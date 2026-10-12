@@ -1,10 +1,41 @@
 # 工作記憶
 
+## 2026-10-12 三大要素中英文再次核對
+
+- 依使用者要求再次搜尋全站來源（排除 .qa、node_modules 與歷史工作記憶），確認首頁、六堂投影片、講義 Markdown 無 Pronunciation／Pronauciation／斷行 Pronun-ciation 錯誤標籤。
+- 首頁中英文分隔列、第一堂圓圖與三張課程卡、第三堂三要素卡、第五堂 lead、第六堂翻牌皆採 BREATH 呼吸、RESONANCE 共鳴、PHONATION 發聲。第四堂無三要素英文標籤，未發現錯誤。
+- 講義網頁與列印頁均讀取同一份 docs/course-handbook.md；下載 PDF 全 34 頁文字掃描通過，三組中英文配對確認存在，無錯誤發聲英文。git diff --check 通過。
+- 本輪僅複核與補記，未再修改教材，尚未提交／推送／部署；此結果為本機版本，未宣稱線上已更新。外部 Claude Doc 未同步。
+
+## 下次 RESUME 優先摘要（2026-10-12 最新）
+
+- 已接續全站三要素英文修正：首頁、第一／二／三／五／六堂英文標籤與講義統一為 BREATH、RESONANCE、PHONATION；移除錯誤 Pronunciation 與斷行形式，保留咬字教學內容。JS 資料鍵未更動。
+- `docs/vocal-class-handbook.pdf` 已依既有列印頁重建，仍為 34 頁；第 6 頁三要素表格文字與渲染確認，第一堂圓圖完整顯示三個英文，320／390／768／1440px 第一堂無橫向溢出；git diff --check 通過。
+- 本輪修改尚未提交、推送或部署；線上即時狀態未重新查證，最後歷史部署仍為 fb3a819。外部 Claude Doc 未同步。
+- 既有兩份未追蹤文件保留；LINE 預覽、Apps Script endpoint、真機／教室實測與老師版標記待辦維持。
+
+
+## 下次 RESUME 優先摘要（2026-10-10 最新）
+
+- 先讀本檔、確認 Git 狀態，第一則訊息提供精簡繁體中文 Brief。此摘要優先於下方舊的 2026-10-09 RESUME 摘要。
+- 最新已推送版本 `fb3a819`：修正首頁起承休轉合五格完整四邊框線、聲波分隔圖縮為 32px 並取消裁切。Pages workflow `38009570586` success；上次查證首頁／CSS HTTP 200，版本 `20261010b` 與修正規則存在。這是歷史部署紀錄，報告即時線上狀態須重新查證。
+- 新 LOGO 分享縮圖已於 `7032a03` 部署，OG 引用 `assets/og-image-20261010.png`。使用者仍回報 LINE 預覽未更新；首頁與圖片以 Linespider UA 查證正常，LINE 快取僅為目前推測。已提供 `https://leoleehr.github.io/vocal_music/?share=logo-7032a03` 測試，尚未收到實際 LINE 新預覽成功的確認。
+- LinkedIn 貼文與四套八張輪播素材已完成，使用者最肯定印象派品牌版；最新加入本人四張照片參考的個人形象、吉他／鋼琴／錄混音設備。最新交付在 `C:/Agent/UIUX/brand/pixel-studio/01-current/vocal-lab-linkedin-leo-20261009/`，八張 1080 × 1350 px、總覽與 ZIP 已驗證，未發佈社群。
+- **目前待接續：全站歌唱三大要素英文統一。** 使用者要求將「發聲」錯誤英文（使用者寫 Pronauciation，實際檔案多為 Pronunciation，含斷行 Pronun-<br>ciation）改成 PHONATION，並核對 BREATH 呼吸、RESONANCE 共鳴、PHONATION 發聲。只完成搜尋與檢查，尚未修改教材、重建 PDF、提交或部署；不得宣稱已完成。
+- 已找到需修改：`slides/lesson-01/index.html` 的三要素圓圖與三張課程卡、`slides/lesson-03/index.html` 的三要素卡、`slides/lesson-06/index.html` 的複習翻牌、`docs/course-handbook.md` 的「發聲與咬字 Pronunciation」表格。第五堂英文 lead 已用 Phonation，但三要素大小寫需統一。首頁分隔列已正確；主聲波小標仍為 BREATH → RESONANCE → VOICE，接續時核對並改為 PHONATION。
+- 講義網頁及列印頁透過 fetch 讀取 `docs/course-handbook.md`；下載 PDF 需同步重新產生與檢查，目前為 34 頁。已讀 pdf 技能；產製前依該技能執行 artifact operation marker（需定位實際腳本），再依既有 HTML 列印流程重建。外部 Claude Doc 原稿曾同步，但本輪未讀取／更新，不得宣稱已同步。
+- `Pronunciation` 正確意義是發音／咬字，三要素標籤應依使用者指定採 PHONATION 發聲；保留合理的咬字教學內容，避免將兩者混為同義詞。搜尋需避開 `.qa` 的大量 Chrome profile 與 node_modules，並保留 JS 的 breath／resonance 資料鍵。
+- 使用者本輪最後要求先記 Memory；停止教材修改，待 Resume 接續。工作記憶保留本機修改，兩份未追蹤 `docs/apps-script-setup-notes.md`、`docs/voice-lab-build-story.md` 保留；未新增提交／部署。既有 Apps Script endpoint、iOS／LINE／麥克風／教室實測與兩處老師版標記待辦仍在。
+
+### 下次繁體中文 Brief 參考
+
+「這是 Pixel Studio 流行歌唱教學網站，六堂互動投影片、34 頁講義與問卷已完成。最新已部署版本 `fb3a819`，修正課程結構邊框與聲波裁切；新版分享縮圖已上線，LINE 預覽仍待確認。LinkedIn 個人形象印象派輪播已交付。目前待接續全站三大要素中英文統一為 BREATH 呼吸、RESONANCE 共鳴、PHONATION 發聲；已定位錯誤，尚未修改或重建 PDF。」
+
 ## 2026-10-10 首頁課程結構邊框與聲波裁切修正
 
 - 依兩張手機截圖確認，第一張實際為首頁 120 分鐘課程結構（起承休轉合），原樣式僅頂線／右線且最後一格取消右線，造成邊框不完整。改為五格各自四邊 1px 完整邊框、8px 間距，保留各格既有金黃／灰／綠強調色。
 - 分隔聲波原 64px 圖片放在 32px 高 overflow:hidden 容器，造成波峰裁切；改為 32 × 32px 圖片置於 44 × 36px 容器並取消裁切。首頁 CSS 版本 `20261010b`。
-- 320／390／768／1440px 無橫向溢出；五格四邊計算樣式皆 1px；390px 結構與縮小聲波目視確認完整。依先前本輪修正部署授權提交及部署；結果待補记。
+- 320／390／768／1440px 無橫向溢出；五格四邊計算樣式皆 1px；390px 結構與縮小聲波目視確認完整。commit `fb3a819` 已推送，Pages workflow `38009570586` completed／success。部署後首頁及 CSS HTTP 200，版本、32px 聲波與完整邊框規則皆確認存在。部署補記保留本機。
 
 ## 2026-10-10 LINE 預覽仍未更新的追查
 
