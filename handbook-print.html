@@ -17,7 +17,7 @@
 @page{size:A4;margin:20mm 17mm 18mm 17mm;
   @bottom-left{content:"亞東吉他社 流行歌唱班｜講義與教案";font:500 7.5pt "Noto Sans TC",sans-serif;color:#a5a19a;letter-spacing:.06em}
   @bottom-right{content:counter(page);font:700 8pt "Space Grotesk",sans-serif;color:#a5a19a}
-  @top-right{content:"PIXEL STUDIO";font:700 7pt "Space Grotesk",sans-serif;color:#c9c5bd;letter-spacing:.3em}}
+  @top-right{content:"Pixel Studio";font:700 7pt "Space Grotesk",sans-serif;color:#c9c5bd;letter-spacing:.3em}}
 @page:first{margin:0;@bottom-left{content:none}@bottom-right{content:none}@top-right{content:none}}
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -96,12 +96,12 @@ a{color:inherit;text-decoration:none}
 </style>
 </head>
 <body>
-<div class="toolbar"><button type="button" onclick="window.print()">列印／另存 PDF</button><a class="ghost" href="docs/vocal-class-handbook.pdf" download="流行歌唱班_講義與教案.pdf">下載 PDF</a><a class="ghost" href="handbook.html">回網頁版</a></div>
+<div class="toolbar"><button type="button" onclick="window.print()">列印／另存 Pdf</button><a class="ghost" href="docs/vocal-class-handbook.pdf" download="流行歌唱班_講義與教案.pdf">下載 Pdf</a><a class="ghost" href="handbook.html">回網頁版</a></div>
 
 <div class="sheet cover">
-  <div class="brandblock"><img class="logo-new" src="assets/brand/pixel-studio-primary-dark.svg" alt="pixel studio"><div class="cn">畫素音樂工作坊</div></div>
+  <div class="brandblock"><img class="logo-new" src="assets/brand/pixel-studio-primary-dark.svg" alt="Pixel Studio"><div class="cn">畫素音樂工作坊</div></div>
   <div class="mid">
-    <div class="eyebrow">VOCAL CLASS HANDBOOK</div>
+    <div class="eyebrow">Vocal Class Handbook</div>
     <h1>流行歌唱班<br>講義與教案</h1>
     <div class="sub">亞東科技大學吉他社・六堂課程</div>
   </div>
@@ -115,14 +115,14 @@ a{color:inherit;text-decoration:none}
   <h2>目錄</h2>
   <p class="lead">六堂課、每堂 120 分鐘：課前問卷、起承轉合的課程綱要、擴充講義、課堂互動與課後練習。</p>
   <ol id="toc"></ol>
-  <p class="note">歌曲影片：每一堂開頭列有本堂歌曲，掃描 QR Code 或點擊連結即可在 YouTube 觀看。互動投影片請至課程網站開啟。</p>
+  <p class="note">歌曲影片：每一堂開頭列有本堂歌曲，掃描 Qr Code 或點擊連結即可在 Youtube 觀看。互動投影片請至課程網站開啟。</p>
 </div>
 
 <main class="sheet md" id="content"></main>
 
-<div class="sheet end"><img class="logo-new endlogo" src="assets/brand/pixel-studio-primary-mono-black.svg" alt="pixel studio"><p class="endcn">畫素音樂工作坊</p><p>Pixel Studio・Established Since 2008</p></div>
+<div class="sheet end"><img class="logo-new endlogo" src="assets/brand/pixel-studio-primary-mono-black.svg" alt="Pixel Studio"><p class="endcn">畫素音樂工作坊</p><p>Pixel Studio・Established Since 2008</p></div>
 
-<script src="assets/songs.js?v=20261008v"></script>
+<script src="assets/songs.js?v=20261012a"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
@@ -144,7 +144,7 @@ a{color:inherit;text-decoration:none}
         var parts = nd.textContent.split(/\s(?=[A-Z])/), title = parts[0].replace(/^第.堂｜/, '').trim(), en = parts.slice(1).join(' ');
         sec.id = n ? 'lesson-' + n : 'overview';
         var lh = document.createElement('div'); lh.className = 'lh'; if (n) lh.style.setProperty('--c', COLOR[n]);
-        lh.innerHTML = '<div class="no">' + (n ? 'LESSON ' + String(n).padStart(2, '0') : 'OVERVIEW') + '</div><h2></h2>';
+        lh.innerHTML = '<div class="no">' + (n ? 'Lesson ' + String(n).padStart(2, '0') : 'Overview') + '</div><h2></h2>';
         lh.querySelector('h2').textContent = title;
         if (en) { var s = document.createElement('small'); s.textContent = en; lh.querySelector('h2').appendChild(s); }
         sec.appendChild(lh);
@@ -155,7 +155,7 @@ a{color:inherit;text-decoration:none}
         if (list) {
           li.lastChild.insertAdjacentHTML('beforeend', '<div class="s">' + list.join('、') + '</div>');
           var box = document.createElement('div'); box.className = 'songs';
-          box.innerHTML = '<div class="h">本堂歌曲<span>掃描 QR Code 或點擊連結，在 YouTube 觀看</span></div><div class="g"></div>';
+          box.innerHTML = '<div class="h">本堂歌曲<span>掃描 Qr Code 或點擊連結，在 Youtube 觀看</span></div><div class="g"></div>';
           list.forEach(function (name) {
             var sg = PIXEL_SONGS[name], url = 'https://youtu.be/' + sg.id, el = document.createElement('div'); el.className = 'song';
             el.innerHTML = '<div class="qr"></div><div><b>' + name + '</b><span>' + sg.artist + '・' + sg.kind + '</span><a href="' + url + '">youtu.be/' + sg.id + '</a></div>';

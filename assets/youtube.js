@@ -43,7 +43,7 @@
         '<button type="button" class="ytp-btn ytp-stop" aria-label="停止">' + ICON.stop + '</button>' +
         '<div class="ytp-meta"><b>' + esc(name) + '</b><span>' + esc(s.artist) + '・' + esc(s.kind) + '</span></div>' +
         '<span class="ytp-time">0:00</span>' +
-        '<a class="ytp-btn ytp-ext" href="https://www.youtube.com/watch?v=' + s.id + '" target="_blank" rel="noopener" aria-label="在 YouTube 開啟">' + ICON.ext + '</a>' +
+        '<a class="ytp-btn ytp-ext" href="https://www.youtube.com/watch?v=' + s.id + '" target="_blank" rel="noopener" aria-label="在 Youtube 開啟">' + ICON.ext + '</a>' +
         (this.opts.closable ? '<button type="button" class="ytp-btn ytp-close" aria-label="關閉">' + ICON.close + '</button>' : '') +
       '</div>';
     this.$ = function (q) { return root.querySelector(q); };
@@ -69,7 +69,7 @@
           events: {
             onReady: function () { self.root.classList.remove('loading'); self.root.classList.add('loaded'); res(self.player); },
             onStateChange: function (e) { self.onState(e.data); },
-            onError: function () { self.root.classList.add('error'); self.$('.ytp-time').textContent = '無法播放，請改用 YouTube 開啟'; }
+            onError: function () { self.root.classList.add('error'); self.$('.ytp-time').textContent = '無法播放，請改用 Youtube 開啟'; }
           }
         });
       });

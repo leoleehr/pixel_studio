@@ -16,7 +16,7 @@ body::before{display:none}
   .kicker{overflow-wrap:anywhere}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
-@media(max-width:360px){.six{grid-template-columns:1fr!important}.six>div{justify-self:center}}
+@media(max-width:480px){.six{grid-template-columns:1fr!important}.six>div{justify-self:center}.six .venn{zoom:.9}}
 
 /* 起承轉合流程圖與課表色塊：刷淡（降低飽和度），白字對比維持在原本水準以上 */
 .bar-qi{background:#52699f}.bar-cheng{background:#cdc57a;color:#1f1d0c!important}.bar-rest{background:#3b3b43}.bar-zhuan{background:#b05a4d}.bar-he{background:#5c8456}

@@ -7,7 +7,7 @@
   var title = document.body.getAttribute('data-title') || document.title;
   var i = 0;
 
-  // 每張投影片加上錨點、左下角章節標註、右下角刷淡的 PIXEL STUDIO Logo
+  // 每張投影片加上錨點、左下角章節標註、右下角刷淡的 Pixel Studio Logo
   var chapter = document.body.getAttribute('data-title') || '';
   slides.forEach(function (s, k) {
     s.id = 's' + (k + 1);
@@ -50,7 +50,7 @@
   bar.className = 'appbar';
   var parts = title.split('｜');
   bar.innerHTML = '<a class="back" href="../../index.html#lessons" aria-label="回課程首頁">' + PixelUI.ICON.back + '</a>' +
-    '<div class="ab-title"><small>' + (parts.length > 1 ? parts[0] : 'PIXEL STUDIO') + '</small><b>' + (parts[1] || title) + '</b></div>' +
+    '<div class="ab-title"><small>' + (parts.length > 1 ? parts[0] : 'Pixel Studio') + '</small><b>' + (parts[1] || title) + '</b></div>' +
     '<span class="ab-count">1 / ' + slides.length + '</span><span class="ab-progress"></span>';
   document.body.insertBefore(bar, document.body.firstChild);
   var sh = PixelUI.sheet('本堂目錄', toc);
@@ -154,7 +154,7 @@
     var bpm = parseInt(m.getAttribute('data-bpm'), 10) || 60, beat = 0, mid = null;
     m.innerHTML = '<button type="button" class="go">▶ 節拍器</button><button type="button" class="dn" aria-label="減速">−</button><span class="bpm"></span><button type="button" class="up" aria-label="加速">＋</button><span class="dots"><span></span><span></span><span></span><span></span></span>';
     var dots = m.querySelectorAll('.dots span'), lab = m.querySelector('.bpm'), go = m.querySelector('.go');
-    function label() { lab.textContent = bpm + ' BPM'; }
+    function label() { lab.textContent = bpm + ' Bpm'; }
     function tick() {
       dots.forEach(function (d, k) { d.classList.toggle('on', k === beat); d.classList.toggle('first', k === 0); });
       click(beat === 0); beat = (beat + 1) % 4;
@@ -177,7 +177,7 @@
       var ok = document.createElement('button'); ok.type = 'button'; ok.className = 'pass'; ok.textContent = '唱穩了 +5';
       var rb = document.createElement('span'); rb.className = 'record';
       var rs = document.createElement('button'); rs.type = 'button'; rs.className = 'restart'; rs.textContent = '回到 ' + base;
-      function showRec() { rb.textContent = rec ? '班級紀錄 ' + rec + ' BPM' : '班級紀錄 —'; }
+      function showRec() { rb.textContent = rec ? '班級紀錄 ' + rec + ' Bpm' : '班級紀錄 —'; }
       ok.onclick = function () {
         if (bpm > rec) { rec = bpm; try { localStorage.setItem(key, rec); } catch (e) {} showRec(); }
         bpm = Math.min(200, bpm + 5); label(); start();

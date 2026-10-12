@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Allura&text=We%20Perform%20the%20Pixel%20of%20Music&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=20261008v">
+<link rel="stylesheet" href="assets/site.css?v=20261012a">
 <link rel="stylesheet" href="assets/backend.css?v=20261008v">
 <link rel="stylesheet" href="assets/responsive.css?v=20261008v">
 <style>
@@ -83,12 +83,12 @@
   .sv-submit .btn{width:100%}
 }
 </style>
-<link rel="stylesheet" href="assets/studio.css?v=20261008v">
+<link rel="stylesheet" href="assets/studio.css?v=20261012a">
 </head>
 <body id="top">
 <header class="topbar">
   <div class="wrap">
-    <a class="brand" href="index.html" aria-label="Pixel Studio 首頁"><img class="brand-logo" src="assets/brand/pixel-studio-horizontal.svg" alt="pixel studio" width="2400" height="720"><span class="brand-caption">畫素音樂工作坊<br>VOCAL LAB</span></a>
+    <a class="brand" href="index.html" aria-label="Pixel Studio 首頁"><img class="brand-logo" src="assets/brand/pixel-studio-horizontal.svg" alt="Pixel Studio" width="2400" height="720"><span class="brand-caption">畫素音樂工作坊<br>Vocal Lab</span></a>
     <nav>
       <a href="index.html#lessons">課程</a>
       <a href="survey.html" class="cur">問卷</a>
@@ -111,7 +111,7 @@
 
 <script src="assets/config.js?v=20261008v"></script>
 <script src="assets/backend.js?v=20261008v"></script>
-<script src="assets/surveys.js?v=20261008v"></script>
+<script src="assets/surveys.js?v=20261012a"></script>
 <script>
 (function () {
   'use strict';
@@ -123,7 +123,7 @@
   var notice = PixelBackend.configured ? '' : '<div class="sv-notice">後台尚未完成設定：送出的問卷會先存在這台裝置，設定完成後自動補送給老師。</div>';
 
   if (!sv) {
-    app.innerHTML = '<div class="sv-head"><div class="lh-no">SURVEYS</div><h1>課程問卷</h1><p>每堂課前三天填寫課前問卷，結業當天填寫課程回饋。填寫後會直接送到老師的課程試算表。</p></div>' + notice + '<div class="sv-list"></div>';
+    app.innerHTML = '<div class="sv-head"><div class="lh-no">Surveys</div><h1>課程問卷</h1><p>每堂課前三天填寫課前問卷，結業當天填寫課程回饋。填寫後會直接送到老師的課程試算表。</p></div>' + notice + '<div class="sv-list"></div>';
     list.forEach(function (s) {
       var d = doneAt(s.id), a = document.createElement('a'); a.className = 'sv-item'; a.href = 'survey.html?id=' + s.id;
       a.style.setProperty('--c', s.id === 'feedback' ? '#C7AF4A' : COLOR[s.lesson]);
@@ -135,7 +135,7 @@
 
   document.title = sv.title + '｜流行歌唱班';
   var p = PixelBackend.profile() || {};
-  var html = '<div class="sv-head" style="--c:' + (sv.id === 'feedback' ? '#C7AF4A' : COLOR[sv.lesson]) + '"><div class="lh-no">' + (sv.id === 'feedback' ? 'FEEDBACK' : 'LESSON ' + String(sv.lesson).padStart(2, '0') + '・PRE-CLASS') + '</div><h1>' + esc(sv.title) + '</h1><p>' + esc(sv.intro) + '</p></div>' + notice +
+  var html = '<div class="sv-head" style="--c:' + (sv.id === 'feedback' ? '#C7AF4A' : COLOR[sv.lesson]) + '"><div class="lh-no">' + (sv.id === 'feedback' ? 'FEEDBACK' : 'Lesson ' + String(sv.lesson).padStart(2, '0') + '・PRE-CLASS') + '</div><h1>' + esc(sv.title) + '</h1><p>' + esc(sv.intro) + '</p></div>' + notice +
     (doneAt(sv.id) ? '<div class="sv-notice" style="color:var(--green);border-color:rgba(108,187,75,.4);background:rgba(108,187,75,.06)">你已在 ' + esc(doneAt(sv.id)) + ' 填寫過這份問卷，再次送出會新增一筆回覆。</div>' : '') +
     '<form novalidate><div class="sv-card who"><div class="sv-q"><span class="n">✦</span>填寫者資料</div><div class="sv-body" style="margin-left:0"><div class="grid">' +
     '<label class="f"><span>姓名</span><input type="text" name="_name" autocomplete="name" maxlength="30" value="' + esc(p.name) + '"></label>' +
