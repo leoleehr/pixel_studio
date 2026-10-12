@@ -3,7 +3,7 @@
  */
 window.PIXEL_SURVEYS = [
   { id: 'pre-1', lesson: 1, title: '第一堂課前問卷（入班問卷）', intro: '了解你的歌唱經驗、目前的困擾與期待，老師會依此調整課程。', questions: [
-    { q: '過去的歌唱經驗', type: 'multi', options: ['無', 'KTV', '合唱團', '樂團', '上過歌唱課'] },
+    { q: '過去的歌唱經驗', type: 'multi', options: ['無', 'Ktv', '合唱團', '樂團', '上過歌唱課'] },
     { q: '吉他程度', type: 'single', options: ['剛入門', '可以自彈簡單和弦', '可以自彈自唱整首歌'] },
     { q: '最喜歡的三位歌手', type: 'short', placeholder: '例如：盧廣仲、田馥甄、五月天' },
     { q: '平常最常演唱的一首歌', type: 'short', hint: '第一堂請備妥這首歌的歌詞或和弦譜' },
@@ -42,7 +42,7 @@ window.PIXEL_SURVEYS = [
     { q: '練習吉他或歌唱時是否使用節拍器', type: 'single', options: ['經常', '偶爾', '從未'] }
   ] },
   { id: 'pre-5', lesson: 5, title: '第五堂課前問卷', intro: '發聲練習的進度、想模仿的歌手，以及結業演唱的初步想法。', questions: [
-    { q: '促音和弦練習的最高速度', type: 'number', unit: 'BPM' },
+    { q: '促音和弦練習的最高速度', type: 'number', unit: 'Bpm' },
     { q: '三步驟學唱中，最有幫助的是哪一步', type: 'single', options: ['唱名', '母音', '歌詞'] },
     { q: '最想模仿的歌手與原因', type: 'text' },
     { q: '演唱時是否會想著歌詞的意思', type: 'single', options: ['經常', '偶爾', '幾乎只顧著音準'] },

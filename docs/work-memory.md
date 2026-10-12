@@ -1,5 +1,24 @@
 # 工作記憶
 
+## 最新英文排版原則與修改（2026-10-12）
+
+- 使用者要求全站英文單字首字母大寫、其餘小寫。文字標題、標籤、頁首／頁尾、六堂投影片、講義、問卷、互動節拍器與歌曲卡片採此原則；三要素現為 Breath 呼吸、Resonance 共鳴、Phonation 發聲，優先於舊紀錄的全大寫要求。
+- 第一堂六組圓圖 18 個英文均為完整單字，移除 Wavelength／Resolution 的手動斷行。圓圈字級 17px，禁止斷字／換行；手機 480px 以下改單欄、zoom .9，其餘手機兩欄 zoom .8，桌面維持三欄。
+- 保留網址、信箱、音名／和弦級數／音標／力度記號、程式資料鍵、影片 ID、Markdown 程式區塊與正式向量 Logo 圖樣；只調整可閱讀的英文文字。CSS 全大寫轉換取消，修改資產版本 20261012a。首頁 Allura 字元子集同步加入大寫 The／Of。
+- 講義 PDF 重建為 34 頁，三要素正確中英文配對、封面與全頁總覽目視確認。新 OG 圖 assets/og-image-20261012.png，舊版日期圖保留，首頁與生成工具同步。
+- 驗證：9 頁 × 4 螢幕寬度無橫向溢出；補修動態 Surveys／Mv 後再次查驗相關三頁 × 四寬度無全大寫標籤殘留。18 個圓圈標籤 × 四寬度各為單行且無文字溢出；JS 語法、影片 ID／投影片 data 屬性未誤改、git diff --check 通過。
+- 沿用使用者 COMMIT PUSH DEPLOY 授權發布；部署結果待下方補記。外部 Claude Doc 未同步，其他真機待辦維持。
+
+
+## 最新部署確認（2026-10-12）
+
+- 使用者明確要求 COMMIT PUSH DEPLOY，三要素修正、34 頁 PDF 與工作記憶已提交為 `f6b622d2f04789e670171f800ad8cf586881f2e3`，推送至 origin/main。
+- GitHub Pages workflow `38204220437` completed／success。部署後首頁、第一／二／三／五／六堂投影片、講義 Markdown 與 PDF 皆 HTTP 200；英文標籤正確、無 Pronunciation 等錯誤形式。線上 PDF SHA-256 與本機一致。
+- 此段優先於下方尚未提交／部署的歷史紀錄。外部 Claude Doc 未同步，其餘 LINE 預覽、Apps Script endpoint、真機／教室實測與老師版待辦不變。
+- 系統 Git HTTPS 因 libcurl-4.dll 被應用程式控制政策阻擋（WinError 4551）失敗；改用 Codex runtime 內建 Git 後成功推送，未修改系統安全設定。
+- 本次部署補記保留本機；兩份既有未追蹤文件未收入提交。
+
+
 ## 2026-10-12 三大要素中英文再次核對
 
 - 依使用者要求再次搜尋全站來源（排除 .qa、node_modules 與歷史工作記憶），確認首頁、六堂投影片、講義 Markdown 無 Pronunciation／Pronauciation／斷行 Pronun-ciation 錯誤標籤。
