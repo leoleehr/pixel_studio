@@ -1,0 +1,197 @@
+/* Guitar Lab 主題：沿用 Vocal Lab 版面，主色換成 CI 綠（#6cbb4b），並加上吉他專用圖表與練習器 */
+:root{--accent:#6cbb4b;--accent-rgb:108,187,75;--amber:var(--accent)}
+::selection{background:var(--accent);color:#0b130a}
+.btn.primary:hover{background:#7fcb5e}
+.live-dot{box-shadow:0 0 12px rgba(var(--accent-rgb),.4)}
+
+/* ---------- 自製插圖（吉他構造、種類、筒身…） ---------- */
+.gfig{display:block;width:100%;height:auto}
+.gfig .ln{fill:none;stroke:var(--ink,#f1f0e8);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.gfig .ln.thin{stroke-width:1.2;opacity:.7}
+.gfig .dim{fill:none;stroke:var(--faint,#90988b);stroke-width:1.2;stroke-dasharray:4 4}
+.gfig .wood{fill:#b7793d}.gfig .wood2{fill:#7a4524}.gfig .wood3{fill:#e2c48f}.gfig .dark{fill:#2a2622}
+.gfig .metal{fill:#c9ccd1}.gfig .bone{fill:#efe8d6}.gfig .hole{fill:#0d0c0b}
+.gfig .acc{fill:var(--accent)}.gfig .acc-s{fill:none;stroke:var(--accent);stroke-width:2}
+.gfig .lead{stroke:var(--accent);stroke-width:1.4;fill:none}
+.gfig .dot{fill:var(--accent)}
+.gfig text{fill:var(--ink,#f1f0e8);font-family:"Noto Sans TC",sans-serif;font-size:15px}
+.gfig text.en{font-family:"Space Grotesk",Arial,sans-serif;fill:var(--muted,#aaafa2);font-size:12.5px}
+.gfig text.big{font-size:19px;font-weight:700}
+.gfig text.n{font-family:"Space Grotesk",Arial,sans-serif;font-weight:700;fill:#0b130a;font-size:13px;text-anchor:middle}
+.gfig text.mid{text-anchor:middle}
+.gfig text.end{text-anchor:end}
+
+/* 構造圖：點標號可看說明 */
+.anatomy{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center;height:100%}
+.anatomy>div:first-child{height:100%;min-height:0;display:flex;justify-content:center}
+.anatomy>div:first-child svg{height:100%;width:auto;max-width:100%}
+.anatomy .hot{cursor:pointer}
+.anatomy .hot circle{fill:var(--accent);transition:transform .15s}
+.anatomy .hot:hover circle,.anatomy .hot.on circle{fill:#fff}
+.anatomy .hot text{pointer-events:none}
+.part-info{min-height:230px}
+.part-info .pi-no{font:700 15px var(--display);color:var(--accent);letter-spacing:.12em}
+.part-info h3{font-size:30px;margin:6px 0 4px}
+.part-info .pi-en{font:500 17px var(--display);color:var(--muted);margin-bottom:12px}
+.part-info p{font-size:21px;line-height:1.65}
+.part-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.part-chips button{border:1px solid var(--line-2);background:var(--card);color:var(--ink);border-radius:999px;padding:5px 13px;font-size:15px;cursor:pointer}
+.part-chips button.on{background:var(--accent);border-color:var(--accent);color:#0b130a;font-weight:700}
+
+/* 年表 */
+.era{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;position:relative;margin-top:8px}
+.era .card{padding:18px 18px 16px;border-top:3px solid var(--c,var(--accent))}
+.era .yr{font:700 15px var(--display);color:var(--c,var(--accent));letter-spacing:.06em}
+.era h3{font-size:21px;margin:6px 0 6px}
+.era p{font-size:16.5px!important;line-height:1.55!important;color:var(--muted)}
+.era .card.hl{background:rgba(var(--accent-rgb),.1);border-color:rgba(var(--accent-rgb),.5)}
+
+/* 吉他家族卡 */
+.family{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.family .card{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center;padding:14px 16px}
+.family .card svg{width:96px;height:150px}
+.family h3{font-size:20px;margin-bottom:2px}
+.family .en{font:500 13.5px var(--display);color:var(--muted)}
+.family p{font-size:15.5px!important;line-height:1.5!important;margin-top:6px;color:var(--muted)}
+
+/* 木材色票 */
+.woods{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.wood-sw{border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+.wood-sw i{display:block;height:74px;background:var(--w);background-image:repeating-linear-gradient(100deg,rgba(0,0,0,.08) 0 2px,transparent 2px 9px),repeating-linear-gradient(97deg,rgba(255,255,255,.06) 0 1px,transparent 1px 14px)}
+.wood-sw div{padding:10px 12px;background:var(--card)}
+.wood-sw b{display:block;font-size:18px}
+.wood-sw span{display:block;font:500 13px var(--display);color:var(--muted)}
+.wood-sw p{font-size:14.5px!important;line-height:1.5!important;margin-top:6px;color:var(--muted)}
+.wood-sw .wbar{height:6px;border-radius:3px;background:var(--card-2,#252b22);margin-top:8px;overflow:hidden}
+.wood-sw .wbar span{display:block;height:100%;background:var(--accent);width:var(--v)}
+
+/* 筒身比較 */
+.bodies{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;align-items:end}
+.bodies .b{text-align:center;cursor:pointer;border-radius:var(--r);padding:10px 4px;border:1px solid transparent}
+.bodies .b.on{border-color:var(--accent);background:rgba(var(--accent-rgb),.08)}
+.bodies .b svg{width:100%;height:auto;max-height:170px}
+.bodies .b b{display:block;font:700 14px var(--display);margin-top:6px}
+.bodies .b small{display:block;font-size:13px;color:var(--muted)}
+.body-note{margin-top:16px;min-height:64px}
+
+/* 尺寸選擇 */
+.sizes{display:flex;align-items:flex-end;gap:22px;justify-content:center}
+.sizes div{text-align:center}
+.sizes svg{height:var(--h);width:auto}
+.sizes b{display:block;font:700 22px var(--display);margin-top:8px}
+.sizes span{font-size:15px;color:var(--muted)}
+
+/* ---------- 和弦圖 ---------- */
+.chord-svg{width:100%;height:auto;overflow:visible}
+.chord-svg .nut{fill:var(--ink,#f1f0e8)}
+.chord-svg .fret{stroke:rgba(237,241,225,.28);stroke-width:1}
+.chord-svg .string{stroke:var(--muted,#aaafa2)}
+.chord-svg .dot{fill:var(--accent)}
+.chord-svg .open{fill:none;stroke:var(--ink,#f1f0e8);stroke-width:1.4}
+.chord-svg .mark{fill:var(--faint,#90988b);font:700 12px var(--display);text-anchor:middle}
+.chord-svg .finger{fill:#0b130a;font:700 9.5px var(--display);text-anchor:middle}
+.chord-svg .snum{fill:var(--faint,#90988b);font:9px var(--display);text-anchor:middle}
+.chord-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.chord-card{display:flex;flex-direction:column;gap:6px;align-items:stretch}
+.chord-card .ch-head{display:flex;align-items:baseline;justify-content:space-between}
+.chord-card .ch-head b{font:700 40px/1 var(--display)}
+.chord-card .ch-head span{font:500 15px var(--display);color:var(--accent)}
+.chord-card .fig{width:132px;margin:2px auto}
+.chord-card p{font-size:15.5px!important;line-height:1.5!important;color:var(--muted)}
+.chord-card .btn{align-self:flex-start;margin-top:auto}
+
+/* 換和弦練習器 */
+.trainer-stage{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:16px;margin-bottom:14px}
+.trainer-stage>div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0}
+.trainer-stage .label{font:500 13px var(--display);letter-spacing:.12em;color:var(--faint);align-self:flex-start}
+.trainer-stage .now .name{font:700 72px/1 var(--display);color:var(--accent)}
+.trainer-stage .next .name{font:700 40px/1 var(--display);color:var(--muted)}
+.trainer-stage .now .fig{width:min(150px,100%)}
+.trainer-stage .next .fig{width:min(110px,100%);opacity:.7}
+.trainer-stage .count .beats{margin-top:auto}
+.trainer-stage .count .hint{margin-bottom:auto;color:var(--muted);font-size:16px;text-align:center;min-height:2.6em}
+.beats{display:flex;gap:10px}
+.beats i{width:24px;height:24px;border-radius:50%;background:var(--card-2,#252b22);border:1px solid var(--line-2)}
+.beats i.on{background:var(--accent);border-color:var(--accent)}
+.beats i.on.down{box-shadow:0 0 0 5px rgba(var(--accent-rgb),.25)}
+
+.gcontrols{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
+.gcontrols .field{display:flex;align-items:center;gap:8px;font-size:15px;color:var(--muted)}
+.gcontrols output{font:700 20px var(--display);color:var(--ink);min-width:3ch;text-align:right}
+.gcontrols input[type=range]{accent-color:var(--accent);width:140px}
+.seg{display:inline-flex;border:1px solid var(--line-2);border-radius:var(--r-sm,3px);overflow:hidden}
+.seg button{border:0;background:transparent;padding:6px 11px;font-size:15px;cursor:pointer;color:var(--muted)}
+.seg button+button{border-left:1px solid var(--line-2)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#0b130a;font-weight:700}
+.gbtn[aria-pressed="true"]{border-color:var(--accent)!important;color:var(--accent)!important}
+
+/* 刷奏格 */
+.strum-grid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px}
+.strum-grid .cell{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 0 8px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-sm,3px)}
+.strum-grid .cell.off{background:var(--surface)}
+.strum-grid .arrow{font:700 40px/1 var(--display);color:var(--ink)}
+.strum-grid .arrow.ghost{color:transparent;-webkit-text-stroke:1.2px var(--faint)}
+.strum-grid .cnt{font:500 14px var(--display);color:var(--faint)}
+.strum-grid .cell.now{background:var(--accent);border-color:var(--accent)}
+.strum-grid .cell.now .arrow,.strum-grid .cell.now .cnt{color:#0b130a}
+.strum-grid .cell.now .arrow.ghost{-webkit-text-stroke:1.2px #0b130a}
+.player-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+.player-top .pname{font-size:21px}
+.player-top .pchord{font:700 40px/1 var(--display);color:var(--accent);min-height:40px}
+.pdesc{color:var(--muted);font-size:16px;margin:12px 0 14px}
+
+/* 調音器 */
+.tuner{display:grid;gap:14px}
+.tuner .strings{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.tuner .strings button{border:1px solid var(--line-2);background:var(--card);color:var(--ink);border-radius:var(--r-sm,3px);padding:10px 0 8px;cursor:pointer;text-align:center}
+.tuner .strings button b{display:block;font:700 28px/1.1 var(--display)}
+.tuner .strings button small{font-size:13px;color:var(--muted)}
+.tuner .strings button.on{border-color:var(--accent);background:rgba(var(--accent-rgb),.12)}
+.tuner .strings button.ok b{color:var(--accent)}
+.tuner .dial{position:relative;height:110px;background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
+.tuner .scale{position:absolute;left:8%;right:8%;top:58px;height:2px;background:var(--line-2)}
+.tuner .zone{position:absolute;left:46%;width:8%;top:44px;height:30px;background:rgba(var(--accent-rgb),.22);border-radius:3px}
+.tuner .needle{position:absolute;top:30px;width:4px;height:58px;margin-left:-2px;left:50%;background:var(--muted);border-radius:2px;transition:left .12s}
+.tuner .needle.ok{background:var(--accent)}
+.tuner .read{position:absolute;left:16px;top:10px;font:700 26px var(--display)}
+.tuner .cents{position:absolute;right:16px;top:12px;font:500 16px var(--display);color:var(--muted)}
+.tuner .lbl{position:absolute;bottom:8px;font-size:13px;color:var(--faint)}
+.tuner .lbl.l{left:16px}.tuner .lbl.r{right:16px}
+.tuner .msg{font-size:16px;color:var(--muted);min-height:1.6em}
+
+/* 指板音名 */
+.fretboard{width:100%;height:auto}
+.fretboard .wood-b{fill:#3a2a1e}
+.fretboard .fr{stroke:#b8b8b8;stroke-width:2}
+.fretboard .nut{fill:#efe8d6}
+.fretboard .st{stroke:#d9d4c7}
+.fretboard .inl{fill:#efe8d6;opacity:.7}
+.fretboard .nn circle{fill:var(--card-2,#252b22);stroke:var(--line-2)}
+.fretboard .nn.on circle{fill:var(--accent);stroke:var(--accent)}
+.fretboard .nn text{font:700 12px var(--display);fill:var(--ink);text-anchor:middle}
+.fretboard .nn.on text{fill:#0b130a}
+.fretboard .sl{font:700 13px var(--display);fill:var(--muted);text-anchor:end}
+
+@media (max-width:900px){
+  .anatomy,.era,.family,.woods{grid-template-columns:1fr}
+  .anatomy{height:auto!important}.anatomy>div:first-child{height:auto}.anatomy>div:first-child svg{height:auto;max-height:70vh;width:auto}
+  .era{grid-template-columns:1fr 1fr}
+  .bodies{grid-template-columns:repeat(3,1fr)}
+  .chord-row{grid-template-columns:1fr 1fr}
+  .trainer-stage{grid-template-columns:1fr 1fr}
+  .trainer-stage .count{grid-column:1/-1}
+  .strum-grid{gap:3px}
+  .strum-grid .arrow{font-size:28px}
+  .tuner .strings b{font-size:22px}
+  .sizes{gap:8px}
+  .sizes div{flex:1;min-width:0}
+  .sizes svg{height:auto;width:100%;max-height:var(--h)}
+  .sizes b{font-size:17px}
+  .part-info{min-height:0}
+}
+@media (max-width:480px){
+  .era{grid-template-columns:1fr}
+  .family .card{grid-template-columns:72px 1fr}
+  .family .card svg{width:72px;height:112px}
+  .woods{grid-template-columns:1fr 1fr}
+}
