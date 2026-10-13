@@ -5,20 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>講義與教案｜Guitar Lab 民謠吉他</title>
 <meta name="description" content="Pixel Studio Guitar Lab 民謠吉他十二章的講義與教案：課前問卷、120 分鐘課程綱要、擴充講義、課堂互動與課後練習。">
-<link rel="icon" href="../assets/favicon.ico?v=20261014a" sizes="any">
-<link rel="icon" type="image/png" sizes="48x48" href="../assets/favicon.png?v=20261014a">
-<link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png?v=20261014a">
-<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=20261014a">
+<link rel="icon" href="../assets/favicon.ico?v=20261014g" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="../assets/favicon.png?v=20261014g">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png?v=20261014g">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=20261014g">
 <meta name="theme-color" content="#101210">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Allura&text=We%20Perform%20the%20Pixel%20of%20Music&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=20261014a">
-<link rel="stylesheet" href="../assets/backend.css?v=20261014a">
-<link rel="stylesheet" href="../assets/responsive.css?v=20261014a">
-<link rel="stylesheet" href="../assets/studio.css?v=20261014a">
-<link rel="stylesheet" href="theme.css?v=20261014a">
+<link rel="stylesheet" href="../assets/site.css?v=20261014g">
+<link rel="stylesheet" href="../assets/backend.css?v=20261014g">
+<link rel="stylesheet" href="../assets/responsive.css?v=20261014g">
+<link rel="stylesheet" href="../assets/studio.css?v=20261014g">
+<link rel="stylesheet" href="theme.css?v=20261014g">
 </head>
 <body id="top" data-course="guitar">
 <header class="topbar">
@@ -47,18 +47,18 @@
   <a href="survey.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6a1 1 0 0 1 1 1v1H8V5a1 1 0 0 1 1-1z"/><path d="M8 5H6a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2"/><path d="M9 12l2 2 4-4"/></svg>問卷</a>
 </nav>
 
-<script src="../assets/pixel.js?v=20261014a"></script>
-<script src="../assets/ui.js?v=20261014a"></script>
-<script src="../assets/config.js?v=20261014a"></script>
-<script src="../assets/backend.js?v=20261014a"></script>
+<script src="../assets/pixel.js?v=20261014g"></script>
+<script src="../assets/ui.js?v=20261014g"></script>
+<script src="../assets/config.js?v=20261014g"></script>
+<script src="../assets/backend.js?v=20261014g"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
-<script>window.GUITAR_READY = [1, 2, 3, 4];</script>
+<script>window.GUITAR_READY = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];</script>
 <script>
 (function () {
   var NUM = { '一': 1, '二': 2, '三': 3, '四': 4, '五': 5, '六': 6, '七': 7, '八': 8, '九': 9, '十': 10, '十一': 11, '十二': 12 };
   var COLOR = ['', '#e8412b', '#e2407f', '#9a5fd0', '#2f5fc4', '#45b3e6', '#6cbb4b', '#d6e03a', '#f4a62a', '#e8412b', '#e2407f', '#9a5fd0', '#45b3e6'];
   var main = document.getElementById('content'), toc = document.getElementById('toc'), prog = document.getElementById('progress');
-  fetch('handbook.md?v=20261014a')
+  fetch('handbook.md?v=20261014g')
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
     .then(function (md) {
       main.innerHTML = marked.parse(md, { gfm: true });

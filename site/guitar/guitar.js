@@ -76,9 +76,10 @@
     W: { name: '華爾滋 3/4 蹦洽洽', beats: 3, cells: ['X', 'u', 'D', 'u', 'D', 'u'], desc: '強、弱、弱：第 1 拍彈低音，第 2、3 拍刷高音弦。圓舞曲與許多慢歌都用它。' },
     W2: { name: '3/4 蹦洽拉洽拉', beats: 3, cells: ['X', 'u', 'D', 'U', 'D', 'U'], desc: '在華爾滋的洽後面加上上刷，三拍子也能有流動感。' },
     E6: { name: '6/8 搖擺', beats: 2, cells: ['X', 'D', 'U', 'Y', 'D', 'U'], desc: '一小節 6 個八分音符，分成兩大拍：蹦洽拉、蹦洽拉，像搖籃一樣晃。' },
+    K: { name: '切音 Chuck', cells: ['D', 'U', 'M', 'U', 'D', 'U', 'M', 'U'], desc: '第 2、4 拍用右手掌側邊或手指「拍」在弦上，發出像小鼓的「恰」。左手同時放鬆讓弦悶住。' },
     T12: { name: '12/8 慢板', beats: 4, cells: ['X', 'D', 'U', 'Y', 'D', 'U', 'X', 'D', 'U', 'Y', 'D', 'U'], desc: '每一拍裡有三個八分音符。藍調與老式情歌常用，速度慢、情緒深。' }
   };
-  var SHORT = { Q: '四分', A: '8 Beats', B: '切分', S: '16 Beats', P: '蹦洽拉', W: '華爾滋', W2: '蹦洽拉洽拉', E6: '6/8', T12: '12/8' };
+  var SHORT = { Q: '四分', A: '8 Beats', B: '切分', S: '16 Beats', P: '蹦洽拉', W: '華爾滋', W2: '蹦洽拉洽拉', E6: '6/8', T12: '12/8', K: '切音' };
   function beatsOf(k) { return PATTERNS[k].beats || 4; }
   function counts(n, beats) {
     var per = n / beats, sub = { 1: [''], 2: ['&'], 3: ['&', 'a'], 4: ['e', '&', 'a'] }[per] || [], out = [];
@@ -398,10 +399,13 @@
   $$('[data-diagram]').forEach(function (n) { n.innerHTML = diagram(n.getAttribute('data-diagram'), { strings: n.hasAttribute('data-strings') }); });
   $$('[data-chord-cards]').forEach(function (root) {
     var keys = (root.getAttribute('data-chord-cards') || 'C G Am F').split(/\s+/);
+    // data-labels="G:G_調_I_級 D:V"（底線代表空白）可自訂右上角標示；data-plain 隱藏預設的級數與提示
+    var labels = {}, plain = root.hasAttribute('data-plain');
+    (root.getAttribute('data-labels') || '').split(/\s+/).forEach(function (x) { var p = x.split(':'); if (p[1]) labels[p[0]] = p[1].replace(/_/g, ' '); });
     root.classList.add('chord-row');
     root.innerHTML = keys.map(function (k) {
-      var c = CHORDS[k];
-      return '<div class="card chord-card"><div class="ch-head"><b>' + c.name + '</b><span>' + (c.degree ? 'C 調 ' + c.degree + ' 級' : '') + '</span></div><div class="fig">' + diagram(k, { strings: true }) + '</div><p>' + c.tip + '</p><button type="button" class="btn" data-hear="' + k + '">▶ 聽聽看</button></div>';
+      var c = CHORDS[k], label = k in labels ? labels[k] : plain ? '' : (c.degree ? 'C 調 ' + c.degree + ' 級' : '');
+      return '<div class="card chord-card"><div class="ch-head"><b>' + c.name + '</b><span>' + label + '</span></div><div class="fig">' + diagram(k, { strings: true }) + '</div><p>' + (plain ? '' : c.tip) + '</p><button type="button" class="btn" data-hear="' + k + '">▶ 聽聽看</button></div>';
     }).join('');
     root.addEventListener('click', function (e) {
       var b = e.target.closest('[data-hear]'), a = b && PS.audio.ctx(); if (!a) return;
@@ -492,6 +496,7 @@
   function strumCell(cell, chord, time, per, accent) {
     var dur = per >= 4 ? 0.35 : 0.5;
     if (cell === 'X' || cell === 'Y') PS.audio.strum(bassOnly(chord, cell === 'Y'), time, 'down', { duration: 0.9, volume: 0.3 });
+    else if (cell === 'M') PS.audio.strum(CHORDS[chord].frets, time, 'down', { duration: 0.05, volume: 0.22, gap: 0.004 });
     else if (cell === 'D' || cell === 'U') {
       var hasBass = PATTERNS.__bass;
       PS.audio.strum(hasBass ? highOnly(chord) : CHORDS[chord].frets, time, cell === 'D' ? 'down' : 'up', { volume: accent ? 0.14 : 0.1, duration: dur, gap: per >= 4 ? 0.008 : undefined });
@@ -501,6 +506,7 @@
     var cells = PATTERNS[key].cells, n = cells.length, beats = beatsOf(key), per = n / beats, cnt = counts(n, beats);
     return '<div class="strum-grid' + (n > 8 ? ' g16' : '') + '" style="grid-template-columns:repeat(' + n + ',minmax(0,1fr))" role="list">' + cells.map(function (c, i) {
       if (c === 'X' || c === 'Y') return '<div class="cell bass' + (i % per ? ' off' : '') + '" role="listitem"><span class="sarrow" aria-label="低音">' + (c === 'X' ? 'X' : 'x') + '</span><span class="cnt">' + cnt[i] + '</span></div>';
+      if (c === 'M') return '<div class="cell bass' + (i % per ? ' off' : '') + '" role="listitem"><span class="sarrow" aria-label="切音">✕</span><span class="cnt">' + cnt[i] + '</span></div>';
       var ghost = c === 'd' || c === 'u', up = c === 'U' || c === 'u';
       return '<div class="cell' + (i % per ? ' off' : '') + '" role="listitem"><span class="sarrow' + (ghost ? ' ghost' : '') + '" aria-label="' + (ghost ? '空刷' : up ? '上刷' : '下刷') + '">' + (up ? '↑' : '↓') + '</span><span class="cnt">' + cnt[i] + '</span></div>';
     }).join('') + '</div>';
@@ -687,7 +693,8 @@
     src.trim().split(/\s+/).forEach(function (tok) {
       if (tok === '|') { bars.push([]); return; }
       var p = tok.split(':'), len = DUR[p[1] || 'q'] || 2, ev = { t: t, len: len, rest: p[0] === 'r', notes: [] };
-      if (!ev.rest) p[0].split('+').forEach(function (x) { var sf = x.split('-'); ev.notes.push({ s: +sf[0], f: +sf[1] }); });
+      // 技巧記號：h 搥弦、p 勾弦、s 滑弦、b 推弦（推高全音）、v 揉音、n 自然泛音，例如 3-2h、2-3b
+      if (!ev.rest) p[0].split('+').forEach(function (x) { var m = x.match(/^(\d)-(\d+)([hpsbvn])?$/); if (m) ev.notes.push({ s: +m[1], f: +m[2], tech: m[3] || '' }); });
       ev.i = events.length; events.push(ev); bars[bars.length - 1].push(ev); t += len;
     });
     return { bars: bars.filter(function (b) { return b.length; }), events: events, total: t };
@@ -708,7 +715,11 @@
           var x = bx + 20 + (bw - 34) * (e.t - start) / len;
           if (e.rest) { s += '<g data-ev="' + e.i + '"><text x="' + x + '" y="' + (y0 + 46) + '" class="tnum">–</text></g>'; return; }
           s += '<g data-ev="' + e.i + '">';
-          e.notes.forEach(function (nt) { var y = y0 + (nt.s - 1) * 16; s += '<rect x="' + (x - 11) + '" y="' + (y - 9) + '" width="22" height="18" rx="4" class="tbg"/><text x="' + x + '" y="' + (y + 5.5) + '" class="tnum">' + nt.f + '</text>'; });
+          e.notes.forEach(function (nt) {
+            var y = y0 + (nt.s - 1) * 16, label = nt.tech === 'n' ? '<' + nt.f + '>' : nt.f + (nt.tech === 'b' ? '↗' : nt.tech === 'v' ? '~' : '');
+            s += '<rect x="' + (x - 13) + '" y="' + (y - 9) + '" width="26" height="18" rx="4" class="tbg"/><text x="' + x + '" y="' + (y + 5.5) + '" class="tnum">' + label + '</text>';
+            if ('hps'.indexOf(nt.tech) > -1 && nt.tech) s += '<text x="' + (x - 22) + '" y="' + (y0 - 4) + '" class="ttech">' + nt.tech.toUpperCase() + '</text>';
+          });
           s += '</g>';
         });
       });
@@ -716,9 +727,10 @@
     return s + '</svg>';
   }
   function pluckNotes(notes, time, dur, vol) {
-    var f = [-1, -1, -1, -1, -1, -1];
-    notes.forEach(function (nt) { f[6 - nt.s] = nt.f; });
-    PS.audio.strum(f, time, 'down', { duration: dur, volume: vol || (notes.length > 1 ? 0.2 : 0.32), gap: 0.012 });
+    var f = [-1, -1, -1, -1, -1, -1], legato = false, harm = false;
+    notes.forEach(function (nt) { f[6 - nt.s] = nt.tech === 'n' ? ({ 12: 12, 7: 19, 5: 24 }[nt.f] || nt.f) : nt.f + (nt.tech === 'b' ? 2 : 0); if ('hps'.indexOf(nt.tech) > -1 && nt.tech) legato = true; if (nt.tech === 'n') harm = true; });
+    var v = vol || (notes.length > 1 ? 0.2 : 0.32);
+    PS.audio.strum(f, time, 'down', { duration: harm ? 2.4 : dur, volume: legato ? v * 0.55 : harm ? v * 0.6 : v, gap: 0.012 });
   }
   $$('[data-tab]').forEach(function (root) {
     var tab = parseTab(root.getAttribute('data-tab')), per = +(root.getAttribute('data-per-row') || 4), player = root.hasAttribute('data-play');
@@ -880,6 +892,20 @@
         PS.audio.strum(lo, t, 'down', { duration: 1, volume: 0.35 });
         PS.audio.strum(hi, t + 0.8, 'down', { duration: 1, volume: 0.35 });
         PS.audio.strum(lo, t + 1.8, 'down', { duration: 1.6, volume: 0.28 }); PS.audio.strum(hi, t + 1.8, 'down', { duration: 1.6, volume: 0.28 });
+      } });
+  });
+
+  /* ---------- 和弦進行聽辨 ----------
+   * data-prog-ear="C,G,Am,F|C,Am,F,G"；data-names="I–V–vi–IV|I–vi–IV–V" 可自訂按鈕文字
+   */
+  $$('[data-prog-ear]').forEach(function (root) {
+    var groups = root.getAttribute('data-prog-ear').split('|'), names = (root.getAttribute('data-names') || '').split('|');
+    earQuiz(root, { name: '和弦進行聽辨', pool: groups.map(function (g, i) { return String(i); }),
+      label: function (k) { return names[+k] || groups[+k].split(',').join(' → '); },
+      hint: '按「出題」聽四個和弦，選出是哪一種進行。先抓最後一個和弦有沒有「回家」。',
+      play: function (k) {
+        var a = PS.audio.ctx(); if (!a) return;
+        groups[+k].split(',').forEach(function (ch, i) { PS.audio.strum(CHORDS[ch].frets, a.currentTime + 0.05 + i * 1.1, 'down', { duration: 1.2, gap: 0.03, volume: 0.18 }); });
       } });
   });
 })(window.PS = window.PS || {});

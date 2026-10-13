@@ -5,7 +5,7 @@
 | 課程 | 中文名稱 | 目錄 | 狀態 |
 | --- | --- | --- | --- |
 | Vocal Lab | 流行歌唱 | `site/vocal/` | 遷移中（目前內容仍在根目錄） |
-| Guitar Lab | 民謠吉他 | `site/guitar/` | 12 章課綱；第 1 章投影片完成，問卷、講義與教案上線 |
+| Guitar Lab | 民謠吉他 | `site/guitar/` | 12 章投影片、講義與教案、課前問卷全部完成 |
 | Piano Lab | 流行鋼琴 | `site/piano/` | 規劃中 |
 | Songwriting Lab | 詞曲創作 | `site/songwriting/` | 規劃中 |
 
@@ -18,6 +18,9 @@
 | `site/guitar/` | Guitar Lab：首頁、`ch01/` 等各章投影片、`survey.html`＋`surveys.js`、`handbook.html`＋`handbook.md`、`guitar.js`（插圖、和弦圖、調音器、練習器）、`theme.css`（主色 CI 綠） |
 | `tools/` | 教材建置與驗證工具 |
 | `backend/` | Google Apps Script 後台（見 `backend/README.md`） |
+| `tools/decks/` | Guitar Lab 各章投影片原稿；`python -X utf8 tools/mkdeck.py 1 2 …` 產生 `site/guitar/chNN/` |
+| `tools/build_handbook.py` | 由投影片原稿產生第 2–12 章講義與教案（`site/guitar/handbook.md`） |
+| `tools/ready.py` | 更新 Guitar Lab 首頁與講義的投影片連結 |
 
 根目錄的 `index.html`、`handbook.html`、`slides/`、`assets/` 等是從 [vocal_music](https://github.com/leoleehr/vocal_music) 帶過來的 Vocal Lab，Git 歷史完整保留。第二階段會整理進 `site/vocal/`。
 
