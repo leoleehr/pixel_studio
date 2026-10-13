@@ -36,8 +36,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          # 只發布 site/（Pixel Studio 平台）；根目錄的舊 Vocal Lab 不公開
+          path: 'site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
