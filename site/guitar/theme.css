@@ -129,12 +129,12 @@
 .strum-grid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px}
 .strum-grid .cell{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 0 8px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-sm,3px)}
 .strum-grid .cell.off{background:var(--surface)}
-.strum-grid .arrow{font:700 40px/1 var(--display);color:var(--ink)}
-.strum-grid .arrow.ghost{color:transparent;-webkit-text-stroke:1.2px var(--faint)}
+.strum-grid .sarrow{font:700 40px/1 var(--display);color:var(--ink)}
+.strum-grid .sarrow.ghost{color:transparent;-webkit-text-stroke:1.2px var(--faint)}
 .strum-grid .cnt{font:500 14px var(--display);color:var(--faint)}
 .strum-grid .cell.now{background:var(--accent);border-color:var(--accent)}
-.strum-grid .cell.now .arrow,.strum-grid .cell.now .cnt{color:#0b130a}
-.strum-grid .cell.now .arrow.ghost{-webkit-text-stroke:1.2px #0b130a}
+.strum-grid .cell.now .sarrow,.strum-grid .cell.now .cnt{color:#0b130a}
+.strum-grid .cell.now .sarrow.ghost{-webkit-text-stroke:1.2px #0b130a}
 .player-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
 .player-top .pname{font-size:21px}
 .player-top .pchord{font:700 40px/1 var(--display);color:var(--accent);min-height:40px}
@@ -181,7 +181,7 @@
   .trainer-stage{grid-template-columns:1fr 1fr}
   .trainer-stage .count{grid-column:1/-1}
   .strum-grid{gap:3px}
-  .strum-grid .arrow{font-size:28px}
+  .strum-grid .sarrow{font-size:28px}
   .tuner .strings b{font-size:22px}
   .sizes{gap:8px}
   .sizes div{flex:1;min-width:0}
@@ -195,3 +195,94 @@
   .family .card svg{width:72px;height:112px}
   .woods{grid-template-columns:1fr 1fr}
 }
+
+/* ---------- 樂譜圖 ---------- */
+.gfig.notes .nfill{fill:var(--ink,#f1f0e8)}
+.gfig.notes .nopen{fill:none;stroke:var(--ink,#f1f0e8);stroke-width:2.2}
+.gfig.notes .nstem{stroke:var(--ink,#f1f0e8);stroke-width:2}
+.gfig.notes .nbeam{stroke:var(--ink,#f1f0e8);stroke-width:6}
+.gfig.notes .nrest{fill:none;stroke:var(--ink,#f1f0e8);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.gfig.notes .nline{stroke:var(--muted,#aaafa2);stroke-width:1.2}
+.gfig.notes .clef{font-family:"Segoe UI Symbol","Apple Symbols","Noto Music",serif;font-size:84px;fill:var(--ink,#f1f0e8)}
+.gfig .acc-t{fill:var(--accent)!important;font-weight:700}
+
+/* ---------- 六線譜 ---------- */
+.tabbox .tabfig{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px 4px}
+.tabbox .player-top{margin-bottom:8px}
+.tabbox .pchord{font-size:22px!important}
+.tabbox .gcontrols{margin-top:10px}
+.gfig.tab .tline{stroke:var(--muted,#aaafa2);stroke-width:1}
+.gfig.tab .tbar{stroke:var(--muted,#aaafa2);stroke-width:1.6}
+.gfig.tab .tabl{font:700 15px "Space Grotesk",Arial,sans-serif;fill:var(--faint,#90988b)}
+.gfig.tab .tbg{fill:var(--card,#1e231c)}
+.gfig.tab .tnum{font:700 15px "Space Grotesk",Arial,sans-serif;fill:var(--ink,#f1f0e8);text-anchor:middle}
+.gfig.tab .now .tbg{fill:var(--accent)}
+.gfig.tab .now .tnum{fill:#0b130a}
+
+/* 指板點選 */
+.fretboard .nn{cursor:pointer}
+.fretboard .nn.hit circle{fill:#fff}
+.fretboard .nn.hit text{fill:#0b130a}
+
+/* ---------- 聽辨測驗 ---------- */
+.ear{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:grid;gap:12px}
+.ear-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ear-score{margin-left:auto;font:700 26px var(--display);color:var(--accent)}
+.ear-opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px}
+.ear-opts .btn{font:700 20px var(--display);min-height:54px}
+.ear-opts .btn.right{background:var(--accent);border-color:var(--accent);color:#0b130a;opacity:1}
+.ear-opts .btn.wrong{border-color:#e8412b;color:#e8412b;opacity:1}
+.ear-msg{color:var(--muted);font-size:16px;margin:0}
+
+/* 16 格刷奏 */
+.strum-grid.g16{grid-template-columns:repeat(16,minmax(0,1fr));gap:3px}
+.strum-grid.g16 .sarrow{font-size:26px}
+.strum-grid.g16 .cnt{font-size:12px}
+
+/* 拍號強弱 */
+.meters{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.meters .card{text-align:center}
+.meters .sig{font:700 44px/1 var(--display);color:var(--accent)}
+.meters .dots{display:flex;justify-content:center;gap:8px;margin:14px 0 8px;align-items:center}
+.meters .dots i{width:14px;height:14px;border-radius:50%;background:var(--line-2)}
+.meters .dots i.s{width:26px;height:26px;background:var(--accent)}
+.meters .dots i.m{width:19px;height:19px;background:rgba(var(--accent-rgb),.55)}
+.meters p{font-size:15.5px!important;color:var(--muted)}
+
+/* 和弦譜（每小節一格） */
+.chart{display:grid;grid-template-columns:repeat(4,1fr);border-left:2px solid var(--line-2)}
+.chart>div{border-right:2px solid var(--line-2);border-bottom:1px solid var(--line);padding:14px 16px;font:700 30px var(--display);min-height:74px;display:flex;align-items:center;gap:12px}
+.chart>div small{font:500 14px var(--display);color:var(--muted)}
+.chart .sec{grid-column:1/-1;border-right:0;font:500 15px var(--sans,"Noto Sans TC");color:var(--accent);min-height:0;padding:10px 0 4px 12px}
+@media (max-width:900px){
+  .meters{grid-template-columns:1fr 1fr}
+  .chart>div{font-size:22px;padding:10px;min-height:56px}
+  .strum-grid.g16{grid-template-columns:repeat(8,minmax(0,1fr))}
+}
+/* 刷奏格依容器寬度縮放（放在半欄時不擠） */
+.pgrid{container-type:inline-size}
+@container (max-width:640px){
+  .strum-grid .sarrow{font-size:26px}
+  .strum-grid .cell{padding:8px 0 6px}
+  .strum-grid .cnt{font-size:12px}
+  .strum-grid.g16 .sarrow{font-size:18px}
+}
+
+/* 低音格（蹦） */
+.strum-grid .cell.bass .sarrow{color:var(--accent);font-family:var(--display)}
+.strum-grid .cell.now.bass .sarrow{color:#0b130a}
+
+/* Capo 計算器 */
+.capo{display:grid;grid-template-columns:1.1fr 1fr;gap:16px}
+.capo .card{display:grid;gap:12px;align-content:start}
+.capo-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.capo .field{display:flex;align-items:center;gap:8px;font-size:15px;color:var(--muted)}
+.capo output{font:700 22px var(--display);color:var(--ink)}
+.capo input[type=range]{accent-color:var(--accent);width:150px}
+.capo-out{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:12px}
+.capo-out span{color:var(--muted);font-size:15px}
+.capo-key{font:700 52px/1 var(--display);color:var(--accent)}
+.capo-list{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.capo-list li{font-size:18px;padding:6px 10px;background:var(--surface);border-radius:var(--r-sm,3px)}
+.capo-list small{color:var(--faint)}
+@media (max-width:900px){.capo{grid-template-columns:1fr}}

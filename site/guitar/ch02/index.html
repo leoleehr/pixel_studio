@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>拍點、讀譜與熱手｜第二章｜Guitar Lab</title>
+<meta name="description" content="Pixel Studio Guitar Lab 第二章課堂投影片：音高與譜表、音名唱名簡譜、時值與休止符、拍號、六線譜、左手按弦、爬格子、五格調音與 C 大調音階。">
+<link rel="icon" href="../../assets/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="../../assets/favicon.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/favicon-192.png?v=2">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#101210">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/deck.css?v=20261014e">
+<link rel="stylesheet" href="../../assets/interact.css?v=20261014e">
+<link rel="stylesheet" href="../../assets/backend.css?v=20261014e">
+<link rel="stylesheet" href="../../assets/responsive.css?v=20261014e">
+<link rel="stylesheet" href="../../assets/deck-studio.css?v=20261014e">
+<link rel="stylesheet" href="../theme.css?v=20261014e">
+</head>
+<body data-title="第二章｜拍點、讀譜與熱手" data-course="guitar" data-lesson="ch02" data-home="../index.html#lessons">
+<div class="progress" id="progress"></div>
+<main class="deck" id="deck">
+<div class="stage" id="stage">
+<!-- 1 封面 -->
+<section class="slide cover">
+  <div class="kicker">Pixel Studio Guitar Lab｜民謠吉他　第二章</div>
+  <h1>拍點、讀譜與熱手</h1>
+  <p class="lead">Beat · Reading · Warm-up</p>
+  <p class="meta">主講：畫素音樂工作坊　李奕勳<br>musicallanding@gmail.com</p>
+</section>
+
+<!-- 2 路線 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>手機同步</div>
+  <div class="kicker">Today · 120 Minutes</div>
+  <h2>今天的路線：看懂譜，讓手指醒過來</h2>
+  <div class="timeline">
+    <div class="bar-qi" style="flex:20"><b>起</b><small>調音、拍點暖身｜20 分</small></div>
+    <div class="bar-cheng" style="flex:35"><b>承</b><small>譜表、時值、拍號、TAB｜35 分</small></div>
+    <div class="bar-rest" style="flex:10"><b>休</b><small>10 分</small></div>
+    <div class="bar-zhuan" style="flex:35"><b>轉</b><small>按弦、爬格子、五格調音｜35 分</small></div>
+    <div class="bar-he" style="flex:20"><b>合</b><small>C 大調音階、第一首旋律｜20 分</small></div>
+  </div>
+  <div class="split wide">
+    <ul class="clean compact">
+      <li>讀得出五線譜上的 Do 到 Do，知道音名、唱名、簡譜的對應</li>
+      <li>分得清全音符到十六分音符，看得懂 2/4、3/4、4/4、6/8</li>
+      <li>看懂六線譜 TAB，跟著節拍器完成爬格子熱手</li>
+      <li>下課前，用 C 大調音階彈出《歡樂頌》；掃這張的 Qr Code，在手機上跟著練</li>
+    </ul>
+    <div class="qr" data-href="self"></div>
+  </div>
+</section>
+
+<!-- 3 回顧 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>舉手計票</div>
+  <div class="kicker"><span class="tag t-qi">起</span>00:00–00:20　上週回顧</div>
+  <h2>先調音，再說說這一週</h2>
+  <div class="split">
+    <div>
+      <ul class="clean compact">
+        <li>全班一起調音：6 弦 E 開始，一條一條來</li>
+        <li>老師回答上週出場券裡最多人問的三個問題</li>
+        <li>兩位同學分享：自己的吉他是什麼筒身、什麼面板</li>
+      </ul>
+      <div class="card" style="margin-top:16px"><p>手指痛嗎？前兩週指尖會痛很正常，<b class="c-gold">每天短時間、多次練</b>，比一次練很久更快長出繭。</p></div>
+    </div>
+    <div>
+      <p class="muted" style="font-size:18px;margin-bottom:10px">這週自己調音，大概花了多久？</p>
+      <div class="poll" data-id="g02-tune" data-options="1 分鐘內|1–3 分鐘|3–5 分鐘|還要別人幫忙"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 拍點暖身 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-qi">起</span>拍點暖身</div>
+  <h2 style="margin-bottom:12px">音樂的心跳：跟著節拍器拍手</h2>
+  <div class="cards-mini">
+    <div class="card"><h3 class="c-navy">① 拍手數拍</h3><p>每一拍拍一下，嘴巴數「1、2、3、4」，第 1 拍拍大聲一點。</p></div>
+    <div class="card"><h3 class="c-gold">② 加入半拍</h3><p>拍手在拍點，嘴巴在中間補一個「&」：1 & 2 & 3 & 4 &。</p></div>
+    <div class="card"><h3 class="c-red">③ 只拍反拍</h3><p>腳踩拍點，手只在「&」拍下去。這是流行歌最常見的律動。</p></div>
+  </div>
+  <div class="metro" data-bpm="60" data-presets="60|80|100" style="margin-top:22px"></div>
+  <p class="muted" style="margin-top:10px;font-size:18px">BPM 是每分鐘幾拍。60 BPM 剛好一秒一拍，像時鐘的秒針。</p>
+</section>
+
+<!-- 5 預測 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>先預測再揭曉</div>
+  <div class="kicker"><span class="tag t-qi">起</span>想一想</div>
+  <h2>吉他譜上常看到的「4/4」，是什麼意思？</h2>
+  <div class="split">
+    <div class="quiz" data-answer="3">
+      <p class="q">先選一個，學完今天的內容再回頭看。</p>
+      <ol><li>這首歌要彈四分鐘</li><li>四個和弦輪流彈四次</li><li>每小節 4 拍，四分音符算一拍</li><li>速度是 44 BPM</li></ol>
+      <div class="why">拍號像分數：上面的 4 是「每小節幾拍」，下面的 4 是「用四分音符當一拍」。今天的第三節會詳細說明。</div>
+    </div>
+    <div class="card"><h3>為什麼要學看譜？</h3><p>和弦譜、六線譜、簡譜、五線譜，是音樂人的共同語言。看得懂譜，你就能自己學新歌，不用每首都等人教。</p></div>
+  </div>
+</section>
+
+<!-- 6 音高與譜表 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">承</span>00:20–00:55　第一節、音高與譜表</div>
+  <h2 style="margin-bottom:8px">五線譜：越往上，音越高</h2>
+  <div data-gfig="staff"></div>
+  <div class="cards-mini" style="margin-top:8px">
+    <div class="card"><h3 class="c-navy">高音譜號 𝄞</h3><p>又叫 G 譜號，捲起來的中心在第二線，那條線就是 G（Sol）。</p></div>
+    <div class="card"><h3 class="c-gold">加線</h3><p>超出五條線的音，就在上面或下面加短線，像中央 C 就在下加一線。</p></div>
+    <div class="card"><h3 class="c-red">吉他的秘密</h3><p>吉他譜習慣寫高八度：譜上的中央 C，實際彈出來低一個八度。</p></div>
+  </div>
+</section>
+
+<!-- 7 全全半 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">承</span>音名、唱名、簡譜</div>
+  <h2 style="margin-bottom:14px">同一個音，三種叫法；八個音，兩個半音</h2>
+  <table>
+    <tr><th>級數</th><th>Ⅰ 主音</th><th>Ⅱ 上主音</th><th>Ⅲ 中音</th><th>Ⅳ 下屬音</th><th>Ⅴ 屬音</th><th>Ⅵ 下中音</th><th>Ⅶ 導音</th><th>Ⅷ 主音</th></tr>
+    <tr><td><b>音名</b></td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>A</td><td>B</td><td>C</td></tr>
+    <tr><td><b>唱名</b></td><td>Do</td><td>Re</td><td>Mi</td><td>Fa</td><td>Sol</td><td>La</td><td>Si</td><td>Do</td></tr>
+    <tr><td><b>簡譜</b></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>1̇</td></tr>
+    <tr><td><b>距離</b></td><td colspan="8" style="letter-spacing:.3em">全　全　<b class="c-gold">半</b>　全　全　全　<b class="c-gold">半</b></td></tr>
+  </table>
+  <div class="reveal" data-label="在吉他上，全音和半音差多少？" style="margin-top:14px"><p class="compact">吉他上每移動一格就是一個半音，兩格是一個全音。所以 Mi→Fa、Si→Do 只差一格，其他相鄰的音都差兩格。</p></div>
+</section>
+
+<!-- 8 時值 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">承</span>第二節、時值</div>
+  <h2 style="margin-bottom:6px">把一小節切成一半、再一半</h2>
+  <div data-gfig="notevalues"></div>
+  <p class="muted" style="font-size:17px">西洋音樂以「二分法」最常見：每往下一層，音符長度就變成一半，數量變成兩倍。八分音符以下，用橫線（符桁）把同一拍的音符連起來。</p>
+</section>
+
+<!-- 9 休止符與附點 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">承</span>休止符與附點</div>
+  <h2 style="margin-bottom:10px">安靜也是音樂的一部分</h2>
+  <div data-gfig="rests"></div>
+  <div class="grid2" style="margin-top:16px">
+    <div class="card"><h3 class="c-gold">附點 = 再加一半</h3><p>音符右邊的小點，表示長度再加原本的一半：附點四分音符 = 1 + ½ = 1.5 拍；附點二分音符 = 3 拍。</p></div>
+    <div class="card"><h3 class="c-navy">休止符不是休息</h3><p>休止的那一拍，手要停住、聲音要切掉，心裡還是要數拍。很多歌的帥氣，就藏在突然的安靜裡。</p></div>
+  </div>
+</section>
+
+<!-- 10 節奏挑戰 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>節奏挑戰</div>
+  <div class="kicker"><span class="tag t-cheng">承</span>用嘴巴先學會節奏</div>
+  <h2 style="margin-bottom:10px">聽一次、唸一次：用「Ta」唱出節奏</h2>
+  <div class="split narrow">
+    <ul class="clean compact">
+      <li>選一種節奏，先按「示範播放」聽</li>
+      <li>按「開始挑戰」，跟著預備拍用 Ta 唱出來</li>
+      <li>麥克風會比對你的拍點，告訴你搶拍還是拖拍</li>
+      <li>不想出聲，可以改用「拍點」鍵或 J 鍵</li>
+      <li>先唸對，之後換成右手刷弦就簡單多了</li>
+    </ul>
+    <div class="panel rhythm-game" data-bpm="70"></div>
+  </div>
+</section>
+
+<!-- 11 拍號 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">承</span>第三節、拍號</div>
+  <h2 style="margin-bottom:14px">拍號決定強弱：一小節幾拍、誰當一拍</h2>
+  <div class="meters">
+    <div class="card"><div class="sig">2/4</div><div class="dots"><i class="s"></i><i></i></div><p>強、弱。進行曲、輕快的歌。</p></div>
+    <div class="card"><div class="sig">3/4</div><div class="dots"><i class="s"></i><i></i><i></i></div><p>強、弱、弱。華爾滋、生日快樂歌。</p></div>
+    <div class="card"><div class="sig">4/4</div><div class="dots"><i class="s"></i><i></i><i class="m"></i><i></i></div><p>強、弱、次強、弱。大部分流行歌。</p></div>
+    <div class="card"><div class="sig">6/8</div><div class="dots"><i class="s"></i><i></i><i></i><i class="m"></i><i></i><i></i></div><p>八分音符一拍，每小節 6 拍，搖晃的感覺。</p></div>
+  </div>
+  <div class="card" style="margin-top:16px"><p>上面的數字＝每小節幾拍；下面的數字＝用幾分音符當一拍。<b class="c-gold">3/4</b> 就是「每小節 3 拍，以四分音符為一拍」。</p></div>
+</section>
+
+<!-- 12 拍號小測 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>選擇題</div>
+  <div class="kicker"><span class="tag t-cheng">承</span>小測驗</div>
+  <h2 style="margin-bottom:14px">一起唱〈生日快樂歌〉，邊唱邊拍手</h2>
+  <div class="split">
+    <div class="quiz" data-answer="2">
+      <p class="q">「祝你生日快樂」最自然的拍子是？</p>
+      <ol><li>2/4：強、弱</li><li>3/4：強、弱、弱</li><li>4/4：強、弱、次強、弱</li></ol>
+      <div class="why">「祝你｜生日｜快樂」唱起來是「強、弱、弱」一組，是三拍子。第五章會學三拍子的伴奏方法。</div>
+    </div>
+    <div class="quiz" data-answer="4">
+      <p class="q">一小節 4/4，下面哪一種組合剛好填滿？</p>
+      <ol><li>3 個四分音符</li><li>1 個二分音符＋1 個四分音符</li><li>6 個八分音符</li><li>1 個二分音符＋2 個四分音符</li></ol>
+      <div class="why">二分音符 2 拍＋兩個四分音符各 1 拍 = 4 拍。其他選項都只有 3 拍。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 六線譜 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">承</span>吉他手的地圖：六線譜 TAB</div>
+  <h2 style="margin-bottom:10px">六條線就是六條弦，數字就是格數</h2>
+  <div class="split wide">
+    <div data-tab="1-0 1-1 1-3 r | 2-1 2-3 3-0 3-2 | 5-3+4-2+3-0+2-1+1-0:w" data-per-row="3" data-title="讀讀看" data-play data-bpm="60"></div>
+    <ul class="clean compact">
+      <li>最上面一條線是<b>最細的 1 弦</b>，最下面是 6 弦</li>
+      <li>數字代表要按的格數，<b>0 是空弦</b></li>
+      <li>上下疊在一起的數字，要同時彈（就是和弦）</li>
+      <li>六線譜看位置、五線譜看節奏，兩個常常一起出現</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 14 休息 -->
+<section class="slide center">
+  <div class="kicker">Break</div>
+  <div class="timer" id="timer">10:00</div>
+  <p class="lead">休息十分鐘，甩甩手、按摩一下指尖</p>
+  <div style="height:20px"></div>
+  <div class="btn-row"><button type="button" class="btn" id="timerBtn">開始倒數</button><button type="button" class="btn" id="timerReset">重設</button></div>
+</section>
+
+<!-- 15 左手按弦 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-zhuan">轉</span>01:05–01:40　左手按弦的方式</div>
+  <h2 style="margin-bottom:12px">按得乾淨的四個祕訣</h2>
+  <div class="grid2" style="align-items:center">
+    <svg class="gfig" viewBox="0 0 520 300" role="img" aria-label="左手按弦示意：指尖立起、靠近琴衍、拇指在琴頸背面中線">
+      <rect x="20" y="120" width="480" height="40" class="dark"/>
+      <line x1="140" x2="140" y1="112" y2="168" stroke="#c9ccd1" stroke-width="5"/><line x1="300" x2="300" y1="112" y2="168" stroke="#c9ccd1" stroke-width="5"/><line x1="440" x2="440" y1="112" y2="168" stroke="#c9ccd1" stroke-width="5"/>
+      <line x1="20" x2="500" y1="124" y2="124" stroke="#e8e4da" stroke-width="2"/>
+      <path d="M190 30 C230 30 262 70 270 118" fill="none" stroke="#e2c48f" stroke-width="26" stroke-linecap="round"/>
+      <circle cx="272" cy="120" r="6" class="dot"/>
+      <path d="M210 228 C240 222 260 200 266 166" fill="none" stroke="#e2c48f" stroke-width="22" stroke-linecap="round" opacity=".8"/>
+      <path d="M272 108 L292 108" class="lead"/><text x="296" y="98" class="big" style="fill:var(--accent)">① 靠近琴衍</text>
+      <text x="20" y="34">② 指尖立起來</text><text x="20" y="58" class="en">像一座拱門</text>
+      <text x="60" y="270">③ 拇指在琴頸背面中線</text>
+      <text x="320" y="216" class="en">琴衍</text>
+    </svg>
+    <div>
+      <ul class="clean compact">
+        <li><b>① 靠近琴衍</b>：按在格子靠右的位置，最省力、最不容易嗡嗡響</li>
+        <li><b>② 指尖立起來</b>：用指尖與指腹之間，手指和指板接近 90 度，才不會碰到隔壁的弦</li>
+        <li><b>③ 拇指在背後</b>：放在琴頸背面中線，和手指像夾子一樣出力，不要靠在指板上偷懶</li>
+        <li><b>④ 剛好就好</b>：按到聲音清楚就停，太用力會累、還會讓音變高</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 16 爬格子一 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>六線譜練習器</div>
+  <div class="kicker"><span class="tag t-zhuan">轉</span>熱手練習（一）</div>
+  <h2 style="margin-bottom:8px">爬格子 1-2-3-4：一指一格</h2>
+  <div data-tab="1-5 1-6 1-7 1-8 | 2-5 2-6 2-7 2-8 | 3-5 3-6 3-7 3-8 | 4-5 4-6 4-7 4-8 | 5-5 5-6 5-7 5-8 | 6-5 6-6 6-7 6-8" data-per-row="6" data-title="從 1 弦第 5 格開始" data-play data-bpm="60"></div>
+  <p class="muted" style="font-size:17px;margin-top:8px">食指負責第 5 格、中指第 6 格、無名指第 7 格、小指第 8 格。右手用彈片「下、上」交替撥弦。按下一格時，前面的手指留在弦上。</p>
+</section>
+
+<!-- 17 爬格子二 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>六線譜練習器</div>
+  <div class="kicker"><span class="tag t-zhuan">轉</span>熱手練習（二）</div>
+  <h2 style="margin-bottom:8px">爬格子 1-3-2-4：讓手指各自獨立</h2>
+  <div data-tab="6-5 6-7 6-6 6-8 | 5-5 5-7 5-6 5-8 | 4-5 4-7 4-6 4-8 | 3-5 3-7 3-6 3-8 | 2-5 2-7 2-6 2-8 | 1-5 1-7 1-6 1-8" data-per-row="6" data-title="從 6 弦往 1 弦" data-play data-bpm="60"></div>
+  <div class="cards-mini" style="margin-top:10px">
+    <div class="card"><h3 class="c-navy">訓練什麼</h3><p>左手的控制力與擴張，右手的速度與準確。</p></div>
+    <div class="card"><h3 class="c-gold">怎麼加速</h3><p>連續兩輪都穩，才加 4 BPM。原講義的 BPM 100 是目標，不是起點。</p></div>
+    <div class="card"><h3 class="c-red">往低把位</h3><p>熟練後從第 1 格開始爬，格距最寬，手指擴張最有效。</p></div>
+  </div>
+</section>
+
+<!-- 18 爬格子接力 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>分組競賽・計時</div>
+  <div class="kicker"><span class="tag t-zhuan">轉</span>分組競賽</div>
+  <h2 style="margin-bottom:12px">爬格子接力賽</h2>
+  <div class="split">
+    <div>
+      <ul class="clean compact">
+        <li>每組排成一列，一人爬一條弦，下一位接著爬下一條</li>
+        <li>節拍器 70 BPM，全組六條弦不掉拍得 2 分</li>
+        <li>有人停下來或彈錯，從那一位重新接上，得 1 分</li>
+        <li>第二輪升到 80 BPM，挑戰全組最高速</li>
+      </ul>
+      <div class="phase" data-phases="分組練習|180;接力挑戰|300" style="margin-top:12px"></div>
+    </div>
+    <div class="score" data-id="g02-relay" data-teams="4"></div>
+  </div>
+</section>
+
+<!-- 19 五格調音法 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>聽音比對</div>
+  <div class="kicker"><span class="tag t-zhuan">轉</span>沒有調音器也能調</div>
+  <h2 style="margin-bottom:8px">五格調音法：用隔壁的弦當參考</h2>
+  <div data-tab="6-5 5-0:h r | 5-5 4-0:h r | 4-5 3-0:h r | 3-4 2-0:h r | 2-5 1-0:h r" data-per-row="5" data-title="每組兩個音要一樣高" data-play data-bpm="56"></div>
+  <div class="pill-row" style="margin-top:14px">
+    <span class="pill">6 弦 5 格 = 5 弦空弦 A</span><span class="pill">5 弦 5 格 = 4 弦空弦 D</span><span class="pill">4 弦 5 格 = 3 弦空弦 G</span><span class="pill" style="border-color:var(--accent);color:var(--accent)">3 弦 4 格 = 2 弦空弦 B</span><span class="pill">2 弦 5 格 = 1 弦空弦 E</span>
+  </div>
+  <p class="muted" style="font-size:17px;margin-top:10px">為什麼 3 弦是第 4 格？因為 3 弦到 2 弦是大三度，其他都是完全四度。第一章的調音圖，在這裡派上用場。</p>
+</section>
+
+<!-- 20 迷思翻牌 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>迷思破解・翻牌</div>
+  <div class="kicker"><span class="tag t-zhuan">轉</span>練習觀念</div>
+  <h2 style="margin-bottom:14px">迷思還是事實？</h2>
+  <div class="flips">
+    <div class="flip"><div class="f">練越快，進步越快</div><div class="b"><strong>迷思</strong>慢而穩才記得住。速度是穩定之後自然多出來的。</div></div>
+    <div class="flip"><div class="f">節拍器只是給初學者用的</div><div class="b"><strong>迷思</strong>職業樂手錄音前也天天跟節拍器練。</div></div>
+    <div class="flip"><div class="f">一天練 10 分鐘也有用</div><div class="b"><strong>事實</strong>每天短時間，比週末一次練兩小時更有效。</div></div>
+    <div class="flip"><div class="f">會彈吉他就一定要看五線譜</div><div class="b"><strong>迷思</strong>流行吉他多用和弦譜與六線譜；但看得懂五線譜，能讀的譜會多很多。</div></div>
+    <div class="flip"><div class="f">小指太短，不用它也沒關係</div><div class="b"><strong>迷思</strong>小指是第四根主力，現在練起來，之後的和弦與音階會輕鬆很多。</div></div>
+    <div class="flip"><div class="f">手指痛的時候要休息</div><div class="b"><strong>事實</strong>痛到刺痛就休息幾分鐘，隔天再練；指尖會慢慢長出繭。</div></div>
+  </div>
+</section>
+
+<!-- 21 C 大調指板 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>點一下聽聲音</div>
+  <div class="kicker"><span class="tag t-he">合</span>01:40–02:00　C 大調音階與指板</div>
+  <h2 style="margin-bottom:8px">第一把位的 C 大調：在哪裡找到 Do Re Mi</h2>
+  <div data-fretboard="cscale"></div>
+  <div class="cards-mini" style="margin-top:12px">
+    <div class="card"><h3 class="c-gold">綠色是 C（Do）</h3><p>5 弦第 3 格、2 弦第 1 格。點點看，聽聽這兩個 Do 差一個八度。</p></div>
+    <div class="card"><h3 class="c-navy">一指一格</h3><p>第 1 格食指、第 2 格中指、第 3 格無名指，和爬格子一樣。</p></div>
+    <div class="card"><h3 class="c-red">空弦也是音</h3><p>4 弦空弦是 D、3 弦空弦是 G、2 弦空弦是 B。</p></div>
+  </div>
+</section>
+
+<!-- 22 C 大調音階 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>六線譜練習器</div>
+  <div class="kicker"><span class="tag t-he">合</span>音階練習</div>
+  <h2 style="margin-bottom:8px">C 大調音階：上去、再下來</h2>
+  <div data-tab="5-3 4-0 4-2 4-3 | 3-0 3-2 2-0 2-1:h | 2-1 2-0 3-2 3-0 | 4-3 4-2 4-0 5-3:h" data-per-row="4" data-title="Do Re Mi Fa Sol La Si Do" data-play data-bpm="60"></div>
+  <p class="muted" style="font-size:17px;margin-top:8px">邊彈邊唱唱名。彈到 2 弦第 1 格的高音 Do，停兩拍，再一路彈回來。</p>
+</section>
+
+<!-- 23 歡樂頌 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>六線譜練習器</div>
+  <div class="kicker"><span class="tag t-he">合</span>第一首旋律</div>
+  <h2 style="margin-bottom:8px">《歡樂頌》：只用 1、2 弦就能彈</h2>
+  <div data-tab="1-0 1-0 1-1 1-3 | 1-3 1-1 1-0 2-3 | 2-1 2-1 2-3 1-0 | 1-0:dq 2-3:e 2-3:h | 1-0 1-0 1-1 1-3 | 1-3 1-1 1-0 2-3 | 2-1 2-1 2-3 1-0 | 2-3:dq 2-1:e 2-1:h" data-per-row="4" data-title="貝多芬《第九號交響曲》〈歡樂頌〉主題" data-play data-bpm="72"></div>
+  <p class="muted" style="font-size:17px;margin-top:6px">第 4、8 小節有附點四分音符：1.5 拍＋半拍。先跟示範聽一次，再關掉「吉他示範」自己彈。</p>
+</section>
+
+<!-- 24 錄音 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>錄音對照</div>
+  <div class="kicker"><span class="tag t-he">合</span>驗收</div>
+  <h2 style="margin-bottom:12px">錄下你的《歡樂頌》</h2>
+  <div class="split">
+    <ul class="clean compact">
+      <li>開節拍器 60 BPM，從頭彈到尾不停</li>
+      <li>錄完重聽：每個音有沒有響、拍子有沒有被拖長</li>
+      <li>和隔壁同學交換聽，各說一個優點</li>
+      <li>錄音只存在你的手機，可以下載留念</li>
+    </ul>
+    <div class="panel"><div class="recorder" data-max="40" data-name="第二章_歡樂頌"></div></div>
+  </div>
+</section>
+
+<!-- 25 三句話 -->
+<section class="slide center">
+  <div class="kicker">Today In Three Lines</div>
+  <p class="quote">拍子比音準先到，<br>六線譜由細到粗，<br>慢而穩，才會快。</p>
+</section>
+
+<!-- 26 出場券 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>出場券 3-2-1</div>
+  <div class="kicker"><span class="tag t-he">合</span>Exit Ticket</div>
+  <h2 style="margin-bottom:14px">離開教室前，寫下 3-2-1</h2>
+  <div class="split wide">
+    <div class="exit" data-prompts="3 個今天看懂的符號|2 個回家要練的項目|1 個還想問老師的問題"></div>
+    <div class="card"><h3>怎麼用</h3><p>用手機掃第 2 張的 Qr Code，在自己的手機上填寫，按「送出給老師」即可。<br><br>老師下週會從大家的問題開場。</p></div>
+  </div>
+</section>
+
+<!-- 27 每日練習 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>自主學習紀錄</div>
+  <div class="kicker">Homework</div>
+  <h2 style="margin-bottom:12px">每天 15 分鐘熱手課表</h2>
+  <div class="routine">
+    <div class="bar-qi" style="flex:2">調音<br><small>2 分</small></div>
+    <div class="bar-teal" style="flex:4">爬格子 1-2-3-4<br><small>4 分</small></div>
+    <div class="bar-cheng" style="flex:3">爬格子 1-3-2-4<br><small>3 分</small></div>
+    <div class="bar-orange" style="flex:3">C 大調音階<br><small>3 分</small></div>
+    <div class="bar-zhuan" style="flex:3">歡樂頌<br><small>3 分</small></div>
+  </div>
+  <div class="log7" data-cols="爬格子幾 BPM|音階順嗎|今天的感受"></div>
+</section>
+
+<!-- 28 課後練習 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>自主學習追蹤</div>
+  <div class="kicker">Homework</div>
+  <h2 style="margin-bottom:12px">課後練習：完成一項，點一下打勾</h2>
+  <ul class="checks" data-id="g02-hw">
+    <li>不看講義，寫出全音符到十六分音符各是幾拍</li>
+    <li>爬格子 1-2-3-4 與 1-3-2-4，各在 70 BPM 連續兩輪不停</li>
+    <li>不用調音器，用五格調音法調一次，再用調音器檢查</li>
+    <li>C 大調音階上行、下行，邊彈邊唱唱名</li>
+    <li>錄一次《歡樂頌》，並填寫第三章課前問卷</li>
+  </ul>
+</section>
+
+<!-- 29 下週預告 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>課前問卷</div>
+  <div class="kicker">Next Week</div>
+  <h2>第三章　第一組和弦</h2>
+  <div class="split wide">
+    <div>
+      <p class="lead">C、G、Am、F：四個和弦，撐起大部分的流行歌。<br>下週開始，你會彈出第一段伴奏。</p>
+      <p class="muted" style="margin-top:20px">掃描 Qr Code，直接在網站上填寫第三章的課前問卷。</p>
+    </div>
+    <div class="qr" data-href="../survey.html?id=g-pre-3"></div>
+  </div>
+</section>
+</div>
+</main>
+
+<nav class="ui" aria-label="投影片控制">
+  <button type="button" id="prev" aria-label="上一張">← 上一張</button>
+  <span class="counter" id="counter">1 / 1</span>
+  <button type="button" id="next" aria-label="下一張">下一張 →</button>
+  <button type="button" id="full">全螢幕</button>
+  <a href="../index.html">課程首頁</a>
+</nav>
+
+<script src="../../assets/pixel.js?v=20261014e"></script>
+<script src="../../assets/ui.js?v=20261014e"></script>
+<script src="../../assets/deck.js?v=20261014e"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="../../assets/interact.js?v=20261014e"></script>
+<script src="../../assets/config.js?v=20261014e"></script>
+<script src="../../assets/backend.js?v=20261014e"></script>
+<script src="../../assets/ps-audio.js?v=20261014e"></script>
+<script src="../guitar.js?v=20261014e"></script>
+</body>
+</html>
