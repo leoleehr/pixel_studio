@@ -21,6 +21,8 @@
 | `tools/decks/` | Guitar Lab 各章投影片原稿；`python -X utf8 tools/mkdeck.py 1 2 …` 產生 `site/guitar/chNN/` |
 | `tools/build_handbook.py` | 由投影片原稿產生第 2–12 章講義與教案（`site/guitar/handbook.md`） |
 | `tools/ready.py` | 更新 Guitar Lab 首頁與講義的投影片連結 |
+| `site/guitar/songs.js` | 原講義曲例與 YouTube 影片（講義、列印版與投影片共用） |
+| `site/guitar/handbook-print.html` | A4 列印版；以 Chrome 無頭模式輸出 `guitar-handbook.pdf`（改講義後需重新產生） |
 
 根目錄的 `index.html`、`handbook.html`、`slides/`、`assets/` 等是從 [vocal_music](https://github.com/leoleehr/vocal_music) 帶過來的 Vocal Lab，Git 歷史完整保留。第二階段會整理進 `site/vocal/`。
 
