@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pixel Studio 畫素音樂工作坊｜互動課程</title>
+<meta name="description" content="畫素音樂工作坊 Pixel Studio 互動教學平台：流行歌唱、民謠吉他、流行鋼琴、詞曲創作四個課程。">
+<link rel="icon" href="assets/brand/symbol-compact-color.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap">
+<link rel="stylesheet" href="assets/brand/brand-tokens.css">
+<link rel="stylesheet" href="assets/ps.css?v=20261013c">
+<style>
+  .hub-hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+  .hub-hero .logo{background:#000;max-width:440px;justify-self:end;width:100%}
+  .card.lab-card{display:flex;flex-direction:column;gap:8px;border-top:3px solid var(--lab)}
+  .lab-card .tag{align-self:flex-start;margin:0}
+  .lab-card .en{font:700 22px var(--display);color:var(--lab)}
+  .lab-card .go{margin-top:auto;padding-top:12px;font:500 14px var(--display);color:var(--lab)}
+  .lab-card.muted .go{color:var(--faint)}
+  @media (max-width:760px){.hub-hero{grid-template-columns:1fr}.hub-hero .logo{justify-self:start;max-width:260px;order:-1}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要內容</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/brand/horizontal-transparent.svg" alt="畫素音樂工作坊 Pixel Studio" width="113" height="34"></a>
+    <nav aria-label="課程">
+      <a href="#labs">課程</a>
+      <a href="guitar/">Guitar Lab</a>
+    </nav>
+  </div>
+</header>
+<div class="wave-rule" aria-hidden="true"></div>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap hub-hero">
+      <div>
+        <p class="kicker">Pixel Studio · Since 2008</p>
+        <h1>畫素音樂工作坊<span class="en">We Perform the Pixel of Music</span></h1>
+        <p class="lead">結合音樂製作、音樂教學與藝術展演。四個課程 Lab 各有自己的教材與練習工具，上課用、回家練習也能用。</p>
+      </div>
+      <img class="logo" src="assets/brand/primary-transparent.svg" alt="" width="440" height="396">
+    </div>
+  </section>
+
+  <section class="block" id="labs">
+    <div class="wrap">
+      <div class="block-head"><span class="num">Labs</span><h2>四個課程</h2></div>
+      <div class="grid cols-4">
+        <a class="card lab-card lab-vocal" href="https://leoleehr.github.io/vocal_music/">
+          <span class="tag on">開課中</span><span class="en">Vocal Lab</span><h3>流行歌唱</h3>
+          <p>呼吸、共鳴、發聲、音域、換氣與詮釋。六堂課、互動投影片與講義。</p>
+          <span class="go">前往課程網站 ↗</span>
+        </a>
+        <a class="card lab-card lab-guitar" href="guitar/">
+          <span class="tag on">試教版</span><span class="en">Guitar Lab</span><h3>民謠吉他</h3>
+          <p>12 章、24 小時。和弦、刷奏、指法、低音、定調到自己的歌。</p>
+          <span class="go">進入課程 →</span>
+        </a>
+        <article class="card lab-card lab-piano muted">
+          <span class="tag">規劃中</span><span class="en">Piano Lab</span><h3>流行鋼琴</h3>
+          <p>鍵盤、轉位、左右手分工與伴奏型。</p>
+          <span class="go">即將推出</span>
+        </article>
+        <article class="card lab-card lab-songwriting muted">
+          <span class="tag">規劃中</span><span class="en">Songwriting Lab</span><h3>詞曲創作</h3>
+          <p>主題、詞句、旋律、和聲、曲式、Hook 與修稿。</p>
+          <span class="go">即將推出</span>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>© 畫素音樂工作坊 Pixel Studio</span>
+    <span class="slogan">We Perform the Pixel of Music</span>
+  </div>
+</footer>
+</body>
+</html>

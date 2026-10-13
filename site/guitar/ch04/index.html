@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 4 章 刷奏與切分｜Guitar Lab｜Pixel Studio</title>
+<meta name="description" content="Guitar Lab 第 4 章：下刷、上刷與空刷，八分音符 8 Beats 與切分 Folk Rock 兩種刷法，跟著節拍器配四大和弦練習。">
+<link rel="icon" href="../../assets/brand/symbol-compact-color.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap">
+<link rel="stylesheet" href="../../assets/brand/brand-tokens.css">
+<link rel="stylesheet" href="../../assets/ps.css?v=20261013c">
+<link rel="stylesheet" href="../guitar.css?v=20261013c">
+</head>
+<body class="lab-guitar" data-lesson="ch04">
+<a class="skip-link" href="#main">跳到主要內容</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../../"><img src="../../assets/brand/horizontal-transparent.svg" alt="畫素音樂工作坊 Pixel Studio" width="113" height="34"><span class="brand-lab">Guitar Lab</span></a>
+    <nav aria-label="Guitar Lab">
+      <a href="../">課綱</a>
+      <a href="../ch03/">和弦</a>
+      <a href="./" aria-current="page">刷奏</a>
+      <a class="opt" href="#card">練習卡</a>
+    </nav>
+  </div>
+</header>
+<div class="wave-rule" aria-hidden="true"></div>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker">Chapter 04 · 上冊</p>
+      <h1>刷奏與切分<span class="en">Strumming &amp; Syncopation</span></h1>
+      <p class="lead">右手是吉他的鼓手。這一章先讓手腕穩定上下擺動，再把一拍藏起來，做出切分的推進感。</p>
+      <div class="hero-meta">
+        <div><b>02</b><span>種刷法</span></div>
+        <div><b>70</b><span>BPM 目標速度</span></div>
+        <div><b>120</b><span>分鐘</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="symbols">
+    <div class="wrap">
+      <div class="block-head"><span class="num">01</span><h2>刷奏符號</h2><p>右手像鐘擺一樣一直上下擺動：拍點往下、半拍往上。有些格子手照樣經過，只是不碰弦，叫做空刷。</p></div>
+      <table class="symbol-table">
+        <thead><tr><th>符號</th><th>動作</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td>↓</td><td>下刷</td><td>從粗弦往細弦刷，通常落在拍點（1、2、3、4）。</td></tr>
+          <tr><td>↑</td><td>上刷</td><td>從細弦往粗弦刷，只刷到高音的三、四條弦，通常落在半拍（&amp;）。</td></tr>
+          <tr><td><span class="ghost">↓</span></td><td>空刷</td><td>手照樣擺動，但不碰弦。保持手的節奏，拍子才不會亂。</td></tr>
+        </tbody>
+      </table>
+      <p class="note" style="margin-top:20px"><b>華語教材的寫法不一樣。</b>不少中文吉他譜用「X」表示往下撥低音弦（唸「蹦」），用向下、向上的符號表示刷高音弦（唸「洽」「拉」）。看到中文譜時要先確認圖例，別和這裡的箭頭搞混。</p>
+    </div>
+  </section>
+
+  <section class="block" id="patterns">
+    <div class="wrap">
+      <div class="block-head"><span class="num">02</span><h2>兩種刷法</h2><p>都是 4/4 拍、每拍分成兩格。先用嘴巴唸出「1 &amp; 2 &amp; 3 &amp; 4 &amp;」，再對著格子刷。</p></div>
+      <div class="grid cols-2">
+        <article class="card"><span class="tag on">Pattern A</span><h3>八分音符 8 Beats</h3><p style="margin-bottom:16px">八下平均，下上下上。所有刷法都從這個動作長出來。</p><div data-pattern-grid="A"></div></article>
+        <article class="card"><span class="tag on">Pattern B</span><h3>切分 Folk Rock</h3><p style="margin-bottom:16px">第 3 拍的下刷變成空刷，2 拍後半的聲音延到第 3 拍。口訣：下、下上、上下上。</p><div data-pattern-grid="B"></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="player">
+    <div class="wrap">
+      <div class="block-head"><span class="num">03</span><h2>跟著刷</h2><p>先數一小節預備拍，接著亮起來的格子就是現在要刷的位置。先關掉「吉他示範」只聽節拍器，覺得穩了再配四大和弦。</p></div>
+      <div data-strum-player></div>
+    </div>
+  </section>
+
+  <section class="block" id="record">
+    <div class="wrap">
+      <div class="block-head"><span class="num">04</span><h2>錄下兩種刷法</h2><p>各錄一段，重聽時注意重音：8 Beats 的重音在拍點上，切分的重音會往前推到 2 拍後半。</p></div>
+      <div data-recorder data-max="60"></div>
+    </div>
+  </section>
+
+  <section class="block" id="plan">
+    <div class="wrap">
+      <div class="block-head"><span class="num">05</span><h2>本章 120 分鐘</h2></div>
+      <table class="plan">
+        <thead><tr><th>分鐘</th><th>段落</th><th>內容</th></tr></thead>
+        <tbody>
+          <tr><td>15</td><td>暖身</td><td>四大和弦複習，C → G → Am → F 每和弦 4 拍下刷</td></tr>
+          <tr><td>30</td><td>新觀念</td><td>持彈片、手腕擺動；刷奏符號與空刷；拍手唸出兩種刷法</td></tr>
+          <tr><td>40</td><td>分段練習</td><td>悶弦刷 8 Beats → 配和弦；切分先唸、再拍手、最後上琴，60 → 70 BPM</td></tr>
+          <tr><td>25</td><td>合奏與應用</td><td>主歌用 8 Beats、副歌換切分，全班合奏同一段進行</td></tr>
+          <tr><td>10</td><td>回顧與作業</td><td>勾選練習卡；回家錄兩種刷法各 30 秒</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="block" id="card">
+    <div class="wrap">
+      <div class="block-head"><span class="num">06</span><h2>練習卡</h2><p>做到了就勾起來。進度會顯示在課綱首頁。</p></div>
+      <div class="row" style="margin-bottom:14px"><div class="progress" style="flex:1;max-width:360px"><span data-checklist-bar="ch04"></span></div><span data-checklist-label="ch04"></span></div>
+      <ul class="checklist" data-checklist="ch04"></ul>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap chapter-nav">
+      <a class="btn" href="../ch03/">← 第 3 章 第一組和弦</a>
+      <a class="btn" href="../">回課綱</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>畫素音樂工作坊 Pixel Studio・Guitar Lab 第 4 章</span>
+    <span class="slogan">We Perform the Pixel of Music</span>
+  </div>
+</footer>
+<script src="../../assets/ps-store.js?v=20261013c"></script>
+<script src="../../assets/ps-audio.js?v=20261013c"></script>
+<script src="../guitar.js?v=20261013c"></script>
+</body>
+</html>
