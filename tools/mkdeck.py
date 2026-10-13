@@ -9,7 +9,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 ZH = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二']
-VER = "20261014g"
+VER = "20261014h"
 
 HEAD = '''<!doctype html>
 <html lang="zh-Hant">
@@ -31,6 +31,7 @@ HEAD = '''<!doctype html>
 <link rel="stylesheet" href="../../assets/backend.css?v={v}">
 <link rel="stylesheet" href="../../assets/responsive.css?v={v}">
 <link rel="stylesheet" href="../../assets/deck-studio.css?v={v}">
+<link rel="stylesheet" href="../../assets/youtube.css?v={v}">
 <link rel="stylesheet" href="../theme.css?v={v}">
 </head>
 <body data-title="第{zh}章｜{title}" data-course="guitar" data-lesson="ch{nn}" data-home="../index.html#lessons">
@@ -59,6 +60,8 @@ TAIL = '''</div>
 <script src="../../assets/backend.js?v={v}"></script>
 <script src="../../assets/ps-audio.js?v={v}"></script>
 <script src="../guitar.js?v={v}"></script>
+<script src="../songs.js?v={v}"></script>
+<script src="../../assets/youtube.js?v={v}"></script>
 </body>
 </html>
 '''

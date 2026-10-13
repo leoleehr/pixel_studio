@@ -5,20 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>講義與教案｜Guitar Lab 民謠吉他</title>
 <meta name="description" content="Pixel Studio Guitar Lab 民謠吉他十二章的講義與教案：課前問卷、120 分鐘課程綱要、擴充講義、課堂互動與課後練習。">
-<link rel="icon" href="../assets/favicon.ico?v=20261014g" sizes="any">
-<link rel="icon" type="image/png" sizes="48x48" href="../assets/favicon.png?v=20261014g">
-<link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png?v=20261014g">
-<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=20261014g">
+<link rel="icon" href="../assets/favicon.ico?v=20261014h" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="../assets/favicon.png?v=20261014h">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png?v=20261014h">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=20261014h">
 <meta name="theme-color" content="#101210">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Allura&text=We%20Perform%20the%20Pixel%20of%20Music&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=20261014g">
-<link rel="stylesheet" href="../assets/backend.css?v=20261014g">
-<link rel="stylesheet" href="../assets/responsive.css?v=20261014g">
-<link rel="stylesheet" href="../assets/studio.css?v=20261014g">
-<link rel="stylesheet" href="theme.css?v=20261014g">
+<link rel="stylesheet" href="../assets/site.css?v=20261014h">
+<link rel="stylesheet" href="../assets/backend.css?v=20261014h">
+<link rel="stylesheet" href="../assets/responsive.css?v=20261014h">
+<link rel="stylesheet" href="../assets/studio.css?v=20261014h">
+<link rel="stylesheet" href="../assets/youtube.css?v=20261014h">
+<link rel="stylesheet" href="theme.css?v=20261014h">
 </head>
 <body id="top" data-course="guitar">
 <header class="topbar">
@@ -35,7 +36,7 @@
 </header>
 <div class="toc"><div class="wrap" id="toc"></div></div>
 
-<div class="wrap"><div class="dl-bar"><div><b>講義與教案</b><span>十二章・每章 120 分鐘・可直接列印或另存 Pdf</span></div><button type="button" class="btn primary" onclick="window.print()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2M8 14h8v7H8z"/></svg>列印／另存 Pdf</button></div></div>
+<div class="wrap"><div class="dl-bar"><div><b>講義與教案 Pdf</b><span>A4 排版・十二章・含曲例 Qr Code，可列印或分享</span></div><a class="btn primary" href="guitar-handbook.pdf" download="民謠吉他十二章_講義與教案.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>下載 Pdf</a></div></div>
 <main class="wrap md" id="content"><p class="loading">講義載入中…</p></main>
 
 <footer>© 畫素音樂工作坊 Pixel Studio・Guitar Lab 民謠吉他</footer>
@@ -47,10 +48,12 @@
   <a href="survey.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6a1 1 0 0 1 1 1v1H8V5a1 1 0 0 1 1-1z"/><path d="M8 5H6a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2"/><path d="M9 12l2 2 4-4"/></svg>問卷</a>
 </nav>
 
-<script src="../assets/pixel.js?v=20261014g"></script>
-<script src="../assets/ui.js?v=20261014g"></script>
-<script src="../assets/config.js?v=20261014g"></script>
-<script src="../assets/backend.js?v=20261014g"></script>
+<script src="../assets/pixel.js?v=20261014h"></script>
+<script src="../assets/ui.js?v=20261014h"></script>
+<script src="songs.js?v=20261014h"></script>
+<script src="../assets/youtube.js?v=20261014h"></script>
+<script src="../assets/config.js?v=20261014h"></script>
+<script src="../assets/backend.js?v=20261014h"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <script>window.GUITAR_READY = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];</script>
 <script>
@@ -58,7 +61,7 @@
   var NUM = { '一': 1, '二': 2, '三': 3, '四': 4, '五': 5, '六': 6, '七': 7, '八': 8, '九': 9, '十': 10, '十一': 11, '十二': 12 };
   var COLOR = ['', '#e8412b', '#e2407f', '#9a5fd0', '#2f5fc4', '#45b3e6', '#6cbb4b', '#d6e03a', '#f4a62a', '#e8412b', '#e2407f', '#9a5fd0', '#45b3e6'];
   var main = document.getElementById('content'), toc = document.getElementById('toc'), prog = document.getElementById('progress');
-  fetch('handbook.md?v=20261014g')
+  fetch('handbook.md?v=20261014h')
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
     .then(function (md) {
       main.innerHTML = marked.parse(md, { gfm: true });
@@ -91,6 +94,11 @@
         row.innerHTML = '<a class="survey-link" href="survey.html?id=g-pre-' + n + '">填寫第 ' + n + ' 章課前問卷 →</a>' +
           ((window.GUITAR_READY || []).indexOf(n) > -1 ? '　<a class="survey-link" href="ch' + String(n).padStart(2, '0') + '/">開啟第 ' + n + ' 章投影片 →</a>' : '');
         h.parentNode.insertBefore(row, h.nextSibling);
+        var list = (window.PIXEL_LESSON_SONGS || {})[n]; if (!list) return;
+        var box = document.createElement('div'); box.className = 'lesson-songs';
+        box.innerHTML = '<div class="ls-title">本章曲例<span>原講義曲例・點縮圖即可播放</span></div><div class="yt-list"></div>';
+        list.forEach(function (s) { box.lastChild.appendChild(PixelYT.card(s)); });
+        row.parentNode.insertBefore(box, row.nextSibling);
       });
       PixelUI.labelTables(main);
       var sh = PixelUI.sheet('講義目錄', items);
