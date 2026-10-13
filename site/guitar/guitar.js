@@ -1,106 +1,331 @@
-/* Guitar Lab：和弦資料、和弦圖、換和弦練習、刷奏播放、錄音與練習卡。 */
+/* ===== Guitar Lab：課程資料、自製插圖、和弦圖、調音器與練習器 =====
+ * 需先載入 ../assets/ps-audio.js。在投影片中以 data 屬性宣告，載入時自動建立：
+ *   [data-gfig="anatomy|family-*|bodies|sizes|laminate|bracing|truss|tuning|posture|pick|hands"]
+ *   [data-diagram="C"]  [data-chord-cards]  [data-switch-trainer]  [data-strum-player]  [data-tuner]
+ * 練習結果經 PixelBackend（backend.js）記錄；沒有載入時略過。
+ */
 (function (PS) {
   'use strict';
-  var course = new PS.store.Course('guitar', '2026.1');
-  var lesson = document.body.getAttribute('data-lesson') || '';
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return [].slice.call((r || document).querySelectorAll(s)); }
+  function el(tag, attrs, html) { var e = document.createElement(tag); for (var k in attrs || {}) e.setAttribute(k, attrs[k]); if (html != null) e.innerHTML = html; return e; }
+  function slideNo(n) { var s = n && n.closest && n.closest('.slide'); return s && s.id ? s.id.replace(/\D/g, '') : ''; }
+  function report(n, type, data) { if (window.PixelBackend) window.PixelBackend.log(type, data, { slide: slideNo(n) }); }
 
-  /* frets／fingers 由 6 弦排到 1 弦；-1 悶音、0 空弦 */
+  /* ---------- 課程資料 ---------- */
   var CHORDS = {
     C:  { name: 'C',  zh: 'C 大三和弦', degree: 'I',  frets: [-1, 3, 2, 0, 1, 0], fingers: [0, 3, 2, 0, 1, 0],
           tip: '6 弦不彈。無名指壓 5 弦第 3 格，指尖立起來，別碰到 4 弦。' },
     G:  { name: 'G',  zh: 'G 大三和弦', degree: 'V',  frets: [3, 2, 0, 0, 0, 3], fingers: [2, 1, 0, 0, 0, 3],
-          tip: '六條弦都彈。中指在 6 弦、食指在 5 弦、無名指在 1 弦，手腕放低一點。' },
+          tip: '六條弦都彈。中指 6 弦、食指 5 弦、無名指 1 弦，手腕放低一點。' },
     Am: { name: 'Am', zh: 'A 小三和弦', degree: 'vi', frets: [-1, 0, 2, 2, 1, 0], fingers: [0, 0, 2, 3, 1, 0],
-          tip: '和 C 只差一根手指：無名指從 5 弦移到 3 弦，食指和中指不動。' },
+          tip: '和 C 只差一根手指：無名指從 5 弦移到 3 弦，食指、中指不動。' },
     F:  { name: 'F',  zh: 'F 大三和弦（小 F）', degree: 'IV', frets: [-1, -1, 3, 2, 1, 1], fingers: [0, 0, 3, 2, 1, 1], barre: { fret: 1, from: 4, to: 5 },
-          tip: '只彈 4 到 1 弦。食指平壓 1、2 弦第 1 格，靠近琴格壓才不會悶。完整封閉 F 留到後面單元。' }
+          tip: '只彈 4 到 1 弦。食指平壓 1、2 弦第 1 格。完整封閉 F 留到第 8 章。' },
+    Em: { name: 'Em', zh: 'E 小三和弦', degree: 'iii', frets: [0, 2, 2, 0, 0, 0], fingers: [0, 2, 3, 0, 0, 0], tip: '' },
+    open: { name: '空弦', zh: '六條空弦', degree: '', frets: [0, 0, 0, 0, 0, 0], fingers: [0, 0, 0, 0, 0, 0], tip: '' }
   };
   var PROGRESSIONS = [
     { id: 'pop', label: 'C → G → Am → F', seq: ['C', 'G', 'Am', 'F'] },
     { id: 'fifties', label: 'C → Am → F → G', seq: ['C', 'Am', 'F', 'G'] },
     { id: 'minor', label: 'Am → F → C → G', seq: ['Am', 'F', 'C', 'G'] }
   ];
-  /* 刷奏型態：每拍兩格（八分音符）。D 下刷、U 上刷、d／u 空刷（手照常擺動，不碰弦） */
+  /* 每拍兩格；D 下刷、U 上刷、d／u 空刷（手照常擺動但不碰弦） */
   var PATTERNS = {
-    A: { name: '八分音符 8 Beats', cells: ['D', 'U', 'D', 'U', 'D', 'U', 'D', 'U'],
-         desc: '手腕像甩水一樣上下擺動：拍點往下、半拍往上，八下平均。' },
-    B: { name: '切分 Folk Rock', cells: ['D', 'u', 'D', 'U', 'd', 'U', 'D', 'U'],
-         desc: '第 2 拍後半拍延音到第 3 拍，第 3 拍的下刷「空過去」不碰弦，重音因此往前移。口訣：下、下上、上下上。' }
+    Q: { name: '四分音符 下刷', cells: ['D', 'u', 'D', 'u', 'D', 'u', 'D', 'u'], desc: '每一拍往下刷一次，手在半拍時回到上方準備。' },
+    A: { name: '八分音符 8 Beats', cells: ['D', 'U', 'D', 'U', 'D', 'U', 'D', 'U'], desc: '拍點往下、半拍往上，八下平均。' },
+    B: { name: '切分 Folk Rock', cells: ['D', 'u', 'D', 'U', 'd', 'U', 'D', 'U'], desc: '第 3 拍的下刷空過去不碰弦，重音往前推。口訣：下、下上、上下上。' }
   };
   var COUNTS = ['1', '&', '2', '&', '3', '&', '4', '&'];
-  var CHECKLISTS = {
-    'ch03': [
-      ['four', '四個和弦都能壓出來，每條該響的弦都清楚', '一條一條弦慢慢撥，聽有沒有悶音'],
-      ['c-am', 'C 和 Am 之間只動無名指，來回切換十次', '不看左手也能找到位置'],
-      ['bpm60', 'C → G → Am → F 在 60 BPM、每和弦 4 拍不停拍', '換不過去時先彈空弦，也不要停下來'],
-      ['bpm60x2', '同一組進行在 60 BPM、每和弦 2 拍完成兩輪', ''],
-      ['record', '錄一段 30 秒的換和弦練習，聽聽看哪裡斷掉', '']
-    ],
-    'ch04': [
-      ['eighth', '空弦刷 8 Beats，60 BPM 下手不停、上下平均', '先悶住弦，只聽節奏'],
-      ['eighth-chord', '8 Beats 配 C → G → Am → F，每和弦一小節', ''],
-      ['sync-say', '能邊拍手邊唸出切分口訣：下、下上、上下上', '先唸對，再上琴'],
-      ['sync-play', '切分 Folk Rock 在 70 BPM 彈完一輪四和弦', '空刷時手照樣往下擺，只是不碰弦'],
-      ['record', '錄下兩種刷法各一段，比較重音位置', '']
-    ]
-  };
-  /* 12 章課綱：上冊（2013-1）第 1–6 章、下冊（2013-2）第 7–12 章，每章 120 分鐘 */
-  var CHAPTERS = [
-    { n: 1, part: '上', title: '認識吉他與調音', en: 'Meet the Guitar',
-      topics: ['吉他構造與各部位名稱', '持琴姿勢、左手架構與持彈片', '空弦音名與調音（調音器／App）', '第一次發出聲音：空弦節奏'],
-      source: '上冊 第一章、第三章第一節（吉他歷史與分類移到參考區）' },
-    { n: 2, part: '上', title: '拍點、讀譜與熱手', en: 'Beat & Warm-up',
-      topics: ['音高與譜表、時值、拍號', '六線譜 TAB 讀法', '爬格子熱手 1-2-3-4', '指板音名與單音旋律（Ode to Joy 等）'],
-      source: '上冊 第二章、第三章第二、三節' },
-    { n: 3, part: '上', title: '第一組和弦', en: 'First Chords', href: 'ch03/',
-      topics: ['和弦圖怎麼讀', 'C、G、Am、F 四大和弦', '換和弦不停拍', 'C 調級數 I–V–vi–IV'],
-      source: '上冊 第三章第四、五節' },
-    { n: 4, part: '上', title: '刷奏與切分', en: 'Strumming & Syncopation', href: 'ch04/',
-      topics: ['下刷、上刷與空刷', '華語教材刷法標示', '八分音符 8 Beats', '切分 Folk Rock 與 16 分音符變化'],
-      source: '上冊 第四章第一至三節' },
-    { n: 5, part: '上', title: '三拍子與伴奏變化', en: 'Triple Meter Grooves',
-      topics: ['二拍子系統的其他伴奏型', '3/4、6/8 與 12/8', '低音＋刷奏（蹦洽洽）', '依歌曲速度選擇伴奏型'],
-      source: '上冊 第四章第三、四節' },
-    { n: 6, part: '上', title: '曲式分析與期中彈唱', en: 'Song Form & Showcase',
-      topics: ['主歌、副歌、橋段與前奏尾奏', '用 Capo 配合歌手的調', '整首歌的段落伴奏設計', '期中彈唱發表'],
-      source: '上冊 第五、六章' },
-    { n: 7, part: '下', title: '樂理導入與指法', en: 'Intervals & Fingerstyle',
-      topics: ['音程與協和度', '大、小、增、減、掛留三和弦', '指法基本姿勢 T-1-2-3', '常用分散和弦指法'],
-      source: '下冊 序章、第一章' },
-    { n: 8, part: '下', title: 'G 大調與封閉和弦', en: 'G Major & Barre Chords',
-      topics: ['G 大調自然音階', '順階和弦', '封閉和弦 F、Bm', '封閉和弦換位練習'],
-      source: '下冊 第二章' },
-    { n: 9, part: '下', title: '低音變化', en: 'Bass Lines',
-      topics: ['根音與替代根音', '分數和弦（C/G、C/E）', '經過音與下行低音線', '低音＋刷奏的伴奏'],
-      source: '下冊 第三章' },
-    { n: 10, part: '下', title: '級數與和弦編排', en: 'Progressions & Arranging',
-      topics: ['級數與順階和弦的功能', '常見流行和弦進行', '代理和弦與色彩和弦', '基本編曲：段落與配器想法'],
-      source: '下冊 第四章、第十一章（綱要，需補教材）' },
-    { n: 11, part: '下', title: '旋律與音色技巧', en: 'Melody & Techniques',
-      topics: ['搥弦、勾弦、滑弦', '悶音、切音、打板、泛音', '推弦、鬆弦、揉音與顫音', '在伴奏中加入過門'],
-      source: '下冊 第五、八、九章（後兩章為綱要，需補示範與練習）' },
-    { n: 12, part: '下', title: '轉調、定調與創作', en: 'Keys & Songwriting',
-      topics: ['移調與 Capo 換算', '找到自己的調（Make Your Own Key）', 'D、F、A、E 大調概覽', '詞曲創作概論與期末作品'],
-      source: '下冊 第六、七、八章（保養與換弦移到參考區）' }
-  ];
-  /* 每章 120 分鐘的固定節奏 */
-  var AGENDA = [['暖身', 15], ['新觀念', 30], ['分段練習', 40], ['合奏與應用', 25], ['回顧與作業', 10]];
-  PS.guitar = { CHORDS: CHORDS, PATTERNS: PATTERNS, CHECKLISTS: CHECKLISTS, CHAPTERS: CHAPTERS, AGENDA: AGENDA, course: course };
+  var OPEN = [{ n: 'E', o: 2, f: 82.41 }, { n: 'A', o: 2, f: 110 }, { n: 'D', o: 3, f: 146.83 }, { n: 'G', o: 3, f: 196 }, { n: 'B', o: 3, f: 246.94 }, { n: 'E', o: 4, f: 329.63 }];
+  PS.guitar = { CHORDS: CHORDS, PATTERNS: PATTERNS };
 
-  function el(tag, attrs, html) {
-    var e = document.createElement(tag);
-    for (var k in attrs || {}) e.setAttribute(k, attrs[k]);
-    if (html !== undefined) e.innerHTML = html;
-    return e;
+  /* ---------- 共用：吉他剪影 ---------- */
+  // 依參數畫出琴身外型（中心 cx、頂端 y0、長 L、上寬 uw、腰寬 ww、下寬 lw、腰位 wp）
+  function bodyPath(cx, y0, L, uw, ww, lw, wp) {
+    var u = uw / 2, w = ww / 2, l = lw / 2, wy = y0 + L * (wp || 0.42);
+    var L1 = function (s) {
+      return 'C' + (cx + s * u * 0.62) + ',' + y0 + ' ' + (cx + s * u) + ',' + (y0 + L * 0.06) + ' ' + (cx + s * u) + ',' + (y0 + L * 0.2) +
+        ' C' + (cx + s * u) + ',' + (y0 + L * 0.3) + ' ' + (cx + s * w) + ',' + (wy - L * 0.07) + ' ' + (cx + s * w) + ',' + wy +
+        ' C' + (cx + s * w) + ',' + (wy + L * 0.08) + ' ' + (cx + s * l) + ',' + (y0 + L * 0.56) + ' ' + (cx + s * l) + ',' + (y0 + L * 0.72) +
+        ' C' + (cx + s * l) + ',' + (y0 + L * 0.93) + ' ' + (cx + s * l * 0.5) + ',' + (y0 + L) + ' ' + cx + ',' + (y0 + L);
+    };
+    // 左半邊順時針到底部，再沿右半邊回到頂端
+    return 'M' + cx + ',' + y0 + ' ' + L1(-1) + ' ' + reverseHalf(cx, y0, L, u, w, l, wy) + ' Z';
   }
-  function $(sel, root) { return (root || document).querySelector(sel); }
-  function $$(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+  function reverseHalf(cx, y0, L, u, w, l, wy) {
+    return 'C' + (cx + l * 0.5) + ',' + (y0 + L) + ' ' + (cx + l) + ',' + (y0 + L * 0.93) + ' ' + (cx + l) + ',' + (y0 + L * 0.72) +
+      ' C' + (cx + l) + ',' + (y0 + L * 0.56) + ' ' + (cx + w) + ',' + (wy + L * 0.08) + ' ' + (cx + w) + ',' + wy +
+      ' C' + (cx + w) + ',' + (wy - L * 0.07) + ' ' + (cx + u) + ',' + (y0 + L * 0.3) + ' ' + (cx + u) + ',' + (y0 + L * 0.2) +
+      ' C' + (cx + u) + ',' + (y0 + L * 0.06) + ' ' + (cx + u * 0.62) + ',' + y0 + ' ' + cx + ',' + y0;
+  }
+  // 小型吉他剪影（家族卡、尺寸圖用），viewBox 0 0 100 160
+  function miniGuitar(o) {
+    o = o || {};
+    var s = '<svg class="gfig" viewBox="0 0 100 160" aria-hidden="true">';
+    var top = o.bodyTop || 62, L = o.bodyLen || 92, neckW = o.neckW || 9;
+    // 琴頭
+    if (o.head === 'slot') s += '<rect x="42" y="4" width="16" height="22" rx="2" class="wood2"/><rect x="45.5" y="8" width="2.6" height="14" class="hole"/><rect x="51.9" y="8" width="2.6" height="14" class="hole"/>';
+    else if (o.head === 'strat') s += '<path d="M46 4 C58 2 62 8 58 14 L56 28 L45 28 Z" class="' + (o.headCls || 'wood3') + '"/>';
+    else s += '<path d="M43 4 H57 L56 27 H44 Z" class="dark"/>';
+    for (var i = 0; i < 3; i++) if (o.head !== 'strat') s += '<circle cx="40" cy="' + (9 + i * 6) + '" r="2" class="metal"/><circle cx="60" cy="' + (9 + i * 6) + '" r="2" class="metal"/>';
+    // 琴頸與指板
+    s += '<rect x="' + (50 - neckW / 2) + '" y="26" width="' + neckW + '" height="' + (top - 22) + '" class="dark"/>';
+    // 琴身
+    if (o.kind === 'electric') {
+      s += '<path d="M50 58 C40 56 33 50 28 54 C24 58 30 66 30 74 C30 84 18 92 18 112 C18 136 34 150 50 150 C66 150 82 136 82 112 C82 94 70 86 70 76 C70 66 78 58 74 54 C70 50 60 56 50 58 Z" class="' + (o.color || 'acc') + '"/>' +
+        '<path d="M38 70 C44 74 56 74 62 70 L64 120 C56 126 44 126 36 120 Z" class="bone" opacity=".9"/>' +
+        '<rect x="40" y="84" width="20" height="4" rx="2" class="dark"/><rect x="40" y="98" width="20" height="4" rx="2" class="dark"/><rect x="40" y="112" width="20" height="4" rx="2" class="dark"/>' +
+        '<rect x="42" y="132" width="16" height="4" class="metal"/>';
+    } else if (o.kind === 'banjo') {
+      s += '<circle cx="50" cy="114" r="34" class="metal"/><circle cx="50" cy="114" r="29" class="bone"/><rect x="40" y="126" width="20" height="3" class="wood2"/>';
+    } else if (o.kind === 'mandolin') {
+      s += '<path d="M50 76 C30 76 22 100 26 120 C30 140 42 150 50 150 C58 150 70 140 74 120 C78 100 70 76 50 76 Z" class="wood"/><path d="M42 104 h16 l-2 6 h-12 Z" class="hole"/>';
+    } else if (o.kind === 'lap') {
+      s = '<svg class="gfig" viewBox="0 0 100 160" aria-hidden="true"><rect x="36" y="8" width="28" height="146" rx="6" class="' + (o.color || 'wood2') + '"/><rect x="40" y="30" width="20" height="96" class="dark"/>' +
+        [0, 1, 2, 3, 4, 5].map(function (k) { return '<line x1="' + (42 + k * 3.2) + '" x2="' + (42 + k * 3.2) + '" y1="12" y2="146" stroke="#ddd" stroke-width=".6"/>'; }).join('') +
+        '<rect x="38" y="128" width="24" height="10" class="metal"/><rect x="30" y="70" width="40" height="7" rx="3.5" class="metal" transform="rotate(-8 50 73)"/>';
+      return s + '</svg>';
+    } else {
+      s += '<path d="' + bodyPath(50, top, L, o.uw || 48, o.ww || 36, o.lw || 62, o.wp) + '" class="' + (o.color || 'wood') + '" stroke="#efe8d6" stroke-width="1.6"/>';
+      s += '<circle cx="50" cy="' + (top + L * 0.36) + '" r="' + (o.hole || 9) + '" class="hole"/>';
+      if (o.pickguard) s += '<path d="M58 ' + (top + L * 0.4) + ' C66 ' + (top + L * 0.42) + ' 70 ' + (top + L * 0.56) + ' 62 ' + (top + L * 0.6) + ' C58 ' + (top + L * 0.62) + ' 56 ' + (top + L * 0.52) + ' 58 ' + (top + L * 0.4) + ' Z" class="' + (o.pickguard === 'clear' ? 'bone' : 'dark') + '" opacity="' + (o.pickguard === 'clear' ? '.35' : '1') + '"/>';
+      s += '<rect x="40" y="' + (top + L * 0.7) + '" width="20" height="4" rx="1" class="dark"/>';
+    }
+    // 弦
+    var n = o.strings || 6, x0 = 50 - (neckW / 2 - 1.5), dx = (neckW - 3) / (n - 1), end = o.kind === 'electric' ? 134 : o.kind === 'banjo' ? 128 : o.kind === 'mandolin' ? 136 : top + L * 0.72;
+    for (var k = 0; k < n; k++) s += '<line x1="' + (x0 + k * dx) + '" x2="' + (x0 + k * dx) + '" y1="26" y2="' + end + '" stroke="#e8e4da" stroke-width=".5"/>';
+    return s + '</svg>';
+  }
+  var FAMILY = {
+    classical: { head: 'slot', uw: 46, ww: 34, lw: 58, color: 'wood3' },
+    flamenco: { head: 'slot', uw: 46, ww: 34, lw: 58, color: 'wood3', pickguard: 'clear' },
+    folk: { uw: 52, ww: 42, lw: 66, pickguard: true, color: 'wood3' },
+    electric: { kind: 'electric', head: 'strat', color: 'acc' },
+    steel: { kind: 'lap' },
+    ukulele: { bodyTop: 84, bodyLen: 66, uw: 34, ww: 26, lw: 44, strings: 4, hole: 6, neckW: 7 },
+    banjo: { kind: 'banjo', strings: 5 },
+    mandolin: { kind: 'mandolin', strings: 8, neckW: 7 }
+  };
+
+  /* ---------- 吉他構造圖 ---------- */
+  var PARTS = [
+    { id: 'head', zh: '琴頭', en: 'Headstock', x: 150, y: 52, d: '固定旋鈕的位置。品牌標誌通常在這裡。' },
+    { id: 'tuner', zh: '旋鈕', en: 'Tuning Machines', x: 98, y: 58, d: '固定琴弦並轉緊、轉鬆來調音。品質好的旋鈕齒輪精密、不易跑音，常見全封閉（油壓）式與開放式。' },
+    { id: 'nut', zh: '上弦枕', en: 'Nut', x: 196, y: 112, t: [172, 112], d: '固定六條弦的間距。材質越硬，振動損耗越少，常見牛骨、塑膠、Tusq。' },
+    { id: 'board', zh: '指板', en: 'Fretboard', x: 98, y: 214, t: [136, 214], d: '左手按弦的接觸面，常用玫瑰木、黑檀木或楓木。木材越硬越耐磨。' },
+    { id: 'fret', zh: '琴衍（琴格）', en: 'Frets', x: 196, y: 168, t: [168, 168], d: '指板上的金屬條。按在兩條琴衍之間，弦長就固定在前一條琴衍，發出穩定的音高。' },
+    { id: 'inlay', zh: '指板記號', en: 'Position Markers', x: 98, y: 290, t: [150, 290], d: '標在第 3、5、7、9、12 格，讓你一眼找到位置；第 12 格是兩個點，正好是空弦的高八度。' },
+    { id: 'neck', zh: '琴頸', en: 'Neck', x: 196, y: 262, t: [172, 262], d: '連接琴頭與琴身，裡面藏著調整彎度的鋼筋（Truss Rod）。' },
+    { id: 'top', zh: '面板', en: 'Top', x: 64, y: 590, d: '琴身正面的板子，是音色最主要的來源。面板振動，把弦的能量變成你聽到的聲音。' },
+    { id: 'hole', zh: '響孔', en: 'Sound Hole', x: 150, y: 456, d: '琴身內的空氣從這裡進出共鳴，把聲音送出來。' },
+    { id: 'rosette', zh: '響孔邊飾', en: 'Rosette', x: 205, y: 420, t: [182, 432], d: '響孔外圈的裝飾，同時補強響孔邊緣。用料有塑膠、木片或貝殼。' },
+    { id: 'guard', zh: '防刮板', en: 'Pickguard', x: 232, y: 512, t: [200, 500], d: '保護面板，避免刷弦時彈片刮傷。' },
+    { id: 'bridge', zh: '琴橋', en: 'Bridge', x: 92, y: 548, t: [112, 556], d: '黏在面板上，承受琴弦的拉力，把振動傳到面板。' },
+    { id: 'saddle', zh: '下弦枕', en: 'Saddle', x: 150, y: 520, t: [150, 549], d: '弦振動的終點，把振動傳進琴橋與面板。高度決定弦距（弦與指板的距離）。' },
+    { id: 'pin', zh: '弦釘', en: 'Bridge Pins', x: 210, y: 572, t: [182, 560], d: '把弦尾固定在琴橋的小釘子。換弦時才會拔起來。' },
+    { id: 'binding', zh: '琴身邊飾', en: 'Binding', x: 284, y: 560, d: '琴身邊緣的封邊，保護接縫，也看得出做工。' },
+    { id: 'side', zh: '側板與背板', en: 'Sides & Back', x: 30, y: 400, d: '琴身的側面與背面，和面板一起圍出共鳴箱，影響低音厚度與餘韻。' }
+  ];
+  function fretY(n) { return 108 + 442 * (1 - Math.pow(2, -n / 12)); }
+  function anatomySVG() {
+    var s = '<svg class="gfig" viewBox="0 0 310 650" role="img" aria-label="木吉他正面構造圖，共 16 個部位">';
+    // 琴頭與旋鈕
+    s += '<path d="M126 108 L120 18 Q150 6 180 18 L174 108 Z" class="dark"/>';
+    [32, 60, 88].forEach(function (y) {
+      s += '<rect x="106" y="' + (y - 5) + '" width="16" height="10" rx="2" class="metal"/><ellipse cx="102" cy="' + y + '" rx="6" ry="9" class="bone"/>' +
+        '<rect x="178" y="' + (y - 5) + '" width="16" height="10" rx="2" class="metal"/><ellipse cx="198" cy="' + y + '" rx="6" ry="9" class="bone"/>' +
+        '<circle cx="133" cy="' + y + '" r="3.2" class="metal"/><circle cx="167" cy="' + y + '" r="3.2" class="metal"/>';
+    });
+    // 琴身（邊飾＋面板）
+    s += '<path d="' + bodyPath(150, 300, 336, 214, 176, 262, 0.44) + '" class="wood3" stroke="#efe8d6" stroke-width="5"/>';
+    // 琴頸、指板、琴衍、記號
+    s += '<rect x="128" y="104" width="44" height="232" class="wood2"/><rect x="130" y="106" width="40" height="312" class="dark"/>';
+    s += '<rect x="128" y="105" width="44" height="6" class="bone"/>';
+    for (var n = 1; n <= 20; n++) s += '<line x1="130" x2="170" y1="' + fretY(n) + '" y2="' + fretY(n) + '" stroke="#c9ccd1" stroke-width="1.6"/>';
+    [3, 5, 7, 9, 15, 17].forEach(function (n) { s += '<circle cx="150" cy="' + ((fretY(n) + fretY(n - 1)) / 2) + '" r="3.4" class="bone"/>'; });
+    s += '<circle cx="142" cy="' + ((fretY(12) + fretY(11)) / 2) + '" r="3.4" class="bone"/><circle cx="158" cy="' + ((fretY(12) + fretY(11)) / 2) + '" r="3.4" class="bone"/>';
+    // 響孔、邊飾、防刮板
+    s += '<circle cx="150" cy="456" r="44" fill="none" stroke="#2a2622" stroke-width="6"/><circle cx="150" cy="456" r="44" fill="none" stroke="#e2c48f" stroke-width="1.5" stroke-dasharray="3 3"/><circle cx="150" cy="456" r="35" class="hole"/>';
+    s += '<path d="M190 470 C214 470 232 498 222 526 C214 546 192 540 184 520 C178 504 180 482 190 470 Z" class="dark" opacity=".92"/>';
+    // 琴橋、下弦枕、弦釘
+    s += '<path d="M104 546 Q150 536 196 546 L196 566 Q150 574 104 566 Z" class="wood2"/><rect x="118" y="547" width="64" height="4" rx="2" class="bone"/>';
+    for (var k = 0; k < 6; k++) s += '<circle cx="' + (130 + k * 8) + '" cy="560" r="2.6" class="bone"/>';
+    // 弦
+    for (var j = 0; j < 6; j++) s += '<line x1="' + (134.5 + j * 6.2) + '" x2="' + (130 + j * 8) + '" y1="108" y2="549" stroke="#e8e4da" stroke-width="' + (1.3 - j * 0.15) + '"/>' +
+      '<line x1="' + (134.5 + j * 6.2) + '" x2="' + (j < 3 ? 133 : 167) + '" y1="108" y2="' + [88, 60, 32, 32, 60, 88][j] + '" stroke="#e8e4da" stroke-width=".8"/>';
+    // 標號
+    PARTS.forEach(function (p, i) {
+      s += '<g class="hot" data-part="' + i + '" tabindex="0" role="button" aria-label="' + p.zh + '">' +
+        (p.t ? '<line x1="' + p.x + '" y1="' + p.y + '" x2="' + p.t[0] + '" y2="' + p.t[1] + '" class="lead"/><circle cx="' + p.t[0] + '" cy="' + p.t[1] + '" r="2.6" class="dot"/>' : '') +
+        '<circle cx="' + p.x + '" cy="' + p.y + '" r="12"/><text x="' + p.x + '" y="' + (p.y + 4.5) + '" class="n">' + (i + 1) + '</text></g>';
+    });
+    return s + '</svg>';
+  }
+  function mountAnatomy(root) {
+    root.classList.add('anatomy');
+    root.innerHTML = '<div>' + anatomySVG() + '</div><div class="part-info" aria-live="polite"></div>';
+    var info = $('.part-info', root), chips = el('div', { class: 'part-chips' });
+    PARTS.forEach(function (p, i) { var b = el('button', { type: 'button', 'data-part': i }, (i + 1) + ' ' + p.zh); chips.appendChild(b); });
+    var seen = {};
+    function show(i) {
+      var p = PARTS[i];
+      info.innerHTML = '<div class="pi-no">' + String(i + 1).padStart(2, '0') + ' / ' + PARTS.length + '</div><h3>' + p.zh + '</h3><div class="pi-en">' + p.en + '</div><p>' + p.d + '</p>';
+      info.appendChild(chips);
+      $$('[data-part]', root).forEach(function (n) { n.classList.toggle('on', +n.getAttribute('data-part') === i); });
+      seen[i] = 1;
+      if (Object.keys(seen).length === PARTS.length) report(root, 'interaction', { item: '吉他構造', result: '看完 16 個部位' });
+    }
+    root.addEventListener('click', function (e) { var t = e.target.closest('[data-part]'); if (t) show(+t.getAttribute('data-part')); });
+    root.addEventListener('keydown', function (e) { var t = e.target.closest('.hot'); if (t && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); show(+t.getAttribute('data-part')); } });
+    show(0);
+  }
+
+  /* ---------- 筒身、尺寸、合板／單板、力木、鋼筋 ---------- */
+  var BODIES = [
+    { id: 'Jumbo', zh: '巨無霸', p: [54, 38, 76, 0.4], L: 104, d: '下半部最寬、腰最細，外型像葫蘆。低音飽滿、音量最大，適合刷奏伴奏。' },
+    { id: 'Dreadnought', zh: '無畏艦（D 桶）', p: [56, 50, 70, 0.44], L: 100, d: '最常見的筒身，肩膀方正、腰線淺。音量大、頻率平均，民謠彈唱的標準選擇。' },
+    { id: 'Grand Auditorium', zh: '大音樂廳（GA）', p: [52, 40, 68, 0.42], L: 100, d: '介於 D 桶與小桶之間，中頻清楚。刷奏、指彈都好用，Taylor 的代表筒身。' },
+    { id: 'Auditorium', zh: '音樂廳（OM／000）', p: [48, 36, 64, 0.42], L: 96, d: '腰細、下半部寬，高低頻分明，適合指彈與錄音。' },
+    { id: 'Grand Concert', zh: '大音樂會（GC）', p: [44, 33, 58, 0.42], L: 90, d: '琴身較小，音量不大，但高頻靈敏、反應快，適合指彈與主奏。' },
+    { id: 'Concert', zh: '音樂會', p: [40, 30, 54, 0.42], L: 86, d: '最小最輕的筒身，抱起來最舒服，適合身形嬌小或常帶出門的人。' }
+  ];
+  function bodyOutline(b) {
+    return '<svg class="gfig" viewBox="0 0 90 112" aria-hidden="true"><path d="' + bodyPath(45, 110 - b.L, b.L, b.p[0], b.p[1], b.p[2], b.p[3]) + '" class="wood3" stroke="#efe8d6" stroke-width="1.4"/><circle cx="45" cy="' + (110 - b.L + b.L * 0.36) + '" r="7.5" class="hole"/></svg>';
+  }
+  function mountBodies(root) {
+    root.innerHTML = '<div class="bodies">' + BODIES.map(function (b, i) {
+      return '<div class="b" data-b="' + i + '" tabindex="0" role="button">' + bodyOutline(b) + '<b>' + b.id + '</b><small>' + b.zh + '</small></div>';
+    }).join('') + '</div><p class="body-note card" aria-live="polite"></p>';
+    var note = $('.body-note', root);
+    function show(i) { $$('.b', root).forEach(function (n, k) { n.classList.toggle('on', k === i); }); note.innerHTML = '<b>' + BODIES[i].id + '｜' + BODIES[i].zh + '</b>　' + BODIES[i].d; }
+    root.addEventListener('click', function (e) { var b = e.target.closest('[data-b]'); if (b) show(+b.getAttribute('data-b')); });
+    root.addEventListener('keydown', function (e) { var b = e.target.closest('[data-b]'); if (b && e.key === 'Enter') show(+b.getAttribute('data-b')); });
+    show(1);
+  }
+  function sizesHTML() {
+    return '<div class="sizes">' + [['1/4', '2–5 歲', 0.55], ['1/2', '5–8 歲', 0.68], ['3/4', '8–12 歲', 0.82], ['Full', '12 歲以上', 1]].map(function (z) {
+      return '<div style="--h:' + Math.round(z[2] * 230) + 'px">' + miniGuitar(FAMILY.folk) + '<b>' + z[0] + '</b><span>' + z[1] + '</span></div>';
+    }).join('') + '</div>';
+  }
+  function laminateSVG() {
+    var s = '<svg class="gfig" viewBox="0 0 600 200" role="img" aria-label="合板與單板面板的剖面比較">';
+    s += '<text x="10" y="22" class="big">合板 Laminated</text><text x="330" y="22" class="big">單板 Solid</text>';
+    s += '<rect x="10" y="38" width="230" height="16" class="wood3"/><rect x="10" y="54" width="230" height="30" class="wood2"/><rect x="10" y="84" width="230" height="16" class="wood3"/>';
+    for (var i = 0; i < 40; i++) s += '<circle cx="' + (16 + (i * 37) % 224) + '" cy="' + (60 + (i * 13) % 20) + '" r="1.8" fill="#c9a06a" opacity=".7"/>';
+    s += '<text x="248" y="51" class="en">薄木片</text><text x="248" y="74" class="en">膠合夾層</text><text x="248" y="97" class="en">薄木片</text>';
+    s += '<rect x="330" y="38" width="260" height="62" class="wood3"/>';
+    for (var j = 0; j < 9; j++) s += '<path d="M330 ' + (43 + j * 6.5) + ' C400 ' + (39 + j * 6.5) + ' 500 ' + (49 + j * 6.5) + ' 590 ' + (43 + j * 6.5) + '" stroke="#c49a5c" stroke-width="1" fill="none"/>';
+    s += '<text x="10" y="134">✓ 價格親民、不怕溫濕度變化</text><text x="10" y="162">✕ 膠層吸收振動，共鳴較弱</text>';
+    s += '<text x="330" y="134">✓ 整片木頭振動，聲音通透</text><text x="330" y="162">✓ 越彈越「開」，音色會成長</text><text x="330" y="190">✕ 價格較高，需注意除濕</text>';
+    return s + '</svg>';
+  }
+  function bracingSVG() {
+    var s = '<svg class="gfig" viewBox="0 0 520 300" role="img" aria-label="民謠吉他 X 型力木與古典吉他扇形力木比較">';
+    function shell(cx) { return '<path d="' + bodyPath(cx, 30, 250, 150, 118, 190, 0.43) + '" class="wood3" stroke="#efe8d6" stroke-width="3" opacity=".95"/><circle cx="' + cx + '" cy="' + (30 + 250 * 0.33) + '" r="28" fill="none" stroke="#7a4524" stroke-width="2" stroke-dasharray="4 3"/>'; }
+    s += shell(130) + shell(390);
+    // X 型
+    s += '<path d="M78 150 L190 236 M182 150 L70 236" stroke="#7a4524" stroke-width="7" stroke-linecap="round"/><path d="M84 104 H176" stroke="#7a4524" stroke-width="6" stroke-linecap="round"/>' +
+      '<path d="M96 210 L120 246 M164 210 L140 246" stroke="#7a4524" stroke-width="4" stroke-linecap="round"/>';
+    // 扇形
+    for (var i = -3; i <= 3; i++) s += '<path d="M390 160 L' + (390 + i * 24) + ' 262" stroke="#7a4524" stroke-width="4" stroke-linecap="round"/>';
+    s += '<path d="M344 104 H436 M340 168 H440" stroke="#7a4524" stroke-width="6" stroke-linecap="round"/>';
+    s += '<text x="130" y="296" class="mid big">X 型力木｜鋼弦民謠吉他</text><text x="390" y="296" class="mid big">扇形力木｜古典吉他</text>';
+    return s + '</svg>';
+  }
+  function trussSVG() {
+    var s = '<svg class="gfig" viewBox="0 0 520 170" role="img" aria-label="琴頸側面與內部鋼筋">';
+    s += '<path d="M10 60 L60 54 L500 62 L500 98 L60 92 L10 96 Z" class="wood2"/><rect x="60" y="54" width="440" height="10" class="dark"/>';
+    s += '<line x1="70" y1="80" x2="490" y2="80" stroke="#c9ccd1" stroke-width="3" stroke-dasharray="10 5"/><circle cx="74" cy="80" r="6" class="metal"/>';
+    s += '<text x="74" y="124" class="mid">調整螺帽</text><text x="10" y="156">鋼筋 Truss Rod：抵抗琴弦拉力，讓琴頸保持微微的弧度</text>';
+    s += '<text x="300" y="22" class="mid en">六條弦的拉力合計約 70 公斤</text><path d="M120 46 C250 28 380 28 480 46" class="acc-s" stroke-dasharray="4 4"/>';
+    return s + '</svg>';
+  }
+  /* 標準調音：六條空弦與音程 */
+  function tuningSVG() {
+    var s = '<svg class="gfig" viewBox="0 0 560 250" role="img" aria-label="標準調音 E A D G B E，相鄰弦相差完全四度，3 弦到 2 弦相差大三度">';
+    OPEN.slice().reverse().forEach(function (o, k) {
+      var y = 30 + k * 38, idx = k + 1; // 上方是最細的 1 弦（與六線譜同方向）
+      s += '<line x1="80" x2="520" y1="' + y + '" y2="' + y + '" stroke="#e8e4da" stroke-width="' + (0.8 + k * 0.35) + '"/>';
+      s += '<text x="26" y="' + (y + 5) + '" class="big">' + idx + '</text><text x="44" y="' + (y + 5) + '" class="en">弦</text>';
+      s += '<circle cx="536" cy="' + y + '" r="17" class="acc"/><text x="536" y="' + (y + 6) + '" class="n" style="font-size:16px">' + o.n + '</text>';
+    });
+    var gaps = ['完全四度', '完全四度', '完全四度', '大三度', '完全四度'];
+    gaps.forEach(function (g, k) {
+      var y = 30 + (4 - k) * 38 + 19;
+      s += '<text x="300" y="' + (y + 5) + '" class="mid ' + (k === 3 ? 'big' : 'en') + '" style="' + (k === 3 ? 'fill:var(--accent)' : '') + '">' + g + '</text>';
+    });
+    return s + '</svg>';
+  }
+  /* 坐姿與持彈片 */
+  function postureSVG() {
+    // 正面坐姿：琴身放右大腿、琴頸往左手方向略微上揚
+    return '<svg class="gfig" viewBox="0 0 420 330" role="img" aria-label="坐姿彈奏示意圖：坐椅子前三分之一，背打直，琴身放在右大腿並貼近身體，琴頸略往上">' +
+      '<rect x="96" y="226" width="150" height="12" rx="4" class="dark"/><rect x="104" y="238" width="10" height="84" class="dark"/><rect x="228" y="238" width="10" height="84" class="dark"/>' +
+      '<circle cx="170" cy="46" r="26" class="ln"/>' +
+      '<path d="M170 72 V110 M120 96 Q170 84 220 96 M134 100 L128 214 M206 100 L212 214 M128 214 Q170 222 212 214" class="ln"/>' +
+      '<path d="M134 218 L122 322 M206 218 L218 322" class="ln"/>' +
+      '<g transform="translate(140 192) rotate(78)"><path d="' + bodyPath(0, -62, 124, 86, 66, 108, 0.44) + '" class="wood3" stroke="#efe8d6" stroke-width="2.5"/><circle cx="0" cy="-17" r="13" class="hole"/>' +
+      '<rect x="-6" y="-210" width="12" height="150" class="dark"/><path d="M-9 -232 H9 L8 -210 H-8 Z" class="dark"/></g>' +
+      '<path d="M120 100 Q96 150 128 176" class="ln"/><path d="M220 100 Q290 116 330 128" class="ln"/>' +
+      '<text x="270" y="36" class="big" style="fill:var(--accent)">✓</text><text x="290" y="36">背打直</text>' +
+      '<text x="270" y="70" class="big" style="fill:var(--accent)">✓</text><text x="290" y="70">琴頸略往上</text>' +
+      '<text x="270" y="232" class="big" style="fill:var(--accent)">✓</text><text x="290" y="232">琴身貼近身體</text>' +
+      '<text x="270" y="266" class="big" style="fill:var(--accent)">✓</text><text x="290" y="266">坐椅子前 1/3</text>' +
+      '</svg>';
+  }
+  function pickSVG() {
+    return '<svg class="gfig" viewBox="0 0 440 200" role="img" aria-label="持彈片：彈片放在食指第一節側面，拇指壓在上方，尖端露出約 2 到 3 公釐">' +
+      '<rect x="20" y="48" width="190" height="44" rx="22" class="wood3" opacity=".75"/>' +
+      '<path d="M88 60 Q120 50 152 60 Q150 100 124 150 Q118 156 114 150 Q92 104 88 60 Z" class="acc"/>' +
+      '<rect x="60" y="34" width="150" height="40" rx="20" class="bone" opacity=".95"/>' +
+      '<text x="250" y="52">拇指壓在彈片上方</text><text x="250" y="96">食指第一節側面托住</text><text x="250" y="150">尖端只露 2–3 mm</text>' +
+      '<path d="M246 48 L200 52 M246 92 L206 84 M246 146 L132 144" class="lead"/>' +
+      '</svg>';
+  }
+  function handsSVG() {
+    var L = [['1', '食指'], ['2', '中指'], ['3', '無名指'], ['4', '小指']], R = [['T', '拇指', '4–6 弦'], ['1', '食指', '3 弦'], ['2', '中指', '2 弦'], ['3', '無名指', '1 弦']];
+    var s = '<svg class="gfig" viewBox="0 0 520 190" role="img" aria-label="左右手的手指編號">';
+    s += '<text x="10" y="24" class="big">左手 按弦</text><text x="280" y="24" class="big">右手 撥弦（指法）</text>';
+    L.forEach(function (f, i) { var x = 30 + i * 58; s += '<circle cx="' + x + '" cy="80" r="22" class="acc"/><text x="' + x + '" y="86" class="n" style="font-size:18px">' + f[0] + '</text><text x="' + x + '" y="128" class="mid">' + f[1] + '</text>'; });
+    R.forEach(function (f, i) { var x = 300 + i * 60; s += '<circle cx="' + x + '" cy="80" r="22" class="metal"/><text x="' + x + '" y="86" class="n" style="font-size:18px">' + f[0] + '</text><text x="' + x + '" y="128" class="mid">' + f[1] + '</text><text x="' + x + '" y="152" class="mid en">' + f[2] + '</text>'; });
+    return s + '</svg>';
+  }
+  /* 演變：烏德琴 → 魯特琴 → 比維拉琴 → 四組弦 → 五組弦 → 六弦吉他 */
+  function evolutionSVG() {
+    var W = 170, items = [
+      ['烏德琴', 'Oud', function (x) { return '<path d="M' + x + ' 92 C' + (x - 46) + ' 92 ' + (x - 52) + ' 168 ' + x + ' 182 C' + (x + 52) + ' 168 ' + (x + 46) + ' 92 ' + x + ' 92 Z" class="wood"/><rect x="' + (x - 5) + '" y="44" width="10" height="52" class="wood2"/><path d="M' + (x - 5) + ' 46 L' + (x + 22) + ' 22 L' + (x + 28) + ' 28 L' + (x + 5) + ' 50 Z" class="wood2"/><circle cx="' + x + '" cy="132" r="8" class="hole"/>'; }],
+      ['魯特琴', 'Lute', function (x) { return '<path d="M' + x + ' 100 C' + (x - 42) + ' 100 ' + (x - 48) + ' 170 ' + x + ' 182 C' + (x + 48) + ' 170 ' + (x + 42) + ' 100 ' + x + ' 100 Z" class="wood3"/><rect x="' + (x - 5) + '" y="30" width="10" height="74" class="dark"/><path d="M' + (x - 5) + ' 32 L' + (x + 26) + ' 34 L' + (x + 26) + ' 42 L' + (x - 5) + ' 40 Z" class="wood2"/><circle cx="' + x + '" cy="138" r="10" fill="none" stroke="#7a4524" stroke-width="2" stroke-dasharray="2 2"/>'; }],
+      ['比維拉琴', 'Vihuela', function (x) { return '<path d="' + bodyPath(x, 100, 82, 46, 34, 56, 0.45) + '" class="wood3"/><rect x="' + (x - 5) + '" y="22" width="10" height="82" class="dark"/><rect x="' + (x - 8) + '" y="10" width="16" height="16" class="wood2"/><circle cx="' + (x - 10) + '" cy="124" r="5" class="hole"/><circle cx="' + (x + 10) + '" cy="124" r="5" class="hole"/>'; }],
+      ['四組弦吉他', 'Renaissance', function (x) { return '<path d="' + bodyPath(x, 112, 70, 40, 30, 50, 0.45) + '" class="wood"/><rect x="' + (x - 5) + '" y="52" width="10" height="64" class="dark"/><rect x="' + (x - 8) + '" y="38" width="16" height="16" class="wood2"/><circle cx="' + x + '" cy="138" r="7" class="hole"/>'; }],
+      ['五組弦吉他', 'Baroque', function (x) { return '<path d="' + bodyPath(x, 104, 78, 42, 30, 52, 0.45) + '" class="wood"/><rect x="' + (x - 5) + '" y="36" width="10" height="72" class="dark"/><rect x="' + (x - 8) + '" y="20" width="16" height="18" class="wood2"/><circle cx="' + x + '" cy="134" r="8" class="hole"/><circle cx="' + x + '" cy="134" r="11" fill="none" stroke="#e2c48f" stroke-width="1.5"/>'; }],
+      ['六弦吉他', 'Modern', function (x) { return '<path d="' + bodyPath(x, 92, 92, 52, 38, 66, 0.44) + '" class="wood3" stroke="#efe8d6" stroke-width="2"/><rect x="' + (x - 5) + '" y="26" width="10" height="70" class="dark"/><rect x="' + (x - 8) + '" y="6" width="16" height="22" class="wood2"/><circle cx="' + x + '" cy="125" r="10" class="hole"/>'; }]
+    ];
+    var s = '<svg class="gfig" viewBox="0 0 ' + (W * items.length) + ' 236" role="img" aria-label="吉他的演變：烏德琴、魯特琴、比維拉琴、四組弦吉他、五組弦吉他、六弦吉他">';
+    items.forEach(function (it, i) {
+      var x = W * i + W / 2;
+      s += it[2](x);
+      s += '<text x="' + x + '" y="210" class="mid big">' + it[0] + '</text><text x="' + x + '" y="230" class="mid en">' + it[1] + '</text>';
+      if (i < items.length - 1) s += '<path d="M' + (x + 62) + ' 140 h40 m-8 -6 l8 6 l-8 6" class="lead"/>';
+    });
+    return s + '</svg>';
+  }
+  var FIGS = { anatomy: mountAnatomy, bodies: mountBodies, evolution: function (n) { n.innerHTML = evolutionSVG(); },
+    sizes: function (n) { n.innerHTML = sizesHTML(); }, laminate: function (n) { n.innerHTML = laminateSVG(); },
+    bracing: function (n) { n.innerHTML = bracingSVG(); }, truss: function (n) { n.innerHTML = trussSVG(); },
+    tuning: function (n) { n.innerHTML = tuningSVG(); }, posture: function (n) { n.innerHTML = postureSVG(); },
+    pick: function (n) { n.innerHTML = pickSVG(); }, hands: function (n) { n.innerHTML = handsSVG(); } };
+  $$('[data-gfig]').forEach(function (n) {
+    var k = n.getAttribute('data-gfig');
+    if (FIGS[k]) FIGS[k](n);
+    else if (k.indexOf('family-') === 0) n.innerHTML = miniGuitar(FAMILY[k.slice(7)]);
+  });
 
   /* ---------- 和弦圖 ---------- */
   function diagram(key, opts) {
     var c = CHORDS[key], o = opts || {};
     var x0 = 22, dx = 16, y0 = 34, dy = 24, frets = 4, w = x0 * 2 + dx * 5, h = y0 + dy * frets + 14;
-    var s = '<svg class="chord-svg" viewBox="0 0 ' + w + ' ' + h + '" role="img" aria-label="' + c.zh + ' 和弦圖：' + describe(c) + '">';
+    var s = '<svg class="chord-svg" viewBox="0 0 ' + w + ' ' + h + '" role="img" aria-label="' + c.zh + ' 和弦圖">';
     s += '<rect x="' + x0 + '" y="' + (y0 - 4) + '" width="' + dx * 5 + '" height="4" class="nut"/>';
     for (var f = 1; f <= frets; f++) s += '<line x1="' + x0 + '" x2="' + (x0 + dx * 5) + '" y1="' + (y0 + dy * f) + '" y2="' + (y0 + dy * f) + '" class="fret"/>';
     for (var i = 0; i < 6; i++) s += '<line x1="' + (x0 + dx * i) + '" x2="' + (x0 + dx * i) + '" y1="' + y0 + '" y2="' + (y0 + dy * frets) + '" class="string" style="stroke-width:' + (1.8 - i * 0.2) + '"/>';
@@ -113,112 +338,79 @@
       if (fr < 0) s += '<text x="' + x + '" y="' + (y0 - 12) + '" class="mark">×</text>';
       else if (fr === 0) s += '<circle cx="' + x + '" cy="' + (y0 - 16) + '" r="4.5" class="open"/>';
       else {
-        var y = y0 + dy * (fr - 0.5);
-        if (!(c.barre && fr === c.barre.fret && i >= c.barre.from && i <= c.barre.to && i !== c.barre.from)) {
-          s += '<circle cx="' + x + '" cy="' + y + '" r="7" class="dot"/>';
-        }
-        if (!o.noFingers && c.fingers[i] && !(c.barre && i > c.barre.from && fr === c.barre.fret)) {
-          s += '<text x="' + x + '" y="' + (y + 3.6) + '" class="finger">' + c.fingers[i] + '</text>';
-        }
+        var y = y0 + dy * (fr - 0.5), inBarre = c.barre && fr === c.barre.fret && i > c.barre.from && i <= c.barre.to;
+        if (!inBarre) s += '<circle cx="' + x + '" cy="' + y + '" r="7" class="dot"/>';
+        if (!o.noFingers && c.fingers[i] && !inBarre) s += '<text x="' + x + '" y="' + (y + 3.6) + '" class="finger">' + c.fingers[i] + '</text>';
       }
     });
-    if (o.strings) {
-      for (var j = 0; j < 6; j++) s += '<text x="' + (x0 + dx * j) + '" y="' + (h - 1) + '" class="snum">' + (6 - j) + '</text>';
-    }
+    if (o.strings) for (var j = 0; j < 6; j++) s += '<text x="' + (x0 + dx * j) + '" y="' + (h - 1) + '" class="snum">' + (6 - j) + '</text>';
     return s + '</svg>';
   }
-  function describe(c) {
-    return c.frets.map(function (f, i) {
-      var n = (6 - i) + ' 弦';
-      return f < 0 ? n + '不彈' : f === 0 ? n + '空弦' : n + '第 ' + f + ' 格';
-    }).join('、');
-  }
-  $$('[data-diagram]').forEach(function (n) {
-    n.innerHTML = diagram(n.getAttribute('data-diagram'), { strings: n.hasAttribute('data-strings') });
-  });
-
-  /* ---------- 和弦卡 ---------- */
+  PS.guitar.diagram = diagram;
+  $$('[data-diagram]').forEach(function (n) { n.innerHTML = diagram(n.getAttribute('data-diagram'), { strings: n.hasAttribute('data-strings') }); });
   $$('[data-chord-cards]').forEach(function (root) {
-    Object.keys(CHORDS).forEach(function (k) {
+    var keys = (root.getAttribute('data-chord-cards') || 'C G Am F').split(/\s+/);
+    root.classList.add('chord-row');
+    root.innerHTML = keys.map(function (k) {
       var c = CHORDS[k];
-      var card = el('article', { class: 'card chord-card' },
-        '<div class="chord-head"><h3>' + c.name + '</h3><span class="degree">C 調 ' + c.degree + ' 級</span></div>' +
-        '<div class="chord-fig">' + diagram(k, { strings: true }) + '</div>' +
-        '<p class="chord-zh">' + c.zh + '</p><p>' + c.tip + '</p>' +
-        '<button type="button" class="btn small" data-hear="' + k + '">▶ 聽聽看</button>');
-      root.appendChild(card);
-    });
+      return '<div class="card chord-card"><div class="ch-head"><b>' + c.name + '</b><span>' + (c.degree ? 'C 調 ' + c.degree + ' 級' : '') + '</span></div><div class="fig">' + diagram(k, { strings: true }) + '</div><p>' + c.tip + '</p><button type="button" class="btn" data-hear="' + k + '">▶ 聽聽看</button></div>';
+    }).join('');
     root.addEventListener('click', function (e) {
-      var b = e.target.closest('[data-hear]'); if (!b) return;
-      var c = CHORDS[b.getAttribute('data-hear')], a = PS.audio.ctx(); if (!a) return;
-      PS.audio.strum(c.frets, a.currentTime + 0.02, 'down', { duration: 2.2, gap: 0.03 });
+      var b = e.target.closest('[data-hear]'), a = b && PS.audio.ctx(); if (!a) return;
+      PS.audio.strum(CHORDS[b.getAttribute('data-hear')].frets, a.currentTime + 0.02, 'down', { duration: 2.2, gap: 0.03 });
     });
   });
 
-  /* 一次只讓一個節拍器播放 */
+  /* ---------- 控制元件 ---------- */
   var active = null;
   function claim(stopFn) { if (active && active !== stopFn) active(); active = stopFn; }
-
-  function seg(root, name, options, current, onChange) {
+  document.addEventListener('slide:change', function () { if (active) active(); });
+  function seg(name, options, current, onChange) {
     var wrap = el('div', { class: 'seg', role: 'group', 'aria-label': name });
     options.forEach(function (op) {
       var b = el('button', { type: 'button', 'aria-pressed': String(op[0] === current) }, op[1]);
-      b.addEventListener('click', function () {
-        $$('button', wrap).forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
-        b.setAttribute('aria-pressed', 'true');
-        onChange(op[0]);
-      });
+      b.addEventListener('click', function () { $$('button', wrap).forEach(function (x) { x.setAttribute('aria-pressed', 'false'); }); b.setAttribute('aria-pressed', 'true'); onChange(op[0]); });
       wrap.appendChild(b);
     });
     return wrap;
   }
+  function field(label, node) { var f = el('span', { class: 'field' }, label); if (node) f.appendChild(node); return f; }
   function bpmField(min, max, value, onInput) {
-    var id = 'bpm-' + Math.random().toString(36).slice(2, 7);
-    var f = el('label', { class: 'field', for: id }, '速度 <input id="' + id + '" type="range" min="' + min + '" max="' + max + '" step="2" value="' + value + '"><output>' + value + '</output> BPM');
+    var f = el('label', { class: 'field' }, '速度 <input type="range" min="' + min + '" max="' + max + '" step="2" value="' + value + '" aria-label="速度 BPM"><output>' + value + '</output> BPM');
     var input = $('input', f), out = $('output', f);
     input.addEventListener('input', function () { out.textContent = input.value; onInput(+input.value); });
     return f;
   }
+  function toggle(label, on, onChange) {
+    var b = el('button', { type: 'button', class: 'btn gbtn', 'aria-pressed': String(on) }, label);
+    b.addEventListener('click', function () { on = !on; b.setAttribute('aria-pressed', String(on)); onChange(on); });
+    return b;
+  }
 
-  /* ---------- 換和弦練習 ---------- */
+  /* ---------- 換和弦練習器 ---------- */
   $$('[data-switch-trainer]').forEach(function (root) {
-    var prog = PROGRESSIONS[0], perChord = 4, bpm = 60, demo = true, startedAt = 0, changes = 0;
-    root.innerHTML =
-      '<div class="trainer-stage" aria-live="polite">' +
-        '<div class="now"><span class="label">現在</span><b class="name">C</b><div class="fig"></div></div>' +
-        '<div class="next"><span class="label">下一個</span><b class="name">G</b><div class="fig"></div></div>' +
-        '<div class="count"><span class="label">拍</span><div class="beats" aria-hidden="true"><i></i><i></i><i></i><i></i></div><p class="hint">按「開始」後先數一小節預備拍</p></div>' +
-      '</div><div class="controls"></div>';
-    var controls = $('.controls', root);
-    var startBtn = el('button', { type: 'button', class: 'btn primary' }, '開始');
-    controls.appendChild(startBtn);
-    controls.appendChild(bpmField(40, 120, bpm, function (v) { bpm = v; m.bpm = v; }));
-    controls.appendChild(el('span', { class: 'field' }, '和弦進行'));
-    controls.lastChild.appendChild(seg(root, '和弦進行', PROGRESSIONS.map(function (p) { return [p.id, p.label]; }), prog.id, function (id) {
-      prog = PROGRESSIONS.filter(function (p) { return p.id === id; })[0]; show(0, 0);
-    }));
-    controls.appendChild(el('span', { class: 'field' }, '每個和弦'));
-    controls.lastChild.appendChild(seg(root, '每個和弦拍數', [[4, '4 拍'], [2, '2 拍']], 4, function (v) { perChord = v; }));
-    var demoBtn = el('button', { type: 'button', class: 'btn small', 'aria-pressed': 'true' }, '示範撥弦');
-    demoBtn.addEventListener('click', function () { demo = !demo; demoBtn.setAttribute('aria-pressed', String(demo)); });
-    controls.appendChild(demoBtn);
-
-    var nowName = $('.now .name', root), nextName = $('.next .name', root), nowFig = $('.now .fig', root), nextFig = $('.next .fig', root);
-    var lights = $$('.beats i', root), hint = $('.hint', root);
+    var prog = PROGRESSIONS[0], perChord = 4, demo = true, startedAt = 0, changes = 0;
+    root.innerHTML = '<div class="trainer-stage" aria-live="polite"><div class="now"><span class="label">現在</span><b class="name">C</b><div class="fig"></div></div>' +
+      '<div class="next"><span class="label">下一個</span><b class="name">G</b><div class="fig"></div></div>' +
+      '<div class="count"><span class="label">拍</span><div class="beats" aria-hidden="true"><i></i><i></i><i></i><i></i></div><p class="hint">按「開始」後先數一小節預備拍</p></div></div><div class="gcontrols"></div>';
+    var c = $('.gcontrols', root), start = el('button', { type: 'button', class: 'btn primary' }, '開始');
+    c.appendChild(start);
+    c.appendChild(bpmField(40, 120, 60, function (v) { m.bpm = v; }));
+    c.appendChild(field('進行', seg('和弦進行', PROGRESSIONS.map(function (p) { return [p.id, p.label]; }), prog.id, function (id) { prog = PROGRESSIONS.filter(function (p) { return p.id === id; })[0]; show(0, -1); })));
+    c.appendChild(field('每個和弦', seg('每個和弦拍數', [[4, '4 拍'], [2, '2 拍']], 4, function (v) { perChord = v; })));
+    c.appendChild(toggle('示範撥弦', true, function (v) { demo = v; }));
+    var nowN = $('.now .name', root), nextN = $('.next .name', root), nowF = $('.now .fig', root), nextF = $('.next .fig', root), lights = $$('.beats i', root), hint = $('.hint', root);
     function show(i, beat) {
       var a = prog.seq[i % 4], b = prog.seq[(i + 1) % 4];
-      if (nowName.textContent !== a || !nowFig.innerHTML) { nowName.textContent = a; nowFig.innerHTML = diagram(a); }
-      if (nextName.textContent !== b || !nextFig.innerHTML) { nextName.textContent = b; nextFig.innerHTML = diagram(b, { noFingers: true }); }
+      if (nowN.textContent !== a || !nowF.innerHTML) { nowN.textContent = a; nowF.innerHTML = diagram(a); }
+      if (nextN.textContent !== b || !nextF.innerHTML) { nextN.textContent = b; nextF.innerHTML = diagram(b, { noFingers: true }); }
       lights.forEach(function (l, n) { l.className = n === beat ? 'on' + (n === 0 ? ' down' : '') : ''; });
     }
-    var m = new PS.audio.Metronome({
-      bpm: bpm, beats: 4, steps: 1,
-      onStep: function (step, time) {
-        if (step < 4 || !demo) return;
-        var k = step - 4;
-        if (k % perChord === 0) PS.audio.strum(CHORDS[prog.seq[Math.floor(k / perChord) % 4]].frets, time, 'down', { volume: 0.12 });
-      }
-    });
+    var m = new PS.audio.Metronome({ bpm: 60, beats: 4, steps: 1, onStep: function (step, time) {
+      if (step < 4 || !demo) return;
+      var k = step - 4;
+      if (k % perChord === 0) PS.audio.strum(CHORDS[prog.seq[Math.floor(k / perChord) % 4]].frets, time, 'down', { volume: 0.12 });
+    } });
     m.onVisual = function (step) {
       if (step < 4) { hint.textContent = '預備 ' + (4 - step); show(0, step); return; }
       var k = step - 4, idx = Math.floor(k / perChord);
@@ -228,192 +420,124 @@
     };
     function stop() {
       if (!m.running) return;
-      m.stop();
-      startBtn.textContent = '開始';
+      m.stop(); start.textContent = '開始';
       lights.forEach(function (l) { l.className = ''; });
       var secs = Math.round((Date.now() - startedAt) / 1000);
       hint.textContent = '剛才練了 ' + secs + ' 秒、換了 ' + changes + ' 次和弦';
-      if (secs >= 5) course.log(lesson, 'chord-switch', { progression: prog.label, bpm: m.bpm, beatsPerChord: perChord, seconds: secs, changes: changes });
+      if (secs >= 5) report(root, 'interaction', { item: '換和弦練習 ' + prog.label, result: m.bpm + ' BPM・每和弦 ' + perChord + ' 拍・' + secs + ' 秒・換 ' + changes + ' 次', value: changes });
     }
-    startBtn.addEventListener('click', function () {
-      if (m.running) return stop();
-      claim(stop);
-      changes = 0; startedAt = Date.now();
-      if (m.start()) startBtn.textContent = '停止';
-    });
+    start.addEventListener('click', function () { if (m.running) return stop(); claim(stop); changes = 0; startedAt = Date.now(); if (m.start()) start.textContent = '停止'; });
     show(0, -1);
   });
 
-  /* ---------- 刷奏型態（靜態格子） ---------- */
-  function arrow(cell) {
-    var ghost = cell === 'd' || cell === 'u', up = cell === 'U' || cell === 'u';
-    return '<span class="arrow' + (ghost ? ' ghost' : '') + '" aria-label="' + (ghost ? '空刷' : up ? '上刷' : '下刷') + '">' + (up ? '↑' : '↓') + '</span>';
-  }
+  /* ---------- 刷奏播放器 ---------- */
   function grid(key) {
-    var p = PATTERNS[key], s = '<div class="strum-grid" role="list">';
-    p.cells.forEach(function (c, i) {
-      s += '<div class="cell' + (i % 2 ? ' off' : '') + (c === 'u' || c === 'd' ? ' is-ghost' : '') + '" role="listitem">' + arrow(c) + '<span class="cnt">' + COUNTS[i] + '</span></div>';
-    });
-    return s + '</div>';
+    return '<div class="strum-grid" role="list">' + PATTERNS[key].cells.map(function (c, i) {
+      var ghost = c === 'd' || c === 'u', up = c === 'U' || c === 'u';
+      return '<div class="cell' + (i % 2 ? ' off' : '') + '" role="listitem"><span class="arrow' + (ghost ? ' ghost' : '') + '" aria-label="' + (ghost ? '空刷' : up ? '上刷' : '下刷') + '">' + (up ? '↑' : '↓') + '</span><span class="cnt">' + COUNTS[i] + '</span></div>';
+    }).join('') + '</div>';
   }
   $$('[data-pattern-grid]').forEach(function (n) { n.innerHTML = grid(n.getAttribute('data-pattern-grid')); });
-
-  /* ---------- 刷奏播放器 ---------- */
   $$('[data-strum-player]').forEach(function (root) {
-    var key = 'A', bpm = 70, chordMode = 'prog', guitar = true, startedAt = 0, bars = 0;
-    root.innerHTML = '<div class="player-stage"><div class="player-top"><b class="pname"></b><span class="pchord" aria-live="polite">C</span></div><div class="pgrid"></div><p class="pdesc"></p></div><div class="controls"></div>';
-    var controls = $('.controls', root), pgrid = $('.pgrid', root), pchord = $('.pchord', root);
-    function render() {
-      $('.pname', root).textContent = PATTERNS[key].name;
-      $('.pdesc', root).textContent = PATTERNS[key].desc;
-      pgrid.innerHTML = grid(key);
-    }
-    var startBtn = el('button', { type: 'button', class: 'btn primary' }, '開始');
-    controls.appendChild(startBtn);
-    controls.appendChild(bpmField(50, 120, bpm, function (v) { bpm = v; m.bpm = v; }));
-    controls.appendChild(el('span', { class: 'field' }, '刷法'));
-    controls.lastChild.appendChild(seg(root, '刷法', [['A', '8 Beats'], ['B', '切分']], 'A', function (v) { key = v; render(); }));
-    controls.appendChild(el('span', { class: 'field' }, '和弦'));
-    controls.lastChild.appendChild(seg(root, '和弦', [['prog', 'C G Am F'], ['C', '只彈 C']], 'prog', function (v) { chordMode = v; }));
-    var gBtn = el('button', { type: 'button', class: 'btn small', 'aria-pressed': 'true' }, '吉他示範');
-    gBtn.addEventListener('click', function () { guitar = !guitar; gBtn.setAttribute('aria-pressed', String(guitar)); });
-    controls.appendChild(gBtn);
-
-    function chordAt(step) {
-      if (chordMode === 'C') return 'C';
-      return ['C', 'G', 'Am', 'F'][Math.floor(Math.max(0, step - 8) / 8) % 4];
-    }
-    var m = new PS.audio.Metronome({
-      bpm: bpm, beats: 4, steps: 2, clickSub: false,
-      onStep: function (step, time) {
-        if (step < 8 || !guitar) return;
-        var cell = PATTERNS[key].cells[step % 8];
-        if (cell === 'D' || cell === 'U') {
-          PS.audio.strum(CHORDS[chordAt(step)].frets, time, cell === 'D' ? 'down' : 'up', { volume: step % 2 ? 0.1 : 0.14, duration: 0.5 });
-        }
-      }
-    });
+    var keys = (root.getAttribute('data-strum-player') || 'A B').split(/\s+/), key = keys[0];
+    var chordSets = { prog: ['C', 'G', 'Am', 'F'], C: ['C'], open: ['open'], Em: ['Em'] };
+    var modes = (root.getAttribute('data-chords') || 'prog C').split(/\s+/), mode = modes[0];
+    var guitar = true, startedAt = 0, bars = 0;
+    root.innerHTML = '<div class="card"><div class="player-top"><b class="pname"></b><span class="pchord" aria-live="polite"></span></div><div class="pgrid"></div><p class="pdesc"></p><div class="gcontrols"></div></div>';
+    var c = $('.gcontrols', root), pgrid = $('.pgrid', root), pchord = $('.pchord', root);
+    function chordAt(step) { var set = chordSets[mode]; return set[Math.floor(Math.max(0, step - 8) / 8) % set.length]; }
+    function render() { $('.pname', root).textContent = PATTERNS[key].name; $('.pdesc', root).textContent = PATTERNS[key].desc; pgrid.innerHTML = grid(key); pchord.textContent = CHORDS[chordAt(8)].name; }
+    var start = el('button', { type: 'button', class: 'btn primary' }, '開始');
+    c.appendChild(start);
+    c.appendChild(bpmField(50, 120, +(root.getAttribute('data-bpm') || 70), function (v) { m.bpm = v; }));
+    if (keys.length > 1) c.appendChild(field('刷法', seg('刷法', keys.map(function (k) { return [k, { Q: '四分', A: '8 Beats', B: '切分' }[k]]; }), key, function (v) { key = v; render(); })));
+    var LABEL = { prog: 'C G Am F', C: '只彈 C', open: '空弦', Em: 'Em' };
+    if (modes.length > 1) c.appendChild(field('和弦', seg('和弦', modes.map(function (k) { return [k, LABEL[k]]; }), mode, function (v) { mode = v; render(); })));
+    c.appendChild(toggle('吉他示範', true, function (v) { guitar = v; }));
+    var m = new PS.audio.Metronome({ bpm: +(root.getAttribute('data-bpm') || 70), beats: 4, steps: 2, onStep: function (step, time) {
+      if (step < 8 || !guitar) return;
+      var cell = PATTERNS[key].cells[step % 8];
+      if (cell === 'D' || cell === 'U') PS.audio.strum(CHORDS[chordAt(step)].frets, time, cell === 'D' ? 'down' : 'up', { volume: step % 2 ? 0.1 : 0.14, duration: 0.5 });
+    } });
     m.onVisual = function (step) {
-      var cells = $$('.cell', pgrid);
-      cells.forEach(function (c, i) { c.classList.toggle('now', step >= 8 && i === step % 8); });
+      $$('.cell', pgrid).forEach(function (n, i) { n.classList.toggle('now', step >= 8 && i === step % 8); });
       if (step < 8) { pchord.textContent = step % 2 ? '' : '預備 ' + (4 - step / 2); return; }
       if (step % 8 === 0) bars++;
-      pchord.textContent = chordAt(step);
+      pchord.textContent = CHORDS[chordAt(step)].name;
     };
     function stop() {
       if (!m.running) return;
-      m.stop();
-      startBtn.textContent = '開始';
-      $$('.cell', pgrid).forEach(function (c) { c.classList.remove('now'); });
-      pchord.textContent = chordAt(8);
+      m.stop(); start.textContent = '開始';
+      $$('.cell', pgrid).forEach(function (n) { n.classList.remove('now'); });
+      pchord.textContent = CHORDS[chordAt(8)].name;
       var secs = Math.round((Date.now() - startedAt) / 1000);
-      if (secs >= 5) course.log(lesson, 'strum-play', { pattern: key, bpm: m.bpm, chords: chordMode, seconds: secs, bars: bars });
+      if (secs >= 5) report(root, 'interaction', { item: '刷奏 ' + PATTERNS[key].name, result: m.bpm + ' BPM・' + bars + ' 小節', value: bars });
     }
-    startBtn.addEventListener('click', function () {
-      if (m.running) return stop();
-      claim(stop);
-      bars = 0; startedAt = Date.now();
-      if (m.start()) startBtn.textContent = '停止';
-    });
+    start.addEventListener('click', function () { if (m.running) return stop(); claim(stop); bars = 0; startedAt = Date.now(); if (m.start()) start.textContent = '停止'; });
     render();
   });
 
-  /* ---------- 錄音 ---------- */
-  $$('[data-recorder]').forEach(function (root) {
-    var max = +root.getAttribute('data-max') || 60;
-    root.classList.add('recorder');
-    if (!PS.audio.Recorder.supported() || !window.isSecureContext) {
-      root.innerHTML = '<p class="note">這個瀏覽器無法在網頁上錄音，或網頁不是用 https 開啟。可以改用手機內建的錄音 App。</p>';
-      return;
+  /* ---------- 調音器（麥克風） ---------- */
+  function detect(buf, sr) {
+    var n = buf.length, rms = 0, i;
+    for (i = 0; i < n; i++) rms += buf[i] * buf[i];
+    if (Math.sqrt(rms / n) < 0.012) return -1;
+    var minLag = Math.floor(sr / 420), maxLag = Math.floor(sr / 70), best = -1, bestC = 0, c = new Float32Array(maxLag + 2);
+    for (var lag = minLag; lag <= maxLag + 1; lag++) {
+      var s = 0, e1 = 0, e2 = 0;
+      for (i = 0; i < n - lag; i++) { s += buf[i] * buf[i + lag]; e1 += buf[i] * buf[i]; e2 += buf[i + lag] * buf[i + lag]; }
+      c[lag] = s / Math.sqrt(e1 * e2 || 1);
     }
-    root.innerHTML = '<div class="row"><button type="button" class="btn primary rec">● 開始錄音</button><span class="status">最長 ' + max + ' 秒；錄音只留在這台裝置，不會上傳</span></div><div class="out"></div>';
-    var btn = $('.rec', root), status = $('.status', root), out = $('.out', root), r = null, timer = null, url = null;
-    function finish() {
-      clearInterval(timer);
-      r.stop().then(function (res) {
-        btn.textContent = '● 重新錄音';
-        status.classList.remove('live');
-        if (!res) return;
-        if (url) URL.revokeObjectURL(url);
-        url = res.url;
-        status.textContent = '錄好了，共 ' + res.seconds + ' 秒';
-        var ext = /mp4/.test(res.type) ? 'm4a' : /ogg/.test(res.type) ? 'ogg' : 'webm';
-        out.innerHTML = '<div class="row"><audio controls src="' + url + '"></audio><a class="btn small" download="guitar-lab-練習錄音.' + ext + '" href="' + url + '">下載</a></div>';
-        course.log(lesson, 'recording', { seconds: res.seconds });
-        r = null;
-      });
-    }
-    btn.addEventListener('click', function () {
-      if (r) return finish();
-      r = new PS.audio.Recorder();
-      r.start().then(function () {
-        var t = 0;
-        btn.textContent = '■ 停止';
-        status.classList.add('live');
-        status.textContent = '錄音中 0 秒';
-        timer = setInterval(function () {
-          t++; status.textContent = '錄音中 ' + t + ' 秒';
-          if (t >= max) finish();
-        }, 1000);
-      }).catch(function () {
-        r = null;
-        status.textContent = '沒有取得麥克風權限。請在瀏覽器網址列允許麥克風後再試一次。';
-      });
-    });
-  });
-
-  /* ---------- 練習卡 ---------- */
-  function progressOf(lessonId) {
-    var items = CHECKLISTS[lessonId] || [], st = course.state(lessonId, 'checklist') || {};
-    var done = items.filter(function (it) { return st[it[0]]; }).length;
-    return { done: done, total: items.length };
+    for (lag = minLag + 1; lag <= maxLag; lag++) if (c[lag] > 0.85 && c[lag] >= c[lag - 1] && c[lag] >= c[lag + 1]) { best = lag; bestC = c[lag]; break; }
+    if (best < 0) return -1;
+    var a = c[best - 1], b = c[best], d = c[best + 1], shift = (a - d) / (2 * (a - 2 * b + d) || 1);
+    return sr / (best + shift);
   }
-  PS.guitar.progressOf = progressOf;
-  $$('[data-checklist]').forEach(function (root) {
-    var id = root.getAttribute('data-checklist'), items = CHECKLISTS[id] || [], st = course.state(id, 'checklist') || {};
-    var bar = $('[data-checklist-bar="' + id + '"]'), label = $('[data-checklist-label="' + id + '"]');
-    root.innerHTML = items.map(function (it) {
-      return '<li><label><input type="checkbox" value="' + it[0] + '"' + (st[it[0]] ? ' checked' : '') + '><span>' + it[1] + (it[2] ? '<small>' + it[2] + '</small>' : '') + '</span></label></li>';
-    }).join('');
-    function update() {
-      var p = progressOf(id);
-      if (bar) bar.style.width = (p.total ? p.done / p.total * 100 : 0) + '%';
-      if (label) label.textContent = p.done + ' / ' + p.total;
+  $$('[data-tuner]').forEach(function (root) {
+    root.classList.add('tuner');
+    root.innerHTML = '<div class="strings">' + OPEN.map(function (o, i) { return '<button type="button" data-s="' + i + '"><b>' + o.n + '</b><small>' + (6 - i) + ' 弦・' + o.n + o.o + '</small></button>'; }).join('') + '</div>' +
+      '<div class="dial"><span class="read">—</span><span class="cents"></span><i class="zone"></i><i class="scale"></i><i class="needle"></i><span class="lbl l">太低 ♭</span><span class="lbl r">太高 ♯</span></div>' +
+      '<div class="row" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button type="button" class="btn primary mic">🎙 開始調音</button><button type="button" class="btn ref">▶ 播放參考音</button><span class="msg">選一條弦，先聽參考音，再按「開始調音」撥那條空弦。</span></div>';
+    var cur = 0, stream = null, raf = 0, an = null, buf = null, okSince = 0, done = {};
+    var needle = $('.needle', root), read = $('.read', root), cents = $('.cents', root), msg = $('.msg', root), micBtn = $('.mic', root);
+    function pick(i) { cur = i; $$('.strings button', root).forEach(function (b, k) { b.classList.toggle('on', k === i); }); }
+    root.addEventListener('click', function (e) { var b = e.target.closest('[data-s]'); if (b) pick(+b.getAttribute('data-s')); });
+    $('.ref', root).addEventListener('click', function () {
+      var a = PS.audio.ctx(); if (!a) return;
+      var f = [-1, -1, -1, -1, -1, -1]; f[cur] = 0;
+      PS.audio.strum(f, a.currentTime + 0.02, 'down', { duration: 2.5, volume: 0.35 });
+    });
+    function stop() { cancelAnimationFrame(raf); if (stream) stream.getTracks().forEach(function (t) { t.stop(); }); stream = null; micBtn.textContent = '🎙 開始調音'; }
+    var lastT = 0;
+    function loop(now) {
+      raf = requestAnimationFrame(loop);
+      if (now - lastT < 50) return; // 約每秒 20 次，手機也不吃力
+      lastT = now;
+      an.getFloatTimeDomainData(buf);
+      var f = detect(buf, an.context.sampleRate), target = OPEN[cur].f;
+      if (f > 0) {
+        // 允許撥成高、低八度時仍對到目標弦
+        while (f > target * 1.414) f /= 2; while (f < target / 1.414) f *= 2;
+        var ce = Math.round(1200 * Math.log2(f / target)), ok = Math.abs(ce) <= 5;
+        needle.style.left = Math.max(8, Math.min(92, 50 + ce * 0.84)) + '%';
+        needle.classList.toggle('ok', ok);
+        read.textContent = OPEN[cur].n + (ok ? ' ✓' : ce < 0 ? ' 偏低' : ' 偏高');
+        cents.textContent = (ce > 0 ? '+' : '') + ce + ' cents・' + f.toFixed(1) + ' Hz';
+        msg.textContent = ok ? '準了！保持一下…' : ce < 0 ? '太低：旋鈕慢慢轉緊（音會變高）' : '太高：先轉鬆到低於目標，再慢慢轉緊上來';
+        if (ok) { if (!okSince) okSince = Date.now(); else if (Date.now() - okSince > 700 && !done[cur]) { done[cur] = 1; $$('.strings button', root)[cur].classList.add('ok'); report(root, 'interaction', { item: '調音 ' + (6 - cur) + ' 弦', result: '完成', value: 1 }); if (cur < 5) pick(cur + 1); okSince = 0; } }
+        else okSince = 0;
+      }
     }
-    root.addEventListener('change', function (e) {
-      if (!e.target.matches('input')) return;
-      st[e.target.value] = e.target.checked ? new Date().toISOString() : false;
-      course.state(id, 'checklist', st);
-      course.log(id, 'checklist', { item: e.target.value, done: e.target.checked });
-      update();
+    micBtn.addEventListener('click', function () {
+      if (stream) return stop();
+      if (!navigator.mediaDevices || !window.isSecureContext) { msg.textContent = '需要用 https 開啟並允許麥克風。也可以改用手機調音 App。'; return; }
+      var a = PS.audio.ctx();
+      navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } }).then(function (s) {
+        stream = s; an = a.createAnalyser(); an.fftSize = 2048; buf = new Float32Array(an.fftSize);
+        a.createMediaStreamSource(s).connect(an);
+        claim(stop); micBtn.textContent = '■ 停止調音'; raf = requestAnimationFrame(loop);
+      }).catch(function () { msg.textContent = '沒有取得麥克風權限。請在網址列允許麥克風後再試一次。'; });
     });
-    update();
+    pick(0);
   });
-
-  /* ---------- 首頁：12 章課綱、進度與紀錄 ---------- */
-  $$('[data-chapters]').forEach(function (root) {
-    var part = root.getAttribute('data-chapters');
-    CHAPTERS.filter(function (c) { return c.part === part; }).forEach(function (c) {
-      var id = 'ch' + (c.n < 10 ? '0' : '') + c.n, p = progressOf(id), ready = !!c.href;
-      var status = !ready ? '製作中' : p.done ? '練習卡 ' + p.done + ' / ' + p.total : '可以開始';
-      var inner =
-        '<div class="ch-top"><span class="ch-num">' + (c.n < 10 ? '0' : '') + c.n + '</span><span class="tag' + (ready ? ' on' : '') + '">' + (ready ? '試教版' : '製作中') + '</span></div>' +
-        '<h3>' + c.title + '</h3><p class="ch-en">' + c.en + '</p>' +
-        '<ul class="ch-topics">' + c.topics.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul>' +
-        (ready ? '<div class="progress" aria-hidden="true"><span style="width:' + (p.total ? p.done / p.total * 100 : 0) + '%"></span></div>' : '') +
-        '<p class="ch-status">' + status + '・120 分鐘</p>';
-      root.appendChild(ready ? el('a', { class: 'card chapter', href: c.href }, inner) : el('article', { class: 'card chapter muted' }, inner));
-    });
-  });
-  $$('[data-agenda]').forEach(function (root) {
-    root.innerHTML = AGENDA.map(function (a) {
-      return '<li style="flex:' + a[1] + '"><b>' + a[1] + '</b><span>' + a[0] + '</span></li>';
-    }).join('');
-  });
-  $$('[data-records-summary]').forEach(function (n) {
-    var recs = course.records(), mins = 0;
-    recs.forEach(function (r) { mins += (r.data && r.data.seconds) || 0; });
-    n.innerHTML = '<b>' + recs.length + '</b> 筆紀錄・共練習 <b>' + Math.round(mins / 60) + '</b> 分鐘・梯次 <code>' + course.cohortId + '</code>';
-  });
-  $$('[data-export]').forEach(function (b) { b.addEventListener('click', function () { course.exportJSON(); }); });
-})(window.PS);
+})(window.PS = window.PS || {});

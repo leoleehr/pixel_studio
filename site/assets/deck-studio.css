@@ -1,0 +1,47 @@
+/* Shared studio palette; lesson colors retain their teaching roles. */
+:root{--bg:#101210;--paper:#141912;--card:#1c2319;--card-2:#252d20;--ink:#f1f0e8;--muted:#aab2a2;--faint:#929c88;--accent:#C7AF4A;--amber:var(--accent);--line:rgba(237,241,225,.13);--line-2:rgba(237,241,225,.23);--frame:rgba(237,241,225,.2);--r-lg:6px;--r:4px;--r-sm:3px}
+body::before{display:none}
+.slide{background:radial-gradient(ellipse at 90% 0%,rgba(var(--accent-rgb,199,175,74),0.03),transparent 60%),#141912}
+.slide::before{height:2px}
+.cover::after{opacity:.12}
+.ui{background:#141912ed}
+.appbar{background:#101210f5}
+.pb-box{background:#181c17;border-color:var(--line-2);border-radius:6px}.pb-save{background:var(--amber);color:#17200f}.pb-chip svg{color:var(--amber);background:rgba(var(--accent-rgb,199,175,74),0.06)}.pb-chip.icon.empty svg{box-shadow:0 0 0 2px rgba(var(--accent-rgb,199,175,74),0.44)}
+::selection{background:var(--accent,#C7AF4A);color:#101210}
+:focus-visible{outline:2px solid var(--amber);outline-offset:4px}
+@media(max-width:900px),(orientation:portrait) and (max-width:1100px){
+  .slide{overflow-wrap:anywhere}
+  .appbar .ab-progress{background:var(--amber)}
+  .slide-meta{border-color:var(--line)}
+  .kicker{overflow-wrap:anywhere}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+@media(max-width:480px){.six{grid-template-columns:1fr!important}.six>div{justify-self:center}.six .venn{zoom:.9}}
+
+/* 起承轉合流程圖與課表色塊：刷淡（降低飽和度），白字對比維持在原本水準以上 */
+.bar-qi{background:#52699f}.bar-cheng{background:#cdc57a;color:#1f1d0c!important}.bar-rest{background:#3b3b43}.bar-zhuan{background:#b05a4d}.bar-he{background:#5c8456}
+.bar-teal{background:#4f8297}.bar-orange{background:#a77b48}.bar-pink{background:#9c5a70}.bar-purple{background:#7b62a0}
+
+/* 投影片頁尾：左下章節、右下刷淡 Logo */
+.slide-chapter{position:absolute;left:40px;bottom:26px;font-size:13px;color:var(--faint);letter-spacing:.08em;pointer-events:none}
+.slide-brand{pointer-events:none}
+.slide-brand img{height:15px;width:auto;opacity:.42;display:block}
+@media (max-width:900px),(orientation:portrait) and (max-width:1100px){.slide-chapter{display:none}}
+@media print{.slide-chapter,.slide-brand{display:none}}
+.slide-brand img{height:34px;opacity:.38;margin:-10px -14px -10px 0} /* 白色單色橫式標誌（SVG 含安全邊距） */
+
+/* 封面：Rebranding 聲波主視覺 */
+.cover::after{display:none}
+.cover>*:not(.cover-art):not(.cover-sig){position:relative;z-index:1;max-width:620px}
+.cover-art{position:absolute;right:40px;top:50%;width:560px;height:560px;transform:translateY(-50%);pointer-events:none;z-index:0}
+.cover-art img{position:relative;width:100%;height:100%;display:block;animation:ca-float 9s ease-in-out infinite}
+.ca-glow{position:absolute;inset:14%;border-radius:50%;background:radial-gradient(circle,rgba(110,90,220,.28),rgba(69,179,230,.12) 45%,transparent 70%);filter:blur(30px);animation:ca-breathe 9s ease-in-out infinite}
+@keyframes ca-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes ca-breathe{0%,100%{opacity:.7}50%{opacity:1}}
+.cover-sig{position:absolute;right:56px;bottom:40px;width:118px;height:auto;opacity:.55;z-index:1}
+.cover .kicker{letter-spacing:.14em}
+@media (prefers-reduced-motion:reduce){.cover-art img,.ca-glow{animation:none}}
+@media (max-width:900px),(orientation:portrait) and (max-width:1100px){
+  .cover-art{position:relative;right:auto;top:auto;transform:none;width:200px;height:200px;margin:-8px 0 4px -16px}
+  .cover-sig{display:none}
+}
