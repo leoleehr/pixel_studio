@@ -286,3 +286,30 @@
 .capo-list li{font-size:18px;padding:6px 10px;background:var(--surface);border-radius:var(--r-sm,3px)}
 .capo-list small{color:var(--faint)}
 @media (max-width:900px){.capo{grid-template-columns:1fr}}
+
+/* 曲式色塊 */
+.form-row{display:flex;gap:4px;height:96px}
+.form-row>div{display:flex;flex-direction:column;justify-content:center;padding:0 12px;border-radius:var(--r-sm,3px);color:#fff;min-width:0}
+.form-row b{font-size:20px;white-space:nowrap}
+.form-row small{font-size:13px;opacity:.9;white-space:nowrap}
+.f-intro{background:#33333b}.f-verse{background:#2f5fc4}.f-pre{background:#8a4fc0}.f-chorus{background:#e8412b}.f-inter{background:#45b3e6}.f-bridge{background:#d6cf2c;color:#1a1800!important}.f-outro{background:#4f9e3a}
+.rubric td:first-child{white-space:nowrap}
+@media (max-width:900px){.form-row{flex-wrap:wrap;height:auto}.form-row>div{flex:1 1 30%!important;padding:10px}}
+.gfig.tab .ttech{font:700 12px "Space Grotesk",Arial,sans-serif;fill:var(--accent)}
+
+/* 手機：投影片裡用 style 指定欄數的版面一律收成窄欄 */
+.seg{flex-wrap:wrap}
+@media (max-width:900px){
+  .slide .grid2[style]{grid-template-columns:1fr!important}
+  .slide .grid2[style] .grid2[style]{grid-template-columns:repeat(2,1fr)!important}
+  .slide .chord-row[style],.slide .chord-row{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .slide .steps[style]{grid-template-columns:1fr 1fr!important}
+  .slide .cards-mini[style]{grid-template-columns:1fr!important}
+  .chart{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:480px){
+  .meters{grid-template-columns:1fr}
+  .slide .steps[style]{grid-template-columns:1fr!important}
+  .pill-row{flex-wrap:wrap}
+  .pill{white-space:normal}
+}

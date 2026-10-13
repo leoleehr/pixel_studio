@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>曲式分析與期中彈唱｜第六章｜Guitar Lab</title>
+<meta name="description" content="Pixel Studio Guitar Lab 第六章課堂投影片：流行歌曲曲式、各段落的角色與伴奏設計、Capo 原理與換算、整首歌的編排、舞台技巧、期中彈唱發表與互評。">
+<link rel="icon" href="../../assets/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="../../assets/favicon.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/favicon-192.png?v=2">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#101210">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/deck.css?v=20261014g">
+<link rel="stylesheet" href="../../assets/interact.css?v=20261014g">
+<link rel="stylesheet" href="../../assets/backend.css?v=20261014g">
+<link rel="stylesheet" href="../../assets/responsive.css?v=20261014g">
+<link rel="stylesheet" href="../../assets/deck-studio.css?v=20261014g">
+<link rel="stylesheet" href="../theme.css?v=20261014g">
+</head>
+<body data-title="第六章｜曲式分析與期中彈唱" data-course="guitar" data-lesson="ch06" data-home="../index.html#lessons">
+<div class="progress" id="progress"></div>
+<main class="deck" id="deck">
+<div class="stage" id="stage">
+<!-- 1 封面 -->
+<section class="slide cover">
+  <div class="kicker">Pixel Studio Guitar Lab｜民謠吉他　第六章</div>
+  <h1>曲式分析與期中彈唱</h1>
+  <p class="lead">Song Form · Capo · Showcase</p>
+  <p class="meta">主講：畫素音樂工作坊　李奕勳<br>musicallanding@gmail.com</p>
+</section>
+
+<!-- 2 路線 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>手機同步</div>
+  <div class="kicker">Today · 120 Minutes</div>
+  <h2>今天的路線：把一首歌完整彈完</h2>
+  <div class="timeline">
+    <div class="bar-qi" style="flex:20"><b>起</b><small>選歌分享、聽段落｜20 分</small></div>
+    <div class="bar-cheng" style="flex:35"><b>承</b><small>曲式、Capo、段落設計｜35 分</small></div>
+    <div class="bar-rest" style="flex:10"><b>休</b><small>10 分</small></div>
+    <div class="bar-zhuan" style="flex:35"><b>轉</b><small>排練、舞台技巧｜35 分</small></div>
+    <div class="bar-he" style="flex:20"><b>合</b><small>期中彈唱發表｜20 分</small></div>
+  </div>
+  <div class="split wide">
+    <ul class="clean compact">
+      <li>分得出前奏、主歌、導歌、副歌、橋段、間奏、尾奏</li>
+      <li>會用 Capo 把歌移到歌手唱得舒服的調</li>
+      <li>替每個段落選伴奏型：主歌輕、副歌滿</li>
+      <li>完成期中彈唱，並給同學一個讚美、一個建議</li>
+    </ul>
+    <div class="qr" data-href="self"></div>
+  </div>
+</section>
+
+<!-- 3 選歌分享 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>舉手計票</div>
+  <div class="kicker"><span class="tag t-qi">起</span>00:00–00:20　期中選歌</div>
+  <h2>你選了哪一首？</h2>
+  <div class="split">
+    <div>
+      <ul class="clean compact">
+        <li>每人用一句話介紹期中曲目：為什麼選它</li>
+        <li>老師依課前問卷，確認每首歌的和弦與調</li>
+        <li>太難的和弦，老師會給簡化版本</li>
+      </ul>
+      <div class="card" style="margin-top:16px"><p>選歌原則：<b class="c-gold">和弦你已經會、調你唱得到、節奏你刷得出來</b>。期中不是比難，是比完整。</p></div>
+    </div>
+    <div>
+      <p class="muted" style="font-size:18px;margin-bottom:10px">期中發表的形式</p>
+      <div class="poll" data-id="g06-form" data-options="個人彈唱|兩人一組（一彈一唱）|小組合奏|還在決定"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 預測 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>先預測再揭曉</div>
+  <div class="kicker"><span class="tag t-qi">起</span>想一想</div>
+  <h2>一首歌最讓人記住的，通常是哪一段？</h2>
+  <div class="split">
+    <div class="quiz" data-answer="3">
+      <p class="q">聽完一首新歌，你最可能哼出來的是？</p>
+      <ol><li>前奏</li><li>主歌</li><li>副歌</li><li>尾奏</li></ol>
+      <div class="why">副歌通常放著整首歌最抓耳的旋律與歌詞，也就是「Hook」。伴奏要在副歌給它最多的能量。</div>
+    </div>
+    <div class="card"><h3>原講義的話</h3><p>彈奏一陣子之後，你會發現很多歌的結構都很像。看懂結構，就能用同一套方法彈不同的歌。</p></div>
+  </div>
+</section>
+
+<!-- 5 曲式 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">承</span>00:20–00:55　第五章、流行歌曲曲式分析</div>
+  <h2 style="margin-bottom:14px">一首流行歌的地圖</h2>
+  <div class="form-row">
+    <div class="f-intro" style="flex:6"><b>前奏</b><small>Intro</small></div>
+    <div class="f-verse" style="flex:12"><b>主歌 A</b><small>Verse</small></div>
+    <div class="f-pre" style="flex:6"><b>導歌</b><small>Pre-chorus</small></div>
+    <div class="f-chorus" style="flex:14"><b>副歌 B</b><small>Chorus</small></div>
+    <div class="f-inter" style="flex:6"><b>間奏</b><small>Interlude</small></div>
+    <div class="f-verse" style="flex:10"><b>主歌 A</b><small>Verse</small></div>
+    <div class="f-chorus" style="flex:12"><b>副歌 B</b><small>Chorus</small></div>
+    <div class="f-bridge" style="flex:8"><b>橋段 C</b><small>Bridge</small></div>
+    <div class="f-chorus" style="flex:12"><b>副歌 B</b><small>×2</small></div>
+    <div class="f-outro" style="flex:6"><b>尾奏</b><small>Outro</small></div>
+  </div>
+  <div class="cards-mini" style="margin-top:16px">
+    <div class="card"><h3 class="c-navy">A 主歌</h3><p>說故事：旋律較低、歌詞多，每次歌詞不同。</p></div>
+    <div class="card"><h3 class="c-red">B 副歌</h3><p>說重點：旋律最高、最好記，歌詞重複出現。</p></div>
+    <div class="card"><h3 class="c-gold">C 橋段</h3><p>轉個彎：和弦與旋律換個方向，讓最後的副歌更有力。</p></div>
+  </div>
+</section>
+
+<!-- 6 各段伴奏 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">承</span>段落的伴奏設計</div>
+  <h2 style="margin-bottom:14px">主歌讓位給歌手，副歌把能量放出來</h2>
+  <table>
+    <tr><th>段落</th><th>任務</th><th>建議伴奏</th></tr>
+    <tr><td><b>前奏</b></td><td>告訴大家速度與調</td><td>四分音符下刷，或副歌和弦彈一輪</td></tr>
+    <tr><td><b>主歌</b></td><td>讓歌詞被聽清楚</td><td>蹦洽拉、四分音符，音量小一點</td></tr>
+    <tr><td><b>導歌</b></td><td>慢慢升溫</td><td>8 Beats，越刷越密</td></tr>
+    <tr><td><b>副歌</b></td><td>全曲最高點</td><td>切分或 16 Beats，刷滿六條弦</td></tr>
+    <tr><td><b>橋段</b></td><td>製造對比</td><td>換刷法、停頓，或只彈和弦長音</td></tr>
+    <tr><td><b>尾奏</b></td><td>收尾</td><td>放慢，最後一個和弦刷一下讓它響完</td></tr>
+  </table>
+</section>
+
+<!-- 7 排序 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>排序遊戲</div>
+  <div class="kicker"><span class="tag t-cheng">承</span>小測驗</div>
+  <h2 style="margin-bottom:12px">把段落排成一首常見的流行歌</h2>
+  <p class="compact" style="margin-bottom:14px">點兩張牌交換位置。</p>
+  <div class="order" data-items="前奏|主歌 A|導歌|副歌 B|間奏|主歌 A|副歌 B|橋段 C|副歌 B|尾奏"></div>
+  <div class="reveal" data-label="一定要照這個順序嗎？"><p class="compact">不一定。有的歌一開始就是副歌，有的沒有導歌或橋段。這只是最常見的版本，聽歌時試著畫出它的地圖。</p></div>
+</section>
+
+<!-- 8 Capo 原理 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">承</span>移調夾 Capo</div>
+  <h2 style="margin-bottom:12px">Capo 就是一個可以移動的上弦枕</h2>
+  <div class="grid2" style="align-items:center">
+    <svg class="gfig" viewBox="0 0 520 220" role="img" aria-label="移調夾夾在第 2 格，所有弦都升高兩個半音">
+      <rect x="20" y="60" width="480" height="100" class="dark"/>
+      <rect x="20" y="60" width="8" height="100" class="bone"/>
+      <line x1="110" x2="110" y1="60" y2="160" stroke="#c9ccd1" stroke-width="3"/><line x1="190" x2="190" y1="60" y2="160" stroke="#c9ccd1" stroke-width="3"/><line x1="265" x2="265" y1="60" y2="160" stroke="#c9ccd1" stroke-width="3"/><line x1="335" x2="335" y1="60" y2="160" stroke="#c9ccd1" stroke-width="3"/><line x1="400" x2="400" y1="60" y2="160" stroke="#c9ccd1" stroke-width="3"/><line x1="460" x2="460" y1="60" y2="160" stroke="#c9ccd1" stroke-width="3"/>
+      <g stroke="#e8e4da"><line x1="20" x2="500" y1="70" y2="70"/><line x1="20" x2="500" y1="86" y2="86"/><line x1="20" x2="500" y1="102" y2="102"/><line x1="20" x2="500" y1="118" y2="118"/><line x1="20" x2="500" y1="134" y2="134"/><line x1="20" x2="500" y1="150" y2="150"/></g>
+      <rect x="176" y="40" width="12" height="140" rx="4" class="acc"/><rect x="168" y="30" width="28" height="18" rx="6" class="metal"/>
+      <text x="182" y="208" class="mid" style="fill:var(--accent)">Capo 夾第 2 格</text>
+      <text x="350" y="30" class="mid">琴衍</text>
+      <text x="64" y="208" class="mid en">原本的上弦枕</text>
+    </svg>
+    <ul class="clean compact">
+      <li>每往上夾一格，所有弦升高一個半音</li>
+      <li>左手照原本的和弦指型按，「Capo 當成第 0 格」</li>
+      <li>夾在琴衍旁邊、和琴衍平行，聲音才乾淨</li>
+      <li>和弦譜常寫「Capo 2，Play C」：夾第 2 格、用 C 指型，實際是 D 調</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 9 Capo 計算器 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>Capo 計算器</div>
+  <div class="kicker"><span class="tag t-cheng">承</span>動手算算看</div>
+  <h2 style="margin-bottom:12px">指型＋Capo ＝ 實際的調</h2>
+  <div data-capo="C G D A E Am Em"></div>
+  <p class="muted" style="font-size:16px;margin-top:10px">原講義的譜上常見「Key: F　Play: C　Capo: 5」，意思就是用 C 指型、夾第 5 格，彈出 F 調。</p>
+</section>
+
+<!-- 10 Capo 小測 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>選擇題</div>
+  <div class="kicker"><span class="tag t-cheng">承</span>小測驗</div>
+  <h2 style="margin-bottom:14px">幫歌手換個調</h2>
+  <div class="split">
+    <div class="quiz" data-answer="2">
+      <p class="q">歌手想唱 D 調，你只會 C 指型。Capo 要夾第幾格？</p>
+      <ol><li>第 1 格</li><li>第 2 格</li><li>第 3 格</li><li>第 4 格</li></ol>
+      <div class="why">C → C# → D，升兩個半音，所以夾第 2 格。</div>
+    </div>
+    <div class="quiz" data-answer="3">
+      <p class="q">譜上寫「Capo 3，Play G」，實際是什麼調？</p>
+      <ol><li>A</li><li>B</li><li>Bb</li><li>C</li></ol>
+      <div class="why">G → G# → A → Bb，升三個半音是 Bb 調。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 休息 -->
+<section class="slide center">
+  <div class="kicker">Break</div>
+  <div class="timer" id="timer">10:00</div>
+  <p class="lead">休息十分鐘，最後一次確認自己的歌</p>
+  <div style="height:20px"></div>
+  <div class="btn-row"><button type="button" class="btn" id="timerBtn">開始倒數</button><button type="button" class="btn" id="timerReset">重設</button></div>
+</section>
+
+<!-- 12 整首編排 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>跟刷節拍器</div>
+  <div class="kicker"><span class="tag t-zhuan">轉</span>01:05–01:40　整首編排示範</div>
+  <h2 style="margin-bottom:10px">同一組和弦，用段落做出起伏</h2>
+  <div class="grid2" style="align-items:start">
+    <div class="chart">
+      <div class="sec">前奏・四分音符</div><div>C</div><div>G</div><div>Am</div><div>F</div>
+      <div class="sec">主歌・蹦洽拉</div><div>C</div><div>G</div><div>Am</div><div>F</div>
+      <div class="sec">副歌・切分</div><div>F</div><div>G</div><div>C</div><div>Am</div>
+    </div>
+    <div data-strum-player="Q P B" data-chords="prog fifties" data-bpm="72"></div>
+  </div>
+  <p class="muted" style="font-size:16px;margin-top:8px">課堂自製練習譜。把你的期中曲目也寫成這樣一張：每段標上和弦與刷法。</p>
+</section>
+
+<!-- 13 排練 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>分段計時</div>
+  <div class="kicker"><span class="tag t-zhuan">轉</span>期中排練</div>
+  <h2 style="margin-bottom:12px">排練：從頭到尾、不停下來</h2>
+  <div class="split">
+    <div>
+      <ul class="clean compact">
+        <li><b>第一輪</b>：只彈不唱，確認和弦與段落</li>
+        <li><b>第二輪</b>：小聲唱，找出最容易卡住的地方</li>
+        <li><b>第三輪</b>：當作正式演出，錯了也不停</li>
+        <li>兩人一組互相當觀眾，各給一個建議</li>
+      </ul>
+    </div>
+    <div class="phase" data-phases="只彈不唱|240;小聲唱|300;正式演練|300"></div>
+  </div>
+</section>
+
+<!-- 14 舞台技巧 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-zhuan">轉</span>上台之前</div>
+  <h2 style="margin-bottom:12px">讓彈唱更完整的五個小技巧</h2>
+  <div class="steps">
+    <div class="card"><div class="big-num c-navy">1</div><h3>先調音</h3><p>上台前調好，Capo 夾好再上台。</p></div>
+    <div class="card"><div class="big-num c-gold">2</div><h3>數拍進</h3><p>心裡數「1、2、3、4」再開始。</p></div>
+    <div class="card"><div class="big-num c-red">3</div><h3>錯了不停</h3><p>右手繼續刷，下一小節接回來。</p></div>
+    <div class="card"><div class="big-num c-green">4</div><h3>看觀眾</h3><p>副歌時抬頭，讓大家看到你的表情。</p></div>
+    <div class="card"><div class="big-num" style="color:var(--accent)">5</div><h3>好好收尾</h3><p>最後一個和弦讓它響完，再說謝謝。</p></div>
+  </div>
+</section>
+
+<!-- 15 評分 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-he">合</span>01:40–02:00　期中彈唱發表</div>
+  <h2 style="margin-bottom:12px">期中評量：看完整，不看難度</h2>
+  <div class="grid2" style="grid-template-columns:1.2fr .8fr;align-items:start">
+    <table class="rubric">
+      <tr><th>項目</th><th>看什麼</th></tr>
+      <tr><td><b>穩定</b></td><td>拍子不斷，錯了能接回來</td></tr>
+      <tr><td><b>和弦</b></td><td>和弦清楚、換和弦準時</td></tr>
+      <tr><td><b>段落</b></td><td>主歌與副歌的伴奏有對比</td></tr>
+      <tr><td><b>彈唱</b></td><td>唱與彈能一起進行</td></tr>
+      <tr><td><b>台風</b></td><td>開頭、結尾與觀眾互動</td></tr>
+    </table>
+    <div>
+      <p class="muted" style="font-size:17px;margin-bottom:8px">抽上台順序</p>
+      <div class="picker" data-id="g06-order"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 16 互評 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>同儕回饋</div>
+  <div class="kicker"><span class="tag t-he">合</span>互評</div>
+  <h2 style="margin-bottom:14px">給上台的同學：一個讚美、一個建議</h2>
+  <div class="split wide">
+    <div class="exit" data-prompts="我聽的是哪一位同學|一個讚美：哪裡讓你印象深刻|一個建議：下次可以怎麼更好"></div>
+    <div class="card"><h3>回饋的方式</h3><p>具體說出「哪一段、哪一個地方」。<br><br>例如：「副歌換成切分後，整首歌一下子亮起來了」比「很好聽」更有幫助。</p></div>
+  </div>
+</section>
+
+<!-- 17 錄音 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>錄音留念</div>
+  <div class="kicker"><span class="tag t-he">合</span>留下第一首</div>
+  <h2 style="margin-bottom:12px">錄下你的期中彈唱</h2>
+  <div class="split">
+    <ul class="clean compact">
+      <li>這是你的第一首完整彈唱，請好好留下來</li>
+      <li>第十二章會和期末作品放在一起聽</li>
+      <li>錄音只存在你的手機，可以下載保存</li>
+    </ul>
+    <div class="panel"><div class="recorder" data-max="240" data-name="第六章_期中彈唱"></div></div>
+  </div>
+</section>
+
+<!-- 18 三句話 -->
+<section class="slide center">
+  <div class="kicker">Today In Three Lines</div>
+  <p class="quote">先畫出歌的地圖，<br>主歌讓位、副歌放開，<br>Capo 讓歌來找你的嗓子。</p>
+</section>
+
+<!-- 19 出場券 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>出場券 3-2-1</div>
+  <div class="kicker"><span class="tag t-he">合</span>Exit Ticket</div>
+  <h2 style="margin-bottom:14px">上冊結束了：寫下 3-2-1</h2>
+  <div class="split wide">
+    <div class="exit" data-prompts="3 個上冊最有收穫的地方|2 個期中發表後想加強的地方|1 個對下冊的期待"></div>
+    <div class="card"><h3>上冊完成</h3><p>六章、十二小時，你已經能看譜、壓和弦、刷節奏、彈唱一首歌。<br><br>下冊會讓你的吉他更有表情。</p></div>
+  </div>
+</section>
+
+<!-- 20 每日練習 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>自主學習紀錄</div>
+  <div class="kicker">Homework</div>
+  <h2 style="margin-bottom:12px">每天 15 分鐘：把一首歌彈熟</h2>
+  <div class="routine">
+    <div class="bar-qi" style="flex:2">調音<br><small>2 分</small></div>
+    <div class="bar-teal" style="flex:3">卡住的段落<br><small>3 分</small></div>
+    <div class="bar-cheng" style="flex:5">整首彈唱<br><small>5 分</small></div>
+    <div class="bar-orange" style="flex:3">換一個調<br><small>3 分</small></div>
+    <div class="bar-zhuan" style="flex:2">錄一次<br><small>2 分</small></div>
+  </div>
+  <div class="log7" data-cols="今天彈了哪首|有沒有停下來|今天的感受"></div>
+</section>
+
+<!-- 21 課後練習 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>自主學習追蹤</div>
+  <div class="kicker">Homework</div>
+  <h2 style="margin-bottom:12px">課後練習：完成一項，點一下打勾</h2>
+  <ul class="checks" data-id="g06-hw">
+    <li>畫出期中曲目的段落地圖：每段的和弦與刷法</li>
+    <li>用 Capo 把同一首歌換到另一個調彈一次</li>
+    <li>聽一首新歌，寫出它的曲式（ABABCB 之類）</li>
+    <li>期中曲目從頭到尾彈唱一次不停</li>
+    <li>聽自己的期中錄音，寫下一個進步的地方，並填寫第七章課前問卷</li>
+  </ul>
+</section>
+
+<!-- 22 下週預告 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>課前問卷</div>
+  <div class="kicker">Next Week</div>
+  <h2>第七章　樂理導入與指法</h2>
+  <div class="split wide">
+    <div>
+      <p class="lead">下冊開始：音程與三和弦是怎麼來的？<br>放下彈片，用手指彈出分散和弦。</p>
+      <p class="muted" style="margin-top:20px">掃描 Qr Code，直接在網站上填寫第七章的課前問卷。</p>
+    </div>
+    <div class="qr" data-href="../survey.html?id=g-pre-7"></div>
+  </div>
+</section>
+</div>
+</main>
+
+<nav class="ui" aria-label="投影片控制">
+  <button type="button" id="prev" aria-label="上一張">← 上一張</button>
+  <span class="counter" id="counter">1 / 1</span>
+  <button type="button" id="next" aria-label="下一張">下一張 →</button>
+  <button type="button" id="full">全螢幕</button>
+  <a href="../index.html">課程首頁</a>
+</nav>
+
+<script src="../../assets/pixel.js?v=20261014g"></script>
+<script src="../../assets/ui.js?v=20261014g"></script>
+<script src="../../assets/deck.js?v=20261014g"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="../../assets/interact.js?v=20261014g"></script>
+<script src="../../assets/config.js?v=20261014g"></script>
+<script src="../../assets/backend.js?v=20261014g"></script>
+<script src="../../assets/ps-audio.js?v=20261014g"></script>
+<script src="../guitar.js?v=20261014g"></script>
+</body>
+</html>
