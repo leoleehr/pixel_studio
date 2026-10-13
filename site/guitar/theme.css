@@ -213,9 +213,9 @@
 .tabbox .gcontrols{margin-top:10px}
 .gfig.tab .tline{stroke:var(--muted,#aaafa2);stroke-width:1}
 .gfig.tab .tbar{stroke:var(--muted,#aaafa2);stroke-width:1.6}
-.gfig.tab .tabl{font:700 15px "Space Grotesk",Arial,sans-serif;fill:var(--faint,#90988b)}
+.gfig.tab .tabl{font:700 13px "Space Grotesk",Arial,sans-serif;fill:var(--faint,#90988b)}
 .gfig.tab .tbg{fill:var(--card,#1e231c)}
-.gfig.tab .tnum{font:700 15px "Space Grotesk",Arial,sans-serif;fill:var(--ink,#f1f0e8);text-anchor:middle}
+.gfig.tab .tnum{font:700 13.5px "Space Grotesk",Arial,sans-serif;fill:var(--ink,#f1f0e8);text-anchor:middle}
 .gfig.tab .now .tbg{fill:var(--accent)}
 .gfig.tab .now .tnum{fill:#0b130a}
 
@@ -328,3 +328,22 @@
   .slide .song-grid.c2,.slide .song-grid.c4{grid-template-columns:1fr;max-width:none}
   .slide .song-grid .ytp-time{display:inline}
 }
+
+/* 五線譜（六線譜、刷法格、節奏遊戲上方） */
+.gfig.notes .nflag,.gfig.notes .ntie{fill:none;stroke:var(--ink,#f1f0e8);stroke-width:2;stroke-linecap:round}
+.gfig.notes .ntie{stroke-width:1.6}
+.gfig.notes .nbeam2{stroke:var(--ink,#f1f0e8);stroke-width:5}
+.gfig.notes .nacc{font:700 17px "Noto Music","Segoe UI Symbol","Apple Symbols",serif;fill:var(--ink,#f1f0e8);text-anchor:middle}
+.gfig.notes .ntext{font:700 12px "Space Grotesk",Arial,sans-serif;fill:var(--accent);text-anchor:middle}
+.gfig.notes .ntime{font:700 22px "Space Grotesk",Arial,sans-serif;fill:var(--ink,#f1f0e8);text-anchor:middle}
+.gfig.notes .nclef{font-family:"Noto Music","Segoe UI Symbol","Apple Symbols",serif;font-size:60px;fill:var(--ink,#f1f0e8)}
+.gfig.notes .nclef8{font:700 13px "Space Grotesk",Arial,sans-serif;fill:var(--ink,#f1f0e8);text-anchor:middle}
+.gfig.notes .nbar{stroke-width:1.6}
+.gfig.notes [data-nev].now .nfill{fill:var(--accent)}
+.gfig.notes [data-nev].now .nopen,.gfig.notes [data-nev].now .nstem{stroke:var(--accent)}
+.gfig.tab .tline,.gfig.tab .tbar{stroke:var(--muted,#aaafa2)}
+.tabbox .tabfig svg{display:block;margin:0 auto}
+.gfig.rnote{display:block;width:100%;height:auto;margin:0 0 6px}
+.rg-staff{margin:4px 0 8px;padding:6px 0 2px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-sm,3px)}
+.rnote-slot{min-height:1px}
+.slide.gtight .strum-player .pdesc,.slide.gtight [data-strum-player] .pdesc{display:none}

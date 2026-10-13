@@ -89,6 +89,151 @@
   var OPEN = [{ n: 'E', o: 2, f: 82.41 }, { n: 'A', o: 2, f: 110 }, { n: 'D', o: 3, f: 146.83 }, { n: 'G', o: 3, f: 196 }, { n: 'B', o: 3, f: 246.94 }, { n: 'E', o: 4, f: 329.63 }];
   PS.guitar = { CHORDS: CHORDS, PATTERNS: PATTERNS };
 
+  /* ---------- 五線譜：音符時值與音高（六線譜、刷法格、節奏遊戲共用） ----------
+   * 時值以十六分音符為 1：16 全音符、8 二分、4 四分、2 八分、1 十六分，3／6／12 為附點。
+   * 事件 { t, len, rest, heads: [{ pos, acc, shape }], tech }；pos 以五線譜最下線 E4 為 0，每升一個音級加 1。
+   * 不在拍點上開始的音，切到下一拍為止並用延音線連接；同一拍內的八分、十六分音符以符槓相連。
+   */
+  var LENS = [16, 12, 8, 6, 4, 3, 2, 1];
+  function splitDur(t, len, beat) {
+    var out = [];
+    while (len > 0) {
+      var off = t % beat, room = off ? Math.min(len, beat - off) : len, v = 1;
+      for (var k = 0; k < LENS.length; k++) if (LENS[k] <= room) { v = LENS[k]; break; }
+      out.push({ t: t, len: v }); t += v; len -= v;
+    }
+    return out;
+  }
+  function SY(p) { return (8 - p) * 5; } // 最上線 y = 0，線距 10
+  function restGlyph(len, x) {
+    var base = { 12: 8, 6: 4, 3: 2 }[len] || len, dot = base !== len, s;
+    if (base === 16) s = '<rect x="' + (x - 7) + '" y="' + SY(6) + '" width="14" height="5" class="nfill"/>';
+    else if (base === 8) s = '<rect x="' + (x - 7) + '" y="' + (SY(4) - 5) + '" width="14" height="5" class="nfill"/>';
+    else if (base === 4) s = '<path transform="translate(' + x + ' ' + (SY(4) - 2) + ') scale(.62)" d="M-4 -24 L6 -12 L-3 -2 L6 10 Q-8 4 -2 18" class="nrest"/>';
+    else if (base === 2) s = '<g transform="translate(' + x + ' ' + SY(4) + ') scale(.62)"><circle cx="-5" cy="-8" r="4.5" class="nfill"/><path d="M-5 -4 Q4 -2 8 -10 L-2 20" class="nrest"/></g>';
+    else s = '<g transform="translate(' + x + ' ' + SY(4) + ') scale(.62)"><circle cx="-3" cy="-16" r="4" class="nfill"/><circle cx="-7" cy="-2" r="4" class="nfill"/><path d="M-3 -12 Q6 -10 10 -18 L-2 22 M-7 2 Q2 4 6 -4" class="nrest"/></g>';
+    return s + (dot ? '<circle cx="' + (x + 11) + '" cy="' + (SY(5)) + '" r="2.2" class="nfill"/>' : '');
+  }
+  function headGlyph(x, y, shape, open) {
+    if (shape === 'x') return '<path d="M' + (x - 5.5) + ' ' + (y - 5.5) + 'l11 11M' + (x + 5.5) + ' ' + (y - 5.5) + 'l-11 11" class="nstem" style="stroke-width:2.4"/>';
+    if (shape === 'd') return '<path d="M' + (x - 7) + ' ' + y + 'L' + x + ' ' + (y - 6) + 'L' + (x + 7) + ' ' + y + 'L' + x + ' ' + (y + 6) + 'Z" class="nopen" style="stroke-width:1.8"/>';
+    return '<ellipse cx="' + x + '" cy="' + y + '" rx="6.8" ry="4.9" transform="rotate(-20 ' + x + ' ' + y + ')" class="' + (open ? 'nopen' : 'nfill') + '"/>';
+  }
+  function notation(events, o) {
+    var segs = [], s = '', top = 0, bot = 40, beat = o.beat || 4;
+    function ext(y) { if (y < top) top = y; if (y > bot) bot = y; }
+    events.forEach(function (ev, k) {
+      splitDur(ev.t, ev.len, beat).forEach(function (pc, j, arr) { segs.push({ ev: ev, k: k, t: pc.t, len: pc.len, first: j === 0, tie: !ev.rest && j < arr.length - 1 }); });
+    });
+    function dirOf(list) {
+      if (o.up) return 1;
+      var sum = 0, n = 0; list.forEach(function (sg) { sg.ev.heads.forEach(function (h) { sum += h.pos; n++; }); });
+      return n && sum / n >= 4 ? -1 : 1;
+    }
+    // 符槓分組：同一拍、連續、八分或更短的音
+    var groups = [], cur = null;
+    segs.forEach(function (sg) {
+      var flag = !sg.ev.rest && sg.len < 4, b = Math.floor(sg.t / beat);
+      if (flag && cur && cur.b === b && cur.end === sg.t) { cur.list.push(sg); cur.end = sg.t + sg.len; }
+      else { cur = flag ? { b: b, list: [sg], end: sg.t + sg.len } : null; if (cur) groups.push(cur); }
+      sg.group = cur;
+    });
+    groups.forEach(function (g) {
+      if (g.list.length < 2) { g.list.forEach(function (sg) { sg.group = null; }); return; }
+      g.dir = dirOf(g.list);
+      var ys = []; g.list.forEach(function (sg) { sg.ev.heads.forEach(function (h) { ys.push(SY(h.pos)); }); });
+      g.y = g.dir > 0 ? Math.min.apply(null, ys) - 32 : Math.max.apply(null, ys) + 32;
+    });
+    segs.forEach(function (sg) {
+      var s0 = s.length;
+      drawSeg(sg);
+      if (sg.ev.id != null) s = s.slice(0, s0) + '<g data-nev="' + sg.ev.id + '">' + s.slice(s0) + '</g>';
+    });
+    function drawSeg(sg) {
+      var x = o.x(sg.t);
+      if (sg.ev.rest) { s += restGlyph(sg.len, x); return; }
+      var heads = sg.ev.heads.slice().sort(function (a, b) { return a.pos - b.pos; }), dir = sg.group ? sg.group.dir : dirOf([sg]);
+      var open = sg.len >= 8, prev = null, accN = 0;
+      heads.forEach(function (h) {
+        var hx = x;
+        if (prev && h.pos - prev.pos === 1 && !prev.shift) { hx = x + (dir > 0 ? 13 : -13); h.shift = true; } else h.shift = false;
+        var y = SY(h.pos);
+        for (var p = -2; p >= h.pos; p -= 2) s += '<line x1="' + (hx - 11) + '" x2="' + (hx + 11) + '" y1="' + SY(p) + '" y2="' + SY(p) + '" class="nline"/>';
+        for (p = 10; p <= h.pos; p += 2) s += '<line x1="' + (hx - 11) + '" x2="' + (hx + 11) + '" y1="' + SY(p) + '" y2="' + SY(p) + '" class="nline"/>';
+        s += headGlyph(hx, y, h.shape, open);
+        if (sg.first && h.acc) { s += '<text x="' + (x - 15 - accN * 9) + '" y="' + (y + 5) + '" class="nacc">' + h.acc + '</text>'; accN++; }
+        if (sg.len === 3 || sg.len === 6 || sg.len === 12) s += '<circle cx="' + (hx + 12) + '" cy="' + (h.pos % 2 ? y : y - 5) + '" r="2.2" class="nfill"/>';
+        ext(y - 7); ext(y + 7); prev = h;
+      });
+      sg.lo = SY(heads[0].pos); sg.hi = SY(heads[heads.length - 1].pos);
+      if (sg.len < 16) {
+        var sx = x + (dir > 0 ? 6.3 : -6.3), y1 = dir > 0 ? sg.lo - 1 : sg.hi + 1;
+        var y2 = sg.group ? sg.group.y : dir > 0 ? sg.hi - 32 : sg.lo + 32;
+        s += '<line x1="' + sx + '" x2="' + sx + '" y1="' + y1 + '" y2="' + y2 + '" class="nstem"/>';
+        sg.sx = sx; ext(y2);
+        if (!sg.group && sg.len < 4) for (var f = 0; f < (sg.len === 1 ? 2 : 1); f++) {
+          var fy = y2 + dir * f * 8;
+          s += '<path d="M' + sx + ' ' + fy + 'q2 ' + (dir * 10) + ' 10 ' + (dir * 14) + 'q4 ' + (dir * 4) + ' 2 ' + (dir * 13) + '" class="nflag"/>';
+        }
+      }
+      if (sg.tie) {
+        var nx = o.x(sg.t + sg.len);
+        heads.forEach(function (h) { var y = SY(h.pos) + (dir > 0 ? 7 : -7), c = y + (dir > 0 ? 8 : -8); s += '<path d="M' + (x + 5) + ' ' + y + 'Q' + ((x + nx) / 2) + ' ' + c + ' ' + (nx - 5) + ' ' + y + '" class="ntie"/>'; ext(c); });
+      }
+      // 演奏技巧：搥勾弦畫圓滑線、滑弦畫斜線、推弦與揉音加文字
+      var tech = sg.first && sg.ev.tech, pv = tech && segs.filter(function (z) { return z.k === sg.k - 1 && !z.ev.rest; })[0];
+      if (tech && (tech === 'h' || tech === 'p') && pv) {
+        var px = o.x(pv.t), yy = Math.max(sg.lo, pv.lo) + 10;
+        s += '<path d="M' + (px + 2) + ' ' + yy + 'Q' + ((px + x) / 2) + ' ' + (yy + 12) + ' ' + (x - 2) + ' ' + yy + '" class="ntie"/>'; ext(yy + 12);
+      } else if (tech === 's' && pv) s += '<line x1="' + (o.x(pv.t) + 9) + '" y1="' + pv.lo + '" x2="' + (x - 9) + '" y2="' + sg.lo + '" class="nstem"/>';
+      else if (tech === 'b' || tech === 'v') { var ty = Math.min(sg.hi - 14, -10); s += '<text x="' + x + '" y="' + ty + '" class="ntext">' + (tech === 'b' ? 'full ↗' : '∿∿∿') + '</text>'; ext(ty - 12); }
+    }
+    groups.forEach(function (g) {
+      if (!g.list[0].group) return;
+      var L = g.list, x1 = L[0].sx, x2 = L[L.length - 1].sx;
+      s += '<line x1="' + (x1 - 0.8) + '" x2="' + (x2 + 0.8) + '" y1="' + (g.y + g.dir * 2.5) + '" y2="' + (g.y + g.dir * 2.5) + '" class="nbeam2"/>';
+      L.forEach(function (sg, i) {
+        if (sg.len !== 1) return;
+        var y = g.y + g.dir * 10.5, nb = L[i + 1], pb = L[i - 1];
+        if (nb && nb.len === 1) s += '<line x1="' + sg.sx + '" x2="' + nb.sx + '" y1="' + y + '" y2="' + y + '" class="nbeam2"/>';
+        else if (!(pb && pb.len === 1)) { var d = nb ? 10 : -10; s += '<line x1="' + sg.sx + '" x2="' + (sg.sx + d) + '" y1="' + y + '" y2="' + y + '" class="nbeam2"/>'; }
+      });
+    });
+    return { svg: s, top: top, bot: bot };
+  }
+  function staffLines(x1, x2) { var s = ''; for (var l = 0; l < 5; l++) s += '<line x1="' + x1 + '" x2="' + x2 + '" y1="' + (l * 10) + '" y2="' + (l * 10) + '" class="nline"/>'; return s; }
+  // 吉他譜用高音譜號（下方加 8：實際聲音低八度）
+  function clef(x) { return '<text x="' + x + '" y="' + SY(-1.6) + '" class="nclef">𝄞</text><text x="' + (x + 12) + '" y="' + SY(-5) + '" class="nclef8">8</text>'; }
+  function timeSig(x, a, b) { return '<text x="' + x + '" y="' + (SY(6) + 1) + '" class="ntime">' + a + '</text><text x="' + x + '" y="' + (SY(2) + 1) + '" class="ntime">' + b + '</text>'; }
+  // 弦與格 → 五線譜位置與臨時記號（以升記號拼寫；同一小節內記住已出現的升記號）
+  var OPEN_MIDI = [64, 59, 55, 50, 45, 40], LETTER = [0, 0, 1, 1, 2, 3, 3, 4, 4, 5, 5, 6], SHARP = [0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0];
+  function pitchHead(s, f, shape, memo) {
+    var w = OPEN_MIDI[s - 1] + f + 12, d = (Math.floor(w / 12) - 1) * 7 + LETTER[w % 12], sharp = SHARP[w % 12], acc = '';
+    if (sharp && memo[d] !== 1) { acc = '♯'; memo[d] = 1; } else if (!sharp && memo[d] === 1) { acc = '♮'; memo[d] = 0; }
+    return { pos: d - 30, acc: acc, shape: shape };
+  }
+  // 刷法格上方的節奏譜：刷弦記在第三間，低音（蹦）記在下方，切音用叉形符頭
+  function rhythmSVG(key, VW) {
+    VW = VW || 860;
+    var P = PATTERNS[key], cells = P.cells, n = cells.length, beats = beatsOf(key), per = n / beats, c16 = per === 4 ? 1 : 2, U = VW / n, evs = [], hits = [];
+    cells.forEach(function (c, i) { if (c !== 'd' && c !== 'u') hits.push(i); });
+    if (hits[0] > 0) evs.push({ t: 0, len: hits[0] * c16, rest: true, heads: [] });
+    hits.forEach(function (i, k) {
+      var c = cells[i], end = k + 1 < hits.length ? hits[k + 1] : n;
+      evs.push({ t: i * c16, len: (end - i) * c16, heads: [{ pos: c === 'X' ? 0 : c === 'Y' ? 2 : 5, shape: c === 'M' ? 'x' : '' }] });
+    });
+    var r = notation(evs, { x: function (t) { return (t / c16 + 0.5) * U; }, beat: per === 3 ? 6 : 4, up: true });
+    var top = r.top - 6, h = r.bot - top + 6;
+    return '<svg class="gfig notes rnote" viewBox="0 ' + top + ' ' + VW + ' ' + h + '" role="img" aria-label="' + P.name + '的五線譜節奏">' + staffLines(0, VW) + '<line x1="' + (VW - 1) + '" x2="' + (VW - 1) + '" y1="0" y2="40" class="nline"/>' + r.svg + '</svg>';
+  }
+  // 依實際寬度繪製（隱藏中的投影片寬度為 0，等切換到該張時再畫）；s 為每單位像素數
+  function paintRhythm(slot, sc) {
+    var cw = slot.clientWidth; if (!cw) return false;
+    sc = sc || 1; if (slot._sc === sc && slot._cw === cw) return true;
+    slot._sc = sc; slot._cw = cw; slot.innerHTML = rhythmSVG(slot.getAttribute('data-k'), Math.round(cw / sc));
+    return true;
+  }
+
   /* ---------- 共用：吉他剪影 ---------- */
   // 依參數畫出琴身外型（中心 cx、頂端 y0、長 L、上寬 uw、腰寬 ww、下寬 lw、腰位 wp）
   function bodyPath(cx, y0, L, uw, ww, lw, wp) {
@@ -504,7 +649,7 @@
   }
   function grid(key) {
     var cells = PATTERNS[key].cells, n = cells.length, beats = beatsOf(key), per = n / beats, cnt = counts(n, beats);
-    return '<div class="strum-grid' + (n > 8 ? ' g16' : '') + '" style="grid-template-columns:repeat(' + n + ',minmax(0,1fr))" role="list">' + cells.map(function (c, i) {
+    return '<div class="rnote-slot" data-k="' + key + '"></div><div class="strum-grid' + (n > 8 ? ' g16' : '') + '" style="grid-template-columns:repeat(' + n + ',minmax(0,1fr))" role="list">' + cells.map(function (c, i) {
       if (c === 'X' || c === 'Y') return '<div class="cell bass' + (i % per ? ' off' : '') + '" role="listitem"><span class="sarrow" aria-label="低音">' + (c === 'X' ? 'X' : 'x') + '</span><span class="cnt">' + cnt[i] + '</span></div>';
       if (c === 'M') return '<div class="cell bass' + (i % per ? ' off' : '') + '" role="listitem"><span class="sarrow" aria-label="切音">✕</span><span class="cnt">' + cnt[i] + '</span></div>';
       var ghost = c === 'd' || c === 'u', up = c === 'U' || c === 'u';
@@ -522,7 +667,7 @@
     function per() { return N() / beatsOf(key); }
     function chordAt(step) { var set = setOf(mode); return set[Math.floor(Math.max(0, step - N()) / N()) % set.length]; }
     function hasBass() { return PATTERNS[key].cells.some(function (x) { return x === 'X' || x === 'Y'; }); }
-    function render() { $('.pname', root).textContent = PATTERNS[key].name; $('.pdesc', root).textContent = PATTERNS[key].desc; pgrid.innerHTML = grid(key); pchord.textContent = CHORDS[chordAt(N())].name; m.steps = per(); m.beats = beatsOf(key); }
+    function render() { $('.pname', root).textContent = PATTERNS[key].name; $('.pdesc', root).textContent = PATTERNS[key].desc; pgrid.innerHTML = grid(key); var sl0 = $('.rnote-slot', pgrid); if (sl0) paintRhythm(sl0, (root.closest('.slide') || {})._rsc || 1); pchord.textContent = CHORDS[chordAt(N())].name; m.steps = per(); m.beats = beatsOf(key); }
     var start = el('button', { type: 'button', class: 'btn primary' }, '開始');
     c.appendChild(start);
     c.appendChild(bpmField(40, 132, +(root.getAttribute('data-bpm') || 70), function (v) { m.bpm = v; }));
@@ -699,32 +844,50 @@
     });
     return { bars: bars.filter(function (b) { return b.length; }), events: events, total: t };
   }
-  function tabSVG(tab, perRow) {
-    var rows = [], i, W = 900, pad = 46, rowH = 112;
+  function tabSVG(tab, perRow, W) {
+    W = W || 900;
+    var rows = [], i, pad = 46, body = '', H = 6;
     for (i = 0; i < tab.bars.length; i += perRow) rows.push(tab.bars.slice(i, i + perRow));
-    var s = '<svg class="gfig tab" viewBox="0 0 ' + W + ' ' + (rows.length * rowH) + '" role="img" aria-label="六線譜：上面第一條線是最細的 1 弦，數字代表要按的格數">';
     rows.forEach(function (row, r) {
-      var y0 = 16 + r * rowH, bw = (W - pad - 10) / perRow;
-      for (var l = 0; l < 6; l++) s += '<line x1="' + pad + '" x2="' + (pad + bw * row.length) + '" y1="' + (y0 + l * 16) + '" y2="' + (y0 + l * 16) + '" class="tline"/>';
-      s += '<text x="12" y="' + (y0 + 22) + '" class="tabl">T</text><text x="12" y="' + (y0 + 46) + '" class="tabl">A</text><text x="12" y="' + (y0 + 70) + '" class="tabl">B</text>';
-      s += '<line x1="' + pad + '" x2="' + pad + '" y1="' + y0 + '" y2="' + (y0 + 80) + '" class="tbar"/>';
+      var bw = (W - pad - 10) / perRow, staff = '', top = 0, bot = 40;
+      function xOf(bx, start, len) { return function (t16) { return bx + 20 + (bw - 34) * (t16 / 2) / len; }; }
+      // 上方五線譜：與六線譜同一個橫向位置
+      row.forEach(function (bar, b) {
+        var bx = pad + b * bw, start = bar[0].t, len = Math.max(8, bar.reduce(function (a, e) { return a + e.len; }, 0)), memo = {};
+        var evs = bar.map(function (e) {
+          return { id: e.i, t: (e.t - start) * 2, len: e.len * 2, rest: e.rest, tech: e.notes[0] ? e.notes[0].tech : '',
+            heads: e.notes.map(function (nt) { return pitchHead(nt.s, nt.f, nt.tech === 'n' ? 'd' : '', memo); }) };
+        });
+        var res = notation(evs, { x: xOf(bx, start, len), beat: 4 });
+        staff += res.svg;
+        staff += '<line x1="' + (bx + bw) + '" x2="' + (bx + bw) + '" y1="0" y2="40" class="nline nbar"/>';
+        top = Math.min(top, res.top); bot = Math.max(bot, res.bot);
+      });
+      bot = Math.max(bot, 62); // 譜號下方的 8
+      var sy = H - top + 4;
+      body += '<g class="staff" transform="translate(0 ' + sy + ')">' + staffLines(pad - 40, pad + bw * row.length) + clef(pad - 38) + '<line x1="' + (pad - 40) + '" x2="' + (pad - 40) + '" y1="0" y2="40" class="nline nbar"/>' + staff + '</g>';
+      var y0 = sy + bot + 14, TS = 13;
+      for (var l = 0; l < 6; l++) body += '<line x1="' + pad + '" x2="' + (pad + bw * row.length) + '" y1="' + (y0 + l * TS) + '" y2="' + (y0 + l * TS) + '" class="tline"/>';
+      body += '<text x="12" y="' + (y0 + 19) + '" class="tabl">T</text><text x="12" y="' + (y0 + 38) + '" class="tabl">A</text><text x="12" y="' + (y0 + 57) + '" class="tabl">B</text>';
+      body += '<line x1="' + pad + '" x2="' + pad + '" y1="' + y0 + '" y2="' + (y0 + 5 * TS) + '" class="tbar"/>';
       row.forEach(function (bar, b) {
         var bx = pad + b * bw, start = bar[0].t, len = Math.max(8, bar.reduce(function (a, e) { return a + e.len; }, 0));
-        s += '<line x1="' + (bx + bw) + '" x2="' + (bx + bw) + '" y1="' + y0 + '" y2="' + (y0 + 80) + '" class="tbar"/>';
+        body += '<line x1="' + (bx + bw) + '" x2="' + (bx + bw) + '" y1="' + y0 + '" y2="' + (y0 + 5 * TS) + '" class="tbar"/>';
         bar.forEach(function (e) {
           var x = bx + 20 + (bw - 34) * (e.t - start) / len;
-          if (e.rest) { s += '<g data-ev="' + e.i + '"><text x="' + x + '" y="' + (y0 + 46) + '" class="tnum">–</text></g>'; return; }
-          s += '<g data-ev="' + e.i + '">';
+          if (e.rest) { body += '<g data-ev="' + e.i + '"><text x="' + x + '" y="' + (y0 + 2.5 * TS + 5) + '" class="tnum">–</text></g>'; return; }
+          body += '<g data-ev="' + e.i + '">';
           e.notes.forEach(function (nt) {
-            var y = y0 + (nt.s - 1) * 16, label = nt.tech === 'n' ? '<' + nt.f + '>' : nt.f + (nt.tech === 'b' ? '↗' : nt.tech === 'v' ? '~' : '');
-            s += '<rect x="' + (x - 13) + '" y="' + (y - 9) + '" width="26" height="18" rx="4" class="tbg"/><text x="' + x + '" y="' + (y + 5.5) + '" class="tnum">' + label + '</text>';
-            if ('hps'.indexOf(nt.tech) > -1 && nt.tech) s += '<text x="' + (x - 22) + '" y="' + (y0 - 4) + '" class="ttech">' + nt.tech.toUpperCase() + '</text>';
+            var y = y0 + (nt.s - 1) * TS, label = nt.tech === 'n' ? '<' + nt.f + '>' : nt.f + (nt.tech === 'b' ? '↗' : nt.tech === 'v' ? '~' : '');
+            body += '<rect x="' + (x - 12) + '" y="' + (y - 7.5) + '" width="24" height="15" rx="4" class="tbg"/><text x="' + x + '" y="' + (y + 5.5) + '" class="tnum">' + label + '</text>';
+            if ('hps'.indexOf(nt.tech) > -1 && nt.tech) body += '<text x="' + (x - 22) + '" y="' + (y0 - 4) + '" class="ttech">' + nt.tech.toUpperCase() + '</text>';
           });
-          s += '</g>';
+          body += '</g>';
         });
       });
+      H = y0 + 5 * TS + 16;
     });
-    return s + '</svg>';
+    return '<svg class="gfig tab notes" viewBox="0 0 ' + W + ' ' + (H - 6) + '" role="img" aria-label="五線譜與六線譜：上方五線譜標示音高與音符長短；下方六線譜第一條線是最細的 1 弦，數字代表要按的格數">' + body + '</svg>';
   }
   function pluckNotes(notes, time, dur, vol) {
     var f = [-1, -1, -1, -1, -1, -1], legato = false, harm = false;
@@ -734,6 +897,7 @@
   }
   $$('[data-tab]').forEach(function (root) {
     var tab = parseTab(root.getAttribute('data-tab')), per = +(root.getAttribute('data-per-row') || 4), player = root.hasAttribute('data-play');
+    root._tab = tab; root._p0 = per;
     root.classList.add('tabbox');
     root.innerHTML = (root.getAttribute('data-title') ? '<div class="player-top"><b class="pname">' + root.getAttribute('data-title') + '</b><span class="pchord" aria-live="polite"></span></div>' : '') + '<div class="tabfig">' + tabSVG(tab, per) + '</div>' + (player ? '<div class="gcontrols"></div>' : '');
     if (!player) return;
@@ -753,13 +917,13 @@
       var k = (step - CI) % tab.total, evs = byStep[k];
       if (k === 0 && step > CI) loops++;
       if (!evs) return;
-      $$('[data-ev]', root).forEach(function (g) { g.classList.toggle('now', +g.getAttribute('data-ev') === evs[0].i); });
+      $$('[data-ev],[data-nev]', root).forEach(function (g) { g.classList.toggle('now', +(g.getAttribute('data-ev') || g.getAttribute('data-nev')) === evs[0].i); });
       if (info) info.textContent = evs[0].rest ? '休止' : evs[0].notes.map(function (nt) { return nt.s + ' 弦 ' + nt.f + ' 格'; }).join('＋');
     };
     function stop() {
       if (!m.running) return;
       m.stop(); start.textContent = '開始';
-      $$('[data-ev]', root).forEach(function (g) { g.classList.remove('now'); });
+      $$('[data-ev],[data-nev]', root).forEach(function (g) { g.classList.remove('now'); });
       if (info) info.textContent = '';
       var secs = Math.round((Date.now() - startedAt) / 1000);
       if (secs >= 5) report(root, 'interaction', { item: root.getAttribute('data-title') || '六線譜練習', result: m.bpm + ' BPM・' + secs + ' 秒・' + loops + ' 輪', value: m.bpm });
@@ -849,6 +1013,24 @@
       } });
   });
 
+  /* ---------- 節奏遊戲（interact.js）：在節奏名稱下方加上五線譜 ---------- */
+  var RG = { '四分音符': '4 4 4 4', '八分音符': '2 2 2 2 2 2 2 2', '附點節奏': '6 2 6 2', '切分音': '2 4 2 4 4',
+    '前八後十六': '2 1 1 2 1 1 4 4', '反拍': 'r2 2 r2 2 r2 2 r2 2' };
+  function rgSVG(name) {
+    var seq = (RG[name] || '').split(' '), t = 0, evs = [];
+    if (!RG[name]) return '';
+    seq.forEach(function (x) { var rest = x[0] === 'r', len = +x.replace('r', ''); evs.push({ t: t, len: len, rest: rest, heads: rest ? [] : [{ pos: 5 }] }); t += len; });
+    var r = notation(evs, { x: function (t) { return 14 + t * 52.6; }, beat: 4, up: true }), top = r.top - 6; // 對齊下方節拍時間軸
+    return '<svg class="gfig notes rnote" viewBox="0 ' + top + ' 860 ' + (r.bot - top + 6) + '" role="img" aria-label="' + name + '的五線譜">' + staffLines(0, 860) + '<line x1="859" x2="859" y1="0" y2="40" class="nline"/>' + r.svg + '</svg>';
+  }
+  $$('.rhythm-game').forEach(function (g) {
+    var head = $('.rg-head', g); if (!head) return;
+    var box = el('div', { class: 'rg-staff' }); head.parentNode.insertBefore(box, head.nextSibling);
+    function upd() { box.innerHTML = rgSVG(($('.rg-name', g) || {}).textContent || ''); }
+    $('.rg-pats', g).addEventListener('click', function () { setTimeout(upd, 0); });
+    upd();
+  });
+
   /* ---------- 移調夾 Capo 計算器 ----------
    * 上半部：選指型與夾的格數，算出實際的調；下半部：選想彈的調，列出可用的指型與 Capo 位置
    */
@@ -908,4 +1090,57 @@
         groups[+k].split(',').forEach(function (ch, i) { PS.audio.strum(CHORDS[ch].frets, a.currentTime + 0.05 + i * 1.1, 'down', { duration: 1.2, gap: 0.03, volume: 0.18 }); });
       } });
   });
+  /* ---------- 版面：投影片放不下時調整五線譜＋六線譜 ----------
+   * 1. 刷法格上方的節奏譜依實際寬度繪製
+   * 2. 六線譜先試著每行多放幾小節，仍放不下才等比例縮小；隱藏刷法說明，最後縮小節奏譜
+   */
+  function over(sl) { return sl.scrollHeight > sl.clientHeight + 1; }
+  function layoutTabs(boxes, m) {
+    boxes.forEach(function (b) {
+      var nb = b._tab.bars.length, p = Math.min(nb, Math.ceil(b._p0 * m)), f = $('.tabfig', b);
+      if (f._p !== p || f._key) { f._p = p; f._key = ''; f.innerHTML = tabSVG(b._tab, p); }
+      f.firstChild.style.width = '';
+    });
+  }
+  function dense(boxes, m) {
+    return boxes.some(function (b) {
+      var p = Math.min(b._tab.bars.length, Math.ceil(b._p0 * m)), most = Math.max.apply(null, b._tab.bars.map(function (x) { return x.reduce(function (a, e) { return a + e.len; }, 0); }));
+      return (900 - 56) / p / Math.max(8, most) < 11; // 每個八分音符至少 11 單位寬
+    });
+  }
+  function fitSlide(sl) {
+    if (!sl) return;
+    sl.classList.remove('gtight'); sl._rsc = 1;
+    $$('.rnote-slot', sl).forEach(function (x) { paintRhythm(x, 1); });
+    var boxes = $$('.tabbox', sl).filter(function (b) { return b._tab; });
+    if (boxes.length) {
+      var best = null, prevP = '';
+      [1, 1.5, 2].forEach(function (m) {
+        var ps = boxes.map(function (b) { return Math.min(b._tab.bars.length, Math.ceil(b._p0 * m)); }).join();
+        if (m > 1 && (ps === prevP || dense(boxes, m))) return;
+        prevP = ps;
+        layoutTabs(boxes, m);
+        var k = 100;
+        while (k > 45 && over(sl)) { k -= 5; boxes.forEach(function (b) { $('.tabfig svg', b).style.width = k + '%'; }); }
+        if (!best || k > best.k) best = { m: m, k: k };
+      });
+      layoutTabs(boxes, best.m);
+      boxes.forEach(function (b) { $('.tabfig svg', b).style.width = best.k < 100 ? best.k + '%' : ''; });
+    }
+    if (over(sl)) sl.classList.add('gtight');
+    [0.85, 0.7].forEach(function (sc) { if (over(sl) && $('.rnote-slot', sl)) { sl._rsc = sc; $$('.rnote-slot', sl).forEach(function (x) { paintRhythm(x, sc); }); } });
+  }
+  var mobile = window.matchMedia('(max-width:900px),(orientation:portrait) and (max-width:1100px)');
+  function paintAll() {
+    $$('.rnote-slot').forEach(function (x) { paintRhythm(x, 1); });
+    // 手機：五線譜＋六線譜改用較窄的畫布，每行少放幾小節，字與音符才不會太小
+    $$('.tabbox').forEach(function (b) {
+      var f = $('.tabfig', b), cw = f && f.clientWidth; if (!b._tab || !cw) return;
+      var W = cw < 700 ? Math.round(cw / 0.8) : 900, p = Math.max(1, Math.min(b._p0, Math.floor((W - 56) / 160))), key = W + ':' + p;
+      if (f._key !== key) { f._key = key; f._p = p; f.innerHTML = tabSVG(b._tab, p, W); }
+    });
+  }
+  document.addEventListener('slide:change', function (e) { if (e.detail && e.detail.mobile) paintAll(); else fitSlide($('.slide.active')); });
+  var rz = 0; addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(function () { if (mobile.matches) paintAll(); }, 200); });
+  if (mobile.matches || !$('.slide')) paintAll(); else fitSlide($('.slide.active'));
 })(window.PS = window.PS || {});
