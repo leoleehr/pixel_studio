@@ -9,7 +9,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 ZH = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二']
-VER = "20261014h"
+VER = "20261014n"
 
 HEAD = '''<!doctype html>
 <html lang="zh-Hant">
@@ -26,6 +26,7 @@ HEAD = '''<!doctype html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Music&text=%F0%9D%84%9E%E2%99%AF%E2%99%AE&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../assets/deck.css?v={v}">
 <link rel="stylesheet" href="../../assets/interact.css?v={v}">
 <link rel="stylesheet" href="../../assets/backend.css?v={v}">
