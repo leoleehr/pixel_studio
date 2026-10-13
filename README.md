@@ -5,7 +5,7 @@
 | 課程 | 中文名稱 | 目錄 | 狀態 |
 | --- | --- | --- | --- |
 | Vocal Lab | 流行歌唱 | `site/vocal/` | 遷移中（目前內容仍在根目錄） |
-| Guitar Lab | 民謠吉他 | `site/guitar/` | 規劃中 |
+| Guitar Lab | 民謠吉他 | `site/guitar/` | 試教版：12 章課綱，第 3、4 章可用 |
 | Piano Lab | 流行鋼琴 | `site/piano/` | 規劃中 |
 | Songwriting Lab | 詞曲創作 | `site/songwriting/` | 規劃中 |
 

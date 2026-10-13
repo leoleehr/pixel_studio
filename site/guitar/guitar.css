@@ -1,0 +1,109 @@
+/* Guitar Lab 專用樣式 */
+
+/* 和弦圖 */
+.chord-svg{width:100%;height:auto;overflow:visible}
+.chord-svg .nut{fill:var(--ink)}
+.chord-svg .fret{stroke:var(--line-2);stroke-width:1}
+.chord-svg .string{stroke:var(--muted)}
+.chord-svg .dot{fill:var(--lab)}
+.chord-svg .open{fill:none;stroke:var(--ink);stroke-width:1.4}
+.chord-svg .mark{fill:var(--faint);font:700 12px var(--display);text-anchor:middle}
+.chord-svg .finger{fill:var(--lab-ink);font:700 9.5px var(--display);text-anchor:middle}
+.chord-svg .snum{fill:var(--faint);font:9px var(--display);text-anchor:middle}
+
+.chord-card{display:flex;flex-direction:column;gap:10px}
+.chord-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.chord-head h3{font:700 34px var(--display);margin:0;color:var(--ink)}
+.degree{font:500 13px var(--display);color:var(--lab)}
+.chord-fig{max-width:150px;margin:4px auto 6px}
+.chord-zh{color:var(--ink)!important;font-weight:500}
+.chord-card .btn{align-self:flex-start;margin-top:auto}
+
+.legend-fig{display:grid;grid-template-columns:minmax(150px,200px) 1fr;gap:28px;align-items:center}
+.legend-fig ul{margin:0;padding-left:20px;color:var(--muted)}
+.legend-fig li+li{margin-top:8px}
+.legend-fig li b{color:var(--ink)}
+
+/* 換和弦練習 */
+.trainer-stage{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:18px;margin-bottom:16px}
+.trainer-stage>div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;align-items:center;gap:8px;min-width:0}
+.trainer-stage .label{font:500 12px var(--display);letter-spacing:.12em;color:var(--faint);align-self:flex-start}
+.trainer-stage .now .name{font:700 clamp(52px,7vw,84px)/1 var(--display);color:var(--lab)}
+.trainer-stage .next .name{font:700 40px/1 var(--display);color:var(--muted)}
+.trainer-stage .now .fig{width:min(170px,100%)}
+.trainer-stage .next .fig{width:min(120px,100%);opacity:.7}
+.trainer-stage .count .beats{margin-top:auto}
+.trainer-stage .count .hint{margin-bottom:auto}
+.trainer-stage .count .beats i{width:22px;height:22px}
+.trainer-stage .hint{color:var(--muted);font-size:14px;text-align:center;min-height:2.4em}
+
+/* 刷奏格子 */
+.strum-grid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px}
+.strum-grid .cell{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 0 8px;background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
+.strum-grid .cell.off{background:var(--surface)}
+.strum-grid .arrow{font:700 clamp(24px,3.4vw,40px)/1 var(--display);color:var(--ink)}
+.strum-grid .arrow.ghost{color:transparent;-webkit-text-stroke:1px var(--faint)}
+.strum-grid .cnt{font:500 13px var(--display);color:var(--faint)}
+.strum-grid .cell.now{background:var(--lab);border-color:var(--lab)}
+.strum-grid .cell.now .arrow,.strum-grid .cell.now .cnt{color:var(--lab-ink)}
+.strum-grid .cell.now .arrow.ghost{-webkit-text-stroke:1px var(--lab-ink)}
+.player-stage{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;margin-bottom:16px}
+.player-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px}
+.player-top .pname{font-size:18px}
+.player-top .pchord{font:700 36px/1 var(--display);color:var(--lab);min-height:36px}
+.pdesc{color:var(--muted);font-size:15px;margin-top:14px!important}
+
+.symbol-table{width:100%;border-collapse:collapse;font-size:15px}
+.symbol-table th,.symbol-table td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.symbol-table th{color:var(--faint);font-weight:500;font-size:13px}
+.symbol-table td:first-child{font:700 24px var(--display);color:var(--lab);white-space:nowrap}
+.symbol-table .ghost{color:transparent;-webkit-text-stroke:1px var(--faint)}
+
+/* 12 章課綱 */
+.chapter{display:flex;flex-direction:column;gap:6px}
+.chapter .ch-top{display:flex;justify-content:space-between;align-items:center}
+.chapter .ch-num{font:700 30px/1 var(--display);color:var(--lab)}
+.chapter.muted .ch-num{color:var(--faint)}
+.chapter .tag{margin:0}
+.chapter h3{margin:6px 0 0}
+.chapter .ch-en{font:500 13px var(--display);color:var(--faint)!important}
+.ch-topics{margin:6px 0 4px;padding-left:18px;color:var(--muted);font-size:14px}
+.ch-topics li+li{margin-top:2px}
+.chapter .progress{margin-top:auto}
+.ch-status{font-size:13px!important;color:var(--faint)!important;margin-top:6px!important}
+.part-head{display:flex;align-items:baseline;gap:14px;margin:8px 0 16px}
+.part-head h3{font-size:20px}
+.part-head span{color:var(--faint);font-size:14px}
+.part-head+.grid{margin-bottom:36px}
+
+/* 120 分鐘節奏條 */
+.agenda{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.agenda li{background:var(--card);border-top:3px solid var(--lab);padding:10px 12px;min-width:0}
+.agenda b{display:block;font:700 22px var(--display)}
+.agenda span{font-size:13px;color:var(--muted)}
+.plan{width:100%;border-collapse:collapse;font-size:15px}
+.plan th,.plan td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.plan th{color:var(--faint);font-weight:500;font-size:13px}
+.plan td:first-child{white-space:nowrap;color:var(--lab);font:700 15px var(--display)}
+.plan td:nth-child(2){white-space:nowrap;font-weight:500}
+.plan td:last-child{color:var(--muted)}
+
+.chapter-nav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:960px){
+  .trainer-stage{grid-template-columns:1fr 1fr}
+  .trainer-stage .count{grid-column:1/-1}
+}
+@media (max-width:640px){
+  .legend-fig{grid-template-columns:1fr}
+  .legend-fig .chord-fig{max-width:160px}
+  .strum-grid{gap:3px}
+  .strum-grid .cell{padding:10px 0 6px}
+  .agenda{flex-direction:column}
+  .agenda li{flex:none!important;display:flex;align-items:baseline;gap:12px;border-top:0;border-left:3px solid var(--lab)}
+  .plan td:nth-child(2){white-space:normal}
+  .plan,.plan tbody,.plan tr,.plan td{display:block}
+  .plan thead{display:none}
+  .plan tr{border-bottom:1px solid var(--line);padding:10px 0}
+  .plan td{border:0;padding:2px 0}
+}
