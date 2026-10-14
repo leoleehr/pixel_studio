@@ -279,10 +279,12 @@
       ' C' + (cx + w) + ',' + (wy - L * 0.07) + ' ' + (cx + u) + ',' + (y0 + L * 0.3) + ' ' + (cx + u) + ',' + (y0 + L * 0.2) +
       ' C' + (cx + u) + ',' + (y0 + L * 0.06) + ' ' + (cx + u * 0.62) + ',' + y0 + ' ' + cx + ',' + y0;
   }
-  // 小型吉他剪影（家族卡、尺寸圖用），viewBox 0 0 100 160
+  // 小型吉他插圖（家族卡、尺寸圖用），viewBox 0 0 100 160
+  var miniGuitarCount = 0;
   function miniGuitar(o) {
     o = o || {};
-    var s = '<svg class="gfig" viewBox="0 0 100 160" aria-hidden="true">';
+    var woodId = 'mini-wood-' + (++miniGuitarCount);
+    var s = '<svg class="gfig" viewBox="0 0 100 160" aria-hidden="true"><defs><linearGradient id="' + woodId + '" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f0d6a4"/><stop offset=".48" stop-color="#c99554"/><stop offset="1" stop-color="#8e5934"/></linearGradient></defs>';
     var top = o.bodyTop || 62, L = o.bodyLen || 92, neckW = o.neckW || 9;
     // 琴頭
     if (o.head === 'slot') s += '<rect x="42" y="4" width="16" height="22" rx="2" class="wood2"/><rect x="45.5" y="8" width="2.6" height="14" class="hole"/><rect x="51.9" y="8" width="2.6" height="14" class="hole"/>';
@@ -307,10 +309,13 @@
         '<rect x="38" y="128" width="24" height="10" class="metal"/><rect x="30" y="70" width="40" height="7" rx="3.5" class="metal" transform="rotate(-8 50 73)"/>';
       return s + '</svg>';
     } else {
-      s += '<path d="' + bodyPath(50, top, L, o.uw || 48, o.ww || 36, o.lw || 62, o.wp) + '" class="' + (o.color || 'wood') + '" stroke="#efe8d6" stroke-width="1.6"/>';
-      s += '<circle cx="50" cy="' + (top + L * 0.36) + '" r="' + (o.hole || 9) + '" class="hole"/>';
+      s += '<path d="' + bodyPath(50, top, L, o.uw || 48, o.ww || 36, o.lw || 62, o.wp) + '" class="' + (o.color || 'wood') + '" style="' + (o.color && o.color !== 'wood' && o.color !== 'wood2' && o.color !== 'wood3' ? '' : 'fill:url(#' + woodId + ')') + '" stroke="#efe8d6" stroke-width="1.6"/>';
+      var holeY = top + L * 0.36;
+      s += '<circle cx="50" cy="' + holeY + '" r="' + ((o.hole || 9) + 3) + '" fill="none" stroke="#e2c48f" stroke-width="1.1"/><circle cx="50" cy="' + holeY + '" r="' + (o.hole || 9) + '" class="hole"/>';
+      s += '<path d="M30 ' + (top + L * .18) + ' C40 ' + (top + L * .15) + ' 60 ' + (top + L * .21) + ' 70 ' + (top + L * .18) + ' M30 ' + (top + L * .25) + ' C42 ' + (top + L * .22) + ' 60 ' + (top + L * .28) + ' 70 ' + (top + L * .25) + '" fill="none" stroke="#f5d8a3" stroke-width=".6" opacity=".55"/>';
       if (o.pickguard) s += '<path d="M58 ' + (top + L * 0.4) + ' C66 ' + (top + L * 0.42) + ' 70 ' + (top + L * 0.56) + ' 62 ' + (top + L * 0.6) + ' C58 ' + (top + L * 0.62) + ' 56 ' + (top + L * 0.52) + ' 58 ' + (top + L * 0.4) + ' Z" class="' + (o.pickguard === 'clear' ? 'bone' : 'dark') + '" opacity="' + (o.pickguard === 'clear' ? '.35' : '1') + '"/>';
-      s += '<rect x="40" y="' + (top + L * 0.7) + '" width="20" height="4" rx="1" class="dark"/>';
+      s += '<rect x="38" y="' + (top + L * 0.69) + '" width="24" height="7" rx="2" class="dark"/><rect x="40" y="' + (top + L * 0.69 - 1) + '" width="20" height="1.5" rx=".7" class="bone"/>';
+      for (var f = 1; f <= 7; f++) { var fy = 26 + (top - 28) * (1 - Math.pow(2, -f / 12)); s += '<line x1="' + (50 - neckW / 2) + '" x2="' + (50 + neckW / 2) + '" y1="' + fy + '" y2="' + fy + '" stroke="#aeb1ae" stroke-width=".65"/>'; }
     }
     // 弦
     var n = o.strings || 6, x0 = 50 - (neckW / 2 - 1.5), dx = (neckW - 3) / (n - 1), end = o.kind === 'electric' ? 134 : o.kind === 'banjo' ? 128 : o.kind === 'mandolin' ? 136 : top + L * 0.72;
@@ -338,43 +343,19 @@
     { id: 'inlay', zh: '指板記號', en: 'Position Markers', x: 98, y: 290, t: [150, 290], d: '標示在第 3、5、7、9、12 格，方便快速找到位置；第 12 格有兩個圓點，正好是空弦的高八度。' },
     { id: 'neck', zh: '琴頸', en: 'Neck', x: 196, y: 262, t: [172, 262], d: '連接琴頭與琴身，內部藏著調整彎度的鋼筋（Truss Rod）。' },
     { id: 'top', zh: '面板', en: 'Top', x: 64, y: 590, d: '琴身正面的木板，是音色最主要的來源。面板振動，將琴弦的能量轉換為你聽到的聲音。' },
-    { id: 'hole', zh: '響孔', en: 'Sound Hole', x: 150, y: 456, d: '琴身內的空氣從這裡進出共鳴，將聲音傳送出來。' },
-    { id: 'rosette', zh: '響孔邊飾', en: 'Rosette', x: 205, y: 420, t: [182, 432], d: '響孔外圈的裝飾，同時補強響孔邊緣，用料包括塑膠、木片或貝殼。' },
-    { id: 'guard', zh: '防刮板', en: 'Pickguard', x: 232, y: 512, t: [200, 500], d: '保護面板，避免刷弦時被彈片刮傷。' },
-    { id: 'bridge', zh: '琴橋', en: 'Bridge', x: 92, y: 548, t: [112, 556], d: '黏在面板上，承受琴弦的拉力，將振動傳到面板。' },
-    { id: 'saddle', zh: '下弦枕', en: 'Saddle', x: 150, y: 520, t: [150, 549], d: '琴弦振動的終點，將振動傳進琴橋與面板。高度決定弦距（琴弦與指板的距離）。' },
-    { id: 'pin', zh: '弦釘', en: 'Bridge Pins', x: 210, y: 572, t: [182, 560], d: '將弦尾固定在琴橋的小釘子，換弦時才需要拔起。' },
-    { id: 'binding', zh: '琴身邊飾', en: 'Binding', x: 284, y: 560, d: '琴身邊緣的封邊，保護接縫，也能觀察做工的細緻程度。' },
-    { id: 'side', zh: '側板與背板', en: 'Sides & Back', x: 30, y: 400, d: '琴身的側面與背面，和面板一同圍出共鳴箱，影響低音的厚度與餘韻。' }
+    { id: 'hole', zh: '響孔', en: 'Sound Hole', x: 150, y: 366, d: '琴身內的空氣從這裡進出共鳴，將聲音傳送出來。' },
+    { id: 'rosette', zh: '響孔邊飾', en: 'Rosette', x: 205, y: 384, t: [182, 382], d: '響孔外圈的裝飾，同時補強響孔邊緣，用料包括塑膠、木片或貝殼。' },
+    { id: 'guard', zh: '防刮板', en: 'Pickguard', x: 232, y: 428, t: [200, 430], d: '保護面板，避免刷弦時被彈片刮傷。' },
+    { id: 'bridge', zh: '琴橋', en: 'Bridge', x: 92, y: 493, t: [112, 495], d: '黏在面板上，承受琴弦的拉力，將振動傳到面板。' },
+    { id: 'saddle', zh: '下弦枕', en: 'Saddle', x: 150, y: 486, t: [150, 496], d: '琴弦振動的終點，將振動傳進琴橋與面板。高度決定弦距（琴弦與指板的距離）。' },
+    { id: 'pin', zh: '弦釘', en: 'Bridge Pins', x: 210, y: 500, t: [182, 495], d: '將弦尾固定在琴橋的小釘子，換弦時才需要拔起。' },
+    { id: 'binding', zh: '琴身邊飾', en: 'Binding', x: 282, y: 535, d: '琴身邊緣的封邊，保護接縫，也能觀察做工的細緻程度。' },
+    { id: 'side', zh: '側板與背板', en: 'Sides & Back', x: 30, y: 386, d: '琴身的側面與背面，和面板一同圍出共鳴箱，影響低音的厚度與餘韻。' }
   ];
   function fretY(n) { return 108 + 442 * (1 - Math.pow(2, -n / 12)); }
   function anatomySVG() {
-    var s = '<svg class="gfig" viewBox="0 0 310 650" role="img" aria-label="木吉他正面構造圖，共 16 個部位">';
-    // 琴頭與旋鈕
-    s += '<path d="M126 108 L120 18 Q150 6 180 18 L174 108 Z" class="dark"/>';
-    [32, 60, 88].forEach(function (y) {
-      s += '<rect x="106" y="' + (y - 5) + '" width="16" height="10" rx="2" class="metal"/><ellipse cx="102" cy="' + y + '" rx="6" ry="9" class="bone"/>' +
-        '<rect x="178" y="' + (y - 5) + '" width="16" height="10" rx="2" class="metal"/><ellipse cx="198" cy="' + y + '" rx="6" ry="9" class="bone"/>' +
-        '<circle cx="133" cy="' + y + '" r="3.2" class="metal"/><circle cx="167" cy="' + y + '" r="3.2" class="metal"/>';
-    });
-    // 琴身（邊飾＋面板）
-    s += '<path d="' + bodyPath(150, 300, 336, 214, 176, 262, 0.44) + '" class="wood3" stroke="#efe8d6" stroke-width="5"/>';
-    // 琴頸、指板、琴衍、記號
-    s += '<rect x="128" y="104" width="44" height="232" class="wood2"/><rect x="130" y="106" width="40" height="312" class="dark"/>';
-    s += '<rect x="128" y="105" width="44" height="6" class="bone"/>';
-    for (var n = 1; n <= 20; n++) s += '<line x1="130" x2="170" y1="' + fretY(n) + '" y2="' + fretY(n) + '" stroke="#c9ccd1" stroke-width="1.6"/>';
-    [3, 5, 7, 9, 15, 17].forEach(function (n) { s += '<circle cx="150" cy="' + ((fretY(n) + fretY(n - 1)) / 2) + '" r="3.4" class="bone"/>'; });
-    s += '<circle cx="142" cy="' + ((fretY(12) + fretY(11)) / 2) + '" r="3.4" class="bone"/><circle cx="158" cy="' + ((fretY(12) + fretY(11)) / 2) + '" r="3.4" class="bone"/>';
-    // 響孔、邊飾、防刮板
-    s += '<circle cx="150" cy="456" r="44" fill="none" stroke="#2a2622" stroke-width="6"/><circle cx="150" cy="456" r="44" fill="none" stroke="#e2c48f" stroke-width="1.5" stroke-dasharray="3 3"/><circle cx="150" cy="456" r="35" class="hole"/>';
-    s += '<path d="M190 470 C214 470 232 498 222 526 C214 546 192 540 184 520 C178 504 180 482 190 470 Z" class="dark" opacity=".92"/>';
-    // 琴橋、下弦枕、弦釘
-    s += '<path d="M104 546 Q150 536 196 546 L196 566 Q150 574 104 566 Z" class="wood2"/><rect x="118" y="547" width="64" height="4" rx="2" class="bone"/>';
-    for (var k = 0; k < 6; k++) s += '<circle cx="' + (130 + k * 8) + '" cy="560" r="2.6" class="bone"/>';
-    // 弦
-    for (var j = 0; j < 6; j++) s += '<line x1="' + (134.5 + j * 6.2) + '" x2="' + (130 + j * 8) + '" y1="108" y2="549" stroke="#e8e4da" stroke-width="' + (1.3 - j * 0.15) + '"/>' +
-      '<line x1="' + (134.5 + j * 6.2) + '" x2="' + (j < 3 ? 133 : 167) + '" y1="108" y2="' + [88, 60, 32, 32, 60, 88][j] + '" stroke="#e8e4da" stroke-width=".8"/>';
-    // 標號
+    var s = '<svg class="gfig" viewBox="0 0 310 650" role="img" aria-label="真實木吉他正面構造圖，共 16 個部位">';
+    s += '<image href="' + GUITAR_IMAGE + 'acoustic-front.jpg" x="0" y="0" width="310" height="650" preserveAspectRatio="xMidYMid slice"/>';
     PARTS.forEach(function (p, i) {
       s += '<g class="hot" data-part="' + i + '" tabindex="0" role="button" aria-label="' + p.zh + '">' +
         (p.t ? '<line x1="' + p.x + '" y1="' + p.y + '" x2="' + p.t[0] + '" y2="' + p.t[1] + '" class="lead"/><circle cx="' + p.t[0] + '" cy="' + p.t[1] + '" r="2.6" class="dot"/>' : '') +
@@ -410,8 +391,17 @@
     { id: 'Grand Concert', zh: '大音樂會（GC）', p: [44, 33, 58, 0.42], L: 90, d: '琴身較小，音量適中，高頻靈敏、反應迅速，適合指彈與主奏。' },
     { id: 'Concert', zh: '音樂會', p: [40, 30, 54, 0.42], L: 86, d: '最小、最輕的筒身，抱起來最舒適，適合身形嬌小或經常攜帶外出的人。' }
   ];
+  var bodyOutlineCount = 0;
   function bodyOutline(b) {
-    return '<svg class="gfig" viewBox="0 0 90 112" aria-hidden="true"><path d="' + bodyPath(45, 110 - b.L, b.L, b.p[0], b.p[1], b.p[2], b.p[3]) + '" class="wood3" stroke="#efe8d6" stroke-width="1.4"/><circle cx="45" cy="' + (110 - b.L + b.L * 0.36) + '" r="7.5" class="hole"/></svg>';
+    var id = 'body-wood-' + (++bodyOutlineCount), y = 110 - b.L, holeY = y + b.L * .36, bridgeY = y + b.L * .7;
+    var s = '<svg class="gfig" viewBox="0 0 90 112" aria-hidden="true"><defs><linearGradient id="' + id + '" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0d6a4"/><stop offset=".52" stop-color="#c99554"/><stop offset="1" stop-color="#8e5934"/></linearGradient></defs>';
+    s += '<rect x="42.5" y="0" width="5" height="' + (y + 4) + '" rx="1" class="dark"/>';
+    for (var f = 1; f <= 5; f++) { var fy = 4 + (y - 2) * (1 - Math.pow(2, -f / 12)); s += '<line x1="42.5" x2="47.5" y1="' + fy + '" y2="' + fy + '" stroke="#c9ccd1" stroke-width=".7"/>'; }
+    s += '<path d="' + bodyPath(45, y, b.L, b.p[0], b.p[1], b.p[2], b.p[3]) + '" style="fill:url(#' + id + ')" stroke="#efe8d6" stroke-width="1.4"/>';
+    s += '<circle cx="45" cy="' + holeY + '" r="9.5" fill="none" stroke="#e2c48f" stroke-width="1.1"/><circle cx="45" cy="' + holeY + '" r="7" class="hole"/>';
+    s += '<rect x="37" y="' + (bridgeY - 2) + '" width="16" height="4" rx="1" class="dark"/><line x1="39" x2="51" y1="' + (bridgeY - 2.5) + '" y2="' + (bridgeY - 2.5) + '" stroke="#efe8d6" stroke-width=".8"/>';
+    for (var k = 0; k < 6; k++) s += '<line x1="' + (43 + k * .8) + '" x2="' + (40 + k * 2) + '" y1="' + (y + 4) + '" y2="' + bridgeY + '" stroke="#e8e4da" stroke-width=".35"/>';
+    return s + '</svg>';
   }
   function mountBodies(root) {
     root.innerHTML = '<div class="bodies">' + BODIES.map(function (b, i) {
