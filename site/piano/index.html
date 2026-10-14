@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pixel Studio 畫素音樂工作坊｜Piano Lab 流行鋼琴</title>
+<meta name="description" content="Pixel Studio Piano Lab 流行鋼琴初階課程：12 堂、24 小時的講義、教案、課前問卷與互動課堂投影片。主講：畫素音樂工作坊 李奕勳。">
+<link rel="icon" href="../assets/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="../assets/favicon.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png?v=2">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#101210">
+<meta property="og:title" content="Piano Lab 流行鋼琴｜畫素音樂工作坊 Pixel Studio">
+<meta property="og:description" content="12 堂課，從第一個琴鍵到自彈自唱。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Allura&text=We%20Perform%20The%20Pixel%20Of%20Music&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=20261014h">
+<link rel="stylesheet" href="../assets/backend.css?v=20261014h">
+<link rel="stylesheet" href="../assets/responsive.css?v=20261014h">
+<link rel="stylesheet" href="../assets/studio.css?v=20261014h">
+<link rel="stylesheet" href="../assets/home-art-direction.css?v=20261014h">
+<link rel="stylesheet" href="theme.css?v=20261014r">
+<link rel="stylesheet" href="../assets/brand/brand-tokens.css">
+</head>
+<body id="top" class="home" data-course="piano">
+<a class="skip-link" href="#main">跳至主要內容</a>
+<header class="topbar">
+<div class="wrap">
+<a class="brand" href="../studio.html" aria-label="返回 Pixel Studio 課程首頁"><img class="brand-logo" src="../assets/brand/pixel-studio-horizontal.svg" alt="Pixel Studio" width="2400" height="720"><span class="brand-caption">畫素音樂工作坊<br>Piano Lab</span></a>
+<nav aria-label="網站導覽">
+<a href="#lessons">課程</a>
+<a href="survey.html">問卷</a>
+<a href="handbook.html">講義與教案</a>
+<a href="#about">關於</a>
+</nav>
+</div>
+</header>
+
+<main id="main" tabindex="-1">
+<section class="home-hero" aria-labelledby="hero-title">
+<div class="wrap">
+<div class="hero-meta"><span><i class="live-dot" aria-hidden="true"></i>Pixel Studio / Piano Lab</span><span>流行鋼琴 · 12 堂 24 小時</span></div>
+<div class="hero-grid">
+<div class="hero-copy">
+<div class="hero-kicker">八十八個琴鍵，容納一整個樂團的聲音。</div>
+<h1 id="hero-title">從第一個琴鍵，<br>到自彈<em>自唱。</em></h1>
+<div class="english" aria-hidden="true">Play &amp; Sing.</div>
+<p>認識鍵盤、閱讀樂譜、按出和弦，<br>再為歌曲換上各種伴奏型態。<br>十二堂課，讓鋼琴陪你唱出喜愛的歌。</p>
+<div class="hero-actions"><a class="btn primary" href="p01/">開始第一堂 <span class="arrow" aria-hidden="true">↗</span></a><a class="text-link" href="#lessons">瀏覽十二堂課程 ↓</a></div>
+</div>
+<div class="voice-art">
+<span class="art-label">Fig. 01 · Hammer &amp; String</span><button class="motion-toggle" type="button" id="voice-motion" aria-pressed="false" title="聲波色彩流動">暫停動態 <span aria-hidden="true">Ⅱ</span></button>
+<svg viewBox="0 0 500 500" role="img" aria-label="由多條彩虹流動聲波構成的聲音雕塑"><defs><linearGradient id="voice-gradient" x1="0" y1="0" x2="500" y2="0" gradientUnits="userSpaceOnUse" spreadMethod="repeat"><stop stop-color="#e8412b"/><stop offset=".14" stop-color="#e2407f"/><stop offset=".28" stop-color="#8a4fc0"/><stop offset=".42" stop-color="#2f5fc4"/><stop offset=".56" stop-color="#45b3e6"/><stop offset=".7" stop-color="#6cbb4b"/><stop offset=".84" stop-color="#d6e03a"/><stop offset=".94" stop-color="#f4a62a"/><stop offset="1" stop-color="#e8412b"/></linearGradient></defs><g stroke="#d3ed8920" stroke-width=".7"><path d="M20 250H480M250 30V470"/><circle cx="250" cy="250" r="210" fill="none"/></g><g class="voice-lines" fill="none" stroke="url(#voice-gradient)" stroke-width="1.2" id="voice-lines"></g></svg>
+<span class="art-caption" aria-hidden="true">Key → Hammer → String</span>
+<span class="art-coordinate" aria-hidden="true">C4 / 261.6 Hz</span>
+<div class="voice-controls"><button type="button" id="voice-play" aria-pressed="false">▶ 聆聽聲音</button><label for="voice-frequency">頻率 <span id="voice-value">262 Hz</span><input id="voice-frequency" type="range" min="110" max="660" value="262" step="1" aria-label="聲波頻率（Hz）"></label></div>
+</div>
+</div>
+<div class="hero-bottom"><div><b>12</b><span>堂課</span></div><div><b>120</b><span>分鐘 / 堂</span></div><div><b>24</b><span>小時</span></div><a href="handbook.html">講義與教案 ↗</a></div>
+</div>
+</section>
+<div class="studio-band" aria-hidden="true"><div class="wrap"><span>Keys 鍵盤</span><i><img src="../assets/brand/pixel-studio-symbol-color.svg" alt="" width="64" height="64"></i><span>Chord 和弦</span><i><img src="../assets/brand/pixel-studio-symbol-color.svg" alt="" width="64" height="64"></i><span>Groove 伴奏</span><i><img src="../assets/brand/pixel-studio-symbol-color.svg" alt="" width="64" height="64"></i><span>Sing 彈唱</span></div></div>
+<section class="block" id="lessons">
+<div class="wrap">
+<div class="section-index">01 / The Learning Journey</div>
+<div class="sec-head">
+<h2>一堂一堂，<br>彈奏自己的歌。</h2>
+<p>前八堂奠定識譜、運指、和弦與伴奏，第八堂期中自彈自唱；後四堂深入級數、和弦進行與節奏型態，第十二堂期末發表。每一堂都是兩小時的課。</p>
+</div>
+<div class="journey-label" aria-hidden="true"><span>十二堂 / 識譜・和弦・伴奏・彈唱</span><span>From First Key To Your Song</span></div>
+<div class="lessons">
+<article class="lesson" style="--c:#e8412b">
+<div class="top"><div class="no">01</div><h3><small>Session 1・2 小時</small>認識鋼琴與流行鋼琴</h3></div>
+<p class="q">認識鋼琴的起源與構造，找到中央 C</p>
+<p class="songs">構造、種類、坐姿、手指編號、踏板</p>
+<div class="links"><a class="main" href="p01/">投影片</a><a href="handbook.html#session-1">講義</a></div>
+<a class="survey-link" href="survey.html?id=p-pre-1">填寫第 1 堂課前問卷 →</a>
+</article>
+<article class="lesson" style="--c:#e2407f">
+<div class="top"><div class="no">02</div><h3><small>Session 2・2 小時</small>基礎樂理與識譜</h3></div>
+<p class="q">閱讀大譜表，在鍵盤上找到每一個音</p>
+<p class="songs">音名、大譜表、時值、拍號、音程</p>
+<div class="links"><a class="main" href="p02/">投影片</a><a href="handbook.html#session-2">講義</a></div>
+<a class="survey-link" href="survey.html?id=p-pre-2">填寫第 2 堂課前問卷 →</a>
+</article>
+<article class="lesson" style="--c:#9a5fd0">
+<div class="top"><div class="no">03</div><h3><small>Session 3・2 小時</small>音階運指</h3></div>
+<p class="q">拇指穿越、中指跨越，流暢地彈奏音階</p>
+<p class="songs">大調公式、C、G、F 大調指法</p>
+<div class="links"><a class="main" href="p03/">投影片</a><a href="handbook.html#session-3">講義</a></div>
+<a class="survey-link" href="survey.html?id=p-pre-3">填寫第 3 堂課前問卷 →</a>
+</article>
+<article class="lesson" style="--c:#2f5fc4">
+<div class="top"><div class="no">04</div><h3><small>Session 4・2 小時</small>和弦組成與結構</h3></div>
+<p class="q">三個三度音疊成和弦，以轉位減少移動</p>
+<p class="songs">大小增減、順階和弦、轉位</p>
+<div class="links"><a class="main" href="p04/">投影片</a><a href="handbook.html#session-4">講義</a></div>
+<a class="survey-link" href="survey.html?id=p-pre-4">填寫第 4 堂課前問卷 →</a>
+</article>
+<article class="lesson" style="--c:#45b3e6">
+<div class="top"><div class="no">05</div><h3><small>Session 5・2 小時</small>基本歌曲彈奏（一）</h3></div>
+<p class="q">右手旋律、左手和弦，完成第一首歌</p>
+<p class="songs">簡譜、左手三種彈法、和弦選搭</p>
+<div class="links"><a class="main" href="p05/">投影片</a><a href="handbook.html#session-5">講義</a></div>
+<a class="survey-link" href="survey.html?id=p-pre-5">填寫第 5 堂課前問卷 →</a>
+</article>
+<article class="lesson" style="--c:#6cbb4b">
+<div class="top"><div class="no">06</div><h3><small>Session 6・2 小時</small>基本歌曲彈奏（二）與節奏型態</h3></div>
+<p class="q">讓左手流動起來</p>
+<p class="songs">指位譜、Slow Soul、華爾滋</p>
+<div class="links"><a class="main" href="p06/">投影片</a><a href="handbook.html#session-6">講義</a></div>
+<a class="survey-link" href="survey.html?id=p-pre-6">填寫第 6 堂課前問卷 →</a>
+</article>
+<article class="lesson" style="--c:#d6e03a">
+<div class="top"><div class="no">07</div><h3><small>Session 7・2 小時</small>伴奏技巧強化（4＋8）</h3></div>
+<p class="q">左右手接力，彈出兩個八度的聲音</p>
+<p class="songs">4 Beats、8 Beats、單手 8 度、雙手 16 度</p>
+<div class="links"><a class="main" href="p07/">投影片</a><a href="handbook.html#session-7">講義</a></div>
+<a class="survey-link" href="survey.html?id=p-pre-7">填寫第 7 堂課前問卷 →</a>
+</article>
+<article class="lesson" style="--c:#f4a62a">
+<div class="top"><div class="no">08</div><h3><small>Session 8・2 小時</small>單一調性歌曲與自彈自唱</h3></div>
+<p class="q">一邊彈，一邊唱，完成期中發表</p>
+<p class="songs">調性、前奏尾奏、自彈自唱四步驟</p>
+<div class="links"><a class="main" href="p08/">投影片</a><a href="handbook.html#session-8">講義</a></div>
+<a class="survey-link" href="survey.html?id=p-pre-8">填寫第 8 堂課前問卷 →</a>
+</article>
+<article class="lesson" style="--c:#e8412b">
+<div class="top"><div class="no">09</div><h3><small>Session 9・2 小時</small>級數和弦與調性關係</h3></div>
+<p class="q">找到和弦背後的數字規律</p>
+<p class="songs">級數、和弦功能、終止式、移調</p>
+<div class="links"><a class="main" href="p09/">投影片</a><a href="handbook.html#session-9">講義</a></div>
+<a class="survey-link" href="survey.html?id=p-pre-9">填寫第 9 堂課前問卷 →</a>
+</article>
+<article class="lesson" style="--c:#e2407f">
+<div class="top"><div class="no">10</div><h3><small>Session 10・2 小時</small>根音連結與常用和弦行進</h3></div>
+<p class="q">讓低音一步一步走下樓梯</p>
+<p class="songs">複合和弦、低音線、1645、卡農進行</p>
+<div class="links"><a class="main" href="p10/">投影片</a><a href="handbook.html#session-10">講義</a></div>
+<a class="survey-link" href="survey.html?id=p-pre-10">填寫第 10 堂課前問卷 →</a>
+</article>
+<article class="lesson" style="--c:#9a5fd0">
+<div class="top"><div class="no">11</div><h3><small>Session 11・2 小時</small>節奏型態（二）與十度、十六度</h3></div>
+<p class="q">為歌曲換上不同風格的衣服</p>
+<p class="songs">Slow Rock、進行曲、十度音</p>
+<div class="links"><a class="main" href="p11/">投影片</a><a href="handbook.html#session-11">講義</a></div>
+<a class="survey-link" href="survey.html?id=p-pre-11">填寫第 11 堂課前問卷 →</a>
+</article>
+<article class="lesson" style="--c:#45b3e6">
+<div class="top"><div class="no">12</div><h3><small>Session 12・2 小時</small>大小調關係與 G 大調</h3></div>
+<p class="q">認識另一個調，完成期末發表</p>
+<p class="songs">關係調、三種小調、G 大調</p>
+<div class="links"><a class="main" href="p12/">投影片</a><a href="handbook.html#session-12">講義</a></div>
+<a class="survey-link" href="survey.html?id=p-pre-12">填寫第 12 堂課前問卷 →</a>
+</article>
+</div>
+</div>
+</section>
+
+<section class="block tools-section" id="tools">
+<div class="wrap">
+<div class="section-index">02 / Your Pocket Studio</div>
+<div class="sec-head">
+<h2>你的口袋裡，<br>就有一架鋼琴。</h2>
+<p>上課時掃描 Qr Code，下課後繼續練習。鍵盤、音階、和弦與伴奏型，每一個工具都能在手機上操作，沒有鋼琴也能先練習。</p>
+</div>
+<div class="practice-layout"><div class="practice-display" aria-hidden="true"><div class="practice-top"><span>Accompaniment</span><span>練習示意 / Demo</span></div><div class="practice-note">C<small>L5 L3 L2 L1</small></div><div class="meter"><i style="--h:12px"></i><i style="--h:14px"></i><i style="--h:16px"></i><i style="--h:18px"></i><i style="--h:18px"></i><i style="--h:19px"></i><i style="--h:20px"></i><i style="--h:22px"></i><i style="--h:26px"></i><i style="--h:30px"></i><i style="--h:34px"></i><i style="--h:38px"></i><i style="--h:41px"></i><i style="--h:41px"></i><i style="--h:40px"></i><i style="--h:41px"></i><i style="--h:30px"></i><i style="--h:24px"></i><i style="--h:20px"></i><i style="--h:22px"></i><i style="--h:24px"></i><i style="--h:30px"></i><i style="--h:36px"></i><i style="--h:41px"></i><i style="--h:41px"></i><i style="--h:41px"></i><i style="--h:38px"></i><i style="--h:41px"></i><i style="--h:41px"></i><i style="--h:34px"></i><i style="--h:26px"></i><i style="--h:20px"></i><i style="--h:16px"></i><i style="--h:12px"></i><i style="--h:8px"></i><i style="--h:6px"></i></div><div class="practice-caption">左手分散和弦，右手唱出旋律。</div></div><div class="features">
+<div class="feature"><i>01 / Keys</i><b>可彈奏的鍵盤</b><span>切換音名、唱名與簡譜，點兩個琴鍵就能計算音程；電腦鍵盤也能彈奏。</span><a class="feature-link" href="p02/#s6">開啟鍵盤 ↗</a></div>
+<div class="feature"><i>02 / Read</i><b>找音遊戲</b><span>看見音名或五線譜上的音，點出正確的琴鍵，累積識譜的速度。</span><a class="feature-link" href="p02/#s18">開始找音 ↗</a></div>
+<div class="feature"><i>03 / Chord</i><b>和弦實驗室</b><span>選擇根音、性質與轉位，觀察組成音並聆聽大、小、增、減和弦的顏色。</span><a class="feature-link" href="p04/#s6">組合和弦 ↗</a></div>
+<div class="feature"><i>04 / Groove</i><b>伴奏型播放器</b><span>以 L5 L3 L2 L1 指位譜呈現二十多種伴奏型，搭配和弦進行與節拍器練習。</span><a class="feature-link" href="p07/#s6">跟著伴奏 ↗</a></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<div class="section-index">03 / The Session Flow</div>
+<div class="sec-head">
+<h2>讓創作，<br>擁有自己的節奏。</h2>
+<p>課前三天在網站填寫問卷，課堂依照起承轉合推進，課後練習延續到下一堂。</p>
+</div>
+<div class="session-head"><span class="eyebrow">Play. Sing. Repeat.</span><div class="session-total">120 <small>Min / Session</small></div></div>
+<div class="rhythm">
+<div style="flex:20;background:#2f5fc4"><b>起</b>熱手・回顧・引題<br><small>20 分鐘</small></div>
+<div style="flex:35;background:#d6cf2c;color:#1a1800"><b>承</b>觀念・示範<br><small>35 分鐘</small></div>
+<div style="flex:10;background:#33333b"><b>休</b>放鬆手指<br><small>10 分鐘</small></div>
+<div style="flex:35;background:#e0402b"><b>轉</b>分組・遊戲・實作<br><small>35 分鐘</small></div>
+<div style="flex:20;background:#4f9e3a"><b>合</b>合奏・驗收・總結<br><small>20 分鐘</small></div>
+</div>
+</div>
+</section>
+
+<section class="block" id="about">
+<div class="wrap">
+<div class="about"><div><div class="section-index">04 / About Pixel Studio</div><h2 class="about-statement">每一雙手，<br>都能彈出自己的歌。<br><em>我們陪你彈奏</em></h2></div><div class="about-copy"><p class="about-label">About Pixel Studio：</p><p class="since">「We Perform The Pixel Of Music」</p><p>畫素音樂工作坊成立於 2008 年，結合音樂製作、音樂教學與藝術展演。</p><p>許多人小時候學過鋼琴，後來卻放下了。我們從和弦與伴奏出發，將多年的鋼琴班教材整理成十二堂課，先讓你自彈自唱，再一步一步走向編曲與爵士。</p><div class="about-credit"><b>主講 / 李奕勳</b><span>Est. 2008</span><a href="mailto:musicallanding@gmail.com">聯絡工作坊 ↗</a></div></div></div>
+</div>
+</section>
+</main>
+<footer><div class="wrap"><p class="footer-manifesto">We Perform<br>The Pixel Of Music<span aria-hidden="true">.</span></p><div class="footer-main"><img class="footer-logo" src="../assets/brand/pixel-studio-horizontal-mono-white.svg" alt="Pixel Studio" width="2400" height="720" loading="lazy"><a href="#top">回到頂端 ↑</a></div><div class="footer-bottom"><span>© 畫素音樂工作坊 · Piano Lab 流行鋼琴</span><span>Est. 2008 · Music / Education / Art</span></div></div></footer>
+
+<nav class="tabbar" aria-label="主選單">
+<a href="#top" class="cur" data-sec="top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>首頁</a>
+<a href="#lessons" data-sec="lessons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>課程</a>
+<a href="handbook.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5V21h16"/></svg>講義</a>
+<a href="survey.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6a1 1 0 0 1 1 1v1H8V5a1 1 0 0 1 1-1z"/><path d="M8 5H6a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2"/><path d="M9 12l2 2 4-4"/></svg>問卷</a>
+</nav>
+
+<script src="../assets/pixel.js?v=20261014h"></script>
+<script src="../assets/studio.js?v=20261014h"></script>
+<script src="../assets/config.js?v=20261014h"></script>
+<script src="../assets/backend.js?v=20261014v"></script>
+<script>
+(function () {
+  var tabs = [].slice.call(document.querySelectorAll('.tabbar a[data-sec]'));
+  function cur() {
+    var id = 'top';
+    ['lessons'].forEach(function (s) { var e = document.getElementById(s); if (e && e.getBoundingClientRect().top < innerHeight * 0.4) id = s; });
+    tabs.forEach(function (a) { var active = a.getAttribute('data-sec') === id; a.classList.toggle('cur', active); if (active) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current'); });
+    document.querySelectorAll('.topbar nav a[href^="#"]').forEach(function (a) {
+      var section = document.querySelector(a.getAttribute('href'));
+      var active = section && section.getBoundingClientRect().top < innerHeight * 0.4 && section.getBoundingClientRect().bottom > innerHeight * 0.4;
+      if (active) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
+    });
+  }
+  addEventListener('scroll', cur, { passive: true }); cur();
+})();
+</script>
+</body>
+</html>
