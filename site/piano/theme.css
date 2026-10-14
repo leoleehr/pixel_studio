@@ -1,0 +1,159 @@
+/* Piano Lab 主題：沿用 Vocal Lab 版面，主色換成 CI 青藍（#45b3e6），並加上鍵盤、音階、和弦與伴奏型的互動工具 */
+:root{--accent:#45b3e6;--accent-rgb:69,179,230;--amber:var(--accent)}
+::selection{background:var(--accent);color:#04121b}
+.btn.primary:hover{background:#68c3ee}
+.live-dot{box-shadow:0 0 12px rgba(var(--accent-rgb),.4)}
+.slide .c-cyan{color:var(--accent)}
+
+/* ---------- 鍵盤 ---------- */
+.kb-box{width:100%}
+.kb{display:block;width:100%;height:auto;max-height:230px;touch-action:manipulation;user-select:none}
+.kb .k{cursor:pointer}
+.kb .w rect{fill:#f4f2ec;stroke:#1b1b20;stroke-width:1.2}
+.kb .b rect{fill:#18181d;stroke:#000}
+.kb .lb{font:600 12px "Space Grotesk","Noto Sans TC",sans-serif;text-anchor:middle;fill:#55525a;pointer-events:none}
+.kb .b .lb{fill:#c9c5bd;font-size:9.5px}
+.kb .fg{font:700 14px "Space Grotesk",sans-serif;text-anchor:middle;fill:#04121b;pointer-events:none}
+.kb .b .fg{fill:#fff;font-size:11px}
+.kb .w.tint rect{fill:#d8eef9}.kb .b.tint rect{fill:#24506a}
+.kb .w.on rect{fill:#9fd9f4}.kb .b.on rect{fill:#2f8fc4}
+.kb .w.sel rect{fill:#f6d77a}.kb .b.sel rect{fill:#b8901f}
+.kb .k.now rect,.kb .k.hit rect{fill:var(--accent)!important}
+.kb .k.now .lb,.kb .k.hit .lb{fill:#04121b}
+.kb .w.good rect{fill:#8fd27a}.kb .b.good rect{fill:#4f9e3a}
+.kb .w.bad rect{fill:#f19a8e}.kb .b.bad rect{fill:#c0392b}
+.kb-top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.kb-show b{display:block;font:700 26px var(--display);color:var(--accent)}
+.kb-show span{font-size:15px;color:var(--muted)}
+.kb-modes,.st-hands{display:flex;gap:6px;flex-wrap:wrap}
+.kb-modes .btn.on,.st-pick .btn.on,.st-hands .btn.on,.cl-roots .btn.on,.cl-quals .btn.on,.cl-inv .btn.on,.ap-pick .btn.on,.dg-keys .btn.on{background:var(--accent);border-color:var(--accent);color:#04121b;font-weight:700}
+
+/* 找音遊戲 */
+.nq-head{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:10px}
+.nq-ask{display:flex;align-items:center;gap:18px}
+.nq-ask p{margin:0;font-size:16px;color:var(--muted)}
+.nq-big{font:700 54px/1 var(--display);color:var(--accent);min-width:110px}
+.nq-stat{font-size:16px;color:var(--muted);text-align:right}
+.nq-stat b{font:700 26px var(--display);color:var(--ink)}
+.nq-stat small{display:block;font-size:13px}
+.staff{width:220px;height:auto;background:#f4f2ec;border-radius:10px}
+.staff line{stroke:#1b1b20;stroke-width:1.2}
+.staff .ledger{stroke-width:1.4}
+.staff .clef{font:46px "Noto Music","Segoe UI Symbol",serif;fill:#1b1b20}
+.staff .clef.b{font-size:36px}
+.staff .head{fill:#1b1b20}
+.staff .acc{font:700 20px "Noto Music","Segoe UI Symbol",serif;fill:#1b1b20}
+
+/* 音階運指、和弦實驗室、伴奏型 */
+.st-pick,.cl-roots,.cl-quals,.cl-inv,.ap-pick,.dg-keys{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.cl-roots .btn{min-width:46px;padding:6px 8px}
+.st-ctl,.ap-ctl{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:10px;font-size:15px;color:var(--muted)}
+.st-ctl input[type=range],.ap-ctl input[type=range]{accent-color:var(--accent);vertical-align:middle}
+.st-ctl b,.ap-ctl b{color:var(--ink);font:700 17px var(--display)}
+.ap-ctl select{background:var(--card-2);border:1px solid var(--line-2);color:var(--ink);border-radius:8px;padding:6px 8px;font:inherit}
+.st-note,.ap-desc,.dg-info{font-size:16px;color:var(--muted);margin:8px 0 0}
+.cl-info{display:flex;gap:18px;align-items:center;margin-top:10px}
+.cl-name{font:700 42px/1 var(--display);color:var(--accent);min-width:120px}
+.cl-name small{display:block;font:500 15px "Noto Sans TC",sans-serif;color:var(--muted);margin-top:6px}
+.cl-detail p{font-size:17px;margin:2px 0}
+.cl-info+.btn-row{justify-content:flex-start;margin-top:8px}
+.ap-bars{display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap}
+.ap-bars span{font:700 18px var(--display);padding:4px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line-2)}
+.ap-bars span.now{background:var(--accent);border-color:var(--accent);color:#04121b}
+.ap-grid{display:grid;grid-template-columns:repeat(var(--n,8),minmax(0,1fr));gap:3px;margin-bottom:10px}
+.ap-cell{background:var(--card);border:1px solid var(--line);border-radius:6px;text-align:center;font:700 14px/1.25 var(--display);padding:7px 2px;color:var(--muted)}
+.ap-cell.beat{color:var(--ink)}
+.ap-cell.bar{grid-column-start:1}
+.ap-cell.now{background:var(--accent);border-color:var(--accent);color:#04121b}
+.ap-metro{display:flex;align-items:center;gap:4px}
+.dg-cards{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:10px}
+.dg-card{border:1px solid var(--line-2);background:var(--card);color:var(--ink);border-radius:var(--r-sm);padding:10px 4px;cursor:pointer;text-align:center;font-family:inherit}
+.dg-card b{display:block;font:700 20px var(--display);color:var(--accent)}
+.dg-card span{display:block;font:700 18px var(--display);margin-top:2px}
+.dg-card small{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+.dg-card.primary{border-color:rgba(var(--accent-rgb),.6)}
+.dg-card.rel{outline:2px dashed #e2407f;outline-offset:-4px}
+.dg-card.on{background:var(--accent);border-color:var(--accent)}
+.dg-card.on b,.dg-card.on span,.dg-card.on small{color:#04121b}
+.st-pick+.kb-box,.cl-inv+.kb-box{margin-top:4px}
+
+/* 鍵盤示意圖、指法手、樂器卡 */
+.pfig{display:block;width:100%;height:auto}
+.pfig text{font-family:"Noto Sans TC",sans-serif;fill:var(--ink,#f3f0e9)}
+.pfig .en{font-family:"Space Grotesk",sans-serif;fill:var(--muted)}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+.hands svg{width:100%;height:auto;max-height:250px}
+.hands .palm{fill:#2a2d33;stroke:#6d6a64;stroke-width:2}
+.hands .tip{fill:var(--accent)}
+.hands text{font:700 22px "Space Grotesk",sans-serif;fill:#04121b;text-anchor:middle}
+.hands .cap{font:500 18px "Noto Sans TC";fill:var(--ink,#f3f0e9)}
+.types{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.types .card{padding:14px 16px}
+.types h3{font-size:19px;margin:0 0 2px}
+.types .en{font:500 13px var(--display);color:var(--muted)}
+.types p{font-size:15px!important;line-height:1.55!important;color:var(--muted);margin-top:6px}
+.types svg{width:100%;height:70px;margin-bottom:6px}
+.era{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.era .card{padding:16px;border-top:3px solid var(--c,var(--accent))}
+.era .yr{font:700 15px var(--display);color:var(--c,var(--accent))}
+.era h3{font-size:20px;margin:6px 0}
+.era p{font-size:15.5px!important;line-height:1.55!important;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.cmp .card h3{font-size:22px;margin-bottom:6px}
+.pattern-txt{font:700 22px var(--display);letter-spacing:.06em;color:var(--accent)}
+.slide table.tight th,.slide table.tight td{font-size:17px;padding:8px 10px}
+.slide .reveal p,.slide .reveal li{font-size:18px;line-height:1.6}
+
+/* 曲例卡片 */
+.slide .song-grid{gap:14px}
+.slide .song-grid.c2{grid-template-columns:repeat(2,minmax(0,1fr));max-width:900px}
+.slide .song-grid.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.slide .song-grid.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.slide .song-grid .ytp-meta b{font-size:14px}
+.slide .song-grid .ytp-bar{gap:6px;padding:8px 10px}
+.slide .song-grid .ytp-btn{width:34px;height:34px}
+.slide .song-grid .ytp-time{display:none}
+.slide .song-grid .ytp-meta span{white-space:normal;line-height:1.35}
+
+/* 講義：鍵盤示意 */
+.md .hb-kb{margin:12px 0 16px;padding:12px;background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
+
+@media (max-width:900px),(orientation:portrait) and (max-width:1100px){
+  .slide .song-grid.c2,.slide .song-grid.c3,.slide .song-grid.c4{grid-template-columns:1fr;max-width:none}
+  .slide .song-grid .ytp-time{display:inline}
+  .slide .grid2[style]{grid-template-columns:1fr!important}
+  .slide .steps[style]{grid-template-columns:1fr 1fr!important}
+  .kb-box{overflow-x:auto}
+  .kb{min-width:560px}
+  .nq-head{flex-direction:column;align-items:flex-start}
+  .nq-big{font-size:40px}
+  .cl-info{flex-direction:column;align-items:flex-start;gap:6px}
+  .cl-name{font-size:32px}
+  .ap-grid{grid-template-columns:repeat(min(var(--n,8),8),minmax(0,1fr))}
+  .dg-cards{grid-template-columns:repeat(4,1fr)}
+  .types,.era{grid-template-columns:1fr 1fr}
+  .cmp,.hands{grid-template-columns:1fr}
+}
+@media (max-width:480px){
+  .types,.era{grid-template-columns:1fr}
+  .dg-cards{grid-template-columns:repeat(3,1fr)}
+  .slide .steps[style]{grid-template-columns:1fr!important}
+}
+
+/* 歌曲彈奏：簡譜 */
+.sp-sheet{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-left:2px solid var(--line-2);margin-bottom:10px}
+.sp-bar{border-right:2px solid var(--line-2);border-bottom:1px solid var(--line);padding:4px 8px 8px}
+.sp-ch{font:700 15px var(--display);color:var(--accent);min-height:20px}
+.sp-mel{display:flex;justify-content:space-around;font:700 24px var(--display);letter-spacing:.02em}
+.sp-mel i{font-style:normal;padding:0 3px;border-radius:6px;display:flex;gap:2px}
+.sp-mel i.now{background:var(--accent);color:#04121b}
+.sp-mel span{position:relative}
+.sp-mel span.hi::after,.sp-mel span.lo::after{content:"·";position:absolute;left:50%;transform:translateX(-50%);font-size:20px;line-height:1}
+.sp-mel span.hi::after{top:-10px}.sp-mel span.lo::after{bottom:-10px}
+@media (max-width:900px){.sp-sheet{grid-template-columns:repeat(2,minmax(0,1fr))}.sp-mel{font-size:19px}}
+.slide .grid2>*,.slide .split>*{min-width:0}
+.sp-sheet.long{grid-template-columns:repeat(8,minmax(0,1fr))}
+.sp-sheet.long .sp-mel{font-size:20px}
+.chordlab .kb{max-height:180px}
+@media (max-width:900px){.sp-sheet.long{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ap-ctl select{max-width:100%;min-width:0}

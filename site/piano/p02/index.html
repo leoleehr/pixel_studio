@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>基礎樂理與識譜｜第二堂｜Piano Lab</title>
+<meta name="description" content="Pixel Studio Piano Lab 第二堂課堂投影片：音名、唱名與簡譜、鍵盤上的音名、大譜表與中央 C、音符時值與休止符、拍號、全音與半音、升降記號、音程與協和度。">
+<link rel="icon" href="../../assets/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="../../assets/favicon.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/favicon-192.png?v=2">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#101210">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Music&text=%F0%9D%84%9E%F0%9D%84%A2%E2%99%AF%E2%99%AD&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/deck.css?v=20261014r">
+<link rel="stylesheet" href="../../assets/interact.css?v=20261014r">
+<link rel="stylesheet" href="../../assets/backend.css?v=20261014r">
+<link rel="stylesheet" href="../../assets/responsive.css?v=20261014r">
+<link rel="stylesheet" href="../../assets/deck-studio.css?v=20261014r">
+<link rel="stylesheet" href="../../assets/youtube.css?v=20261014r">
+<link rel="stylesheet" href="../theme.css?v=20261014r">
+</head>
+<body data-title="第二堂｜基礎樂理與識譜" data-course="piano" data-lesson="p02" data-home="../index.html#lessons">
+<div class="progress" id="progress"></div>
+<main class="deck" id="deck">
+<div class="stage" id="stage">
+<!-- 1 封面 -->
+<section class="slide cover">
+  <div class="kicker">Pixel Studio Piano Lab｜流行鋼琴　第二堂</div>
+  <h1>基礎樂理與識譜</h1>
+  <p class="lead">Basic Theory · Reading Music</p>
+  <p class="meta">主講：畫素音樂工作坊　李奕勳<br>musicallanding@gmail.com</p>
+</section>
+
+<!-- 2 路線 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>手機同步</div>
+  <div class="kicker">Today · 120 Minutes</div>
+  <h2>今天的路線：讓樂譜變成能彈奏的語言</h2>
+  <div class="timeline">
+    <div class="bar-qi" style="flex:20"><b>起</b><small>五指回顧、聲音三要素｜20 分鐘</small></div>
+    <div class="bar-cheng" style="flex:35"><b>承</b><small>音名、譜表、時值、拍號｜35 分鐘</small></div>
+    <div class="bar-rest" style="flex:10"><b>休</b><small>10 分鐘</small></div>
+    <div class="bar-zhuan" style="flex:35"><b>轉</b><small>全音半音、升降記號、音程｜35 分鐘</small></div>
+    <div class="bar-he" style="flex:20"><b>合</b><small>找音遊戲｜20 分鐘</small></div>
+  </div>
+  <div class="split wide">
+    <ul class="clean compact">
+      <li>能說出音名、唱名與簡譜的對應，並在鍵盤上找到每一個音</li>
+      <li>能閱讀大譜表上中央 C 附近的音，理解音符時值與拍號</li>
+      <li>理解全音、半音與升降記號，能計算兩個音之間的音程</li>
+      <li>下課前，在找音遊戲中連續答對十題</li>
+    </ul>
+    <div class="qr" data-href="self"></div>
+  </div>
+</section>
+
+<!-- 3 回顧 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>舉手計票</div>
+  <div class="kicker"><span class="tag t-qi">起</span>00:00–00:20　回顧</div>
+  <h2>五指位置，現在穩定了嗎？</h2>
+  <div class="split">
+    <div>
+      <ul class="clean compact">
+        <li>右手 1 2 3 4 5、左手 5 4 3 2 1，全班一起彈奏一輪</li>
+        <li>兩位同學分享上週的錄音：五個音是否平均</li>
+        <li>老師回答上週出場券的問題</li>
+      </ul>
+    </div>
+    <div>
+      <p class="muted" style="font-size:18px;margin-bottom:10px">閉上眼睛，你能找到中央 C 嗎？</p>
+      <div class="poll" data-id="p02-c" data-options="立刻找到|需要看一下黑鍵|還需要數一數|還不太確定"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 聲音三要素 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-qi">起</span>何謂音樂</div>
+  <h2 style="margin-bottom:16px">音的三要素：高低、大小、音色</h2>
+  <div class="grid3">
+    <div class="card"><div class="big-num c-cyan">Hz</div><h3>高低：頻率</h3><p>每秒振動的次數。A4 每秒振動 440 次，就是 440 Hz；人耳大約可以聆聽 20 Hz 到 20000 Hz。</p></div>
+    <div class="card"><div class="big-num c-gold">dB</div><h3>大小：振幅</h3><p>振動的幅度越大，聲音越大。鋼琴依靠觸鍵的速度與重量控制音量。</p></div>
+    <div class="card"><div class="big-num c-pink">♪</div><h3>音色：泛音</h3><p>同樣是 440 Hz，鋼琴與長笛聽起來不同，原因是泛音的數量與強弱不同。</p></div>
+  </div>
+  <div class="card" style="margin-top:16px"><p>振動規則、有固定高度的聲音稱為樂音；不規則、沒有固定高度的聲音稱為噪音。音樂的四大要素是旋律、和聲、節奏，以及承載它們的音色。</p></div>
+</section>
+
+<!-- 5 音名 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">承</span>00:20–00:55　音名、唱名與簡譜</div>
+  <h2 style="margin-bottom:14px">同一個音，有三種稱呼</h2>
+  <table>
+    <tr><th>級數</th><td>Ⅰ 主音</td><td>Ⅱ 上主音</td><td>Ⅲ 中音</td><td>Ⅳ 下屬音</td><td>Ⅴ 屬音</td><td>Ⅵ 下中音</td><td>Ⅶ 導音</td><td>Ⅷ 主音</td></tr>
+    <tr><th>音名</th><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>A</td><td>B</td><td>C</td></tr>
+    <tr><th>唱名</th><td>Do</td><td>Re</td><td>Mi</td><td>Fa</td><td>Sol</td><td>La</td><td>Si</td><td>Do</td></tr>
+    <tr><th>簡譜</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>1̇</td></tr>
+  </table>
+  <div class="grid2" style="margin-top:16px">
+    <div class="card"><h3 class="c-cyan">音名</h3><p>英美慣用的字母，琴鍵的固定名稱。和弦名稱也用音名，例如 C、Am、G7。</p></div>
+    <div class="card"><h3 class="c-gold">唱名與簡譜</h3><p>唱名方便演唱，簡譜方便記錄。本課程的旋律一律以簡譜記錄，數字上方加點代表高八度。</p></div>
+  </div>
+</section>
+
+<!-- 6 鍵盤上的音名 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>可彈奏的鍵盤</div>
+  <div class="kicker"><span class="tag t-cheng">承</span>鍵盤上的音名</div>
+  <h2 style="margin-bottom:8px">切換音名、唱名、簡譜，觀察每個白鍵的名字</h2>
+  <div class="keyboard" data-lo="48" data-hi="84" data-labels="name"></div>
+  <p class="muted" style="font-size:17px;margin-top:8px">C4 後面的數字代表第幾個八度。從 C 到下一個 C 是一個八度，鋼琴總共有七個多八度。</p>
+</section>
+
+<!-- 7 大譜表 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">承</span>大譜表</div>
+  <h2 style="margin-bottom:14px">高音譜號屬於右手，低音譜號屬於左手</h2>
+  <div class="grid2" style="grid-template-columns:1fr 1fr;align-items:center">
+    <svg class="pfig" viewBox="0 0 520 300" role="img" aria-label="大譜表：上方高音譜號、下方低音譜號，中央 C 位於兩者之間的加線">
+      <rect x="0" y="0" width="520" height="300" rx="14" fill="#f4f2ec"/>
+      <g stroke="#1b1b20" stroke-width="1.4"><path d="M40 60H500M40 76H500M40 92H500M40 108H500M40 124H500"/><path d="M40 180H500M40 196H500M40 212H500M40 228H500M40 244H500"/><path d="M40 60V244"/></g>
+      <text x="48" y="122" font-size="78" style="font-family:'Noto Music','Segoe UI Symbol',serif;fill:#1b1b20">𝄞</text>
+      <text x="50" y="222" font-size="56" style="font-family:'Noto Music','Segoe UI Symbol',serif;fill:#1b1b20">𝄢</text>
+      <g fill="#1b1b20"><path d="M246 140h28" stroke="#1b1b20" stroke-width="1.6"/><ellipse cx="260" cy="140" rx="9" ry="6.5" transform="rotate(-20 260 140)" fill="#45b3e6"/>
+      <ellipse cx="330" cy="124" rx="9" ry="6.5" transform="rotate(-20 330 124)"/><ellipse cx="400" cy="60" rx="9" ry="6.5" transform="rotate(-20 400 60)"/><ellipse cx="190" cy="180" rx="9" ry="6.5" transform="rotate(-20 190 180)"/><ellipse cx="130" cy="244" rx="9" ry="6.5" transform="rotate(-20 130 244)"/></g>
+      <g font-size="15" fill="#1b1b20" style="font-family:'Space Grotesk',sans-serif;font-weight:700"><text x="250" y="166" fill="#2f8fc4">C4</text><text x="320" y="146">E4</text><text x="390" y="48">F5</text><text x="180" y="168">A3</text><text x="120" y="268">G2</text></g>
+    </svg>
+    <ul class="clean compact">
+      <li>大譜表由高音譜表與低音譜表上下相疊，鋼琴譜的標準格式</li>
+      <li>中央 C 位於兩個譜表之間：高音譜表的下加一線</li>
+      <li>高音譜表的第一線是 E4，第五線是 F5</li>
+      <li>低音譜表的第一線是 G2，第五線是 A3</li>
+      <li>超出五線的音，往上或往下加線、加間</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 8 時值 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">承</span>音符的時值</div>
+  <h2 style="margin-bottom:14px">二分法：每往下一級，長度剩下一半</h2>
+  <div class="grid2" style="grid-template-columns:1.15fr .85fr;align-items:start">
+    <table class="tight">
+      <tr><th>音符</th><th>拍數（4/4）</th><th>休止符</th><th>簡譜</th></tr>
+      <tr><td>全音符</td><td>4 拍</td><td>全休止符</td><td>1 - - -</td></tr>
+      <tr><td>二分音符</td><td>2 拍</td><td>二分休止符</td><td>1 -</td></tr>
+      <tr><td>四分音符</td><td>1 拍</td><td>四分休止符</td><td>1</td></tr>
+      <tr><td>八分音符</td><td>½ 拍</td><td>八分休止符</td><td>數字下一條線</td></tr>
+      <tr><td>十六分音符</td><td>¼ 拍</td><td>十六分休止符</td><td>數字下兩條線</td></tr>
+    </table>
+    <div>
+      <div class="card"><h3 class="c-cyan">附點</h3><p>增加原本時值的一半。附點二分音符等於 3 拍，附點四分音符等於 1.5 拍。</p></div>
+      <div class="card" style="margin-top:12px"><h3 class="c-gold">三連音</h3><p>將一拍平均分成三份，常見於抒情慢歌與 Slow Rock，第十一堂會再遇到。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 拍號 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">承</span>拍號</div>
+  <h2 style="margin-bottom:14px">上方是每小節幾拍，下方是幾分音符為一拍</h2>
+  <div class="grid3">
+    <div class="card"><div class="big-num c-cyan">2/4・4/4</div><h3>二拍子系統</h3><p>強、弱；4/4 是強、弱、次強、弱，流行歌曲最常見。</p></div>
+    <div class="card"><div class="big-num c-gold">3/4・6/8</div><h3>三拍子系統</h3><p>強、弱、弱，如同圓舞曲的旋轉；6/8 是兩大拍、每拍分成三份。</p></div>
+    <div class="card"><div class="big-num c-pink">5/4・7/8</div><h3>變化拍子</h3><p>二拍與三拍組合而成，較少見，常出現在前衛的作品中。</p></div>
+  </div>
+  <div class="reveal" data-label="跟著打拍子" style="margin-top:16px"><p>全班一起拍手：4/4 念出「1、2、3、4」，第 1 拍最重；3/4 念出「1、2、3」，像跳舞時轉一圈。</p></div>
+</section>
+
+<!-- 10 小測 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>選擇題</div>
+  <div class="kicker"><span class="tag t-cheng">承</span>小測驗</div>
+  <h2 style="margin-bottom:14px">譜表與拍子</h2>
+  <div class="split">
+    <div class="quiz" data-answer="3">
+      <p class="q">中央 C 在高音譜表的哪個位置？</p>
+      <ol><li>第一線</li><li>第一間</li><li>下加一線</li><li>上加一線</li></ol>
+      <div class="why">中央 C 位於高音譜表的下加一線，也是低音譜表的上加一線。</div>
+    </div>
+    <div class="quiz" data-answer="2">
+      <p class="q">在 4/4 拍中，附點二分音符等於幾拍？</p>
+      <ol><li>2 拍</li><li>3 拍</li><li>4 拍</li><li>1.5 拍</li></ol>
+      <div class="why">二分音符 2 拍，附點再增加一半的 1 拍，共 3 拍。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 休息 -->
+<section class="slide center">
+  <div class="kicker">Break</div>
+  <div class="timer" id="timer">10:00</div>
+  <p class="lead">休息十分鐘，用手指在桌上打出 4/4 與 3/4</p>
+  <div style="height:20px"></div>
+  <div class="btn-row"><button type="button" class="btn" id="timerBtn">開始倒數</button><button type="button" class="btn" id="timerReset">重設</button></div>
+</section>
+
+<!-- 12 全音半音 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-zhuan">轉</span>01:05–01:40　全音與半音</div>
+  <h2 style="margin-bottom:14px">相鄰的兩個琴鍵，相差一個半音</h2>
+  <div class="grid2">
+    <div class="card"><h3 class="c-cyan">半音</h3><p>鍵盤上緊鄰的兩個鍵，不論黑白。E 與 F、B 與 C 之間沒有黑鍵，所以它們本身就相差半音。</p></div>
+    <div class="card"><h3 class="c-gold">全音</h3><p>兩個半音。C 到 D 中間隔著一個黑鍵，所以相差一個全音。</p></div>
+  </div>
+  <div class="card" style="margin-top:14px"><p><b class="c-cyan">十二平均律：</b>將一個八度平均分成十二個半音，不論在哪一個調彈奏，聽起來都一樣均勻。這是巴哈大力提倡的系統，也是今天所有鋼琴的調音方式。</p></div>
+</section>
+
+<!-- 13 升降記號 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-zhuan">轉</span>變化記號</div>
+  <h2 style="margin-bottom:14px">升、降、還原：讓音往上或往下移動半音</h2>
+  <table>
+    <tr><th>記號</th><th>名稱</th><th>作用</th><th>範例</th></tr>
+    <tr><td><b>♯</b></td><td>升記號</td><td>升高半音</td><td>♯F：F 右邊的黑鍵</td></tr>
+    <tr><td><b>♭</b></td><td>降記號</td><td>降低半音</td><td>♭B：B 左邊的黑鍵</td></tr>
+    <tr><td><b>♮</b></td><td>還原記號</td><td>取消升降，回到原本的音</td><td>♮F：回到白鍵 F</td></tr>
+    <tr><td><b>𝄪 𝄫</b></td><td>重升、重降</td><td>升高或降低一個全音</td><td>較少見</td></tr>
+  </table>
+  <p class="muted" style="font-size:17px;margin-top:12px">寫在小節中的變化記號稱為「臨時記號」，只在該小節有效；寫在譜號旁邊的稱為「調號」，整首曲子都有效。第十二堂的 G 大調，就有一個升 F 的調號。</p>
+</section>
+
+<!-- 14 音程 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-zhuan">轉</span>音程</div>
+  <h2 style="margin-bottom:12px">兩個音之間的距離，以「度」計算</h2>
+  <div class="grid2" style="grid-template-columns:1.1fr .9fr;align-items:start">
+    <table class="tight">
+      <tr><th>半音數</th><th>音程</th><th>協和度</th></tr>
+      <tr><td>0</td><td>完全一度</td><td>完全協和</td></tr>
+      <tr><td>3／4</td><td>小三度／大三度</td><td>不完全協和</td></tr>
+      <tr><td>5</td><td>完全四度</td><td>完全協和</td></tr>
+      <tr><td>6</td><td>增四度、減五度</td><td>不協和</td></tr>
+      <tr><td>7</td><td>完全五度</td><td>完全協和</td></tr>
+      <tr><td>8／9</td><td>小六度／大六度</td><td>不完全協和</td></tr>
+      <tr><td>1、2、10、11</td><td>二度、七度</td><td>不協和</td></tr>
+      <tr><td>12</td><td>完全八度</td><td>完全協和</td></tr>
+    </table>
+    <div>
+      <div class="card"><h3 class="c-cyan">計算度數</h3><p>頭尾都要算：C 到 F 是 C、D、E、F，共四度。</p></div>
+      <div class="card" style="margin-top:12px"><h3 class="c-gold">為什麼還要算半音</h3><p>同樣是四度，C 到 F 相差 5 個半音，F 到 B 相差 6 個半音，名稱就從完全四度變成增四度。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 15 音程鍵盤 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>音程計算</div>
+  <div class="kicker"><span class="tag t-zhuan">轉</span>動手計算</div>
+  <h2 style="margin-bottom:8px">點選兩個琴鍵，計算音程並聆聽協和度</h2>
+  <div class="keyboard" data-lo="48" data-hi="84" data-labels="name" data-mode="interval"></div>
+  <p class="muted" style="font-size:17px;margin-top:8px">試試看：C 與 G、C 與 E、C 與 D、B 與 F。哪一組聽起來最穩定，哪一組最緊張？</p>
+</section>
+
+<!-- 16 小測 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>選擇題</div>
+  <div class="kicker"><span class="tag t-zhuan">轉</span>小測驗</div>
+  <h2 style="margin-bottom:14px">音程的計算</h2>
+  <div class="split">
+    <div class="quiz" data-answer="1">
+      <p class="q">大三度包含幾個半音？</p>
+      <ol><li>4 個</li><li>5 個</li><li>6 個</li><li>8 個</li></ol>
+      <div class="why">C 到 E：C♯、D、D♯、E，共 4 個半音。</div>
+    </div>
+    <div class="quiz" data-answer="4">
+      <p class="q">哪一個不是完全協和音程？</p>
+      <ol><li>八度</li><li>四度</li><li>五度</li><li>二度</li></ol>
+      <div class="why">完全協和音程是一度、四度、五度、八度；二度屬於不協和音程。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 17 找音遊戲：音名 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>找音遊戲</div>
+  <div class="kicker"><span class="tag t-he">合</span>01:40–02:00　找音遊戲</div>
+  <h2 style="margin-bottom:8px">看見音名，點出正確的琴鍵</h2>
+  <div class="notequiz" data-mode="name" data-lo="48" data-hi="72"></div>
+</section>
+
+<!-- 18 找音遊戲：五線譜 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>找音遊戲・五線譜</div>
+  <div class="kicker"><span class="tag t-he">合</span>識譜挑戰</div>
+  <h2 style="margin-bottom:8px">看見五線譜上的音，點出正確的琴鍵</h2>
+  <div class="notequiz" data-mode="staff" data-lo="53" data-hi="72"></div>
+</section>
+
+<!-- 19 三句話 -->
+<section class="slide center">
+  <div class="kicker">Today In Three Lines</div>
+  <p class="quote">C D E F G A B 是音名，<br>中央 C 在下加一線，<br>相鄰的兩個琴鍵相差半音。</p>
+</section>
+
+<!-- 20 出場券 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>出場券 3-2-1</div>
+  <div class="kicker"><span class="tag t-he">合</span>Exit Ticket</div>
+  <h2 style="margin-bottom:14px">離開教室前，寫下 3-2-1</h2>
+  <div class="split wide">
+    <div class="exit" data-prompts="3 個今天學會的樂理名詞|2 個你還容易混淆的音或音程|1 個還想詢問老師的問題"></div>
+    <div class="card"><h3>下一堂開始運指</h3><p>第三堂學習大調音階與穿指、跨指。請每天練習找音遊戲五分鐘，讓眼睛與手指熟悉鍵盤。</p></div>
+  </div>
+</section>
+
+<!-- 21 課後練習 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>自主學習追蹤</div>
+  <div class="kicker">Homework</div>
+  <h2 style="margin-bottom:12px">課後練習：完成一項，點選一次打勾</h2>
+  <ul class="checks" data-id="p02-hw">
+    <li>找音遊戲（音名）連續答對二十題</li>
+    <li>找音遊戲（五線譜）連續答對十題</li>
+    <li>在鍵盤上彈出 C 到 G、C 到 E、E 到 F，說出它們的音程</li>
+    <li>將〈小星星〉的簡譜 1 1 5 5 6 6 5 寫成音名與唱名</li>
+    <li>填寫第三堂課前問卷</li>
+  </ul>
+</section>
+
+<!-- 22 下週預告 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>課前問卷</div>
+  <div class="kicker">Next Week</div>
+  <h2>第三堂　音階運指</h2>
+  <div class="split wide">
+    <div>
+      <p class="lead">大調音階的「全全半全全全半」，<br>拇指穿過、中指跨過，<br>用十根手指，流暢地彈奏 C 大調音階。</p>
+      <p class="muted" style="margin-top:20px">掃描 Qr Code，直接在網站上填寫第三堂的課前問卷。</p>
+    </div>
+    <div class="qr" data-href="../survey.html?id=p-pre-3"></div>
+  </div>
+</section>
+</div>
+</main>
+
+<nav class="ui" aria-label="投影片控制">
+  <button type="button" id="prev" aria-label="上一張">← 上一張</button>
+  <span class="counter" id="counter">1 / 1</span>
+  <button type="button" id="next" aria-label="下一張">下一張 →</button>
+  <button type="button" id="full">全螢幕</button>
+  <a href="../index.html">課程首頁</a>
+</nav>
+
+<script src="../../assets/pixel.js?v=20261014r"></script>
+<script src="../../assets/ui.js?v=20261014r"></script>
+<script src="../../assets/deck.js?v=20261014r"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="../../assets/interact.js?v=20261014r"></script>
+<script src="../../assets/config.js?v=20261014r"></script>
+<script src="../../assets/backend.js?v=20261014r"></script>
+<script src="../../assets/ps-audio.js?v=20261014r"></script>
+<script src="../piano.js?v=20261014r"></script>
+<script src="../songs.js?v=20261014r"></script>
+<script src="../../assets/youtube.js?v=20261014r"></script>
+</body>
+</html>
