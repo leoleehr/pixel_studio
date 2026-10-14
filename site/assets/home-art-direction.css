@@ -74,7 +74,7 @@
 .home .feature-link{font-size:13px;min-height:44px}
 .home .session-total{font-size:80px;font-weight:500}
 .home .rhythm{gap:8px;margin-top:32px;border:0}
-.home .rhythm div{background:transparent!important;padding:28px 24px 32px;border:1px solid rgba(var(--accent-rgb,199,175,74),0.31);font-size:13px}
+.home .rhythm div{background:transparent!important;padding:28px 24px 32px;border:1px solid rgba(var(--accent-rgb,244,166,42),0.31);font-size:13px}
 .home .rhythm div:nth-child(2){border-color:var(--amber)}
 .home .rhythm div:nth-child(3){border-color:#7b8375}
 .home .rhythm div:nth-child(4){border-color:#b3cc78}
@@ -93,7 +93,7 @@
 .home .footer-logo{height:88px;margin-left:-14px}
 .home .footer-bottom{font-size:11px;padding-top:24px;border-top:1px solid var(--line);margin-top:24px}
 .home .tabbar a{min-height:54px}
-@media(min-width:861px){.home .topbar nav a[aria-current]{color:var(--amber);background:rgba(var(--accent-rgb,199,175,74),0.05)}}
+@media(min-width:861px){.home .topbar nav a[aria-current]{color:var(--amber);background:rgba(var(--accent-rgb,244,166,42),0.05)}}
 @media(max-width:1100px){
  .home .hero-grid{grid-template-columns:1fr 1fr;gap:24px}.home .hero-copy h1{font-size:clamp(48px,6.5vw,72px)}
  .home .hero-actions{flex-wrap:wrap;gap:12px}.home .hero-copy p{font-size:14px}

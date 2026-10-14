@@ -9,7 +9,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 ZH = ['', '一', '二', '三', '四', '五', '六', '七', '八']
-VER = "20261014z"
+VER = "20261015b"
 
 HEAD = '''<!doctype html>
 <html lang="zh-Hant">
