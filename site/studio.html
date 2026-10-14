@@ -26,7 +26,7 @@
   .hub-art .art-coordinate{left:0;bottom:13%;letter-spacing:.08em}
   .hub-art .motion-toggle{position:absolute;right:0;top:2%;z-index:3;display:flex;align-items:center;gap:9px;min-height:44px;padding:8px 0 8px 12px;border:0;background:transparent;color:var(--muted);font:10px var(--display);cursor:pointer}
   .hub-art .motion-toggle:hover{color:var(--ink)}
-  .hub-art .motion-toggle span{color:var(--pixel-lime);font-size:15px}
+  .hub-art .motion-toggle span{color:var(--hub-accent-soft);font-size:15px}
   .hub-art .motion-toggle[hidden]{display:none}
   .card.lab-card{display:flex;flex-direction:column;gap:8px;border-top:3px solid var(--lab)}
   .lab-card .tag{align-self:flex-start;margin:0}
@@ -40,19 +40,19 @@
   .teacher-contact:hover{text-decoration:underline;text-underline-offset:4px}
   .teacher-note{max-width:660px;color:var(--muted);font-size:15px}
   .brand-manifesto{max-width:960px;color:var(--ink);font-size:clamp(24px,3.3vw,42px);font-weight:500;line-height:1.6;letter-spacing:-.035em}
-  .brand-manifesto .pixel-word{color:var(--pixel-lime)}
+  .brand-manifesto .pixel-word{color:var(--hub-accent-soft)}
   .experience-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-  .experience-card{padding:22px 24px;border:1px solid var(--line);border-top:2px solid var(--pixel-lime);background:var(--card)}
+  .experience-card{padding:22px 24px;border:1px solid var(--line);border-top:2px solid var(--hub-accent);background:var(--card)}
   .experience-card h3{margin-bottom:12px;font-size:17px}
   .experience-card ul{display:grid;gap:8px;margin:0;padding:0;list-style:none}
   .experience-card li{position:relative;padding-left:14px;color:var(--muted);font-size:14px;line-height:1.8}
   .experience-card li::before{position:absolute;top:.82em;left:0;width:4px;height:4px;border-radius:50%;background:var(--pixel-cyan);content:""}
   /* Home follows the Lab pages: compact brand bar, editorial sections, precise CI color. */
-  .studio-hub{--bg:#101210;--surface:#181c17;--card:#1e231c;--card-2:#252b22;--ink:#f1f0e8;--muted:#aaaFA2;--faint:#90988b;--line:rgba(237,241,225,.13);--line-2:rgba(237,241,225,.23);--lab:var(--pixel-lime);--lab-ink:#0b0d0e;--accent:#C7AF4A;--amber:var(--accent);--r:4px;--gutter:48px;background:var(--bg);font:400 16px/1.75 "Noto Sans TC",system-ui,sans-serif;overflow-x:hidden}
+  .studio-hub{--bg:#111014;--surface:#18171d;--card:#1e1c24;--card-2:#26232d;--ink:#f1f0e8;--muted:#aaaFA2;--faint:#90988b;--line:rgba(237,241,225,.13);--line-2:rgba(237,241,225,.23);--hub-accent:var(--pixel-purple);--hub-accent-soft:#b993e8;--lab:var(--hub-accent-soft);--lab-ink:#0b0d0e;--accent:#C7AF4A;--amber:var(--accent);--r:4px;--gutter:48px;background:var(--bg);font:400 16px/1.75 "Noto Sans TC",system-ui,sans-serif;overflow-x:hidden}
   .studio-hub p,.studio-hub li{overflow-wrap:anywhere;word-break:break-all}
   .studio-hub::before{display:none}
   .studio-hub .wrap{max-width:1240px;padding-inline:var(--gutter)}
-  .studio-hub .skip-link{z-index:100;background:var(--pixel-lime);color:#101210;padding:10px 18px}
+  .studio-hub .skip-link{z-index:100;background:var(--hub-accent);color:#fff;padding:10px 18px}
   .topbar{background:rgba(16,18,16,.94)}
   .topbar{background:rgba(0,0,0,.9);backdrop-filter:blur(10px)}
   .topbar .wrap{gap:20px}
@@ -65,12 +65,12 @@
   .hero::before{content:"";position:absolute;inset:0 0 auto;height:100%;pointer-events:none;background:radial-gradient(ellipse at 84% 40%,rgba(69,179,230,.08),transparent 38%),radial-gradient(ellipse at 94% 70%,rgba(226,64,127,.07),transparent 32%)}
   .hub-meta{display:flex;justify-content:space-between;align-items:center;padding-top:36px;color:var(--muted);font:10px var(--display);letter-spacing:.16em}
   .hub-meta span:first-child{color:var(--pixel-cyan)}
-  .hub-meta .live-dot{display:inline-block;width:6px;height:6px;margin-right:10px;border-radius:50%;background:var(--pixel-lime);box-shadow:0 0 12px rgba(214,224,58,.35)}
+  .hub-meta .live-dot{display:inline-block;width:6px;height:6px;margin-right:10px;border-radius:50%;background:var(--hub-accent);box-shadow:0 0 12px rgba(138,79,192,.55)}
   .hub-hero{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:0;align-items:center;min-height:0;padding-top:34px;padding-bottom:26px}
   .hub-copy{position:relative;z-index:2;min-width:0;width:100%;max-width:630px}
-  .hub-copy .kicker{display:block;max-width:100%;margin-bottom:24px;font:500 12px var(--display);letter-spacing:.14em;color:var(--pixel-lime);text-transform:uppercase;overflow-wrap:anywhere}
+  .hub-copy .kicker{display:block;max-width:100%;margin-bottom:24px;font:500 12px var(--display);letter-spacing:.14em;color:var(--hub-accent-soft);text-transform:uppercase;overflow-wrap:anywhere}
   .hub-copy h1{max-width:640px;margin:0;font-size:clamp(54px,6.2vw,86px);font-weight:500;line-height:1.18;letter-spacing:-.065em}
-  .hub-copy h1 em{color:var(--pixel-lime);font-style:normal;font-weight:700}
+  .hub-copy h1 em{color:var(--hub-accent-soft);font-style:normal;font-weight:700}
   .hub-copy .hub-english{display:block;width:auto;max-width:100%;margin-top:16px;color:#7ddcf2;font:500 clamp(27px,3.2vw,44px)/1.2 var(--display);letter-spacing:-.055em;text-shadow:0 0 9px rgba(99,217,255,.3),0 0 28px rgba(177,115,255,.2);background-image:linear-gradient(100deg,#ff72b6 0%,#bb83ff 26%,#63d9ff 54%,#9bffe0 76%,#ff72b6 100%);background-size:220% 100%;background-position:0 50%;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:hub-neon-brush 8s linear infinite}
   .hub-mobile-break{display:none}
   @keyframes hub-neon-brush{to{background-position:100% 50%}}
@@ -80,20 +80,20 @@
   .hub-copy .brand-about .block-head h2{font-size:16px}
   .hub-copy .brand-manifesto{font-size:15px;line-height:1.8}
   .hub-copy .hero-actions{display:flex;align-items:center;gap:22px;margin-top:24px}
-  .hub-copy .btn.primary{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 22px;background:var(--pixel-lime);color:#101210;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.03em}
+  .hub-copy .btn.primary{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 22px;background:var(--hub-accent);color:#fff;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.03em}
   .hub-copy .text-link{display:inline-flex;align-items:center;min-height:44px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line-2);font-size:12px}
-  .hub-copy .text-link:hover{color:var(--pixel-lime)}
+  .hub-copy .text-link:hover{color:var(--hub-accent-soft)}
   .hub-hero .hub-art{margin-left:12px}
   .hub-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;gap:20px;padding:22px 0 28px;border-top:1px solid var(--line)}
   .hub-stats div{display:flex;align-items:baseline;gap:12px}
   .hub-stats b{font:500 30px var(--display);letter-spacing:-.05em;color:var(--ink)}
   .hub-stats span{color:var(--muted);font-size:11px}
   .hub-stats a{display:flex;align-items:center;min-height:44px;color:var(--ink);font-size:12px;text-decoration:none}
-  .hub-stats a:hover{color:var(--pixel-lime)}
+  .hub-stats a:hover{color:var(--hub-accent-soft)}
   .wave-rule{height:3px;background:var(--wave)}
   section.block{padding:66px 0}
   .block-head{display:flex;align-items:baseline;gap:18px;margin-bottom:28px}
-  .block-head .num{font:11px var(--display);letter-spacing:.16em;color:var(--pixel-lime);text-transform:uppercase}
+  .block-head .num{font:11px var(--display);letter-spacing:.16em;color:var(--hub-accent-soft);text-transform:uppercase}
   .block-head h2{font-size:clamp(24px,3vw,34px);letter-spacing:-.03em}
   #about{padding-bottom:38px}
   #labs{padding-top:54px;border-top:1px solid var(--line)}
@@ -102,8 +102,8 @@
   .brand-about .block-head h2{font-size:18px;color:var(--muted);font-weight:500}
   .brand-manifesto{font-size:clamp(17px,2vw,21px);line-height:1.8;max-width:640px;color:var(--ink)}
   .grid.cols-4{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-  .card.lab-card{position:relative;min-height:230px;padding:25px 26px 22px;background:linear-gradient(145deg,#1e231c,#181c17);border:1px solid var(--line);border-top:2px solid var(--lab);border-radius:3px;transition:transform .2s,border-color .2s,background .2s}
-  .card.lab-card:hover,.card.lab-card:focus-visible{transform:translateY(-3px);border-color:color-mix(in srgb,var(--lab),transparent 45%);background:linear-gradient(145deg,#252b22,#1e231c)}
+  .card.lab-card{position:relative;min-height:230px;padding:25px 26px 22px;background:linear-gradient(145deg,#1e1c24,#18171d);border:1px solid var(--line);border-top:2px solid var(--lab);border-radius:3px;transition:transform .2s,border-color .2s,background .2s}
+  .card.lab-card:hover,.card.lab-card:focus-visible{transform:translateY(-3px);border-color:color-mix(in srgb,var(--lab),transparent 45%);background:linear-gradient(145deg,#26232d,#1e1c24)}
   .lab-card .en{font-size:20px}
   .lab-card h3{font-size:22px;letter-spacing:.02em}
   .lab-card p{max-width:42em;color:var(--muted);font-size:15px;line-height:1.75}
@@ -156,9 +156,9 @@
   .hub-logo-wrap .hub-logo{animation:none;filter:none}
   @keyframes logo-flow{from{transform:translateX(0)}to{transform:translateX(50%)}}
   .fx-toggle{position:absolute;top:2%;right:0;z-index:4;display:inline-flex;align-items:center;gap:7px;min-height:32px;padding:5px 10px;border:1px solid var(--line-2);border-radius:999px;background:rgba(16,18,16,.72);color:var(--muted);font:500 11px var(--display);letter-spacing:.06em;cursor:pointer}
-  .fx-toggle:hover,.fx-toggle:focus-visible{color:var(--ink);border-color:var(--pixel-lime)}
+  .fx-toggle:hover,.fx-toggle:focus-visible{color:var(--ink);border-color:var(--hub-accent)}
   .fx-dot{width:7px;height:7px;border-radius:50%;background:var(--faint)}
-  .fx-on .fx-dot{background:var(--pixel-lime);box-shadow:0 0 8px var(--pixel-lime)}
+  .fx-on .fx-dot{background:var(--hub-accent);box-shadow:0 0 8px var(--hub-accent)}
   .fx-off .card.lab-card::before,.fx-off .experience-card::before,.fx-off .topbar .brand-logo{animation:none}
   .fx-off .topbar .brand-logo{filter:none}
   @media(max-width:640px){.fx-toggle{top:0;font-size:10px;min-height:30px}}
