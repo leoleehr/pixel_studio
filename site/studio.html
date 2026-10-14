@@ -19,6 +19,19 @@
   .lab-card .en{font:700 22px var(--display);color:var(--lab)}
   .lab-card .go{margin-top:auto;padding-top:12px;font:500 14px var(--display);color:var(--lab)}
   .lab-card.muted .go{color:var(--faint)}
+  .teacher-intro{display:grid;grid-template-columns:minmax(220px,.72fr) 1.28fr;gap:48px;align-items:start;margin-bottom:28px}
+  .teacher-name{font-size:clamp(28px,4vw,46px);font-weight:900;letter-spacing:-.035em}
+  .teacher-name small{display:block;margin-top:6px;color:var(--faint);font:500 15px var(--display);letter-spacing:.04em}
+  .teacher-contact{display:inline-flex;align-items:center;min-height:44px;margin-top:18px;color:var(--lab);text-decoration:none}
+  .teacher-contact:hover{text-decoration:underline;text-underline-offset:4px}
+  .teacher-note{max-width:660px;color:var(--muted);font-size:15px}
+  .experience-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .experience-card{padding:22px 24px;border:1px solid var(--line);border-top:2px solid var(--pixel-lime);background:var(--card)}
+  .experience-card h3{margin-bottom:12px;font-size:17px}
+  .experience-card ul{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+  .experience-card li{position:relative;padding-left:14px;color:var(--muted);font-size:14px;line-height:1.8}
+  .experience-card li::before{position:absolute;top:.82em;left:0;width:4px;height:4px;border-radius:50%;background:var(--pixel-cyan);content:""}
+  @media(max-width:760px){.teacher-intro{grid-template-columns:1fr;gap:14px}.experience-grid{grid-template-columns:1fr}}
   @media (max-width:760px){.hub-hero{grid-template-columns:1fr}.hub-hero .logo{justify-self:start;max-width:260px;order:-1}}
 </style>
 </head>
@@ -26,9 +39,10 @@
 <a class="skip-link" href="#main">跳到主要內容</a>
 <header class="topbar">
   <div class="wrap">
-    <a class="brand" href="studio.html"><img src="assets/brand/horizontal-transparent.svg" alt="畫素音樂工作坊 Pixel Studio" width="113" height="34"></a>
+    <a class="brand" href="./" aria-label="返回 Pixel Studio 品牌入口"><img src="assets/brand/horizontal-transparent.svg" alt="畫素音樂工作坊 Pixel Studio" width="113" height="34"></a>
     <nav aria-label="課程">
       <a href="#labs">課程</a>
+      <a href="#teacher">阿勳老師</a>
       <a href="guitar/">Guitar Lab</a>
     </nav>
   </div>
@@ -70,6 +84,68 @@
           <span class="tag">規劃中</span><span class="en">Songwriting Lab</span><h3>詞曲創作</h3>
           <p>主題、詞句、旋律、和聲、曲式、Hook 與修稿。</p>
           <span class="go">即將推出</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="teacher" aria-labelledby="teacher-title">
+    <div class="wrap">
+      <div class="block-head"><span class="num">About</span><h2 id="teacher-title">關於阿勳老師</h2></div>
+      <div class="teacher-intro">
+        <div>
+          <p class="teacher-name">李奕勳 <small>阿勳｜音樂創作與教學</small></p>
+          <a class="teacher-contact" href="mailto:musicallanding@gmail.com">musicallanding@gmail.com</a>
+        </div>
+        <p class="teacher-note">從校園社團、音樂教室到舞台演出，持續投入歌唱、吉他、鍵盤與詞曲創作教學；陪伴不同背景的學員，把喜歡的音樂一步步化為自己的表達。</p>
+      </div>
+      <div class="experience-grid">
+        <article class="experience-card">
+          <h3>社團教學經歷</h3>
+          <ul>
+            <li>亞東技術學院、華梵大學、國立臺灣海洋大學、致理技術學院吉他社指導老師。</li>
+            <li>國立泰山高中、新北市立海山高中、明德高中、清水高中吉他社指導老師。</li>
+            <li>新北市立石碇高中、國立華僑實驗中學吉他社指導老師。</li>
+            <li>中國文化大學熱門音樂社鍵盤班、主唱班指導老師。</li>
+          </ul>
+        </article>
+        <article class="experience-card">
+          <h3>音樂相關經歷</h3>
+          <ul>
+            <li>校園金曲唱片製作中心簽約詞曲創作人。</li>
+            <li>亞太創意技術學院數位多媒體系詞曲創作課程講師。</li>
+            <li>高雄港都黃金愛河咖啡廳駐唱歌手。</li>
+            <li>樹林巴洛克音樂生活館，教授吉他、流行鋼琴、流行歌唱。</li>
+            <li>板橋大麥特樂器世界、卡農藝術學院，教授吉他、流行鋼琴、流行歌唱。</li>
+            <li>樹林勤嬑音樂工作室，教授吉他。</li>
+            <li>新莊 Doremi 音樂教室，教授吉他、流行鋼琴。</li>
+            <li>泰山集樂精緻音樂生活館，教授吉他。</li>
+            <li>高雄小港功學社音樂教室、淳琴音樂教室，教授吉他。</li>
+            <li>高雄琴韻音樂教室，教授流行鋼琴。</li>
+          </ul>
+        </article>
+        <article class="experience-card">
+          <h3>社團經歷</h3>
+          <ul>
+            <li>國立高雄餐旅學院第十屆吉他社社長、第七屆社團顧問、第六屆社團總教學。</li>
+            <li>國立高雄餐旅專科學校第四、二屆吉他社社長，第一屆吉他社副社長。</li>
+            <li>臺北市立南港高工第八屆吉他社活動。</li>
+          </ul>
+        </article>
+        <article class="experience-card">
+          <h3>其他經歷</h3>
+          <ul>
+            <li>新北市、桃園縣、宜蘭縣、花蓮縣、臺東縣、新竹縣街頭藝人認證。</li>
+            <li>國泰人壽、致理技術學院、清水高中、北士商夜補校歌唱比賽評審。</li>
+            <li>PTT 樹林版音樂同好會、樹林區慈善公益音樂會。</li>
+            <li>樹林區藝文葡萄酒品酒會主辦暨講師。</li>
+            <li>八八水災長老教會太麻里志工團隊。</li>
+            <li>7-ELEVEN 陽光好鄰居 921 災區重建義工隊。</li>
+            <li>南區知識青年黨部全國大專院校領袖營。</li>
+            <li>致理技術學院校歌編曲與製作。</li>
+            <li>人安基金會公益廣播配樂製作、龍山寺跨年義演。</li>
+            <li>婚禮歌手、主持，以及其他大小公開演出。</li>
+          </ul>
         </article>
       </div>
     </div>
