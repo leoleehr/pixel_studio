@@ -8,15 +8,15 @@ window.PIXEL_SURVEYS = [
     { q: '你的吉他種類', type: 'single', options: ['民謠吉他（鋼弦）', '古典吉他（尼龍弦）', '電吉他', '尚未擁有吉他'] },
     { q: '最想學會彈奏的三首歌', type: 'short', placeholder: '例如：小幸運、晴天、Perfect' },
     { q: '自我評分（1 到 5 分）', type: 'matrix', rows: ['節奏感', '讀譜', '左手按弦', '右手刷弦', '自彈自唱'] },
-    { q: '學習吉他最擔心的事', type: 'multi', options: ['手指疼痛', '和弦換不過去', '節奏跟不上', '讀不懂樂譜', '練習時間不足'], other: true },
+    { q: '學習吉他最擔心的事', type: 'multi', options: ['手指疼痛', '和弦換不過去', '節奏跟不上', '不熟悉讀譜', '練習時間不足'], other: true },
     { q: '十二章結束時，最希望達成的一件事', type: 'text' },
     { q: '每週可以練琴的時間', type: 'single', options: ['少於 1 小時', '1–3 小時', '3–5 小時', '5 小時以上'] }
   ] },
   { id: 'g-pre-2', lesson: 2, title: '第二章課前問卷', intro: '上一章的練習狀況，以及你對節奏與讀譜的熟悉程度。', questions: [
     { q: '上一章的五項課後練習，完成的項數', type: 'single', options: ['0', '1', '2', '3', '4', '5'] },
-    { q: '不翻講義，叫得出名稱的吉他部位數量', type: 'number', unit: '個' },
+    { q: '不翻講義，能說出名稱的吉他部位數量', type: 'number', unit: '個' },
     { q: '目前自己調準六條琴弦，大約需要的時間', type: 'number', unit: '分鐘' },
-    { q: '讀得懂的樂譜種類', type: 'multi', options: ['五線譜', '簡譜', '六線譜 TAB', '和弦譜', '目前都讀不懂'] },
+    { q: '能夠閱讀的樂譜種類', type: 'multi', options: ['五線譜', '簡譜', '六線譜 TAB', '和弦譜', '目前尚未學會讀譜'] },
     { q: '空弦下刷跟著節拍器，最穩定的速度', type: 'number', unit: 'BPM' },
     { q: '練習時，手指或手腕感到痠痛的位置', type: 'multi', options: ['指尖', '左手手腕', '右手手腕', '肩膀', '沒有痠痛'] }
   ] },
@@ -38,7 +38,7 @@ window.PIXEL_SURVEYS = [
     { q: '8 Beats 搭配四大和弦，最穩定的速度', type: 'number', unit: 'BPM' },
     { q: '切分 Folk Rock 的熟練程度', type: 'scale', low: '仍需思考', high: '無需思考' },
     { q: '刷奏時，右手手腕緊繃的程度', type: 'single', options: ['經常緊繃', '偶爾緊繃', '保持放鬆'] },
-    { q: '想得到的三拍子歌曲', type: 'short', optional: true, placeholder: '例如：生日快樂歌' },
+    { q: '你知道的三拍子歌曲', type: 'short', optional: true, placeholder: '例如：生日快樂歌' },
     { q: '想學會的伴奏方式', type: 'multi', options: ['慢歌', '快歌', '華爾滋', '搖擺 Shuffle'] }
   ] },
   { id: 'g-pre-6', lesson: 6, title: '第六章課前問卷', intro: '準備期中彈唱：選歌、Capo 與段落。', questions: [
