@@ -173,3 +173,7 @@
 }
 @keyframes vt-out{to{opacity:0}}
 @keyframes vt-in{from{opacity:0;transform:translateY(10px)}}
+
+/* 標題避免單字落行，內文避免最後一行只剩一兩個字 */
+.home h2,.home h3,.home .about-statement{text-wrap:balance}
+.home p{text-wrap:pretty}

@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Music&text=%F0%9D%84%9E%E2%99%AF%E2%99%AE&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Allura&text=We%20Perform%20the%20Pixel%20of%20Music&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=20261016a">
+<link rel="stylesheet" href="../assets/site.css?v=20261016b">
 <link rel="stylesheet" href="../assets/backend.css?v=20261015b">
 <link rel="stylesheet" href="../assets/responsive.css?v=20261015b">
 <link rel="stylesheet" href="../assets/studio.css?v=20261015b">
@@ -30,7 +30,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="../assets/teaching-visuals.css?v=20261015uniform">
+<link rel="stylesheet" href="../assets/teaching-visuals.css?v=20261015whiteprint">
 </head>
 <body id="top" data-course="piano">
 <header class="topbar">
@@ -71,7 +71,7 @@
   var NUM = { '一': 1, '二': 2, '三': 3, '四': 4, '五': 5, '六': 6, '七': 7, '八': 8, '九': 9, '十': 10, '十一': 11, '十二': 12 };
   var COLOR = ['', '#e8412b', '#e2407f', '#9a5fd0', '#2f5fc4', '#45b3e6', '#6cbb4b', '#d6e03a', '#f4a62a', '#e8412b', '#e2407f', '#9a5fd0', '#45b3e6'];
   var main = document.getElementById('content'), toc = document.getElementById('toc'), prog = document.getElementById('progress');
-  fetch('handbook.md?v=20261015uniform')
+  fetch('handbook.md?v=20261015whiteprint')
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
     .then(function (md) {
       main.innerHTML = marked.parse(md, { gfm: true });
