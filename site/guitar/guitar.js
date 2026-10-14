@@ -11,6 +11,8 @@
   function el(tag, attrs, html) { var e = document.createElement(tag); for (var k in attrs || {}) e.setAttribute(k, attrs[k]); if (html != null) e.innerHTML = html; return e; }
   function slideNo(n) { var s = n && n.closest && n.closest('.slide'); return s && s.id ? s.id.replace(/\D/g, '') : ''; }
   function report(n, type, data) { if (window.PixelBackend) window.PixelBackend.log(type, data, { slide: slideNo(n) }); }
+  var guitarScript = $('script[src*="guitar.js"]');
+  var GUITAR_IMAGE = guitarScript ? new URL('../assets/guitar/', guitarScript.src).href : '../assets/guitar/';
 
   /* ---------- 課程資料 ---------- */
   var CHORDS = {
@@ -475,38 +477,42 @@
     });
     return s + '</svg>';
   }
-  /* 坐姿與持彈片 */
+  /* 坐姿與持彈片：照片呈現真實手感，向量標註保留教學重點 */
   function postureSVG() {
-    // 正面坐姿：琴身放右大腿、琴頸往左手方向略微上揚
-    return '<svg class="gfig" viewBox="0 0 420 330" role="img" aria-label="坐姿彈奏示意圖：坐在椅子前三分之一，背部挺直，琴身放在右大腿並貼近身體，琴頸略微往上">' +
-      '<rect x="96" y="226" width="150" height="12" rx="4" class="dark"/><rect x="104" y="238" width="10" height="84" class="dark"/><rect x="228" y="238" width="10" height="84" class="dark"/>' +
-      '<circle cx="170" cy="46" r="26" class="ln"/>' +
-      '<path d="M170 72 V110 M120 96 Q170 84 220 96 M134 100 L128 214 M206 100 L212 214 M128 214 Q170 222 212 214" class="ln"/>' +
-      '<path d="M134 218 L122 322 M206 218 L218 322" class="ln"/>' +
-      '<g transform="translate(140 192) rotate(78)"><path d="' + bodyPath(0, -62, 124, 86, 66, 108, 0.44) + '" class="wood3" stroke="#efe8d6" stroke-width="2.5"/><circle cx="0" cy="-17" r="13" class="hole"/>' +
-      '<rect x="-6" y="-210" width="12" height="150" class="dark"/><path d="M-9 -232 H9 L8 -210 H-8 Z" class="dark"/></g>' +
-      '<path d="M120 100 Q96 150 128 176" class="ln"/><path d="M220 100 Q290 116 330 128" class="ln"/>' +
-      '<text x="270" y="36" class="big" style="fill:var(--accent)">✓</text><text x="290" y="36">背打直</text>' +
-      '<text x="270" y="70" class="big" style="fill:var(--accent)">✓</text><text x="290" y="70">琴頸略往上</text>' +
-      '<text x="270" y="232" class="big" style="fill:var(--accent)">✓</text><text x="290" y="232">琴身貼近身體</text>' +
-      '<text x="270" y="266" class="big" style="fill:var(--accent)">✓</text><text x="290" y="266">坐椅子前 1/3</text>' +
-      '</svg>';
+    return '<svg class="gfig" viewBox="0 0 620 330" role="img" aria-label="木吉他坐姿：坐在椅子前三分之一，背部自然挺直，琴身靠近身體並置於右大腿，琴頸微微上揚">' +
+      '<defs><clipPath id="posture-photo-clip"><rect x="0" y="28" width="390" height="260" rx="12"/></clipPath></defs>' +
+      '<image href="' + GUITAR_IMAGE + 'posture.jpg" x="0" y="28" width="390" height="260" preserveAspectRatio="xMidYMid slice" clip-path="url(#posture-photo-clip)"/>' +
+      '<path d="M14 55 L98 94 M166 111 L298 147 M270 236 L145 220 M180 274 L276 267" class="lead" stroke-width="2"/>' +
+      '<circle cx="98" cy="94" r="4" class="dot"/><circle cx="298" cy="147" r="4" class="dot"/><circle cx="145" cy="220" r="4" class="dot"/><circle cx="276" cy="267" r="4" class="dot"/>' +
+      '<text x="414" y="72" class="big" style="fill:var(--accent)">01</text><text x="446" y="72">背部自然挺直</text>' +
+      '<text x="414" y="126" class="big" style="fill:var(--accent)">02</text><text x="446" y="126">琴頸微微上揚</text>' +
+      '<text x="414" y="180" class="big" style="fill:var(--accent)">03</text><text x="446" y="180">琴身靠近身體</text>' +
+      '<text x="414" y="234" class="big" style="fill:var(--accent)">04</text><text x="446" y="234">坐在椅面前 1/3</text>' +
+      '<text x="0" y="318" class="en">自然放鬆，手腕不需刻意折彎</text>' + '</svg>';
   }
   function pickSVG() {
-    return '<svg class="gfig" viewBox="0 0 440 200" role="img" aria-label="持彈片：彈片放在食指第一節側面，拇指壓在上方，尖端露出約 2 到 3 公釐">' +
-      '<rect x="20" y="48" width="190" height="44" rx="22" class="wood3" opacity=".75"/>' +
-      '<path d="M88 60 Q120 50 152 60 Q150 100 124 150 Q118 156 114 150 Q92 104 88 60 Z" class="acc"/>' +
-      '<rect x="60" y="34" width="150" height="40" rx="20" class="bone" opacity=".95"/>' +
-      '<text x="250" y="52">拇指壓在彈片上方</text><text x="250" y="96">食指第一節側面支撐</text><text x="250" y="150">尖端露出 2–3 mm</text>' +
-      '<path d="M246 48 L200 52 M246 92 L206 84 M246 146 L132 144" class="lead"/>' +
-      '</svg>';
+    return '<svg class="gfig" viewBox="0 0 540 235" role="img" aria-label="持彈片特寫：拇指指腹與食指側面輕夾彈片，尖端露出約 2 到 3 公釐">' +
+      '<defs><clipPath id="pick-photo-clip"><rect x="0" y="20" width="282" height="188" rx="12"/></clipPath></defs>' +
+      '<image href="' + GUITAR_IMAGE + 'pick-grip.jpg" x="0" y="20" width="282" height="188" preserveAspectRatio="xMidYMid slice" clip-path="url(#pick-photo-clip)"/>' +
+      '<path d="M302 64 L231 118" class="lead" stroke-width="2"/><circle cx="231" cy="118" r="4" class="dot"/>' +
+      '<text x="302" y="57" class="big" style="fill:var(--accent)">拇指</text><text x="355" y="57">指腹輕壓彈片</text>' +
+      '<text x="302" y="111" class="big" style="fill:var(--accent)">食指</text><text x="355" y="111">第一節側面支撐</text>' +
+      '<text x="302" y="165" class="big" style="fill:var(--accent)">尖端</text><text x="355" y="165">露出約 2–3 mm</text>' +
+      '<text x="0" y="231" class="en">輕夾即可，手指保持自然彎曲</text>' + '</svg>';
   }
   function handsSVG() {
-    var L = [['1', '食指'], ['2', '中指'], ['3', '無名指'], ['4', '小指']], R = [['T', '拇指', '4–6 弦'], ['1', '食指', '3 弦'], ['2', '中指', '2 弦'], ['3', '無名指', '1 弦']];
-    var s = '<svg class="gfig" viewBox="0 0 520 190" role="img" aria-label="左右手的手指編號">';
-    s += '<text x="10" y="24" class="big">左手 按弦</text><text x="280" y="24" class="big">右手 撥弦（指法）</text>';
-    L.forEach(function (f, i) { var x = 30 + i * 58; s += '<circle cx="' + x + '" cy="80" r="22" class="acc"/><text x="' + x + '" y="86" class="n" style="font-size:18px">' + f[0] + '</text><text x="' + x + '" y="128" class="mid">' + f[1] + '</text>'; });
-    R.forEach(function (f, i) { var x = 300 + i * 60; s += '<circle cx="' + x + '" cy="80" r="22" class="metal"/><text x="' + x + '" y="86" class="n" style="font-size:18px">' + f[0] + '</text><text x="' + x + '" y="128" class="mid">' + f[1] + '</text><text x="' + x + '" y="152" class="mid en">' + f[2] + '</text>'; });
+    var s = '<svg class="gfig" viewBox="0 0 560 245" role="img" aria-label="吉他左右手指法：左手四指以 1 到 4 編號按弦，右手拇指 T 撥 4 至 6 弦，食指、中指、無名指依序撥 3、2、1 弦">';
+    s += '<text x="28" y="28" class="big">左手｜按弦</text><text x="312" y="28" class="big">右手｜指法</text>';
+    /* 指尖朝上，掌背與手指輪廓以圓角曲線呈現；保留醒目的指法編號。 */
+    s += '<path d="M54 170 Q47 155 51 132 L58 88 Q60 78 67 80 Q74 82 72 93 L67 126 L76 62 Q78 50 86 52 Q94 54 92 66 L84 126 L95 45 Q97 34 105 36 Q113 38 111 50 L102 127 L116 57 Q119 46 127 49 Q135 52 132 64 L121 135 L137 88 Q141 77 149 81 Q157 85 153 97 L138 158 Q133 181 112 190 L91 196 Q67 196 54 170 Z" fill="#d8b49a" stroke="#efe8d6" stroke-width="2"/>' +
+      '<path d="M78 61 Q85 56 91 62 M97 45 Q104 40 110 47 M119 58 Q125 54 131 61" fill="none" stroke="#b98f76" stroke-width="1.5"/>' +
+      '<path d="M332 170 Q325 155 329 132 L336 88 Q338 78 345 80 Q352 82 350 93 L345 126 L354 62 Q356 50 364 52 Q372 54 370 66 L362 126 L373 45 Q375 34 383 36 Q391 38 389 50 L380 127 L394 57 Q397 46 405 49 Q413 52 410 64 L399 135 L415 88 Q419 77 427 81 Q435 85 431 97 L416 158 Q411 181 390 190 L369 196 Q345 196 332 170 Z" fill="#d8b49a" stroke="#efe8d6" stroke-width="2"/>' +
+      '<path d="M356 61 Q363 56 369 62 M375 45 Q382 40 388 47 M397 58 Q403 54 409 61" fill="none" stroke="#b98f76" stroke-width="1.5"/>';
+    var left = [['1', 68, 90], ['2', 85, 63], ['3', 104, 48], ['4', 126, 63]];
+    left.forEach(function (f) { s += '<circle cx="' + f[1] + '" cy="' + f[2] + '" r="11" class="acc"/><text x="' + f[1] + '" y="' + (f[2] + 4) + '" class="n" style="font-size:12px">' + f[0] + '</text>'; });
+    var right = [['T', 345, 90], ['1', 363, 63], ['2', 382, 48], ['3', 404, 63]];
+    right.forEach(function (f) { s += '<circle cx="' + f[1] + '" cy="' + f[2] + '" r="11" fill="#c9ccd1"/><text x="' + f[1] + '" y="' + (f[2] + 4) + '" class="n" style="font-size:12px">' + f[0] + '</text>'; });
+    s += '<text x="52" y="222" class="en">食指 1　中指 2　無名指 3　小指 4</text><text x="319" y="222" class="en">拇指 4–6 弦　食 3 弦　中 2 弦　無 1 弦</text>';
     return s + '</svg>';
   }
   /* 演變：烏德琴 → 魯特琴 → 比維拉琴 → 四組弦 → 五組弦 → 六弦吉他 */
