@@ -419,16 +419,12 @@
     }).join('') + '</div>';
   }
   function laminateSVG() {
-    var s = '<svg class="gfig" viewBox="0 0 600 200" role="img" aria-label="合板與單板面板的剖面比較">';
-    s += '<text x="10" y="22" class="big">合板 Laminated</text><text x="330" y="22" class="big">單板 Solid</text>';
-    s += '<rect x="10" y="38" width="230" height="16" class="wood3"/><rect x="10" y="54" width="230" height="30" class="wood2"/><rect x="10" y="84" width="230" height="16" class="wood3"/>';
-    for (var i = 0; i < 40; i++) s += '<circle cx="' + (16 + (i * 37) % 224) + '" cy="' + (60 + (i * 13) % 20) + '" r="1.8" fill="#c9a06a" opacity=".7"/>';
-    s += '<text x="248" y="51" class="en">薄木片</text><text x="248" y="74" class="en">膠合夾層</text><text x="248" y="97" class="en">薄木片</text>';
-    s += '<rect x="330" y="38" width="260" height="62" class="wood3"/>';
-    for (var j = 0; j < 9; j++) s += '<path d="M330 ' + (43 + j * 6.5) + ' C400 ' + (39 + j * 6.5) + ' 500 ' + (49 + j * 6.5) + ' 590 ' + (43 + j * 6.5) + '" stroke="#c49a5c" stroke-width="1" fill="none"/>';
-    s += '<text x="10" y="134">✓ 價格親民、不易受溫濕度影響</text><text x="10" y="162">✕ 膠層吸收振動，共鳴較弱</text>';
-    s += '<text x="330" y="134">✓ 整片木頭振動，聲音通透</text><text x="330" y="162">✓ 越彈越「開」，音色持續成長</text><text x="330" y="190">✕ 價格較高，需要留意除濕</text>';
-    return s + '</svg>';
+    return '<svg class="gfig" viewBox="0 0 600 390" role="img" aria-label="響孔邊緣放大切面：左側合板有三層木片與膠合線；右側單板由同一塊木料連續延伸">' +
+      '<text x="12" y="26" class="big">合板 Laminated</text><text x="312" y="26" class="big">單板 Solid</text>' +
+      '<image href="' + GUITAR_IMAGE + 'soundboard-cutaway.jpg" x="0" y="42" width="600" height="300"/>' +
+      '<text x="12" y="368" style="font-size:15px">多層木片，切面可見膠合線</text>' +
+      '<text x="312" y="368" style="font-size:15px">同一塊木料，切面木紋連續</text>' +
+      '<text x="300" y="388" class="en mid" style="font-size:11px">響孔邊緣放大切面示意</text></svg>';
   }
   function bracingSVG() {
     var s = '<svg class="gfig" viewBox="0 0 520 300" role="img" aria-label="民謠吉他 X 型力木與古典吉他扇形力木比較">';
