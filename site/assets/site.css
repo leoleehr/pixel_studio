@@ -1,5 +1,6 @@
 /* ===== Pixel Studio 課程網站：設計系統 v3（首頁、講義） ===== */
 :root{
+  color-scheme:dark;
   --bg:#09090b; --surface:#131317; --card:#18181e; --card-2:#202028;
   --ink:#f3f0e9; --muted:#9d998f; --faint:#6d6a64;
   --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14);

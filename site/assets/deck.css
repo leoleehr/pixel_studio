@@ -1,5 +1,6 @@
 /* ===== Pixel Studio 課堂投影片：設計系統 v3 ===== */
 :root{
+  color-scheme:dark;
   --bg:#09090b; --paper:#111115; --card:#18181e; --card-2:#202028;
   --ink:#f3f0e9; --muted:#9d998f; --faint:#6d6a64;
   --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14); --frame:rgba(255,255,255,.16);
