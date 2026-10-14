@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>舊站紀錄轉移｜Vocal Lab</title>
+<link rel="icon" href="../assets/favicon.ico?v=20261014v" sizes="any">
+<link rel="stylesheet" href="../assets/site.css?v=20261014v">
+<link rel="stylesheet" href="../assets/responsive.css?v=20261014v">
+<link rel="stylesheet" href="../assets/studio.css?v=20261014v">
+<style>
+.transfer{max-width:760px;margin:0 auto;padding:52px 22px 80px}.transfer h1{font-size:clamp(30px,6vw,48px);margin:14px 0}.transfer p,.transfer li{line-height:1.9}.transfer ol{padding-left:24px}.transfer-card{margin-top:24px;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--panel,#fff)}.transfer-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}.transfer input[type=file]{display:block;margin:14px 0;max-width:100%}.transfer-status{min-height:1.8em;margin-top:12px;font-weight:700}.transfer-note{color:var(--muted);font-size:14px}.transfer .btn{cursor:pointer}
+</style>
+</head>
+<body>
+<main class="transfer">
+  <a href="index.html">← 回到 Vocal Lab</a>
+  <p class="eyebrow">LOCAL RECORD TRANSFER</p>
+  <h1>帶著舊站練習紀錄繼續學習</h1>
+  <p>舊站與 Pixel Studio 使用不同網域，瀏覽器不會自動搬移本機練習紀錄。請先在原本使用的裝置與瀏覽器下載備份，再回到這頁匯入。</p>
+  <ol>
+    <li>開啟舊站<a href="https://leoleehr.github.io/vocal_music/data-transfer.html">紀錄匯出頁</a>，下載 JSON 檔。</li>
+    <li>回到本頁選取該檔案，再按「匯入到這台裝置」。</li>
+    <li>完成後進入投影片，確認練習紀錄已載入。</li>
+  </ol>
+  <section class="transfer-card">
+    <h2>匯入舊站備份</h2>
+    <p class="transfer-note">檔案只會在這個瀏覽器內讀取。相同名稱的紀錄會保留目前網站資料，不會覆蓋。</p>
+    <input id="backup-file" type="file" accept="application/json,.json">
+    <button class="btn primary" id="import-button" type="button">匯入到這台裝置</button>
+    <div id="status" class="transfer-status" role="status" aria-live="polite"></div>
+  </section>
+  <section class="transfer-card">
+    <h2>下載 Pixel Studio 備份</h2>
+    <p class="transfer-note">下載這台裝置目前的 Vocal Lab 本機紀錄，方便另存或日後搬移。</p>
+    <button class="btn" id="export-button" type="button">下載本機紀錄</button>
+  </section>
+  <p class="transfer-note">問卷與作業若已送到老師的試算表，資料仍保留在原後台；這個工具只搬移瀏覽器中的本機紀錄。完成確認前，請保留下載的備份檔。</p>
+</main>
+<script>
+(function () {
+  'use strict';
+  var PREFIX = 'pixel:', schema = 'pixel-studio-local-storage-v1';
+  var fileInput = document.getElementById('backup-file'), status = document.getElementById('status');
+  function entries() {
+    var rows = [];
+    for (var i = 0; i < localStorage.length; i++) {
+      var key = localStorage.key(i);
+      if (key && key.indexOf(PREFIX) === 0 && key.indexOf('pixel:guitar:') !== 0) rows.push({ key: key, value: localStorage.getItem(key) });
+    }
+    return rows;
+  }
+  function download(rows, name) {
+    var blob = new Blob([JSON.stringify({ schema: schema, exportedAt: new Date().toISOString(), entries: rows }, null, 2)], { type: 'application/json' });
+    var url = URL.createObjectURL(blob), a = document.createElement('a');
+    a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+  }
+  document.getElementById('export-button').addEventListener('click', function () {
+    var rows = entries();
+    if (!rows.length) { status.textContent = '這台裝置目前沒有可匯出的 Pixel Studio 紀錄。'; return; }
+    var d = new Date(), stamp = d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0');
+    download(rows, 'pixel-studio-vocal-backup-' + stamp + '.json');
+    status.textContent = '已準備 ' + rows.length + ' 筆本機紀錄備份。';
+  });
+  document.getElementById('import-button').addEventListener('click', function () {
+    var file = fileInput.files && fileInput.files[0];
+    if (!file) { status.textContent = '請先選取從舊站下載的 JSON 備份。'; return; }
+    if (file.size > 10 * 1024 * 1024) { status.textContent = '備份檔超過 10 MB，請確認選取的檔案。'; return; }
+    var reader = new FileReader();
+    reader.onload = function () {
+      try {
+        var data = JSON.parse(reader.result);
+        if (!data || data.schema !== schema || !Array.isArray(data.entries)) throw new Error('格式不符');
+        var added = 0, skipped = 0, failed = 0;
+        data.entries.forEach(function (row) {
+          if (!row || typeof row.key !== 'string' || row.key.indexOf(PREFIX) !== 0 || row.key.indexOf('pixel:guitar:') === 0 || typeof row.value !== 'string') { skipped++; return; }
+          if (localStorage.getItem(row.key) !== null) { skipped++; return; }
+          try { localStorage.setItem(row.key, row.value); added++; } catch (storageError) { failed++; }
+        });
+        status.textContent = '匯入完成：新增 ' + added + ' 筆，保留既有或略過 ' + skipped + ' 筆，儲存空間不足 ' + failed + ' 筆。';
+      } catch (error) { status.textContent = '無法匯入：檔案格式錯誤或瀏覽器儲存空間不足。'; }
+    };
+    reader.onerror = function () { status.textContent = '無法讀取所選檔案。'; };
+    reader.readAsText(file);
+  });
+})();
+</script>
+</body>
+</html>
