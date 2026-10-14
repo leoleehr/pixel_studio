@@ -157,3 +157,16 @@
 .chordlab .kb{max-height:180px}
 @media (max-width:900px){.sp-sheet.long{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .ap-ctl select{max-width:100%;min-width:0}
+
+/* 第 1 堂實物教學插圖 */
+.piano-mechanism{position:relative;margin:0;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#171815}
+.piano-mechanism img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.piano-mechanism figcaption{position:absolute;left:10px;right:10px;bottom:9px;padding:7px 10px;border-radius:6px;background:rgba(10,12,10,.82);color:var(--ink);font-size:14px;text-align:center;letter-spacing:.04em}
+.types .card{overflow:hidden}
+.types .piano-type-img{display:block;width:100%;height:112px;margin:0 0 12px;border:1px solid var(--line);border-radius:9px;background:#171815;object-fit:contain;object-position:center}
+.hands.photo-hands{position:relative;display:block;width:100%;max-width:960px;margin:0 auto;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#171815}
+.hands.photo-hands>img{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover}
+.hands.photo-hands>svg{position:absolute;inset:0;width:100%;height:100%;max-height:none;pointer-events:none}
+.hands.photo-hands .tip{fill:var(--accent);stroke:#101210;stroke-width:3}
+.hands.photo-hands .finger-num{font:700 28px "Space Grotesk",sans-serif;fill:#101210;text-anchor:middle}
+.hands.photo-hands .hand-label{font:700 22px "Noto Sans TC",sans-serif;fill:#f3f0e9;text-anchor:middle}
