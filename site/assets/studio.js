@@ -98,3 +98,24 @@
   window.addEventListener('pagehide', stop);
   draw();
 })();
+
+/* 捲動進場：區塊標題、課程列、功能卡由下往上淡入（首頁與四個 Lab 共用）。
+   只有在 JS 執行時才加上 .reveal-ready，避免腳本失敗時內容被隱藏；系統減少動態時不啟用。 */
+(function () {
+  'use strict';
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var items = [].slice.call(document.querySelectorAll('.home .sec-head, .home .lesson, .home .feature, .home .about, .home .practice-display, .home .rhythm, .home .teacher, .home .session-head'));
+  if (!items.length) return;
+  document.documentElement.classList.add('reveal-ready');
+  items.forEach(function (el) {
+    var sib = el.parentNode ? [].slice.call(el.parentNode.children).filter(function (c) { return c.className === el.className; }) : [];
+    el.style.setProperty('--ri', Math.min(sib.indexOf(el), 6));
+    el.classList.add('reveal-item');
+  });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  items.forEach(function (el) {
+    if (el.getBoundingClientRect().top < innerHeight) el.classList.add('is-in'); else io.observe(el);
+  });
+})();

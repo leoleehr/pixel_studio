@@ -83,3 +83,6 @@ def build(n):
 if __name__ == '__main__':
     for a in sys.argv[1:]:
         build(int(a))
+    # 補齊社群分享標籤（og:image 等）
+    import subprocess
+    subprocess.run([sys.executable, "-X", "utf8", str(ROOT / "tools" / "add_social_meta.py")], check=True)
