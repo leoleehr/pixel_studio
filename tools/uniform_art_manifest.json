@@ -1,0 +1,440 @@
+[
+  {
+    "src": "site/assets/teaching/vocal-standing-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        221,
+        118,
+        271,
+        164
+      ]
+    ],
+    "photo_size": [
+      502,
+      460
+    ],
+    "logo_scale": 1.3
+  },
+  {
+    "src": "site/assets/teaching/vocal-seated-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        214,
+        138,
+        263,
+        158
+      ]
+    ],
+    "photo_size": [
+      506,
+      460
+    ],
+    "logo_scale": 1
+  },
+  {
+    "src": "site/assets/teaching/warmup-shoulders-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        209,
+        260,
+        335,
+        352
+      ]
+    ],
+    "photo_size": [
+      504,
+      460
+    ],
+    "logo_scale": 1.5
+  },
+  {
+    "src": "site/assets/teaching/warmup-forward-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        272,
+        138,
+        289,
+        177
+      ]
+    ],
+    "photo_size": [
+      502,
+      548
+    ],
+    "logo_scale": 1
+  },
+  {
+    "src": "site/assets/teaching/breath-in-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        199,
+        210,
+        310,
+        284
+      ]
+    ],
+    "photo_size": [
+      506,
+      548
+    ],
+    "logo_scale": 1.5
+  },
+  {
+    "src": "site/assets/teaching/breath-out-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        206,
+        218,
+        313,
+        290
+      ]
+    ],
+    "photo_size": [
+      504,
+      548
+    ],
+    "logo_scale": 1.5
+  },
+  {
+    "src": "site/assets/teaching/voice-yawn-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        159,
+        334,
+        310,
+        391
+      ]
+    ],
+    "photo_size": [
+      449,
+      394
+    ],
+    "logo_scale": 1.5
+  },
+  {
+    "src": "site/assets/teaching/voice-hum-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        157,
+        328,
+        310,
+        394
+      ]
+    ],
+    "photo_size": [
+      450,
+      394
+    ],
+    "logo_scale": 1.5
+  },
+  {
+    "src": "site/assets/teaching/voice-chest-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        172,
+        341,
+        315,
+        392
+      ]
+    ],
+    "photo_size": [
+      451,
+      394
+    ],
+    "logo_scale": 1.5
+  },
+  {
+    "src": "site/assets/teaching/voice-no-pinch-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        156,
+        321,
+        310,
+        378
+      ]
+    ],
+    "photo_size": [
+      449,
+      380
+    ],
+    "logo_scale": 1.5
+  },
+  {
+    "src": "site/assets/teaching/voice-pinch-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        168,
+        320,
+        313,
+        378
+      ]
+    ],
+    "photo_size": [
+      450,
+      380
+    ],
+    "logo_scale": 1.5
+  },
+  {
+    "src": "site/assets/teaching/voice-air-hand-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        214,
+        320,
+        355,
+        376
+      ]
+    ],
+    "photo_size": [
+      451,
+      380
+    ],
+    "logo_scale": 1.5
+  },
+  {
+    "src": "site/assets/teaching/mic-straight-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        190,
+        286,
+        336,
+        340
+      ]
+    ],
+    "photo_size": [
+      449,
+      347
+    ],
+    "logo_scale": 1.5
+  },
+  {
+    "src": "site/assets/teaching/mic-offset-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        219,
+        287,
+        341,
+        341
+      ]
+    ],
+    "photo_size": [
+      450,
+      347
+    ],
+    "logo_scale": 1.5
+  },
+  {
+    "src": "site/assets/teaching/warmup-neck-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        194,
+        282,
+        316,
+        338
+      ]
+    ],
+    "photo_size": [
+      451,
+      347
+    ],
+    "logo_scale": 1.5
+  },
+  {
+    "src": "site/assets/teaching/vowel-a-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        151,
+        464,
+        346,
+        548
+      ]
+    ],
+    "photo_size": [
+      502,
+      556
+    ],
+    "logo_scale": 1.5
+  },
+  {
+    "src": "site/assets/teaching/vowel-i-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        154,
+        466,
+        348,
+        548
+      ]
+    ],
+    "photo_size": [
+      505,
+      556
+    ],
+    "logo_scale": 1.5
+  },
+  {
+    "src": "site/assets/teaching/vowel-u-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        163,
+        465,
+        350,
+        548
+      ]
+    ],
+    "photo_size": [
+      505,
+      556
+    ],
+    "logo_scale": 1.5
+  },
+  {
+    "src": "site/assets/teaching/vowel-e-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        205,
+        430,
+        295,
+        452
+      ]
+    ],
+    "photo_size": [
+      502,
+      452
+    ],
+    "logo_scale": 1
+  },
+  {
+    "src": "site/assets/teaching/vowel-o-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        205,
+        430,
+        295,
+        452
+      ]
+    ],
+    "photo_size": [
+      505,
+      452
+    ],
+    "logo_scale": 1
+  },
+  {
+    "src": "site/assets/teaching/warmup-wrists-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        190,
+        295,
+        314,
+        351
+      ]
+    ],
+    "photo_size": [
+      505,
+      452
+    ],
+    "logo_scale": 1.5
+  },
+  {
+    "src": "site/assets/teaching/breath-wall-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        305,
+        259,
+        344,
+        332
+      ]
+    ],
+    "photo_size": [
+      496,
+      636
+    ],
+    "logo_scale": 1
+  },
+  {
+    "src": "site/assets/teaching/breath-pair-paper-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        55,
+        407,
+        161,
+        533
+      ],
+      [
+        506,
+        447,
+        633,
+        537
+      ]
+    ],
+    "photo_size": [
+      697,
+      636
+    ],
+    "logo_scale": 1.5
+  },
+  {
+    "src": "site/assets/teaching/breath-wall-tissue-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        224,
+        390,
+        268,
+        497
+      ]
+    ],
+    "photo_size": [
+      496,
+      648
+    ],
+    "logo_scale": 1
+  },
+  {
+    "src": "site/assets/teaching/breath-tissue-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        390,
+        461,
+        561,
+        618
+      ]
+    ],
+    "photo_size": [
+      697,
+      648
+    ],
+    "logo_scale": 1.3
+  },
+  {
+    "src": "site/assets/teaching/teacher-leo-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        256,
+        258,
+        428,
+        369
+      ]
+    ],
+    "photo_size": [
+      1100,
+      688
+    ],
+    "logo_scale": 1.5
+  },
+  {
+    "src": "site/assets/teaching/guitar-posture-uniform.svg",
+    "shirt_print_bounds": [
+      [
+        350,
+        258,
+        485,
+        331
+      ]
+    ],
+    "photo_size": [
+      1100,
+      731
+    ],
+    "logo_scale": 1.5
+  }
+]
