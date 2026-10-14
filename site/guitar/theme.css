@@ -363,3 +363,5 @@
 .md .hb-score{margin:14px 0 18px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
 .md .hb-cap{margin:0 0 8px;font-size:15px}
 .md .hb-score .tabbox .player-top{margin-bottom:6px}
+/* 揭曉內容：字級略小，展開後仍放得下 */
+.slide .reveal p,.slide .reveal li{font-size:18px;line-height:1.6}

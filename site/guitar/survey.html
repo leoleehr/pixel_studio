@@ -84,7 +84,7 @@
 }
 </style>
 <link rel="stylesheet" href="../assets/studio.css?v=20261014h">
-<link rel="stylesheet" href="theme.css?v=20261014r">
+<link rel="stylesheet" href="theme.css?v=20261014t">
 </head>
 <body id="top" data-course="guitar">
 <header class="topbar">
@@ -112,7 +112,7 @@
 
 <script src="../assets/config.js?v=20261014h"></script>
 <script src="../assets/backend.js?v=20261014h"></script>
-<script src="surveys.js?v=20261014h"></script>
+<script src="surveys.js?v=20261014s"></script>
 <script>
 (function () {
   'use strict';
@@ -121,10 +121,10 @@
   var list = window.PIXEL_SURVEYS || [], sv = list.filter(function (s) { return s.id === id; })[0];
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function doneAt(sid) { try { return localStorage.getItem('pixel:guitar:survey-' + sid); } catch (e) { return null; } }
-  var notice = PixelBackend.configured ? '' : '<div class="sv-notice">後台尚未完成設定：送出的問卷會先存在這台裝置，設定完成後自動補送給老師。</div>';
+  var notice = PixelBackend.configured ? '' : '<div class="sv-notice">後台尚未完成設定：送出的問卷會先儲存在這台裝置，設定完成之後，自動補送給老師。</div>';
 
   if (!sv) {
-    app.innerHTML = '<div class="sv-head"><div class="lh-no">Surveys</div><h1>課程問卷</h1><p>每章上課前三天填寫課前問卷，第十二章結束時填寫課程回饋。填寫後會直接送到老師的課程試算表。</p></div>' + notice + '<div class="sv-list"></div>';
+    app.innerHTML = '<div class="sv-head"><div class="lh-no">Surveys</div><h1>課程問卷</h1><p>每章上課前三天填寫課前問卷，第十二章結束時填寫課程回饋。填寫之後，會直接送到老師的課程試算表。</p></div>' + notice + '<div class="sv-list"></div>';
     list.forEach(function (s) {
       var d = doneAt(s.id), a = document.createElement('a'); a.className = 'sv-item'; a.href = 'survey.html?id=' + s.id;
       a.style.setProperty('--c', s.id === 'g-feedback' ? '#6cbb4b' : COLOR[s.lesson]);
@@ -162,7 +162,7 @@
     html += '<div class="sv-card" data-k="' + k + '"><div class="sv-q"><span class="n">' + (k + 1) + '</span><span>' + esc(q.q) + '</span>' + (q.optional ? '<span class="opt">選填</span>' : '') + '</div>' +
       (q.hint ? '<p class="sv-hint">' + esc(q.hint) + '</p>' : '') + '<div class="sv-body">' + body + '</div><p class="sv-err">這一題還沒有填寫</p></div>';
   });
-  html += '<div class="sv-submit"><button type="submit" class="btn primary">送出問卷</button><p>送出後會附上你的姓名與科系，資料只提供給老師。</p></div></form>';
+  html += '<div class="sv-submit"><button type="submit" class="btn primary">送出問卷</button><p>送出時會附上你的姓名與科系，資料只提供給老師。</p></div></form>';
   app.innerHTML = html;
 
   var f = app.querySelector('form');
@@ -200,7 +200,7 @@
         var d = new Date(), stamp = (d.getMonth() + 1) + '/' + d.getDate() + ' ' + String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
         try { localStorage.setItem('pixel:guitar:survey-' + sv.id, stamp); } catch (e) {}
         var sent = r && r.sent;
-        app.innerHTML = '<div class="sv-done"><div class="ok">✓</div><h2>' + (sent ? '問卷已送出' : '問卷已儲存') + '</h2><p>' + (sent ? '謝謝 ' + esc(who.name) + '，老師會在課前看過大家的回覆。' : '目前無法連線到後台，問卷已存在這台裝置，連線後會自動補送。') + '</p><div class="cta"><a class="btn primary" href="survey.html">回到問卷列表</a><a class="btn" href="index.html#lessons">前往課程</a></div></div>';
+        app.innerHTML = '<div class="sv-done"><div class="ok">✓</div><h2>' + (sent ? '問卷已送出' : '問卷已儲存') + '</h2><p>' + (sent ? '謝謝 ' + esc(who.name) + '，老師會在課前閱讀大家的回覆。' : '目前無法連線到後台，問卷已儲存在這台裝置，恢復連線之後會自動補送。') + '</p><div class="cta"><a class="btn primary" href="survey.html">回到問卷列表</a><a class="btn" href="index.html#lessons">前往課程</a></div></div>';
         scrollTo(0, 0);
       });
     });
