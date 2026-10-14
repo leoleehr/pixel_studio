@@ -13,13 +13,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Music&text=%F0%9D%84%9E%E2%99%AF%E2%99%AE&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Allura&text=We%20Perform%20the%20Pixel%20of%20Music&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css?v=20261014h">
 <link rel="stylesheet" href="../assets/backend.css?v=20261014h">
 <link rel="stylesheet" href="../assets/responsive.css?v=20261014h">
 <link rel="stylesheet" href="../assets/studio.css?v=20261014h">
 <link rel="stylesheet" href="../assets/youtube.css?v=20261014h">
-<link rel="stylesheet" href="theme.css?v=20261014n">
+<link rel="stylesheet" href="theme.css?v=20261014r">
 </head>
 <body id="top" data-course="guitar">
 <header class="topbar">
@@ -54,6 +55,8 @@
 <script src="../assets/youtube.js?v=20261014h"></script>
 <script src="../assets/config.js?v=20261014h"></script>
 <script src="../assets/backend.js?v=20261014h"></script>
+<script src="../assets/ps-audio.js?v=20261014r"></script>
+<script src="guitar.js?v=20261014r"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <script>window.GUITAR_READY = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];</script>
 <script>
@@ -61,7 +64,7 @@
   var NUM = { '一': 1, '二': 2, '三': 3, '四': 4, '五': 5, '六': 6, '七': 7, '八': 8, '九': 9, '十': 10, '十一': 11, '十二': 12 };
   var COLOR = ['', '#e8412b', '#e2407f', '#9a5fd0', '#2f5fc4', '#45b3e6', '#6cbb4b', '#d6e03a', '#f4a62a', '#e8412b', '#e2407f', '#9a5fd0', '#45b3e6'];
   var main = document.getElementById('content'), toc = document.getElementById('toc'), prog = document.getElementById('progress');
-  fetch('handbook.md?v=20261014h')
+  fetch('handbook.md?v=20261014r')
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
     .then(function (md) {
       main.innerHTML = marked.parse(md, { gfm: true });
@@ -100,6 +103,7 @@
         list.forEach(function (s) { box.lastChild.appendChild(PixelYT.card(s)); });
         row.parentNode.insertBefore(box, row.nextSibling);
       });
+      if (window.PS && PS.guitar && PS.guitar.mount) PS.guitar.mount(main); // 譜例：五線譜＋六線譜
       PixelUI.labelTables(main);
       var sh = PixelUI.sheet('講義目錄', items);
       [].forEach.call(sh.list.children, function (a, k) { if (items[k].sub) a.classList.add('sub'); });

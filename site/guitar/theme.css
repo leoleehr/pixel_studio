@@ -347,3 +347,19 @@
 .rg-staff{margin:4px 0 8px;padding:6px 0 2px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-sm,3px)}
 .rnote-slot{min-height:1px}
 .slide.gtight .strum-player .pdesc,.slide.gtight [data-strum-player] .pdesc{display:none}
+.gfig.notes .nchord{font:700 15px "Space Grotesk",Arial,sans-serif;fill:var(--accent)}
+.gfig.rnote .tnum{font-size:12.5px}
+.pgrid .strum-grid{margin-left:58px}
+.gfig.rnote .ntime{font-size:19px}
+/* 投影片放不下時：刷奏播放器改緊湊版，讓譜例維持較大的字 */
+.slide.gtight [data-strum-player] .player-top{margin-bottom:2px}
+.slide.gtight [data-strum-player] .card{padding-top:12px;padding-bottom:12px}
+.slide.gtight .strum-grid .cell{padding:5px 0 4px;gap:2px}
+.slide.gtight .strum-grid .sarrow{font-size:24px}
+.slide.gtight .strum-grid .cnt{font-size:11px}
+.slide.gtight [data-strum-player] .gcontrols{gap:6px 10px;margin-top:8px}
+.slide.gtight [data-strum-player] .gcontrols .btn{padding-top:6px;padding-bottom:6px}
+/* 講義：譜例 */
+.md .hb-score{margin:14px 0 18px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
+.md .hb-cap{margin:0 0 8px;font-size:15px}
+.md .hb-score .tabbox .player-top{margin-bottom:6px}

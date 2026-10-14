@@ -321,6 +321,44 @@ def surveys():
     return out
 
 
+PNAME = {'Q': '四分音符 下刷', 'A': '八分音符 8 Beats', 'B': '切分 Folk Rock', 'S': '十六分音符 16 Beats', 'P': '蹦洽拉 Bass & Strum',
+         'W': '華爾滋 3/4 蹦洽洽', 'W2': '3/4 蹦洽拉洽拉', 'E6': '6/8 搖擺', 'K': '切音 Chuck', 'T12': '12/8 慢板'}
+SET0 = {'prog': 'C', 'fifties': 'C', 'C': 'C', 'G': 'G', 'open': 'open', 'Em': 'Em', 'gkey': 'G', 'waltz': 'C', 'minor': 'Am', 'bass': 'C'}
+CNAME = {'open': '空弦'}
+
+
+def scores(n):
+    """從投影片原稿收集本章所有刷法與六線譜，輸出「譜例」段落（講義頁由 guitar.js 畫成五線譜＋六線譜）。"""
+    src = (ROOT / 'tools' / 'decks' / ('ch%02d.html' % n)).read_text(encoding='utf-8')
+    pats, seen = [], set()
+    for m in re.finditer(r'<div (data-strum-player="([^"]+)"[^>]*|data-pattern-grid="([^"]+)"[^>]*)>', src):
+        attrs = m.group(1)
+        keys = (m.group(2) or m.group(3)).split()
+        ch = re.search(r'data-chord="([^"]+)"', attrs)
+        chords = re.search(r'data-chords="([^"]+)"', attrs)
+        chord = ch.group(1) if ch else SET0.get(chords.group(1).split()[0], chords.group(1).split()[0].split(',')[0]) if chords else 'C'
+        for k in keys:  # 每種刷法只列一次；先遇到空弦、之後有真正的和弦時改用和弦
+            if k not in seen:
+                seen.add(k); pats.append((k, chord))
+            elif chord != 'open':
+                pats = [(a, chord if a == k and b == 'open' else b) for a, b in pats]
+    tabs, tseen = [], set()
+    for m in re.finditer(r'<div data-tab="([^"]+)"([^>]*)>', src):
+        if m.group(1) in tseen:
+            continue
+        tseen.add(m.group(1))
+        title = re.search(r'data-title="([^"]*)"', m.group(2)); per = re.search(r'data-per-row="(\d+)"', m.group(2))
+        tabs.append((m.group(1), html.unescape(title.group(1)) if title else '', per.group(1) if per else '4'))
+    if not pats and not tabs:
+        return ''
+    L = ['### 譜例：五線譜＋六線譜', '', '本章用到的刷法與指法。上方五線譜看音高與音符長短，下方六線譜看弦與格；刷法下方的箭頭是右手方向。', '']
+    for k, c in pats:
+        L += ['<div class="hb-score"><p class="hb-cap"><b>%s</b>（%s 和弦）</p><div data-pattern-grid="%s" data-chord="%s"></div></div>' % (PNAME[k], CNAME.get(c, c), k, c), '']
+    for t, title, per in tabs:
+        L += ['<div class="hb-score"><div data-tab="%s" data-per-row="%s" data-title="%s"></div></div>' % (t, per, html.escape(title, quote=True).replace('&#x27;', "'")), '']
+    return '\n'.join(L).rstrip() + '\n'
+
+
 def chapter(n, sv):
     title, en, sl = slides_of(n)
     L = ['## 第%s章｜%s %s' % (ZH[n], title, en.replace(' · ', ' & ')), '']
@@ -340,7 +378,8 @@ def chapter(n, sv):
     tail = [s for s in sl if s['seg'] is None and s['no'] > 2]
     if tail:
         L.append('| 收尾 | 課後 | 三句話總結、每日練習紀錄、課後練習與下章預告 | %s |' % '、'.join(str(s['no']) for s in tail))
-    L += ['', NOTES[n].strip(), '', '### 課堂互動（網站簡報）', '', '| 投影片 | 互動 | 內容 |', '| --- | --- | --- |']
+    sc = scores(n)
+    L += ['', NOTES[n].strip()] + (['', sc.strip()] if sc else []) + ['', '### 課堂互動（網站簡報）', '', '| 投影片 | 互動 | 內容 |', '| --- | --- | --- |']
     for s in sl:
         if s['ix']:
             L.append('| %d | %s | %s |' % (s['no'], s['ix'], s['h']))
@@ -355,6 +394,10 @@ def main():
     head = md[:md.index('## 第二章')]
     head = re.sub(r'\| 教案草案（原教材部分為綱要） \|', '| 投影片完成 |', head)
     head = head.replace('| 教案草案 |', '| 投影片完成 |')
+    # 第一章為手寫內容：在「課堂互動」前放入（或更新）譜例
+    head = re.sub(r'<!-- scores:1 -->.*?<!-- /scores:1 -->\n\n', '', head, flags=re.S)
+    i1 = head.index('### 課堂互動（網站簡報）', head.index('## 第一章'))
+    head = head[:i1] + '<!-- scores:1 -->\n\n' + scores(1) + '\n<!-- /scores:1 -->\n\n' + head[i1:]
     sv = surveys()
     body = '\n'.join(chapter(n, sv) for n in range(2, 13))
     MD.write_text(head + body, encoding='utf-8', newline='\n')

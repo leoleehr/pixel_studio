@@ -10,6 +10,7 @@
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Music&text=%F0%9D%84%9E%E2%99%AF%E2%99%AE&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#1c1c21;--muted:#6f6b64;--faint:#a5a19a;--line:#e6e2da;--soft:#f6f4ef;--amber:#4f9e3a;--display:"Space Grotesk","Noto Sans TC",sans-serif;
@@ -107,6 +108,35 @@ a{color:inherit;text-decoration:none}
 .end{break-before:page;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:240mm;color:var(--muted)}
 .end .endlogo{margin-bottom:8mm}
 .end .endcn{font-size:16pt;font-weight:700;letter-spacing:.3em;color:var(--ink);margin-bottom:2mm}
+
+/* 譜例：五線譜＋六線譜（白底列印配色） */
+.hb-score{margin:3mm 0 4mm;break-inside:avoid}
+.hb-cap{font-size:9.5pt;margin:0 0 1.5mm}
+.gfig{display:block;width:100%;height:auto}
+.gfig .nfill{fill:#1c1c21}.gfig .nopen{fill:none;stroke:#1c1c21;stroke-width:2.2}
+.gfig .nstem{stroke:#1c1c21;stroke-width:2}.gfig .nbeam,.gfig .nbeam2{stroke:#1c1c21;stroke-width:5}
+.gfig .nflag,.gfig .ntie{fill:none;stroke:#1c1c21;stroke-width:1.8;stroke-linecap:round}
+.gfig .nrest{fill:none;stroke:#1c1c21;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.gfig .nline{stroke:#8a867e;stroke-width:1.1}.gfig .nbar{stroke-width:1.5}
+.gfig .nacc{font:700 17px "Noto Music","Segoe UI Symbol",serif;fill:#1c1c21;text-anchor:middle}
+.gfig .nclef{font-family:"Noto Music","Segoe UI Symbol",serif;font-size:60px;fill:#1c1c21}
+.gfig .nclef8{font:700 13px "Space Grotesk",sans-serif;fill:#1c1c21;text-anchor:middle}
+.gfig .ntime{font:700 19px "Space Grotesk",sans-serif;fill:#1c1c21;text-anchor:middle}
+.gfig .ntext,.gfig .nchord{font:700 13px "Space Grotesk",sans-serif;fill:#4f9e3a}
+.gfig .ntext{text-anchor:middle}
+.gfig.tab .tline{stroke:#8a867e;stroke-width:1}.gfig.tab .tbar{stroke:#8a867e;stroke-width:1.5}
+.gfig.tab .tabl{font:700 13px "Space Grotesk",sans-serif;fill:#8a867e}
+.gfig.tab .tbg{fill:#fff}.gfig.tab .tnum{font:700 13px "Space Grotesk",sans-serif;fill:#1c1c21;text-anchor:middle}
+.gfig.tab .ttech{font:700 12px "Space Grotesk",sans-serif;fill:#4f9e3a}
+.tabbox .player-top{font-size:9.5pt;font-weight:700;margin-bottom:1.5mm}.tabbox .pchord{display:none}
+.pgrid .strum-grid{display:grid;gap:1mm;margin-left:58px}
+.strum-grid .cell{display:flex;flex-direction:column;align-items:center;padding:1mm 0;border:1px solid var(--line);border-radius:1mm;background:#fff}
+.strum-grid .cell.off{background:var(--soft)}
+.strum-grid .sarrow{font:700 14pt/1 "Space Grotesk",sans-serif}
+.strum-grid .sarrow.ghost{color:transparent;-webkit-text-stroke:1px #a5a19a}
+.strum-grid .cell.bass .sarrow{color:#4f9e3a}
+.strum-grid .cnt{font:500 7pt "Space Grotesk",sans-serif;color:var(--faint)}
+.md .hb-score table{display:none}
 </style>
 </head>
 <body>
@@ -137,6 +167,8 @@ a{color:inherit;text-decoration:none}
 <div class="sheet end"><img class="logo-new endlogo" src="../assets/brand/pixel-studio-primary-mono-black.svg" alt="Pixel Studio"><p class="endcn">畫素音樂工作坊</p><p>Pixel Studio・Established Since 2008</p></div>
 
 <script src="songs.js?v=20261014h"></script>
+<script src="../assets/ps-audio.js?v=20261014r"></script>
+<script src="guitar.js?v=20261014r"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
@@ -145,7 +177,7 @@ a{color:inherit;text-decoration:none}
   var COLOR = ['', '#e8412b', '#e2407f', '#8a4fc0', '#2f5fc4', '#2f8fc4', '#4f9e3a', '#b5a400', '#e08a12', '#e8412b', '#e2407f', '#8a4fc0', '#2f8fc4'];
   var DESC = ['', '吉他從哪裡來？各部位叫什麼？怎麼把六條弦調準？', '怎麼看懂六線譜？左右手怎麼一起動？', '四個和弦，可以彈多少首歌？', '右手怎麼刷，歌才會有律動？', '華爾滋和慢歌，要怎麼伴奏？', '一首歌怎麼分段？Capo 怎麼用？', '和弦是怎麼組成的？指法怎麼彈？', '封閉和弦怎麼壓才會響？', '讓伴奏走起來的低音線', '為什麼這些和弦總是一起出現？', '搥、勾、滑、悶、推，讓吉他會說話', '找到自己的調，寫一首自己的歌'];
   var main = document.getElementById('content'), toc = document.getElementById('toc');
-  fetch('handbook.md?v=20261014h').then(function (r) { return r.text(); }).then(function (md) {
+  fetch('handbook.md?v=20261014r').then(function (r) { return r.text(); }).then(function (md) {
     var tmp = document.createElement('div'); tmp.innerHTML = marked.parse(md, { gfm: true });
     // 拿掉文件標題與署名行，改用封面
     var h1 = tmp.querySelector('h1'); if (h1) { var nx = h1.nextElementSibling; h1.remove(); if (nx && nx.tagName === 'P') nx.remove(); }
@@ -187,6 +219,7 @@ a{color:inherit;text-decoration:none}
     main.querySelectorAll('table').forEach(function (t) {
       var first = t.querySelector('tr'); if (first && first.querySelector('th') && !t.querySelector('thead')) { var th = document.createElement('thead'); th.appendChild(first); t.insertBefore(th, t.firstChild); }
     });
+    if (window.PS && PS.guitar && PS.guitar.mount) PS.guitar.mount(main); // 譜例：五線譜＋六線譜
     document.body.setAttribute('data-ready', '1');
   });
 })();
