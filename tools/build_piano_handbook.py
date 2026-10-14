@@ -7,6 +7,7 @@
 import html
 import pathlib
 import re
+from teaching_visuals import enrich_markdown
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 MD = ROOT / 'site' / 'piano' / 'handbook.md'
@@ -478,7 +479,7 @@ def session(n, sv):
 def main():
     sv = surveys()
     body = '\n'.join(session(n, sv) for n in range(1, 13))
-    MD.write_text(HEAD + body, encoding='utf-8', newline='\n')
+    MD.write_text(enrich_markdown(HEAD + body, "piano"), encoding='utf-8', newline='\n')
     print('handbook written', len(HEAD + body))
 
 

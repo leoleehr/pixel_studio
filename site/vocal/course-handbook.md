@@ -335,6 +335,49 @@ Oct 5, 2026 · @Leo Lee
 - [ ] 錄下《太陽》副歌一次，聆聽時檢查句尾是否無力
 - [ ] 每天喝水 1,500 c.c. 以上，並記錄睡眠時數
 
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="v01"><h3>呼吸與發聲構造｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/voice-anatomy.jpg" alt="喉部、聲帶、口腔、鼻腔與氣管的相對位置" loading="eager"><figcaption>喉部、聲帶、口腔、鼻腔與氣管的相對位置</figcaption></figure>
+<figure><img src="../assets/teaching/airflow.svg" alt="肺部氣流經氣管、聲帶，進入聲道" loading="eager"><figcaption>肺部氣流經氣管、聲帶，進入聲道</figcaption></figure>
+</div>
+<p class="teaching-note">橫膈膜與呼吸肌協助肺部通氣；聲帶在喉部振動，口腔、咽腔與鼻腔改變聲音。</p>
+<p class="teaching-sources"><a href="https://www.nidcd.nih.gov/health/taking-care-your-voice">NIH / NIDCD 發聲構造</a> · <a href="https://www.asha.org/practice-portal/clinical-topics/resonance-disorders/">ASHA 聲道共鳴</a></p>
+</div>
+
+<div class="teaching-book" data-demo-group="v02"><h3>站姿與彈唱坐姿｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/vocal-standing.webp" alt="站姿：重心穩定、膝蓋與肩膀放鬆" loading="eager"><figcaption>站姿：重心穩定、膝蓋與肩膀放鬆</figcaption></figure>
+<figure><img src="../assets/teaching/vocal-seated.webp" alt="彈唱：坐穩、吉他靠近身體、視線自然向前" loading="eager"><figcaption>彈唱：坐穩、吉他靠近身體、視線自然向前</figcaption></figure>
+</div>
+</div>
+
+<div class="teaching-book" data-demo-group="v03"><h3>暖身動作｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/warmup-shoulders.webp" alt="小幅度肩關節轉動，雙臂自然" loading="eager"><figcaption>小幅度肩關節轉動，雙臂自然</figcaption></figure>
+<figure><img src="../assets/teaching/warmup-forward.webp" alt="以髖部帶動小幅前傾，頭頸自然" loading="eager"><figcaption>以髖部帶動小幅前傾，頭頸自然</figcaption></figure>
+<figure><img src="../assets/teaching/vocal-standing.webp" alt="回到自然站姿，檢查肩頸是否放鬆" loading="eager"><figcaption>回到自然站姿，檢查肩頸是否放鬆</figcaption></figure>
+<figure><img src="../assets/teaching/warmup-neck.webp" alt="輕柔側傾頭部，保持肩膀放鬆，不用力拉扯頸部。" loading="eager"><figcaption>輕柔側傾頭部，保持肩膀放鬆，不用力拉扯頸部。</figcaption></figure>
+<figure><img src="../assets/teaching/warmup-wrists.webp" alt="輕柔活動手腕，手臂與肩膀維持放鬆。" loading="eager"><figcaption>輕柔活動手腕，手臂與肩膀維持放鬆。</figcaption></figure>
+</div>
+<p class="teaching-note">各動作在舒服範圍內慢慢進行。</p>
+</div>
+
+<div class="teaching-book" data-demo-group="v04"><h3>腰腹呼吸與控制｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/breath-in.webp" alt="雙手放在下肋與腰側，感受吸氣時的擴張" loading="eager"><figcaption>雙手放在下肋與腰側，感受吸氣時的擴張</figcaption></figure>
+<figure><img src="../assets/teaching/breath-out.webp" alt="吐氣時維持穩定，肩膀自然放鬆" loading="eager"><figcaption>吐氣時維持穩定，肩膀自然放鬆</figcaption></figure>
+</div>
+<p class="teaching-note">手部是觀察的位置；氣流進入肺部。</p>
+</div>
+
+<div class="teaching-book" data-demo-group="v05"><h3>呼吸活動操作｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/breath-wall.webp" alt="站在牆邊觀察腰腹吐氣動作" loading="eager"><figcaption>站在牆邊觀察腰腹吐氣動作</figcaption></figure>
+<figure><img src="../assets/teaching/breath-pair-paper.webp" alt="兩人輪流吹紙張" loading="eager"><figcaption>兩人輪流吹紙張</figcaption></figure>
+<figure><img src="../assets/teaching/breath-wall-paper.webp" alt="以持續氣流托住牆上的紙張" loading="eager"><figcaption>以持續氣流托住牆上的紙張</figcaption></figure>
+<figure><img src="../assets/teaching/breath-tissue.webp" alt="觀察懸垂紙張的角度是否穩定" loading="eager"><figcaption>觀察懸垂紙張的角度是否穩定</figcaption></figure>
+</div>
+</div>
+
+<!-- teaching-visuals-end -->
+
 ## 第三堂｜歌唱共鳴條件
 
 第三堂讓學員分別找到口腔、頭腔、胸腔三種共鳴的位置，並以茄子蛋的兩首台語歌練習混合運用。依據戴意誠（1998）的說法，人聲三大要素為呼吸、共鳴與發聲；上一堂處理了呼吸，這一堂處理聲音的放大與美化。
@@ -424,6 +467,31 @@ Oct 5, 2026 · @Leo Lee
 - [ ] 聆聽張學友或陳奕迅的一首歌，記錄胸腔共鳴最明顯的一句
 - [ ] 聆聽張惠妹或五月天阿信的一首歌，記錄頭腔共鳴最明顯的一句
 - [ ] 繼續記錄 /s/ 吐氣秒數，每週一次即可
+
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="v06"><h3>聲道與共鳴感受位置｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/voice-anatomy.jpg" alt="實際構造：口腔、咽腔、鼻腔與喉部" loading="eager"><figcaption>實際構造：口腔、咽腔、鼻腔與喉部</figcaption></figure>
+<figure><img src="../assets/teaching/resonance.svg" alt="聲道構造與頭／胸振動感受分別標示" loading="eager"><figcaption>聲道構造與頭／胸振動感受分別標示</figcaption></figure>
+</div>
+<p class="teaching-note">課程中的頭腔、胸腔是歌唱感受描述，不等於圖中獨立的聲道腔室。</p>
+<p class="teaching-sources"><a href="https://www.nidcd.nih.gov/health/taking-care-your-voice">NIH / NIDCD 發聲構造</a> · <a href="https://www.asha.org/practice-portal/clinical-topics/resonance-disorders/">ASHA 聲道共鳴</a></p>
+</div>
+
+<div class="teaching-book" data-demo-group="v07"><h3>哈欠、哼鳴與手貼胸口｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/voice-yawn.webp" alt="下巴自然下垂，模擬輕哈欠" loading="eager"><figcaption>下巴自然下垂，模擬輕哈欠</figcaption></figure>
+<figure><img src="../assets/teaching/voice-hum.webp" alt="嘴唇輕閉，哼出 /m/" loading="eager"><figcaption>嘴唇輕閉，哼出 /m/</figcaption></figure>
+<figure><img src="../assets/teaching/voice-chest.webp" alt="手掌輕貼胸口，觀察振動感受" loading="eager"><figcaption>手掌輕貼胸口，觀察振動感受</figcaption></figure>
+</div>
+</div>
+
+<div class="teaching-book" data-demo-group="v08"><h3>捏鼻測試｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/voice-no-pinch.webp" alt="1：以舒服音高唱長音" loading="eager"><figcaption>1：以舒服音高唱長音</figcaption></figure>
+<figure><img src="../assets/teaching/voice-pinch.webp" alt="2：輕捏鼻翼，比較聲音的改變" loading="eager"><figcaption>2：輕捏鼻翼，比較聲音的改變</figcaption></figure>
+</div>
+</div>
+
+<!-- teaching-visuals-end -->
 
 ## 第四堂｜歌唱發聲練習
 
@@ -540,6 +608,41 @@ Oct 5, 2026 · @Leo Lee
 - [ ] 每天唸一次繞口令，錄音檢查平舌與捲舌
 - [ ] 依照三步驟練習《不是因為天氣晴朗才愛你》副歌，錄下第三步的版本
 - [ ] 預習：聆聽陳奕迅《愛情轉移》，先以自己的方式演唱一次「把一個人的溫暖，轉移到另一個人的胸膛」
+
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="v04"><h3>腰腹呼吸與控制｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/breath-in.webp" alt="雙手放在下肋與腰側，感受吸氣時的擴張" loading="eager"><figcaption>雙手放在下肋與腰側，感受吸氣時的擴張</figcaption></figure>
+<figure><img src="../assets/teaching/breath-out.webp" alt="吐氣時維持穩定，肩膀自然放鬆" loading="eager"><figcaption>吐氣時維持穩定，肩膀自然放鬆</figcaption></figure>
+</div>
+<p class="teaching-note">手部是觀察的位置；氣流進入肺部。</p>
+</div>
+
+<div class="teaching-book" data-demo-group="v09"><h3>五個母音口型｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/vowel-a.webp" alt="/a/：下巴自然下垂" loading="eager"><figcaption>/a/：下巴自然下垂</figcaption></figure>
+<figure><img src="../assets/teaching/vowel-i.webp" alt="/i/：嘴角微展，保留內部空間" loading="eager"><figcaption>/i/：嘴角微展，保留內部空間</figcaption></figure>
+<figure><img src="../assets/teaching/vowel-u.webp" alt="/u/：嘴唇圓攏" loading="eager"><figcaption>/u/：嘴唇圓攏</figcaption></figure>
+<figure><img src="../assets/teaching/vowel-e.webp" alt="/e/：下巴微開" loading="eager"><figcaption>/e/：下巴微開</figcaption></figure>
+<figure><img src="../assets/teaching/vowel-o.webp" alt="/o/：嘴唇成圓" loading="eager"><figcaption>/o/：嘴唇成圓</figcaption></figure>
+</div>
+<p class="teaching-note">照片呈現外部口型；舌位與實際發音仍需配合示範聆聽。</p>
+</div>
+
+<div class="teaching-book" data-demo-group="v10"><h3>舌位與送氣｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/tongue.svg" alt="比較舌尖在前方與稍向後的構形" loading="eager"><figcaption>比較舌尖在前方與稍向後的構形</figcaption></figure>
+<figure><img src="../assets/teaching/voice-air-hand.webp" alt="手掌放在嘴前，觀察送氣差異" loading="eager"><figcaption>手掌放在嘴前，觀察送氣差異</figcaption></figure>
+</div>
+<p class="teaching-note">舌位圖為示意，不要求過度捲曲或擠壓。</p>
+<p class="teaching-sources"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7891883/">台灣華語舌位研究</a></p>
+</div>
+
+<div class="teaching-book" data-demo-group="v11"><h3>麥克風與嘴巴角度｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/mic-straight.webp" alt="正對麥克風：留意送氣直接撞擊網罩" loading="eager"><figcaption>正對麥克風：留意送氣直接撞擊網罩</figcaption></figure>
+<figure><img src="../assets/teaching/mic-offset.webp" alt="略偏離氣流正前方，保持演唱距離" loading="eager"><figcaption>略偏離氣流正前方，保持演唱距離</figcaption></figure>
+</div>
+</div>
+
+<!-- teaching-visuals-end -->
 
 ## 第五堂｜歌唱綜合應用
 
@@ -821,3 +924,13 @@ Oct 5, 2026 · @Leo Lee
 1. 目前 /s/ 吐氣最長持續的秒數：\_\_ 秒
 2. 目前的可用音域（選填）：\_\_ 度
 3. 和第一堂相比，歌唱能力的整體進步程度，1 到 5 分（1 分沒有進步，5 分進步很多）：\_\_
+
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="g09"><h3>Capo 夾位｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/capo-front.webp" alt="夾在琴衍前方，六條弦均勻受壓" loading="eager"><figcaption>夾在琴衍前方，六條弦均勻受壓</figcaption></figure>
+<figure><img src="../assets/teaching/capo-side.webp" alt="側面確認夾具穩定、避開直接壓住琴衍" loading="eager"><figcaption>側面確認夾具穩定、避開直接壓住琴衍</figcaption></figure>
+</div>
+</div>
+
+<!-- teaching-visuals-end -->

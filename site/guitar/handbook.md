@@ -230,6 +230,54 @@
 - [ ] 空弦下刷 60 BPM，連續一分鐘不中斷，再嘗試 8 Beats
 - [ ] 完成七天練習紀錄，並填寫第二章課前問卷
 
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="g01"><h3>木材近拍｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/wood-spruce.webp" alt="雲杉：細直木紋" loading="eager"><figcaption>雲杉：細直木紋</figcaption></figure>
+<figure><img src="../assets/teaching/wood-cedar.webp" alt="紅杉：暖褐色木紋" loading="eager"><figcaption>紅杉：暖褐色木紋</figcaption></figure>
+<figure><img src="../assets/teaching/wood-mahogany.webp" alt="桃花心木：開放木孔" loading="eager"><figcaption>桃花心木：開放木孔</figcaption></figure>
+<figure><img src="../assets/teaching/wood-rosewood.webp" alt="玫瑰木：深色條紋" loading="eager"><figcaption>玫瑰木：深色條紋</figcaption></figure>
+<figure><img src="../assets/teaching/wood-maple.webp" alt="楓木：淺色木紋" loading="eager"><figcaption>楓木：淺色木紋</figcaption></figure>
+<figure><img src="../assets/teaching/wood-koa.webp" alt="相思木：金褐色紋理" loading="eager"><figcaption>相思木：金褐色紋理</figcaption></figure>
+<figure><img src="../assets/teaching/wood-walnut.webp" alt="胡桃木：褐色紋理" loading="eager"><figcaption>胡桃木：褐色紋理</figcaption></figure>
+<figure><img src="../assets/teaching/wood-basswood.webp" alt="椴木：細緻淺色木紋" loading="eager"><figcaption>椴木：細緻淺色木紋</figcaption></figure>
+</div>
+<p class="teaching-note">木色與紋理會因木料而異；圖像用於辨識外觀，音色仍需實際聆聽。</p>
+</div>
+
+<div class="teaching-book" data-demo-group="g02"><h3>六種筒身｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/body-jumbo.webp" alt="Jumbo｜寬大的下半部與明顯腰身" loading="eager"><figcaption>Jumbo｜寬大的下半部與明顯腰身</figcaption></figure>
+<figure><img src="../assets/teaching/body-dreadnought.webp" alt="Dreadnought｜方肩、較平緩的腰線" loading="eager"><figcaption>Dreadnought｜方肩、較平緩的腰線</figcaption></figure>
+<figure><img src="../assets/teaching/body-ga.webp" alt="Grand Auditorium｜中大型、腰線明顯" loading="eager"><figcaption>Grand Auditorium｜中大型、腰線明顯</figcaption></figure>
+<figure><img src="../assets/teaching/body-om.webp" alt="Auditorium／OM｜較小、上下比例均衡" loading="eager"><figcaption>Auditorium／OM｜較小、上下比例均衡</figcaption></figure>
+<figure><img src="../assets/teaching/body-gc.webp" alt="Grand Concert｜緊湊琴身" loading="eager"><figcaption>Grand Concert｜緊湊琴身</figcaption></figure>
+<figure><img src="../assets/teaching/body-concert.webp" alt="Concert｜小型琴身" loading="eager"><figcaption>Concert｜小型琴身</figcaption></figure>
+</div>
+<p class="teaching-note">外形為類型示意，各廠牌命名與尺寸可能不同。</p>
+</div>
+
+<div class="teaching-book" data-demo-group="g03"><h3>尺寸與持琴比例｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/sizes.svg" alt="1/4、1/2、3/4 與全尺寸的相對比例" loading="eager"><figcaption>1/4、1/2、3/4 與全尺寸的相對比例</figcaption></figure>
+<figure><img src="../assets/teaching/../guitar/posture.jpg" alt="試抱時確認手臂能自然落在琴身上" loading="eager"><figcaption>試抱時確認手臂能自然落在琴身上</figcaption></figure>
+</div>
+<p class="teaching-note">尺寸圖為相對比例示意；選琴仍以實際試抱與手臂活動空間為準。</p>
+</div>
+
+<div class="teaching-book" data-demo-group="g04"><h3>面板內側力木｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/bracing-x.webp" alt="鋼弦吉他的 X 型力木" loading="eager"><figcaption>鋼弦吉他的 X 型力木</figcaption></figure>
+<figure><img src="../assets/teaching/bracing-fan.webp" alt="古典吉他的扇形力木" loading="eager"><figcaption>古典吉他的扇形力木</figcaption></figure>
+</div>
+</div>
+
+<div class="teaching-book" data-demo-group="g05"><h3>琴頸內部鋼筋｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/truss-cutaway.webp" alt="剖面中的指板、琴頸與鋼筋" loading="eager"><figcaption>剖面中的指板、琴頸與鋼筋</figcaption></figure>
+<figure><img src="../assets/teaching/truss-nut.webp" alt="響孔側的調整螺帽近拍" loading="eager"><figcaption>響孔側的調整螺帽近拍</figcaption></figure>
+</div>
+<p class="teaching-note">剖面為構造示意，調整位置依琴款而異。</p>
+</div>
+
+<!-- teaching-visuals-end -->
+
 ## 第二章｜拍點、讀譜與熱手 Beat & Reading & Warm-up
 
 本章目標：能清楚辨識五線譜上的 Do 到 Do，理解音名、唱名、簡譜的對應；理解全音符到十六分音符的時值，能夠分辨 2/4、3/4、4/4、6/8 不同拍型；閱讀六線譜 TAB，跟著節拍器完成爬格子熱手；下課前，以 C 大調音階彈奏《歡樂頌》。
@@ -334,6 +382,17 @@
 - [ ] C 大調音階上行、下行，邊彈邊唱出唱名
 - [ ] 錄製一次《歡樂頌》，並填寫第三章課前問卷
 
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="g06"><h3>四指爬格子｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/crawl-ready.webp" alt="1：四根手指自然彎曲，各負責一格" loading="eager"><figcaption>1：四根手指自然彎曲，各負責一格</figcaption></figure>
+<figure><img src="../assets/teaching/crawl-next.webp" alt="2：依序落指，手腕保持自然" loading="eager"><figcaption>2：依序落指，手腕保持自然</figcaption></figure>
+</div>
+<p class="teaching-note">食指、中指、無名指、小指依序為 1、2、3、4；實際彈奏順序見譜例。</p>
+</div>
+
+<!-- teaching-visuals-end -->
+
 ## 第三章｜第一組和弦 First Chords
 
 本章目標：能閱讀和弦圖，理解和弦由哪些音組成；C、Am、G、F 四個和弦，每一條應該發聲的琴弦都按響；以 C → G → Am → F 在 60 BPM、每個和弦 4 拍，連續彈奏不斷拍；下課前，全班一起用四個和弦伴奏一段副歌。
@@ -424,6 +483,21 @@
 - [ ] 同一組進行，每個和弦 2 拍，完成兩輪
 - [ ] 錄製一段 30 秒的四和弦，並填寫第四章課前問卷
 
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="g07"><h3>開放和弦手型｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/chord-c.svg" alt="C：食指 2 弦 1 格、中指 4 弦 2 格、無名指 5 弦 3 格" loading="eager"><figcaption>C：食指 2 弦 1 格、中指 4 弦 2 格、無名指 5 弦 3 格</figcaption></figure>
+<figure><img src="../assets/teaching/chord-am.svg" alt="Am：食指 2 弦 1 格、中指 4 弦 2 格、無名指 3 弦 2 格" loading="eager"><figcaption>Am：食指 2 弦 1 格、中指 4 弦 2 格、無名指 3 弦 2 格</figcaption></figure>
+<figure><img src="../assets/teaching/chord-g.svg" alt="G：中指 6 弦 3 格、食指 5 弦 2 格、小指或無名指 1 弦 3 格" loading="eager"><figcaption>G：中指 6 弦 3 格、食指 5 弦 2 格、小指或無名指 1 弦 3 格</figcaption></figure>
+<figure><img src="../assets/teaching/chord-small-f.svg" alt="小 F：食指壓住 1、2 弦 1 格" loading="eager"><figcaption>小 F：食指壓住 1、2 弦 1 格</figcaption></figure>
+<figure><img src="../assets/teaching/chord-d.svg" alt="D：食指 3 弦 2 格、中指 1 弦 2 格、無名指 2 弦 3 格" loading="eager"><figcaption>D：食指 3 弦 2 格、中指 1 弦 2 格、無名指 2 弦 3 格</figcaption></figure>
+<figure><img src="../assets/teaching/../guitar/fretting-technique.jpg" alt="觀察指尖弧度與拇指支撐；各和弦格位見上方指位圖" loading="eager"><figcaption>觀察指尖弧度與拇指支撐；各和弦格位見上方指位圖</figcaption></figure>
+</div>
+<p class="teaching-note">以投影片和弦圖核對弦與格位，照片用於觀察手指彎曲與手腕位置。</p>
+</div>
+
+<!-- teaching-visuals-end -->
+
 ## 第四章｜刷奏與切分 Strumming & Syncopation
 
 本章目標：右手穩定上下擺動：拍點往下、半拍往上；能辨識下刷、上刷、空刷，以及華語教材的 X、↓、↑；8 Beats 與切分 Folk Rock 搭配 C → G → Am → F，連續彈奏不斷拍；下課前，主歌 8 Beats、副歌切分，全班合奏一段。
@@ -509,6 +583,16 @@
 - [ ] 邊拍手邊唸出切分口訣：下、下上、上下上
 - [ ] 切分 Folk Rock 在 70 BPM 彈完一輪四和弦
 - [ ] 錄下兩種刷法各一段，並填寫第五章課前問卷
+
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="g08"><h3>刷弦手腕｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/strum-down.webp" alt="1：手腕帶動下刷，手臂自然支撐" loading="eager"><figcaption>1：手腕帶動下刷，手臂自然支撐</figcaption></figure>
+<figure><img src="../assets/teaching/strum-up.webp" alt="2：以相同路徑上刷，彈片輕掠琴弦" loading="eager"><figcaption>2：以相同路徑上刷，彈片輕掠琴弦</figcaption></figure>
+</div>
+</div>
+
+<!-- teaching-visuals-end -->
 
 ## 第五章｜三拍子與伴奏變化 Triple Meter & Bass & Strum
 
@@ -692,6 +776,16 @@
 - [ ] 期中曲目從頭到尾彈唱一次，中途保持連續
 - [ ] 聆聽自己的期中錄音，寫下一個進步的地方，並填寫第七章課前問卷
 
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="g09"><h3>Capo 夾位｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/capo-front.webp" alt="夾在琴衍前方，六條弦均勻受壓" loading="eager"><figcaption>夾在琴衍前方，六條弦均勻受壓</figcaption></figure>
+<figure><img src="../assets/teaching/capo-side.webp" alt="側面確認夾具穩定、避開直接壓住琴衍" loading="eager"><figcaption>側面確認夾具穩定、避開直接壓住琴衍</figcaption></figure>
+</div>
+</div>
+
+<!-- teaching-visuals-end -->
+
 ## 第七章｜樂理導入與指法 Intervals & Triads & Fingerstyle
 
 本章目標：能計算兩個音的距離（度數），並分辨協和與不協和；瞭解大三、小三、增三、減三、掛四和弦的組成，能夠分辨大小和弦；右手使用 T、1、2、3 四根手指，彈奏三種分散和弦；下課前，以指法彈完 C → Am → F → G。
@@ -799,6 +893,16 @@
 - [ ] 指法（二）或（三）任選一種，連續彈完一輪
 - [ ] 將期中曲目的主歌改成指法，並填寫第八章課前問卷
 
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="g10"><h3>右手指彈姿勢｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/fingerstyle-ready.webp" alt="T 拇指在低音弦，1、2、3 分別對應 3、2、1 弦" loading="eager"><figcaption>T 拇指在低音弦，1、2、3 分別對應 3、2、1 弦</figcaption></figure>
+<figure><img src="../assets/teaching/fingerstyle-pluck.webp" alt="手指往掌心方向撥弦，手腕自然" loading="eager"><figcaption>手指往掌心方向撥弦，手腕自然</figcaption></figure>
+</div>
+</div>
+
+<!-- teaching-visuals-end -->
+
 ## 第八章｜G 大調與封閉和弦 G Major & Barre Chords
 
 本章目標：彈奏 G 大調音階，瞭解 G 大調多了一個 F#；以級數排出 G 大調的七個順階和弦；G、D、Em、C 換和弦，連續彈奏不斷拍；按出六條琴弦都發聲的大封閉 F，以及 Bm。
@@ -886,6 +990,28 @@
 - [ ] G → D → Em → C 在 60 BPM、每個和弦 4 拍，連續兩輪
 - [ ] 大封閉 F 至少五條琴弦發聲，Bm 至少四條
 - [ ] C → F → G → C 使用大封閉 F 彈奏一輪，並填寫第九章課前問卷
+
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="g07"><h3>開放和弦手型｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/chord-c.svg" alt="C：食指 2 弦 1 格、中指 4 弦 2 格、無名指 5 弦 3 格" loading="eager"><figcaption>C：食指 2 弦 1 格、中指 4 弦 2 格、無名指 5 弦 3 格</figcaption></figure>
+<figure><img src="../assets/teaching/chord-am.svg" alt="Am：食指 2 弦 1 格、中指 4 弦 2 格、無名指 3 弦 2 格" loading="eager"><figcaption>Am：食指 2 弦 1 格、中指 4 弦 2 格、無名指 3 弦 2 格</figcaption></figure>
+<figure><img src="../assets/teaching/chord-g.svg" alt="G：中指 6 弦 3 格、食指 5 弦 2 格、小指或無名指 1 弦 3 格" loading="eager"><figcaption>G：中指 6 弦 3 格、食指 5 弦 2 格、小指或無名指 1 弦 3 格</figcaption></figure>
+<figure><img src="../assets/teaching/chord-small-f.svg" alt="小 F：食指壓住 1、2 弦 1 格" loading="eager"><figcaption>小 F：食指壓住 1、2 弦 1 格</figcaption></figure>
+<figure><img src="../assets/teaching/chord-d.svg" alt="D：食指 3 弦 2 格、中指 1 弦 2 格、無名指 2 弦 3 格" loading="eager"><figcaption>D：食指 3 弦 2 格、中指 1 弦 2 格、無名指 2 弦 3 格</figcaption></figure>
+<figure><img src="../assets/teaching/../guitar/fretting-technique.jpg" alt="觀察指尖弧度與拇指支撐；各和弦格位見上方指位圖" loading="eager"><figcaption>觀察指尖弧度與拇指支撐；各和弦格位見上方指位圖</figcaption></figure>
+</div>
+<p class="teaching-note">以投影片和弦圖核對弦與格位，照片用於觀察手指彎曲與手腕位置。</p>
+</div>
+
+<div class="teaching-book" data-demo-group="g11"><h3>封閉和弦手型｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/chord-barre.webp" alt="食指橫按，其他手指保持彎曲" loading="eager"><figcaption>食指橫按，其他手指保持彎曲</figcaption></figure>
+<figure><img src="../assets/teaching/../guitar/fretting-technique.jpg" alt="琴頸背面的拇指支撐位置" loading="eager"><figcaption>琴頸背面的拇指支撐位置</figcaption></figure>
+</div>
+<p class="teaching-note">檢查各弦發聲，再調整食指角度與壓力。</p>
+</div>
+
+<!-- teaching-visuals-end -->
 
 ## 第九章｜低音變化 Bass Lines & Slash Chords
 
@@ -1173,6 +1299,45 @@
 - [ ] 彈奏第 12、7、5 格的自然泛音
 - [ ] 在期末作品中加入至少一個技巧，並填寫第十二章課前問卷
 
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="g12"><h3>搥弦、勾弦、滑弦｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/hammer-sequence.svg" alt="搥弦：低格保留，另一指落至較高格" loading="eager"><figcaption>搥弦：低格保留，另一指落至較高格</figcaption></figure>
+<figure><img src="../assets/teaching/pull-sequence.svg" alt="勾弦：高格輕勾離弦，低格保留" loading="eager"><figcaption>勾弦：高格輕勾離弦，低格保留</figcaption></figure>
+<figure><img src="../assets/teaching/slide-sequence.svg" alt="滑弦：沿同一條弦保持接觸移動" loading="eager"><figcaption>滑弦：沿同一條弦保持接觸移動</figcaption></figure>
+<figure><img src="../assets/teaching/hammer-before.webp" alt="近拍觀察手指自然彎曲與離弦空間" loading="eager"><figcaption>近拍觀察手指自然彎曲與離弦空間</figcaption></figure>
+<figure><img src="../assets/teaching/hammer-after.webp" alt="近拍觀察指尖落弦時的弧度" loading="eager"><figcaption>近拍觀察指尖落弦時的弧度</figcaption></figure>
+</div>
+</div>
+
+<div class="teaching-book" data-demo-group="g13"><h3>悶音、切音與打板｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/mute-ready.webp" alt="悶音：掌側靠近琴橋與下弦枕" loading="eager"><figcaption>悶音：掌側靠近琴橋與下弦枕</figcaption></figure>
+<figure><img src="../assets/teaching/mute-play.webp" alt="維持輕觸，再以彈片撥奏" loading="eager"><figcaption>維持輕觸，再以彈片撥奏</figcaption></figure>
+<figure><img src="../assets/teaching/chuck-before.webp" alt="切音：先刷弦" loading="eager"><figcaption>切音：先刷弦</figcaption></figure>
+<figure><img src="../assets/teaching/chuck-after.webp" alt="手掌接觸琴弦，將聲音切斷" loading="eager"><figcaption>手掌接觸琴弦，將聲音切斷</figcaption></figure>
+<figure><img src="../assets/teaching/slap-before.webp" alt="打板：手掌抬起少許" loading="eager"><figcaption>打板：手掌抬起少許</figcaption></figure>
+<figure><img src="../assets/teaching/slap-after.webp" alt="以掌側或拇指輕落琴弦／琴身" loading="eager"><figcaption>以掌側或拇指輕落琴弦／琴身</figcaption></figure>
+</div>
+</div>
+
+<div class="teaching-book" data-demo-group="g14"><h3>自然泛音｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/harmonic-touch.webp" alt="1：指尖輕觸第 12 格琴衍正上方" loading="eager"><figcaption>1：指尖輕觸第 12 格琴衍正上方</figcaption></figure>
+<figure><img src="../assets/teaching/harmonic-release.webp" alt="2：撥弦後離開，讓琴弦繼續振動" loading="eager"><figcaption>2：撥弦後離開，讓琴弦繼續振動</figcaption></figure>
+</div>
+<p class="teaching-note">輕觸琴弦，不將琴弦按到指板。</p>
+</div>
+
+<div class="teaching-book" data-demo-group="g15"><h3>推弦、鬆弦、揉音與顫音｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/bend-motion.svg" alt="推弦／鬆弦的側向往返方向" loading="eager"><figcaption>推弦／鬆弦的側向往返方向</figcaption></figure>
+<figure><img src="../assets/teaching/vibrato-motion.svg" alt="揉音以較小幅度改變張力" loading="eager"><figcaption>揉音以較小幅度改變張力</figcaption></figure>
+<figure><img src="../assets/teaching/hammer-sequence.svg" alt="顫音：持續交替搥弦與勾弦" loading="eager"><figcaption>顫音：持續交替搥弦與勾弦</figcaption></figure>
+<figure><img src="../assets/teaching/bend-raised.webp" alt="近拍觀察按弦與支撐手指" loading="eager"><figcaption>近拍觀察按弦與支撐手指</figcaption></figure>
+<figure><img src="../assets/teaching/vibrato-center.webp" alt="保持彎曲的指尖與自然手腕" loading="eager"><figcaption>保持彎曲的指尖與自然手腕</figcaption></figure>
+</div>
+</div>
+
+<!-- teaching-visuals-end -->
+
 ## 第十二章｜轉調、定調與創作 Keys & Songwriting & Finale
 
 本章目標：學會將一首歌移到另一個調，並選好指型與 Capo；測出自己的音域，算出最適合的調；以歌曲企劃單規劃一首歌，和組員寫出四小節；完成期末發表，回顧十二章以來的自己。
@@ -1260,3 +1425,21 @@
 - [ ] 填寫課程回饋問卷
 - [ ] 將期中與期末錄音下載保存
 - [ ] 每週至少彈奏三次，保持手感
+
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="g09"><h3>Capo 夾位｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/capo-front.webp" alt="夾在琴衍前方，六條弦均勻受壓" loading="eager"><figcaption>夾在琴衍前方，六條弦均勻受壓</figcaption></figure>
+<figure><img src="../assets/teaching/capo-side.webp" alt="側面確認夾具穩定、避開直接壓住琴衍" loading="eager"><figcaption>側面確認夾具穩定、避開直接壓住琴衍</figcaption></figure>
+</div>
+</div>
+
+<div class="teaching-book" data-demo-group="g16"><h3>保養與換弦｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/care-wipe.webp" alt="1：彈奏後擦去琴弦與琴身手汗" loading="eager"><figcaption>1：彈奏後擦去琴弦與琴身手汗</figcaption></figure>
+<figure><img src="../assets/teaching/care-pin.webp" alt="2：放鬆琴弦後取出弦釘" loading="eager"><figcaption>2：放鬆琴弦後取出弦釘</figcaption></figure>
+<figure><img src="../assets/teaching/care-string.webp" alt="3：以弦釘固定弦尾" loading="eager"><figcaption>3：以弦釘固定弦尾</figcaption></figure>
+<figure><img src="../assets/teaching/care-wind.svg" alt="4：旋鈕整齊纏弦，再逐步調音" loading="eager"><figcaption>4：旋鈕整齊纏弦，再逐步調音</figcaption></figure>
+</div>
+</div>
+
+<!-- teaching-visuals-end -->

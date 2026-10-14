@@ -9,7 +9,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 ZH = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二']
-VER = "20261015b"
+VER = "20261015visual1"
 
 HEAD = '''<!doctype html>
 <html lang="zh-Hant">
@@ -86,3 +86,6 @@ if __name__ == '__main__':
     # 補齊社群分享標籤（og:image 等）
     import subprocess
     subprocess.run([sys.executable, "-X", "utf8", str(ROOT / "tools" / "add_social_meta.py")], check=True)
+
+    from teaching_visuals import install_all
+    install_all()

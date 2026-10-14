@@ -13,6 +13,7 @@
   function report(n, type, data) { if (window.PixelBackend) window.PixelBackend.log(type, data, { slide: slideNo(n) }); }
   var guitarScript = $('script[src*="guitar.js"]');
   var GUITAR_IMAGE = guitarScript ? new URL('../assets/guitar/', guitarScript.src).href : '../assets/guitar/';
+  var GUITAR_TEACHING = new URL('../assets/teaching/', guitarScript.src).href;
 
   /* ---------- 課程資料 ---------- */
   var CHORDS = {
@@ -393,15 +394,8 @@
   ];
   var bodyOutlineCount = 0;
   function bodyOutline(b) {
-    var id = 'body-wood-' + (++bodyOutlineCount), y = 110 - b.L, holeY = y + b.L * .36, bridgeY = y + b.L * .7;
-    var s = '<svg class="gfig" viewBox="0 0 90 112" aria-hidden="true"><defs><linearGradient id="' + id + '" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0d6a4"/><stop offset=".52" stop-color="#c99554"/><stop offset="1" stop-color="#8e5934"/></linearGradient></defs>';
-    s += '<rect x="42.5" y="0" width="5" height="' + (y + 4) + '" rx="1" class="dark"/>';
-    for (var f = 1; f <= 5; f++) { var fy = 4 + (y - 2) * (1 - Math.pow(2, -f / 12)); s += '<line x1="42.5" x2="47.5" y1="' + fy + '" y2="' + fy + '" stroke="#c9ccd1" stroke-width=".7"/>'; }
-    s += '<path d="' + bodyPath(45, y, b.L, b.p[0], b.p[1], b.p[2], b.p[3]) + '" style="fill:url(#' + id + ')" stroke="#efe8d6" stroke-width="1.4"/>';
-    s += '<circle cx="45" cy="' + holeY + '" r="9.5" fill="none" stroke="#e2c48f" stroke-width="1.1"/><circle cx="45" cy="' + holeY + '" r="7" class="hole"/>';
-    s += '<rect x="37" y="' + (bridgeY - 2) + '" width="16" height="4" rx="1" class="dark"/><line x1="39" x2="51" y1="' + (bridgeY - 2.5) + '" y2="' + (bridgeY - 2.5) + '" stroke="#efe8d6" stroke-width=".8"/>';
-    for (var k = 0; k < 6; k++) s += '<line x1="' + (43 + k * .8) + '" x2="' + (40 + k * 2) + '" y1="' + (y + 4) + '" y2="' + bridgeY + '" stroke="#e8e4da" stroke-width=".35"/>';
-    return s + '</svg>';
+    var names = {'Jumbo':'jumbo','Dreadnought':'dreadnought','Grand Auditorium':'ga','Auditorium':'om','Grand Concert':'gc','Concert':'concert'};
+    return '<img class="gfig body-photo" src="' + GUITAR_TEACHING + 'body-' + names[b.id] + '.webp" alt="' + b.zh + '筒身寫實外形" width="506" height="506">';
   }
   function mountBodies(root) {
     root.innerHTML = '<div class="bodies">' + BODIES.map(function (b, i) {
@@ -415,7 +409,7 @@
   }
   function sizesHTML() {
     return '<div class="sizes">' + [['1/4', '2–5 歲', 0.55], ['1/2', '5–8 歲', 0.68], ['3/4', '8–12 歲', 0.82], ['Full', '12 歲以上', 1]].map(function (z) {
-      return '<div style="--h:' + Math.round(z[2] * 230) + 'px">' + miniGuitar(FAMILY.folk) + '<b>' + z[0] + '</b><span>' + z[1] + '</span></div>';
+      return '<div style="--h:' + Math.round(z[2] * 230) + 'px">' + '<img src="' + GUITAR_IMAGE + 'folk-photo.jpg" alt="' + z[0] + '相對尺寸示意">' + '<b>' + z[0] + '</b><span>' + z[1] + '</span></div>';
     }).join('') + '</div>';
   }
   function laminateSVG() {
@@ -427,25 +421,10 @@
       '<text x="300" y="388" class="en mid" style="font-size:11px">響孔邊緣放大切面示意</text></svg>';
   }
   function bracingSVG() {
-    var s = '<svg class="gfig" viewBox="0 0 520 300" role="img" aria-label="民謠吉他 X 型力木與古典吉他扇形力木比較">';
-    function shell(cx) { return '<path d="' + bodyPath(cx, 30, 250, 150, 118, 190, 0.43) + '" class="wood3" stroke="#efe8d6" stroke-width="3" opacity=".95"/><circle cx="' + cx + '" cy="' + (30 + 250 * 0.33) + '" r="28" fill="none" stroke="#7a4524" stroke-width="2" stroke-dasharray="4 3"/>'; }
-    s += shell(130) + shell(390);
-    // X 型
-    s += '<path d="M78 150 L190 236 M182 150 L70 236" stroke="#7a4524" stroke-width="7" stroke-linecap="round"/><path d="M84 104 H176" stroke="#7a4524" stroke-width="6" stroke-linecap="round"/>' +
-      '<path d="M96 210 L120 246 M164 210 L140 246" stroke="#7a4524" stroke-width="4" stroke-linecap="round"/>';
-    // 扇形
-    for (var i = -3; i <= 3; i++) s += '<path d="M390 160 L' + (390 + i * 24) + ' 262" stroke="#7a4524" stroke-width="4" stroke-linecap="round"/>';
-    s += '<path d="M344 104 H436 M340 168 H440" stroke="#7a4524" stroke-width="6" stroke-linecap="round"/>';
-    s += '<text x="130" y="296" class="mid big">X 型力木｜鋼弦民謠吉他</text><text x="390" y="296" class="mid big">扇形力木｜古典吉他</text>';
-    return s + '</svg>';
+    return '<div class="demo-inline-duo"><figure><img src="' + GUITAR_TEACHING + 'bracing-x.webp" alt="面板內側 X 型力木"><figcaption>X 型力木｜鋼弦民謠吉他</figcaption></figure><figure><img src="' + GUITAR_TEACHING + 'bracing-fan.webp" alt="面板內側扇形力木"><figcaption>扇形力木｜古典吉他</figcaption></figure></div>';
   }
   function trussSVG() {
-    var s = '<svg class="gfig" viewBox="0 0 520 170" role="img" aria-label="琴頸側面與內部鋼筋">';
-    s += '<path d="M10 60 L60 54 L500 62 L500 98 L60 92 L10 96 Z" class="wood2"/><rect x="60" y="54" width="440" height="10" class="dark"/>';
-    s += '<line x1="70" y1="80" x2="490" y2="80" stroke="#c9ccd1" stroke-width="3" stroke-dasharray="10 5"/><circle cx="74" cy="80" r="6" class="metal"/>';
-    s += '<text x="74" y="124" class="mid">調整螺帽</text><text x="10" y="156">鋼筋 Truss Rod：抵抗琴弦拉力，讓琴頸保持微微的弧度</text>';
-    s += '<text x="300" y="22" class="mid en">六條弦的拉力合計約 70 公斤</text><path d="M120 46 C250 28 380 28 480 46" class="acc-s" stroke-dasharray="4 4"/>';
-    return s + '</svg>';
+    return '<figure class="demo-inline"><img src="' + GUITAR_TEACHING + 'truss-cutaway.webp" alt="琴頸剖面中的鋼筋與指板"><figcaption>琴頸剖面｜鋼筋位於木製琴頸內</figcaption></figure>';
   }
   /* 標準調音：六條空弦與音程 */
   function tuningSVG() {
