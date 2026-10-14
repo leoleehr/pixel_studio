@@ -159,7 +159,7 @@ a{color:inherit;text-decoration:none}
   <h2>目錄</h2>
   <p class="lead">十二章、每章 120 分鐘：課前問卷、起承轉合的課程綱要、擴充講義、課堂互動與課後練習。</p>
   <ol id="toc"></ol>
-  <p class="note">曲例影片：各章開頭列有原講義的曲例，掃描 Qr Code 或點擊連結即可在 Youtube 觀看；講義不附歌詞與和弦譜。互動投影片、調音器與練習器請至課程網站開啟。</p>
+  <p class="note">曲例影片：各章開頭列出原講義的曲例，掃描 Qr Code 或點擊連結，即可在 Youtube 觀看；講義不附歌詞與和弦譜。互動投影片、調音器與練習器，請至課程網站開啟。</p>
 </div>
 
 <main class="sheet md" id="content"></main>
@@ -167,17 +167,17 @@ a{color:inherit;text-decoration:none}
 <div class="sheet end"><img class="logo-new endlogo" src="../assets/brand/pixel-studio-primary-mono-black.svg" alt="Pixel Studio"><p class="endcn">畫素音樂工作坊</p><p>Pixel Studio・Established Since 2008</p></div>
 
 <script src="songs.js?v=20261014h"></script>
-<script src="../assets/ps-audio.js?v=20261014r"></script>
-<script src="guitar.js?v=20261014r"></script>
+<script src="../assets/ps-audio.js?v=20261014s"></script>
+<script src="guitar.js?v=20261014s"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
 (function () {
   var NUM = { '一': 1, '二': 2, '三': 3, '四': 4, '五': 5, '六': 6, '七': 7, '八': 8, '九': 9, '十': 10, '十一': 11, '十二': 12 };
   var COLOR = ['', '#e8412b', '#e2407f', '#8a4fc0', '#2f5fc4', '#2f8fc4', '#4f9e3a', '#b5a400', '#e08a12', '#e8412b', '#e2407f', '#8a4fc0', '#2f8fc4'];
-  var DESC = ['', '吉他從哪裡來？各部位叫什麼？怎麼把六條弦調準？', '怎麼看懂六線譜？左右手怎麼一起動？', '四個和弦，可以彈多少首歌？', '右手怎麼刷，歌才會有律動？', '華爾滋和慢歌，要怎麼伴奏？', '一首歌怎麼分段？Capo 怎麼用？', '和弦是怎麼組成的？指法怎麼彈？', '封閉和弦怎麼壓才會響？', '讓伴奏走起來的低音線', '為什麼這些和弦總是一起出現？', '搥、勾、滑、悶、推，讓吉他會說話', '找到自己的調，寫一首自己的歌'];
+  var DESC = ['', '認識吉他的起源與各部位名稱，將六條琴弦調準', '讀懂六線譜，讓左右手協調合作', '四個和弦，就能彈奏大量的流行歌曲', '學會右手刷法，讓歌曲產生律動', '為華爾滋與慢歌設計伴奏', '分析歌曲段落，學會使用 Capo', '理解和弦的組成，學會基本指法', '掌握封閉和弦的按壓位置', '讓伴奏行進的低音線', '理解和弦總是結伴出現的原因', '搥弦、勾弦、滑弦、悶音、推弦，讓吉他開口說話', '找到自己的調，創作一首自己的歌'];
   var main = document.getElementById('content'), toc = document.getElementById('toc');
-  fetch('handbook.md?v=20261014r').then(function (r) { return r.text(); }).then(function (md) {
+  fetch('handbook.md?v=20261014s').then(function (r) { return r.text(); }).then(function (md) {
     var tmp = document.createElement('div'); tmp.innerHTML = marked.parse(md, { gfm: true });
     // 拿掉文件標題與署名行，改用封面
     var h1 = tmp.querySelector('h1'); if (h1) { var nx = h1.nextElementSibling; h1.remove(); if (nx && nx.tagName === 'P') nx.remove(); }
