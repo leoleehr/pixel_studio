@@ -35,7 +35,7 @@ window.PIXEL_SURVEYS = [
   { id: 'p-pre-5', lesson: 5, title: '第五堂課前問卷', intro: '和弦的進度，準備彈奏第一首歌。', questions: [
     { q: '能夠立刻彈出的和弦數量', type: 'number', unit: '個' },
     { q: '以轉位彈奏 C → F → G → C 的狀態', type: 'single', options: ['手不跳動，非常順暢', '偶爾需要看鍵盤', '換到 G 會卡住', '還在熟記和弦'] },
-    { q: '分辨大和弦與小和弦的把握', type: 'scale', low: '聽不出差別', high: '非常清楚' },
+    { q: '分辨大和弦與小和弦的把握', type: 'scale', low: '無法分辨', high: '非常清楚' },
     { q: '最想先學會的一首歌', type: 'short', optional: true }
   ] },
   { id: 'p-pre-6', lesson: 6, title: '第六堂課前問卷', intro: '第一首歌的進度，準備加入節奏型態。', questions: [
