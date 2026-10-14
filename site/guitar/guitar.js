@@ -446,7 +446,7 @@
   function postureSVG() {
     return '<svg class="gfig" viewBox="0 0 620 330" role="img" aria-label="木吉他坐姿：坐在椅子前三分之一，背部自然挺直，琴身靠近身體並置於右大腿，琴頸微微上揚">' +
       '<defs><clipPath id="posture-photo-clip"><rect x="0" y="28" width="390" height="260" rx="12"/></clipPath></defs>' +
-      '<image href="' + GUITAR_IMAGE + 'posture.jpg" x="0" y="28" width="390" height="260" preserveAspectRatio="xMidYMid slice" clip-path="url(#posture-photo-clip)"/>' +
+      '<image href="' + GUITAR_TEACHING + 'guitar-posture-uniform.svg" x="0" y="28" width="390" height="260" preserveAspectRatio="xMidYMid slice" clip-path="url(#posture-photo-clip)"/>' +
       '<path d="M14 55 L98 94 M166 111 L298 147 M270 236 L145 220 M180 274 L276 267" class="lead" stroke-width="2"/>' +
       '<circle cx="98" cy="94" r="4" class="dot"/><circle cx="298" cy="147" r="4" class="dot"/><circle cx="145" cy="220" r="4" class="dot"/><circle cx="276" cy="267" r="4" class="dot"/>' +
       '<text x="414" y="72" class="big" style="fill:var(--accent)">01</text><text x="446" y="72">背部自然挺直</text>' +
