@@ -12,8 +12,14 @@
 <link rel="stylesheet" href="assets/brand/brand-tokens.css">
 <link rel="stylesheet" href="assets/ps.css?v=20261013c">
 <style>
+  .topbar .wrap{height:82px}
+  .topbar .brand img{height:64px;width:auto;margin-left:-11px;margin-right:-8px}
   .hub-hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
-  .hub-hero .logo{background:#000;max-width:440px;justify-self:end;width:100%}
+  .hub-hero .logo-wrap{position:relative;isolation:isolate;background:#000;max-width:440px;justify-self:end;width:100%;overflow:hidden}
+  .hub-hero .logo{display:block;width:100%;height:auto}
+  .logo-sweep{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;mask:url("assets/brand/primary-transparent.svg") center/100% 100% no-repeat;-webkit-mask:url("assets/brand/primary-transparent.svg") center/100% 100% no-repeat}
+  .logo-sweep::before{position:absolute;top:-12%;bottom:-12%;left:-46%;width:44%;background:linear-gradient(90deg,transparent,rgba(69,179,230,.22) 25%,rgba(244,244,240,.96) 50%,rgba(226,64,127,.42) 70%,transparent);filter:drop-shadow(0 0 9px rgba(69,179,230,.8));transform:translateX(0);animation:logo-scan 7.2s 1.2s cubic-bezier(.55,.08,.35,.95) infinite;content:""}
+  @keyframes logo-scan{0%,12%{transform:translateX(0);opacity:0}19%{opacity:.92}40%{transform:translateX(330%);opacity:.65}52%,100%{transform:translateX(330%);opacity:0}}
   .card.lab-card{display:flex;flex-direction:column;gap:8px;border-top:3px solid var(--lab)}
   .lab-card .tag{align-self:flex-start;margin:0}
   .lab-card .en{font:700 22px var(--display);color:var(--lab)}
@@ -25,24 +31,30 @@
   .teacher-contact{display:inline-flex;align-items:center;min-height:44px;margin-top:18px;color:var(--lab);text-decoration:none}
   .teacher-contact:hover{text-decoration:underline;text-underline-offset:4px}
   .teacher-note{max-width:660px;color:var(--muted);font-size:15px}
+  .brand-manifesto{max-width:960px;color:var(--ink);font-size:clamp(24px,3.3vw,42px);font-weight:500;line-height:1.6;letter-spacing:-.035em}
+  .brand-manifesto .pixel-word{color:var(--pixel-lime)}
   .experience-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
   .experience-card{padding:22px 24px;border:1px solid var(--line);border-top:2px solid var(--pixel-lime);background:var(--card)}
   .experience-card h3{margin-bottom:12px;font-size:17px}
   .experience-card ul{display:grid;gap:8px;margin:0;padding:0;list-style:none}
   .experience-card li{position:relative;padding-left:14px;color:var(--muted);font-size:14px;line-height:1.8}
   .experience-card li::before{position:absolute;top:.82em;left:0;width:4px;height:4px;border-radius:50%;background:var(--pixel-cyan);content:""}
+  @media(max-width:860px){.topbar .wrap{height:64px}.topbar .brand img{height:52px;margin-left:-9px;margin-right:-8px}}
+  @media(max-width:599px){.topbar .brand img{height:46px;margin-left:-8px;margin-right:-8px}}
   @media(max-width:760px){.teacher-intro{grid-template-columns:1fr;gap:14px}.experience-grid{grid-template-columns:1fr}}
-  @media (max-width:760px){.hub-hero{grid-template-columns:1fr}.hub-hero .logo{justify-self:start;max-width:260px;order:-1}}
+  @media (max-width:760px){.hub-hero{grid-template-columns:1fr}.hub-hero .logo-wrap{justify-self:start;max-width:260px;order:-1}}
+  @media(prefers-reduced-motion:reduce){.logo-sweep::before{animation:none;opacity:0}}
 </style>
 </head>
 <body>
 <a class="skip-link" href="#main">跳到主要內容</a>
 <header class="topbar">
   <div class="wrap">
-    <a class="brand" href="./" aria-label="返回 Pixel Studio 品牌入口"><img src="assets/brand/horizontal-transparent.svg" alt="畫素音樂工作坊 Pixel Studio" width="113" height="34"></a>
+    <a class="brand" href="./" aria-label="返回 Pixel Studio 品牌入口"><img class="brand-logo" src="assets/brand/pixel-studio-horizontal.svg" alt="畫素音樂工作坊 Pixel Studio" width="2400" height="720"></a>
     <nav aria-label="課程">
+      <a href="#about">About</a>
       <a href="#labs">課程</a>
-      <a href="#teacher">阿勳老師</a>
+      <a href="#teacher">老師介紹</a>
       <a href="guitar/">Guitar Lab</a>
     </nav>
   </div>
@@ -50,6 +62,13 @@
 <div class="wave-rule" aria-hidden="true"></div>
 
 <main id="main">
+  <section class="block" id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <div class="block-head"><span class="num">About</span><h2 id="about-title">音樂的畫素</h2></div>
+      <p class="brand-manifesto">探索音樂藝術的多元樣貌，尋找其中微小的<span class="pixel-word">「畫素」</span>，再將它整理成系統，傳遞給更多人。這是我們最擅長、也最熱愛的事。</p>
+    </div>
+  </section>
+
   <section class="hero">
     <div class="wrap hub-hero">
       <div>
@@ -57,7 +76,10 @@
         <h1>畫素音樂工作坊<span class="en">We Perform the Pixel of Music</span></h1>
         <p class="lead">Pixel Studio 成立於 2008 年，結合音樂製作、音樂教學與展演藝術。四個課程 Lab 各自擁有教材與練習工具，課堂上使用，回家練習也同樣適用。</p>
       </div>
-      <img class="logo" src="assets/brand/primary-transparent.svg" alt="" width="440" height="396">
+      <div class="logo-wrap">
+        <img class="logo" src="assets/brand/primary-transparent.svg" alt="" width="440" height="396">
+        <span class="logo-sweep" aria-hidden="true"></span>
+      </div>
     </div>
   </section>
 
