@@ -4,7 +4,7 @@
 
 | 課程 | 中文名稱 | 目錄 | 狀態 |
 | --- | --- | --- | --- |
-| Vocal Lab | 流行歌唱 | `site/vocal/` | 遷移中（目前內容仍在根目錄） |
+| Vocal Lab | 流行歌唱 | `site/vocal/` | 六堂課投影片、講義與教案、課前問卷，已移入新平台 |
 | Guitar Lab | 民謠吉他 | `site/guitar/` | 12 章投影片、講義與教案、課前問卷全部完成 |
 | Piano Lab | 流行鋼琴 | `site/piano/` | 規劃中 |
 | Songwriting Lab | 詞曲創作 | `site/songwriting/` | 規劃中 |
@@ -15,6 +15,7 @@
 | --- | --- |
 | `site/` | 對外發布的網站內容，部署只發布這個資料夾 |
 | `site/assets/` | 共用資產：沿用 Vocal Lab 的版面（site／studio／deck CSS）、投影片引擎（deck.js）、互動元件（interact.js）、後台（backend.js），以及品牌標誌 |
+| `site/vocal/` | Vocal Lab：首頁、`slides/lesson-01/` 到 `lesson-06/` 投影片、`survey.html`＋`surveys.js`、`handbook.html`＋`course-handbook.md`、`handbook-print.html`＋`vocal-class-handbook.pdf`、`songs.js`、`og-image.png`。沿用舊站的 `pixel:*` 儲存鍵，學員在舊站留下的資料在同網域下可直接沿用 |
 | `site/guitar/` | Guitar Lab：首頁、`ch01/` 等各章投影片、`survey.html`＋`surveys.js`、`handbook.html`＋`handbook.md`、`guitar.js`（插圖、和弦圖、調音器、練習器）、`theme.css`（主色 CI 綠） |
 | `tools/` | 教材建置與驗證工具 |
 | `backend/` | Google Apps Script 後台（見 `backend/README.md`） |
@@ -24,7 +25,7 @@
 | `site/guitar/songs.js` | 原講義曲例與 YouTube 影片（講義、列印版與投影片共用） |
 | `site/guitar/handbook-print.html` | A4 列印版；以 Chrome 無頭模式輸出 `guitar-handbook.pdf`（改講義後需重新產生） |
 
-根目錄的 `index.html`、`handbook.html`、`slides/`、`assets/` 等是從 [vocal_music](https://github.com/leoleehr/vocal_music) 帶過來的 Vocal Lab，Git 歷史完整保留。第二階段會整理進 `site/vocal/`。
+Vocal Lab 從 [vocal_music](https://github.com/leoleehr/vocal_music) 匯入，Git 歷史完整保留（`git log --follow site/vocal/index.html`）。
 
 ## 本機預覽
 
