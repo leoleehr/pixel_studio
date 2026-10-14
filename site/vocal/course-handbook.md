@@ -346,33 +346,33 @@ Oct 5, 2026 · @Leo Lee
 </div>
 
 <div class="teaching-book" data-demo-group="v02"><h3>站姿與彈唱坐姿｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/vocal-standing.webp" alt="站姿：重心穩定、膝蓋與肩膀放鬆" loading="eager"><figcaption>站姿：重心穩定、膝蓋與肩膀放鬆</figcaption></figure>
-<figure><img src="../assets/teaching/vocal-seated.webp" alt="彈唱：坐穩、吉他靠近身體、視線自然向前" loading="eager"><figcaption>彈唱：坐穩、吉他靠近身體、視線自然向前</figcaption></figure>
+<figure><img src="../assets/teaching/vocal-standing-lead.webp" alt="站姿：重心穩定、膝蓋與肩膀放鬆" loading="eager"><figcaption>站姿：重心穩定、膝蓋與肩膀放鬆</figcaption></figure>
+<figure><img src="../assets/teaching/vocal-seated-lead.webp" alt="彈唱：坐穩、吉他靠近身體、視線自然向前" loading="eager"><figcaption>彈唱：坐穩、吉他靠近身體、視線自然向前</figcaption></figure>
 </div>
 </div>
 
 <div class="teaching-book" data-demo-group="v03"><h3>暖身動作｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/warmup-shoulders.webp" alt="小幅度肩關節轉動，雙臂自然" loading="eager"><figcaption>小幅度肩關節轉動，雙臂自然</figcaption></figure>
-<figure><img src="../assets/teaching/warmup-forward.webp" alt="以髖部帶動小幅前傾，頭頸自然" loading="eager"><figcaption>以髖部帶動小幅前傾，頭頸自然</figcaption></figure>
-<figure><img src="../assets/teaching/vocal-standing.webp" alt="回到自然站姿，檢查肩頸是否放鬆" loading="eager"><figcaption>回到自然站姿，檢查肩頸是否放鬆</figcaption></figure>
-<figure><img src="../assets/teaching/warmup-neck.webp" alt="輕柔側傾頭部，保持肩膀放鬆，不用力拉扯頸部。" loading="eager"><figcaption>輕柔側傾頭部，保持肩膀放鬆，不用力拉扯頸部。</figcaption></figure>
-<figure><img src="../assets/teaching/warmup-wrists.webp" alt="輕柔活動手腕，手臂與肩膀維持放鬆。" loading="eager"><figcaption>輕柔活動手腕，手臂與肩膀維持放鬆。</figcaption></figure>
+<figure><img src="../assets/teaching/warmup-shoulders-lead.webp" alt="小幅度肩關節轉動，雙臂自然" loading="eager"><figcaption>小幅度肩關節轉動，雙臂自然</figcaption></figure>
+<figure><img src="../assets/teaching/warmup-forward-lead.webp" alt="以髖部帶動小幅前傾，頭頸自然" loading="eager"><figcaption>以髖部帶動小幅前傾，頭頸自然</figcaption></figure>
+<figure><img src="../assets/teaching/vocal-standing-lead.webp" alt="回到自然站姿，檢查肩頸是否放鬆" loading="eager"><figcaption>回到自然站姿，檢查肩頸是否放鬆</figcaption></figure>
+<figure><img src="../assets/teaching/warmup-neck-lead.webp" alt="輕柔側傾頭部，保持肩膀放鬆，不用力拉扯頸部。" loading="eager"><figcaption>輕柔側傾頭部，保持肩膀放鬆，不用力拉扯頸部。</figcaption></figure>
+<figure><img src="../assets/teaching/warmup-wrists-lead.webp" alt="輕柔活動手腕，手臂與肩膀維持放鬆。" loading="eager"><figcaption>輕柔活動手腕，手臂與肩膀維持放鬆。</figcaption></figure>
 </div>
 <p class="teaching-note">各動作在舒服範圍內慢慢進行。</p>
 </div>
 
 <div class="teaching-book" data-demo-group="v04"><h3>腰腹呼吸與控制｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/breath-in.webp" alt="雙手放在下肋與腰側，感受吸氣時的擴張" loading="eager"><figcaption>雙手放在下肋與腰側，感受吸氣時的擴張</figcaption></figure>
-<figure><img src="../assets/teaching/breath-out.webp" alt="吐氣時維持穩定，肩膀自然放鬆" loading="eager"><figcaption>吐氣時維持穩定，肩膀自然放鬆</figcaption></figure>
+<figure><img src="../assets/teaching/breath-in-lead.webp" alt="雙手放在下肋與腰側，感受吸氣時的擴張" loading="eager"><figcaption>雙手放在下肋與腰側，感受吸氣時的擴張</figcaption></figure>
+<figure><img src="../assets/teaching/breath-out-lead.webp" alt="吐氣時維持穩定，肩膀自然放鬆" loading="eager"><figcaption>吐氣時維持穩定，肩膀自然放鬆</figcaption></figure>
 </div>
 <p class="teaching-note">手部是觀察的位置；氣流進入肺部。</p>
 </div>
 
 <div class="teaching-book" data-demo-group="v05"><h3>呼吸活動操作｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/breath-wall.webp" alt="站在牆邊觀察腰腹吐氣動作" loading="eager"><figcaption>站在牆邊觀察腰腹吐氣動作</figcaption></figure>
-<figure><img src="../assets/teaching/breath-pair-paper.webp" alt="兩人輪流吹紙張" loading="eager"><figcaption>兩人輪流吹紙張</figcaption></figure>
+<figure><img src="../assets/teaching/breath-wall-lead.webp" alt="站在牆邊觀察腰腹吐氣動作" loading="eager"><figcaption>站在牆邊觀察腰腹吐氣動作</figcaption></figure>
+<figure><img src="../assets/teaching/breath-pair-paper-lead.webp" alt="兩人輪流吹紙張" loading="eager"><figcaption>兩人輪流吹紙張</figcaption></figure>
 <figure><img src="../assets/teaching/breath-wall-paper.webp" alt="以持續氣流托住牆上的紙張" loading="eager"><figcaption>以持續氣流托住牆上的紙張</figcaption></figure>
-<figure><img src="../assets/teaching/breath-tissue.webp" alt="觀察懸垂紙張的角度是否穩定" loading="eager"><figcaption>觀察懸垂紙張的角度是否穩定</figcaption></figure>
+<figure><img src="../assets/teaching/breath-tissue-lead.webp" alt="觀察懸垂紙張的角度是否穩定" loading="eager"><figcaption>觀察懸垂紙張的角度是否穩定</figcaption></figure>
 </div>
 </div>
 
@@ -479,15 +479,15 @@ Oct 5, 2026 · @Leo Lee
 </div>
 
 <div class="teaching-book" data-demo-group="v07"><h3>哈欠、哼鳴與手貼胸口｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/voice-yawn.webp" alt="下巴自然下垂，模擬輕哈欠" loading="eager"><figcaption>下巴自然下垂，模擬輕哈欠</figcaption></figure>
-<figure><img src="../assets/teaching/voice-hum.webp" alt="嘴唇輕閉，哼出 /m/" loading="eager"><figcaption>嘴唇輕閉，哼出 /m/</figcaption></figure>
-<figure><img src="../assets/teaching/voice-chest.webp" alt="手掌輕貼胸口，觀察振動感受" loading="eager"><figcaption>手掌輕貼胸口，觀察振動感受</figcaption></figure>
+<figure><img src="../assets/teaching/voice-yawn-lead.webp" alt="下巴自然下垂，模擬輕哈欠" loading="eager"><figcaption>下巴自然下垂，模擬輕哈欠</figcaption></figure>
+<figure><img src="../assets/teaching/voice-hum-lead.webp" alt="嘴唇輕閉，哼出 /m/" loading="eager"><figcaption>嘴唇輕閉，哼出 /m/</figcaption></figure>
+<figure><img src="../assets/teaching/voice-chest-lead.webp" alt="手掌輕貼胸口，觀察振動感受" loading="eager"><figcaption>手掌輕貼胸口，觀察振動感受</figcaption></figure>
 </div>
 </div>
 
 <div class="teaching-book" data-demo-group="v08"><h3>捏鼻測試｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/voice-no-pinch.webp" alt="1：以舒服音高唱長音" loading="eager"><figcaption>1：以舒服音高唱長音</figcaption></figure>
-<figure><img src="../assets/teaching/voice-pinch.webp" alt="2：輕捏鼻翼，比較聲音的改變" loading="eager"><figcaption>2：輕捏鼻翼，比較聲音的改變</figcaption></figure>
+<figure><img src="../assets/teaching/voice-no-pinch-lead.webp" alt="1：以舒服音高唱長音" loading="eager"><figcaption>1：以舒服音高唱長音</figcaption></figure>
+<figure><img src="../assets/teaching/voice-pinch-lead.webp" alt="2：輕捏鼻翼，比較聲音的改變" loading="eager"><figcaption>2：輕捏鼻翼，比較聲音的改變</figcaption></figure>
 </div>
 </div>
 
@@ -612,33 +612,33 @@ Oct 5, 2026 · @Leo Lee
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="v04"><h3>腰腹呼吸與控制｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/breath-in.webp" alt="雙手放在下肋與腰側，感受吸氣時的擴張" loading="eager"><figcaption>雙手放在下肋與腰側，感受吸氣時的擴張</figcaption></figure>
-<figure><img src="../assets/teaching/breath-out.webp" alt="吐氣時維持穩定，肩膀自然放鬆" loading="eager"><figcaption>吐氣時維持穩定，肩膀自然放鬆</figcaption></figure>
+<figure><img src="../assets/teaching/breath-in-lead.webp" alt="雙手放在下肋與腰側，感受吸氣時的擴張" loading="eager"><figcaption>雙手放在下肋與腰側，感受吸氣時的擴張</figcaption></figure>
+<figure><img src="../assets/teaching/breath-out-lead.webp" alt="吐氣時維持穩定，肩膀自然放鬆" loading="eager"><figcaption>吐氣時維持穩定，肩膀自然放鬆</figcaption></figure>
 </div>
 <p class="teaching-note">手部是觀察的位置；氣流進入肺部。</p>
 </div>
 
 <div class="teaching-book" data-demo-group="v09"><h3>五個母音口型｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/vowel-a.webp" alt="/a/：下巴自然下垂" loading="eager"><figcaption>/a/：下巴自然下垂</figcaption></figure>
-<figure><img src="../assets/teaching/vowel-i.webp" alt="/i/：嘴角微展，保留內部空間" loading="eager"><figcaption>/i/：嘴角微展，保留內部空間</figcaption></figure>
-<figure><img src="../assets/teaching/vowel-u.webp" alt="/u/：嘴唇圓攏" loading="eager"><figcaption>/u/：嘴唇圓攏</figcaption></figure>
-<figure><img src="../assets/teaching/vowel-e.webp" alt="/e/：下巴微開" loading="eager"><figcaption>/e/：下巴微開</figcaption></figure>
-<figure><img src="../assets/teaching/vowel-o.webp" alt="/o/：嘴唇成圓" loading="eager"><figcaption>/o/：嘴唇成圓</figcaption></figure>
+<figure><img src="../assets/teaching/vowel-a-lead.webp" alt="/a/：下巴自然下垂" loading="eager"><figcaption>/a/：下巴自然下垂</figcaption></figure>
+<figure><img src="../assets/teaching/vowel-i-lead.webp" alt="/i/：嘴角微展，保留內部空間" loading="eager"><figcaption>/i/：嘴角微展，保留內部空間</figcaption></figure>
+<figure><img src="../assets/teaching/vowel-u-lead.webp" alt="/u/：嘴唇圓攏" loading="eager"><figcaption>/u/：嘴唇圓攏</figcaption></figure>
+<figure><img src="../assets/teaching/vowel-e-lead.webp" alt="/e/：下巴微開" loading="eager"><figcaption>/e/：下巴微開</figcaption></figure>
+<figure><img src="../assets/teaching/vowel-o-lead.webp" alt="/o/：嘴唇成圓" loading="eager"><figcaption>/o/：嘴唇成圓</figcaption></figure>
 </div>
 <p class="teaching-note">照片呈現外部口型；舌位與實際發音仍需配合示範聆聽。</p>
 </div>
 
 <div class="teaching-book" data-demo-group="v10"><h3>舌位與送氣｜圖解示範</h3><div class="teaching-photo-grid">
 <figure><img src="../assets/teaching/tongue.svg" alt="比較舌尖在前方與稍向後的構形" loading="eager"><figcaption>比較舌尖在前方與稍向後的構形</figcaption></figure>
-<figure><img src="../assets/teaching/voice-air-hand.webp" alt="手掌放在嘴前，觀察送氣差異" loading="eager"><figcaption>手掌放在嘴前，觀察送氣差異</figcaption></figure>
+<figure><img src="../assets/teaching/voice-air-hand-lead.webp" alt="手掌放在嘴前，觀察送氣差異" loading="eager"><figcaption>手掌放在嘴前，觀察送氣差異</figcaption></figure>
 </div>
 <p class="teaching-note">舌位圖為示意，不要求過度捲曲或擠壓。</p>
 <p class="teaching-sources"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7891883/">台灣華語舌位研究</a></p>
 </div>
 
 <div class="teaching-book" data-demo-group="v11"><h3>麥克風與嘴巴角度｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/mic-straight.webp" alt="正對麥克風：留意送氣直接撞擊網罩" loading="eager"><figcaption>正對麥克風：留意送氣直接撞擊網罩</figcaption></figure>
-<figure><img src="../assets/teaching/mic-offset.webp" alt="略偏離氣流正前方，保持演唱距離" loading="eager"><figcaption>略偏離氣流正前方，保持演唱距離</figcaption></figure>
+<figure><img src="../assets/teaching/mic-straight-lead.webp" alt="正對麥克風：留意送氣直接撞擊網罩" loading="eager"><figcaption>正對麥克風：留意送氣直接撞擊網罩</figcaption></figure>
+<figure><img src="../assets/teaching/mic-offset-lead.webp" alt="略偏離氣流正前方，保持演唱距離" loading="eager"><figcaption>略偏離氣流正前方，保持演唱距離</figcaption></figure>
 </div>
 </div>
 

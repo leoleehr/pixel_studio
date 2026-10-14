@@ -739,11 +739,11 @@
     ],
     "images": [
       {
-        "src": "vocal-standing.webp",
+        "src": "vocal-standing-lead.webp",
         "caption": "站姿：重心穩定、膝蓋與肩膀放鬆"
       },
       {
-        "src": "vocal-seated.webp",
+        "src": "vocal-seated-lead.webp",
         "caption": "彈唱：坐穩、吉他靠近身體、視線自然向前"
       }
     ],
@@ -763,23 +763,23 @@
     ],
     "images": [
       {
-        "src": "warmup-shoulders.webp",
+        "src": "warmup-shoulders-lead.webp",
         "caption": "小幅度肩關節轉動，雙臂自然"
       },
       {
-        "src": "warmup-forward.webp",
+        "src": "warmup-forward-lead.webp",
         "caption": "以髖部帶動小幅前傾，頭頸自然"
       },
       {
-        "src": "vocal-standing.webp",
+        "src": "vocal-standing-lead.webp",
         "caption": "回到自然站姿，檢查肩頸是否放鬆"
       },
       {
-        "src": "warmup-neck.webp",
+        "src": "warmup-neck-lead.webp",
         "caption": "輕柔側傾頭部，保持肩膀放鬆，不用力拉扯頸部。"
       },
       {
-        "src": "warmup-wrists.webp",
+        "src": "warmup-wrists-lead.webp",
         "caption": "輕柔活動手腕，手臂與肩膀維持放鬆。"
       }
     ],
@@ -807,11 +807,11 @@
     ],
     "images": [
       {
-        "src": "breath-in.webp",
+        "src": "breath-in-lead.webp",
         "caption": "雙手放在下肋與腰側，感受吸氣時的擴張"
       },
       {
-        "src": "breath-out.webp",
+        "src": "breath-out-lead.webp",
         "caption": "吐氣時維持穩定，肩膀自然放鬆"
       }
     ],
@@ -831,11 +831,11 @@
     ],
     "images": [
       {
-        "src": "breath-wall.webp",
+        "src": "breath-wall-lead.webp",
         "caption": "站在牆邊觀察腰腹吐氣動作"
       },
       {
-        "src": "breath-pair-paper.webp",
+        "src": "breath-pair-paper-lead.webp",
         "caption": "兩人輪流吹紙張"
       },
       {
@@ -843,7 +843,7 @@
         "caption": "以持續氣流托住牆上的紙張"
       },
       {
-        "src": "breath-tissue.webp",
+        "src": "breath-tissue-lead.webp",
         "caption": "觀察懸垂紙張的角度是否穩定"
       }
     ],
@@ -899,15 +899,15 @@
     ],
     "images": [
       {
-        "src": "voice-yawn.webp",
+        "src": "voice-yawn-lead.webp",
         "caption": "下巴自然下垂，模擬輕哈欠"
       },
       {
-        "src": "voice-hum.webp",
+        "src": "voice-hum-lead.webp",
         "caption": "嘴唇輕閉，哼出 /m/"
       },
       {
-        "src": "voice-chest.webp",
+        "src": "voice-chest-lead.webp",
         "caption": "手掌輕貼胸口，觀察振動感受"
       }
     ],
@@ -927,11 +927,11 @@
     ],
     "images": [
       {
-        "src": "voice-no-pinch.webp",
+        "src": "voice-no-pinch-lead.webp",
         "caption": "1：以舒服音高唱長音"
       },
       {
-        "src": "voice-pinch.webp",
+        "src": "voice-pinch-lead.webp",
         "caption": "2：輕捏鼻翼，比較聲音的改變"
       }
     ],
@@ -951,23 +951,23 @@
     ],
     "images": [
       {
-        "src": "vowel-a.webp",
+        "src": "vowel-a-lead.webp",
         "caption": "/a/：下巴自然下垂"
       },
       {
-        "src": "vowel-i.webp",
+        "src": "vowel-i-lead.webp",
         "caption": "/i/：嘴角微展，保留內部空間"
       },
       {
-        "src": "vowel-u.webp",
+        "src": "vowel-u-lead.webp",
         "caption": "/u/：嘴唇圓攏"
       },
       {
-        "src": "vowel-e.webp",
+        "src": "vowel-e-lead.webp",
         "caption": "/e/：下巴微開"
       },
       {
-        "src": "vowel-o.webp",
+        "src": "vowel-o-lead.webp",
         "caption": "/o/：嘴唇成圓"
       }
     ],
@@ -991,7 +991,7 @@
         "caption": "比較舌尖在前方與稍向後的構形"
       },
       {
-        "src": "voice-air-hand.webp",
+        "src": "voice-air-hand-lead.webp",
         "caption": "手掌放在嘴前，觀察送氣差異"
       }
     ],
@@ -1017,11 +1017,11 @@
     ],
     "images": [
       {
-        "src": "mic-straight.webp",
+        "src": "mic-straight-lead.webp",
         "caption": "正對麥克風：留意送氣直接撞擊網罩"
       },
       {
-        "src": "mic-offset.webp",
+        "src": "mic-offset-lead.webp",
         "caption": "略偏離氣流正前方，保持演唱距離"
       }
     ],

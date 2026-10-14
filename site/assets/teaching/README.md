@@ -7,6 +7,10 @@
 - 木色、筒身、內部構造與零件外觀會因製造商而異。
 - `voice-anatomy.jpg` 取自美國 NIDCD 的 Taking Care of Your Voice 教育資料；`resonance.svg` 使用該圖加上中文教學說明。
 
+## Vocal Lab 示範主角
+
+`*-lead.webp` 女性示範圖以使用者提供且說明已取得同意的人像參考，透過 AI 編輯製作。原始參考照片不包含在發布資產中；示範動作與口型為教學重建。
+
 ## 參考來源
 
 - [NIDCD：Taking Care of Your Voice](https://www.nidcd.nih.gov/health/taking-care-your-voice)

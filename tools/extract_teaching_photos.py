@@ -9,11 +9,12 @@ def boundaries(length, count, horizontal):
  result=[0]
  for n in range(1,count):
   center=round(n*length/count); scores=[]
-  for pos in range(max(0,center-40),min(length,center+41)):
+  for pos in range(max(0,center-64),min(length,center+65)):
    pixels=[im.getpixel((x,pos) if horizontal else (pos,x)) for x in range(0,im.width if horizontal else im.height,4)]
    scores.append((sum(min(v)>225 for v in pixels)/len(pixels),pos))
   best=max(scores)
-  result.append(best[1] if best[0]>.8 else center)
+  near=[pos for score,pos in scores if score>=best[0]-.02]
+  result.append(round(sum(near)/len(near)) if best[0]>.8 else center)
  return result+[length]
 xs=boundaries(im.width,a.cols,False); ys=boundaries(im.height,a.rows,True)
 for i,name in enumerate(names):
