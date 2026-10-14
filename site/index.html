@@ -3,84 +3,63 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pixel Studio 畫素音樂工作坊｜互動課程</title>
-<meta name="description" content="畫素音樂工作坊 Pixel Studio 互動教學平台：流行歌唱、民謠吉他、流行鋼琴、詞曲創作四個課程。">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="Pixel Studio 畫素音樂工作坊｜We Perform the Pixel of Music">
+<title>Pixel Studio｜We Perform the Pixel of Music</title>
 <link rel="icon" href="assets/brand/symbol-compact-color.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap">
-<link rel="stylesheet" href="assets/brand/brand-tokens.css">
-<link rel="stylesheet" href="assets/ps.css?v=20261013c">
+<link rel="preload" href="assets/brand/pixel-studio-primary-dark.svg" as="image" media="(min-width: 600px)">
+<link rel="preload" href="assets/brand/symbol-compact-color.svg" as="image" media="(max-width: 599px)">
 <style>
-  .hub-hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
-  .hub-hero .logo{background:#000;max-width:440px;justify-self:end;width:100%}
-  .card.lab-card{display:flex;flex-direction:column;gap:8px;border-top:3px solid var(--lab)}
-  .lab-card .tag{align-self:flex-start;margin:0}
-  .lab-card .en{font:700 22px var(--display);color:var(--lab)}
-  .lab-card .go{margin-top:auto;padding-top:12px;font:500 14px var(--display);color:var(--lab)}
-  .lab-card.muted .go{color:var(--faint)}
-  @media (max-width:760px){.hub-hero{grid-template-columns:1fr}.hub-hero .logo{justify-self:start;max-width:260px;order:-1}}
+:root{color-scheme:dark;--black:#000;--paper:#f4f4f0;--muted:#8b9097;--line:rgba(244,244,240,.22);--red:#e8412b;--pink:#e2407f;--purple:#8a4fc0;--blue:#2f5fc4;--cyan:#45b3e6;--green:#6cbb4b;--lime:#d6e03a;--amber:#f4a62a}
+*{box-sizing:border-box}html{min-width:320px;min-height:100%;background:var(--black)}body{margin:0;min-height:100svh;background:var(--black);color:var(--paper);font-family:"Space Grotesk","Noto Sans TC",Arial,sans-serif;overflow:hidden}.entry{position:relative;isolation:isolate;display:grid;min-height:100svh;grid-template-rows:auto 1fr auto;padding:clamp(22px,4.2vw,64px) clamp(22px,5.4vw,88px) clamp(20px,3vw,42px);overflow:hidden}.entry:before{position:absolute;z-index:-2;inset:0;background:radial-gradient(ellipse at 50% 49%,rgba(27,30,32,.38),transparent 54%);content:""}.entry:after{position:absolute;z-index:-1;inset:0;background-image:linear-gradient(rgba(244,244,240,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(244,244,240,.025) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(transparent,#000 14%,#000 84%,transparent);content:""}
+.masthead,.foot{display:flex;align-items:center;justify-content:space-between;gap:18px}.eyebrow,.coordinates,.foot,.enter,.audio-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase}.eyebrow{display:flex;align-items:center;gap:12px;color:#b6b9bc}.status{display:inline-flex;align-items:center;gap:8px;color:var(--green)}.status:before{width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 12px currentColor;content:""}.coordinates{color:#71767c;text-align:right}.stage{position:relative;display:flex;min-height:0;align-items:center;justify-content:center}.identity{position:relative;display:grid;place-items:center;width:min(52vw,620px);min-width:480px;aspect-ratio:10/9}.identity img{display:block;width:100%;height:auto;animation:mark-arrive 1.5s cubic-bezier(.2,.7,.15,1) both}.identity .compact{display:none}.spectral{position:absolute;inset:15% -12%;width:124%;height:70%;overflow:visible;pointer-events:none}.spectral path{fill:none;stroke-width:1;vector-effect:non-scaling-stroke;opacity:.54}.spectral .trace{stroke-dasharray:1;stroke-dashoffset:1;animation:trace 3.6s .25s cubic-bezier(.65,0,.35,1) forwards}.spectral .afterglow{stroke-dasharray:1;stroke-dashoffset:1;opacity:.25;animation:trace 3.6s .42s cubic-bezier(.65,0,.35,1) forwards}.beam{position:absolute;top:11%;bottom:11%;left:0;width:1px;background:linear-gradient(transparent,rgba(214,224,58,.75),rgba(69,179,230,.9),rgba(226,64,127,.68),transparent);filter:drop-shadow(0 0 8px rgba(69,179,230,.6));opacity:0;animation:beam-cross 2.7s .8s cubic-bezier(.4,0,.2,1) both;pointer-events:none}.copy{position:absolute;bottom:4.5%;left:50%;width:min(90%,620px);transform:translateX(-50%);text-align:center}.copy h1{margin:0 0 11px;font-family:"Noto Sans TC",Arial,sans-serif;font-size:clamp(15px,1.5vw,19px);font-weight:500;letter-spacing:.22em}.copy p{margin:0;color:#a8adb1;font-size:11px;letter-spacing:.19em}.copy .index{display:block;margin-top:16px;color:#686e73;font-size:9px;letter-spacing:.2em}.enter{position:relative;display:inline-flex;min-height:48px;align-items:center;gap:15px;padding:0 0 0 2px;border:0;border-bottom:1px solid #696d70;background:none;color:var(--paper);font:inherit;cursor:pointer;transition:color .2s,border-color .2s}.enter:hover{border-color:var(--lime);color:var(--lime)}.enter:focus-visible{outline:2px solid var(--lime);outline-offset:8px}.enter .arrow{font-size:17px;transition:transform .2s}.enter:hover .arrow{transform:translateX(4px)}.enter[disabled]{cursor:progress;opacity:.64}.foot{color:#777c81}.slogan{color:#c6c9c9;font-size:10px;letter-spacing:.13em}.progress{position:absolute;right:0;bottom:0;left:0;height:1px;background:rgba(244,244,240,.1);transform:scaleX(0);transform-origin:left;animation:progress 6.1s linear forwards}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@keyframes trace{to{stroke-dashoffset:0}}@keyframes beam-cross{0%{left:3%;opacity:0}10%{opacity:.8}85%{opacity:.54}100%{left:97%;opacity:0}}@keyframes progress{to{transform:scaleX(1)}}@keyframes mark-arrive{0%{opacity:0;clip-path:inset(0 100% 0 0)}35%{opacity:1}100%{opacity:1;clip-path:inset(0 0 0 0)}}
+@media(min-width:600px){.identity{transform:translateY(-4vh)}.copy{bottom:4%}}
+@media(max-width:599px){body{overflow:hidden}.entry{padding:23px 22px 20px}.entry:after{background-size:40px 40px}.masthead{align-items:flex-start}.eyebrow{font-size:9px;letter-spacing:.12em}.coordinates{display:none}.identity{width:clamp(112px,34vw,144px);min-width:0;aspect-ratio:1;transform:translateY(-9vh)}.identity .primary{display:none}.identity .compact{display:block;width:100%;height:auto;animation:mark-arrive 1.2s ease-out both}.spectral{inset:-5% -56%;width:212%;height:110%}.copy{bottom:10%;width:calc(100% - 12px)}.copy h1{font-size:15px;letter-spacing:.18em}.copy p{max-width:290px;margin:auto;font-size:10px;line-height:1.8;letter-spacing:.12em}.copy .index{margin-top:13px}.foot{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;align-items:center;row-gap:18px;font-size:9px;letter-spacing:.1em}.foot>span:first-child{grid-column:1;grid-row:2}.enter{grid-column:1/3;grid-row:1;justify-self:center;min-height:48px}.slogan{grid-column:2;grid-row:2;max-width:unset;text-align:right;font-size:8px;line-height:1.6;letter-spacing:.07em}.progress{bottom:-20px}}
+@media(max-height:620px) and (min-width:600px){.entry{padding-top:20px;padding-bottom:18px}.identity{width:clamp(96px,19vh,120px);min-width:0;aspect-ratio:1;transform:translateY(-3vh)}.identity .primary{display:none}.identity .compact{display:block;width:100%;height:auto}.copy{bottom:2%}.eyebrow,.coordinates,.foot{font-size:9px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.beam{display:none}}
 </style>
 </head>
 <body>
-<a class="skip-link" href="#main">跳到主要內容</a>
-<header class="topbar">
-  <div class="wrap">
-    <a class="brand" href="./"><img src="assets/brand/horizontal-transparent.svg" alt="畫素音樂工作坊 Pixel Studio" width="113" height="34"></a>
-    <nav aria-label="課程">
-      <a href="#labs">課程</a>
-      <a href="guitar/">Guitar Lab</a>
-    </nav>
-  </div>
-</header>
-<div class="wave-rule" aria-hidden="true"></div>
-
-<main id="main">
-  <section class="hero">
-    <div class="wrap hub-hero">
-      <div>
-        <p class="kicker">Pixel Studio · Since 2008</p>
-        <h1>畫素音樂工作坊<span class="en">We Perform the Pixel of Music</span></h1>
-        <p class="lead">結合音樂製作、音樂教學與藝術展演。四個課程 Lab 各自擁有教材與練習工具，課堂上使用，回家練習也同樣適用。</p>
-      </div>
-      <img class="logo" src="assets/brand/primary-transparent.svg" alt="" width="440" height="396">
+<main class="entry" aria-labelledby="entry-title">
+  <header class="masthead">
+    <div class="eyebrow"><span class="status" aria-hidden="true">Pixel Studio</span><span>Est. 2008</span></div>
+    <div class="coordinates" aria-hidden="true">Music / Learning / Performance</div>
+  </header>
+  <section class="stage" aria-label="Pixel Studio 品牌動畫入口">
+    <div class="identity" aria-hidden="true">
+      <img class="primary" src="assets/brand/pixel-studio-primary-dark.svg" alt="" width="1600" height="1440" fetchpriority="high">
+      <img class="compact" src="assets/brand/symbol-compact-color.svg" alt="" width="256" height="256" fetchpriority="high">
+      <svg class="spectral" viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden="true">
+        <defs><linearGradient id="spectrum"><stop stop-color="#e8412b"/><stop offset=".18" stop-color="#f4a62a"/><stop offset=".34" stop-color="#d6e03a"/><stop offset=".5" stop-color="#6cbb4b"/><stop offset=".67" stop-color="#45b3e6"/><stop offset=".84" stop-color="#2f5fc4"/><stop offset="1" stop-color="#8a4fc0"/></linearGradient></defs>
+        <path class="afterglow" stroke="url(#spectrum)" pathLength="1" d="M0 198.00L2.5 197.73 L5 196.99 L7.5 195.96 L10 194.90 L12.5 194.10 L15 193.85 L17.5 194.35 L20 195.68 L22.5 197.78 L25 200.44 L27.5 203.32 L30 206.00 L32.5 208.02 L35 208.97 L37.5 208.55 L40 206.65 L42.5 203.33 L45 198.89 L47.5 193.82 L50 188.72 L52.5 184.29 L55 181.18 L57.5 179.92 L60 180.86 L62.5 184.04 L65 189.26 L67.5 195.99 L70 203.50 L72.5 210.87 L75 217.16 L77.5 221.50 L80 223.21 L82.5 221.91 L85 217.57 L87.5 210.54 L90 201.56 L92.5 191.63 L95 181.93 L97.5 174.30 L100 169.47 L102.5 168.01 L105 170.11 L107.5 175.50 L110 183.55 L112.5 193.31 L115 203.62 L117.5 213.27 L120 221.12 L122.5 226.23 L125 228.00 L127.5 226.23 L130 221.12 L132.5 213.27 L135 203.62 L137.5 193.31 L140 183.55 L142.5 175.50 L145 170.11 L147.5 168.01 L150 169.47 L152.5 174.30 L155 181.93 L157.5 191.46 L160 201.76 L162.5 211.62 L165 219.87 L167.5 225.53 L170 227.94 L172.5 226.81 L175 222.27 L177.5 214.86 L180 205.46 L182.5 195.18 L185 185.23 L187.5 176.79 L190 170.86 L192.5 168.13 L195 168.94 L197.5 173.19 L200 180.37 L202.5 189.63 L205 199.88 L207.5 209.91 L210 218.54 L212.5 224.73 L215 227.76 L217.5 227.28 L220 223.33 L222.5 216.39 L225 207.27 L227.5 197.06 L230 186.96 L232.5 178.16 L235 171.71 L237.5 168.37 L240 168.53 L242.5 172.18 L245 178.88 L247.5 187.84 L250 198.00 L252.5 208.16 L255 217.12 L257.5 223.82 L260 227.47 L262.5 227.63 L265 224.29 L267.5 217.84 L270 209.04 L272.5 198.94 L275 188.73 L277.5 179.61 L280 172.67 L282.5 168.72 L285 168.24 L287.5 171.27 L290 177.46 L292.5 186.09 L295 196.12 L297.5 206.37 L300 215.63 L302.5 222.81 L305 227.06 L307.5 227.87 L310 225.14 L312.5 219.21 L315 210.77 L317.5 200.82 L320 190.54 L322.5 181.14 L325 173.73 L327.5 169.19 L330 168.06 L332.5 170.47 L335 176.13 L337.5 184.38 L340 194.24 L342.5 204.54 L345 214.07 L347.5 221.70 L350 226.53 L352.5 227.99 L355 225.89 L357.5 220.50 L360 212.45 L362.5 202.69 L365 192.38 L367.5 182.73 L370 174.88 L372.5 169.77 L375 168.00 L377.5 169.77 L380 174.88 L382.5 182.73 L385 192.38 L387.5 202.69 L390 212.45 L392.5 220.50 L395 225.89 L397.5 227.99 L400 226.53 L402.5 221.70 L405 214.07 L407.5 204.54 L410 194.24 L412.5 184.38 L415 176.13 L417.5 170.47 L420 168.06 L422.5 169.19 L425 173.73 L427.5 181.14 L430 190.54 L432.5 200.82 L435 210.77 L437.5 219.21 L440 225.14 L442.5 227.87 L445 227.06 L447.5 222.81 L450 215.63 L452.5 206.37 L455 196.12 L457.5 186.09 L460 177.46 L462.5 171.27 L465 168.24 L467.5 168.72 L470 172.67 L472.5 179.61 L475 188.73 L477.5 198.94 L480 209.04 L482.5 217.84 L485 224.29 L487.5 227.63 L490 227.47 L492.5 223.82 L495 217.12 L497.5 208.16 L500 198.00 L502.5 187.84 L505 178.88 L507.5 172.18 L510 168.53 L512.5 168.37 L515 171.71 L517.5 178.16 L520 186.96 L522.5 197.06 L525 207.27 L527.5 216.39 L530 223.33 L532.5 227.28 L535 227.76 L537.5 224.73 L540 218.54 L542.5 209.91 L545 199.88 L547.5 189.63 L550 180.37 L552.5 173.19 L555 168.94 L557.5 168.13 L560 170.86 L562.5 176.79 L565 185.23 L567.5 195.18 L570 205.46 L572.5 214.86 L575 222.27 L577.5 226.81 L580 227.94 L582.5 225.53 L585 219.87 L587.5 211.62 L590 201.76 L592.5 191.46 L595 181.93 L597.5 174.30 L600 169.47 L602.5 168.01 L605 170.11 L607.5 175.50 L610 183.55 L612.5 193.31 L615 203.62 L617.5 213.27 L620 221.12 L622.5 226.23 L625 228.00 L627.5 226.23 L630 221.12 L632.5 213.27 L635 203.62 L637.5 193.31 L640 183.55 L642.5 175.50 L645 170.11 L647.5 168.01 L650 169.47 L652.5 174.30 L655 181.93 L657.5 191.46 L660 201.76 L662.5 211.62 L665 219.87 L667.5 225.53 L670 227.94 L672.5 226.81 L675 222.27 L677.5 214.86 L680 205.46 L682.5 195.18 L685 185.23 L687.5 176.79 L690 170.86 L692.5 168.13 L695 168.94 L697.5 173.19 L700 180.37 L702.5 189.63 L705 199.88 L707.5 209.91 L710 218.54 L712.5 224.73 L715 227.76 L717.5 227.28 L720 223.33 L722.5 216.39 L725 207.27 L727.5 197.06 L730 186.96 L732.5 178.16 L735 171.71 L737.5 168.37 L740 168.53 L742.5 172.18 L745 178.88 L747.5 187.84 L750 198.00 L752.5 208.16 L755 217.12 L757.5 223.82 L760 227.47 L762.5 227.63 L765 224.29 L767.5 217.84 L770 209.04 L772.5 198.94 L775 188.73 L777.5 179.61 L780 172.67 L782.5 168.72 L785 168.24 L787.5 171.27 L790 177.46 L792.5 186.09 L795 196.12 L797.5 206.37 L800 215.63 L802.5 222.81 L805 227.06 L807.5 227.87 L810 225.14 L812.5 219.21 L815 210.77 L817.5 200.82 L820 190.54 L822.5 181.14 L825 173.73 L827.5 169.19 L830 168.06 L832.5 170.47 L835 176.13 L837.5 184.38 L840 194.24 L842.5 204.54 L845 214.07 L847.5 221.70 L850 226.53 L852.5 227.99 L855 225.89 L857.5 220.50 L860 212.45 L862.5 202.69 L865 192.38 L867.5 182.73 L870 174.88 L872.5 169.77 L875 168.00 L877.5 169.77 L880 174.88 L882.5 182.73 L885 192.38 L887.5 202.69 L890 212.45 L892.5 220.50 L895 225.89 L897.5 227.99 L900 226.53 L902.5 221.70 L905 214.07 L907.5 204.37 L910 194.44 L912.5 185.46 L915 178.43 L917.5 174.09 L920 172.79 L922.5 174.50 L925 178.84 L927.5 185.13 L930 192.50 L932.5 200.01 L935 206.74 L937.5 211.96 L940 215.14 L942.5 216.08 L945 214.82 L947.5 211.71 L950 207.28 L952.5 202.18 L955 197.11 L957.5 192.67 L960 189.35 L962.5 187.45 L965 187.03 L967.5 187.98 L970 190.00 L972.5 192.68 L975 195.56 L977.5 198.22 L980 200.32 L982.5 201.65 L985 202.15 L987.5 201.90 L990 201.10 L992.5 200.04 L995 199.01 L997.5 198.27 L1000 198.00"/>
+        <path class="trace" stroke="url(#spectrum)" pathLength="1" d="M0 198.00L2.5 197.73 L5 196.99 L7.5 195.96 L10 194.90 L12.5 194.10 L15 193.85 L17.5 194.35 L20 195.68 L22.5 197.78 L25 200.44 L27.5 203.32 L30 206.00 L32.5 208.02 L35 208.97 L37.5 208.55 L40 206.65 L42.5 203.33 L45 198.89 L47.5 193.82 L50 188.72 L52.5 184.29 L55 181.18 L57.5 179.92 L60 180.86 L62.5 184.04 L65 189.26 L67.5 195.99 L70 203.50 L72.5 210.87 L75 217.16 L77.5 221.50 L80 223.21 L82.5 221.91 L85 217.57 L87.5 210.54 L90 201.56 L92.5 191.63 L95 181.93 L97.5 174.30 L100 169.47 L102.5 168.01 L105 170.11 L107.5 175.50 L110 183.55 L112.5 193.31 L115 203.62 L117.5 213.27 L120 221.12 L122.5 226.23 L125 228.00 L127.5 226.23 L130 221.12 L132.5 213.27 L135 203.62 L137.5 193.31 L140 183.55 L142.5 175.50 L145 170.11 L147.5 168.01 L150 169.47 L152.5 174.30 L155 181.93 L157.5 191.46 L160 201.76 L162.5 211.62 L165 219.87 L167.5 225.53 L170 227.94 L172.5 226.81 L175 222.27 L177.5 214.86 L180 205.46 L182.5 195.18 L185 185.23 L187.5 176.79 L190 170.86 L192.5 168.13 L195 168.94 L197.5 173.19 L200 180.37 L202.5 189.63 L205 199.88 L207.5 209.91 L210 218.54 L212.5 224.73 L215 227.76 L217.5 227.28 L220 223.33 L222.5 216.39 L225 207.27 L227.5 197.06 L230 186.96 L232.5 178.16 L235 171.71 L237.5 168.37 L240 168.53 L242.5 172.18 L245 178.88 L247.5 187.84 L250 198.00 L252.5 208.16 L255 217.12 L257.5 223.82 L260 227.47 L262.5 227.63 L265 224.29 L267.5 217.84 L270 209.04 L272.5 198.94 L275 188.73 L277.5 179.61 L280 172.67 L282.5 168.72 L285 168.24 L287.5 171.27 L290 177.46 L292.5 186.09 L295 196.12 L297.5 206.37 L300 215.63 L302.5 222.81 L305 227.06 L307.5 227.87 L310 225.14 L312.5 219.21 L315 210.77 L317.5 200.82 L320 190.54 L322.5 181.14 L325 173.73 L327.5 169.19 L330 168.06 L332.5 170.47 L335 176.13 L337.5 184.38 L340 194.24 L342.5 204.54 L345 214.07 L347.5 221.70 L350 226.53 L352.5 227.99 L355 225.89 L357.5 220.50 L360 212.45 L362.5 202.69 L365 192.38 L367.5 182.73 L370 174.88 L372.5 169.77 L375 168.00 L377.5 169.77 L380 174.88 L382.5 182.73 L385 192.38 L387.5 202.69 L390 212.45 L392.5 220.50 L395 225.89 L397.5 227.99 L400 226.53 L402.5 221.70 L405 214.07 L407.5 204.54 L410 194.24 L412.5 184.38 L415 176.13 L417.5 170.47 L420 168.06 L422.5 169.19 L425 173.73 L427.5 181.14 L430 190.54 L432.5 200.82 L435 210.77 L437.5 219.21 L440 225.14 L442.5 227.87 L445 227.06 L447.5 222.81 L450 215.63 L452.5 206.37 L455 196.12 L457.5 186.09 L460 177.46 L462.5 171.27 L465 168.24 L467.5 168.72 L470 172.67 L472.5 179.61 L475 188.73 L477.5 198.94 L480 209.04 L482.5 217.84 L485 224.29 L487.5 227.63 L490 227.47 L492.5 223.82 L495 217.12 L497.5 208.16 L500 198.00 L502.5 187.84 L505 178.88 L507.5 172.18 L510 168.53 L512.5 168.37 L515 171.71 L517.5 178.16 L520 186.96 L522.5 197.06 L525 207.27 L527.5 216.39 L530 223.33 L532.5 227.28 L535 227.76 L537.5 224.73 L540 218.54 L542.5 209.91 L545 199.88 L547.5 189.63 L550 180.37 L552.5 173.19 L555 168.94 L557.5 168.13 L560 170.86 L562.5 176.79 L565 185.23 L567.5 195.18 L570 205.46 L572.5 214.86 L575 222.27 L577.5 226.81 L580 227.94 L582.5 225.53 L585 219.87 L587.5 211.62 L590 201.76 L592.5 191.46 L595 181.93 L597.5 174.30 L600 169.47 L602.5 168.01 L605 170.11 L607.5 175.50 L610 183.55 L612.5 193.31 L615 203.62 L617.5 213.27 L620 221.12 L622.5 226.23 L625 228.00 L627.5 226.23 L630 221.12 L632.5 213.27 L635 203.62 L637.5 193.31 L640 183.55 L642.5 175.50 L645 170.11 L647.5 168.01 L650 169.47 L652.5 174.30 L655 181.93 L657.5 191.46 L660 201.76 L662.5 211.62 L665 219.87 L667.5 225.53 L670 227.94 L672.5 226.81 L675 222.27 L677.5 214.86 L680 205.46 L682.5 195.18 L685 185.23 L687.5 176.79 L690 170.86 L692.5 168.13 L695 168.94 L697.5 173.19 L700 180.37 L702.5 189.63 L705 199.88 L707.5 209.91 L710 218.54 L712.5 224.73 L715 227.76 L717.5 227.28 L720 223.33 L722.5 216.39 L725 207.27 L727.5 197.06 L730 186.96 L732.5 178.16 L735 171.71 L737.5 168.37 L740 168.53 L742.5 172.18 L745 178.88 L747.5 187.84 L750 198.00 L752.5 208.16 L755 217.12 L757.5 223.82 L760 227.47 L762.5 227.63 L765 224.29 L767.5 217.84 L770 209.04 L772.5 198.94 L775 188.73 L777.5 179.61 L780 172.67 L782.5 168.72 L785 168.24 L787.5 171.27 L790 177.46 L792.5 186.09 L795 196.12 L797.5 206.37 L800 215.63 L802.5 222.81 L805 227.06 L807.5 227.87 L810 225.14 L812.5 219.21 L815 210.77 L817.5 200.82 L820 190.54 L822.5 181.14 L825 173.73 L827.5 169.19 L830 168.06 L832.5 170.47 L835 176.13 L837.5 184.38 L840 194.24 L842.5 204.54 L845 214.07 L847.5 221.70 L850 226.53 L852.5 227.99 L855 225.89 L857.5 220.50 L860 212.45 L862.5 202.69 L865 192.38 L867.5 182.73 L870 174.88 L872.5 169.77 L875 168.00 L877.5 169.77 L880 174.88 L882.5 182.73 L885 192.38 L887.5 202.69 L890 212.45 L892.5 220.50 L895 225.89 L897.5 227.99 L900 226.53 L902.5 221.70 L905 214.07 L907.5 204.37 L910 194.44 L912.5 185.46 L915 178.43 L917.5 174.09 L920 172.79 L922.5 174.50 L925 178.84 L927.5 185.13 L930 192.50 L932.5 200.01 L935 206.74 L937.5 211.96 L940 215.14 L942.5 216.08 L945 214.82 L947.5 211.71 L950 207.28 L952.5 202.18 L955 197.11 L957.5 192.67 L960 189.35 L962.5 187.45 L965 187.03 L967.5 187.98 L970 190.00 L972.5 192.68 L975 195.56 L977.5 198.22 L980 200.32 L982.5 201.65 L985 202.15 L987.5 201.90 L990 201.10 L992.5 200.04 L995 199.01 L997.5 198.27 L1000 198.00"/>
+      </svg><span class="beam"></span>
+    </div>
+    <div class="copy">
+      <h1 id="entry-title">畫素音樂工作坊</h1>
+      <p lang="en">We Perform the Pixel of Music</p>
+      <span class="index" aria-hidden="true">A place for sound, craft &amp; expression</span>
     </div>
   </section>
-
-  <section class="block" id="labs">
-    <div class="wrap">
-      <div class="block-head"><span class="num">Labs</span><h2>四個課程</h2></div>
-      <div class="grid cols-4">
-        <a class="card lab-card lab-vocal" href="vocal/">
-          <span class="tag on">開課中</span><span class="en">Vocal Lab</span><h3>流行歌唱</h3>
-          <p>呼吸、共鳴、發聲、音域、換氣與詮釋。六堂課，搭配互動投影片與講義。</p>
-          <span class="go">進入課程 →</span>
-        </a>
-        <a class="card lab-card lab-guitar" href="guitar/">
-          <span class="tag on">開課中</span><span class="en">Guitar Lab</span><h3>民謠吉他</h3>
-          <p>12 章、24 小時。十二章的互動投影片、講義與教案、課前問卷全部上線。</p>
-          <span class="go">進入課程 →</span>
-        </a>
-        <article class="card lab-card lab-piano muted">
-          <span class="tag">規劃中</span><span class="en">Piano Lab</span><h3>流行鋼琴</h3>
-          <p>鍵盤、轉位、左右手分工與伴奏型。</p>
-          <span class="go">即將推出</span>
-        </article>
-        <article class="card lab-card lab-songwriting muted">
-          <span class="tag">規劃中</span><span class="en">Songwriting Lab</span><h3>詞曲創作</h3>
-          <p>主題、詞句、旋律、和聲、曲式、Hook 與修稿。</p>
-          <span class="go">即將推出</span>
-        </article>
-      </div>
-    </div>
-  </section>
+  <footer class="foot">
+    <span>© Pixel Studio</span>
+    <button class="enter" id="enter" type="button"><span>進入工作室</span><span class="arrow" aria-hidden="true">↗</span><span class="sr-only">；或等待動畫結束自動進入</span></button>
+    <span class="slogan">Music · Studio</span>
+  </footer>
+  <div class="progress" aria-hidden="true"></div>
 </main>
-
-<footer class="footer">
-  <div class="wrap">
-    <span>© 畫素音樂工作坊 Pixel Studio</span>
-    <span class="slogan">We Perform the Pixel of Music</span>
-  </div>
-</footer>
+<script>
+(()=>{
+  const destination='studio.html';
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const delay=reduced?1100:6100;
+  const enter=document.getElementById('enter');
+  let moved=false;
+  function proceed(){if(moved)return;moved=true;enter.disabled=true;enter.setAttribute('aria-label','正在進入工作室');window.location.replace(destination)}
+  enter.addEventListener('click',proceed);
+  window.setTimeout(proceed,delay);
+})();
+</script>
 </body>
 </html>
