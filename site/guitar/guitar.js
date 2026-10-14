@@ -492,14 +492,14 @@
   }
   function handsSVG() {
     var s = '<svg class="gfig" viewBox="0 0 800 440" role="img" aria-label="吉他指法：左手食指 1、中指 2、無名指 3、小指 4，拇指不編號；右手拇指 T、食指 1、中指 2、無名指 3">';
-    s += '<defs><clipPath id="guitar-fingers-photo"><rect x="0" y="42" width="800" height="320" rx="10"/></clipPath></defs>';
+    s += '<defs><clipPath id="guitar-left-photo"><rect x="0" y="42" width="400" height="320" rx="10"/></clipPath><clipPath id="guitar-right-photo"><rect x="400" y="42" width="400" height="320" rx="10"/></clipPath></defs>';
     s += '<text x="18" y="28" class="big">左手｜按弦</text><text x="420" y="28" class="big">右手｜撥弦</text>';
-    s += '<image href="' + GUITAR_IMAGE + 'finger-anatomy.jpg" x="0" y="42" width="800" height="533.333" clip-path="url(#guitar-fingers-photo)"/>';
-    var markers = [['1',240,117],['2',180,84],['3',128,119],['4',72,175],['T',448,280],['1',557,119],['2',620,84],['3',677,119]];
+    s += '<image href="' + GUITAR_IMAGE + 'finger-anatomy.jpg" x="-400" y="42" width="800" height="533.333" clip-path="url(#guitar-left-photo)"/><image href="' + GUITAR_IMAGE + 'finger-anatomy.jpg" x="400" y="42" width="800" height="533.333" clip-path="url(#guitar-right-photo)"/>';
+    var markers = [['1',157,119],['2',220,84],['3',277,119],['4',328,175],['T',760,280],['1',640,117],['2',580,84],['3',528,119]];
     markers.forEach(function (f, i) {
       s += '<circle cx="' + f[1] + '" cy="' + f[2] + '" r="15" fill="' + (i < 4 ? '#6cbb4b' : '#c9ccd1') + '" stroke="#111315" stroke-width="2"/><text x="' + f[1] + '" y="' + (f[2] + 5) + '" class="n" style="font-size:16px">' + f[0] + '</text>';
     });
-    s += '<text x="307" y="318" class="en" style="fill:#f4f4f0">拇指不編號</text>';
+    s += '<text x="18" y="318" class="en" style="fill:#f4f4f0">拇指不編號</text>';
     s += '<text x="18" y="393" style="font-size:17px">1 食指　2 中指　3 無名指　4 小指</text>';
     s += '<text x="420" y="393" style="font-size:17px">T 拇指　1 食指　2 中指　3 無名指</text>';
     s += '<text x="18" y="423" class="en">四根手指負責按弦，拇指在琴頸後方支撐</text>';
@@ -507,23 +507,16 @@
     return s + '</svg>';
   }
   /* 演變：烏德琴 → 魯特琴 → 比維拉琴 → 四組弦 → 五組弦 → 六弦吉他 */
+  var PHOTO_FAMILY = {oud:'烏德琴', classical:'古典吉他', flamenco:'佛朗明哥吉他', folk:'民謠吉他', electric:'電吉他', steel:'夏威夷吉他', ukulele:'烏克麗麗、班鳩琴與曼陀鈴'};
+  function familyPhoto(key) {
+    var file = key === 'ukulele' ? 'relatives' : key;
+    return '<img class="guitar-photo" src="' + GUITAR_IMAGE + file + '-photo.jpg" alt="' + PHOTO_FAMILY[key] + '寫實器材圖" width="512" height="512">';
+  }
   function evolutionSVG() {
-    var W = 170, items = [
-      ['烏德琴', 'Oud', function (x) { return '<path d="M' + x + ' 92 C' + (x - 46) + ' 92 ' + (x - 52) + ' 168 ' + x + ' 182 C' + (x + 52) + ' 168 ' + (x + 46) + ' 92 ' + x + ' 92 Z" class="wood"/><rect x="' + (x - 5) + '" y="44" width="10" height="52" class="wood2"/><path d="M' + (x - 5) + ' 46 L' + (x + 22) + ' 22 L' + (x + 28) + ' 28 L' + (x + 5) + ' 50 Z" class="wood2"/><circle cx="' + x + '" cy="132" r="8" class="hole"/>'; }],
-      ['魯特琴', 'Lute', function (x) { return '<path d="M' + x + ' 100 C' + (x - 42) + ' 100 ' + (x - 48) + ' 170 ' + x + ' 182 C' + (x + 48) + ' 170 ' + (x + 42) + ' 100 ' + x + ' 100 Z" class="wood3"/><rect x="' + (x - 5) + '" y="30" width="10" height="74" class="dark"/><path d="M' + (x - 5) + ' 32 L' + (x + 26) + ' 34 L' + (x + 26) + ' 42 L' + (x - 5) + ' 40 Z" class="wood2"/><circle cx="' + x + '" cy="138" r="10" fill="none" stroke="#7a4524" stroke-width="2" stroke-dasharray="2 2"/>'; }],
-      ['比維拉琴', 'Vihuela', function (x) { return '<path d="' + bodyPath(x, 100, 82, 46, 34, 56, 0.45) + '" class="wood3"/><rect x="' + (x - 5) + '" y="22" width="10" height="82" class="dark"/><rect x="' + (x - 8) + '" y="10" width="16" height="16" class="wood2"/><circle cx="' + (x - 10) + '" cy="124" r="5" class="hole"/><circle cx="' + (x + 10) + '" cy="124" r="5" class="hole"/>'; }],
-      ['四組弦吉他', 'Renaissance', function (x) { return '<path d="' + bodyPath(x, 112, 70, 40, 30, 50, 0.45) + '" class="wood"/><rect x="' + (x - 5) + '" y="52" width="10" height="64" class="dark"/><rect x="' + (x - 8) + '" y="38" width="16" height="16" class="wood2"/><circle cx="' + x + '" cy="138" r="7" class="hole"/>'; }],
-      ['五組弦吉他', 'Baroque', function (x) { return '<path d="' + bodyPath(x, 104, 78, 42, 30, 52, 0.45) + '" class="wood"/><rect x="' + (x - 5) + '" y="36" width="10" height="72" class="dark"/><rect x="' + (x - 8) + '" y="20" width="16" height="18" class="wood2"/><circle cx="' + x + '" cy="134" r="8" class="hole"/><circle cx="' + x + '" cy="134" r="11" fill="none" stroke="#e2c48f" stroke-width="1.5"/>'; }],
-      ['六弦吉他', 'Modern', function (x) { return '<path d="' + bodyPath(x, 92, 92, 52, 38, 66, 0.44) + '" class="wood3" stroke="#efe8d6" stroke-width="2"/><rect x="' + (x - 5) + '" y="26" width="10" height="70" class="dark"/><rect x="' + (x - 8) + '" y="6" width="16" height="22" class="wood2"/><circle cx="' + x + '" cy="125" r="10" class="hole"/>'; }]
-    ];
-    var s = '<svg class="gfig" viewBox="0 0 ' + (W * items.length) + ' 236" role="img" aria-label="吉他的演變：烏德琴、魯特琴、比維拉琴、四組弦吉他、五組弦吉他、六弦吉他">';
-    items.forEach(function (it, i) {
-      var x = W * i + W / 2;
-      s += it[2](x);
-      s += '<text x="' + x + '" y="210" class="mid big">' + it[0] + '</text><text x="' + x + '" y="230" class="mid en">' + it[1] + '</text>';
-      if (i < items.length - 1) s += '<path d="M' + (x + 62) + ' 140 h40 m-8 -6 l8 6 l-8 6" class="lead"/>';
-    });
-    return s + '</svg>';
+    var items = [['oud','烏德琴','Oud'],['lute','魯特琴','Lute'],['vihuela','比維拉琴','Vihuela'],['renaissance','四組弦吉他','Renaissance'],['baroque','五組弦吉他','Baroque'],['classical-history','六弦吉他','Modern']];
+    return '<div class="guitar-evolution-photos">' + items.map(function (it) {
+      return '<figure><img src="' + GUITAR_IMAGE + it[0] + '-photo.jpg" alt="' + it[1] + '寫實重建圖"><figcaption><b>' + it[1] + '</b><span>' + it[2] + '</span></figcaption></figure>';
+    }).join('') + '</div>';
   }
   var FIGS = { anatomy: mountAnatomy, bodies: mountBodies, evolution: function (n) { n.innerHTML = evolutionSVG(); },
     sizes: function (n) { n.innerHTML = sizesHTML(); }, laminate: function (n) { n.innerHTML = laminateSVG(); },
@@ -533,7 +526,7 @@
   $$('[data-gfig]').forEach(function (n) {
     var k = n.getAttribute('data-gfig');
     if (FIGS[k]) FIGS[k](n);
-    else if (k.indexOf('family-') === 0) n.innerHTML = miniGuitar(FAMILY[k.slice(7)]);
+    else if (k.indexOf('family-') === 0) { var type = k.slice(7); n.innerHTML = PHOTO_FAMILY[type] ? familyPhoto(type) : miniGuitar(FAMILY[type]); }
   });
 
   /* ---------- 和弦圖 ---------- */
