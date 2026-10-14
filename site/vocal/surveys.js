@@ -8,7 +8,7 @@ window.PIXEL_SURVEYS = [
     { q: '最喜歡的三位歌手', type: 'short', placeholder: '例如：盧廣仲、田馥甄、五月天' },
     { q: '平常最常演唱的一首歌', type: 'short', hint: '第一堂請備妥這首歌的歌詞或和弦譜' },
     { q: '自我評分（1 到 5 分）', type: 'matrix', rows: ['音準', '節奏', '氣息', '高音', '咬字', '台風'] },
-    { q: '演唱時最大的困擾', type: 'multi', options: ['高音唱不上去', '破音', '走音', '氣息不足', '唱完喉嚨疼痛', '容易緊張'], other: true },
+    { q: '演唱時最大的困擾', type: 'multi', options: ['高音吃力', '破音', '走音', '氣息不足', '唱完喉嚨疼痛', '容易緊張'], other: true },
     { q: '六堂課結束時，最希望達成的一件事', type: 'text' },
     { q: '課堂上是否願意獨唱', type: 'single', options: ['願意', '希望與同伴一起', '暫時保留'] },
     { q: '健康狀況（選填）', type: 'text', optional: true, hint: '是否有聲帶結節、過敏性鼻炎、氣喘或抽菸習慣，僅供老師調整練習強度' }
@@ -36,7 +36,7 @@ window.PIXEL_SURVEYS = [
     { q: '上週找到的換聲區大約落在哪一個音（尚不確定也沒有關係）', type: 'short', optional: true, placeholder: '例如：E4' },
     { q: '三種共鳴中，最容易找到的是', type: 'single', options: ['胸腔', '口腔', '頭腔'] },
     { q: '三種共鳴中，最難找到的是', type: 'single', options: ['胸腔', '口腔', '頭腔'] },
-    { q: '演唱時，是否曾被說「聽不清楚歌詞」', type: 'single', options: ['經常', '偶爾', '從未'] },
+    { q: '演唱時，是否曾被說「歌詞不清楚」', type: 'single', options: ['經常', '偶爾', '從未'] },
     { q: '咬字自我評分（1 到 5 分）', type: 'matrix', rows: ['平舌與捲舌的區分', 'ㄣ與ㄥ的區分'] },
     { q: '是否能閱讀簡譜，或能以 Do Re Mi 唱出旋律', type: 'single', options: ['可以', '略懂', '尚未學會'] },
     { q: '練習吉他或歌唱時，是否使用節拍器', type: 'single', options: ['經常', '偶爾', '從未'] }
