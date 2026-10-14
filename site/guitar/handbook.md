@@ -779,8 +779,8 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="g09"><h3>Capo 夾位｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/capo-front.webp" alt="夾在琴衍前方，六條弦均勻受壓" loading="eager"><figcaption>夾在琴衍前方，六條弦均勻受壓</figcaption></figure>
-<figure><img src="../assets/teaching/capo-side.webp" alt="側面確認夾具穩定、避開直接壓住琴衍" loading="eager"><figcaption>側面確認夾具穩定、避開直接壓住琴衍</figcaption></figure>
+<figure><img src="../assets/teaching/capo-front-v2.webp" alt="壓桿橫跨指板與六條弦，放在格位內、靠近琴衍。" loading="eager"><figcaption>壓桿橫跨指板與六條弦，放在格位內、靠近琴衍。</figcaption></figure>
+<figure><img src="../assets/teaching/capo-side-v2.webp" alt="上方橡膠墊壓住琴弦，下方夾爪貼合琴頸背面。" loading="eager"><figcaption>上方橡膠墊壓住琴弦，下方夾爪貼合琴頸背面。</figcaption></figure>
 </div>
 </div>
 
@@ -1429,8 +1429,8 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="g09"><h3>Capo 夾位｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/capo-front.webp" alt="夾在琴衍前方，六條弦均勻受壓" loading="eager"><figcaption>夾在琴衍前方，六條弦均勻受壓</figcaption></figure>
-<figure><img src="../assets/teaching/capo-side.webp" alt="側面確認夾具穩定、避開直接壓住琴衍" loading="eager"><figcaption>側面確認夾具穩定、避開直接壓住琴衍</figcaption></figure>
+<figure><img src="../assets/teaching/capo-front-v2.webp" alt="壓桿橫跨指板與六條弦，放在格位內、靠近琴衍。" loading="eager"><figcaption>壓桿橫跨指板與六條弦，放在格位內、靠近琴衍。</figcaption></figure>
+<figure><img src="../assets/teaching/capo-side-v2.webp" alt="上方橡膠墊壓住琴弦，下方夾爪貼合琴頸背面。" loading="eager"><figcaption>上方橡膠墊壓住琴弦，下方夾爪貼合琴頸背面。</figcaption></figure>
 </div>
 </div>
 
