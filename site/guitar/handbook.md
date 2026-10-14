@@ -191,6 +191,18 @@
 - **手指編號**：左手食指 1、中指 2、無名指 3、小指 4；右手指法時拇指 T 負責 4–6 弦、食指 1 負責 3 弦、中指 2 負責 2 弦、無名指 3 負責 1 弦。
 - **左手按弦**：用指尖與指腹之間按弦，手指盡量與指板垂直、靠近琴衍；拇指放在琴頸背面中線，不要靠在指板上。
 
+<!-- scores:1 -->
+
+### 譜例：五線譜＋六線譜
+
+本章用到的刷法與指法。上方五線譜看音高與音符長短，下方六線譜看弦與格；刷法下方的箭頭是右手方向。
+
+<div class="hb-score"><p class="hb-cap"><b>四分音符 下刷</b>（空弦 和弦）</p><div data-pattern-grid="Q" data-chord="open"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>八分音符 8 Beats</b>（空弦 和弦）</p><div data-pattern-grid="A" data-chord="open"></div></div>
+
+<!-- /scores:1 -->
+
 ### 課堂互動（網站簡報）
 
 | 投影片 | 互動 | 目的 |
@@ -275,6 +287,22 @@
 - 爬格子 1-2-3-4 與 1-3-2-4：一指一格，右手彈片下上交替；連續兩輪都穩再加 4 BPM，原講義的 BPM 100 是目標而非起點。
 - 五格調音法：6、5、4、2 弦的第 5 格等於下一條空弦，只有 3 弦是第 4 格（大三度）。
 
+### 譜例：五線譜＋六線譜
+
+本章用到的刷法與指法。上方五線譜看音高與音符長短，下方六線譜看弦與格；刷法下方的箭頭是右手方向。
+
+<div class="hb-score"><div data-tab="1-0 1-1 1-3 r | 2-1 2-3 3-0 3-2 | 5-3+4-2+3-0+2-1+1-0:w" data-per-row="3" data-title="讀讀看"></div></div>
+
+<div class="hb-score"><div data-tab="1-5 1-6 1-7 1-8 | 2-5 2-6 2-7 2-8 | 3-5 3-6 3-7 3-8 | 4-5 4-6 4-7 4-8 | 5-5 5-6 5-7 5-8 | 6-5 6-6 6-7 6-8" data-per-row="6" data-title="從 1 弦第 5 格開始"></div></div>
+
+<div class="hb-score"><div data-tab="6-5 6-7 6-6 6-8 | 5-5 5-7 5-6 5-8 | 4-5 4-7 4-6 4-8 | 3-5 3-7 3-6 3-8 | 2-5 2-7 2-6 2-8 | 1-5 1-7 1-6 1-8" data-per-row="6" data-title="從 6 弦往 1 弦"></div></div>
+
+<div class="hb-score"><div data-tab="6-5 5-0:h r | 5-5 4-0:h r | 4-5 3-0:h r | 3-4 2-0:h r | 2-5 1-0:h r" data-per-row="5" data-title="每組兩個音要一樣高"></div></div>
+
+<div class="hb-score"><div data-tab="5-3 4-0 4-2 4-3 | 3-0 3-2 2-0 2-1:h | 2-1 2-0 3-2 3-0 | 4-3 4-2 4-0 5-3:h" data-per-row="4" data-title="Do Re Mi Fa Sol La Si Do"></div></div>
+
+<div class="hb-score"><div data-tab="1-0 1-0 1-1 1-3 | 1-3 1-1 1-0 2-3 | 2-1 2-1 2-3 1-0 | 1-0:dq 2-3:e 2-3:h | 1-0 1-0 1-1 1-3 | 1-3 1-1 1-0 2-3 | 2-1 2-1 2-3 1-0 | 2-3:dq 2-1:e 2-1:h" data-per-row="4" data-title="貝多芬《第九號交響曲》〈歡樂頌〉主題"></div></div>
+
 ### 課堂互動（網站簡報）
 
 | 投影片 | 互動 | 內容 |
@@ -346,6 +374,22 @@
 - 換和弦祕訣：最後一拍就開始動、手指整組一起落下、來不及就先刷空弦，拍子不停。
 - C ↔ Am 只動無名指；Am → F 整手平移一條弦；F → G 先放最遠的中指；G → C 無名指從 1 弦移到 5 弦。
 - C 調順階和弦：C（I）、Dm（ii）、Em（iii）、F（IV）、G（V）、Am（vi）、Bdim（vii°）。C → G → Am → F 就是 I–V–vi–IV。
+
+### 譜例：五線譜＋六線譜
+
+本章用到的刷法與指法。上方五線譜看音高與音符長短，下方六線譜看弦與格；刷法下方的箭頭是右手方向。
+
+<div class="hb-score"><p class="hb-cap"><b>四分音符 下刷</b>（C 和弦）</p><div data-pattern-grid="Q" data-chord="C"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>八分音符 8 Beats</b>（C 和弦）</p><div data-pattern-grid="A" data-chord="C"></div></div>
+
+<div class="hb-score"><div data-tab="5-3 4-2 3-0 2-1 | 1-0:h 5-3+4-2+3-0+2-1+1-0:h" data-per-row="2" data-title="把 C 和弦一條一條拆開"></div></div>
+
+<div class="hb-score"><div data-tab="5-3 4-2 3-0 2-1 1-0 | 5-3+4-2+3-0+2-1+1-0:w" data-per-row="2" data-title="逐弦撥出，每一條都要響"></div></div>
+
+<div class="hb-score"><div data-tab="6-3 5-2 4-0 3-0 2-0 1-3 | 6-3+5-2+4-0+3-0+2-0+1-3:w" data-per-row="2" data-title="逐弦撥出，6 弦也要響"></div></div>
+
+<div class="hb-score"><div data-tab="4-3 3-2 2-1 1-1 | 4-3+3-2+2-1+1-1:w" data-per-row="2" data-title="只彈 4 到 1 弦"></div></div>
 
 ### 課堂互動（網站簡報）
 
@@ -422,6 +466,18 @@
 | 8 Beats | ↓ ↑ ↓ ↑ ↓ ↑ ↓ ↑ | 八下平均，下重上輕 |
 | 切分 Folk Rock | ↓ · ↓ ↑ · ↑ ↓ ↑ | 第 2 拍後半延音到第 3 拍；口訣「下、下上、上下上」 |
 | 16 Beats | 每拍 1 e & a | 正拍保留下刷、反拍加入上刷；60 BPM 的手速等於 8 Beats 120 BPM |
+
+### 譜例：五線譜＋六線譜
+
+本章用到的刷法與指法。上方五線譜看音高與音符長短，下方六線譜看弦與格；刷法下方的箭頭是右手方向。
+
+<div class="hb-score"><p class="hb-cap"><b>四分音符 下刷</b>（C 和弦）</p><div data-pattern-grid="Q" data-chord="C"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>八分音符 8 Beats</b>（C 和弦）</p><div data-pattern-grid="A" data-chord="C"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>切分 Folk Rock</b>（C 和弦）</p><div data-pattern-grid="B" data-chord="C"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>十六分音符 16 Beats</b>（C 和弦）</p><div data-pattern-grid="S" data-chord="C"></div></div>
 
 ### 課堂互動（網站簡報）
 
@@ -503,6 +559,24 @@
 
 依歌曲選伴奏：抒情慢歌 60–80 BPM 用 12/8、蹦洽拉；中板 8 Beats；輕快流行用切分、16 Beats；圓舞曲用 3/4。
 
+### 譜例：五線譜＋六線譜
+
+本章用到的刷法與指法。上方五線譜看音高與音符長短，下方六線譜看弦與格；刷法下方的箭頭是右手方向。
+
+<div class="hb-score"><p class="hb-cap"><b>蹦洽拉 Bass & Strum</b>（C 和弦）</p><div data-pattern-grid="P" data-chord="C"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>八分音符 8 Beats</b>（C 和弦）</p><div data-pattern-grid="A" data-chord="C"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>華爾滋 3/4 蹦洽洽</b>（C 和弦）</p><div data-pattern-grid="W" data-chord="C"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>3/4 蹦洽拉洽拉</b>（C 和弦）</p><div data-pattern-grid="W2" data-chord="C"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>6/8 搖擺</b>（Am 和弦）</p><div data-pattern-grid="E6" data-chord="Am"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>12/8 慢板</b>（C 和弦）</p><div data-pattern-grid="T12" data-chord="C"></div></div>
+
+<div class="hb-score"><div data-tab="5-3 3-0+2-1+1-0:e 3-0+2-1+1-0:e 4-2 3-0+2-1+1-0:e 3-0+2-1+1-0:e | 6-3 3-0+2-0+1-3:e 3-0+2-0+1-3:e 5-2 3-0+2-0+1-3:e 3-0+2-0+1-3:e" data-per-row="2" data-title="C 一小節、G 一小節"></div></div>
+
 ### 課堂互動（網站簡報）
 
 | 投影片 | 互動 | 內容 |
@@ -579,6 +653,16 @@
 ### 講義擴充：期中評量
 
 穩定（拍子不斷）、和弦（清楚準時）、段落（主副歌有對比）、彈唱（一起進行）、台風（開頭結尾與互動）。比完整，不比難度。
+
+### 譜例：五線譜＋六線譜
+
+本章用到的刷法與指法。上方五線譜看音高與音符長短，下方六線譜看弦與格；刷法下方的箭頭是右手方向。
+
+<div class="hb-score"><p class="hb-cap"><b>四分音符 下刷</b>（C 和弦）</p><div data-pattern-grid="Q" data-chord="C"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>蹦洽拉 Bass & Strum</b>（C 和弦）</p><div data-pattern-grid="P" data-chord="C"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>切分 Folk Rock</b>（C 和弦）</p><div data-pattern-grid="B" data-chord="C"></div></div>
 
 ### 課堂互動（網站簡報）
 
@@ -666,6 +750,24 @@
 - 拇指 T 管 4–6 弦低音，食指 1、中指 2、無名指 3 分別管 3、2、1 弦；手腕微拱、手指往掌心勾。
 - 指法（一）T-1-2-3；指法（二）T-1-2-1-3-1-2-1；指法（三）夾弦 Pinch，拇指與無名指同時彈並加入交替低音。
 
+### 譜例：五線譜＋六線譜
+
+本章用到的刷法與指法。上方五線譜看音高與音符長短，下方六線譜看弦與格；刷法下方的箭頭是右手方向。
+
+<div class="hb-score"><p class="hb-cap"><b>八分音符 8 Beats</b>（C 和弦）</p><div data-pattern-grid="A" data-chord="C"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>四分音符 下刷</b>（C 和弦）</p><div data-pattern-grid="Q" data-chord="C"></div></div>
+
+<div class="hb-score"><div data-tab="4-0+3-2+2-3+1-3:h 4-0+3-2+2-3+1-2:h | 5-0+4-2+3-2+2-3+1-0:h 5-0+4-2+3-2+2-2+1-0:h" data-per-row="2" data-title="Dsus4 → D、Asus4 → A"></div></div>
+
+<div class="hb-score"><div data-tab="6-3+5-2+4-0+3-0+2-0+1-1:w | 5-3+4-2+3-0+2-1+1-0:w" data-per-row="2" data-title="G7 → C：屬七和弦解決到主和弦"></div></div>
+
+<div class="hb-score"><div data-tab="5-3:e 3-0:e 2-1:e 1-0:e 5-3:e 3-0:e 2-1:e 1-0:e | 5-0:e 3-2:e 2-1:e 1-0:e 5-0:e 3-2:e 2-1:e 1-0:e | 4-3:e 3-2:e 2-1:e 1-1:e 4-3:e 3-2:e 2-1:e 1-1:e | 6-3:e 3-0:e 2-0:e 1-3:e 6-3:e 3-0:e 2-0:e 1-3:e" data-per-row="4" data-title="C → Am → F → G"></div></div>
+
+<div class="hb-score"><div data-tab="5-3:e 3-0:e 2-1:e 3-0:e 1-0:e 3-0:e 2-1:e 3-0:e | 5-0:e 3-2:e 2-1:e 3-2:e 1-0:e 3-2:e 2-1:e 3-2:e | 4-3:e 3-2:e 2-1:e 3-2:e 1-1:e 3-2:e 2-1:e 3-2:e | 6-3:e 3-0:e 2-0:e 3-0:e 1-3:e 3-0:e 2-0:e 3-0:e" data-per-row="4" data-title="流行抒情歌最常見的指法"></div></div>
+
+<div class="hb-score"><div data-tab="5-3+1-0:e 3-0:e 2-1:e 3-0:e 4-2+1-0:e 3-0:e 2-1:e 3-0:e | 5-0+1-0:e 3-2:e 2-1:e 3-2:e 4-2+1-0:e 3-2:e 2-1:e 3-2:e | 4-3+1-1:e 3-2:e 2-1:e 3-2:e 3-2+1-1:e 3-2:e 2-1:e 3-2:e | 6-3+1-3:e 3-0:e 2-0:e 3-0:e 5-2+1-3:e 3-0:e 2-0:e 3-0:e" data-per-row="4" data-title="加上交替低音"></div></div>
+
 ### 課堂互動（網站簡報）
 
 | 投影片 | 互動 | 內容 |
@@ -734,6 +836,24 @@
 - 封閉和弦＝食指當 Capo：E 型往上移一格並封第 1 格成為 F（1 3 3 2 1 1）；Am 型往上移兩格並封第 2 格成為 Bm（x 2 4 4 3 2）。
 - 祕訣：用食指靠拇指一側、緊貼琴衍、用手臂重量往後拉、拇指放低在中指後方、逐弦檢查。3 弦最常悶，挪動食指避開關節縫。
 - 每天「壓 5 秒、放 5 秒」×10 次；還壓不響時先用小 F 與 Bm（4–1 弦）把歌彈下去。
+
+### 譜例：五線譜＋六線譜
+
+本章用到的刷法與指法。上方五線譜看音高與音符長短，下方六線譜看弦與格；刷法下方的箭頭是右手方向。
+
+<div class="hb-score"><p class="hb-cap"><b>蹦洽拉 Bass & Strum</b>（G 和弦）</p><div data-pattern-grid="P" data-chord="G"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>切分 Folk Rock</b>（G 和弦）</p><div data-pattern-grid="B" data-chord="G"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>八分音符 8 Beats</b>（G 和弦）</p><div data-pattern-grid="A" data-chord="G"></div></div>
+
+<div class="hb-score"><div data-tab="6-3 5-0 5-2 5-3 | 4-0 4-2 4-4 3-0 | 3-2 2-0 2-1 2-3 | 1-0 1-2 1-3:h | 1-3 1-2 1-0 2-3 | 2-1 2-0 3-2 3-0 | 4-4 4-2 4-0 5-3 | 5-2 5-0 6-3:h" data-per-row="4" data-title="G A B C D E F# G A B C D E F# G"></div></div>
+
+<div class="hb-score"><div data-tab="4-0 3-2 2-3 1-2 | 4-0+3-2+2-3+1-2:w" data-per-row="2" data-title="只彈 4 到 1 弦"></div></div>
+
+<div class="hb-score"><div data-tab="6-1 5-3 4-3 3-2 2-1 1-1 r r | 6-1+5-3+4-3+3-2+2-1+1-1:w" data-per-row="2" data-title="大封閉 F"></div></div>
+
+<div class="hb-score"><div data-tab="5-2 4-4 3-4 2-3 1-2 r r r | 5-2+4-4+3-4+2-3+1-2:w" data-per-row="2" data-title="Bm"></div></div>
 
 ### 課堂互動（網站簡報）
 
@@ -806,6 +926,28 @@
 - 下行低音：C → G/B → Am → Am/G → F → C/E → Dm → G，低音 C B A G F E D G 一步一步往下，帶出懷念、感傷的情緒。
 - 上行低音：C → C/E → F → G，常用在導歌把氣氛推進副歌。
 - 經過音：放在換和弦前的最後一拍，用音階上的音走過去；每四小節一兩次就好。
+
+### 譜例：五線譜＋六線譜
+
+本章用到的刷法與指法。上方五線譜看音高與音符長短，下方六線譜看弦與格；刷法下方的箭頭是右手方向。
+
+<div class="hb-score"><p class="hb-cap"><b>蹦洽拉 Bass & Strum</b>（C 和弦）</p><div data-pattern-grid="P" data-chord="C"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>華爾滋 3/4 蹦洽洽</b>（C 和弦）</p><div data-pattern-grid="W" data-chord="C"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>八分音符 8 Beats</b>（C 和弦）</p><div data-pattern-grid="A" data-chord="C"></div></div>
+
+<div class="hb-score"><div data-tab="5-3+4-2+3-0+2-1+1-0:w | 6-3+5-3+4-2+3-0+2-1+1-0:w | 6-0+5-3+4-2+3-0+2-1+1-0:w" data-per-row="3" data-title="同樣是 C：低音分別是 C、G、E"></div></div>
+
+<div class="hb-score"><div data-tab="5-3 3-0+2-1+1-0 6-3 3-0+2-1+1-0 | 5-0 3-2+2-1+1-0 6-0 3-2+2-1+1-0 | 4-3 3-2+2-1+1-1 5-3 3-2+2-1+1-1 | 6-3 3-0+2-0+1-3 4-0 3-0+2-0+1-3" data-per-row="4" data-title="C → Am → F → G：根音、和弦、五度、和弦"></div></div>
+
+<div class="hb-score"><div data-tab="5-3:h 5-2:h | 5-0:h 6-3:h | 6-1:h 6-0:h | 4-0:h 6-3:h | 5-3+4-2+3-0+2-1:h 5-2+4-0+3-0+2-0:h | 5-0+4-2+3-2+2-1:h 6-3+4-2+3-2+2-1:h | 6-1+5-3+4-3+3-2+2-1+1-1:h 6-0+5-3+4-2+3-0+2-1:h | 4-0+3-2+2-3+1-1:h 6-3+5-2+4-0+3-0+2-0:h" data-per-row="4" data-title="先低音、再加和弦"></div></div>
+
+<div class="hb-score"><div data-tab="5-3+4-2+3-0+2-1+1-0:w | 6-0+5-3+4-2+3-0+2-1+1-0:w | 6-1+5-3+4-3+3-2+2-1+1-1:w | 6-3+5-2+4-0+3-0+2-0+1-3:w" data-per-row="2" data-title="低音 C → E → F → G"></div></div>
+
+<div class="hb-score"><div data-tab="6-3 3-0+2-0+1-3 6-3 6-2 | 6-0 3-0+2-0+1-0 6-0 6-2 | 6-3 3-0+2-0+1-3 5-0 5-2 | 5-3 3-0+2-1+1-0 5-3:h" data-per-row="4" data-title="G → Em → G → C：在最後一拍彈經過音"></div></div>
+
+<div class="hb-score"><div data-tab="5-3:e 3-0:e 2-1:e 1-0:e 5-2:e 3-0:e 2-0:e 1-3:e | 5-0:e 3-2:e 2-1:e 1-0:e 6-3:e 3-2:e 2-1:e 1-0:e | 4-3:e 3-2:e 2-1:e 1-1:e 6-0:e 3-0:e 2-1:e 1-0:e | 4-0:e 3-2:e 2-3:e 1-1:e 6-3:e 3-0:e 2-0:e 1-3:e" data-per-row="4" data-title="T-1-2-3 × 下行低音（每和弦兩拍）"></div></div>
 
 ### 課堂互動（網站簡報）
 
@@ -890,6 +1032,20 @@
 
 原講義此章僅有綱要，以下依課堂實作整理：前奏用副歌和弦、主歌用指法或蹦洽拉加低音線、導歌用上行低音並越刷越密、副歌用切分或 16 Beats 並以 V7 結尾、尾奏放慢讓 I 或 Imaj7 響完。
 
+### 譜例：五線譜＋六線譜
+
+本章用到的刷法與指法。上方五線譜看音高與音符長短，下方六線譜看弦與格；刷法下方的箭頭是右手方向。
+
+<div class="hb-score"><p class="hb-cap"><b>蹦洽拉 Bass & Strum</b>（C 和弦）</p><div data-pattern-grid="P" data-chord="C"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>八分音符 8 Beats</b>（C 和弦）</p><div data-pattern-grid="A" data-chord="C"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>切分 Folk Rock</b>（C 和弦）</p><div data-pattern-grid="B" data-chord="C"></div></div>
+
+<div class="hb-score"><div data-tab="6-3+5-2+4-0+3-0+2-0+1-1:w | 5-3+4-2+3-0+2-1+1-0:w | 4-0+3-2+2-1+1-2:w | 6-3+5-2+4-0+3-0+2-0+1-3:w" data-per-row="4" data-title="G7 → C、D7 → G"></div></div>
+
+<div class="hb-score"><div data-tab="2-1 2-1 1-3 1-3 | 1-5 1-5 1-3:h | 1-1 1-1 1-0 1-0 | 2-3 2-3 2-1:h" data-per-row="4" data-title="Do Do Sol Sol | La La Sol — | Fa Fa Mi Mi | Re Re Do —"></div></div>
+
 ### 課堂互動（網站簡報）
 
 | 投影片 | 互動 | 內容 |
@@ -963,6 +1119,28 @@
 | 鬆弦 Release | 推上去後慢慢放回 | 接在推弦後 |
 | 揉音 Vibrato | 手指壓著弦小幅晃動，讓音微微波動 | 長音 |
 | 顫音 Trill | 兩個音快速連續搥、勾 | 裝飾音 |
+
+### 譜例：五線譜＋六線譜
+
+本章用到的刷法與指法。上方五線譜看音高與音符長短，下方六線譜看弦與格；刷法下方的箭頭是右手方向。
+
+<div class="hb-score"><p class="hb-cap"><b>切音 Chuck</b>（C 和弦）</p><div data-pattern-grid="K" data-chord="C"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>八分音符 8 Beats</b>（C 和弦）</p><div data-pattern-grid="A" data-chord="C"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>切分 Folk Rock</b>（C 和弦）</p><div data-pattern-grid="B" data-chord="C"></div></div>
+
+<div class="hb-score"><div data-tab="3-0 3-2h 3-0 3-2h | 4-0 4-2h 4-0 4-2h | 5-0 5-2h 5-0 5-2h | 5-3+4-2+3-0+2-1+1-0:w" data-per-row="4" data-title="空弦搥到第 2 格（G→A、D→E、A→B）"></div></div>
+
+<div class="hb-score"><div data-tab="2-3 2-0p 2-1 2-0p | 3-2 3-0p 3-2 3-0p | 1-3 1-0p 1-1 1-0p | 2-1 2-0p 3-2:h" data-per-row="4" data-title="從按住的格勾回空弦"></div></div>
+
+<div class="hb-score"><div data-tab="3-2 3-4s 3-2 3-4s | 2-3 2-5s 2-3 2-5s | 4-2 4-4s 3-2 3-4s | 3-4:h 3-2s:h" data-per-row="4" data-title="上滑、下滑"></div></div>
+
+<div class="hb-score"><div data-tab="5-3+4-2+3-0+2-1+1-0:h 4-0 4-2h | 5-0+4-2+3-2+2-1+1-0:h 3-0 3-2h | 4-3+3-2+2-1+1-1:h 4-0 4-2h | 6-3+5-2+4-0+3-0+2-0+1-3:h 2-3 2-0p" data-per-row="4" data-title="C → Am → F → G：每小節後兩拍是過門"></div></div>
+
+<div class="hb-score"><div data-tab="6-12n 5-12n 4-12n 3-12n | 2-12n 1-12n:h r | 4-7n 3-7n 2-7n:h | 3-5n+2-5n+1-5n:w" data-per-row="4" data-title="&lt;12&gt; 表示泛音"></div></div>
+
+<div class="hb-score"><div data-tab="2-8b:h 2-8:h | 1-5v:w | 3-5 3-7h 3-5p 3-7h | 3-5 3-7h 3-5p:h" data-per-row="2" data-title="推弦、揉音、顫音"></div></div>
 
 ### 課堂互動（網站簡報）
 
@@ -1046,6 +1224,16 @@
 - 指板：換弦時清潔，玫瑰木、黑檀木指板一年上一兩次指板油。琴身：彈完擦去手汗，避開日曬、高溫、潮濕，濕度約 45–55%。
 - 琴弦：聲音變悶或生鏽就換；磷青銅溫暖耐用、80/20 黃銅明亮、鍍膜弦壽命長。
 - 換弦：一次換一條、弦釘固定弦尾、留兩三格長度繞旋鈕、同方向捲、調音後拉一拉弦再調一次。
+
+### 譜例：五線譜＋六線譜
+
+本章用到的刷法與指法。上方五線譜看音高與音符長短，下方六線譜看弦與格；刷法下方的箭頭是右手方向。
+
+<div class="hb-score"><p class="hb-cap"><b>八分音符 8 Beats</b>（C 和弦）</p><div data-pattern-grid="A" data-chord="C"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>蹦洽拉 Bass & Strum</b>（C 和弦）</p><div data-pattern-grid="P" data-chord="C"></div></div>
+
+<div class="hb-score"><p class="hb-cap"><b>華爾滋 3/4 蹦洽洽</b>（C 和弦）</p><div data-pattern-grid="W" data-chord="C"></div></div>
 
 ### 課堂互動（網站簡報）
 
