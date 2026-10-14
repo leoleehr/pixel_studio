@@ -371,7 +371,7 @@
     var data = saved ? saved.data : [], marks = saved ? saved.marks : [], sel = null, drag = null;
     var an = null, raf = 0, t0 = 0, last = 0, rec = null, chunks = [], blob = null, url = '', recent = [], playing = false;
     p.innerHTML = '<div class="rl-read"><div><small>音高</small><b class="rl-note">--</b><span class="rl-hz"></span></div><div><small>音量</small><b class="rl-db">--</b><span class="rl-bar"><i></i></span></div><div><small>錄製</small><b class="rl-time">0.0 秒</b></div></div>' +
-      '<canvas class="rl-cv"></canvas><div class="rl-legend"><span class="lg-pitch">— 音高</span><span class="lg-vol">▇ 音量</span><span class="lg-ov">▨ 聲區</span><span class="muted">錄完後在圖上拖曳選一段，再按腔體按鈕標記；兩種共鳴重疊的地方就是聲區</span></div>' +
+      '<canvas class="rl-cv"></canvas><div class="rl-legend"><span class="lg-pitch">━ 音高</span><span class="lg-vol">▇ 音量</span><span class="lg-ov">▨ 聲區</span><span class="muted">錄完後在圖上拖曳選一段，再按腔體按鈕標記；兩種共鳴重疊的地方就是聲區</span></div>' +
       '<div class="btn-row rl-main"><button type="button" class="btn primary go">● 開始錄製</button><button type="button" class="btn play" disabled>▶ 播放</button><button type="button" class="btn clear">清除</button><span class="rl-sep"></span>' + ZONES.map(function (z) { return '<button type="button" class="btn rl-z" data-z="' + z.k + '" disabled style="--zc:' + z.col + '">標記為' + z.name + '</button>'; }).join('') + '</div>' +
       '<ul class="rl-marks"></ul><p class="rl-sum"></p>' +
       '<div class="btn-row rl-out"><button type="button" class="btn png">下載觀測圖</button><a class="btn wav" href="#">下載錄音</a><button type="button" class="btn primary up">上傳給老師</button></div><audio class="rl-audio"></audio>';
@@ -629,7 +629,7 @@
       else {
         chordsEl.innerHTML = chordOrder().map(function (d, i) { return '<span class="pr-chip" data-i="' + i + '">' + chordName(st.start, d) + '</span>'; }).join('');
         cells.innerHTML = ST_PAT.map(function (o, i) { return '<span class="pr-cell sm" data-i="' + i + '"><b>' + ['1', '', '3', '', '5'][o] + '</b></span>'; }).join('') + '<span class="pr-cell sm root" data-i="8"><b>1</b></span><span class="pr-cell sm pr-breath" data-i="9"><b>吸</b></span>';
-        var r = p.querySelector('.pr-rec'); if (r) r.textContent = st.rec ? '班級紀錄 ' + st.rec + ' Bpm' : '班級紀錄 —';
+        var r = p.querySelector('.pr-rec'); if (r) r.textContent = st.rec ? '班級紀錄 ' + st.rec + ' Bpm' : '班級紀錄：尚無';
       }
       if (!playing) drawStaff(0);
       if (!playing) { big.textContent = KEYN[st.start % 12] + ' 調'; sub.textContent = '起始音 ' + nameOf(st.start).name + '・' + st.bpm + ' Bpm・母音 ' + VOWELS[st.vowel] + '　按「開始跟唱」，先聽 4 拍預備'; }
@@ -1039,7 +1039,7 @@
     p.innerHTML = '<div class="rg-read"><div><small>可用音域</small><b class="rg-use">--</b></div><div><small>完全音域</small><b class="rg-full">--</b></div><div><small>可用度數</small><b class="rg-deg">--</b></div></div>' +
       '<div class="rg-ref"><button type="button" class="btn dn" aria-label="往下一個音">▼</button><div class="rg-note"><small>參考音</small><b>C4</b><span class="rg-sung">你唱的音：--</span></div><button type="button" class="btn up" aria-label="往上一個音">▲</button></div>' +
       '<div class="btn-row"><button type="button" class="btn play">▶ 播放參考音</button><button type="button" class="btn primary mic">● 開始偵測</button><button type="button" class="btn setlo">設為可用最低</button><button type="button" class="btn sethi">設為可用最高</button><button type="button" class="btn clear">清除</button></div>' +
-      '<p class="rg-state muted">由 C4 開始，以 /a/ 逐音往下唱；聲音變虛、音準不穩時，把前一個音設為「可用最低」。再回到 C4 往上，用同樣方式設定「可用最高」。</p>';
+      '<p class="rg-state muted">由 C4 開始，以 /a/ 逐音往下演唱；聲音變虛、音準不穩時，將前一個音設為「可用最低」。再回到 C4 往上，以同樣的方式設定「可用最高」。</p>';
     var noteB = p.querySelector('.rg-note b'), sung = p.querySelector('.rg-sung'), state = p.querySelector('.rg-state'), mic = p.querySelector('.mic');
     function nm(m) { return m === null || m === undefined ? '--' : nameOf(m).name; }
     function show() {
