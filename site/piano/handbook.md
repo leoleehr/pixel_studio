@@ -144,7 +144,7 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="p01"><h3>坐姿與手形｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/piano-posture.webp" alt="側面：肩膀放鬆，手肘與琴鍵接近同一平面" loading="eager"><figcaption>側面：肩膀放鬆，手肘與琴鍵接近同一平面</figcaption></figure>
+<figure><img src="../assets/teaching/piano-posture-white.webp" alt="側面：肩膀放鬆，手肘與琴鍵接近同一平面" loading="eager"><figcaption>側面：肩膀放鬆，手肘與琴鍵接近同一平面</figcaption></figure>
 <figure><img src="../assets/teaching/piano-hand-curve.webp" alt="近拍：手指成弧、手腕自然" loading="eager"><figcaption>近拍：手指成弧、手腕自然</figcaption></figure>
 </div>
 </div>

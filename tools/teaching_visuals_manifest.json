@@ -105,7 +105,7 @@
         "caption": "1/4、1/2、3/4 與全尺寸的相對比例"
       },
       {
-        "src": "guitar-posture-uniform.svg",
+        "src": "guitar-posture-white.webp",
         "caption": "試抱時確認手臂能自然落在琴身上"
       }
     ],
@@ -530,7 +530,7 @@
     ],
     "images": [
       {
-        "src": "piano-posture.webp",
+        "src": "piano-posture-white.webp",
         "caption": "側面：肩膀放鬆，手肘與琴鍵接近同一平面"
       },
       {
@@ -739,11 +739,11 @@
     ],
     "images": [
       {
-        "src": "vocal-standing-uniform.svg",
+        "src": "vocal-standing-white.webp",
         "caption": "站姿：重心穩定、膝蓋與肩膀放鬆"
       },
       {
-        "src": "vocal-seated-uniform.svg",
+        "src": "vocal-seated-white.webp",
         "caption": "彈唱：坐穩、吉他靠近身體、視線自然向前"
       }
     ],
@@ -763,23 +763,23 @@
     ],
     "images": [
       {
-        "src": "warmup-shoulders-uniform.svg",
+        "src": "warmup-shoulders-white.webp",
         "caption": "小幅度肩關節轉動，雙臂自然"
       },
       {
-        "src": "warmup-forward-uniform.svg",
+        "src": "warmup-forward-white.webp",
         "caption": "以髖部帶動小幅前傾，頭頸自然"
       },
       {
-        "src": "vocal-standing-uniform.svg",
+        "src": "vocal-standing-white.webp",
         "caption": "回到自然站姿，檢查肩頸是否放鬆"
       },
       {
-        "src": "warmup-neck-uniform.svg",
+        "src": "warmup-neck-white.webp",
         "caption": "輕柔側傾頭部，保持肩膀放鬆，不用力拉扯頸部。"
       },
       {
-        "src": "warmup-wrists-uniform.svg",
+        "src": "warmup-wrists-white.webp",
         "caption": "輕柔活動手腕，手臂與肩膀維持放鬆。"
       }
     ],
@@ -807,11 +807,11 @@
     ],
     "images": [
       {
-        "src": "breath-in-uniform.svg",
+        "src": "breath-in-white.webp",
         "caption": "雙手放在下肋與腰側，感受吸氣時的擴張"
       },
       {
-        "src": "breath-out-uniform.svg",
+        "src": "breath-out-white.webp",
         "caption": "吐氣時維持穩定，肩膀自然放鬆"
       }
     ],
@@ -831,19 +831,19 @@
     ],
     "images": [
       {
-        "src": "breath-wall-uniform.svg",
+        "src": "breath-wall-white.webp",
         "caption": "男主角面向牆壁，腹部輕抵牆面，觀察吸吐氣時的起伏。"
       },
       {
-        "src": "breath-pair-paper-uniform.svg",
+        "src": "breath-pair-paper-white.webp",
         "caption": "一人捏住紙張上緣，讓紙張下垂；兩人從兩側輪流吹動紙張。"
       },
       {
-        "src": "breath-wall-tissue-uniform.svg",
+        "src": "breath-wall-tissue-white.webp",
         "caption": "以持續氣流托住牆面上的單張薄衛生紙。"
       },
       {
-        "src": "breath-tissue-uniform.svg",
+        "src": "breath-tissue-white.webp",
         "caption": "拿住衛生紙上緣，以穩定氣流吹動下垂的衛生紙。"
       }
     ],
@@ -899,15 +899,15 @@
     ],
     "images": [
       {
-        "src": "voice-yawn-uniform.svg",
+        "src": "voice-yawn-white.webp",
         "caption": "下巴自然下垂，模擬輕哈欠"
       },
       {
-        "src": "voice-hum-uniform.svg",
+        "src": "voice-hum-white.webp",
         "caption": "嘴唇輕閉，哼出 /m/"
       },
       {
-        "src": "voice-chest-uniform.svg",
+        "src": "voice-chest-white.webp",
         "caption": "手掌輕貼胸口，觀察振動感受"
       }
     ],
@@ -927,11 +927,11 @@
     ],
     "images": [
       {
-        "src": "voice-no-pinch-uniform.svg",
+        "src": "voice-no-pinch-white.webp",
         "caption": "1：以舒服音高唱長音"
       },
       {
-        "src": "voice-pinch-uniform.svg",
+        "src": "voice-pinch-white.webp",
         "caption": "2：輕捏鼻翼，比較聲音的改變"
       }
     ],
@@ -951,23 +951,23 @@
     ],
     "images": [
       {
-        "src": "vowel-a-uniform.svg",
+        "src": "vowel-a-white.webp",
         "caption": "/a/：下巴自然下垂"
       },
       {
-        "src": "vowel-i-uniform.svg",
+        "src": "vowel-i-white.webp",
         "caption": "/i/：嘴角微展，保留內部空間"
       },
       {
-        "src": "vowel-u-uniform.svg",
+        "src": "vowel-u-white.webp",
         "caption": "/u/：嘴唇圓攏"
       },
       {
-        "src": "vowel-e-uniform.svg",
+        "src": "vowel-e-white.webp",
         "caption": "/e/：下巴微開"
       },
       {
-        "src": "vowel-o-uniform.svg",
+        "src": "vowel-o-white.webp",
         "caption": "/o/：嘴唇成圓"
       }
     ],
@@ -991,7 +991,7 @@
         "caption": "比較舌尖在前方與稍向後的構形"
       },
       {
-        "src": "voice-air-hand-uniform.svg",
+        "src": "voice-air-hand-white.webp",
         "caption": "手掌放在嘴前，觀察送氣差異"
       }
     ],
@@ -1017,11 +1017,11 @@
     ],
     "images": [
       {
-        "src": "mic-straight-uniform.svg",
+        "src": "mic-straight-white.webp",
         "caption": "正對麥克風：留意送氣直接撞擊網罩"
       },
       {
-        "src": "mic-offset-uniform.svg",
+        "src": "mic-offset-white.webp",
         "caption": "略偏離氣流正前方，保持演唱距離"
       }
     ],
