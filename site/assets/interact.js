@@ -366,7 +366,7 @@
   /* ---------- 共鳴觀測站：音高與音量即時曲線，錄下後標記共鳴腔體 ---------- */
   $$('.resolab').forEach(function (p) {
     var MAXS = parseInt(p.getAttribute('data-max'), 10) || 20, LO = 40, HI = 84, DBLO = -60, DBHI = 0, FPS_MS = 33;
-    var ZONES = [{ k: 'chest', name: '胸腔', col: '#45b3e6' }, { k: 'mouth', name: '口腔', col: '#C7AF4A' }, { k: 'head', name: '頭腔', col: '#ec4a36' }];
+    var ZONES = [{ k: 'chest', name: '胸腔', col: '#45b3e6' }, { k: 'mouth', name: '口腔', col: '#f4a62a' }, { k: 'head', name: '頭腔', col: '#ec4a36' }];
     var key = 'resolab-' + LESSON, saved = LS.get(key, null);
     var data = saved ? saved.data : [], marks = saved ? saved.marks : [], sel = null, drag = null;
     var an = null, raf = 0, t0 = 0, last = 0, rec = null, chunks = [], blob = null, url = '', recent = [], playing = false;
@@ -521,7 +521,7 @@
       var who = (window.PixelBackend && window.PixelBackend.profile && window.PixelBackend.profile()) || {};
       x.fillText('共鳴轉換觀測圖　' + (who.name || '') + '　' + stamp().replace('_', ' '), 12, 10);
       x.drawImage(cv, 0, 36, W, g.c.h);
-      x.font = '13px "Noto Sans TC",sans-serif'; x.fillStyle = '#C7AF4A';
+      x.font = '13px "Noto Sans TC",sans-serif'; x.fillStyle = '#f4a62a';
       lines.forEach(function (l, i) { x.fillText(l, 12, 44 + g.c.h + i * 17); });
       return out;
     }
@@ -1179,7 +1179,7 @@
       }
       x.fillStyle = 'rgba(255,255,255,.45)'; x.font = '12px "Space Grotesk",sans-serif';
       for (var b = 0; b < 4; b++) x.fillText(String(b + 1), X(b) + 4, 18);
-      if (nowBeat >= 0) { x.fillStyle = 'rgba(199,175,74,.12)'; x.fillRect(X(Math.floor(nowBeat)), 4, w / 4, H - 8); }
+      if (nowBeat >= 0) { x.fillStyle = 'rgba(244,166,42,.12)'; x.fillRect(X(Math.floor(nowBeat)), 4, w / 4, H - 8); }
       var on = RHYTHMS[idx].on, mid = H * 0.42;
       on.forEach(function (b, k) {
         var st = result ? (result.hit[k] ? css('--green') : 'rgba(236,74,54,.85)') : css('--amber');

@@ -11,7 +11,7 @@ LOGO = base64.b64encode((ROOT / 'site/assets/brand/pixel-studio-horizontal.svg')
 SPECTRUM = 'linear-gradient(90deg,#f2836f,#ee7fae,#b993e8,#86a8f2,#7cccf0,#9bd57f,#e3ea6f,#f7c06a)'
 ITEMS = [
     ('og-image.png', 'Music Studio / 畫素音樂工作坊', '找到音樂裡的每個畫素。', None),
-    ('vocal/og-image.png', 'Vocal Lab / 聲樂實驗室', '找到屬於自己的聲音。', '#c7af4a'),
+    ('vocal/og-image.png', 'Vocal Lab / 聲樂實驗室', '找到屬於自己的聲音。', '#f4a62a'),
     ('guitar/og-image.png', 'Guitar Lab / 民謠吉他', '從第一個和弦，到自己的歌曲。', '#6cbb4b'),
     ('piano/og-image.png', 'Piano Lab / 流行鋼琴', '從第一個琴鍵，到自彈自唱。', '#45b3e6'),
     ('songwriting/og-image.png', 'Songwriting Lab / 詞曲創作', '從一個念頭，到自己的歌曲。', '#e2407f'),
