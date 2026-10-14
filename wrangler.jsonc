@@ -1,0 +1,9 @@
+// Cloudflare Workers 靜態資產設定：只發布 site/，找不到的路徑回傳 site/404.html
+{
+  "name": "pixel-studio",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./site",
+    "not_found_handling": "404-page"
+  }
+}
