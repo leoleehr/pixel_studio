@@ -7,7 +7,4 @@ node_modules/
 Thumbs.db
 
 # docs/ 只留在本機，不進版本管理。
-# 例外：Vocal Lab 講義原稿與 PDF 是網站公開內容，第二階段移入 site/vocal/ 後移除這兩行例外。
-/docs/*
-!/docs/course-handbook.md
-!/docs/vocal-class-handbook.pdf
+/docs/
