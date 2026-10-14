@@ -83,3 +83,6 @@ def build(n):
 if __name__ == '__main__':
     for a in (sys.argv[1:] or [p.stem[1:] for p in sorted((ROOT / 'tools' / 'piano').glob('p[0-9][0-9].html'))]):
         build(int(a))
+    # 補齊社群分享標籤（og:image 等）
+    import subprocess
+    subprocess.run([sys.executable, "-X", "utf8", str(ROOT / "tools" / "add_social_meta.py")], check=True)

@@ -142,3 +142,8 @@
 }
 @media(prefers-reduced-motion:reduce){.motion-toggle{display:none}.home .voice-lines{transform:none!important}.home .voice-art:hover .voice-lines{transform:none}}
 @media(max-width:360px){.home .hero-copy p{font-size:13px;text-wrap:pretty}.home .hero-copy p br{display:none}}
+
+/* 捲動進場（studio.js 加上 .reveal-ready 後才生效） */
+.reveal-ready .reveal-item{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--ri,0) * 70ms)}
+.reveal-ready .reveal-item.is-in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal-ready .reveal-item{opacity:1;transform:none;transition:none}}
