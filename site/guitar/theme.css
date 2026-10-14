@@ -365,3 +365,14 @@
 .md .hb-score .tabbox .player-top{margin-bottom:6px}
 /* 揭曉內容：字級略小，展開後仍放得下 */
 .slide .reveal p,.slide .reveal li{font-size:18px;line-height:1.6}
+
+/* 第一章的寫實樂器圖 */
+.guitar-photo{display:block;width:100%;height:180px;object-fit:contain;border-radius:8px;background:#161718}
+.family .card{grid-template-columns:120px 1fr}
+.family .guitar-photo{width:120px;height:150px}
+.guitar-evolution-photos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.guitar-evolution-photos figure{margin:0;min-width:0;text-align:center}
+.guitar-evolution-photos img{display:block;width:100%;height:180px;object-fit:contain;background:#161718;border-radius:8px}
+.guitar-evolution-photos b{display:block;font-size:17px;margin-top:8px}
+.guitar-evolution-photos span{display:block;font:12px var(--display);color:var(--muted);margin-top:3px}
+@media(max-width:600px){.guitar-evolution-photos{grid-template-columns:repeat(3,minmax(0,1fr))}.family .card{grid-template-columns:96px 1fr}.family .guitar-photo{width:96px}}
