@@ -186,6 +186,14 @@
   @keyframes spectrum-dot{from{background-position:0 0}to{background-position:-120% 0}}
   .fx-off .hub-copy .btn.primary,.fx-off .hub-meta .live-dot,.fx-off .studio-hub .skip-link{animation:none}
   @media(prefers-reduced-motion:reduce){.hub-copy .btn.primary,.hub-meta .live-dot,.fx-on .fx-dot{animation:none}}
+
+  /* 強調文字：彩虹漸層文字（小字用提亮的品牌色以維持可讀性） */
+  .studio-hub{--spectrum-light:linear-gradient(90deg,#f2836f,#ee7fae,#b993e8,#86a8f2,#7cccf0,#9bd57f,#e3ea6f,#f7c06a,#f2836f)}
+  .hub-copy h1 em,.hub-copy .kicker,.brand-manifesto .pixel-word,.block-head .num,.teacher-contact{background:var(--spectrum-light) 0 0/300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:spectrum-shift 10s linear infinite}
+  .hub-copy h1 em{background-image:var(--spectrum)}
+  .teacher-contact:hover{text-decoration-color:#f2836f}
+  .fx-off .hub-copy h1 em,.fx-off .hub-copy .kicker,.fx-off .brand-manifesto .pixel-word,.fx-off .block-head .num,.fx-off .teacher-contact{animation:none}
+  @media(prefers-reduced-motion:reduce){.hub-copy h1 em,.hub-copy .kicker,.brand-manifesto .pixel-word,.block-head .num,.teacher-contact{animation:none}}
 </style>
 </head>
 <body id="top" class="studio-hub">
