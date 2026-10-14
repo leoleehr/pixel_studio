@@ -491,18 +491,19 @@
       '<text x="0" y="231" class="en">輕夾即可，手指保持自然彎曲</text>' + '</svg>';
   }
   function handsSVG() {
-    var s = '<svg class="gfig" viewBox="0 0 560 245" role="img" aria-label="吉他左右手指法：左手四指以 1 到 4 編號按弦，右手拇指 T 撥 4 至 6 弦，食指、中指、無名指依序撥 3、2、1 弦">';
-    s += '<text x="28" y="28" class="big">左手｜按弦</text><text x="312" y="28" class="big">右手｜指法</text>';
-    /* 指尖朝上，掌背與手指輪廓以圓角曲線呈現；保留醒目的指法編號。 */
-    s += '<path d="M54 170 Q47 155 51 132 L58 88 Q60 78 67 80 Q74 82 72 93 L67 126 L76 62 Q78 50 86 52 Q94 54 92 66 L84 126 L95 45 Q97 34 105 36 Q113 38 111 50 L102 127 L116 57 Q119 46 127 49 Q135 52 132 64 L121 135 L137 88 Q141 77 149 81 Q157 85 153 97 L138 158 Q133 181 112 190 L91 196 Q67 196 54 170 Z" fill="#d8b49a" stroke="#efe8d6" stroke-width="2"/>' +
-      '<path d="M78 61 Q85 56 91 62 M97 45 Q104 40 110 47 M119 58 Q125 54 131 61" fill="none" stroke="#b98f76" stroke-width="1.5"/>' +
-      '<path d="M332 170 Q325 155 329 132 L336 88 Q338 78 345 80 Q352 82 350 93 L345 126 L354 62 Q356 50 364 52 Q372 54 370 66 L362 126 L373 45 Q375 34 383 36 Q391 38 389 50 L380 127 L394 57 Q397 46 405 49 Q413 52 410 64 L399 135 L415 88 Q419 77 427 81 Q435 85 431 97 L416 158 Q411 181 390 190 L369 196 Q345 196 332 170 Z" fill="#d8b49a" stroke="#efe8d6" stroke-width="2"/>' +
-      '<path d="M356 61 Q363 56 369 62 M375 45 Q382 40 388 47 M397 58 Q403 54 409 61" fill="none" stroke="#b98f76" stroke-width="1.5"/>';
-    var left = [['1', 68, 90], ['2', 85, 63], ['3', 104, 48], ['4', 126, 63]];
-    left.forEach(function (f) { s += '<circle cx="' + f[1] + '" cy="' + f[2] + '" r="11" class="acc"/><text x="' + f[1] + '" y="' + (f[2] + 4) + '" class="n" style="font-size:12px">' + f[0] + '</text>'; });
-    var right = [['T', 345, 90], ['1', 363, 63], ['2', 382, 48], ['3', 404, 63]];
-    right.forEach(function (f) { s += '<circle cx="' + f[1] + '" cy="' + f[2] + '" r="11" fill="#c9ccd1"/><text x="' + f[1] + '" y="' + (f[2] + 4) + '" class="n" style="font-size:12px">' + f[0] + '</text>'; });
-    s += '<text x="52" y="222" class="en">食指 1　中指 2　無名指 3　小指 4</text><text x="319" y="222" class="en">拇指 4–6 弦　食 3 弦　中 2 弦　無 1 弦</text>';
+    var s = '<svg class="gfig" viewBox="0 0 800 440" role="img" aria-label="吉他指法：左手食指 1、中指 2、無名指 3、小指 4，拇指不編號；右手拇指 T、食指 1、中指 2、無名指 3">';
+    s += '<defs><clipPath id="guitar-fingers-photo"><rect x="0" y="42" width="800" height="320" rx="10"/></clipPath></defs>';
+    s += '<text x="18" y="28" class="big">左手｜按弦</text><text x="420" y="28" class="big">右手｜撥弦</text>';
+    s += '<image href="' + GUITAR_IMAGE + 'finger-anatomy.jpg" x="0" y="42" width="800" height="533.333" clip-path="url(#guitar-fingers-photo)"/>';
+    var markers = [['1',240,117],['2',180,84],['3',128,119],['4',72,175],['T',448,280],['1',557,119],['2',620,84],['3',677,119]];
+    markers.forEach(function (f, i) {
+      s += '<circle cx="' + f[1] + '" cy="' + f[2] + '" r="15" fill="' + (i < 4 ? '#6cbb4b' : '#c9ccd1') + '" stroke="#111315" stroke-width="2"/><text x="' + f[1] + '" y="' + (f[2] + 5) + '" class="n" style="font-size:16px">' + f[0] + '</text>';
+    });
+    s += '<text x="307" y="318" class="en" style="fill:#f4f4f0">拇指不編號</text>';
+    s += '<text x="18" y="393" style="font-size:17px">1 食指　2 中指　3 無名指　4 小指</text>';
+    s += '<text x="420" y="393" style="font-size:17px">T 拇指　1 食指　2 中指　3 無名指</text>';
+    s += '<text x="18" y="423" class="en">四根手指負責按弦，拇指在琴頸後方支撐</text>';
+    s += '<text x="420" y="423" class="en">拇指 4–6 弦／食指 3 弦／中指 2 弦／無名指 1 弦</text>';
     return s + '</svg>';
   }
   /* 演變：烏德琴 → 魯特琴 → 比維拉琴 → 四組弦 → 五組弦 → 六弦吉他 */
