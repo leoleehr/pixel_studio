@@ -1,0 +1,15 @@
+{
+  "name": "Pixel Studio 畫素音樂工作坊",
+  "short_name": "Pixel Studio",
+  "description": "流行歌唱、民謠吉他、流行鋼琴、詞曲創作四個互動課程。We Perform the Pixel of Music.",
+  "lang": "zh-Hant",
+  "start_url": "studio.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#101210",
+  "theme_color": "#101210",
+  "icons": [
+    { "src": "assets/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

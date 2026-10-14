@@ -107,10 +107,13 @@
   var items = [].slice.call(document.querySelectorAll('.home .sec-head, .home .lesson, .home .feature, .home .about, .home .practice-display, .home .rhythm, .home .teacher, .home .session-head'));
   if (!items.length) return;
   document.documentElement.classList.add('reveal-ready');
-  items.forEach(function (el) {
+  /* 先算好同層同類的順序再加 class，否則前一個元素加了 reveal-item 後就比對不到，錯開延遲會全部歸零。 */
+  items.map(function (el) {
     var sib = el.parentNode ? [].slice.call(el.parentNode.children).filter(function (c) { return c.className === el.className; }) : [];
-    el.style.setProperty('--ri', Math.min(sib.indexOf(el), 6));
-    el.classList.add('reveal-item');
+    return Math.min(sib.indexOf(el), 6);
+  }).forEach(function (ri, i) {
+    items[i].style.setProperty('--ri', ri);
+    items[i].classList.add('reveal-item');
   });
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
@@ -118,4 +121,16 @@
   items.forEach(function (el) {
     if (el.getBoundingClientRect().top < innerHeight) el.classList.add('is-in'); else io.observe(el);
   });
+  /* 點選錨點直接跳段時，中間被跳過的區塊不會觸發 IntersectionObserver；捲動後補上，往回捲時內容已經在。 */
+  var pending = false;
+  addEventListener('scroll', function () {
+    if (pending) return;
+    pending = true;
+    requestAnimationFrame(function () {
+      pending = false;
+      items.forEach(function (el) {
+        if (!el.classList.contains('is-in') && el.getBoundingClientRect().top < innerHeight) { el.classList.add('is-in'); io.unobserve(el); }
+      });
+    });
+  }, { passive: true });
 })();

@@ -37,7 +37,7 @@
     root.classList.add('ytp');
     root.innerHTML =
       '<div class="ytp-screen" style="background-image:url(https://i.ytimg.com/vi/' + s.id + '/hqdefault.jpg)"><button type="button" class="ytp-big" aria-label="播放">' + ICON.play + '</button><div class="ytp-slot"></div></div>' +
-      '<div class="ytp-prog" role="slider" aria-label="播放進度" tabindex="0"><i></i></div>' +
+      '<div class="ytp-prog" role="slider" aria-label="播放進度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="0:00" tabindex="0"><i></i></div>' +
       '<div class="ytp-bar">' +
         '<button type="button" class="ytp-btn ytp-toggle" aria-label="播放">' + ICON.play + '</button>' +
         '<button type="button" class="ytp-btn ytp-stop" aria-label="停止">' + ICON.stop + '</button>' +
@@ -96,6 +96,7 @@
     var p = this.player; if (!p || !p.getDuration) return;
     var d = p.getDuration() || 0, c = this.state === 5 ? 0 : (p.getCurrentTime() || 0);
     this.$('.ytp-prog i').style.width = (d ? c / d * 100 : 0) + '%';
+    this.$('.ytp-prog').setAttribute('aria-valuenow', d ? Math.round(c / d * 100) : 0); this.$('.ytp-prog').setAttribute('aria-valuetext', fmt(c) + ' / ' + fmt(d));
     this.$('.ytp-time').textContent = fmt(c) + ' / ' + fmt(d);
   };
   Ctl.prototype.destroy = function () {

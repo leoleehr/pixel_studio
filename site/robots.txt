@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pixel-studio.musicallanding.workers.dev/sitemap.xml
