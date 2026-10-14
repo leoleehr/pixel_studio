@@ -1541,7 +1541,7 @@
   $$('.log7').forEach(function (t) {
     var key = 'log7-' + LESSON, cols = t.getAttribute('data-cols').split('|'), st = LS.get(key, {});
     var tb = el('table', 'log7-t'), h = '<tr><th>天數</th>' + cols.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>';
-    for (var d = 0; d < 7; d++) { h += '<tr><td>第 ' + (d + 1) + ' 天</td>' + cols.map(function (_, c) { return '<td><input type="text" data-k="' + d + '-' + c + '"></td>'; }).join('') + '</tr>'; }
+    for (var d = 0; d < 7; d++) { h += '<tr><td>第 ' + (d + 1) + ' 天</td>' + cols.map(function (_, c) { return '<td><input type="text" data-k="' + d + '-' + c + '" aria-label="第 ' + (d + 1) + ' 天 ' + esc(cols[c]) + '"></td>'; }).join('') + '</tr>'; }
     tb.innerHTML = h; t.appendChild(tb);
     $$('input', tb).forEach(function (i) { i.value = st[i.getAttribute('data-k')] || ''; i.oninput = function () { st[i.getAttribute('data-k')] = i.value; LS.set(key, st); }; });
     var lf = el('div', 'btn-row pb-send'), ls = btn('送出紀錄給老師', 'primary'); lf.appendChild(ls); t.appendChild(lf);
@@ -1556,8 +1556,9 @@
   /* ---------- 16. 作業勾選 ---------- */
   $$('.checks[data-id]').forEach(function (u) {
     var key = 'checks-' + u.getAttribute('data-id'), st = LS.get(key, []);
+    u.setAttribute('role', 'group'); if (!u.hasAttribute('aria-label')) u.setAttribute('aria-label', '作業勾選');
     $$('li', u).forEach(function (li, k) {
-      li.classList.toggle('done', !!st[k]); li.tabIndex = 0; li.setAttribute('role', 'checkbox');
+      li.classList.toggle('done', !!st[k]); li.tabIndex = 0; li.setAttribute('role', 'checkbox'); li.setAttribute('aria-checked', !!st[k]);
       var tg = function () { st[k] = !st[k]; li.classList.toggle('done', !!st[k]); li.setAttribute('aria-checked', !!st[k]); LS.set(key, st); report(u, 'homework', { item: li.textContent.replace(/▶/g, '').trim(), result: st[k] ? '完成' : '取消', value: st[k] ? 1 : 0 }); };
       li.onclick = tg; li.onkeydown = function (e) { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); tg(); } };
     });
@@ -1571,6 +1572,7 @@
     q.appendChild(el('div', 'qr-url', esc(url.replace(/^https?:\/\//, ''))));
     if (window.QRCode) new window.QRCode(box, { text: url, width: 220, height: 220, colorDark: '#000000', colorLight: '#ffffff', correctLevel: window.QRCode.CorrectLevel.M });
     else box.innerHTML = '<a href="' + esc(url) + '">' + esc(url) + '</a>';
+    if (window.QRCode) { box.setAttribute('role', 'img'); box.setAttribute('aria-label', 'Qr Code：' + url.replace(/^https?:\/\//, '')); [].forEach.call(box.children, function (c) { c.setAttribute('aria-hidden', 'true'); if (c.tagName === 'IMG') c.alt = ''; }); }
     // 手機上不需要掃碼：同一頁顯示「已同步」，其他連結改成按鈕
     q.appendChild(href === 'self' ? el('div', 'qr-mobile here', '✓ 你已在手機上開啟這份簡報') : el('a', 'qr-mobile go', '開啟課前問卷 →'));
     if (href !== 'self') q.lastChild.href = url;

@@ -355,7 +355,7 @@
   ];
   function fretY(n) { return 108 + 442 * (1 - Math.pow(2, -n / 12)); }
   function anatomySVG() {
-    var s = '<svg class="gfig" viewBox="0 0 310 650" role="img" aria-label="真實木吉他正面構造圖，共 16 個部位">';
+    var s = '<svg class="gfig" viewBox="0 0 310 650" role="group" aria-label="真實木吉他正面構造圖，共 16 個部位">';
     s += '<image href="' + GUITAR_IMAGE + 'acoustic-front.jpg" x="0" y="0" width="310" height="650" preserveAspectRatio="xMidYMid slice"/>';
     PARTS.forEach(function (p, i) {
       s += '<g class="hot" data-part="' + i + '" tabindex="0" role="button" aria-label="' + p.zh + '">' +

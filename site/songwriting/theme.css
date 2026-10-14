@@ -1,7 +1,9 @@
 /* Songwriting Lab 主題：沿用 Vocal Lab 版面，主色換成 CI 粉紅（#e2407f），並加上詞曲創作專用的互動工具 */
 :root{--accent:#e2407f;--accent-rgb:226,64,127;--amber:var(--accent)}
 ::selection{background:var(--accent);color:#1d0510}
-.btn.primary:hover{background:#ea5d93}
+.btn.primary{color:#0a0a0a}.btn.primary:hover{background:#ea5d93}
+/* 小字的粉紅在深底上對比不足 4.5，提亮一點 */
+.pb-chip>span{color:color-mix(in srgb,var(--accent) 80%,#fff)}
 .live-dot{box-shadow:0 0 12px rgba(var(--accent-rgb),.4)}
 .slide .c-pink{color:var(--accent)}
 

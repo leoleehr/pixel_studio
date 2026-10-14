@@ -152,3 +152,24 @@
 .home .hero-bottom{grid-template-columns:repeat(3,minmax(0,1fr))}
 .home .studio-band .wrap{align-items:center}
 .home .studio-band span{display:flex;align-items:center;min-height:36px;line-height:1}
+
+/* 頁尾網站地圖：首頁與四個 Lab 共用，目前所在頁以 aria-current 標示 */
+.home .footer-nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;margin-top:40px;border-top:1px solid var(--line)}
+.home .footer-nav a{--c:var(--ink);display:flex;flex-direction:column;gap:6px;padding:20px 16px 4px 0;color:var(--muted);text-decoration:none;position:relative;transition:color .25s}
+.home .footer-nav a::before{content:"";position:absolute;left:0;top:-1px;width:0;height:2px;background:var(--c);transition:width .35s cubic-bezier(.2,.7,.2,1)}
+.home .footer-nav b{font:500 14px/1.2 var(--display);letter-spacing:-.01em;color:var(--ink)}
+.home .footer-nav span{font-size:12px}
+.home .footer-nav a:hover,.home .footer-nav a:focus-visible,.home .footer-nav a[aria-current]{color:var(--c)}
+.home .footer-nav a:hover::before,.home .footer-nav a:focus-visible::before,.home .footer-nav a[aria-current]::before{width:40px}
+@media(max-width:860px){.home .footer-nav{grid-template-columns:repeat(3,minmax(0,1fr))}.home .footer-nav a{padding-bottom:16px}}
+@media(max-width:599px){.home .footer-nav{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:28px}.home .footer-nav b{font-size:13px}}
+
+/* 跨頁轉場：首頁與四個 Lab 之間淡入淡出，頂端導覽列固定不動；不支援的瀏覽器照常換頁 */
+@media(prefers-reduced-motion:no-preference){
+  @view-transition{navigation:auto}
+  .home .topbar{view-transition-name:site-topbar}
+  ::view-transition-old(root){animation:.28s cubic-bezier(.4,0,1,1) both vt-out}
+  ::view-transition-new(root){animation:.42s cubic-bezier(.2,.7,.2,1) .06s both vt-in}
+}
+@keyframes vt-out{to{opacity:0}}
+@keyframes vt-in{from{opacity:0;transform:translateY(10px)}}
