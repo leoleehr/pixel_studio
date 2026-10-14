@@ -13,7 +13,9 @@
 
 | 路徑 | 說明 |
 | --- | --- |
-| `site/` | 對外發布的網站內容，部署只發布這個資料夾 |
+| `site/` | 對外發布的網站內容，部署只發布這個資料夾；根網址先進品牌動畫入口，再前往 `studio.html` |
+| `site/index.html` | Pixel Studio 品牌動畫入口；提供可略過按鈕並在動畫後自動進入 |
+| `site/studio.html` | 課程總覽主頁，列出四個 Lab |
 | `site/assets/` | 共用資產：沿用 Vocal Lab 的版面（site／studio／deck CSS）、投影片引擎（deck.js）、互動元件（interact.js）、後台（backend.js），以及品牌標誌 |
 | `site/vocal/` | Vocal Lab：首頁、`slides/lesson-01/` 到 `lesson-06/` 投影片、問卷、講義與 PDF、曲例及分享縮圖；附舊站本機紀錄匯入／匯出工具 |
 | `site/guitar/` | Guitar Lab：首頁、`ch01/` 等各章投影片、`survey.html`＋`surveys.js`、`handbook.html`＋`handbook.md`、`guitar.js`（插圖、和弦圖、調音器、練習器）、`theme.css`（主色 CI 綠） |
@@ -35,6 +37,6 @@ python -m http.server 8765 --directory site
 
 ## 部署
 
-正式部署使用 Cloudflare，只發布 `site/`。Vocal Lab 網址為 https://pixel-studio.musicallanding.workers.dev/vocal/。舊站保留相容轉址；舊網域的瀏覽器紀錄須先匯出，再於新站匯入。
+正式部署使用 Cloudflare，只發布 `site/`。入口網址為 https://pixel-studio.musicallanding.workers.dev/，課程總覽位於 `/studio.html`，Vocal Lab 網址為 https://pixel-studio.musicallanding.workers.dev/vocal/。舊站保留相容轉址；舊網域的瀏覽器紀錄須先匯出，再於新站匯入。
 
 原始教材、講義原稿與歌曲和弦譜涉及第三方著作權，沒有放進這個 repo。
