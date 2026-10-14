@@ -145,6 +145,27 @@
   @keyframes edge-flow{from{background-position:100% 0}to{background-position:-200% 0}}
   @media(max-width:760px){.teacher-intro{grid-template-columns:1fr;gap:18px}}
   @media(prefers-reduced-motion:reduce){.hub-logo,.card.lab-card::before,.experience-card::before{animation:none}.hub-logo{filter:none}}
+
+  /* 主視覺：彩色流動標誌、琴弦波紋、特效開關 */
+  .hub-logo-wrap{position:relative;width:100%;max-width:520px}
+  .hub-logo-wrap .hub-logo{position:relative;z-index:1;max-width:none}
+  .hub-logo-flow{position:absolute;inset:0;z-index:2;display:none;overflow:hidden;-webkit-mask:url(assets/brand/primary-transparent.svg) center/contain no-repeat;mask:url(assets/brand/primary-transparent.svg) center/contain no-repeat;pointer-events:none}
+  .hub-logo-flow::before{position:absolute;top:0;bottom:0;left:-100%;width:200%;background:linear-gradient(90deg,#e8412b,#e2407f,#8a4fc0,#2f5fc4,#45b3e6,#6cbb4b,#d6e03a,#f4a62a,#e8412b) 0 0/50% 100% repeat-x;animation:logo-flow 7s linear infinite;content:""}
+  @supports ((mask-image:url(x)) or (-webkit-mask-image:url(x))){.fx-on .hub-logo-flow{display:block}.fx-on .hub-logo-wrap .hub-logo{visibility:hidden}}
+  .fx-on .hub-logo-wrap{filter:drop-shadow(0 0 10px rgba(226,64,127,.26)) drop-shadow(0 0 24px rgba(69,179,230,.16))}
+  .hub-logo-wrap .hub-logo{animation:none;filter:none}
+  @keyframes logo-flow{from{transform:translateX(0)}to{transform:translateX(50%)}}
+  .hub-string{position:absolute;z-index:0;left:-14%;top:calc(50% - 10%);width:128%;height:20%;overflow:visible;pointer-events:none}
+  .hub-string path{fill:none;vector-effect:non-scaling-stroke}
+  .hub-string .string-line{stroke-width:1.2;opacity:.62}
+  .hub-string .string-glow{stroke-width:5;opacity:.12;filter:blur(3px)}
+  .fx-toggle{position:absolute;top:2%;right:0;z-index:4;display:inline-flex;align-items:center;gap:7px;min-height:32px;padding:5px 10px;border:1px solid var(--line-2);border-radius:999px;background:rgba(16,18,16,.72);color:var(--muted);font:500 11px var(--display);letter-spacing:.06em;cursor:pointer}
+  .fx-toggle:hover,.fx-toggle:focus-visible{color:var(--ink);border-color:var(--pixel-lime)}
+  .fx-dot{width:7px;height:7px;border-radius:50%;background:var(--faint)}
+  .fx-on .fx-dot{background:var(--pixel-lime);box-shadow:0 0 8px var(--pixel-lime)}
+  .fx-off .card.lab-card::before,.fx-off .experience-card::before,.fx-off .topbar .brand-logo{animation:none}
+  .fx-off .topbar .brand-logo{filter:none}
+  @media(max-width:640px){.fx-toggle{top:0;font-size:10px;min-height:30px}.hub-string{left:-6%;width:112%}}
 </style>
 </head>
 <body id="top" class="studio-hub">
@@ -180,7 +201,16 @@
           <div class="hero-actions"><a class="btn primary" href="#labs">探索四個 Lab <span aria-hidden="true">↗</span></a><a class="text-link" href="#teacher">認識阿勳老師 ↓</a></div>
         </div>
         <div class="hub-art hub-logo-art">
-          <img class="hub-logo" src="assets/brand/primary-transparent.svg" alt="畫素音樂工作坊 Pixel Studio 完整標誌" width="1600" height="1440">
+          <button class="fx-toggle" type="button" id="fx-toggle" aria-pressed="true" title="關閉或開啟首頁動態特效"><span class="fx-dot" aria-hidden="true"></span><span class="fx-text">關閉特效</span></button>
+          <div class="hub-logo-wrap">
+            <svg class="hub-string" viewBox="0 0 1000 200" preserveAspectRatio="none" aria-hidden="true">
+              <defs><linearGradient id="string-spectrum" x1="0" y1="0" x2="1000" y2="0" gradientUnits="userSpaceOnUse" spreadMethod="repeat"><stop stop-color="#e8412b"/><stop offset=".18" stop-color="#f4a62a"/><stop offset=".34" stop-color="#d6e03a"/><stop offset=".5" stop-color="#6cbb4b"/><stop offset=".67" stop-color="#45b3e6"/><stop offset=".84" stop-color="#2f5fc4"/><stop offset="1" stop-color="#e2407f"/></linearGradient></defs>
+              <path class="string-glow" id="string-glow" stroke="url(#string-spectrum)" d="M0 100H1000"/>
+              <path class="string-line" id="string-line" stroke="url(#string-spectrum)" d="M0 100H1000"/>
+            </svg>
+            <img class="hub-logo" src="assets/brand/primary-transparent.svg" alt="畫素音樂工作坊 Pixel Studio 完整標誌" width="1600" height="1440">
+            <span class="hub-logo-flow" aria-hidden="true"></span>
+          </div>
         </div>
       </div>
       <div class="hub-stats"><div><b>EST. 2008</b><span>音樂製作與教學</span></div><div><b>04</b><span>個音樂 Lab</span></div><div><b>01</b><span>持續創作的工作坊</span></div></div>
@@ -292,5 +322,6 @@
     <div class="copyright"><span>© 畫素音樂工作坊 Pixel Studio</span><a href="#top" class="text-link">回到頁首 ↑</a></div>
   </div>
 </footer>
+<script src="assets/studio-hero.js"></script>
 </body>
 </html>
