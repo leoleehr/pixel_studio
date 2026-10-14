@@ -28,6 +28,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/teaching-visuals.css?v=20261015visual1">
 </head>
 <body id="top">
 <header class="topbar">
@@ -44,7 +45,7 @@
 </header>
 <div class="toc"><div class="wrap" id="toc"></div></div>
 
-<div class="wrap"><div class="dl-bar"><div><b>講義與教案 Pdf</b><span>A4 排版・34 頁・含歌曲 Qr Code，可列印或分享</span></div><a class="btn primary" href="vocal-class-handbook.pdf" download="流行歌唱班_講義與教案.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>下載 Pdf</a></div></div>
+<div class="wrap"><div class="dl-bar"><div><b>講義與教案 Pdf</b><span>A4 排版・40 頁・含歌曲 Qr Code，可列印或分享</span></div><a class="btn primary" href="vocal-class-handbook.pdf" download="流行歌唱班_講義與教案.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>下載 Pdf</a></div></div>
 <main class="wrap md" id="content"><p class="loading">講義載入中…</p></main>
 
 <footer>© 畫素音樂工作坊 Pixel Studio・亞東科技大學吉他社 流行歌唱班</footer>
@@ -68,7 +69,7 @@
   var NUM = { '一': 1, '二': 2, '三': 3, '四': 4, '五': 5, '六': 6 };
   var COLOR = ['', '#e8412b', '#e2407f', '#9a5fd0', '#45b3e6', '#6cbb4b', '#e3d83a'];
   var main = document.getElementById('content'), toc = document.getElementById('toc'), prog = document.getElementById('progress');
-  fetch('course-handbook.md?v=20261014pol')
+  fetch('course-handbook.md?v=20261015visual1')
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
     .then(function (md) {
       main.innerHTML = marked.parse(md, { gfm: true });

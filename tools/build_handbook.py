@@ -7,6 +7,7 @@ import html
 import json
 import pathlib
 import re
+from teaching_visuals import enrich_markdown
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 MD = ROOT / 'site' / 'guitar' / 'handbook.md'
@@ -400,7 +401,7 @@ def main():
     head = head[:i1] + '<!-- scores:1 -->\n\n' + scores(1) + '\n<!-- /scores:1 -->\n\n' + head[i1:]
     sv = surveys()
     body = '\n'.join(chapter(n, sv) for n in range(2, 13))
-    MD.write_text(head + body, encoding='utf-8', newline='\n')
+    MD.write_text(enrich_markdown(head + body, "guitar"), encoding='utf-8', newline='\n')
     print('handbook chapters 2-12 written', len(head + body))
 
 

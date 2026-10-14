@@ -141,6 +141,31 @@
 - [ ] 聆聽一首鋼琴伴奏的流行歌曲，判斷它比較接近流行還是爵士
 - [ ] 填寫第二堂課前問卷
 
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="p01"><h3>坐姿與手形｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/piano-posture.webp" alt="側面：肩膀放鬆，手肘與琴鍵接近同一平面" loading="eager"><figcaption>側面：肩膀放鬆，手肘與琴鍵接近同一平面</figcaption></figure>
+<figure><img src="../assets/teaching/piano-hand-curve.webp" alt="近拍：手指成弧、手腕自然" loading="eager"><figcaption>近拍：手指成弧、手腕自然</figcaption></figure>
+</div>
+</div>
+
+<div class="teaching-book" data-demo-group="p02"><h3>踏板與腳部操作｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/piano-pedals.webp" alt="三個踏板的實際位置" loading="eager"><figcaption>三個踏板的實際位置</figcaption></figure>
+<figure><img src="../assets/teaching/piano-pedal-down.webp" alt="腳跟留在地面，以前腳掌踩下延音踏板" loading="eager"><figcaption>腳跟留在地面，以前腳掌踩下延音踏板</figcaption></figure>
+<figure><img src="../assets/teaching/piano-pedal-up.webp" alt="前腳掌放開，腳跟繼續支撐" loading="eager"><figcaption>前腳掌放開，腳跟繼續支撐</figcaption></figure>
+</div>
+<p class="teaching-note">平台鋼琴與直立鋼琴的中踏板功能可能不同，依琴款確認。</p>
+</div>
+
+<div class="teaching-book" data-demo-group="p03"><h3>五指位置與指位譜｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/piano-five-fingers.webp" alt="五根手指各對應一個琴鍵" loading="eager"><figcaption>五根手指各對應一個琴鍵</figcaption></figure>
+<figure><img src="../assets/teaching/../piano/hands-keyboard.jpg" alt="由上方觀察左右手位置" loading="eager"><figcaption>由上方觀察左右手位置</figcaption></figure>
+</div>
+<p class="teaching-note">指法編號從拇指 1 到小指 5；音高與手位以鍵盤圖核對。</p>
+</div>
+
+<!-- teaching-visuals-end -->
+
 ## 第二堂｜基礎樂理與識譜 Basic Theory · Reading Music
 
 本堂目標：能說出音名、唱名與簡譜的對應，並在鍵盤上找到每一個音；能閱讀大譜表上中央 C 附近的音，理解音符時值與拍號；理解全音、半音與升降記號，能計算兩個音之間的音程；下課前，在找音遊戲中連續答對十題。
@@ -296,6 +321,19 @@
 - [ ] 左手 C 大調音階上下行，60 BPM 連續五次不中斷
 - [ ] 挑戰雙手合併，或彈奏 G 大調音階
 - [ ] 填寫第四堂課前問卷
+
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="p04"><h3>穿指與跨指｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/piano-scale-motion.svg" alt="穿指與跨指的確切音名、手指編號與移動路徑" loading="eager"><figcaption>穿指與跨指的確切音名、手指編號與移動路徑</figcaption></figure>
+<figure><img src="../assets/teaching/piano-under-before.webp" alt="近拍觀察手指與琴鍵的接觸" loading="eager"><figcaption>近拍觀察手指與琴鍵的接觸</figcaption></figure>
+<figure><img src="../assets/teaching/piano-under-after.webp" alt="手位移動時保持手腕自然" loading="eager"><figcaption>手位移動時保持手腕自然</figcaption></figure>
+<figure><img src="../assets/teaching/piano-cross-before.webp" alt="其他手指自然抬起，準備下一個音" loading="eager"><figcaption>其他手指自然抬起，準備下一個音</figcaption></figure>
+<figure><img src="../assets/teaching/piano-cross-after.webp" alt="手掌跟著指位平移" loading="eager"><figcaption>手掌跟著指位平移</figcaption></figure>
+</div>
+</div>
+
+<!-- teaching-visuals-end -->
 
 ## 第四堂｜和弦組成與結構 Chords & Inversions
 
@@ -533,6 +571,17 @@
 - [ ] 挑選期中想彈唱的 C 調歌曲，找好和弦譜
 - [ ] 填寫第七堂課前問卷
 
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="p03"><h3>五指位置與指位譜｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/piano-five-fingers.webp" alt="五根手指各對應一個琴鍵" loading="eager"><figcaption>五根手指各對應一個琴鍵</figcaption></figure>
+<figure><img src="../assets/teaching/../piano/hands-keyboard.jpg" alt="由上方觀察左右手位置" loading="eager"><figcaption>由上方觀察左右手位置</figcaption></figure>
+</div>
+<p class="teaching-note">指法編號從拇指 1 到小指 5；音高與手位以鍵盤圖核對。</p>
+</div>
+
+<!-- teaching-visuals-end -->
+
 ## 第七堂｜伴奏技巧強化（4＋8） Accompaniment · 4 Beats & 8 Beats
 
 本堂目標：能說明 4 Beats 與 8 Beats 的差別，依照速度選擇伴奏密度；能彈奏單手 8 度與雙手 16 度的分散和弦；理解左右手接力時的指法與手的位置；下課前，以 C → Am → F → G 完成一段「主歌 4 Beats、副歌 8 Beats」的伴奏。
@@ -600,6 +649,16 @@
 - [ ] 為期中曲目設計主歌與副歌的伴奏型，寫在和弦譜上
 - [ ] 錄下期中曲目的伴奏，不唱歌
 - [ ] 填寫第八堂課前問卷
+
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="p05"><h3>左右手交接｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/piano-relay-left.webp" alt="左手完成低音區，右手預先準備" loading="eager"><figcaption>左手完成低音區，右手預先準備</figcaption></figure>
+<figure><img src="../assets/teaching/piano-relay-right.webp" alt="右手接續高音區，保持律動連續" loading="eager"><figcaption>右手接續高音區，保持律動連續</figcaption></figure>
+</div>
+</div>
+
+<!-- teaching-visuals-end -->
 
 ## 第八堂｜單一調性歌曲與自彈自唱 One Key · Sing & Play
 
@@ -876,6 +935,18 @@
 - [ ] 為期末曲目選擇兩種伴奏型，標在和弦譜上
 - [ ] 錄下期末曲目的伴奏
 - [ ] 填寫第十二堂課前問卷
+
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="p06"><h3>十度音與雙手十六度｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/piano-tenth-motion.svg" alt="根音、五音與十度音依序彈奏的手位路徑" loading="eager"><figcaption>根音、五音與十度音依序彈奏的手位路徑</figcaption></figure>
+<figure><img src="../assets/teaching/piano-relay-left.webp" alt="由上方觀察低音區與高音區的左右手分工" loading="eager"><figcaption>由上方觀察低音區與高音區的左右手分工</figcaption></figure>
+<figure><img src="../assets/teaching/piano-relay-right.webp" alt="雙手交接時保持自然弧度與連續律動" loading="eager"><figcaption>雙手交接時保持自然弧度與連續律動</figcaption></figure>
+</div>
+<p class="teaching-note">分散彈奏時以手臂平移協助，不必同時張開手掌壓住十度。</p>
+</div>
+
+<!-- teaching-visuals-end -->
 
 ## 第十二堂｜大小調關係與 G 大調歌曲彈奏 Major & Minor · Songs In G
 

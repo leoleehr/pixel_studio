@@ -120,6 +120,7 @@ a{color:inherit;text-decoration:none}
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/teaching-visuals.css?v=20261015visual1">
 </head>
 <body>
 <div class="toolbar"><button type="button" onclick="window.print()">列印／另存 Pdf</button><a class="ghost" href="piano-handbook.pdf" download="流行鋼琴十二堂_講義與教案.pdf">下載 Pdf</a><a class="ghost" href="handbook.html">回網頁版</a></div>
@@ -157,7 +158,7 @@ a{color:inherit;text-decoration:none}
   var COLOR = ['', '#e8412b', '#e2407f', '#8a4fc0', '#2f5fc4', '#2f8fc4', '#4f9e3a', '#b5a400', '#e08a12', '#e8412b', '#e2407f', '#8a4fc0', '#2f8fc4'];
   var DESC = ['', '認識鋼琴的起源與構造，找到中央 C', '閱讀大譜表，在鍵盤上找到每一個音', '拇指穿越、中指跨越，流暢地彈奏音階', '三個三度音疊成和弦，以轉位減少移動', '右手旋律、左手和弦，完成第一首歌', '讓左手流動起來', '左右手接力，彈出兩個八度的聲音', '一邊彈，一邊唱，完成期中發表', '找到和弦背後的數字規律', '讓低音一步一步走下樓梯', '為歌曲換上不同風格的衣服', '認識另一個調，完成期末發表'];
   var main = document.getElementById('content'), toc = document.getElementById('toc');
-  fetch('handbook.md?v=20261014pol').then(function (r) { return r.text(); }).then(function (md) {
+  fetch('handbook.md?v=20261015visual1').then(function (r) { return r.text(); }).then(function (md) {
     var tmp = document.createElement('div'); tmp.innerHTML = marked.parse(md, { gfm: true });
     // 拿掉文件標題與署名行，改用封面
     var h1 = tmp.querySelector('h1'); if (h1) { var nx = h1.nextElementSibling; h1.remove(); if (nx && nx.tagName === 'P') nx.remove(); }
@@ -199,6 +200,7 @@ a{color:inherit;text-decoration:none}
     main.querySelectorAll('table').forEach(function (t) {
       var first = t.querySelector('tr'); if (first && first.querySelector('th') && !t.querySelector('thead')) { var th = document.createElement('thead'); th.appendChild(first); t.insertBefore(th, t.firstChild); }
     });
+    main.querySelectorAll('.teaching-book img').forEach(function (im) { im.loading = 'eager'; });
     document.body.setAttribute('data-ready', '1');
   });
 })();
