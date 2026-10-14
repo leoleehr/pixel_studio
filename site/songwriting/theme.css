@@ -1,0 +1,242 @@
+/* Songwriting Lab 主題：沿用 Vocal Lab 版面，主色換成 CI 粉紅（#e2407f），並加上詞曲創作專用的互動工具 */
+:root{--accent:#e2407f;--accent-rgb:226,64,127;--amber:var(--accent)}
+::selection{background:var(--accent);color:#1d0510}
+.btn.primary:hover{background:#ea5d93}
+.live-dot{box-shadow:0 0 12px rgba(var(--accent-rgb),.4)}
+.slide .c-pink{color:var(--accent)}
+
+/* ---------- 共用：段落色（曲式） ---------- */
+.f-intro{--sc:#5b5b66}.f-verse{--sc:#2f5fc4}.f-pre{--sc:#8a4fc0}.f-chorus{--sc:#e2407f}.f-inter{--sc:#45b3e6}
+.f-bridge{--sc:#d6cf2c}.f-post{--sc:#f4a62a}.f-outro{--sc:#4f9e3a}.f-ending{--sc:#33333b}.f-tag{--sc:#e8412b}
+
+/* 曲式色塊（靜態示意） */
+.form-row{display:flex;gap:4px;min-height:92px}
+.form-row>div{display:flex;flex-direction:column;justify-content:center;padding:6px 10px;border-radius:var(--r-sm);background:var(--sc);color:#fff;min-width:0}
+.form-row b{font-size:18px;white-space:nowrap}
+.form-row small{font-size:12.5px;opacity:.92;white-space:nowrap}
+.form-row .f-bridge{color:#1a1800}
+
+/* 段落說明卡：功能、特性、順序 */
+.sec-card{border-left:6px solid var(--sc);background:var(--card);border-radius:var(--r);padding:18px 22px}
+.sec-card h3{font-size:24px;margin:0 0 4px;display:flex;align-items:baseline;gap:10px}
+.sec-card h3 small{font:500 15px var(--display);color:var(--muted)}
+.sec-card dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:10px 0 0}
+.sec-card dt{font-size:15px;font-weight:700;color:var(--sc);padding-top:2px;white-space:nowrap}
+.sec-card.f-bridge dt{color:#e7e06a}
+.sec-card dd{margin:0;font-size:17.5px;line-height:1.55}
+
+/* ---------- 曲式積木 .formbuilder ---------- */
+.fb{display:grid;gap:12px}
+.fb-palette{display:flex;flex-wrap:wrap;gap:8px}
+.fb-palette button{border:0;border-radius:999px;padding:7px 14px;font:700 15px var(--display);color:#fff;background:var(--sc);cursor:pointer}
+.fb-palette button.f-bridge{color:#1a1800}
+.fb-track{display:flex;gap:4px;min-height:84px;padding:6px;border:1px dashed var(--line-2);border-radius:var(--r);background:rgba(255,255,255,.02);overflow-x:auto}
+.fb-track:empty::before{content:"點選上方段落，依序排出歌曲的結構";color:var(--faint);align-self:center;margin:auto;font-size:16px}
+.fb-block{position:relative;flex:var(--w,1) 0 0;min-width:58px;border-radius:var(--r-sm);background:var(--sc);color:#fff;padding:8px 8px 6px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer}
+.fb-block.f-bridge{color:#1a1800}
+.fb-block b{font:700 15px var(--display);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fb-block small{font-size:12px;opacity:.9}
+.fb-block .x{position:absolute;top:2px;right:4px;font-size:13px;opacity:.75}
+.fb-block.bad{outline:3px solid #fff;outline-offset:-3px;animation:fbshake .4s}
+@keyframes fbshake{25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+.fb-curve{display:block;width:100%;height:70px}
+.fb-curve path{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-linejoin:round}
+.fb-curve .area{fill:rgba(var(--accent-rgb),.14);stroke:none}
+.fb-stat{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:15px;color:var(--muted);align-items:center}
+.fb-stat b{color:var(--ink);font:700 18px var(--display)}
+.fb-stat label{display:flex;align-items:center;gap:6px}
+.fb-stat input{width:64px;background:var(--card-2);border:1px solid var(--line-2);color:var(--ink);border-radius:8px;padding:4px 6px;font:inherit}
+.fb-msg{margin:0;font-size:16px;line-height:1.55;min-height:24px}
+.fb-msg .ok{color:var(--green)}.fb-msg .warn{color:#ffb347}
+.fb-presets{display:flex;flex-wrap:wrap;gap:8px}
+
+/* ---------- 韻腳檢查器 .rhyme ---------- */
+.rh{display:grid;grid-template-columns:1.05fr .95fr;gap:16px;align-items:start}
+.rh textarea{width:100%;min-height:200px;resize:vertical;background:var(--card-2);border:1px solid var(--line-2);border-radius:var(--r);color:var(--ink);font:500 20px/1.75 "Noto Sans TC",sans-serif;padding:12px 14px}
+.rh textarea:focus{outline:2px solid rgba(var(--accent-rgb),.6);border-color:transparent}
+.rh-lines{display:grid;gap:4px;max-height:232px;overflow:auto}
+.rh-line{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r-sm);padding:4px 10px;font-size:16px}
+.rh-line .t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted)}
+.rh-line .t em{font-style:normal;color:var(--ink);font-weight:700}
+.rh-line .py{font:500 13px var(--display);color:var(--faint)}
+.rh-line .g{min-width:66px;text-align:center;border-radius:999px;padding:3px 10px;font-weight:700;font-size:15px;color:#fff;background:var(--gc,#55555f)}
+.rh-sum{margin-top:10px;font-size:16px;line-height:1.6}
+.rh-sum b{color:var(--accent)}
+.rh-state{font-size:14px;color:var(--faint);margin-top:6px}
+.rh-bank{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.rh-bank button{border:1px solid var(--line-2);background:var(--card);color:var(--ink);border-radius:999px;padding:4px 12px;font-size:15px;cursor:pointer}
+.rh-bank button.on{background:var(--gc);border-color:var(--gc);color:#fff;font-weight:700}
+.rh-words{margin-top:8px;font-size:17px;line-height:1.8;color:var(--muted);min-height:32px}
+.rhyme-groups{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.rhyme-groups .card{padding:12px 14px;border-top:4px solid var(--gc)}
+.rhyme-groups b{font:700 22px var(--display);color:var(--gc)}
+.rhyme-groups p{font-size:15.5px!important;line-height:1.55!important;color:var(--muted);margin-top:4px}
+
+/* ---------- 動機實驗室 .motif ---------- */
+.mo{display:grid;gap:10px}
+.mo-grid{display:grid;grid-template-columns:44px repeat(var(--steps,8),1fr);gap:3px;user-select:none}
+.mo-grid .lab{font:700 14px var(--display);color:var(--muted);display:flex;align-items:center;justify-content:flex-end;padding-right:8px}
+.mo-grid .cell{height:21px;border-radius:5px;background:rgba(255,255,255,.04);border:1px solid var(--line);cursor:pointer}
+.mo-grid .cell.on{background:var(--accent);border-color:var(--accent)}
+.mo-grid .cell.cur{box-shadow:0 0 0 2px #fff inset}
+.mo-grid .cell.bar{border-left:2px solid var(--line-2)}
+.mo-grid .lab span{position:relative}
+.mo-grid .lab span.hi::after,.mo-grid .lab span.lo::after{content:"·";position:absolute;left:50%;transform:translateX(-50%);font-size:16px;line-height:1}
+.mo-grid .lab span.hi::after{top:-9px}.mo-grid .lab span.lo::after{bottom:-9px}
+.mo .btn-row,.td .btn-row,.notebook .btn-row,.fb .btn-row,.rh .btn-row,.sc-foot{justify-content:flex-start}
+.mo-num{display:flex;flex-wrap:wrap;gap:6px 14px;font:700 26px var(--display);letter-spacing:.06em;min-height:36px}
+.mo-num span{position:relative}
+.mo-num span.hi::after{content:"·";position:absolute;left:50%;top:-18px;transform:translateX(-50%);font-size:22px}
+.mo-num span.lo::after{content:"·";position:absolute;left:50%;bottom:-18px;transform:translateX(-50%);font-size:22px}
+.mo-num span.now{color:var(--accent)}
+.mo-ops{display:flex;flex-wrap:wrap;gap:8px}
+.mo-ops .btn.on{background:var(--accent);border-color:var(--accent);color:#1d0510;font-weight:700}
+.mo-desc{font-size:16.5px;color:var(--muted);margin:0;min-height:26px}
+
+/* ---------- 和弦進行 .chordprog ---------- */
+.cp{display:grid;gap:12px}
+.cp-pick{display:flex;flex-wrap:wrap;gap:8px}
+.cp-pick .btn.on{background:var(--accent);border-color:var(--accent);color:#1d0510;font-weight:700}
+.cp-bars{display:grid;grid-template-columns:repeat(var(--n,4),1fr);border-left:2px solid var(--line-2)}
+.cp-bars>div{border-right:2px solid var(--line-2);padding:10px 12px;min-height:84px;display:flex;flex-direction:column;justify-content:center;transition:background .1s}
+.cp-bars>div.now{background:rgba(var(--accent-rgb),.18)}
+.cp-bars b{font:700 30px var(--display)}
+.cp-bars small{font:500 14px var(--display);color:var(--muted)}
+.cp-bars .fn{font-size:13px;color:var(--accent);margin-top:2px}
+.cp-ctl{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:15px;color:var(--muted)}
+.cp-ctl select,.cp-ctl input{background:var(--card-2);border:1px solid var(--line-2);color:var(--ink);border-radius:8px;padding:5px 8px;font:inherit}
+.cp-ctl input[type=range]{accent-color:var(--accent);padding:0}
+
+/* ---------- 編曲混音台 .arranger ---------- */
+.ar{display:grid;gap:10px}
+.ar-tracks{display:grid;gap:6px}
+.ar-tr{display:grid;grid-template-columns:190px 1fr 120px auto;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r-sm);padding:8px 12px;opacity:.55;transition:opacity .15s}
+.ar-tr.on{opacity:1;border-color:rgba(var(--tc-rgb),.6)}
+.ar-tr b{display:block;font-size:17px}
+.ar-tr small{display:block;font:500 12.5px var(--display);color:var(--muted)}
+.ar-steps{display:grid;grid-template-columns:repeat(16,1fr);gap:2px}
+.ar-steps i{height:16px;border-radius:3px;background:rgba(255,255,255,.05)}
+.ar-steps i.v{background:rgba(var(--tc-rgb),.75)}
+.ar-steps i.now{outline:2px solid #fff}
+.ar-tr input[type=range]{width:110px;accent-color:rgb(var(--tc-rgb))}
+.ar-tr .btn{min-width:72px}
+.ar-tr.on .btn.tg{background:rgb(var(--tc-rgb));border-color:rgb(var(--tc-rgb));color:#111;font-weight:700}
+.ar-ctl{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:15px;color:var(--muted)}
+.ar-ctl b{color:var(--ink);font:700 18px var(--display)}
+.ar-bar{font:700 15px var(--display);color:var(--accent)}
+
+/* ---------- 創作範本卡 .songcard ---------- */
+.sc{display:grid;gap:10px}
+.sc-grid{display:grid;grid-template-columns:repeat(var(--cols,2),minmax(0,1fr));gap:10px 14px}
+.sc label{display:grid;gap:4px;font-size:14px;color:var(--muted);font-weight:500}
+.sc label.wide{grid-column:1/-1}
+.sc input,.sc textarea,.sc select{width:100%;background:var(--card-2);border:1px solid var(--line-2);border-radius:10px;color:var(--ink);font:500 17px/1.55 "Noto Sans TC",sans-serif;padding:8px 10px}
+.sc textarea{min-height:74px;resize:vertical}
+.sc input:focus,.sc textarea:focus,.sc select:focus{outline:2px solid rgba(var(--accent-rgb),.55);border-color:transparent}
+.sc-checks{display:flex;flex-wrap:wrap;gap:6px}
+.sc-checks span{border:1px solid var(--line-2);border-radius:999px;padding:3px 11px;font-size:14.5px;color:var(--ink);cursor:pointer;background:var(--card)}
+.sc-checks span.on{background:var(--accent);border-color:var(--accent);color:#1d0510;font-weight:700}
+.sc-foot{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.sc-foot small{color:var(--faint);font-size:13.5px}
+.sc-note{font-size:13.5px;color:var(--faint);margin:0}
+
+/* ---------- 素材庫 .notebook ---------- */
+.nb-tabs{display:flex;gap:6px;margin-bottom:8px}
+.nb-tabs .btn.on{background:var(--accent);border-color:var(--accent);color:#1d0510;font-weight:700}
+.nb-add{display:flex;gap:8px}
+.nb-add input{flex:1;background:var(--card-2);border:1px solid var(--line-2);border-radius:10px;color:var(--ink);font:500 18px "Noto Sans TC",sans-serif;padding:8px 12px}
+.nb-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;min-height:44px;align-content:flex-start}
+.nb-list span{background:var(--card);border:1px solid var(--line-2);border-radius:999px;padding:4px 12px;font-size:16px;cursor:pointer}
+.nb-list span:hover{border-color:#e8412b;text-decoration:line-through}
+
+/* ---------- 主題骰子 .themedice ---------- */
+.td{display:grid;gap:12px}
+.td-reels{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.td-reel{background:var(--card);border:1px solid var(--line-2);border-radius:var(--r);padding:14px;text-align:center}
+.td-reel small{display:block;font-size:14px;color:var(--muted);margin-bottom:6px}
+.td-reel b{font-size:28px;display:block;min-height:40px}
+.td-reel.spin b{opacity:.5;filter:blur(1px)}
+.td-out{font-size:19px;line-height:1.6;min-height:60px}
+.td-out b{color:var(--accent)}
+
+/* ---------- 作詞家／作曲家卡 ---------- */
+.people{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.people button{border:1px solid var(--line-2);background:var(--card);color:var(--ink);border-radius:var(--r-sm);padding:10px 6px;font:700 17px "Noto Sans TC",sans-serif;cursor:pointer;text-align:center}
+.people button small{display:block;font:500 12px var(--display);color:var(--muted);margin-top:2px}
+.people button.on{background:var(--accent);border-color:var(--accent);color:#1d0510}
+.people button.on small{color:#1d0510}
+.person-info{margin-top:12px;min-height:150px}
+.person-info h3{font-size:26px;margin:0 0 2px}
+.person-info .pi-en{font:500 15px var(--display);color:var(--muted);margin-bottom:8px}
+.person-info p{font-size:18px;line-height:1.65}
+.person-info .works{color:var(--accent);font-weight:700}
+
+/* 修辭卡 */
+.rhet{display:grid;grid-template-columns:repeat(var(--cols,3),minmax(0,1fr));gap:12px}
+.rhet .card{padding:16px 18px}
+.rhet h3{font-size:21px;margin:0 0 4px;color:var(--accent)}
+.rhet p{font-size:15.5px!important;line-height:1.55!important;color:var(--muted)}
+.rhet blockquote{margin:8px 0 0;padding:6px 0 6px 12px;border-left:3px solid var(--line-2);font-size:16.5px;line-height:1.6;color:var(--ink)}
+.rhet blockquote cite{display:block;font-style:normal;font-size:13px;color:var(--faint);margin-top:2px}
+
+/* 韻文比較表、八大製程、混音層次 */
+.slide table.tight th,.slide table.tight td{font-size:17px;padding:8px 10px}
+.prod{display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
+.prod div{background:var(--card);border:1px solid var(--line);border-radius:var(--r-sm);padding:12px 8px;text-align:center}
+.prod b{display:block;font:700 26px var(--display);color:var(--accent)}
+.prod span{font-size:15px;line-height:1.4;display:block;margin-top:4px}
+.layers{display:grid;gap:6px}
+.layers div{display:grid;grid-template-columns:170px 1fr;gap:12px;align-items:center;background:var(--card);border-left:6px solid var(--lc);border-radius:var(--r-sm);padding:10px 14px}
+.layers b{font-size:18px}.layers b small{display:block;font:500 13px var(--display);color:var(--muted)}
+.layers span{font-size:16.5px;color:var(--muted);line-height:1.5}
+
+/* 投影片上的 YouTube 卡片 */
+.slide .song-grid{gap:14px}
+.slide .song-grid.c2{grid-template-columns:repeat(2,minmax(0,1fr));max-width:900px}
+.slide .song-grid.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.slide .song-grid.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.slide .song-grid .ytp-meta b{font-size:14px}
+.slide .song-grid .ytp-bar{gap:6px;padding:8px 10px}
+.slide .song-grid .ytp-btn{width:34px;height:34px}
+.slide .song-grid .ytp-time{display:none}
+.slide .song-grid .ytp-meta span{white-space:normal;line-height:1.35}
+.yt-more{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px;color:var(--muted);font-size:16px!important}
+.slide .reveal p,.slide .reveal li{font-size:18px;line-height:1.6}
+.slide .compact li{font-size:19px}
+
+/* 講義：作品範本卡、表格 */
+.md .hb-card{margin:14px 0 18px;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
+
+/* ---------- 手機 ---------- */
+@media (max-width:900px),(orientation:portrait) and (max-width:1100px){
+  .slide .song-grid.c2,.slide .song-grid.c3,.slide .song-grid.c4{grid-template-columns:1fr;max-width:none}
+  .slide .song-grid .ytp-time{display:inline}
+  .slide .grid2[style]{grid-template-columns:1fr!important}
+  .slide .steps[style]{grid-template-columns:1fr 1fr!important}
+  .rh{grid-template-columns:1fr}
+  .rh textarea{font-size:17px;min-height:180px}
+  .rhyme-groups{grid-template-columns:1fr 1fr}
+  .rhet{grid-template-columns:1fr}
+  .people{grid-template-columns:repeat(3,1fr)}
+  .prod{grid-template-columns:repeat(4,1fr)}
+  .layers div{grid-template-columns:1fr}
+  .ar-tr{grid-template-columns:1fr auto;gap:8px}
+  .ar-tr .ar-steps{grid-column:1/-1;order:3}
+  .ar-tr input[type=range]{display:none}
+  .sc-grid{grid-template-columns:1fr}
+  .td-reels{grid-template-columns:1fr}
+  .td-reel b{font-size:22px}
+  .form-row{flex-wrap:wrap}
+  .form-row>div{flex:1 1 30%!important}
+  .sec-card dl{grid-template-columns:1fr}
+  .cp-bars{grid-template-columns:repeat(2,1fr)}
+  .cp-bars b{font-size:24px}
+  .mo-grid .cell{height:22px}
+  .mo-num{font-size:20px}
+}
+@media (max-width:480px){
+  .people{grid-template-columns:repeat(2,1fr)}
+  .prod{grid-template-columns:repeat(2,1fr)}
+  .rhyme-groups{grid-template-columns:1fr}
+  .slide .steps[style]{grid-template-columns:1fr!important}
+}
