@@ -122,3 +122,5 @@
 /* 方框上下各留 10%：圖名與特效開關在方框上方同一列，圖說在方框下方，左右皆對齊方框邊線 */
 .hub .voice-art .art-label{left:0;top:10px}
 .hub .voice-art .art-caption{right:0;top:calc(90% + 10px);bottom:auto}
+/* 課程簡述：以逗號為界的片語不從中間斷開，手機換行落在語意停頓 */
+.hub .lesson .q .ph{display:inline-block}
