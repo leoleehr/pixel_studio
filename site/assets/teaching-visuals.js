@@ -10,7 +10,12 @@
   dialog.setAttribute('aria-labelledby', 'teaching-dialog-title');
   dialog.innerHTML = '<div class="teaching-dialog-top"><h2 id="teaching-dialog-title"></h2><button type="button" class="teaching-close" aria-label="關閉圖解">關閉 ×</button></div><div class="teaching-dialog-body"></div>';
   document.body.appendChild(dialog);
-  function url(src) { return new URL(src, base).href; }
+  function url(src) {
+    var resolved = new URL(src, base);
+    var revision = new URL(script.src).searchParams.get('v');
+    if (revision) resolved.searchParams.set('v', revision);
+    return resolved.href;
+  }
   function figure(item) {
     var f = document.createElement('figure'), im = document.createElement('img'), cap = document.createElement('figcaption');
     im.src = url(item.src); im.alt = item.caption; im.loading = 'eager';
@@ -23,6 +28,7 @@
     var body = dialog.querySelector('.teaching-dialog-body'); body.replaceChildren();
     groups.forEach(function (g) {
       var section = document.createElement('section'), title = document.createElement('h3'), grid = document.createElement('div');
+      section.dataset.demoGroup = g.id;
       title.textContent = g.title; grid.className = 'teaching-photo-grid';
       g.images.forEach(function (im) { grid.appendChild(figure(im)); });
       if (groups.length > 1) section.appendChild(title);

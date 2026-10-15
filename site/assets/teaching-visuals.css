@@ -31,3 +31,8 @@
 .sizes img{height:var(--h);width:auto;object-fit:contain;max-width:100%;border-radius:6px}
 .demo-inline{margin:0;text-align:center}.demo-inline img{display:block;width:100%;height:auto;max-height:300px;object-fit:contain;border-radius:8px;background:#141615}.demo-inline figcaption{font-size:15px;line-height:1.5;margin-top:8px}
 .demo-inline-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}.demo-inline-duo figure{margin:0;text-align:center}.demo-inline-duo img{display:block;width:100%;height:260px;object-fit:contain;border-radius:8px;background:#141615}.demo-inline-duo figcaption{font-size:15px;line-height:1.5;margin-top:8px}
+
+/* The anatomy labels need the full gallery width for classroom projection. */
+[data-demo-group="v01"] .teaching-photo-grid{grid-template-columns:1fr}
+[data-demo-group="v01"] .teaching-photo-grid img{height:auto;max-height:none}
+@media print{[data-demo-group="v01"] .teaching-photo-grid{grid-template-columns:1fr}[data-demo-group="v01"] .teaching-photo-grid img{height:auto;max-height:160mm}}
