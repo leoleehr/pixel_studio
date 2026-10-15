@@ -1017,7 +1017,7 @@
     m.appendChild(grid); m.appendChild(res); m.appendChild(foot);
     function winner(r) { var mx = Math.max.apply(null, st[r]); return mx ? st[r].indexOf(mx) : -1; }
     function draw() {
-      $$('.dm-cell', grid).forEach(function (b) { var r = +b.getAttribute('data-r'), c = +b.getAttribute('data-c'); b.textContent = st[r][c] || ''; b.classList.toggle('win', winner(r) === c); });
+      $$('.dm-cell', grid).forEach(function (b) { var r = +b.getAttribute('data-r'), c = +b.getAttribute('data-c'); b.textContent = st[r][c] || ''; b.setAttribute('aria-label', secs[r] + ' ' + lv[c] + '，' + (st[r][c] || 0) + ' 票'); b.classList.toggle('win', winner(r) === c); });
       var parts = secs.map(function (s, r) { var w = winner(r); return w < 0 ? null : s + ' ' + lv[w]; }).filter(Boolean);
       res.textContent = parts.length ? '全班共識：' + parts.join(' → ') : '點格子計票（右鍵或長按減一），每段票數最多的力度就是全班共識';
     }
