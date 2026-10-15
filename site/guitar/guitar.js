@@ -358,7 +358,7 @@
     var s = '<svg class="gfig" viewBox="0 0 310 650" role="group" aria-label="真實木吉他正面構造圖，共 16 個部位">';
     s += '<image href="' + GUITAR_IMAGE + 'acoustic-front.branded.svg?v=20261015revision16" x="0" y="0" width="310" height="650" preserveAspectRatio="xMidYMid slice"/>';
     PARTS.forEach(function (p, i) {
-      s += '<g class="hot" data-part="' + i + '" tabindex="0" role="button" aria-label="' + p.zh + '">' +
+      s += '<g class="hot" data-part="' + i + '" tabindex="0" role="button" aria-label="' + (i + 1) + ' ' + p.zh + '">' +
         (p.t ? '<line x1="' + p.x + '" y1="' + p.y + '" x2="' + p.t[0] + '" y2="' + p.t[1] + '" class="lead"/><circle cx="' + p.t[0] + '" cy="' + p.t[1] + '" r="2.6" class="dot"/>' : '') +
         '<circle cx="' + p.x + '" cy="' + p.y + '" r="12"/><text x="' + p.x + '" y="' + (p.y + 4.5) + '" class="n">' + (i + 1) + '</text></g>';
     });

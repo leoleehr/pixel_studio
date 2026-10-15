@@ -260,5 +260,5 @@ h1,h2,h3,h4{text-wrap:balance}p,li,dd,figcaption,blockquote,.sv-item small,.desc
 /* 講義與問卷由 JS 填入內容：先保留目錄列高度與主要區塊高度，避免版面跳動 */
 .toc:has(.wrap:empty){min-height:60px;box-sizing:border-box}main#content,main#app{min-height:100vh}
 /* 講義：畫面外的章節延後計算版面 */
-.hb-sec{content-visibility:auto;contain-intrinsic-size:auto 2400px}
+.hb-sec{content-visibility:auto;contain-intrinsic-size:auto var(--ch-d,2400px)}@media(max-width:860px){.hb-sec{contain-intrinsic-size:auto var(--ch-m,4800px)}}
 .hb-deep .hb-sec{content-visibility:visible}
