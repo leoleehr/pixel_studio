@@ -33,34 +33,37 @@ def build():
                 root = ET.fromstring(original)
                 vb = root.get('viewBox','').split()
                 w,h = map(float,vb[2:]) if vb else (float(root.get('width')),float(root.get('height')))
-                # Existing diagram captions stay clear: reserve a footer inside the new SVG.
-                extra = w * .095; out_h = h + extra
+                # Keep the original canvas; use the empty lower-right area beside captions.
+                out_h = h
                 content = re.sub(r'<\?xml[^>]*\?>', '', original.decode('utf-8')).strip()
-                color='white';side='right';x=w*.70;y=h+extra*.05;lw=w*.28
-                plate=f'<rect y="{h}" width="{w}" height="{extra}" fill="#111315"/>'
+                opacity=.60;color='white';side='right';lw=w*.15;x=w-lw-w*.02;y=h-lw*.3-w*.012
             else:
                 im=Image.open(p).convert('RGB');w,h=im.size;out_h=h
-                lw=w*.28; margin=w*.025;lh=lw*.3
-                # Compare corner texture so hands, instruments and faces are less likely covered.
+                lw=w*.20; margin=w*.025;lh=lw*.3
+                # Prefer quiet background in any corner, penalizing edges and skin.
                 choices=[]
-                for side in ('right','left'):
-                    x=w-lw-margin if side=='right' else margin;y=h-lh-margin
-                    crop=im.crop((int(x),int(y),int(x+lw),int(y+lh))).convert('L')
-                    complexity=ImageStat.Stat(crop.filter(ImageFilter.FIND_EDGES)).mean[0]
-                    brightness=ImageStat.Stat(crop).mean[0]
-                    choices.append((complexity,side,x,y,brightness))
+                for side in ('right','left','top-right','top-left'):
+                    x=w-lw-margin if side.endswith('right') else margin
+                    y=margin if side.startswith('top-') else h-lh-margin
+                    crop=im.crop((int(x),int(y),int(x+lw),int(y+lh)))
+                    gray=crop.convert('L');stats=ImageStat.Stat(gray)
+                    complexity=ImageStat.Stat(gray.filter(ImageFilter.FIND_EDGES)).mean[0]
+                    pixels=list(crop.resize((48,24)).getdata())
+                    skin=sum(r>g*1.08 and g>b*1.06 and r>80 for r,g,b in pixels)/len(pixels)
+                    score=complexity+stats.stddev[0]*.3+skin*18+(1 if side.startswith('top-') else 0)
+                    choices.append((score,side,x,y,stats.mean[0]))
                 complexity,side,x,y,brightness=min(choices,key=lambda c:c[0])
-                color='black' if brightness>160 else 'white'
-                plate=''
-                if complexity>8:
-                    pad=w*.009;fill='#ffffff' if color=='black' else '#111315'
-                    plate=f'<rect x="{x-pad}" y="{y-pad}" width="{lw+pad*2}" height="{lh+pad*2}" rx="{pad*.5}" fill="{fill}"/>'
+                color='black' if brightness>145 else 'white'
+                opacity=.50 if color=='black' else .65
+                # User requires transparent logos only: never add plates, borders or canvas.
+                if p.stem in ('breath-wall-tissue-white','breath-wall-white'):
+                    side='right';x=w-lw-margin;color='black';opacity=.50
                 content=f'<image width="{w}" height="{h}" href="{uri(original,"image/jpeg" if p.suffix==".jpg" else "image/webp")}"/>'
-            logo=f'<image x="{x}" y="{y}" width="{lw}" height="{lw*.3}" href="{logos[color]}"/>'
+            logo=f'<image x="{x}" y="{y}" width="{lw}" height="{lw*.3}" opacity="{opacity}" href="{logos[color]}"/>'
             out=p.with_name(p.stem+'.branded.svg')
-            out.write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{out_h}" viewBox="0 0 {w} {out_h}">{content}{plate}{logo}</svg>\n',encoding='utf-8',newline='\n')
+            out.write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{out_h}" viewBox="0 0 {w} {out_h}">{content}{logo}</svg>\n',encoding='utf-8',newline='\n')
             mapping[p.name]=out.name
-            report.append({'source':p.relative_to(ROOT).as_posix(),'output':out.relative_to(ROOT).as_posix(),'corner':side,'logo':color})
+            report.append({'source':p.relative_to(ROOT).as_posix(),'output':out.relative_to(ROOT).as_posix(),'corner':side,'logo':color,'opacity':opacity,'width_fraction':round(lw/w,3),'transparent':True,'canvas_unchanged':True})
     # Only references change, never the original artwork generators.
     files=list((ROOT/'site').rglob('*'))+list((ROOT/'tools/decks').rglob('*.html'))+list((ROOT/'tools/piano').rglob('*.html'))+list((ROOT/'tools/songwriting').rglob('*.html'))+[ROOT/'tools/teaching_visuals_manifest.json']
     for p in files:
