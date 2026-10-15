@@ -12,7 +12,7 @@
 <meta name="theme-color" content="#101210">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&family=Space+Grotesk:wght@500..700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<script>/* 第一格畫面之後才載入網路字型，首屏先用系統字型，不讓 1MB 中文字型拖慢首次繪製 */requestAnimationFrame(function(){requestAnimationFrame(function(){var l=document.createElement("link");l.rel="stylesheet";l.href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&family=Space+Grotesk:wght@500..700&display=swap";document.head.appendChild(l)})})</script>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&family=Space+Grotesk:wght@500..700&display=swap"></noscript>
 <link rel="stylesheet" href="/assets/site.css?v=20261016c">
 <link rel="stylesheet" href="/assets/responsive.css?v=20261015b">
