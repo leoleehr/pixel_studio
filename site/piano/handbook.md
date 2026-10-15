@@ -144,22 +144,22 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="p01"><h3>坐姿與手形｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/piano-posture-white.webp" alt="側面：肩膀放鬆，手肘與琴鍵接近同一平面" loading="eager"><figcaption>側面：肩膀放鬆，手肘與琴鍵接近同一平面</figcaption></figure>
-<figure><img src="../assets/teaching/piano-hand-curve.webp" alt="近拍：手指成弧、手腕自然" loading="eager"><figcaption>近拍：手指成弧、手腕自然</figcaption></figure>
+<figure><img src="../assets/teaching/piano-posture-white.webp?v=20261015faces2" alt="側面：肩膀放鬆，手肘與琴鍵接近同一平面" loading="eager"><figcaption>側面：肩膀放鬆，手肘與琴鍵接近同一平面</figcaption></figure>
+<figure><img src="../assets/teaching/piano-hand-curve.webp?v=20261015faces2" alt="近拍：手指成弧、手腕自然" loading="eager"><figcaption>近拍：手指成弧、手腕自然</figcaption></figure>
 </div>
 </div>
 
 <div class="teaching-book" data-demo-group="p02"><h3>踏板與腳部操作｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/piano-pedals.webp" alt="三個踏板的實際位置" loading="eager"><figcaption>三個踏板的實際位置</figcaption></figure>
-<figure><img src="../assets/teaching/piano-pedal-down.webp" alt="腳跟留在地面，以前腳掌踩下延音踏板" loading="eager"><figcaption>腳跟留在地面，以前腳掌踩下延音踏板</figcaption></figure>
-<figure><img src="../assets/teaching/piano-pedal-up.webp" alt="前腳掌放開，腳跟繼續支撐" loading="eager"><figcaption>前腳掌放開，腳跟繼續支撐</figcaption></figure>
+<figure><img src="../assets/teaching/piano-pedals.webp?v=20261015faces2" alt="三個踏板的實際位置" loading="eager"><figcaption>三個踏板的實際位置</figcaption></figure>
+<figure><img src="../assets/teaching/piano-pedal-down.webp?v=20261015faces2" alt="腳跟留在地面，以前腳掌踩下延音踏板" loading="eager"><figcaption>腳跟留在地面，以前腳掌踩下延音踏板</figcaption></figure>
+<figure><img src="../assets/teaching/piano-pedal-up.webp?v=20261015faces2" alt="前腳掌放開，腳跟繼續支撐" loading="eager"><figcaption>前腳掌放開，腳跟繼續支撐</figcaption></figure>
 </div>
 <p class="teaching-note">平台鋼琴與直立鋼琴的中踏板功能可能不同，依琴款確認。</p>
 </div>
 
 <div class="teaching-book" data-demo-group="p03"><h3>五指位置與指位譜｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/piano-five-fingers.webp" alt="五根手指各對應一個琴鍵" loading="eager"><figcaption>五根手指各對應一個琴鍵</figcaption></figure>
-<figure><img src="../assets/teaching/../piano/hands-keyboard.jpg" alt="由上方觀察左右手位置" loading="eager"><figcaption>由上方觀察左右手位置</figcaption></figure>
+<figure><img src="../assets/teaching/piano-five-fingers.webp?v=20261015faces2" alt="五根手指各對應一個琴鍵" loading="eager"><figcaption>五根手指各對應一個琴鍵</figcaption></figure>
+<figure><img src="../assets/teaching/../piano/hands-keyboard.jpg?v=20261015faces2" alt="由上方觀察左右手位置" loading="eager"><figcaption>由上方觀察左右手位置</figcaption></figure>
 </div>
 <p class="teaching-note">指法編號從拇指 1 到小指 5；音高與手位以鍵盤圖核對。</p>
 </div>
@@ -325,11 +325,11 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="p04"><h3>穿指與跨指｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/piano-scale-motion.svg" alt="穿指與跨指的確切音名、手指編號與移動路徑" loading="eager"><figcaption>穿指與跨指的確切音名、手指編號與移動路徑</figcaption></figure>
-<figure><img src="../assets/teaching/piano-under-before.webp" alt="近拍觀察手指與琴鍵的接觸" loading="eager"><figcaption>近拍觀察手指與琴鍵的接觸</figcaption></figure>
-<figure><img src="../assets/teaching/piano-under-after.webp" alt="手位移動時保持手腕自然" loading="eager"><figcaption>手位移動時保持手腕自然</figcaption></figure>
-<figure><img src="../assets/teaching/piano-cross-before.webp" alt="其他手指自然抬起，準備下一個音" loading="eager"><figcaption>其他手指自然抬起，準備下一個音</figcaption></figure>
-<figure><img src="../assets/teaching/piano-cross-after.webp" alt="手掌跟著指位平移" loading="eager"><figcaption>手掌跟著指位平移</figcaption></figure>
+<figure><img src="../assets/teaching/piano-scale-motion.svg?v=20261015faces2" alt="穿指與跨指的確切音名、手指編號與移動路徑" loading="eager"><figcaption>穿指與跨指的確切音名、手指編號與移動路徑</figcaption></figure>
+<figure><img src="../assets/teaching/piano-under-before.webp?v=20261015faces2" alt="近拍觀察手指與琴鍵的接觸" loading="eager"><figcaption>近拍觀察手指與琴鍵的接觸</figcaption></figure>
+<figure><img src="../assets/teaching/piano-under-after.webp?v=20261015faces2" alt="手位移動時保持手腕自然" loading="eager"><figcaption>手位移動時保持手腕自然</figcaption></figure>
+<figure><img src="../assets/teaching/piano-cross-before.webp?v=20261015faces2" alt="其他手指自然抬起，準備下一個音" loading="eager"><figcaption>其他手指自然抬起，準備下一個音</figcaption></figure>
+<figure><img src="../assets/teaching/piano-cross-after.webp?v=20261015faces2" alt="手掌跟著指位平移" loading="eager"><figcaption>手掌跟著指位平移</figcaption></figure>
 </div>
 </div>
 
@@ -574,8 +574,8 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="p03"><h3>五指位置與指位譜｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/piano-five-fingers.webp" alt="五根手指各對應一個琴鍵" loading="eager"><figcaption>五根手指各對應一個琴鍵</figcaption></figure>
-<figure><img src="../assets/teaching/../piano/hands-keyboard.jpg" alt="由上方觀察左右手位置" loading="eager"><figcaption>由上方觀察左右手位置</figcaption></figure>
+<figure><img src="../assets/teaching/piano-five-fingers.webp?v=20261015faces2" alt="五根手指各對應一個琴鍵" loading="eager"><figcaption>五根手指各對應一個琴鍵</figcaption></figure>
+<figure><img src="../assets/teaching/../piano/hands-keyboard.jpg?v=20261015faces2" alt="由上方觀察左右手位置" loading="eager"><figcaption>由上方觀察左右手位置</figcaption></figure>
 </div>
 <p class="teaching-note">指法編號從拇指 1 到小指 5；音高與手位以鍵盤圖核對。</p>
 </div>
@@ -653,8 +653,8 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="p05"><h3>左右手交接｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/piano-relay-left.webp" alt="左手完成低音區，右手預先準備" loading="eager"><figcaption>左手完成低音區，右手預先準備</figcaption></figure>
-<figure><img src="../assets/teaching/piano-relay-right.webp" alt="右手接續高音區，保持律動連續" loading="eager"><figcaption>右手接續高音區，保持律動連續</figcaption></figure>
+<figure><img src="../assets/teaching/piano-relay-left.webp?v=20261015faces2" alt="左手完成低音區，右手預先準備" loading="eager"><figcaption>左手完成低音區，右手預先準備</figcaption></figure>
+<figure><img src="../assets/teaching/piano-relay-right.webp?v=20261015faces2" alt="右手接續高音區，保持律動連續" loading="eager"><figcaption>右手接續高音區，保持律動連續</figcaption></figure>
 </div>
 </div>
 
@@ -939,9 +939,9 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="p06"><h3>十度音與雙手十六度｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/piano-tenth-motion.svg" alt="根音、五音與十度音依序彈奏的手位路徑" loading="eager"><figcaption>根音、五音與十度音依序彈奏的手位路徑</figcaption></figure>
-<figure><img src="../assets/teaching/piano-relay-left.webp" alt="由上方觀察低音區與高音區的左右手分工" loading="eager"><figcaption>由上方觀察低音區與高音區的左右手分工</figcaption></figure>
-<figure><img src="../assets/teaching/piano-relay-right.webp" alt="雙手交接時保持自然弧度與連續律動" loading="eager"><figcaption>雙手交接時保持自然弧度與連續律動</figcaption></figure>
+<figure><img src="../assets/teaching/piano-tenth-motion.svg?v=20261015faces2" alt="根音、五音與十度音依序彈奏的手位路徑" loading="eager"><figcaption>根音、五音與十度音依序彈奏的手位路徑</figcaption></figure>
+<figure><img src="../assets/teaching/piano-relay-left.webp?v=20261015faces2" alt="由上方觀察低音區與高音區的左右手分工" loading="eager"><figcaption>由上方觀察低音區與高音區的左右手分工</figcaption></figure>
+<figure><img src="../assets/teaching/piano-relay-right.webp?v=20261015faces2" alt="雙手交接時保持自然弧度與連續律動" loading="eager"><figcaption>雙手交接時保持自然弧度與連續律動</figcaption></figure>
 </div>
 <p class="teaching-note">分散彈奏時以手臂平移協助，不必同時張開手掌壓住十度。</p>
 </div>

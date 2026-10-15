@@ -6,7 +6,7 @@ import pathlib
 import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-VERSION = '20261015whiteprint'
+VERSION = '20261015faces2'
 
 def manifest():
     return json.loads((ROOT / 'tools/teaching_visuals_manifest.json').read_text(encoding='utf-8'))
@@ -72,7 +72,7 @@ def book_block(groups):
     for g in groups:
         lines.append('<div class="teaching-book" data-demo-group="' + g['id'] + '"><h3>' + html.escape(g['title']) + '｜圖解示範</h3><div class="teaching-photo-grid">')
         for im in g['images']:
-            src = '../assets/teaching/' + im['src']
+            src = '../assets/teaching/' + im['src'] + '?v=' + VERSION
             cap = html.escape(im['caption'])
             lines.append(f'<figure><img src="{src}" alt="{cap}" loading="eager"><figcaption>{cap}</figcaption></figure>')
         lines.append('</div>')
@@ -96,7 +96,7 @@ def enrich_markdown(md, course):
         groups = [g for g in data if any(t.get('course', g['course']) == course and t['lesson'] == num for t in g['targets'])]
         if groups:
             pieces[i] = part.rstrip() + '\n\n' + book_block(groups)
-    return ''.join(pieces)
+    return ''.join(pieces).rstrip() + '\n'
 
 def update_books():
     for course in ['guitar', 'piano', 'vocal']:
