@@ -107,6 +107,7 @@
     var p = profile();
     b.innerHTML = ICON + '<span>' + (complete(p) ? esc(p.name) + '<small>' + esc(p.dept) + '</small>' : '填寫學員資料') + '</span>';
     b.classList.toggle('empty', !complete(p));
+    b.setAttribute('aria-label', complete(p) ? '學員資料 ' + p.name + ' ' + p.dept : '填寫學員資料');
   }
   function refreshChips() { chips.forEach(paint); }
 

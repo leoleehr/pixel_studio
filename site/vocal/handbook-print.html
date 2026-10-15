@@ -124,7 +124,7 @@ a{color:inherit;text-decoration:none}
 <link rel="stylesheet" href="../assets/teaching-visuals.css?v=20261015faces2">
 </head>
 <body>
-<div class="toolbar"><button type="button" onclick="window.print()">列印／另存 Pdf</button><a class="ghost" href="vocal-class-handbook.pdf" download="流行歌唱班_講義與教案.pdf">下載 Pdf</a><a class="ghost" href="handbook.html">回網頁版</a></div>
+<div class="toolbar"><button type="button" onclick="window.print()">列印／另存 PDF</button><a class="ghost" href="vocal-class-handbook.pdf" download="流行歌唱班_講義與教案.pdf">下載 PDF</a><a class="ghost" href="handbook.html">回網頁版</a></div>
 
 <div class="sheet cover">
   <div class="brandblock"><img class="logo-new" src="../assets/brand/pixel-studio-primary-dark.svg" alt="Pixel Studio"><div class="cn">畫素音樂工作坊</div></div>
@@ -143,7 +143,7 @@ a{color:inherit;text-decoration:none}
   <h2>目錄</h2>
   <p class="lead">六堂課、每堂 120 分鐘：課前問卷、起承轉合的課程綱要、擴充講義、課堂互動與課後練習。</p>
   <ol id="toc"></ol>
-  <p class="note">歌曲影片：每一堂開頭列有本堂歌曲，掃描 Qr Code 或點擊連結即可在 Youtube 觀看。互動投影片請至課程網站開啟。</p>
+  <p class="note">歌曲影片：每一堂開頭列有本堂歌曲，掃描 QR Code 或點擊連結即可在 YouTube 觀看。互動投影片請至課程網站開啟。</p>
 </div>
 
 <main class="sheet md" id="content"></main>
@@ -184,7 +184,7 @@ a{color:inherit;text-decoration:none}
         if (list) {
           li.lastChild.insertAdjacentHTML('beforeend', '<div class="s">' + list.join('、') + '</div>');
           var box = document.createElement('div'); box.className = 'songs';
-          box.innerHTML = '<div class="h">本堂歌曲<span>掃描 Qr Code 或點擊連結，在 Youtube 觀看</span></div><div class="g"></div>';
+          box.innerHTML = '<div class="h">本堂歌曲<span>掃描 QR Code 或點擊連結，在 YouTube 觀看</span></div><div class="g"></div>';
           list.forEach(function (name) {
             var sg = PIXEL_SONGS[name], url = 'https://youtu.be/' + sg.id, el = document.createElement('div'); el.className = 'song';
             el.innerHTML = '<div class="qr"></div><div><b>' + name + '</b><span>' + sg.artist + '・' + sg.kind + '</span><a href="' + url + '">youtu.be/' + sg.id + '</a></div>';

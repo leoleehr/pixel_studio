@@ -23,7 +23,7 @@ TPL = '''<!doctype html><meta charset="utf-8"><style>*{box-sizing:border-box}htm
 .slogan b{font-size:26px;font-weight:400}.slogan span{font-size:21px;letter-spacing:2px}
 .c{%s}</style>
 <div class="meta"><span class="c">%s</span><span class="c">Pixel Studio · Since 2008</span></div>
-<img class="logo" src="data:image/svg+xml;base64,%s"><div class="slogan"><b>We Perform The Pixel Of Music</b><span class="c">%s</span></div>'''
+<img class="logo" src="data:image/svg+xml;base64,%s"><div class="slogan"><b>We Perform the Pixel of Music</b><span class="c">%s</span></div>'''
 
 for out, label, line, color in ITEMS:
     style = 'color:%s' % color if color else 'background:%s;-webkit-background-clip:text;background-clip:text;color:transparent' % SPECTRUM

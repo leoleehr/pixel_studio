@@ -251,3 +251,6 @@ footer{margin-top:24px;padding:28px 0 40px;color:var(--faint);font-size:13px;tex
   .sheet-open .sheet-scrim{opacity:1;pointer-events:auto}
   .sheet-open .sheet{transform:none}
 }
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+/* 中文排版：標題平衡斷行，內文避免最後一行只剩一個字 */
+h1,h2,h3,h4{text-wrap:balance}p,li,dd,figcaption,blockquote,.sv-item small,.desc{text-wrap:pretty}.sv-item b{text-wrap:balance}
