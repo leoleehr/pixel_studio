@@ -17,26 +17,26 @@
     "corner": "right"
   },
   "bracing-x": {
-    "corner": "bottom-center",
+    "corner": "top-right",
     "logo": "black",
-    "x_fraction": 0.4,
-    "y_fraction": 0.89,
-    "width_fraction": 0.2,
+    "x_fraction": 0.59,
+    "y_fraction": 0.08,
+    "width_fraction": 0.18,
     "opacity": 0.55
   },
   "bracing-fan": {
-    "corner": "bottom-center",
+    "corner": "top-right",
     "logo": "black",
-    "x_fraction": 0.4,
-    "y_fraction": 0.89,
-    "width_fraction": 0.2,
+    "x_fraction": 0.59,
+    "y_fraction": 0.08,
+    "width_fraction": 0.18,
     "opacity": 0.55
   },
   "pick-grip": {
     "corner": "left",
     "logo": "black",
-    "x_fraction": 0.22,
-    "y_fraction": 0.87,
+    "x_fraction": 0.115,
+    "y_fraction": 0.9,
     "width_fraction": 0.18,
     "opacity": 0.55
   },
@@ -172,5 +172,38 @@
     "logo": "black",
     "width_fraction": 0.23,
     "opacity": 0.5
+  },
+  "soundboard-cutaway": {
+    "corner": "bottom-left",
+    "logo": "white",
+    "width_fraction": 0.18,
+    "opacity": 0.65,
+    "extra_logos": [
+      {
+        "x_fraction": 0.525,
+        "y_fraction": 0.86,
+        "width_fraction": 0.18,
+        "logo": "white",
+        "opacity": 0.65
+      }
+    ]
+  },
+  "harmonic-touch-v2": {
+    "corner": "top-right",
+    "logo": "white",
+    "width_fraction": 0.18,
+    "opacity": 0.55
+  },
+  "harmonic-release-v2": {
+    "corner": "top-right",
+    "logo": "white",
+    "width_fraction": 0.18,
+    "opacity": 0.55
+  },
+  "guitar-posture-white": {
+    "corner": "top-right",
+    "logo": "white",
+    "width_fraction": 0.16,
+    "opacity": 0.55
   }
 }

@@ -172,10 +172,10 @@
   {
     "source": "site/assets/guitar/soundboard-cutaway.jpg",
     "output": "site/assets/guitar/soundboard-cutaway.branded.svg",
-    "corner": "left",
+    "corner": "bottom-left",
     "logo": "white",
     "opacity": 0.65,
-    "width_fraction": 0.2,
+    "width_fraction": 0.18,
     "transparent": true,
     "canvas_unchanged": true
   },
@@ -352,20 +352,20 @@
   {
     "source": "site/assets/teaching/bracing-fan.webp",
     "output": "site/assets/teaching/bracing-fan.branded.svg",
-    "corner": "bottom-center",
+    "corner": "top-right",
     "logo": "black",
     "opacity": 0.55,
-    "width_fraction": 0.2,
+    "width_fraction": 0.18,
     "transparent": true,
     "canvas_unchanged": true
   },
   {
     "source": "site/assets/teaching/bracing-x.webp",
     "output": "site/assets/teaching/bracing-x.branded.svg",
-    "corner": "bottom-center",
+    "corner": "top-right",
     "logo": "black",
     "opacity": 0.55,
-    "width_fraction": 0.2,
+    "width_fraction": 0.18,
     "transparent": true,
     "canvas_unchanged": true
   },
@@ -612,10 +612,10 @@
   {
     "source": "site/assets/teaching/guitar-posture-white.webp",
     "output": "site/assets/teaching/guitar-posture-white.branded.svg",
-    "corner": "right",
+    "corner": "top-right",
     "logo": "white",
-    "opacity": 0.65,
-    "width_fraction": 0.2,
+    "opacity": 0.55,
+    "width_fraction": 0.16,
     "transparent": true,
     "canvas_unchanged": true
   },
@@ -650,12 +650,32 @@
     "canvas_unchanged": true
   },
   {
+    "source": "site/assets/teaching/harmonic-release-v2.svg",
+    "output": "site/assets/teaching/harmonic-release-v2.branded.svg",
+    "corner": "top-right",
+    "logo": "white",
+    "opacity": 0.55,
+    "width_fraction": 0.18,
+    "transparent": true,
+    "canvas_unchanged": true
+  },
+  {
     "source": "site/assets/teaching/harmonic-release.webp",
     "output": "site/assets/teaching/harmonic-release.branded.svg",
     "corner": "top-right",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
+    "transparent": true,
+    "canvas_unchanged": true
+  },
+  {
+    "source": "site/assets/teaching/harmonic-touch-v2.svg",
+    "output": "site/assets/teaching/harmonic-touch-v2.branded.svg",
+    "corner": "top-right",
+    "logo": "white",
+    "opacity": 0.55,
+    "width_fraction": 0.18,
     "transparent": true,
     "canvas_unchanged": true
   },
