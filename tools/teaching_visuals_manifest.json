@@ -227,8 +227,16 @@
         "caption": "D：食指 3 弦 2 格、中指 1 弦 2 格、無名指 2 弦 3 格"
       },
       {
-        "src": "../guitar/fretting-technique.branded.svg",
-        "caption": "由上而下：正面按弦、斜側面指尖與琴頸背面拇指支撐；各和弦格位見指位圖"
+        "src": "../guitar/fretting-front.branded.svg",
+        "caption": "正面：觀察指尖按弦與手指自然弧度"
+      },
+      {
+        "src": "../guitar/fretting-oblique.branded.svg",
+        "caption": "斜側面：觀察指尖與琴弦的接觸位置"
+      },
+      {
+        "src": "../guitar/fretting-thumb.branded.svg",
+        "caption": "背面：拇指自然支撐琴頸"
       }
     ],
     "note": "以投影片和弦圖核對弦與格位，照片用於觀察手指彎曲與手腕位置。"
@@ -338,8 +346,16 @@
         "caption": "食指橫按，其他手指保持彎曲"
       },
       {
-        "src": "../guitar/fretting-technique.branded.svg",
-        "caption": "由上而下：正面按弦、斜側面指尖與琴頸背面拇指支撐；各和弦格位見指位圖"
+        "src": "../guitar/fretting-front.branded.svg",
+        "caption": "正面：觀察指尖按弦與手指自然弧度"
+      },
+      {
+        "src": "../guitar/fretting-oblique.branded.svg",
+        "caption": "斜側面：觀察指尖與琴弦的接觸位置"
+      },
+      {
+        "src": "../guitar/fretting-thumb.branded.svg",
+        "caption": "背面：拇指自然支撐琴頸"
       }
     ],
     "note": "檢查各弦發聲，再調整食指角度與壓力。"
