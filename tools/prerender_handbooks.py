@@ -172,6 +172,47 @@ def build(lab):
     print(f'{lab}: {md_name} -> handbook.html ({len(body) // 1024} KB, {chips.count("<a ")} 章節)')
 
 
+def measure(labs):
+    """以 Chrome 量每章在手機（412px）與桌機（1440px）的實際高度，寫成 section 的佔位高度。
+
+    content-visibility 會用佔位高度代替畫面外章節；佔位越準，捲軸與跳轉越穩。
+    需要 Playwright；沒有時保留預設佔位（CSS 的 2400px）。
+    """
+    try:
+        import asyncio
+        from playwright.async_api import async_playwright
+    except ImportError:
+        print('略過章節量測：沒有 Playwright')
+        return
+
+    async def run():
+        async with async_playwright() as p:
+            b = await p.chromium.launch(channel='chrome')
+            for lab in labs:
+                page_path = ROOT / 'site' / lab / 'handbook.html'
+                hs = {}
+                for key, w in (('m', 412), ('d', 1440)):
+                    pg = await b.new_page(viewport={'width': w, 'height': 900})
+                    # 帶錨點開啟＝完整排版並立即掛上所有影片卡與譜例
+                    await pg.goto(page_path.as_uri() + '#overview', wait_until='load')
+                    await pg.wait_for_timeout(2500)
+                    hs[key] = await pg.evaluate("[...document.querySelectorAll('.hb-sec')].map(s=>Math.round(s.getBoundingClientRect().height))")
+                    await pg.close()
+                text = page_path.read_text(encoding='utf-8')
+                parts = text.split('<section class="hb-sec"')
+                assert len(parts) - 1 == len(hs['m']) == len(hs['d']), (lab, len(parts) - 1, len(hs['m']))
+                out = parts[0]
+                for i, rest in enumerate(parts[1:]):
+                    rest = re.sub(r'^ style="[^"]*"', '', rest)
+                    out += f'<section class="hb-sec" style="--ch-m:{hs["m"][i]}px;--ch-d:{hs["d"][i]}px"' + rest
+                page_path.write_text(out, encoding='utf-8', newline='\n')
+                print(f'{lab}: 章節高度 手機 {hs["m"]} 桌機 {hs["d"]}')
+            await b.close()
+    asyncio.run(run())
+
+
 if __name__ == '__main__':
-    for lab in (sys.argv[1:] or LABS):
+    labs = sys.argv[1:] or list(LABS)
+    for lab in labs:
         build(lab)
+    measure(labs)

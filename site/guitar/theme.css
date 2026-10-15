@@ -376,3 +376,5 @@
 .guitar-evolution-photos b{display:block;font-size:17px;margin-top:8px}
 .guitar-evolution-photos span{display:block;font:12px var(--display);color:var(--muted);margin-top:3px}
 @media(max-width:600px){.guitar-evolution-photos{grid-template-columns:repeat(3,minmax(0,1fr))}.family .card{grid-template-columns:96px 1fr}.family .guitar-photo{width:96px}}
+/* 年代標籤提亮，深色卡片上維持 4.5:1 */
+.era .yr{color:color-mix(in srgb,var(--c,var(--accent)) 62%,#fff)}

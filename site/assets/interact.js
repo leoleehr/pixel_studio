@@ -1347,8 +1347,8 @@
   /* ---------- 9. 錄音 ---------- */
   $$('.recorder').forEach(function (r) {
     var max = parseInt(r.getAttribute('data-max'), 10) || 30, label = r.getAttribute('data-name') || '錄音';
-    r.innerHTML = '<div class="rec-time">' + String(Math.floor(max / 60)).padStart(2, '0') + ':' + String(max % 60).padStart(2, '0') + '</div><div class="btn-row"><button type="button" class="btn primary go">● 開始錄音</button></div><audio controls></audio><a class="btn dl" download>下載檔案</a><p class="muted rec-note">可下載保存，或按「上傳給老師」送到課程的雲端資料夾。</p>';
-    var tm = r.querySelector('.rec-time'), go = r.querySelector('.go'), au = r.querySelector('audio'), dl = r.querySelector('.dl');
+    r.innerHTML = '<div class="rec-time">' + String(Math.floor(max / 60)).padStart(2, '0') + ':' + String(max % 60).padStart(2, '0') + '</div><div class="btn-row"><button type="button" class="btn primary go">● 開始錄音</button></div><audio controls></audio><a class="btn dl" download href="#">下載檔案</a><p class="muted rec-note">可下載保存，或按「上傳給老師」送到課程的雲端資料夾。</p>';
+    var tm = r.querySelector('.rec-time'), go = r.querySelector('.go'), au = r.querySelector('audio'), dl = r.querySelector('.dl'); dl.onclick = function (e) { e.preventDefault(); }; // 錄音完成前不下載
     var rec = null, chunks = [], left = max, tid = 0, usingMic = false, up = null;
     function fmt(s) { s = Math.max(0, s); return String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); }
     function stop() { if (rec && rec.state !== 'inactive') rec.stop(); clearInterval(tid); }
