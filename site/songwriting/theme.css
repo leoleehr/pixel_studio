@@ -243,3 +243,7 @@
   .rhyme-groups{grid-template-columns:1fr}
   .slide .steps[style]{grid-template-columns:1fr!important}
 }
+/* 投影片上的粉紅小字用提亮版（5.2:1）；亮色段落色塊改用深色字 */
+body .slide .c-pink,body .slide th,body .slide .tp-out tr.main td,body .slide .person-info .works{color:#ec6498}
+:is(.form-row>div,.fb-palette button,.fb-block):is(.f-chorus,.f-inter,.f-post,.f-tag,.f-outro){color:#141414}:is(.form-row>div,.fb-block) small{opacity:1}
+.sec-card dt{color:color-mix(in srgb,var(--sc) 62%,#fff)}

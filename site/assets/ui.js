@@ -47,3 +47,15 @@
 
   global.PixelUI = { ICON: ICON, labelTables: labelTables, sheet: sheet };
 })(window);
+
+/* 可捲動區塊（譜例、鍵盤、步驟列、程式碼）沒有可聚焦的內容時，讓鍵盤也能捲動 */
+(function () {
+  function mark() {
+    document.querySelectorAll('.ph-steps,.kb-box,.rh-lines,.md pre,.tab-scroll,.fb-track').forEach(function (e) {
+      if (e.hasAttribute('tabindex') || e.querySelector('a,button,input,select,textarea,[tabindex]')) return;
+      var cs = getComputedStyle(e);
+      if (/auto|scroll/.test(cs.overflowX + cs.overflowY)) e.tabIndex = 0;
+    });
+  }
+  addEventListener('load', function () { mark(); setTimeout(mark, 1500); }); addEventListener('resize', mark); addEventListener('hashchange', mark);
+})();
