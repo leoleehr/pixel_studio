@@ -50,7 +50,7 @@
 <nav class="toc" aria-label="講義目錄"><div class="wrap" id="toc"><a href="#overview" data-id="overview">課程總覽</a><a href="#chapter-1" data-id="chapter-1">第一章</a><a href="#chapter-2" data-id="chapter-2">第二章</a><a href="#chapter-3" data-id="chapter-3">第三章</a><a href="#chapter-4" data-id="chapter-4">第四章</a><a href="#chapter-5" data-id="chapter-5">第五章</a><a href="#chapter-6" data-id="chapter-6">第六章</a><a href="#chapter-7" data-id="chapter-7">第七章</a><a href="#chapter-8" data-id="chapter-8">第八章</a><a href="#chapter-9" data-id="chapter-9">第九章</a><a href="#chapter-10" data-id="chapter-10">第十章</a><a href="#chapter-11" data-id="chapter-11">第十一章</a><a href="#chapter-12" data-id="chapter-12">第十二章</a></div></nav>
 
 <aside class="wrap" aria-label="講義下載"><div class="dl-bar"><div><b>講義與教案 PDF</b><span>A4 排版・十二章・含曲例 QR Code，可列印或分享</span></div><a class="btn primary" href="guitar-handbook.pdf" download="民謠吉他十二章_講義與教案.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>下載 PDF</a></div></aside>
-<main class="wrap md" id="content" data-prerendered="c911e2f7e2">
+<main class="wrap md" id="content" data-prerendered="02b36967e7">
 <h1>Pixel Studio Guitar Lab｜民謠吉他十二章講義與教案</h1>
 <p>主講：畫素音樂工作坊 李奕勳｜教材來源：畫素音樂工作坊 2013 民謠吉他入門班講義（上、下冊）與社課簡報，2026 年重新整理、校訂。</p>
 <section class="hb-sec"><div class="lesson-head" id="overview" data-item="課程總覽"><div class="lh-no">Overview</div><h2>課程總覽</h2></div>
@@ -711,7 +711,7 @@
 
 <div class="teaching-book" data-demo-group="g03"><h3 id="chapter-1-25">尺寸與持琴比例｜圖解示範</h3><div class="teaching-photo-grid">
 <figure><img src="../assets/teaching/sizes.svg?v=20261015faces2" width="1000" height="700" alt="1/4、1/2、3/4 與全尺寸的相對比例" loading="lazy" decoding="async"><figcaption>1/4、1/2、3/4 與全尺寸的相對比例</figcaption></figure>
-<figure><img src="../assets/teaching/guitar-posture-white.webp?v=20261015contour4" width="1537" height="1023" alt="試抱時確認手臂能自然落在琴身上" loading="lazy" decoding="async"><figcaption>試抱時確認手臂能自然落在琴身上</figcaption></figure>
+<figure><img src="../assets/teaching/guitar-posture-white.webp?v=20261015breath5" width="1537" height="1023" alt="試抱時確認手臂能自然落在琴身上" loading="lazy" decoding="async"><figcaption>試抱時確認手臂能自然落在琴身上</figcaption></figure>
 </div>
 <p class="teaching-note">尺寸圖為相對比例示意；選琴仍以實際試抱與手臂活動空間為準。</p>
 </div>
@@ -3632,7 +3632,7 @@
 <script src="../assets/config.js?v=20261014h"></script>
 <script src="../assets/backend.js?v=20261016c"></script>
 <script src="../assets/ps-audio.js?v=20261014s"></script>
-<script src="guitar.js?v=20261015contour4"></script>
+<script src="guitar.js?v=20261015breath5"></script>
 <script>window.GUITAR_READY = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];</script>
 <script>
 (function () {
@@ -3641,7 +3641,7 @@
   var main = document.getElementById('content'), toc = document.getElementById('toc'), prog = document.getElementById('progress');
   var pre = main.hasAttribute('data-prerendered');
   function loadMarked() { return window.marked ? Promise.resolve() : new Promise(function (ok, no) { var s = document.createElement('script'); s.src = 'https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js'; s.onload = ok; s.onerror = no; document.head.appendChild(s); }); }
-  (pre ? (location.hash ? Promise.resolve(null) : new Promise(function (ok) { requestAnimationFrame(function () { setTimeout(function () { ok(null); }, 0); }); })) : loadMarked().then(function () { return fetch('handbook.md?v=20261015contour4'); }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }))
+  (pre ? (location.hash ? Promise.resolve(null) : new Promise(function (ok) { requestAnimationFrame(function () { setTimeout(function () { ok(null); }, 0); }); })) : loadMarked().then(function () { return fetch('handbook.md?v=20261015breath5'); }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }))
     .then(function (md) {
       if (md !== null) main.innerHTML = marked.parse(md, { gfm: true });
       main.querySelectorAll('img').forEach(function (i) { i.loading = 'lazy'; i.decoding = 'async'; });
