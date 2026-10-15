@@ -20,12 +20,9 @@ svg('airflow.svg','''<defs><linearGradient id="lung" x2="1" y2="1"><stop stop-co
 from refine_airflow import refine
 airflow_path = root / 'airflow.svg'
 airflow_path.write_text(refine(airflow_path.read_text(encoding='utf-8')), encoding='utf-8')
-# Sagittal oral construction and controlled tongue gestures.
-body=''
-for dx,label,path in [(0,'舌尖在前方','M95 352Q134 290 212 318Q276 342 358 334L350 380H100Z'),(500,'舌尖稍向後','M95 352Q125 270 173 258Q194 270 181 297Q234 329 358 334L350 380H100Z')]:
- body+=f'<g transform="translate({dx} 0)"><text class="label" x="70" y="84">{label}</text><path d="M80 190Q193 107 338 183Q399 240 394 338Q355 435 196 440Q103 426 73 370L59 342L77 320L59 295L77 271L69 246Z" fill="#dfb59b" stroke="#f3d6c1" stroke-width="3"/><path d="M94 247Q199 171 344 221L365 342Q244 375 101 351Z" fill="#4d302d"/><path d="M91 244Q222 180 344 221" fill="none" stroke="#f4cabe" stroke-width="17"/><rect x="90" y="249" width="23" height="32" rx="4" fill="#fff4df"/><rect x="92" y="325" width="23" height="24" rx="4" fill="#fff4df"/><path d="{path}" fill="#bf626d" stroke="#f1adb7" stroke-width="3"/><text class="small" x="105" y="483">牙齒、硬顎與舌位的相對關係</text></g>'
-body+='<text class="small muted" x="80" y="590">平舌／較後方構形的示意；舌尖輕移，不需用力過度捲曲。</text><text class="small muted" x="80" y="639">外部口型與舌位需配合聆聽、模仿與老師示範。</text>'
-svg('tongue.svg',body)
+# Realistic tongue artwork with separately typeset Chinese labels.
+from build_tongue_diagram import build as build_tongue
+build_tongue()
 body='<text class="label" x="40" y="45">相對尺寸比較</text>'
 for i,(name,scale) in enumerate([('1/4',.55),('1/2',.68),('3/4',.82),('Full',1)]):
  h=510*scale; w=h*.47; x=130+i*230-w/2; y=590-h

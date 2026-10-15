@@ -35,4 +35,5 @@
 /* The anatomy labels need the full gallery width for classroom projection. */
 [data-demo-group="v01"] .teaching-photo-grid{grid-template-columns:1fr}
 [data-demo-group="v01"] .teaching-photo-grid img{height:auto;max-height:none}
+[data-demo-group="v10"] .teaching-photo-grid img{height:auto;max-height:none}
 @media print{[data-demo-group="v01"] .teaching-photo-grid{grid-template-columns:1fr}[data-demo-group="v01"] .teaching-photo-grid img{height:auto;max-height:160mm}}
