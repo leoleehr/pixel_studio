@@ -6,7 +6,7 @@ import pathlib
 import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-VERSION = '20261015breath5'
+VERSION = '20261015corner1'
 
 def manifest():
     return json.loads((ROOT / 'tools/teaching_visuals_manifest.json').read_text(encoding='utf-8'))

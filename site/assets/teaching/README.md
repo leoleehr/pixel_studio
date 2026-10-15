@@ -5,8 +5,8 @@
 - WebP 圖像為 AI 製作的寫實教學示意，並非實際課堂拍攝紀錄。
 - 指板、指法順序、鍵盤音位與動作箭頭使用可編輯 SVG。和弦位置以標示的弦序、格位與指號為準；照片輔助觀察手部姿態。
 - 木色、筒身、內部構造與零件外觀會因製造商而異。
-- `tongue-anatomy.webp` 為 AI 重繪的口腔剖面示意，呈現舌尖靠前與稍向後的構形；`tongue.svg` 保留可編輯的大字中文標示，並非個人的醫療影像。
-- `voice-anatomy.jpg?v=20261015faces2` 依美國 NIDCD 的 Taking Care of Your Voice 教育資料重繪，採繁體中文標示，呈現發聲構造及吞嚥、發聲、安靜呼吸三種聲帶狀態；屬 AI 教學示意。`resonance.svg?v=20261015faces2` 使用該重繪圖加上中文教學說明。
+- `tongue-anatomy.branded.svg` 為 AI 重繪的口腔剖面示意，呈現舌尖靠前與稍向後的構形；`tongue.branded.svg` 保留可編輯的大字中文標示，並非個人的醫療影像。
+- `voice-anatomy.branded.svg?v=20261015faces2` 依美國 NIDCD 的 Taking Care of Your Voice 教育資料重繪，採繁體中文標示，呈現發聲構造及吞嚥、發聲、安靜呼吸三種聲帶狀態；屬 AI 教學示意。`resonance.branded.svg?v=20261015faces2` 使用該重繪圖加上中文教學說明。
 
 ## Vocal Lab 示範主角
 
@@ -24,3 +24,7 @@
 ## 白色聲紋印花 T-shirt
 
 `*-white.webp` 為以 imagegen 重製的人物圖。白色棉質服裝與彩色聲紋印花整合於影像內，印花依衣料的摺痕、光影及視角呈現；衣服上僅使用聲紋圖形。圖像仍為 AI 教學重建，原始人像參考照不隨網站發布。
+
+## Corner identification
+
+Website artwork uses `.branded.svg` derivatives, with the original image embedded unchanged and an official monochrome horizontal logo. Run `python -X utf8 tools/brand_artwork.py` after rebuilding original artwork, then prerender handbooks and regenerate PDFs. Layout decisions are recorded in `tools/artwork_branding_manifest.json`; source artwork and the full-resolution official PNG logos are retained.
