@@ -10,10 +10,11 @@
 <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png?v=20261014v">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=20261014v">
 <meta name="theme-color" content="#101210">
+<link rel="preload" href="../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<script>/* 第一格畫面之後才載入網路字型，首屏先用系統字型，不讓 1MB 中文字型拖慢首次繪製 */requestAnimationFrame(function(){requestAnimationFrame(function(){var l=document.createElement("link");l.rel="stylesheet";l.href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&family=Space+Grotesk:wght@500..700&display=swap";document.head.appendChild(l)})})</script>
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&family=Space+Grotesk:wght@500..700&display=swap"></noscript>
+<script>/* 中文字型策略：首次造訪用系統中文字型（符合 CI：正黑體／蘋方），不在首屏重排；瀏覽器閒置時只把本頁用得到的 Noto Sans TC 分組下載進快取，之後每頁一開始就套用 */(function(){var K="ps-font",U="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap";function apply(){var l=document.createElement("link");l.rel="stylesheet";l.href=U;document.head.appendChild(l)}var c=0;try{c=localStorage.getItem(K)}catch(e){}if(c){apply();return}var n=navigator.connection;if(n&&(n.saveData||/2g/.test(n.effectiveType||"")))return;function inRange(r,cps){return r.split(",").some(function(p){var m=p.trim().replace(/^U\+/i,"").split("-"),a=parseInt(m[0],16),b=m[1]?parseInt(m[1],16):a;return cps.some(function(x){return x>=a&&x<=b})})}function warm(){if(!window.FontFace||!window.fetch)return;var seen={},cps=[],t=document.body.textContent;for(var i=0;i<t.length;i++){var x=t.charCodeAt(i);if(x>=0x2E80&&!seen[x]){seen[x]=1;cps.push(x)}}fetch(U).then(function(r){return r.text()}).then(function(css){var jobs=[];css.replace(/@font-face\s*\{([^}]*)\}/g,function(_,b){var s=/url\(([^)]+)\)/.exec(b),r=/unicode-range:\s*([^;]+)/.exec(b);if(s&&r&&inRange(r[1],cps))jobs.push(new FontFace("Noto Sans TC","url("+s[1]+")",{weight:"400 900",unicodeRange:r[1]}).load());return _});return Promise.all(jobs)}).then(function(){try{localStorage.setItem(K,"1")}catch(e){}}).catch(function(){})}addEventListener("load",function(){(window.requestIdleCallback||function(f){setTimeout(f,2000)})(warm,{timeout:4000})})})()</script>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=optional"></noscript>
 <link rel="stylesheet" href="../assets/site.css?v=20261016c">
 <link rel="stylesheet" href="../assets/youtube.css?v=20261015b">
 <link rel="stylesheet" href="../assets/backend.css?v=20261015b">
@@ -29,6 +30,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/teaching-visuals.css?v=20261015tongue3">
+<script>/* 從章節錨點進入時完整排版，落點才精準 */if(location.hash)document.documentElement.classList.add('hb-deep')</script>
 </head>
 <body id="top">
 <header class="topbar">
@@ -43,10 +45,2403 @@
   </div>
   <span class="bar-progress" id="progress"></span>
 </header>
-<nav class="toc" aria-label="講義目錄"><div class="wrap" id="toc"></div></nav>
+<nav class="toc" aria-label="講義目錄"><div class="wrap" id="toc"><a href="#overview" data-id="overview">課程總覽</a><a href="#lesson-1" data-id="lesson-1">第一堂</a><a href="#lesson-2" data-id="lesson-2">第二堂</a><a href="#lesson-3" data-id="lesson-3">第三堂</a><a href="#lesson-4" data-id="lesson-4">第四堂</a><a href="#lesson-5" data-id="lesson-5">第五堂</a><a href="#lesson-6" data-id="lesson-6">第六堂</a></div></nav>
 
 <aside class="wrap" aria-label="講義下載"><div class="dl-bar"><div><b>講義與教案 PDF</b><span>A4 排版・40 頁・含歌曲 QR Code，可列印或分享</span></div><a class="btn primary" href="vocal-class-handbook.pdf" download="流行歌唱班_講義與教案.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>下載 PDF</a></div></aside>
-<main class="wrap md" id="content"><p class="loading">講義載入中…</p></main>
+<main class="wrap md" id="content" data-prerendered="baf4fda157">
+<h1>亞東吉他社 流行歌唱班｜六堂課程講義與教案</h1>
+<p>Oct 5, 2026 · @Leo Lee</p>
+<section class="hb-sec"><div class="lesson-head" id="overview" data-item="課程總覽"><div class="lh-no">Overview</div><h2>課程總覽</h2></div>
+<p>六堂課、每堂 120 分鐘，路線從「理解聲音」出發，經過呼吸、共鳴、發聲三大要素，最後走到「找到屬於自己的調」。每一堂都依循同一套節奏：課前問卷瞭解學員狀態，課堂以起承轉合推進，課後練習延續到下一堂。</p>
+<p>吉他社的學員多半一邊彈奏、一邊演唱，因此每堂的歌曲練習都保留自彈自唱的空間；不彈琴的夥伴，由老師或社員伴奏即可。</p>
+<h3 id="overview-2">六堂進度表</h3>
+<table>
+<thead>
+<tr>
+<th>堂次</th>
+<th>主題</th>
+<th>核心內容</th>
+<th>練習歌曲</th>
+<th>課後產出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>歌唱序論</td>
+<td>聲音的形成與擴大，好主唱的條件</td>
+<td>學員自選一首最喜歡的歌</td>
+<td>一張自選歌的曲式地圖</td>
+</tr>
+<tr>
+<td>2</td>
+<td>歌唱基本條件與呼吸</td>
+<td>歌唱氣息的來源，讓氣息穩定又持久</td>
+<td>刻在我心底的名字、太陽</td>
+<td>七天呼吸紀錄表</td>
+</tr>
+<tr>
+<td>3</td>
+<td>歌唱共鳴條件</td>
+<td>讓聲音更明亮、更厚實、傳得更遠</td>
+<td>浪流連、浪子回頭</td>
+<td>三腔共鳴對照錄音</td>
+</tr>
+<tr>
+<td>4</td>
+<td>歌唱發聲練習</td>
+<td>讓每個字都清楚又圓潤</td>
+<td>不是因為天氣晴朗才愛你</td>
+<td>五母音音階錄音</td>
+</tr>
+<tr>
+<td>5</td>
+<td>歌唱綜合應用</td>
+<td>將技巧轉化為表情</td>
+<td>後來的我們、人質、演員</td>
+<td>模仿歌手筆記與換氣點標記譜</td>
+</tr>
+<tr>
+<td>6</td>
+<td>歌唱自我條件設定</td>
+<td>找到適合自己的歌曲與演唱的調</td>
+<td>Case Study 十首</td>
+<td>個人自定調歌單與結業演唱</td>
+</tr>
+</tbody></table>
+<h3 id="overview-3">每堂 120 分鐘的共同節奏</h3>
+<table>
+<thead>
+<tr>
+<th>時段</th>
+<th>分鐘</th>
+<th>段落</th>
+<th>目的</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>課前 3 天</td>
+<td>5</td>
+<td>課前問卷</td>
+<td>學員在課程網站「問卷」頁填寫，回覆自動進入課程試算表；尚未填寫的學員，於開場時用手機補填</td>
+</tr>
+<tr>
+<td>00:00–00:20</td>
+<td>20</td>
+<td>起</td>
+<td>身體暖身、上週練習回饋，以一個問題或一段示範引出本堂主題</td>
+</tr>
+<tr>
+<td>00:20–00:55</td>
+<td>35</td>
+<td>承</td>
+<td>原理講解與老師示範，學員跟著做、跟著唱</td>
+</tr>
+<tr>
+<td>00:55–01:05</td>
+<td>10</td>
+<td>休息</td>
+<td>補充水分，喝溫水，避免冰水</td>
+</tr>
+<tr>
+<td>01:05–01:40</td>
+<td>35</td>
+<td>轉</td>
+<td>換一個角度挑戰：遊戲、分組、歌曲實作，將原理轉換為歌聲</td>
+</tr>
+<tr>
+<td>01:40–02:00</td>
+<td>20</td>
+<td>合</td>
+<td>學員輪流演唱驗收、老師總結三句重點、說明課後練習</td>
+</tr>
+</tbody></table>
+<h3 id="overview-4">教具清單</h3>
+<ul>
+<li>鍵盤或鋼琴 App（定音、彈奏音階），吉他一把以上</li>
+<li>節拍器與調音器 App（建議使用 Guitartuna、Soundcorset 這類免費工具）</li>
+<li>學員自備手機錄音，每堂至少錄下一段自己的歌聲</li>
+<li>衛生紙、A4 紙（呼吸遊戲使用）、鏡子或手機前鏡頭（觀察口型與姿勢）</li>
+<li>投影設備，播放示範音檔與歌曲</li>
+</ul>
+<h3 id="overview-5">評量方式</h3>
+<p>每堂「合」的段落即為形成性評量：老師依據課前問卷的起點，對照課後錄音的變化給予回饋。第六堂的結業演唱為總結性評量，重點放在個人的進步幅度，先天音色不列入評分。</p>
+<h3 id="overview-6">課堂互動設計原則</h3>
+<p>網站簡報每三張至少安排一個互動，讓學員每隔幾分鐘就動手、動口或動腦。互動分成三種場景：</p>
+<table>
+<thead>
+<tr>
+<th>場景</th>
+<th>操作者</th>
+<th>互動方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>投影幕</td>
+<td>老師</td>
+<td>隨機點名、舉手計票、分組計分板、分段計時（思考、配對、分享）、翻牌、排序遊戲、揭曉答案</td>
+</tr>
+<tr>
+<td>學員手機</td>
+<td>學員</td>
+<td>掃描第 2 張的 Qr Code，同步開啟簡報：音準挑戰、吐氣測量、錄音、歌詞換氣標記、出場券、作業勾選、七天紀錄表</td>
+</tr>
+<tr>
+<td>全班</td>
+<td>師生一起</td>
+<td>預測、觀察、解釋；手指投票（同時比出 1–4）；示範、跟做；前測與後測對照</td>
+</tr>
+</tbody></table>
+<p><strong>資料與隱私</strong>：網站以 Google 試算表作為後台。學員第一次送出資料時，填寫姓名、科系與課程代碼；之後的問卷、作答、出場券、練習紀錄與錄音，都會附上姓名，送進老師的試算表，錄音則存入老師的 Google Drive。課程代碼由老師在課堂上公布，用來阻擋非本班的送出；試算表與錄音資料夾只有老師能開啟。點名名單與投影幕上的計票、分數，儲存在老師的電腦，需要時再按下「儲存到後台」。</p>
+<p><strong>設備需求</strong>：麥克風功能（音準挑戰、吐氣測量、錄音）需要以 https 網址開啟，第一次使用時，瀏覽器會詢問是否允許麥克風。教室如果無法使用麥克風，吐氣測量可以改用內建碼表。</p>
+<p><strong>投影片編號</strong>：以下各堂的「課堂互動」表中，編號都對應網站上現有的投影片。</p>
+</section>
+<section class="hb-sec"><div class="lesson-head" id="lesson-1" style="--c: #e8412b;" data-dot="#e8412b" data-item="第一堂　歌唱序論"><div class="lh-no">Lesson 01</div><h2>歌唱序論<small>Introduction To Vocal Music</small></h2></div>
+<p>第一堂的任務是建立共同語言：以六組「三要素」說明聲音從產生到成為歌聲的過程，再以「流行歌曲曲式公式」理解一首歌的地圖。課堂最後，錄下每位學員的「第零號錄音」，第六堂再拿出來對照。</p>
+<h3 id="lesson-1-8">課前問卷（入班問卷）</h3>
+<ol>
+<li>過去的歌唱經驗：沒有經驗／Ktv／合唱團／樂團／上過歌唱課</li>
+<li>目前的吉他程度：剛剛入門／可以彈奏簡單和弦／可以自彈自唱整首歌</li>
+<li>最喜歡的三位歌手：<strong><strong>、</strong></strong>、____</li>
+<li>平常最常演唱的一首歌（第一堂請備妥歌詞或和弦譜）：____</li>
+<li>自我評分 1 到 5 分：音準 __、節奏 __、氣息 __、高音 __、咬字 __、臺風 __</li>
+<li>演唱時最大的困擾（可複選）：高音吃力、破音、走音、氣息不足、唱完喉嚨疼痛、容易緊張、其他 ____</li>
+<li>六堂課結束時，最希望達成的一件事：____</li>
+<li>課堂上是否願意獨唱：願意／希望與同伴一起／暫時保留</li>
+<li>健康狀況：是否有聲帶結節、過敏性鼻炎、氣喘或抽菸習慣（僅供老師調整練習強度）</li>
+</ol>
+<h3 id="lesson-1-9">課程綱要（120 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>時間</th>
+<th>段落</th>
+<th>活動內容</th>
+<th>教具</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>00:00–00:20</td>
+<td>起</td>
+<td>老師自我介紹與課程地圖；破冰「副歌接龍」：每人演唱自己最愛歌曲的一句副歌。老師接著以氣聲、鼻音、飽滿的共鳴三種音色演唱同一句，引導學員思考：同一個人、同一句歌，聽起來為何各有不同。</td>
+<td>吉他</td>
+</tr>
+<tr>
+<td>00:20–00:55</td>
+<td>承</td>
+<td>講解六組三要素（見下方講義）。吉他實驗：撥奏第六弦空弦 → 手掌蓋住音孔再撥奏 → 轉向牆角再撥奏，對照「振動、共鳴、空間」。學員分別在教室中央與牆角哼唱同一個音，寫下兩者的差異</td>
+<td>吉他、投影</td>
+</tr>
+<tr>
+<td>00:55–01:05</td>
+<td>休息</td>
+<td>喝溫水</td>
+<td></td>
+</tr>
+<tr>
+<td>01:05–01:40</td>
+<td>轉</td>
+<td>曲式偵探：播放邱振哲《太陽》，學員聽到段落轉換時，舉手喊出段落名稱。接著三人一組，拆解組員自選歌曲的曲式，畫出曲式地圖，標出全曲最高音所在的段落</td>
+<td>音響、A4 紙</td>
+</tr>
+<tr>
+<td>01:40–02:00</td>
+<td>合</td>
+<td>各組以一分鐘分享曲式地圖。每位學員清唱自選歌曲的副歌 30 秒，以手機錄下「第零號錄音」。老師總結：聲音有原理、歌曲有結構、進步有紀錄</td>
+<td>手機</td>
+</tr>
+</tbody></table>
+<h3 id="lesson-1-10">講義擴充：六組三要素</h3>
+<p>六張圓圖依序接力：聲音先「形成」，再「擴大」，接著被「聆聽」；歌者以「歌唱三要素」將聲音轉換為歌聲，放進「音樂三要素」裡，最後以「好主唱三條件」站上舞台。</p>
+<p><strong>一、聲音形成的基本條件</strong></p>
+<ul>
+<li><strong>振幅 Amplitude</strong>：振動的幅度，決定音量大小。氣息推動聲帶的力量越大，振幅越大。</li>
+<li><strong>頻率 Frequency</strong>：每秒振動的次數，決定音高。標準音 A4 為每秒 440 次（440 Hz），高一個八度即為兩倍的 880 Hz。</li>
+<li><strong>波長 Wavelength</strong>：與頻率成反比。低音波長較長，傳得較遠，也容易繞過障礙物；高音波長較短，方向性強。這也是隔壁房間總是先聽見貝斯的原因。</li>
+</ul>
+<p><strong>二、聲音擴大的基本條件</strong>（以吉他類比）</p>
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>吉他</th>
+<th>人聲</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>振動 Vibration</td>
+<td>琴弦</td>
+<td>聲帶</td>
+</tr>
+<tr>
+<td>共鳴 Resonance</td>
+<td>琴身與音孔</td>
+<td>胸腔、口咽腔、頭腔</td>
+</tr>
+<tr>
+<td>空間 Room</td>
+<td>演奏的房間</td>
+<td>演唱的場地（浴室特別好聽，就是空間反射的功勞）</td>
+</tr>
+</tbody></table>
+<p>只依靠琴弦，吉他的聲音微弱單薄；人聲也是如此，聲帶本身只是一對幾公厘長的組織，必須仰賴共鳴腔體放大。</p>
+<p><strong>三、歌唱的聆聽條件</strong></p>
+<ul>
+<li><strong>音準 Pitch</strong>：聽眾第一個察覺的，就是走音。</li>
+<li><strong>音色 Tone</strong>：讓聽眾認得你的聲音。</li>
+<li><strong>速度與節奏 Tempo</strong>：搭配伴奏的穩定度，搶拍與拖拍都會讓整首歌失去重心。</li>
+</ul>
+<p><strong>四、歌唱的基本三大要素</strong>（本課程的主軸）</p>
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>對應堂次</th>
+<th>一句話重點</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>呼吸 Breath</td>
+<td>第二堂</td>
+<td>氣息是歌聲的燃料</td>
+</tr>
+<tr>
+<td>共鳴 Resonance</td>
+<td>第三堂</td>
+<td>共鳴是歌聲的擴音器</td>
+</tr>
+<tr>
+<td>發聲 Phonation</td>
+<td>第四堂</td>
+<td>咬字讓聽眾理解故事</td>
+</tr>
+</tbody></table>
+<p><strong>五、音樂的基本構成三大要素</strong></p>
+<ul>
+<li><strong>旋律 Melody</strong>：歌者演唱的主線。</li>
+<li><strong>和聲 Harmony</strong>：吉他和弦提供的色彩，歌者理解和弦，音準才有依靠。</li>
+<li><strong>節奏 Rhythm</strong>：歌曲的律動，從吉他的刷法與指法就能辨認。</li>
+</ul>
+<p>註：原講義圓圖中的 Hamonic、Rythem，正確拼法為 Harmony、Rhythm。</p>
+<p><strong>六、好主唱的條件</strong></p>
+<ul>
+<li><strong>控制 Control</strong>：音量、音色、情緒都能收放自如。</li>
+<li><strong>耐力 Stamina</strong>：一場演出 10 到 15 首歌，最後一首仍維持第一首的品質。</li>
+<li><strong>辨識度 Resolution</strong>：聲音的解析度，也就是歌手的特色。聽眾只聽一句，就能認出是你在演唱；第五堂的「記憶點 Hook」會再深入說明。</li>
+</ul>
+<h3 id="lesson-1-11">講義擴充：流行歌曲曲式公式 Song Formula</h3>
+<p>流行歌曲的結構，大多來自同一套公式：前奏 → 主歌 → 前導句 → 副歌 → 間奏之後回到主歌，第二次副歌之後接橋段，再回到副歌與尾奏。理解每一段的角色，就能安排氣力與情緒的分配。</p>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>角色</th>
+<th>演唱策略</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>前奏 Intro</td>
+<td>建立氛圍與調性</td>
+<td>聽清楚起音、調勻呼吸，準備第一句</td>
+</tr>
+<tr>
+<td>主歌 Verse</td>
+<td>敘述故事，音域偏中低</td>
+<td>接近說話的口吻，咬字清楚，音量保留三成</td>
+</tr>
+<tr>
+<td>前導句 Pre Chorus</td>
+<td>將情緒往上推</td>
+<td>氣量逐漸增加，為副歌累積能量</td>
+</tr>
+<tr>
+<td>副歌 Chorus</td>
+<td>全曲重心與記憶點 Hook</td>
+<td>共鳴最飽滿、情緒最濃烈，也是最高音的所在</td>
+</tr>
+<tr>
+<td>間奏 Inter</td>
+<td>讓歌者休息</td>
+<td>喝一口水、調整氣息，準備第二輪</td>
+</tr>
+<tr>
+<td>橋段／後副歌 Bridge / Post Chorus</td>
+<td>旋律或情緒的轉折</td>
+<td>轉換音色或力度，讓最後的副歌更有力量</td>
+</tr>
+<tr>
+<td>破格句 Tag</td>
+<td>重複或延伸最後一句</td>
+<td>可以改變節奏或放慢速度，留下餘韻</td>
+</tr>
+<tr>
+<td>尾奏 Outro／結尾 Ending</td>
+<td>收束全曲</td>
+<td>收音乾淨，尾音逐漸淡出</td>
+</tr>
+</tbody></table>
+<p><strong>範例：邱振哲《太陽》</strong>（第二堂練習曲）：前奏 → 主歌▲「你總感到落寞沮喪」→ 副歌★「我只想做你的太陽」→ 間奏之後回到▲ → ★ → 橋段「也許有一天你不再記得我」→ 回到★ → 尾奏。橋段的和弦由 F 切入，與主歌、副歌的 C 起頭形成對比，這就是「轉折」最明顯的訊號。</p>
+<h3 id="lesson-1-12">課堂互動（網站簡報）</h3>
+<p>22 張投影片中有 17 張帶有互動，避免連續兩張以上的純講述。</p>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>教學技巧</th>
+<th>進行方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2 今天的路線</td>
+<td>手機同步 Qr Code</td>
+<td>降低參與門檻</td>
+<td>學員掃碼開啟同一份簡報，之後的測量音準、錄音、出場券，都在自己的手機上操作</td>
+</tr>
+<tr>
+<td>3 課程地圖</td>
+<td>舉手計票：最期待哪一堂</td>
+<td>喚起動機</td>
+<td>老師點選選項計票，記下最多人期待的主題，作為之後課堂的呼應</td>
+</tr>
+<tr>
+<td>4 副歌接龍</td>
+<td>隨機點名</td>
+<td>隨機點名</td>
+<td>名單儲存在老師的電腦，抽中的人接下一棒，避免總是同樣幾位發言</td>
+</tr>
+<tr>
+<td>5 三種音色</td>
+<td>預測選擇題</td>
+<td>預測、觀察、解釋</td>
+<td>先用手指比出 1–4 預測，老師示範之後揭曉並解釋</td>
+</tr>
+<tr>
+<td>7 聲音形成</td>
+<td>聲波實驗室</td>
+<td>動手實驗</td>
+<td>拉動頻率、振幅滑桿，同時聽見並看見聲波變化；以 220、440、880 Hz 對照八度</td>
+</tr>
+<tr>
+<td>9 聆聽條件</td>
+<td>節奏挑戰</td>
+<td>即時回饋</td>
+<td>播放四分音符、八分音符、附點、切分、前八後十六、反拍等節奏，數完四拍後，學員用「Ta」唱出，麥克風比對拍點，顯示命中數與搶拍、拖拍的傾向</td>
+</tr>
+<tr>
+<td>11 音樂三要素</td>
+<td>手指投票</td>
+<td>關鍵提問</td>
+<td>提問「刷法與指法屬於哪一個要素」，全班同時比出數字，老師一眼看出誤解</td>
+</tr>
+<tr>
+<td>12 好主唱</td>
+<td>分段計時</td>
+<td>思考、配對、分享</td>
+<td>自己思考 1 分鐘、兩人分享 1 分鐘、全班分享 2 分鐘：最喜歡的歌手，辨識度來自哪裡</td>
+</tr>
+<tr>
+<td>13 休息</td>
+<td>十分鐘倒數</td>
+<td>節奏管理</td>
+<td>投影幕顯示倒數</td>
+</tr>
+<tr>
+<td>14 曲式公式</td>
+<td>排序遊戲</td>
+<td>遊戲化</td>
+<td>八張段落卡片點選兩次交換位置，依照第一次出現的順序排好之後，按下「檢查」</td>
+</tr>
+<tr>
+<td>15 各段角色</td>
+<td>翻牌</td>
+<td>提取練習</td>
+<td>先猜測段落的角色，再翻牌查看演唱策略</td>
+</tr>
+<tr>
+<td>16 曲式偵探</td>
+<td>分組計分板</td>
+<td>分組搶答</td>
+<td>播放《太陽》，聽到段落轉換時，第一個喊對的組別加 1 分</td>
+</tr>
+<tr>
+<td>17 分組任務</td>
+<td>分段計時</td>
+<td>合作學習</td>
+<td>拆解 8 分鐘、標記 5 分鐘、準備 2 分鐘；三人分工操作、記錄、報告</td>
+</tr>
+<tr>
+<td>18 第零號錄音</td>
+<td>手機錄音</td>
+<td>前測、自我評量</td>
+<td>學員在自己的手機錄下 30 秒，按下「下載檔案」自行保存，也可以按下「上傳給老師」存入課程雲端資料夾，第六堂對照</td>
+</tr>
+<tr>
+<td>20 出場券</td>
+<td>3-2-1 出場券</td>
+<td>出場券</td>
+<td>在手機填寫之後，按下「送出給老師」，下週從大家的問題開始講起</td>
+</tr>
+<tr>
+<td>21 課後練習</td>
+<td>作業勾選</td>
+<td>自主學習追蹤</td>
+<td>完成一項就點選一次，完成狀況自動回傳給老師</td>
+</tr>
+<tr>
+<td>22 下週預告</td>
+<td>課前問卷 Qr Code</td>
+<td>課前準備</td>
+<td>掃碼直接在網站填寫第二堂課前問卷</td>
+</tr>
+</tbody></table>
+<h3 id="lesson-1-13">課後練習</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 保存「第零號錄音」，這份檔案第六堂會用到</li>
+<li><input disabled="" type="checkbox"> 每天聆聽三首歌，以曲式公式寫出段落順序；其中一首必須是盧廣仲《刻在我心底的名字》</li>
+<li><input disabled="" type="checkbox"> 仔細聆聽最喜歡的歌手，記錄副歌中能聽見幾次吸氣聲，以及分別落在哪些字之後</li>
+<li><input disabled="" type="checkbox"> 在浴室、房間、戶外各哼唱同一句歌，寫下三種空間的聲音差異</li>
+<li><input disabled="" type="checkbox"> 觀察自己一週的用聲習慣：熬夜幾天、喝冰飲幾杯、大聲說話或尖叫幾次</li>
+</ul>
+</section>
+<section class="hb-sec"><div class="lesson-head" id="lesson-2" style="--c: #e2407f;" data-dot="#e2407f" data-item="第二堂　歌唱基本條件與呼吸"><div class="lh-no">Lesson 02</div><h2>歌唱基本條件與呼吸</h2></div>
+<p>第二堂的目標，是讓每位學員學會胸腹式呼吸，並將 /s/ 吐氣秒數從課堂開頭到結尾實際拉長。歌唱的氣息以小腹肌肉為基礎，與平日集中在胸口的呼吸方式不同；姿勢、暖身與聲帶保養，則是讓呼吸發揮作用的前提。</p>
+<h3 id="lesson-2-15">課前問卷</h3>
+<ol>
+<li>上週的五項課後練習，完成的項數：0／1／2／3／4／5</li>
+<li>拆解曲式時，最難分辨的段落：主歌／前導句／副歌／橋段／破格句</li>
+<li>演唱一首歌時，通常感到氣息不足的段落：主歌／副歌／長音／快歌的密集歌詞</li>
+<li>演唱完一小時後，喉嚨的感覺：舒服／乾燥／緊繃／疼痛／聲音沙啞</li>
+<li>平均每天喝水量（c.c.）與睡眠時數：____</li>
+<li>站在鏡子前深吸一口氣，肩膀是否上抬：會上抬／保持不動／尚不確定</li>
+<li>在家以 /s/ 吐氣並計時，最長持續的秒數：____</li>
+</ol>
+<h3 id="lesson-2-16">課程綱要（120 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>時間</th>
+<th>段落</th>
+<th>活動內容</th>
+<th>教具</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>00:00–00:20</td>
+<td>起</td>
+<td>兩位學員分享曲式作業。全班以 /s/ 吐氣，老師計時，並將每人的秒數寫在白板，引導學員思考：同樣的肺，為何有人 10 秒、有人 30 秒。</td>
+<td>節拍器、碼表</td>
+</tr>
+<tr>
+<td>00:20–00:55</td>
+<td>承</td>
+<td>講解發聲原理與聆聽的重要性；對照正確與錯誤的姿勢，包含自彈自唱的坐姿；說明聲帶保養八項。老師帶領暖身五步驟與四種基本呼吸，學員雙手叉腰，感受腹部與側腰的擴張</td>
+<td>投影、鏡子</td>
+</tr>
+<tr>
+<td>00:55–01:05</td>
+<td>休息</td>
+<td>喝溫水</td>
+<td></td>
+</tr>
+<tr>
+<td>01:05–01:40</td>
+<td>轉</td>
+<td>「呼吸運動會」分組競賽：吐氣彈壁、紙張乒乓球、面牆吹衛生紙、吹動衛生紙。接著以節拍器 80 Bpm 進行 /s/、/hei/、/hu/ 三組肌肉訓練，各四小節</td>
+<td>衛生紙、A4 紙、節拍器</td>
+</tr>
+<tr>
+<td>01:40–02:00</td>
+<td>合</td>
+<td>《刻在我心底的名字》副歌：全班先在歌詞上標出換氣點 ∨，再齊唱、分組演唱。最後重新測量 /s/ 秒數，與開場比較</td>
+<td>吉他、歌譜</td>
+</tr>
+</tbody></table>
+<h3 id="lesson-2-17">講義擴充：發聲的路徑</h3>
+<p>腰腹肌肉收縮，橫膈膜上移，肺部的空氣被推出，經過氣管到達聲門，振動聲帶；聲波再進入咽腔、口腔、鼻腔共鳴，最後由舌頭、嘴唇、牙齒塑造成字。任何一個環節緊繃，整條路徑都會受到影響。</p>
+<p>歌聲與說話同樣來自發聲，差別在於歌聲的音域更高、更寬，持續時間更長，也更仰賴氣息的穩定供應。</p>
+<h3 id="lesson-2-18">講義擴充：聆聽的重要性</h3>
+<ul>
+<li><strong>音準 Pitch</strong>：音準聽清楚，才能唱準確。所謂「五音不全」，多半是耳朵尚未經過訓練，發聲器官本身並無問題。練習方法：以吉他彈奏一個音，先在心裡哼唱一次，再發出聲音，使用調音器 App 檢查。</li>
+<li><strong>音色 Tone</strong>：發聲部位的高低、共鳴的多寡、呼吸的深淺，都仰賴耳朵分辨。錄下自己的歌聲並重複聆聽，是訓練辨聲能力最直接的方法。</li>
+</ul>
+<h3 id="lesson-2-19">講義擴充：歌唱姿勢檢查表</h3>
+<table>
+<thead>
+<tr>
+<th>部位</th>
+<th>正確姿勢</th>
+<th>常見錯誤</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>雙腳</td>
+<td>與肩同寬，重心微微向前</td>
+<td>三七步、重心放在腳跟</td>
+</tr>
+<tr>
+<td>膝蓋</td>
+<td>微微放鬆，避免鎖死</td>
+<td>膝蓋往後頂直</td>
+</tr>
+<tr>
+<td>肩膀</td>
+<td>放鬆下沉，吸氣時保持不動</td>
+<td>縮肩、聳肩</td>
+</tr>
+<tr>
+<td>胸口</td>
+<td>自然打開</td>
+<td>駝背或過度挺胸</td>
+</tr>
+<tr>
+<td>頭頸</td>
+<td>下巴與地面平行，眼睛平視前方</td>
+<td>仰頭追高音、低頭看譜</td>
+</tr>
+<tr>
+<td>臉部</td>
+<td>下顎放鬆，口腔內部打開</td>
+<td>咬牙、皺眉</td>
+</tr>
+</tbody></table>
+<p><strong>自彈自唱的坐姿</strong>：坐在椅子前三分之一，骨盆坐穩，吉他貼近身體，譜架與視線同高。吉他手最容易低頭看指板，頸部一彎曲，喉嚨也跟著受到壓迫；建議將和弦練到無需看手，再開始自彈自唱。</p>
+<h3 id="lesson-2-20">講義擴充：聲帶保養八項</h3>
+<ol>
+<li><strong>菸酒</strong>：菸會刺激氣管，酒會讓聲帶充血，演唱前後切忌。</li>
+<li><strong>辛辣</strong>：咖哩、麻辣與重口味食物，容易刺激喉部。</li>
+<li><strong>過度用聲</strong>：高談闊論、尖聲大叫都是大忌；耳語說悄悄話，同樣會讓聲帶緊繃。</li>
+<li><strong>保重身體</strong>：感冒、咽喉炎、聲帶水腫時，暫停高強度練習。</li>
+<li><strong>演唱環境</strong>：Ktv 的煙霧、熬夜與吵雜，是嗓子最大的消耗。</li>
+<li><strong>充足飲水</strong>：每天 1,500 到 2,000 c.c. 溫水，少量多次，聲帶黏膜保持滋潤，才能順利振動。</li>
+<li><strong>演唱前的飲食</strong>：牛奶、巧克力、甜食容易生痰，演出前三小時應避免。</li>
+<li><strong>想清喉嚨時</strong>：以吞口水取代用力咳嗽；聲音沙啞超過兩週，請至耳鼻喉科就醫。</li>
+</ol>
+<h3 id="lesson-2-21">講義擴充：暖身與呼吸練習</h3>
+<p><strong>一、暖身動作</strong>（由上而下，完成之後反向進行一次）</p>
+<ol>
+<li>站立姿勢：雙腳與肩同寬。</li>
+<li>頭部與頸部：嘴巴張開呈 O 型開合，緩和顎骨；旋轉頸部之後自然下垂，感受喉部肌肉。</li>
+<li>肩膀與手部：肩關節順時針、逆時針轉動，感受胸部肌肉。</li>
+<li>上背部：上背往前傾斜，感受上腹部。</li>
+<li>下背部：上半身往前傾，感受下腹部。</li>
+</ol>
+<p><strong>二、基本呼吸練習</strong>（建議搭配節拍器 60 Bpm）</p>
+<table>
+<thead>
+<tr>
+<th>種類</th>
+<th>吸氣</th>
+<th>吐氣</th>
+<th>拍數目標</th>
+<th>歌曲應用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>自然呼吸</td>
+<td>/o/ 口鼻同吸</td>
+<td>/u/ 吐氣</td>
+<td>4 拍吸、4 拍吐</td>
+<td>平靜狀態的基準</td>
+</tr>
+<tr>
+<td>慢吸慢吐</td>
+<td>/o/ 慢吸</td>
+<td>/s/ 慢吐，吐盡再吸下一口</td>
+<td>4 拍吸、8 拍吐</td>
+<td>平述的主歌</td>
+</tr>
+<tr>
+<td>快吸快吐</td>
+<td>/o/ 快吸</td>
+<td>/s/ 快吐</td>
+<td>每拍一次</td>
+<td>快歌、載歌載舞</td>
+</tr>
+<tr>
+<td>快吸慢吐</td>
+<td>/o/ 一拍吸足</td>
+<td>暫停之後，以 /s/ 慢吐並讀秒</td>
+<td>1 拍吸、每週增加 2 拍吐</td>
+<td>在歌曲中運用最廣泛</td>
+</tr>
+</tbody></table>
+<p>快吸快吐時，如果吸氣聲過大，代表過度使用喉嚨的力氣，應放鬆喉部，改由腹部帶動。</p>
+<p><strong>三、主要肌肉的運用</strong>（以 4/4 拍、每個四分音符換氣一次）</p>
+<ol>
+<li><strong>腹部肌力</strong>：以 /s/ 發出氣音，四小節之後，腹部應有緊繃感。</li>
+<li><strong>喉部肌力</strong>：以 /hei/ 發出低音，可以提升低音音準的控制力。</li>
+<li><strong>綜合訓練</strong>：以 /hu/ 一小節低音、一小節假音交替。</li>
+</ol>
+<p><strong>四、呼吸延長訓練</strong></p>
+<ol>
+<li><strong>快吸慢吐</strong>：/s/ 吐氣到底時，以手輕壓腹部，再快速吸氣；改以 /i/ 吐氣時，可以同時訓練腹肌。</li>
+<li><strong>快吸停吐</strong>：吸足之後，屏住氣息讀秒，再吐氣，每次延長讀秒的時間。</li>
+</ol>
+<p><strong>五、呼吸小遊戲</strong></p>
+<ol>
+<li><strong>吐氣彈壁</strong>：面向牆壁，腹部輕抵牆面，觀察吸吐氣時腹部的起伏。</li>
+<li><strong>紙張乒乓球</strong>（兩人）：一人拿住紙張上緣，讓紙張自然下垂；兩人從兩側輪流吹動紙張，觀察擺動。</li>
+<li><strong>面牆吹衛生紙</strong>：將單張薄衛生紙貼在牆面，放開手後以持續氣流讓衛生紙保持不落下。</li>
+<li><strong>吹動衛生紙</strong>：原講義以燭火練習，教室內改用一張懸垂的衛生紙；以 /s/ 吹氣，讓紙張穩定飄動，角度維持不變。</li>
+</ol>
+<h3 id="lesson-2-22">講義擴充：歌曲應用與換氣點</h3>
+<p>換氣點分為兩種：樂句之間的<strong>大換氣</strong>，時間充裕，吸飽一口氣；句子中間的<strong>小換氣（偷氣）</strong>，利用半拍空隙快速補氣。換氣點要先標在樂譜上，唱到一半才找氣，句尾常會無力。</p>
+<table>
+<thead>
+<tr>
+<th>歌曲</th>
+<th>原調／男調／女調</th>
+<th>速度</th>
+<th>換氣點示範（∨）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>盧廣仲《刻在我心底的名字》</td>
+<td>B♭／A／E</td>
+<td>68</td>
+<td>刻在我心底的名字 ∨ 忘記了時間這回事 ∨ 於是謊言說了一次 ∨ 就一輩子</td>
+</tr>
+<tr>
+<td>邱振哲《太陽》</td>
+<td>E♭／E♭／A♭</td>
+<td>64</td>
+<td>我只想做你的太陽 ∨ 你的太陽 ∨ 在你的心裡呀 ∨ 在你的心底呀</td>
+</tr>
+</tbody></table>
+<p>兩首都是 70 Bpm 以下的慢歌，樂句長、長音多，最適合練習「快吸慢吐」。吉他刷法與指法，請參考原譜。</p>
+<h3 id="lesson-2-23">課堂互動（網站簡報）</h3>
+<p>24 張投影片中有 19 張帶有互動。這一堂的主軸是「前測與後測」：開場與下課前各測量一次 /s/ 吐氣，網頁自動比較秒數，讓學員當場看見進步。</p>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>教學技巧</th>
+<th>進行方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2 今天的路線</td>
+<td>手機同步 Qr Code</td>
+<td>降低參與門檻</td>
+<td>學員掃碼，後續的吐氣測量都在自己的手機上進行</td>
+</tr>
+<tr>
+<td>3 前測</td>
+<td>吐氣測量</td>
+<td>前測</td>
+<td>麥克風自動計時並計算穩定度，秒數保留到後測</td>
+</tr>
+<tr>
+<td>4 想一想</td>
+<td>舉手計票＋揭曉</td>
+<td>預測、觀察、解釋</td>
+<td>先猜測秒數差距的原因，揭曉之後由後測驗證</td>
+</tr>
+<tr>
+<td>5 發聲路徑</td>
+<td>排序遊戲</td>
+<td>遊戲化</td>
+<td>七個環節依照氣流前進的順序排列</td>
+</tr>
+<tr>
+<td>6 聆聽</td>
+<td>音準挑戰</td>
+<td>即時回饋</td>
+<td>播放目標音 → 心裡哼唱 → 唱出，觀察指針是否落在綠色區間</td>
+</tr>
+<tr>
+<td>9 聲帶保養</td>
+<td>迷思或事實翻牌</td>
+<td>迷思破解</td>
+<td>八張卡片先舉手猜測，再翻牌：冰水、耳語、牛奶、咳嗽等常見誤解</td>
+</tr>
+<tr>
+<td>10 暖身</td>
+<td>分段計時</td>
+<td>示範、跟做</td>
+<td>五個步驟加上反向放鬆，每個步驟 30 秒，自動切換並提示</td>
+</tr>
+<tr>
+<td>11 胸腹式呼吸</td>
+<td>手指投票</td>
+<td>關鍵提問</td>
+<td>提問「吸氣時哪一個現象代表吸對位置」，搭配照鏡子或同學互相觀察</td>
+</tr>
+<tr>
+<td>12 四種呼吸</td>
+<td>節拍器 60 Bpm</td>
+<td>示範、跟做</td>
+<td>跟著節拍器數拍練習</td>
+</tr>
+<tr>
+<td>13 休息</td>
+<td>十分鐘倒數</td>
+<td>節奏管理</td>
+<td>投影幕顯示倒數</td>
+</tr>
+<tr>
+<td>14 呼吸運動會</td>
+<td>分組計分板</td>
+<td>遊戲化</td>
+<td>四個遊戲各自分出勝負，組名可以直接修改</td>
+</tr>
+<tr>
+<td>15 肌肉運用</td>
+<td>節拍器 80 Bpm</td>
+<td>示範、跟做</td>
+<td>/s/、/hei/、/hu/ 各四小節</td>
+</tr>
+<tr>
+<td>17 換氣點</td>
+<td>選擇題</td>
+<td>提取練習</td>
+<td>提問「唱到一半才找氣的結果」</td>
+</tr>
+<tr>
+<td>18 刻在我心底的名字</td>
+<td>歌詞換氣標記</td>
+<td>動手標記、同儕比對</td>
+<td>在字的後方標記 ∨ 或 ˇ，和隔壁同學比對，再對照老師版</td>
+</tr>
+<tr>
+<td>19 後測</td>
+<td>吐氣測量＋自動比較</td>
+<td>後測、看見進步</td>
+<td>顯示「開場 X 秒 → 現在 Y 秒」</td>
+</tr>
+<tr>
+<td>21 出場券</td>
+<td>3-2-1 出場券</td>
+<td>出場券</td>
+<td>在手機填寫之後，按下「送出給老師」</td>
+</tr>
+<tr>
+<td>22 每日課表</td>
+<td>七天紀錄表</td>
+<td>自主學習紀錄</td>
+<td>學員在手機上填寫每天的秒數與感受，按下「送出紀錄給老師」</td>
+</tr>
+<tr>
+<td>23 課後練習</td>
+<td>作業勾選</td>
+<td>自主學習追蹤</td>
+<td>完成一項就點選一次</td>
+</tr>
+<tr>
+<td>24 下週預告</td>
+<td>課前問卷 Qr Code</td>
+<td>課前準備</td>
+<td>掃碼直接在網站填寫第三堂課前問卷</td>
+</tr>
+</tbody></table>
+<h3 id="lesson-2-24">課後練習</h3>
+<p><strong>每日 15 分鐘呼吸課表</strong>：暖身 3 分鐘 → 自然呼吸 2 分鐘 → 慢吸慢吐 3 分鐘 → 快吸慢吐讀秒 3 分鐘 → /s/、/hei/、/hu/ 各四小節 4 分鐘。</p>
+<table>
+<thead>
+<tr>
+<th>天數</th>
+<th>/s/ 吐氣秒數</th>
+<th>肩膀是否上抬</th>
+<th>今天的感受</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第 1 天</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>第 2 天</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>第 3 天</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>第 4 天</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>第 5 天</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>第 6 天</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>第 7 天</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li><input disabled="" type="checkbox"> 完成七天呼吸紀錄表</li>
+<li><input disabled="" type="checkbox"> 在《太陽》歌詞上標出所有換氣點，區分大換氣與小換氣</li>
+<li><input disabled="" type="checkbox"> 錄下《太陽》副歌一次，聆聽時檢查句尾是否無力</li>
+<li><input disabled="" type="checkbox"> 每天喝水 1,500 c.c. 以上，並記錄睡眠時數</li>
+</ul>
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="v01"><h3 id="lesson-2-25">呼吸與發聲構造｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/voice-anatomy.jpg?v=20261015tongue3" width="1161" height="1355" alt="喉部、聲帶、口腔、鼻腔與氣管的相對位置" loading="lazy" decoding="async"><figcaption>喉部、聲帶、口腔、鼻腔與氣管的相對位置</figcaption></figure>
+<figure><img src="../assets/teaching/airflow.svg?v=20261015tongue3" width="1000" height="700" alt="肺部氣流經氣管、聲帶，進入聲道" loading="lazy" decoding="async"><figcaption>肺部氣流經氣管、聲帶，進入聲道</figcaption></figure>
+</div>
+<p class="teaching-note">橫膈膜與呼吸肌協助肺部通氣；聲帶在喉部振動，口腔、咽腔與鼻腔改變聲音。</p>
+<p class="teaching-sources"><a href="https://www.nidcd.nih.gov/health/taking-care-your-voice">NIH / NIDCD 發聲構造</a> · <a href="https://www.asha.org/practice-portal/clinical-topics/resonance-disorders/">ASHA 聲道共鳴</a></p>
+</div>
+
+<div class="teaching-book" data-demo-group="v02"><h3 id="lesson-2-26">站姿與彈唱坐姿｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/vocal-standing-white.webp?v=20261015tongue3" width="1309" height="1201" alt="站姿：重心穩定、膝蓋與肩膀放鬆" loading="lazy" decoding="async"><figcaption>站姿：重心穩定、膝蓋與肩膀放鬆</figcaption></figure>
+<figure><img src="../assets/teaching/vocal-seated-white.webp?v=20261015tongue3" width="1315" height="1196" alt="彈唱：坐穩、吉他靠近身體、視線自然向前" loading="lazy" decoding="async"><figcaption>彈唱：坐穩、吉他靠近身體、視線自然向前</figcaption></figure>
+</div>
+</div>
+
+<div class="teaching-book" data-demo-group="v03"><h3 id="lesson-2-27">暖身動作｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/warmup-shoulders-white.webp?v=20261015tongue3" width="1314" height="1197" alt="小幅度肩關節轉動，雙臂自然" loading="lazy" decoding="async"><figcaption>小幅度肩關節轉動，雙臂自然</figcaption></figure>
+<figure><img src="../assets/teaching/warmup-forward-white.webp?v=20261015tongue3" width="1200" height="1310" alt="以髖部帶動小幅前傾，頭頸自然" loading="lazy" decoding="async"><figcaption>以髖部帶動小幅前傾，頭頸自然</figcaption></figure>
+<figure><img src="../assets/teaching/vocal-standing-white.webp?v=20261015tongue3" width="1309" height="1201" alt="回到自然站姿，檢查肩頸是否放鬆" loading="lazy" decoding="async"><figcaption>回到自然站姿，檢查肩頸是否放鬆</figcaption></figure>
+<figure><img src="../assets/teaching/warmup-neck-white.webp?v=20261015tongue3" width="1431" height="1099" alt="輕柔側傾頭部，保持肩膀放鬆，不用力拉扯頸部。" loading="lazy" decoding="async"><figcaption>輕柔側傾頭部，保持肩膀放鬆，不用力拉扯頸部。</figcaption></figure>
+<figure><img src="../assets/teaching/warmup-wrists-white.webp?v=20261015tongue3" width="1283" height="1226" alt="輕柔活動手腕，手臂與肩膀維持放鬆。" loading="lazy" decoding="async"><figcaption>輕柔活動手腕，手臂與肩膀維持放鬆。</figcaption></figure>
+</div>
+<p class="teaching-note">各動作在舒服範圍內慢慢進行。</p>
+</div>
+
+<div class="teaching-book" data-demo-group="v04"><h3 id="lesson-2-28">腰腹呼吸與控制｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/breath-in-white.webp?v=20261015tongue3" width="1205" height="1305" alt="雙手放在下肋與腰側，感受吸氣時的擴張" loading="lazy" decoding="async"><figcaption>雙手放在下肋與腰側，感受吸氣時的擴張</figcaption></figure>
+<figure><img src="../assets/teaching/breath-out-white.webp?v=20261015tongue3" width="1203" height="1308" alt="吐氣時維持穩定，肩膀自然放鬆" loading="lazy" decoding="async"><figcaption>吐氣時維持穩定，肩膀自然放鬆</figcaption></figure>
+</div>
+<p class="teaching-note">手部是觀察的位置；氣流進入肺部。</p>
+</div>
+
+<div class="teaching-book" data-demo-group="v05"><h3 id="lesson-2-29">呼吸活動操作｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/breath-wall-white.webp?v=20261015contour4" width="1107" height="1421" alt="男主角面向牆壁，腹部輕抵牆面，觀察吸吐氣時的起伏。" loading="lazy" decoding="async"><figcaption>男主角面向牆壁，腹部輕抵牆面，觀察吸吐氣時的起伏。</figcaption></figure>
+<figure><img src="../assets/teaching/breath-pair-paper-white.webp?v=20261015contour4" width="1313" height="1198" alt="一人捏住紙張上緣，讓紙張下垂；兩人從兩側輪流吹動紙張。" loading="lazy" decoding="async"><figcaption>一人捏住紙張上緣，讓紙張下垂；兩人從兩側輪流吹動紙張。</figcaption></figure>
+<figure><img src="../assets/teaching/breath-wall-tissue-white.webp?v=20261015contour4" width="1097" height="1434" alt="以持續氣流托住牆面上的單張薄衛生紙。" loading="lazy" decoding="async"><figcaption>以持續氣流托住牆面上的單張薄衛生紙。</figcaption></figure>
+<figure><img src="../assets/teaching/breath-tissue-white.webp?v=20261015tongue3" width="1300" height="1209" alt="拿住衛生紙上緣，以穩定氣流吹動下垂的衛生紙。" loading="lazy" decoding="async"><figcaption>拿住衛生紙上緣，以穩定氣流吹動下垂的衛生紙。</figcaption></figure>
+</div>
+</div>
+
+<!-- teaching-visuals-end -->
+
+</section>
+<section class="hb-sec"><div class="lesson-head" id="lesson-3" style="--c: #9a5fd0;" data-dot="#9a5fd0" data-item="第三堂　歌唱共鳴條件"><div class="lh-no">Lesson 03</div><h2>歌唱共鳴條件</h2></div>
+<p>第三堂讓學員分別找到口腔、頭腔、胸腔三種共鳴的位置，並以茄子蛋的兩首台語歌練習混合運用。依據戴意誠（1998）的說法，人聲三大要素為呼吸、共鳴與發聲；上一堂處理了呼吸，這一堂處理聲音的放大與美化。</p>
+<h3 id="lesson-3-31">課前問卷</h3>
+<ol>
+<li>七天呼吸紀錄：/s/ 吐氣從 ____ 秒進步到 ____ 秒</li>
+<li>呼吸課表中最難持續的一項：____</li>
+<li>演唱時，身體感到振動的位置（可複選）：胸口／喉嚨／鼻樑／眉心／頭頂／沒有感覺</li>
+<li>朋友對你聲音的形容：明亮／沉悶／厚實／單薄／鼻音重／氣音多</li>
+<li>演唱高音時的感覺：擠壓／用喊的／容易破音／自動轉成假音／還算輕鬆</li>
+<li>對台語歌的熟悉程度：經常聆聽也經常演唱／聽過、尚未唱過／幾乎沒有接觸</li>
+</ol>
+<h3 id="lesson-3-32">課程綱要（120 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>時間</th>
+<th>段落</th>
+<th>活動內容</th>
+<th>教具</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>00:00–00:20</td>
+<td>起</td>
+<td>快速複習呼吸課表 5 分鐘。「摀耳實驗」：雙手輕摀耳朵哼唱一句歌，聽見頭裡的聲音。老師以三種共鳴演唱同一句，學員猜測各是哪一種</td>
+<td>吉他</td>
+</tr>
+<tr>
+<td>00:20–00:55</td>
+<td>承</td>
+<td>以口部、喉部橫切面圖講解三腔位置；逐一帶領打哈欠、哼鳴、手掌貼胸口、捏鼻測試四項體會練習</td>
+<td>投影、鍵盤</td>
+</tr>
+<tr>
+<td>00:55–01:05</td>
+<td>休息</td>
+<td>喝溫水</td>
+<td></td>
+</tr>
+<tr>
+<td>01:05–01:40</td>
+<td>轉</td>
+<td>警笛滑音：由最低音滑到最高音，找出聲音「斷開」的位置。《浪流連》三組角色實作：胸腔組負責主歌、口腔組負責副歌、頭腔組負責句尾長音，每輪結束之後交換角色</td>
+<td>吉他、歌譜</td>
+</tr>
+<tr>
+<td>01:40–02:00</td>
+<td>合</td>
+<td>《浪子回頭》全班自彈自唱。每位學員以三種共鳴各錄一次同一句，當場播放三位學員的錄音，對照講評</td>
+<td>手機、音響</td>
+</tr>
+</tbody></table>
+<h3 id="lesson-3-33">講義擴充：何謂共鳴</h3>
+<p>共鳴最簡單的定義為「物體因共振而發聲」。吉他的琴弦如果沒有琴身，聲音微弱單薄；人聲也是如此，聲帶發出的原始聲音缺乏音色之美，必須借助腔體共振，才能美化為響亮、具有持續力的歌聲。演唱時，三種共鳴同時存在，只是依照歌曲與樂句調整比例。</p>
+<table>
+<thead>
+<tr>
+<th>共鳴</th>
+<th>位置</th>
+<th>體會方式</th>
+<th>音色</th>
+<th>常見錯誤</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>口腔（口咽腔）共鳴</td>
+<td>顎以下、聲帶以上</td>
+<td>打哈欠時喉腔打開、軟顎上提的感覺</td>
+<td>清脆明亮，咬字清晰</td>
+<td>將喉嚨「張開」誤解為用力擠壓，聲音僵硬、卡喉</td>
+</tr>
+<tr>
+<td>頭腔（鼻腔）共鳴</td>
+<td>顎以上至眉心、前額、頭頂</td>
+<td>閉嘴哼出 /m/，鼻樑與眉心發麻</td>
+<td>柔和華麗，如同立體聲</td>
+<td>變成擠鼻子的「鼻音」，模糊沉悶，如同感冒</td>
+</tr>
+<tr>
+<td>胸腔共鳴</td>
+<td>聲帶以下的胸腔</td>
+<td>手掌貼住胸口，以低音說「嗯哼」</td>
+<td>渾厚實在，具有承托力</td>
+<td>往下壓喉製造「假厚」，高音變得吃力</td>
+</tr>
+</tbody></table>
+<h3 id="lesson-3-34">講義擴充：五個共鳴體會練習</h3>
+<ol>
+<li><strong>打哈欠嘆氣</strong>：先假裝打哈欠，在張得最開的瞬間，以「哈」輕輕嘆氣，記住口腔後方打開的空間，這就是口腔共鳴的基礎。</li>
+<li><strong>哼鳴 Humming</strong>：閉上嘴巴、牙齒微微分開，以 /m/ 哼唱五度音階 1 2 3 4 5 4 3 2 1，每輪升高半音，特別留意鼻樑是否發麻。</li>
+<li><strong>手掌貼胸口</strong>：以說話音高往下三個音，發出 /hei/，手掌感受到振動，即為胸腔共鳴。</li>
+<li><strong>捏鼻測試</strong>：唱長音 /a/ 時捏住鼻子，聲音如果明顯變悶，代表氣流經過鼻子、形成鼻音；聲音幾乎不變，代表共鳴位置正確。</li>
+<li><strong>警笛滑音</strong>：以 /u/ 或 /ng/ 從最低音緩緩滑到最高音，再滑回來。聲音突然斷開、音色轉變的地方，就是你的換聲區；以鍵盤找出是哪一個音，並記錄下來。</li>
+</ol>
+<h3 id="lesson-3-35">講義擴充：共鳴的混合使用</h3>
+<p>高音區較多利用頭腔共鳴，低音區則偏重胸腔。缺少頭腔潤飾，聲音乾硬；缺少胸腔支撐，音色虛浮。三腔混合，重點在換聲區：由胸腔過渡到頭腔時，音量稍微收小、口腔保持打開，讓上下兩種聲音逐漸交接，避免用更大的力氣硬推上去。</p>
+<p>共鳴是聲樂中的高階課題，初學者很難自行分辨是否用對了腔體。錄音對照與老師的即時回饋，是避免走入岔路最可靠的方法。</p>
+<h3 id="lesson-3-36">講義擴充：歌曲應用</h3>
+<table>
+<thead>
+<tr>
+<th>歌曲</th>
+<th>原調／男調／女調</th>
+<th>速度</th>
+<th>共鳴安排</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>茄子蛋《浪流連》</td>
+<td>C／C／G</td>
+<td>63</td>
+<td>主歌「想你的彼暗」以胸腔為主，如同對著一個人說話；副歌「這個風風雨雨的社會」轉為口腔，每個字咬清楚；「浪流連」的尾音加入頭腔延伸</td>
+</tr>
+<tr>
+<td>茄子蛋《浪子回頭》</td>
+<td>C／C／G</td>
+<td>66</td>
+<td>「菸一支一支一支的點」的重複句，以口腔保持顆粒感；「佇坎坷的路」往上推升，胸腔與口腔並用；「帶某子逗陣」收尾放鬆，留一點氣音</td>
+</tr>
+</tbody></table>
+<p>台語歌的母音開口較大，尤其是 /a/ 與 /o/，很適合用來練習口腔共鳴的打開感。</p>
+<h3 id="lesson-3-37">課堂互動（網站簡報）</h3>
+<p>22 張投影片中有 17 張帶有互動，主軸是「分辨差異」：每一種共鳴都以錄音或音高曲線留下證據，後半堂以角色輪替練習歌曲。</p>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>教學技巧</th>
+<th>進行方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2 今天的路線</td>
+<td>手機同步 Qr Code</td>
+<td>降低參與門檻</td>
+<td>學員掃碼同步簡報</td>
+</tr>
+<tr>
+<td>3 摀耳實驗</td>
+<td>舉手計票＋揭曉</td>
+<td>預測、觀察、解釋</td>
+<td>老師以三種共鳴演唱同一句，學員投票猜測是胸腔、口腔或頭腔</td>
+</tr>
+<tr>
+<td>5 何謂共鳴</td>
+<td>手指投票</td>
+<td>關鍵提問</td>
+<td>提問「吉他沒有琴身時，聲音的變化」，接著以實際的吉他示範</td>
+</tr>
+<tr>
+<td>6 三腔對照</td>
+<td>翻牌</td>
+<td>提取練習</td>
+<td>正面是共鳴名稱，反面是位置、體會方式與常見錯誤</td>
+</tr>
+<tr>
+<td>7 打哈欠嘆氣</td>
+<td>分段計時</td>
+<td>示範、跟做</td>
+<td>打哈欠、哼鳴、手貼胸口三段，每段 40 秒</td>
+</tr>
+<tr>
+<td>9 共鳴觀測站</td>
+<td>音高與音量即時曲線＋錄音標記</td>
+<td>預測、觀察、解釋；自我評量</td>
+<td>以 /m/ 或 /u/ 從胸腔滑到頭腔，即時看見音高升高、音量變小；錄下之後，拖曳標記胸腔、口腔、頭腔的位置與音高，標記重疊處即為聲區（共鳴轉換的位置），並列出聲區音高，自動比較音高與音量變化，可以下載觀測圖或上傳給老師</td>
+</tr>
+<tr>
+<td>10 捏鼻測試</td>
+<td>兩段錄音對照</td>
+<td>自我評量</td>
+<td>唱 /a/ 時，捏鼻與不捏鼻各錄一次，聆聽聲音是否變悶</td>
+</tr>
+<tr>
+<td>12 警笛滑音</td>
+<td>音高曲線</td>
+<td>動手實驗</td>
+<td>由低音滑到高音，曲線斷開的位置就是換聲區；按下「標記換聲點」，記錄是哪一個音，音域與換聲點會送給老師</td>
+</tr>
+<tr>
+<td>13 混合使用</td>
+<td>選擇題</td>
+<td>提取練習</td>
+<td>提問「高音區較多使用哪一種共鳴」</td>
+</tr>
+<tr>
+<td>14 休息</td>
+<td>十分鐘倒數</td>
+<td>節奏管理</td>
+<td>投影幕顯示倒數</td>
+</tr>
+<tr>
+<td>15 《浪流連》共鳴地圖</td>
+<td>影片播放</td>
+<td>聆聽、對照</td>
+<td>邊聽邊在歌譜上標出主歌胸腔、副歌口腔、句尾頭腔</td>
+</tr>
+<tr>
+<td>16 《浪流連》角色</td>
+<td>隨機點名＋分段計時</td>
+<td>角色輪替</td>
+<td>抽組分配胸腔、口腔、頭腔角色，每輪 3 分鐘之後交換</td>
+</tr>
+<tr>
+<td>17 《浪流連》展演</td>
+<td>分組計分板</td>
+<td>同儕評分</td>
+<td>各組投票選出「共鳴切換最清楚」的組別</td>
+</tr>
+<tr>
+<td>18 《浪子回頭》</td>
+<td>手機錄音</td>
+<td>同儕回饋</td>
+<td>同一句以三種共鳴各錄一次，兩人互相聆聽，給予「兩個讚美、一個建議」</td>
+</tr>
+<tr>
+<td>20 出場券</td>
+<td>3-2-1 出場券</td>
+<td>出場券</td>
+<td>在手機填寫之後，按下「送出給老師」</td>
+</tr>
+<tr>
+<td>21 課後練習</td>
+<td>作業勾選</td>
+<td>自主學習追蹤</td>
+<td>完成一項就點選一次</td>
+</tr>
+<tr>
+<td>22 下週預告</td>
+<td>課前問卷 Qr Code</td>
+<td>課前準備</td>
+<td>掃碼直接在網站填寫第四堂課前問卷</td>
+</tr>
+</tbody></table>
+<h3 id="lesson-3-38">課後練習</h3>
+<p><strong>每日 18 分鐘課表</strong>：呼吸課表精簡版 10 分鐘 → 打哈欠嘆氣 2 分鐘 → 哼鳴五度音階 2 分鐘 → 警笛滑音 2 分鐘 → 胸腔 /hei/ 2 分鐘。</p>
+<ul>
+<li><input disabled="" type="checkbox"> 以三種共鳴各錄一次《浪流連》副歌第一句，寫下三個版本的差異</li>
+<li><input disabled="" type="checkbox"> 使用鍵盤 App，找出自己的換聲區大約落在哪一個音：____</li>
+<li><input disabled="" type="checkbox"> 聆聽張學友或陳奕迅的一首歌，記錄胸腔共鳴最明顯的一句</li>
+<li><input disabled="" type="checkbox"> 聆聽張惠妹或五月天阿信的一首歌，記錄頭腔共鳴最明顯的一句</li>
+<li><input disabled="" type="checkbox"> 繼續記錄 /s/ 吐氣秒數，每週一次即可</li>
+</ul>
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="v06"><h3 id="lesson-3-39">聲道與共鳴感受位置｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/voice-anatomy.jpg?v=20261015tongue3" width="1161" height="1355" alt="實際構造：口腔、咽腔、鼻腔與喉部" loading="lazy" decoding="async"><figcaption>實際構造：口腔、咽腔、鼻腔與喉部</figcaption></figure>
+<figure><img src="../assets/teaching/resonance.svg?v=20261015tongue3" width="1000" height="700" alt="聲道構造與頭／胸振動感受分別標示" loading="lazy" decoding="async"><figcaption>聲道構造與頭／胸振動感受分別標示</figcaption></figure>
+</div>
+<p class="teaching-note">課程中的頭腔、胸腔是歌唱感受描述，不等於圖中獨立的聲道腔室。</p>
+<p class="teaching-sources"><a href="https://www.nidcd.nih.gov/health/taking-care-your-voice">NIH / NIDCD 發聲構造</a> · <a href="https://www.asha.org/practice-portal/clinical-topics/resonance-disorders/">ASHA 聲道共鳴</a></p>
+</div>
+
+<div class="teaching-book" data-demo-group="v07"><h3 id="lesson-3-40">哈欠、哼鳴與手貼胸口｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/voice-yawn-white.webp?v=20261015tongue3" width="1339" height="1175" alt="下巴自然下垂，模擬輕哈欠" loading="lazy" decoding="async"><figcaption>下巴自然下垂，模擬輕哈欠</figcaption></figure>
+<figure><img src="../assets/teaching/voice-hum-white.webp?v=20261015contour4" width="1338" height="1175" alt="嘴唇輕閉，哼出 /m/" loading="lazy" decoding="async"><figcaption>嘴唇輕閉，哼出 /m/</figcaption></figure>
+<figure><img src="../assets/teaching/voice-chest-white.webp?v=20261015tongue3" width="1343" height="1171" alt="手掌輕貼胸口，觀察振動感受" loading="lazy" decoding="async"><figcaption>手掌輕貼胸口，觀察振動感受</figcaption></figure>
+</div>
+</div>
+
+<div class="teaching-book" data-demo-group="v08"><h3 id="lesson-3-41">捏鼻測試｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/voice-no-pinch-white.webp?v=20261015tongue3" width="1363" height="1154" alt="1：以舒服音高唱長音" loading="lazy" decoding="async"><figcaption>1：以舒服音高唱長音</figcaption></figure>
+<figure><img src="../assets/teaching/voice-pinch-white.webp?v=20261015tongue3" width="1363" height="1154" alt="2：輕捏鼻翼，比較聲音的改變" loading="lazy" decoding="async"><figcaption>2：輕捏鼻翼，比較聲音的改變</figcaption></figure>
+</div>
+</div>
+
+<!-- teaching-visuals-end -->
+
+</section>
+<section class="hb-sec"><div class="lesson-head" id="lesson-4" style="--c: #45b3e6;" data-dot="#45b3e6" data-item="第四堂　歌唱發聲練習"><div class="lh-no">Lesson 04</div><h2>歌唱發聲練習</h2></div>
+<p>第四堂將呼吸與共鳴落實到每一個字：以五個基本母音練習音階與促音和弦，再整理子音的咬字。歌曲是一連串音符、節奏與和聲的組合，缺少充分的發聲基礎就想表現感情，如同一把尚未上膛的槍。</p>
+<h3 id="lesson-4-43">課前問卷</h3>
+<ol>
+<li>上週找到的換聲區大約落在哪一個音：____（尚不確定也沒有關係）</li>
+<li>三種共鳴中，最容易找到的是 ____，最難找到的是 ____</li>
+<li>演唱時，是否曾被說「歌詞不清楚」：經常／偶爾／從未</li>
+<li>咬字自我評分 1 到 5 分：平舌與捲舌的區分 __、ㄣ 與 ㄥ 的區分 __</li>
+<li>是否能閱讀簡譜，或能以 Do Re Mi 唱出旋律：可以／略懂／尚未學會</li>
+<li>練習吉他或歌唱時，是否使用節拍器：經常／偶爾／從未</li>
+</ol>
+<h3 id="lesson-4-44">課程綱要（120 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>時間</th>
+<th>段落</th>
+<th>活動內容</th>
+<th>教具</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>00:00–00:20</td>
+<td>起</td>
+<td>繞口令暖身：「四是四，十是十，十四是十四，四十是四十」。老師先只以母音演唱一句歌，再只以子音演唱，學員猜測歌名，引出「母音是歌聲的主體」</td>
+<td>吉他</td>
+</tr>
+<tr>
+<td>00:20–00:55</td>
+<td>承</td>
+<td>對著鏡子練習五母音口型；講解複母音與鼻韻母的收音。以 70 Bpm 帶領「基本音階發聲練習」，五個母音輪流演唱 C 大調八度</td>
+<td>鏡子、鍵盤、節拍器</td>
+</tr>
+<tr>
+<td>00:55–01:05</td>
+<td>休息</td>
+<td>喝溫水</td>
+<td></td>
+</tr>
+<tr>
+<td>01:05–01:40</td>
+<td>轉</td>
+<td>「促音和弦發聲練習」：節拍器由 70 逐步加速到 90 Bpm。分組「母音接力」：每組負責一個母音，接續完成七個和弦。子音練習：對照平舌與捲舌、送氣與不送氣</td>
+<td>節拍器、鍵盤</td>
+</tr>
+<tr>
+<td>01:40–02:00</td>
+<td>合</td>
+<td>《不是因為天氣晴朗才愛你》三步驟學唱：唱名 → /i/ 母音 → 歌詞，重點處理韻腳 [i]。全班跟隨老師的指彈合唱</td>
+<td>吉他、歌譜</td>
+</tr>
+</tbody></table>
+<h3 id="lesson-4-45">講義擴充：五個基本母音</h3>
+<p>華語歌曲的發音幾乎以母音為主，長音也多半落在句尾字，因此先從句尾字的母音著手。</p>
+<table>
+<thead>
+<tr>
+<th>母音</th>
+<th>韻腳注音</th>
+<th>口型要領</th>
+<th>常見問題</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[a]</td>
+<td>ㄚ</td>
+<td>下巴放鬆，自然下垂，舌尖輕抵下排牙齒</td>
+<td>嘴巴張得很大、喉腔卻沒有打開，聲音反而變扁</td>
+</tr>
+<tr>
+<td>[i]</td>
+<td>ㄧ、ㄩ</td>
+<td>嘴角微微展開、舌面抬高，口腔內部仍保持空間</td>
+<td>太扁太尖，高音時變成刺耳的擠聲</td>
+</tr>
+<tr>
+<td>[u]</td>
+<td>ㄨ</td>
+<td>嘴唇圓攏往前，如同輕輕吹口哨</td>
+<td>音量過小、音色悶住</td>
+</tr>
+<tr>
+<td>[e]</td>
+<td>ㄟ、ㄝ</td>
+<td>介於 [a] 與 [i] 之間，下巴微開</td>
+<td>和 [i] 混在一起，難以分辨</td>
+</tr>
+<tr>
+<td>[o]</td>
+<td>ㄛ、ㄜ</td>
+<td>嘴唇圓、口腔深，如同含著一顆雞蛋</td>
+<td>嘴唇太鬆，變成 [a]</td>
+</tr>
+</tbody></table>
+<p><strong>複母音</strong>：兩個以上母音組成的韻腳，例如 [ai] 愛、唉，[au] 熬，重點落在後一個母音。長音時，先以前一個母音延續，最後清楚歸到後一個母音，聽眾才能辨認是哪一個字。</p>
+<p><strong>鼻韻母</strong>：ㄢㄣ 收在舌尖（前鼻音 n），ㄤㄥ 收在舌根（後鼻音 ng）。「心」與「星」、「情」與「勤」的收音如果混在一起，歌詞就會被聽錯。</p>
+<h3 id="lesson-4-46">講義擴充：音階與促音和弦練習</h3>
+<p><strong>練習一：基本音階發聲練習</strong>。播放音檔，鋼琴以 70 Bpm 由 C 大調演奏一個八度，依序以 [a]、[i]、[u]、[e]、[o] 跟著旋律與節奏演唱。請以站姿發聲，每個循環開始之前，一定要吸足氣息。</p>
+<table>
+<thead>
+<tr>
+<th>音名</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>唱名</td>
+<td>Do</td>
+<td>Re</td>
+<td>Mi</td>
+<td>Fa</td>
+<td>Sol</td>
+<td>La</td>
+<td>Si</td>
+<td>Do</td>
+</tr>
+<tr>
+<td>簡譜</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>1̇</td>
+</tr>
+</tbody></table>
+<p><strong>練習二：促音和弦發聲練習</strong>。以 C 大調順階和弦為一個循環，同樣以五個母音分別發音。促音就是「短、促、有力」的斷音，每個音都由腹部彈一下推出，與第二堂的「快吸快吐」使用同一組肌肉。</p>
+<table>
+<thead>
+<tr>
+<th>和弦</th>
+<th>C</th>
+<th>Dm</th>
+<th>Em</th>
+<th>F</th>
+<th>G</th>
+<th>Am</th>
+<th>Bdim</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>組成音</td>
+<td>1 3 5</td>
+<td>2 4 6</td>
+<td>3 5 7</td>
+<td>4 6 1</td>
+<td>5 7 2</td>
+<td>6 1 3</td>
+<td>7 2 4</td>
+</tr>
+<tr>
+<td>行進</td>
+<td>13531353 1</td>
+<td>24642464 2</td>
+<td>35753575 3</td>
+<td>46164616 4</td>
+<td>57275727 5</td>
+<td>61316131 6</td>
+<td>72427242 7</td>
+</tr>
+</tbody></table>
+<p>促音常用在快節奏、切分音或散拍的歌曲，一定要學會。吉他手可以自己彈奏七個和弦的分解和弦，一邊彈奏、一邊演唱，音準與和聲感一併訓練。</p>
+<h3 id="lesson-4-47">講義擴充：子音的基本發聲</h3>
+<p>子音通常出現在母音之前，原則是「子音短而清楚，母音長而圓潤」：子音負責讓聽眾理解，母音負責讓歌聲好聽。</p>
+<table>
+<thead>
+<tr>
+<th>類別</th>
+<th>注音</th>
+<th>練習要點</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>平舌音</td>
+<td>ㄗㄘㄙ</td>
+<td>舌尖抵住下排牙齒後方</td>
+</tr>
+<tr>
+<td>捲舌音</td>
+<td>ㄓㄔㄕㄖ</td>
+<td>舌尖往上捲向硬顎，捲到位置即可，避免過度捲曲</td>
+</tr>
+<tr>
+<td>送氣音</td>
+<td>ㄆㄊㄎ</td>
+<td>發音時，嘴巴前方的手掌能感受到氣流；在麥克風前要稍微收力，避免噴麥</td>
+</tr>
+<tr>
+<td>不送氣音</td>
+<td>ㄅㄉㄍ</td>
+<td>幾乎沒有氣流，輕快俐落</td>
+</tr>
+</tbody></table>
+<p>子音單獨存在的情況並不常見，多半出現在快歌或廣告歌，例如斯斯感冒糖漿的廣告曲。子音的練習方式與母音相同，大約一個月之後，共鳴會有所改變，低音更渾厚、高音更圓潤。</p>
+<h3 id="lesson-4-48">講義擴充：歌曲應用</h3>
+<p>理想混蛋《不是因為天氣晴朗才愛你》，速度 68 Bpm，吉他使用 G 調指型，Capo 夾在第 1 格。</p>
+<p><strong>三步驟學唱</strong>：</p>
+<ol>
+<li>以唱名 Do Re Mi 唱出旋律，先將音準與節奏唱穩。</li>
+<li>這首歌的韻腳是 [i]，全部改以 /i/ 母音演唱，專心檢查共鳴與氣息是否連貫。</li>
+<li>最後放入歌詞，只在子音加上咬字，母音維持第二步的圓潤。</li>
+</ol>
+<p><strong>韻腳處理</strong>：副歌「不是因為天氣晴朗才愛你／不是因為看見星星才想你」的韻腳都是 [i]。「你」的長音容易變扁，請保持嘴角微展、下巴放鬆，口腔內部仍保留打哈欠的空間。「星星」「晴朗」是後鼻音 ㄥ，收音在舌根。</p>
+<h3 id="lesson-4-49">課堂互動（網站簡報）</h3>
+<p>22 張投影片中有 17 張帶有互動，主軸是「聽辨與咬字」：以聽辨題找出平舌與捲舌、前後鼻音的盲點，再以節拍器加速挑戰練習促音。</p>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>教學技巧</th>
+<th>進行方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2 今天的路線</td>
+<td>手機同步 Qr Code</td>
+<td>降低參與門檻</td>
+<td>學員掃碼同步簡報</td>
+</tr>
+<tr>
+<td>3 繞口令</td>
+<td>隨機點名＋碼表</td>
+<td>遊戲化</td>
+<td>抽中的同學唸出「四是四、十是十」，比速度，也比清楚</td>
+</tr>
+<tr>
+<td>4 母音與子音</td>
+<td>預測選擇題</td>
+<td>預測、觀察、解釋</td>
+<td>老師只用母音、只用子音各唱一句，先猜測哪一個能辨認出歌名</td>
+</tr>
+<tr>
+<td>6 五個母音</td>
+<td>翻牌</td>
+<td>提取練習</td>
+<td>正面是母音，反面是口型要領；學員以手機前鏡頭當作鏡子</td>
+</tr>
+<tr>
+<td>7 複母音與鼻韻母</td>
+<td>聽辨＋舉手計票</td>
+<td>關鍵提問</td>
+<td>老師唱出「心」或「星」，全班比出 1 或 2，計票之後揭曉收音的差別</td>
+</tr>
+<tr>
+<td>9 基本音階</td>
+<td>音階跟唱</td>
+<td>示範、跟做</td>
+<td>選擇男聲或女聲與起始音，拍速、半音可以調整；鋼琴帶唱上行一個八度，高音 1 重複一次再下行，最後的 1 唱滿四拍（連續練習時，這四拍就是預備拍，直接接下一輪）；五線譜與簡譜同步標示，第一輪前 4 拍預備，可以自動升高半音、輪換五個母音</td>
+</tr>
+<tr>
+<td>10 促音和弦</td>
+<td>促音跟唱＋加速挑戰</td>
+<td>遊戲化</td>
+<td>C 大調七個三和弦以 1 3 5 3 1 3 5 3、1 的斷音上下行，換氣時提示下一個和弦，五線譜同步標示；拍速與半音可以調整，從 70 Bpm 開始，全班唱穩之後按下「唱穩了 +5 Bpm」，記錄班級紀錄</td>
+</tr>
+<tr>
+<td>12 母音接力</td>
+<td>分組計分板</td>
+<td>合作學習</td>
+<td>每組負責一個母音，接續七個和弦，過程連續的組別加 1 分</td>
+</tr>
+<tr>
+<td>13 休息</td>
+<td>十分鐘倒數</td>
+<td>節奏管理</td>
+<td>投影幕顯示倒數</td>
+</tr>
+<tr>
+<td>14 子音</td>
+<td>翻牌</td>
+<td>提取練習</td>
+<td>手掌放在嘴巴前方，唸出平舌、捲舌、送氣、不送氣，再翻牌查看要領</td>
+</tr>
+<tr>
+<td>15 送氣音與噴麥</td>
+<td>選擇題</td>
+<td>關鍵提問</td>
+<td>提問「對著麥克風唱送氣音，最常出現的問題」</td>
+</tr>
+<tr>
+<td>16 三步驟學唱</td>
+<td>分段計時＋影片連動＋旋律偵測</td>
+<td>示範、跟做</td>
+<td>唱名、/i/ 母音、歌詞三段，每段 3 分鐘；按下開始時同步播放影片，唱名段自動啟動旋律偵測，即時將影片旋律畫成五線譜與簡譜（電腦使用分頁音訊，手機使用麥克風）</td>
+</tr>
+<tr>
+<td>17 韻腳處理</td>
+<td>歌詞標記</td>
+<td>動手標記</td>
+<td>在《不是因為天氣晴朗才愛你》歌詞上點出 [i] 韻腳（●）與後鼻音（ŋ），再對照老師版</td>
+</tr>
+<tr>
+<td>18 合唱</td>
+<td>手機錄音</td>
+<td>自我評量</td>
+<td>錄下第三步的版本，和第二步的 /i/ 版對照</td>
+</tr>
+<tr>
+<td>20 出場券</td>
+<td>3-2-1 出場券</td>
+<td>出場券</td>
+<td>在手機填寫之後，按下「送出給老師」</td>
+</tr>
+<tr>
+<td>21 課後練習</td>
+<td>作業勾選</td>
+<td>自主學習追蹤</td>
+<td>完成一項就點選一次</td>
+</tr>
+<tr>
+<td>22 下週預告</td>
+<td>課前問卷 Qr Code</td>
+<td>課前準備</td>
+<td>掃碼直接在網站填寫第五堂課前問卷</td>
+</tr>
+</tbody></table>
+<h3 id="lesson-4-50">課後練習</h3>
+<p><strong>每日 20 分鐘課表</strong>：呼吸 5 分鐘 → 共鳴（哼鳴、警笛滑音）5 分鐘 → 五母音音階 5 分鐘 → 促音和弦 5 分鐘。</p>
+<ul>
+<li><input disabled="" type="checkbox"> 錄下五個母音的音階練習，對著鏡子檢查口型</li>
+<li><input disabled="" type="checkbox"> 促音和弦練習從 70 Bpm 開始，穩定之後每天增加 5 Bpm，記錄最高速度：____ Bpm</li>
+<li><input disabled="" type="checkbox"> 每天唸一次繞口令，錄音檢查平舌與捲舌</li>
+<li><input disabled="" type="checkbox"> 依照三步驟練習《不是因為天氣晴朗才愛你》副歌，錄下第三步的版本</li>
+<li><input disabled="" type="checkbox"> 預習：聆聽陳奕迅《愛情轉移》，先以自己的方式演唱一次「把一個人的溫暖，轉移到另一個人的胸膛」</li>
+</ul>
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="v04"><h3 id="lesson-4-51">腰腹呼吸與控制｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/breath-in-white.webp?v=20261015tongue3" width="1205" height="1305" alt="雙手放在下肋與腰側，感受吸氣時的擴張" loading="lazy" decoding="async"><figcaption>雙手放在下肋與腰側，感受吸氣時的擴張</figcaption></figure>
+<figure><img src="../assets/teaching/breath-out-white.webp?v=20261015tongue3" width="1203" height="1308" alt="吐氣時維持穩定，肩膀自然放鬆" loading="lazy" decoding="async"><figcaption>吐氣時維持穩定，肩膀自然放鬆</figcaption></figure>
+</div>
+<p class="teaching-note">手部是觀察的位置；氣流進入肺部。</p>
+</div>
+
+<div class="teaching-book" data-demo-group="v09"><h3 id="lesson-4-52">五個母音口型｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/vowel-a-white.webp?v=20261015tongue3" width="1227" height="1281" alt="/a/：下巴自然下垂" loading="lazy" decoding="async"><figcaption>/a/：下巴自然下垂</figcaption></figure>
+<figure><img src="../assets/teaching/vowel-i-white.webp?v=20261015tongue3" width="1229" height="1280" alt="/i/：嘴角微展，保留內部空間" loading="lazy" decoding="async"><figcaption>/i/：嘴角微展，保留內部空間</figcaption></figure>
+<figure><img src="../assets/teaching/vowel-u-white.webp?v=20261015tongue3" width="1232" height="1277" alt="/u/：嘴唇圓攏" loading="lazy" decoding="async"><figcaption>/u/：嘴唇圓攏</figcaption></figure>
+<figure><img src="../assets/teaching/vowel-e-white.webp?v=20261015tongue3" width="1277" height="1231" alt="/e/：下巴微開" loading="lazy" decoding="async"><figcaption>/e/：下巴微開</figcaption></figure>
+<figure><img src="../assets/teaching/vowel-o-white.webp?v=20261015tongue3" width="1280" height="1229" alt="/o/：嘴唇成圓" loading="lazy" decoding="async"><figcaption>/o/：嘴唇成圓</figcaption></figure>
+</div>
+<p class="teaching-note">照片呈現外部口型；舌位與實際發音仍需配合示範聆聽。</p>
+</div>
+
+<div class="teaching-book" data-demo-group="v10"><h3 id="lesson-4-53">舌位與送氣｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/tongue.svg?v=20261015tongue3" width="1000" height="820" alt="比較舌尖在前方與稍向後的構形" loading="lazy" decoding="async"><figcaption>比較舌尖在前方與稍向後的構形</figcaption></figure>
+<figure><img src="../assets/teaching/voice-air-hand-white.webp?v=20261015tongue3" width="1367" height="1150" alt="手掌放在嘴前，觀察送氣差異" loading="lazy" decoding="async"><figcaption>手掌放在嘴前，觀察送氣差異</figcaption></figure>
+</div>
+<p class="teaching-note">舌位圖為示意，不要求過度捲曲或擠壓。</p>
+<p class="teaching-sources"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7891883/">台灣華語舌位研究</a></p>
+</div>
+
+<div class="teaching-book" data-demo-group="v11"><h3 id="lesson-4-54">麥克風與嘴巴角度｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/mic-straight-white.webp?v=20261015tongue3" width="1426" height="1103" alt="正對麥克風：留意送氣直接撞擊網罩" loading="lazy" decoding="async"><figcaption>正對麥克風：留意送氣直接撞擊網罩</figcaption></figure>
+<figure><img src="../assets/teaching/mic-offset-white.webp?v=20261015tongue3" width="1426" height="1103" alt="略偏離氣流正前方，保持演唱距離" loading="lazy" decoding="async"><figcaption>略偏離氣流正前方，保持演唱距離</figcaption></figure>
+</div>
+</div>
+
+<!-- teaching-visuals-end -->
+
+</section>
+<section class="hb-sec"><div class="lesson-head" id="lesson-5" style="--c: #6cbb4b;" data-dot="#6cbb4b" data-item="第五堂　歌唱綜合應用"><div class="lh-no">Lesson 05</div><h2>歌唱綜合應用</h2></div>
+<p>第五堂將呼吸、共鳴、發聲三大要素轉換為歌曲的表情，並透過模仿找到自己的音色。前四堂練習「正確演唱」，這一堂開始練習「動人演唱」。</p>
+<h3 id="lesson-5-56">課前問卷</h3>
+<ol>
+<li>促音和弦練習的最高速度：____ Bpm</li>
+<li>三步驟學唱（唱名、母音、歌詞）中，最有幫助的步驟：____</li>
+<li>最想模仿的歌手與原因：____</li>
+<li>演唱時，是否思考歌詞的意思：經常／偶爾／幾乎只留意音準</li>
+<li>在他人面前演唱的緊張程度，1 到 5 分：__</li>
+<li>你認為自己聲音最有特色的地方：____</li>
+<li>第六堂的結業演唱，偏好：獨唱／雙人／小組；是否自彈自唱：自彈自唱／只負責演唱</li>
+</ol>
+<h3 id="lesson-5-57">課程綱要（120 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>時間</th>
+<th>段落</th>
+<th>活動內容</th>
+<th>教具</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>00:00–00:20</td>
+<td>起</td>
+<td>兩位學員示範三步驟學唱的成果。學員以自己的方式演唱《愛情轉移》的「把一個人的溫暖，轉移到另一個人的胸膛，讓上次犯的錯反省出夢想」，再聆聽原唱，比較斷句與換氣的差異</td>
+<td>音響</td>
+</tr>
+<tr>
+<td>00:20–00:55</td>
+<td>承</td>
+<td>講解呼吸、共鳴、發聲的應用表。老師以《後來的我們》的同一句，示範長音、短音、頓音三種處理，學員記錄聽到的情緒差異</td>
+<td>吉他、投影</td>
+</tr>
+<tr>
+<td>00:55–01:05</td>
+<td>休息</td>
+<td>喝溫水</td>
+<td></td>
+</tr>
+<tr>
+<td>01:05–01:40</td>
+<td>轉</td>
+<td>模仿工作坊：四組各抽選一種歌手類型（胸腔、頭腔、口腔、壓喉音），以「聆聽、模仿、轉化」三步驟模仿一句，並上台展示；接著以自己的聲音重新演唱同一句</td>
+<td>音響、手機</td>
+</tr>
+<tr>
+<td>01:40–02:00</td>
+<td>合</td>
+<td>《後來的我們》副歌全班合唱；《人質》與《演員》依照男女調分組。每位學員說出一個「我想保留的技巧」，老師說明結業演唱與音域測量作業</td>
+<td>吉他、歌譜</td>
+</tr>
+</tbody></table>
+<h3 id="lesson-5-58">講義擴充：呼吸、共鳴、發聲的應用</h3>
+<p><strong>一、呼吸應用</strong></p>
+<p>觀摩現場演出或聆聽錄音，揣摩演唱者的斷句、換氣點與呼吸方式，再轉化為自己的習慣。同一句歌詞，可以一口氣唱完，也可以在逗號處偷氣；換氣位置不同，聽眾感受到的意思與情緒也會不同。</p>
+<p><strong>二、共鳴應用</strong></p>
+<table>
+<thead>
+<tr>
+<th>共鳴區域</th>
+<th>旋律音域</th>
+<th>表情呈現</th>
+<th>歌曲段落</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>頭腔共鳴</td>
+<td>高音域</td>
+<td>表情通常柔和，力道較弱</td>
+<td>主歌、副歌</td>
+</tr>
+<tr>
+<td>口腔共鳴</td>
+<td>中音域</td>
+<td>口氣最重、咬字清晰，力道一般</td>
+<td>主歌、副歌</td>
+</tr>
+<tr>
+<td>胸腔共鳴</td>
+<td>低音域</td>
+<td>聲音渾厚且具有力道，發聲難度較高</td>
+<td>副歌、橋段</td>
+</tr>
+<tr>
+<td>混合使用</td>
+<td>全段</td>
+<td>減少聲區差異，各段表情都能呈現</td>
+<td>全段</td>
+</tr>
+</tbody></table>
+<p><strong>三、發聲應用</strong></p>
+<table>
+<thead>
+<tr>
+<th>發聲方式</th>
+<th>歌曲拍速（Bpm）</th>
+<th>表情呈現</th>
+<th>適切曲風</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>長音（連音）</td>
+<td>100 以下</td>
+<td>情感豐沛、詞意容易融入、渲染力強</td>
+<td>Ballad、Soul</td>
+</tr>
+<tr>
+<td>短音</td>
+<td>70 到 120</td>
+<td>情感較淡、律動性提升</td>
+<td>R&amp;B、Soul</td>
+</tr>
+<tr>
+<td>頓音（促音）</td>
+<td>120 到 200</td>
+<td>口氣明顯、律動性強、旋律性提高</td>
+<td>R&amp;B、Rock</td>
+</tr>
+<tr>
+<td>混合使用</td>
+<td>60 到 200</td>
+<td>段落分明，可以呈現全部表情</td>
+<td>各種曲風</td>
+</tr>
+</tbody></table>
+<p>長音依靠第二堂的「快吸慢吐」，頓音依靠第四堂的「促音和弦」。前幾堂的練習，在這裡一起派上用場。</p>
+<h3 id="lesson-5-59">講義擴充：模仿的作用</h3>
+<p>除非具備「從未聽過音樂，直接將旋律哼出就能感動人心」的天賦，每位歌手的養成過程都經過模仿。模仿的主要作用，在於<strong>開發自身歌唱技巧的不足</strong>；模仿的對象越多元，可以運用的技巧也越多。</p>
+<p>歌唱技巧，是在自身音質 Quality 之外，整合呼吸、共鳴、發聲三大要素之後，於音色、音準、爆發力、渲染力上的整體表現。</p>
+<table>
+<thead>
+<tr>
+<th>想要的能力</th>
+<th>可以揣摩的歌手</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>穩定厚實、情感豐沛的胸腔共鳴</td>
+<td>張學友、陳奕迅</td>
+</tr>
+<tr>
+<td>高音的爆發力與渲染力（頭腔共鳴）</td>
+<td>張惠妹、戴愛玲、阿信</td>
+</tr>
+<tr>
+<td>優美的高音曲線與美聲唱法</td>
+<td>林志炫、柯以敏</td>
+</tr>
+<tr>
+<td>更多元的口腔共鳴</td>
+<td>王若琳、陳綺貞、梁靜茹</td>
+</tr>
+<tr>
+<td>口腔與喉腔之間的壓喉音</td>
+<td>黃大煒、黃小琥</td>
+</tr>
+</tbody></table>
+<p><strong>模仿三步驟：聆聽、模仿、轉化</strong></p>
+<ol>
+<li><strong>聆聽</strong>：同一句重複聆聽五次，分別標記換氣、共鳴位置、轉音、氣音與尾音的處理。</li>
+<li><strong>模仿</strong>：逐句模仿並錄音，與原唱交替播放比對。</li>
+<li><strong>轉化</strong>：保留適合自己聲音的技巧，放下不適合的部分。</li>
+</ol>
+<p>模仿時，如果喉嚨開始緊繃、疼痛，代表模仿了不適合自己的發聲方式，尤其是刻意壓喉製造的沙啞，請立即停止。透過一連串的模仿，才能找出各個共鳴區域最動聽的音色，減少共鳴轉換時的聲區差異，最後找到屬於自己的音色與表現方法。</p>
+<h3 id="lesson-5-60">講義擴充：創造聲音的識別度與感染力</h3>
+<p>找到各段共鳴最適切的表現之後，製作人通常會保留某一種特別容易辨識的音色或發聲方式，作為歌手在商業音樂市場中的記憶點 Hook；這個記憶點，常常影響歌手的發展。</p>
+<p>感染力則來自歌者將情感融入詮釋之後，所釋放的影響力。它或許需要切身的經歷，或許需要刻意的揣摩；這樣的聲音，才能撫慰人心。</p>
+<p><strong>情緒地圖練習</strong>：在歌詞的每一段旁邊，寫下一個情緒關鍵字（例如：回憶、不捨、釋懷）與力度記號（p 弱、mp 中弱、mf 中強、f 強），演唱時依照地圖調整共鳴與發聲方式。</p>
+<h3 id="lesson-5-61">講義擴充：歌曲應用</h3>
+<table>
+<thead>
+<tr>
+<th>歌曲</th>
+<th>原調／男調／女調</th>
+<th>速度</th>
+<th>應用重點</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>五月天《後來的我們》</td>
+<td>C／C／G</td>
+<td>79</td>
+<td>曲式完整，包含前導句「而那些昨日」。主歌以口腔敘事，前導句逐漸累積能量，副歌「只期待後來的你能快樂」以長音與混合共鳴展開</td>
+</tr>
+<tr>
+<td>張惠妹《人質》</td>
+<td>A♭／C／G</td>
+<td>75</td>
+<td>揣摩張惠妹的頭腔爆發力；主歌收斂、副歌釋放，力度由 mp 推到 f</td>
+</tr>
+<tr>
+<td>薛之謙《演員》</td>
+<td>B／A／E</td>
+<td>92</td>
+<td>主歌「簡單點，說話的方式簡單點」以短音、口語化處理；副歌轉為長音，對比出情緒的落差</td>
+</tr>
+</tbody></table>
+<h3 id="lesson-5-62">課堂互動（網站簡報）</h3>
+<p>22 張投影片中有 19 張帶有互動，主軸是「聆聽、模仿、轉化」：先聽辨發聲方式，再分組模仿，最後錄下「模仿版」與「自己版」對照。</p>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>教學技巧</th>
+<th>進行方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2 今天的路線</td>
+<td>手機同步 Qr Code</td>
+<td>降低參與門檻</td>
+<td>學員掃碼同步簡報</td>
+</tr>
+<tr>
+<td>3 三步驟成果</td>
+<td>隨機點名</td>
+<td>隨機點名</td>
+<td>抽選兩位同學，示範上週的三步驟學唱</td>
+</tr>
+<tr>
+<td>4 《愛情轉移》</td>
+<td>歌詞換氣標記</td>
+<td>動手標記、比對</td>
+<td>先標出自己的換氣點並演唱一次，聆聽原唱之後，對照老師依原唱標記的版本</td>
+</tr>
+<tr>
+<td>5 共鳴應用</td>
+<td>翻牌</td>
+<td>提取練習</td>
+<td>正面是共鳴區域，反面是表情呈現與適合的歌曲段落</td>
+</tr>
+<tr>
+<td>6 發聲應用</td>
+<td>聽辨＋舉手計票</td>
+<td>關鍵提問</td>
+<td>老師以長音、短音、頓音演唱同一句，全班比出 1–3，揭曉時對照拍速與曲風表</td>
+</tr>
+<tr>
+<td>7 拍速與發聲</td>
+<td>節拍器</td>
+<td>示範、跟做</td>
+<td>70、100、140 Bpm 一鍵切換，同一句以三種速度演唱，體會發聲方式跟著改變</td>
+</tr>
+<tr>
+<td>8 模仿的作用</td>
+<td>舉手計票</td>
+<td>喚起動機</td>
+<td>提問「最想模仿哪一類歌手」：胸腔、頭腔、美聲、口腔、壓喉音</td>
+</tr>
+<tr>
+<td>10 歌手配對</td>
+<td>翻牌</td>
+<td>提取練習</td>
+<td>正面是想要的能力，反面是可以揣摩的歌手</td>
+</tr>
+<tr>
+<td>11 休息</td>
+<td>十分鐘倒數</td>
+<td>節奏管理</td>
+<td>投影幕顯示倒數</td>
+</tr>
+<tr>
+<td>12 模仿工作坊</td>
+<td>隨機點名＋分段計時</td>
+<td>合作學習</td>
+<td>抽籤分配歌手類型；聆聽 5 分鐘、模仿 8 分鐘、轉化 5 分鐘</td>
+</tr>
+<tr>
+<td>13 工作坊參考</td>
+<td>影片播放</td>
+<td>聆聽、對照</td>
+<td>依照換氣、共鳴、轉音、氣音、尾音五個項目標記</td>
+</tr>
+<tr>
+<td>14 小組展示</td>
+<td>分組計分板</td>
+<td>同儕評分</td>
+<td>全班投票選出「模仿得最像」與「最有自己味道」各一組</td>
+</tr>
+<tr>
+<td>15 模仿版與自己版</td>
+<td>兩段錄音對照</td>
+<td>自我評量</td>
+<td>同一句各錄一次，寫下想保留的一個技巧</td>
+</tr>
+<tr>
+<td>16 情緒地圖</td>
+<td>力度計票表</td>
+<td>全班共識</td>
+<td>《後來的我們》每一段使用 p、mp、mf 或 f，逐段計票之後，依照全班共識合唱</td>
+</tr>
+<tr>
+<td>17 《人質》《演員》</td>
+<td>隨機點名</td>
+<td>分享</td>
+<td>依照男女調分組合唱，抽籤請同學說出一個「我想保留的技巧」</td>
+</tr>
+<tr>
+<td>19 出場券</td>
+<td>3-2-1 出場券</td>
+<td>出場券</td>
+<td>在手機填寫之後，按下「送出給老師」</td>
+</tr>
+<tr>
+<td>20 模仿筆記表</td>
+<td>筆記表單</td>
+<td>自主學習紀錄</td>
+<td>六個欄位在手機上填寫，按下「送出給老師」</td>
+</tr>
+<tr>
+<td>21 課後練習</td>
+<td>作業勾選</td>
+<td>自主學習追蹤</td>
+<td>完成一項就點選一次</td>
+</tr>
+<tr>
+<td>22 下週預告</td>
+<td>課前問卷 Qr Code</td>
+<td>課前準備</td>
+<td>掃碼填寫第六堂課前問卷，提醒攜帶第零號錄音檔，並在家先測量音域</td>
+</tr>
+</tbody></table>
+<h3 id="lesson-5-63">課後練習</h3>
+<p><strong>模仿筆記表</strong>：選擇一位歌手、一首歌，完成下表。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>筆記</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>歌手與歌曲</td>
+<td></td>
+</tr>
+<tr>
+<td>換氣點（大換氣、小換氣）</td>
+<td></td>
+</tr>
+<tr>
+<td>主要共鳴（主歌、副歌各一）</td>
+<td></td>
+</tr>
+<tr>
+<td>發聲方式（長音、短音、頓音）</td>
+<td></td>
+</tr>
+<tr>
+<td>這位歌手的記憶點 Hook</td>
+<td></td>
+</tr>
+<tr>
+<td>我想保留的一個技巧</td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li><input disabled="" type="checkbox"> 完成模仿筆記表，並錄下模仿版與自己版各一句</li>
+<li><input disabled="" type="checkbox"> 在《人質》或《演員》歌詞上畫出情緒地圖，錄下副歌</li>
+<li><input disabled="" type="checkbox"> 音域測量：以鍵盤 App 由中央 C 往下、往上逐音演唱，記錄「能舒服演唱」與「勉強能碰到」的最低音與最高音，第六堂使用</li>
+<li><input disabled="" type="checkbox"> 選定結業演唱的歌曲，可以從第六堂 Case Study 的十首中挑選</li>
+</ul>
+</section>
+<section class="hb-sec"><div class="lesson-head" id="lesson-6" style="--c: #e3d83a;" data-dot="#e3d83a" data-item="第六堂　歌唱自我條件設定"><div class="lh-no">Lesson 06</div><h2>歌唱自我條件設定<small>Conclusion Of Vocal Music</small></h2></div>
+<p>第六堂以「測量自己」收尾：測出可用音域與完全音域，學會為每一首歌設定自己的調，最後以結業演唱與第零號錄音對照，聆聽六週以來的變化。本堂因結業演唱需要較長的時間，「合」延長為 30 分鐘。</p>
+<h3 id="lesson-6-65">課前問卷</h3>
+<ol>
+<li>在家測量的可用音域：最低音 ____、最高音 ____；完全音域：最低音 ____、最高音 ____</li>
+<li>模仿筆記選擇的歌手，以及最想保留的一個技巧：____</li>
+<li>六堂課中收穫最多的一項：呼吸／共鳴／發聲／表情應用／曲式</li>
+<li>目前仍然最困擾的問題：____</li>
+<li>結業演唱的歌曲與預計使用的調：____</li>
+<li>伴奏的需求：需要老師或社員伴奏／自彈自唱／使用伴奏音檔</li>
+</ol>
+<h3 id="lesson-6-66">課程綱要（120 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>時間</th>
+<th>段落</th>
+<th>活動內容</th>
+<th>教具</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>00:00–00:15</td>
+<td>起</td>
+<td>六堂課表濃縮版暖身。Quick Review 分組搶答，答對一題得一分</td>
+<td>白板</td>
+</tr>
+<tr>
+<td>00:15–00:45</td>
+<td>承</td>
+<td>音域測量：老師以鍵盤逐一確認每位學員的可用音域與完全音域，同步填寫 Quick Review 第 7、8 題。講解度數計算、自定調公式與吉他移調</td>
+<td>鍵盤、吉他、移調夾</td>
+</tr>
+<tr>
+<td>00:45–00:55</td>
+<td>休息</td>
+<td>喝溫水，結業演唱者準備</td>
+<td></td>
+</tr>
+<tr>
+<td>00:55–01:30</td>
+<td>轉</td>
+<td>Case Study：每組分配兩到三首，填寫音域、最高音、自定調與韻腳之後上台報告。每位學員從十首中，選出最適合自己的三首</td>
+<td>歌詞講義</td>
+</tr>
+<tr>
+<td>01:30–02:00</td>
+<td>合</td>
+<td>結業演唱：每位學員一分鐘（一段副歌）。願意的學員，當場播放第零號錄音對照。老師結語，學員填寫課程回饋問卷</td>
+<td>音響、吉他</td>
+</tr>
+</tbody></table>
+<h3 id="lesson-6-67">講義擴充：Quick Review（含教師解答）</h3>
+<table>
+<thead>
+<tr>
+<th>題目</th>
+<th>解答</th>
+<th>對應堂次</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. 音樂構成基本三要素</td>
+<td>旋律、和聲、節奏</td>
+<td>第一堂</td>
+</tr>
+<tr>
+<td>2. 歌唱基本三要素</td>
+<td>呼吸、共鳴、發聲（咬字）</td>
+<td>第一堂</td>
+</tr>
+<tr>
+<td>3. 呼吸的方式一般可分為</td>
+<td>胸式呼吸、腹式呼吸（歌唱採用兩者結合的胸腹式呼吸）</td>
+<td>第二堂</td>
+</tr>
+<tr>
+<td>4. 歌唱共鳴腔體一般可分為</td>
+<td>頭腔、口腔、胸腔</td>
+<td>第三堂</td>
+</tr>
+<tr>
+<td>5. 歌唱發聲的基本母音</td>
+<td>[a]、[i]、[u]、[e]、[o]</td>
+<td>第四堂</td>
+</tr>
+<tr>
+<td>6. 換氣點的配置一般可分為</td>
+<td>大換氣與小換氣（偷氣）</td>
+<td>第二、五堂</td>
+</tr>
+<tr>
+<td>7. 我的可用音域</td>
+<td>個人實測</td>
+<td>第六堂</td>
+</tr>
+<tr>
+<td>8. 我的完全音域</td>
+<td>個人實測</td>
+<td>第六堂</td>
+</tr>
+</tbody></table>
+<h3 id="lesson-6-68">講義擴充：音域測量</h3>
+<ul>
+<li><strong>可用音域</strong>：音色穩定、可以反覆演唱，而喉嚨保持放鬆的範圍，選歌與定調以此為準。</li>
+<li><strong>完全音域</strong>：能發出聲音的最低音到最高音，包含假音與勉強碰到的音，只作為參考。</li>
+</ul>
+<p><strong>測量步驟</strong>：由中央 C（C4）開始，以 /a/ 逐音往下演唱，直到聲音變虛、音準不穩，記錄前一個音；再由 C4 逐音往上，以同樣的方式記錄最高音。重複三次，取最穩定的結果。</p>
+<p><strong>度數計算</strong>：在鍵盤上，從最低音數到最高音的白鍵數量，頭尾都計算在內。例如：C3 到 C4 為 8 度，C3 到 A4 為 13 度。</p>
+<h3 id="lesson-6-69">講義擴充：自定調的方法</h3>
+<p>自定調的原則只有兩條：歌曲的音域要小於或等於自己的可用音域；歌曲的最高音等於可用音域的最高音，或再降低一到兩個半音，保留餘裕。</p>
+<pre><code class="language-latex">\text{移調半音數} = \text{我的可用最高音} - \text{歌曲最高音}
+</code></pre>
+<p>例如：歌曲原調為 C，最高音為 A4；你的可用最高音為 F4，相差負 4 個半音，將原調 C 降低 4 個半音，即為 A♭ 調。吉他可以使用 G 調指型，移調夾夾在第 1 格。</p>
+<p>前幾堂的歌譜上標有「男調、女調」，例如《後來的我們》男調 C、女調 G，這只是一般男聲、女聲的平均建議；依照自己實測的音域計算，得出的調最準確。</p>
+<h3 id="lesson-6-70">講義擴充：Case Study 十首</h3>
+<p>下表「最高音 H」以簡譜表示，講義歌詞中的紅色、藍色字，標示最高音出現的位置。「音域」「自定調」「韻腳」三欄由學員填寫，《泡沫》為示範。</p>
+<table>
+<thead>
+<tr>
+<th>歌曲</th>
+<th>拍號</th>
+<th>詞曲</th>
+<th>最高音 H</th>
+<th>音域</th>
+<th>自定調</th>
+<th>韻腳</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>泡沫</td>
+<td>4/4</td>
+<td>G.E.M.</td>
+<td>6</td>
+<td>13 度（低音 1 到高音 6）</td>
+<td></td>
+<td>ㄛ [o]：沫、火、弱、過</td>
+</tr>
+<tr>
+<td>失落沙洲</td>
+<td>4/4</td>
+<td>徐佳瑩</td>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>想你的夜</td>
+<td>4/4</td>
+<td>關喆</td>
+<td>4（1）</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>最長的電影</td>
+<td>4/4</td>
+<td>周杰倫</td>
+<td>4（6）</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>末日之戀</td>
+<td>4/4</td>
+<td>詞：張思爾、施人誠；曲：林俊傑</td>
+<td>5（1）</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>洋蔥</td>
+<td>4/4</td>
+<td>阿信（五月天）</td>
+<td>6（1）</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>小幸運</td>
+<td>4/4</td>
+<td>詞：徐世珍、吳輝福；曲：Jerryc</td>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>煎熬</td>
+<td>4/4</td>
+<td>詞：徐世珍；曲：饒善強</td>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>新不了情</td>
+<td>12/8</td>
+<td>詞：黃鬱；曲：鮑比達</td>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>我要我們在一起</td>
+<td>12/8</td>
+<td>李泉</td>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>拍號提醒</strong>：12/8 拍每小節有四個大拍，每個大拍包含三個八分音符，常用在慢板的抒情歌。吉他刷法以「一二三、二二三」的三連音律動伴奏，歌聲的長音也要跟著這個律動搖擺。</p>
+<h3 id="lesson-6-71">課堂互動（網站簡報）</h3>
+<p>22 張投影片中有 20 張帶有互動，主軸是「測量自己、聽見進步」：以音準偵測測量音域，以計算題練習自定調，最後將結業錄音與第零號錄音放在一起聆聽。</p>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>教學技巧</th>
+<th>進行方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2 今天的路線</td>
+<td>手機同步 Qr Code</td>
+<td>降低參與門檻</td>
+<td>學員掃碼同步簡報</td>
+</tr>
+<tr>
+<td>3 Quick Review</td>
+<td>分組計分板</td>
+<td>提取練習、分組搶答</td>
+<td>前六題分組搶答，答對一題加 1 分</td>
+</tr>
+<tr>
+<td>4 換氣點配置</td>
+<td>手指投票</td>
+<td>關鍵提問</td>
+<td>大換氣與小換氣的情境題</td>
+</tr>
+<tr>
+<td>5 Quick Review 解答</td>
+<td>翻牌</td>
+<td>提取練習</td>
+<td>六題答案逐張翻牌對照</td>
+</tr>
+<tr>
+<td>6 音域測量</td>
+<td>參考音＋麥克風偵測</td>
+<td>動手實驗</td>
+<td>由 C4 逐音往下、往上播放參考音，設定可用最低音與最高音；麥克風偵測到的最低、最高音記錄為完全音域，並自動計算度數</td>
+</tr>
+<tr>
+<td>7 可用與完全音域</td>
+<td>選擇題</td>
+<td>關鍵提問</td>
+<td>提問「選歌與定調要以哪一個為準」</td>
+</tr>
+<tr>
+<td>9 度數計算</td>
+<td>選擇題</td>
+<td>提取練習</td>
+<td>提問「C3 到 A4 相差幾度」</td>
+</tr>
+<tr>
+<td>10 自定調公式</td>
+<td>選擇題</td>
+<td>應用題</td>
+<td>提問「原調 C、最高音 A4，我的可用最高音 F4，應該使用哪一個調」</td>
+</tr>
+<tr>
+<td>11 自定調計算器</td>
+<td>自定調計算</td>
+<td>應用、個人化</td>
+<td>選擇原調與歌曲最高音，自動帶入自己的可用最高音，計算出自定調、餘裕方案與吉他移調夾位置</td>
+</tr>
+<tr>
+<td>12 吉他移調</td>
+<td>分組計分板</td>
+<td>合作學習</td>
+<td>各組使用移調夾彈出指定的調，最先彈對的組別加 1 分</td>
+</tr>
+<tr>
+<td>13 休息</td>
+<td>十分鐘倒數</td>
+<td>節奏管理</td>
+<td>結業演唱者準備</td>
+</tr>
+<tr>
+<td>14 Case Study 分歌</td>
+<td>隨機點名＋分段計時</td>
+<td>合作學習</td>
+<td>抽籤分配歌曲；分析 10 分鐘、報告 5 分鐘</td>
+</tr>
+<tr>
+<td>16 十首人氣榜</td>
+<td>舉手計票</td>
+<td>自我選擇</td>
+<td>每人選出最適合自己的一首，計票觀察全班的分布</td>
+</tr>
+<tr>
+<td>17 結業演唱順序</td>
+<td>隨機點名</td>
+<td>隨機點名</td>
+<td>抽籤決定上台順序</td>
+</tr>
+<tr>
+<td>18 結業演唱</td>
+<td>循環計時</td>
+<td>同儕回饋</td>
+<td>準備 20 秒、演唱 1 分鐘、回饋 40 秒，自動輪到下一位；聽眾給予「兩個讚美、一個建議」</td>
+</tr>
+<tr>
+<td>19 前後對照</td>
+<td>選檔播放＋手機錄音</td>
+<td>前測與後測</td>
+<td>從手機選擇第一堂下載的第零號錄音（或由老師從雲端資料夾播放），錄下結業版，按一下就先播放第零號、再播放結業版</td>
+</tr>
+<tr>
+<td>20 課程回饋</td>
+<td>回饋問卷 Qr Code</td>
+<td>課程評鑑</td>
+<td>掃碼在網站填寫課程回饋問卷：五個滿意度構面、整體滿意度與六堂學習成效自評</td>
+</tr>
+<tr>
+<td>21 出場券</td>
+<td>3-2-1 六堂總回顧</td>
+<td>出場券</td>
+<td>3 個收穫、2 個要繼續練習的項目、1 句想對老師說的話</td>
+</tr>
+<tr>
+<td>22 結語</td>
+<td>作業勾選</td>
+<td>自主學習追蹤</td>
+<td>結業之後的長期課表，完成一項就點選一次</td>
+</tr>
+</tbody></table>
+<h3 id="lesson-6-72">課後練習（結業後的長期課表）</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 每日 20 分鐘課表持續一個月：呼吸 5 分鐘、共鳴 5 分鐘、母音音階 5 分鐘、歌曲 5 分鐘</li>
+<li><input disabled="" type="checkbox"> 將「自定調歌單」擴充到十首，每首註明原調、自定調與吉他移調夾位置</li>
+<li><input disabled="" type="checkbox"> 每個月錄音一次，與第零號錄音及結業錄音對照</li>
+<li><input disabled="" type="checkbox"> 每半年重新測量一次可用音域</li>
+</ul>
+<h3 id="lesson-6-73">課程回饋問卷（結業當天填寫）</h3>
+<p>問卷在網站上填寫（第六堂第 20 張掃描 Qr Code），共 12 題，結果送進課程試算表。</p>
+<p><strong>一、各構面滿意度</strong>（1 分為非常不滿意，5 分為非常滿意）</p>
+<table>
+<thead>
+<tr>
+<th>構面</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>教學方式</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>教學內容</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>講義內容</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>講師專業</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>講師態度</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>二、課程整體</strong></p>
+<ol>
+<li>整體滿意度，1 到 5 分：__</li>
+<li>最有幫助的一堂：第 __ 堂，原因（選填）：____</li>
+<li>每堂 120 分鐘的節奏：太快／剛好合適／太慢</li>
+<li>課後練習的份量：太多／剛好合適／太少</li>
+<li>希望進階班加強的主題（可複選，選填）：高音／轉音／合聲／舞台表演／自彈自唱／歌詞創作</li>
+<li>想對老師說的話（選填）：____</li>
+</ol>
+<p><strong>三、六堂課學習成效自評</strong>（1 分為完全做不到，5 分為能穩定做到）</p>
+<table>
+<thead>
+<tr>
+<th>學習目標</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第一堂：能說明聲音形成與歌唱三要素，並拆解一首歌的曲式</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>第二堂：能以胸腹式呼吸演唱，並在歌詞上規劃換氣點</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>第三堂：能分辨並運用胸腔、口腔、頭腔共鳴</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>第四堂：能以正確的母音口型與咬字演唱</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>第五堂：能運用長音、短音、頓音與模仿技巧表達情感</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>第六堂：能測量自己的音域，並為歌曲設定適合的調</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>四、進步紀錄</strong></p>
+<ol>
+<li>目前 /s/ 吐氣最長持續的秒數：__ 秒</li>
+<li>目前的可用音域（選填）：__ 度</li>
+<li>和第一堂相比，歌唱能力的整體進步程度，1 到 5 分（1 分沒有進步，5 分進步很多）：__</li>
+</ol>
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="g09"><h3 id="lesson-6-74">Capo 夾位｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/capo-front-v2.webp?v=20261015tongue3" width="882" height="879" alt="壓桿橫跨指板與六條弦，放在格位內、靠近琴衍。" loading="lazy" decoding="async"><figcaption>壓桿橫跨指板與六條弦，放在格位內、靠近琴衍。</figcaption></figure>
+<figure><img src="../assets/teaching/capo-side-v2.webp?v=20261015tongue3" width="876" height="879" alt="上方橡膠墊壓住琴弦，下方夾爪貼合琴頸背面。" loading="lazy" decoding="async"><figcaption>上方橡膠墊壓住琴弦，下方夾爪貼合琴頸背面。</figcaption></figure>
+</div>
+</div>
+
+<!-- teaching-visuals-end -->
+
+</section>
+</main>
 
 <footer>© 畫素音樂工作坊 Pixel Studio・亞東科技大學吉他社 流行歌唱班</footer>
 
@@ -63,18 +2458,23 @@
 <script src="../assets/youtube.js?v=20261016a"></script>
 <script src="../assets/config.js?v=20261014v"></script>
 <script src="../assets/backend.js?v=20261016c"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <script>
 (function () {
   var NUM = { '一': 1, '二': 2, '三': 3, '四': 4, '五': 5, '六': 6 };
   var COLOR = ['', '#e8412b', '#e2407f', '#9a5fd0', '#45b3e6', '#6cbb4b', '#e3d83a'];
   var main = document.getElementById('content'), toc = document.getElementById('toc'), prog = document.getElementById('progress');
-  fetch('course-handbook.md?v=20261015contour4')
-    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+  var pre = main.hasAttribute('data-prerendered');
+  function loadMarked() { return window.marked ? Promise.resolve() : new Promise(function (ok, no) { var s = document.createElement('script'); s.src = 'https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js'; s.onload = ok; s.onerror = no; document.head.appendChild(s); }); }
+  (pre ? (location.hash ? Promise.resolve(null) : new Promise(function (ok) { requestAnimationFrame(function () { setTimeout(function () { ok(null); }, 0); }); })) : loadMarked().then(function () { return fetch('course-handbook.md?v=20261015contour4'); }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }))
     .then(function (md) {
-      main.innerHTML = marked.parse(md, { gfm: true });
+      if (md !== null) main.innerHTML = marked.parse(md, { gfm: true });
+      main.querySelectorAll('img').forEach(function (i) { i.loading = 'lazy'; i.decoding = 'async'; });
       var heads = [], items = [];
-      main.querySelectorAll('h2,h3').forEach(function (h) {
+      if (pre) main.querySelectorAll('.lesson-head,h3').forEach(function (h) {
+        if (h.tagName === 'H3') { items.push({ href: '#' + h.id, label: h.textContent.trim(), sub: true }); return; }
+        heads.push(h); items.push({ href: '#' + h.id, label: h.getAttribute('data-item'), dot: h.getAttribute('data-dot') });
+      });
+      else main.querySelectorAll('h2,h3').forEach(function (h) {
         if (h.tagName === 'H3') {
           var parent = heads[heads.length - 1];
           h.id = (parent ? parent.id : 'sec') + '-' + (items.length + 1);
@@ -94,6 +2494,8 @@
         var a = document.createElement('a'); a.href = '#' + id; a.textContent = n ? '第' + m[1] + '堂' : '課程總覽'; a.setAttribute('data-id', id); toc.appendChild(a);
         items.push({ href: '#' + id, label: n ? '第' + m[1] + '堂　' + parts[0].replace(/^第.堂｜/, '').trim() : '課程總覽', dot: n ? COLOR[n] : null });
       });
+      // 每一章包成 section，畫面外的章節延後計算版面（content-visibility），長講義才不會卡住
+      if (!pre) heads.forEach(function (h) { var sec = document.createElement('section'); sec.className = 'hb-sec'; h.parentNode.insertBefore(sec, h); var n = h; while (n && (n === h || !(n.classList && n.classList.contains('lesson-head')))) { var nx = n.nextSibling; sec.appendChild(n); n = nx; } });
       main.querySelectorAll('input[type=checkbox]').forEach(function (c) { c.removeAttribute('disabled'); if (c.parentNode) c.setAttribute('aria-label', c.parentNode.textContent.trim()); });
       // 每堂開頭放「本堂歌曲」，內文的《歌名》後面加上播放鈕
       heads.forEach(function (h) {
@@ -123,7 +2525,7 @@
         var max = document.documentElement.scrollHeight - innerHeight;
         prog.style.width = (max > 0 ? scrollY / max * 100 : 0) + '%';
         var cur = heads[0];
-        heads.forEach(function (h) { if (h.getBoundingClientRect().top < innerHeight * 0.3) cur = h; });
+        heads.forEach(function (h) { if (h.parentNode.getBoundingClientRect().top < innerHeight * 0.3) cur = h; });
         chips.forEach(function (c) {
           var on = cur && c.getAttribute('data-id') === cur.id;
           if (on && !c.classList.contains('cur')) c.scrollIntoView({ block: 'nearest', inline: 'center' });

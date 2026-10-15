@@ -10,10 +10,11 @@
 <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png?v=20261014h">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=20261014h">
 <meta name="theme-color" content="#101210">
+<link rel="preload" href="../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<script>/* 第一格畫面之後才載入網路字型，首屏先用系統字型，不讓 1MB 中文字型拖慢首次繪製 */requestAnimationFrame(function(){requestAnimationFrame(function(){var l=document.createElement("link");l.rel="stylesheet";l.href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&family=Space+Grotesk:wght@500..700&display=swap";document.head.appendChild(l)})})</script>
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&family=Space+Grotesk:wght@500..700&display=swap"></noscript>
+<script>/* 中文字型策略：首次造訪用系統中文字型（符合 CI：正黑體／蘋方），不在首屏重排；瀏覽器閒置時只把本頁用得到的 Noto Sans TC 分組下載進快取，之後每頁一開始就套用 */(function(){var K="ps-font",U="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap";function apply(){var l=document.createElement("link");l.rel="stylesheet";l.href=U;document.head.appendChild(l)}var c=0;try{c=localStorage.getItem(K)}catch(e){}if(c){apply();return}var n=navigator.connection;if(n&&(n.saveData||/2g/.test(n.effectiveType||"")))return;function inRange(r,cps){return r.split(",").some(function(p){var m=p.trim().replace(/^U\+/i,"").split("-"),a=parseInt(m[0],16),b=m[1]?parseInt(m[1],16):a;return cps.some(function(x){return x>=a&&x<=b})})}function warm(){if(!window.FontFace||!window.fetch)return;var seen={},cps=[],t=document.body.textContent;for(var i=0;i<t.length;i++){var x=t.charCodeAt(i);if(x>=0x2E80&&!seen[x]){seen[x]=1;cps.push(x)}}fetch(U).then(function(r){return r.text()}).then(function(css){var jobs=[];css.replace(/@font-face\s*\{([^}]*)\}/g,function(_,b){var s=/url\(([^)]+)\)/.exec(b),r=/unicode-range:\s*([^;]+)/.exec(b);if(s&&r&&inRange(r[1],cps))jobs.push(new FontFace("Noto Sans TC","url("+s[1]+")",{weight:"400 900",unicodeRange:r[1]}).load());return _});return Promise.all(jobs)}).then(function(){try{localStorage.setItem(K,"1")}catch(e){}}).catch(function(){})}addEventListener("load",function(){(window.requestIdleCallback||function(f){setTimeout(f,2000)})(warm,{timeout:4000})})})()</script>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=optional"></noscript>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Music&text=%F0%9D%84%9E%E2%99%AF%E2%99%AE&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css?v=20261016c">
 <link rel="stylesheet" href="../assets/backend.css?v=20261015b">
@@ -30,6 +31,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<script>/* 從章節錨點進入時完整排版，落點才精準 */if(location.hash)document.documentElement.classList.add('hb-deep')</script>
 </head>
 <body id="top" data-course="songwriting">
 <header class="topbar">
@@ -44,10 +46,2550 @@
   </div>
   <span class="bar-progress" id="progress"></span>
 </header>
-<nav class="toc" aria-label="講義目錄"><div class="wrap" id="toc"></div></nav>
+<nav class="toc" aria-label="講義目錄"><div class="wrap" id="toc"><a href="#overview" data-id="overview">課程總覽</a><a href="#session-1" data-id="session-1">第一堂</a><a href="#session-2" data-id="session-2">第二堂</a><a href="#session-3" data-id="session-3">第三堂</a><a href="#session-4" data-id="session-4">第四堂</a><a href="#session-5" data-id="session-5">第五堂</a><a href="#session-6" data-id="session-6">第六堂</a><a href="#session-7" data-id="session-7">第七堂</a><a href="#session-8" data-id="session-8">第八堂</a></div></nav>
 
 <aside class="wrap" aria-label="講義下載"><div class="dl-bar"><div><b>講義與教案 PDF</b><span>A4 排版・八堂課・含曲例 QR Code，可列印或分享</span></div><a class="btn primary" href="songwriting-handbook.pdf" download="詞曲創作八堂_講義與教案.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>下載 PDF</a></div></aside>
-<main class="wrap md" id="content"><p class="loading">講義載入中…</p></main>
+<main class="wrap md" id="content" data-prerendered="46a9336414">
+<h1>Pixel Studio Songwriting Lab｜詞曲創作八堂講義與教案</h1>
+<p>主講：畫素音樂工作坊 李奕勳｜教材來源：畫素音樂工作坊「流行音樂學程：詞曲創作」課程綱要、詞曲創作概論、2011 年 Session 4、Session 5 講座教材、流行音樂育成中心詞曲創作班教材，2026 年重新整理、校訂。</p>
+<section class="hb-sec"><div class="lesson-head" id="overview" data-item="課程總覽"><div class="lh-no">Overview</div><h2>課程總覽</h2></div>
+<p>流行音樂以藍調為濫觴，百年之間翻轉、融合了整個地球的音樂。臺灣在五〇年代大量吸收美國的流行音樂文化，日後成為華語流行音樂的重鎮；詞曲創作的中文教材，卻始終稀少。這份講義將詞曲創作整理成系統，盼望協助學員解答創作上的疑惑。</p>
+<p>課程共八堂，每堂 180 分鐘，合計 24 小時。每一組學員從第一堂確立主題開始，一堂一堂累積同一張「創作範本卡」，第八堂發表一首包含詞、曲、編曲與 Demo 的完整作品。</p>
+<h3 id="overview-2">教學目標</h3>
+<ol>
+<li>理解流行音樂創作的基本方式與結構，提升詞曲創作的概念與想法。</li>
+<li>分析流行歌曲的動機、曲式、模進與創作意涵，提升音樂的評析與鑑賞能力。</li>
+<li>透過創作練習與探討，養成客觀、公正、專業的音樂創作態度。</li>
+<li>融合不同個案進行探討與重製，激發創作風氣與良性競爭。</li>
+</ol>
+<h3 id="overview-3">八堂進度表</h3>
+<table>
+<thead>
+<tr>
+<th>堂</th>
+<th>主題</th>
+<th>對應課綱單元</th>
+<th>核心內容</th>
+<th>作品進度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>初探詞曲創作</td>
+<td>一、初探詞曲創作</td>
+<td>創作的分級、確立主題、素材來源、素材篩選、排列組合、重新包裝</td>
+<td>主題、歌名、人稱</td>
+</tr>
+<tr>
+<td>2</td>
+<td>詞曲創作導論與曲式</td>
+<td>二、詞曲創作導論；三、詞曲創作的繪本</td>
+<td>樂理基礎、何謂流行音樂、動機發展、流行歌曲公式、副歌</td>
+<td>曲式圖</td>
+</tr>
+<tr>
+<td>3</td>
+<td>歌詞創作（一）從詩到詞</td>
+<td>四、歌詞創作</td>
+<td>四大韻文、歌詞與詩的不同、作詞與填詞、字調、韻腳</td>
+<td>主歌歌詞</td>
+</tr>
+<tr>
+<td>4</td>
+<td>歌詞創作（二）修辭與作詞家</td>
+<td>四、歌詞創作</td>
+<td>二十三種修辭法、十八位作詞家、九大禁忌、修理歌詞</td>
+<td>完整歌詞</td>
+</tr>
+<tr>
+<td>5</td>
+<td>旋律創作（一）動機與和弦</td>
+<td>五、旋律創作</td>
+<td>演奏曲與演唱曲、作曲與譜曲、音階、旋律線條、和弦進行</td>
+<td>副歌旋律</td>
+</tr>
+<tr>
+<td>6</td>
+<td>旋律與配唱</td>
+<td>五、旋律創作；六、旋律與配唱</td>
+<td>作曲家、範例評析、完全音域與可用音域、音準點、定調與轉調</td>
+<td>全曲旋律、人聲 Demo</td>
+</tr>
+<tr>
+<td>7</td>
+<td>音樂的魔法師：編曲與製作</td>
+<td>七、音樂的魔法師</td>
+<td>編曲前置、五大要素、配唱與編曲、錄音與混音</td>
+<td>樂器配置、伴奏</td>
+</tr>
+<tr>
+<td>8</td>
+<td>範例研討與成果發表</td>
+<td>八、詞曲創作範例研討；九、成果發表</td>
+<td>修正回饋、評估批評、隨堂編修、成果發表、總回顧</td>
+<td>作品發表</td>
+</tr>
+</tbody></table>
+<h3 id="overview-4">每堂 180 分鐘的共同節奏</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>25 分鐘</td>
+<td>回顧上週作品、回答出場券的問題、引導主題</td>
+</tr>
+<tr>
+<td>承</td>
+<td>55 分鐘</td>
+<td>新觀念講解、範例聆聽與小測驗</td>
+</tr>
+<tr>
+<td>休</td>
+<td>10 分鐘</td>
+<td>休息、補充水分</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>60 分鐘</td>
+<td>分組創作、工具實作、互評</td>
+</tr>
+<tr>
+<td>合</td>
+<td>30 分鐘</td>
+<td>寫入創作範本卡、三句話總結、出場券、課後練習</td>
+</tr>
+</tbody></table>
+<h3 id="overview-5">教具清單</h3>
+<ul>
+<li>教室投影與音響設備；鋼琴、鍵盤或吉他一把，用於示範和弦與旋律</li>
+<li>學員手機：掃描投影片 Qr Code，同步使用素材庫、韻腳檢查器、動機實驗室、和弦進行與錄音</li>
+<li>耳機與安靜的錄音空間（第六、七、八堂錄製 Demo）</li>
+</ul>
+<h3 id="overview-6">評量方式</h3>
+<p>原課程的成績項目以歌曲段落命名，提醒學員八堂課完成的是同一首作品。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>比重</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Verse 主歌</td>
+<td>25%</td>
+<td>創作範本卡與隨堂作業：主題、曲式、歌詞、旋律的階段成果</td>
+</tr>
+<tr>
+<td>Chorus 副歌</td>
+<td>35%</td>
+<td>期末作品：第八堂的成果發表</td>
+</tr>
+<tr>
+<td>Hook 記憶點</td>
+<td>30%</td>
+<td>出席與課堂參與：課前問卷、出場券、分組任務</td>
+</tr>
+<tr>
+<td>Tag 破格句</td>
+<td>10%</td>
+<td>其他表現：互評、協助組員、課後持續創作</td>
+</tr>
+</tbody></table>
+<h3 id="overview-7">創作範本卡</h3>
+<p>創作範本卡源自「流行詞曲創作範本格式」，欄位包含歌曲名稱、填詞、譜曲、編曲、拍號、調號、速度、音域、主律動、押韻方式與韻腳、人稱立場、主題與故事、記憶點、段落結構、樂器配置、各段歌詞與修辭法。八堂課共用同一張範本卡，資料存在學員自己的裝置，可以下載文字檔，也可以送給老師。</p>
+<h3 id="overview-8">課堂互動設計原則</h3>
+<ul>
+<li>新觀念控制在 55 分鐘以內，其餘時間留給創作與討論</li>
+<li>每一堂都有一個「作品進度」，寫入創作範本卡，下一堂從這裡接續</li>
+<li>先聆聽範例、再分析手法、最後動手創作；所有藝術的開端皆為模仿，模仿的是手法與結構</li>
+<li>歌詞範例只摘錄分析所需的短句，完整作品請聆聽官方影片</li>
+</ul>
+</section>
+<section class="hb-sec"><div class="lesson-head" id="session-1" style="--c: #e8412b;" data-dot="#e8412b" data-item="第一堂　初探詞曲創作 1st"><div class="lh-no">Session 01</div><h2>初探詞曲創作 1st<small>Step About Songwriting</small></h2></div>
+<p>本堂目標：能說明創作的分級，理解商業與藝術之間的流動；能從生活取材、情感訴求、議題擴大三個方向，確立一首歌的主題；建立自己的詞典、句典、曲典，並學會篩選合適的素材；下課前，每一組完成創作範本卡的第一筆：歌名、主題與記憶點。</p>
+<h3 id="session-1-10">課前問卷（入班問卷）</h3>
+<ul>
+<li>會演奏的樂器</li>
+<li>創作歌曲的經驗</li>
+<li>能夠閱讀的樂譜</li>
+<li>自我評分（1 到 5 分）</li>
+<li>最常聆聽的音樂類型</li>
+<li>最喜愛的三位歌手或創作者</li>
+<li>最想創作的主題方向</li>
+<li>八堂課結束時，最希望達成的一件事</li>
+</ul>
+<h3 id="session-1-11">課程綱要（180 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+<th>投影片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>00:00–00:25</td>
+<td>一首歌的起點，常常是生活裡的一個片刻、創作歌曲，最困難的部分、輸入 Input，產出 Output、每一堂課，都為作品完成一個部分</td>
+<td>3–6</td>
+</tr>
+<tr>
+<td>承</td>
+<td>00:25–01:20</td>
+<td>同樣是創作，出發點各有不同、藝術與商業，會隨著時間互換位置、迷思還是事實？、生活取材：最平凡的日常，最容易引起共鳴、情感訴求：親情、友情、愛情、議題擴大：從身邊的人，走向整個世界、這個主題，屬於哪一個方向、主題確立之後，再決定這首歌的聲音、詞曲先後，沒有定律、作詞與填詞、作曲與譜曲</td>
+<td>7–16</td>
+</tr>
+<tr>
+<td>休</td>
+<td>01:20–01:30</td>
+<td>休息十分鐘</td>
+<td>17</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>01:30–02:30</td>
+<td>建立自己的詞典、句典、曲典、素材的好壞，取決於是否合適、流行歌曲公式 Song Formula、Hook：聆聽一次，就忘不了的那個地方、唱片工業的八大製程、不翻閱上一張，排出八大製程的順序、每一組認領一個方向，八堂課完成一首歌、主題骰子：沒有靈感時，先擲一次</td>
+<td>18–25</td>
+</tr>
+<tr>
+<td>合</td>
+<td>02:30–03:00</td>
+<td>創作的三大禁忌與三大目標、創作範本卡：歌名、主題、人稱、記憶點、離開教室前，寫下 3-2-1</td>
+<td>26–29</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td>課後</td>
+<td>三句話總結、出場券、課後練習與下一堂預告</td>
+<td>28、30、31、32</td>
+</tr>
+</tbody></table>
+<h3 id="session-1-12">講義擴充：前言</h3>
+<p>人生於世，生活中的大小事，只要牽動情感的寄託，就值得回味與保留。有些人用攝影、繪圖、影像記錄這一切，熱愛音樂的朋友，選擇用音樂記錄生命的點滴。</p>
+<p>常常有學生詢問：「阿勳老師，我要如何寫歌？」創作歌曲並不困難，困難的是培養生活中過人的觀察力，並且訓練自己，讓記錄的方法更快、更有效率。最困難的，莫過於將這份感受與感動，對等地移轉到聆聽者的耳朵，甚至心底。</p>
+<p>以輸入（Input）與產出（Output）解讀創作：新聞、對話、旅行、一段美妙的旋律，都是輸入源。資訊進入腦海之後，經過解讀、分析、重整、排列，才產出我們需要的詞藻與旋律。多多臨摹喜愛的詞曲創作者，從作品中找到方向，再發展出自我的風格，是初入詞曲創作最穩當的方式。</p>
+<h3 id="session-1-13">講義擴充：創作的分級</h3>
+<table>
+<thead>
+<tr>
+<th>分級</th>
+<th>對照</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>正規與非正規</td>
+<td>古典理論作曲、現代商業作曲；近體詩與現代詩</td>
+</tr>
+<tr>
+<td>主觀與客觀</td>
+<td>自我與大眾、藝術與科學、東西文化的差異</td>
+</tr>
+<tr>
+<td>商業與藝術</td>
+<td>今日的藝術，明日的商業（郭英男、閃靈）；今日的商業，明日的藝術（Michael Jackson、鄧麗君）</td>
+</tr>
+</tbody></table>
+<h3 id="session-1-14">講義擴充：確立主題</h3>
+<table>
+<thead>
+<tr>
+<th>方向</th>
+<th>範圍</th>
+<th>曲例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>生活取材</td>
+<td>食、衣、住、行、育、樂；人、事、時、地、物</td>
+<td>盧廣仲〈早安，晨之美！〉</td>
+</tr>
+<tr>
+<td>情感訴求</td>
+<td>親情、友情、愛情</td>
+<td>〈阿嬤的話〉、〈朋友〉、〈家後〉、〈月亮代表我的心〉</td>
+</tr>
+<tr>
+<td>議題擴大</td>
+<td>群眾、社會、國家、世界</td>
+<td>小蟲〈紅花雨〉、〈手牽手〉、U2〈With Or Without You〉、Bob Dylan〈Knockin&#39; On Heaven&#39;s Door〉</td>
+</tr>
+</tbody></table>
+<p>確立主題之後，再決定整體的風格：旋律（傳統音階、五聲音階、藍調音階）、和聲（和聲編排、和弦編寫）、節奏（律動分配、節奏型態與風格）。</p>
+<h3 id="session-1-15">講義擴充：素材的來源、篩選與包裝</h3>
+<ul>
+<li>音樂構成的三大要素：旋律、和聲、節奏；歌曲的第四大要素：引領意境的歌詞。詞曲先後沒有定律。</li>
+<li>作詞：依據曲式結構創作歌詞；填詞：依照已有的旋律填詞。作曲：直接創作旋律；譜曲：依照已有的歌詞譜曲。</li>
+<li>生活化的素材蒐集：建立詞典、句典、曲典，依照主題與韻腳分類索引。</li>
+<li>素材篩選：較佳的素材如同樂音，華麗或樸實的辭藻都好；較不佳的素材如同噪音，是多餘的贅句與不合適的句子。素材的好壞，取決於是否符合邏輯、情境、修辭與表現。</li>
+<li>排列組合：流行歌曲公式、起承轉合、情緒鋪陳（平述、強化、激烈、頓悟、坦然、釋然）、記憶強化點 Hook（詞記憶點如〈我要快樂〉〈就是愛你〉；曲記憶點如〈卡農〉）。</li>
+<li>重新包裝：唱片工業的八大製程，A&amp;R 前期規劃、詞曲創作、決定風格、編曲進行、錄音工程、聲音編輯、混音工程、母帶後製。</li>
+</ul>
+<h3 id="session-1-16">講義擴充：創作的三大禁忌與三大目標</h3>
+<table>
+<thead>
+<tr>
+<th>三大禁忌</th>
+<th>三大目標</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第一首歌就想創作出經典</td>
+<td>將歌曲完成</td>
+</tr>
+<tr>
+<td>不斷往下延伸，忘記先前哼唱過的好旋律</td>
+<td>將旋律清楚地哼唱出來</td>
+</tr>
+<tr>
+<td>有靈感才創作一段，斷斷續續，沒有組織</td>
+<td>一定要錄音記錄</td>
+</tr>
+</tbody></table>
+<h3 id="session-1-17">課堂互動（網站簡報）</h3>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>手機同步</td>
+<td>今天的路線：從一個念頭，走到一張創作範本卡</td>
+</tr>
+<tr>
+<td>3</td>
+<td>舉手計票</td>
+<td>一首歌的起點，常常是生活裡的一個片刻</td>
+</tr>
+<tr>
+<td>8</td>
+<td>先預測再揭曉</td>
+<td>藝術與商業，會隨著時間互換位置</td>
+</tr>
+<tr>
+<td>9</td>
+<td>迷思破解・翻牌</td>
+<td>迷思還是事實？</td>
+</tr>
+<tr>
+<td>10</td>
+<td>曲例聆聽・YouTube</td>
+<td>生活取材：最平凡的日常，最容易引起共鳴</td>
+</tr>
+<tr>
+<td>11</td>
+<td>曲例聆聽・YouTube</td>
+<td>情感訴求：親情、友情、愛情</td>
+</tr>
+<tr>
+<td>12</td>
+<td>曲例聆聽・YouTube</td>
+<td>議題擴大：從身邊的人，走向整個世界</td>
+</tr>
+<tr>
+<td>13</td>
+<td>選擇題</td>
+<td>這個主題，屬於哪一個方向</td>
+</tr>
+<tr>
+<td>18</td>
+<td>素材庫</td>
+<td>建立自己的詞典、句典、曲典</td>
+</tr>
+<tr>
+<td>21</td>
+<td>曲例聆聽・YouTube</td>
+<td>Hook：聆聽一次，就忘不了的那個地方</td>
+</tr>
+<tr>
+<td>23</td>
+<td>排序遊戲</td>
+<td>不翻閱上一張，排出八大製程的順序</td>
+</tr>
+<tr>
+<td>24</td>
+<td>隨機點名</td>
+<td>每一組認領一個方向，八堂課完成一首歌</td>
+</tr>
+<tr>
+<td>25</td>
+<td>主題骰子・分段計時</td>
+<td>主題骰子：沒有靈感時，先擲一次</td>
+</tr>
+<tr>
+<td>27</td>
+<td>創作範本卡</td>
+<td>創作範本卡：歌名、主題、人稱、記憶點</td>
+</tr>
+<tr>
+<td>29</td>
+<td>出場券 3-2-1</td>
+<td>離開教室前，寫下 3-2-1</td>
+</tr>
+<tr>
+<td>30</td>
+<td>自主學習紀錄</td>
+<td>七天素材紀錄：每天十分鐘</td>
+</tr>
+<tr>
+<td>31</td>
+<td>自主學習追蹤</td>
+<td>課後練習：完成一項，點選一次打勾</td>
+</tr>
+<tr>
+<td>32</td>
+<td>課前問卷</td>
+<td>第二堂 詞曲創作導論與曲式</td>
+</tr>
+</tbody></table>
+<h3 id="session-1-18">課後練習</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 素材庫的詞典、句典、曲典，各累積五筆以上</li>
+<li><input disabled="" type="checkbox"> 挑選一首喜愛的歌曲，找出它的主題方向與 Hook</li>
+<li><input disabled="" type="checkbox"> 和組員確認主題，完成創作範本卡的歌名、人稱與主題</li>
+<li><input disabled="" type="checkbox"> 用手機錄下一段自己哼出的旋律，長度不限</li>
+<li><input disabled="" type="checkbox"> 填寫第二堂課前問卷</li>
+</ul>
+</section>
+<section class="hb-sec"><div class="lesson-head" id="session-2" style="--c: #e2407f;" data-dot="#e2407f" data-item="第二堂　詞曲創作導論與曲式"><div class="lh-no">Session 02</div><h2>詞曲創作導論與曲式<small>Introduction &amp; Song Form</small></h2></div>
+<p>本堂目標：理解音名、唱名、簡譜、拍值與拍子的強弱；能說明動機、重複、模進、形變、聯結五種發展手法；能分辨前奏、主歌、前副歌、副歌、間奏、橋段、尾奏與結尾；下課前，每一組用曲式積木排出自己作品的結構。</p>
+<h3 id="session-2-20">課前問卷</h3>
+<ul>
+<li>這一週，素材庫累積的詞語與句子</li>
+<li>組內確認的主題方向</li>
+<li>對簡譜、拍號與拍值的熟悉程度</li>
+<li>能夠分辨的歌曲段落</li>
+<li>一首讓你聆聽一次就記住副歌的歌曲</li>
+</ul>
+<h3 id="session-2-21">課程綱要（180 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+<th>投影片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>00:00–00:25</td>
+<td>這一週，你的素材庫累積了多少？、聆聽〈十年〉：情緒在哪裡升高</td>
+<td>3–4</td>
+</tr>
+<tr>
+<td>承</td>
+<td>00:25–01:20</td>
+<td>音名、唱名與簡譜、音符的長短，決定旋律的呼吸、拍位的強弱，讓旋律產生律動、流行音樂：將繁雜的樂理簡化，讓音樂屬於每一個人、動機、重複、模進、形變、聯結、動機實驗室：點選格子改寫動機，再套用發展手法、這是哪一種發展手法</td>
+<td>5–11</td>
+</tr>
+<tr>
+<td>休</td>
+<td>01:20–01:30</td>
+<td>休息十分鐘</td>
+<td>12</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>01:30–02:30</td>
+<td>歌曲的開場：前奏與主歌、前副歌加溫，副歌解決、間奏與後副歌（橋段）、尾奏導出情緒，結尾留下餘韻、排出流行歌曲公式的段落順序、曲式積木：排出段落，檢查順序，觀察情緒曲線、各組認領一首歌，標出段落與 Hook、一首歌詞，有六種出發的方式、動筆之前，先設定歌曲的題材</td>
+<td>13–22</td>
+</tr>
+<tr>
+<td>合</td>
+<td>02:30–03:00</td>
+<td>為作品排出曲式，再寫入創作範本卡、創作範本卡：拍號、速度、主律動與段落結構、離開教室前，寫下 3-2-1</td>
+<td>23–26</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td>課後</td>
+<td>三句話總結、出場券、課後練習與下一堂預告</td>
+<td>17、25、27、28</td>
+</tr>
+</tbody></table>
+<h3 id="session-2-22">講義擴充：基礎樂理</h3>
+<table>
+<thead>
+<tr>
+<th>音名</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>A</th>
+<th>B</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>唱名</td>
+<td>Do</td>
+<td>Re</td>
+<td>Mi</td>
+<td>Fa</td>
+<td>Sol</td>
+<td>La</td>
+<td>Si</td>
+</tr>
+<tr>
+<td>簡譜</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Mi、Fa 與 Si、Do 相差半音，其餘相鄰的音皆相差全音。大調音階的距離為「全、全、半、全、全、全、半」。</li>
+<li>拍號的下方是「幾分音符為一拍」，上方是「每小節幾拍」。4/4 以四分音符為一拍，每小節四拍。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>音符</th>
+<th>時值（四分音符 = 1）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>全音符</td>
+<td>4</td>
+</tr>
+<tr>
+<td>二分音符</td>
+<td>2</td>
+</tr>
+<tr>
+<td>四分音符</td>
+<td>1</td>
+</tr>
+<tr>
+<td>八分音符</td>
+<td>½</td>
+</tr>
+<tr>
+<td>十六分音符</td>
+<td>¼</td>
+</tr>
+</tbody></table>
+<h3 id="session-2-23">講義擴充：律動感</h3>
+<table>
+<thead>
+<tr>
+<th>拍子</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2 拍子</td>
+<td>強</td>
+<td>弱</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3 拍子</td>
+<td>強</td>
+<td>弱</td>
+<td>弱</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4 拍子</td>
+<td>強</td>
+<td>弱</td>
+<td>次強</td>
+<td>弱</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6 拍子</td>
+<td>強</td>
+<td>弱</td>
+<td>弱</td>
+<td>次強</td>
+<td>弱</td>
+<td>弱</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8 拍子</td>
+<td>強</td>
+<td>弱</td>
+<td>次強</td>
+<td>最弱</td>
+<td>強</td>
+<td>弱</td>
+<td>次強</td>
+<td>最弱</td>
+</tr>
+</tbody></table>
+<p>律動設計的目的，在於加深旋律的層次。重要的字放在強拍，虛字放在弱拍；同一句歌詞，換一個重音位置，情緒就跟著改變。</p>
+<h3 id="session-2-24">講義擴充：旋律的發展手法</h3>
+<table>
+<thead>
+<tr>
+<th>手法</th>
+<th>做法</th>
+<th>範例（簡譜）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>動機</td>
+<td>一段短小、有特色的音型</td>
+<td>1 2 3 5</td>
+</tr>
+<tr>
+<td>重複</td>
+<td>同一個動機再出現一次</td>
+<td>1 2 3 5｜1 2 3 5</td>
+</tr>
+<tr>
+<td>模進</td>
+<td>形狀不變，整體往上或往下移動</td>
+<td>1 2 3 5｜2 3 4 6</td>
+</tr>
+<tr>
+<td>形變</td>
+<td>倒影、逆行、擴大、縮小</td>
+<td>逆行：5 3 2 1</td>
+</tr>
+<tr>
+<td>聯結</td>
+<td>串起數個動機，最後回到主音</td>
+<td>1 2 3 5｜7̣ 1 2 1</td>
+</tr>
+</tbody></table>
+<h3 id="session-2-25">講義擴充：流行歌曲曲式結構分析</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>功能</th>
+<th>特性</th>
+<th>順序</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>前奏 Intro</td>
+<td>導入主歌、告知歌曲、醞釀情緒</td>
+<td>常為樂器 Hook；四到八小節，常用副歌或主歌的旋律修改</td>
+<td>前奏之前沒有段落（專輯序曲例外），之後必接主歌</td>
+</tr>
+<tr>
+<td>主歌 Verse</td>
+<td>說故事，為歌曲加溫</td>
+<td>詞較繁複、情節平淡；曲調平淡，通常兩段，定調、定韻</td>
+<td>可接前副歌或副歌，可由前奏或間奏接回</td>
+</tr>
+<tr>
+<td>前副歌 Pre-Chorus</td>
+<td>補述主歌未完的情緒，加溫</td>
+<td>字數與詞律和主歌不同，可轉韻；曲調上揚，律動明快；不超過八小節</td>
+<td>必接副歌；主歌動能足夠時可省略</td>
+</tr>
+<tr>
+<td>副歌 Chorus</td>
+<td>情緒最激昂之處，將能量解決</td>
+<td>易記易哼、押韻明快，兩段之間不換韻；樂器的能量與密度最高；常用經典和弦進行</td>
+<td>第一次副歌後常接間奏，第二次接後副歌再回副歌</td>
+</tr>
+<tr>
+<td>間奏 Interlude</td>
+<td>兩大段落的緩衝，加強樂器 Hook</td>
+<td>常為樂器獨奏，四到八小節；常用轉調製造轉折</td>
+<td>接在副歌之後，可接回主歌或前副歌</td>
+</tr>
+<tr>
+<td>後副歌／橋段 Bridge</td>
+<td>副歌後再加重力度的補述：解答、釋懷</td>
+<td>二到四小節；速度可轉為二分之一或兩倍</td>
+<td>接在副歌或間奏之後，必接回副歌</td>
+</tr>
+<tr>
+<td>尾奏 Outro</td>
+<td>歌曲結束前的情緒導出</td>
+<td>樂器逐漸削減能量；最好停在屬和弦</td>
+<td>接在第二或第三次副歌之後，必接結尾</td>
+</tr>
+<tr>
+<td>結尾 Ending</td>
+<td>完結歌曲，延伸餘韻</td>
+<td>齊停、漸慢、淡出、即興、句型齊奏、急停</td>
+<td>最後一個段落</td>
+</tr>
+</tbody></table>
+<h3 id="session-2-26">講義擴充：歌詞的六種出發方式</h3>
+<ol>
+<li>從一個主題或心情出發，從頭敘事。</li>
+<li>靈光乍現的一句或數句優美字詞，再向前後延伸。</li>
+<li>在已經完成的旋律或伴奏上填詞。</li>
+<li>分段敘事：先規劃各段的情節發展與連結順序。</li>
+<li>沒有主題與設限，想到什麼就記錄什麼，再慢慢整理。</li>
+<li>詞曲齊出，相互配合。</li>
+</ol>
+<p>動筆之前，先設定歌曲的題材：詞意主題、音樂類型、速度，以及由男聲、女聲或合唱演出。</p>
+<h3 id="session-2-27">課堂互動（網站簡報）</h3>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>手機同步</td>
+<td>今天的路線：為作品畫出第一張曲式圖</td>
+</tr>
+<tr>
+<td>3</td>
+<td>舉手計票</td>
+<td>這一週，你的素材庫累積了多少？</td>
+</tr>
+<tr>
+<td>4</td>
+<td>曲例聆聽・情緒地圖</td>
+<td>聆聽〈十年〉：情緒在哪裡升高</td>
+</tr>
+<tr>
+<td>10</td>
+<td>動機實驗室</td>
+<td>動機實驗室：點選格子改寫動機，再套用發展手法</td>
+</tr>
+<tr>
+<td>11</td>
+<td>選擇題</td>
+<td>這是哪一種發展手法</td>
+</tr>
+<tr>
+<td>18</td>
+<td>排序遊戲</td>
+<td>排出流行歌曲公式的段落順序</td>
+</tr>
+<tr>
+<td>19</td>
+<td>曲式積木</td>
+<td>曲式積木：排出段落，檢查順序，觀察情緒曲線</td>
+</tr>
+<tr>
+<td>20</td>
+<td>分組任務・分段計時</td>
+<td>各組認領一首歌，標出段落與 Hook</td>
+</tr>
+<tr>
+<td>23</td>
+<td>曲式積木・創作範本卡</td>
+<td>為作品排出曲式，再寫入創作範本卡</td>
+</tr>
+<tr>
+<td>24</td>
+<td>創作範本卡</td>
+<td>創作範本卡：拍號、速度、主律動與段落結構</td>
+</tr>
+<tr>
+<td>26</td>
+<td>出場券 3-2-1</td>
+<td>離開教室前，寫下 3-2-1</td>
+</tr>
+<tr>
+<td>27</td>
+<td>自主學習追蹤</td>
+<td>課後練習：完成一項，點選一次打勾</td>
+</tr>
+<tr>
+<td>28</td>
+<td>課前問卷</td>
+<td>第三堂 歌詞創作（一）：從詩到詞</td>
+</tr>
+</tbody></table>
+<h3 id="session-2-28">課後練習</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 挑選一首喜愛的歌曲，用曲式積木排出它的結構，記錄每一段的小節數</li>
+<li><input disabled="" type="checkbox"> 在動機實驗室創作一個四拍的動機，套用模進與倒影，並錄下來</li>
+<li><input disabled="" type="checkbox"> 和組員確認作品的曲式圖，寫入創作範本卡</li>
+<li><input disabled="" type="checkbox"> 寫下副歌的第一句，作為作品的 Hook</li>
+<li><input disabled="" type="checkbox"> 填寫第三堂課前問卷</li>
+</ul>
+</section>
+<section class="hb-sec"><div class="lesson-head" id="session-3" style="--c: #9a5fd0;" data-dot="#9a5fd0" data-item="第三堂　歌詞創作（一）從詩到詞"><div class="lh-no">Session 03</div><h2>歌詞創作（一）從詩到詞<small>Lyrics I · Poem, Lyric &amp; Rhyme</small></h2></div>
+<p>本堂目標：能說明漢賦、唐詩、宋詞、元曲與新詩的格律差異；能分辨作詞與填詞，理解可唱性與字調的關係；能依照注音韻母選擇韻腳，說明一韻到底與三種換韻方式；下課前，每一組完成八句主歌初稿，並用韻腳檢查器確認押韻。</p>
+<h3 id="session-3-30">課前問卷</h3>
+<ul>
+<li>作品的曲式圖完成程度</li>
+<li>副歌的第一句或 Hook</li>
+<li>閱讀古典詩詞的習慣</li>
+<li>對「押韻」的把握</li>
+<li>作詞時最擔心的事</li>
+</ul>
+<h3 id="session-3-31">課程綱要（180 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+<th>投影片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>00:00–00:25</td>
+<td>你們的曲式圖，完成到哪一步？、蘇軾〈江城子・乙卯正月二十日夜記夢〉</td>
+<td>3–4</td>
+</tr>
+<tr>
+<td>承</td>
+<td>00:25–01:20</td>
+<td>中國四大韻文與新詩、樂府詩、古體詩、近體詩與新詩、宋詞與元曲、用流行音樂的語言，重新認識古典韻文、韻文的格律、作詞是獨立的詞，填詞是為曲而填的詞、國語有四個聲調，旋律要順著字的方向</td>
+<td>5–11</td>
+</tr>
+<tr>
+<td>休</td>
+<td>01:20–01:30</td>
+<td>休息十分鐘</td>
+<td>12</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>01:30–02:30</td>
+<td>依照注音韻母，整理常用的韻腳、四種押韻策略、哪一個詞語，不適合放進一韻到底的歌詞、韻腳檢查器：逐行標出句尾的韻母、誰在說話，對誰說話、完成八句主歌初稿：兩段，各押一個韻、各組念出主歌，其他組別評分</td>
+<td>13–19</td>
+</tr>
+<tr>
+<td>合</td>
+<td>02:30–03:00</td>
+<td>創作範本卡：押韻方式與主歌、離開教室前，寫下 3-2-1</td>
+<td>20–22</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td>課後</td>
+<td>三句話總結、出場券、課後練習與下一堂預告</td>
+<td>21、23、24</td>
+</tr>
+</tbody></table>
+<h3 id="session-3-32">講義擴充：中國四大韻文與新詩</h3>
+<table>
+<thead>
+<tr>
+<th>文體</th>
+<th>格式</th>
+<th>押韻</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>漢賦</td>
+<td>歌、行，字句數不限，多為五言或七言</td>
+<td>可換韻</td>
+</tr>
+<tr>
+<td>唐詩</td>
+<td>今體詩：絕句、律詩，字數固定</td>
+<td>一韻到底</td>
+</tr>
+<tr>
+<td>宋詞</td>
+<td>小令、中調、長調，字數參差不齊</td>
+<td>可換韻</td>
+</tr>
+<tr>
+<td>元曲</td>
+<td>散曲、劇曲，有固定句法，可加襯字</td>
+<td>不可換韻</td>
+</tr>
+<tr>
+<td>新詩</td>
+<td>現代詩、白話詩、自由詩</td>
+<td>格式與押韻皆不限</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>格律</th>
+<th>絕句</th>
+<th>律詩</th>
+<th>新詩</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>句數</td>
+<td>4 句</td>
+<td>8 句</td>
+<td>不限</td>
+</tr>
+<tr>
+<td>字數</td>
+<td>五絕 20 字、七絕 28 字</td>
+<td>五律 40 字、七律 56 字</td>
+<td>不限</td>
+</tr>
+<tr>
+<td>押韻</td>
+<td>偶數句押韻，第一句可押可不押，一韻到底</td>
+<td>偶數句押韻，一韻到底</td>
+<td>不限</td>
+</tr>
+<tr>
+<td>平仄</td>
+<td>一三五不論，二四六分明</td>
+<td>一三五不論，二四六分明</td>
+<td>不限</td>
+</tr>
+<tr>
+<td>對仗</td>
+<td>不限</td>
+<td>頷聯、頸聯對仗</td>
+<td>不限</td>
+</tr>
+</tbody></table>
+<h3 id="session-3-33">講義擴充：宋詞與元曲</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>宋詞</th>
+<th>元曲</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>別名</td>
+<td>曲子詞、長短句、詩餘</td>
+<td>樂府（散曲）</td>
+</tr>
+<tr>
+<td>調子</td>
+<td>詞牌（詞調）</td>
+<td>曲牌（曲調）</td>
+</tr>
+<tr>
+<td>押韻</td>
+<td>有換韻，也有一韻到底，四聲不通押</td>
+<td>一韻到底，四聲通押</td>
+</tr>
+<tr>
+<td>文辭</td>
+<td>典雅含蓄</td>
+<td>通俗活潑</td>
+</tr>
+<tr>
+<td>句子</td>
+<td>依照詞譜，沒有襯字</td>
+<td>可加襯字，較富彈性</td>
+</tr>
+</tbody></table>
+<ul>
+<li>宋詞承繼漢魏樂府的遺風，吸收胡人音樂的影響，由民間發展而來；詞可說是詩的解放。</li>
+<li>元曲由詞演化而來，調合北方的里巷之歌與外來的胡夷之曲，兼具格律與自由。散曲只用於清唱，又稱清曲；雜劇夾雜賓白與科介，以表演故事為主。</li>
+<li>詩的格律嚴謹，較不考量可唱性；詞的格式寬鬆，寫作形式如同流行音樂的「作詞」；曲加上襯字，可唱性最高，寫作形式如同流行音樂的「填詞」。散曲如同 Single，劇曲如同 Album 或音樂劇。</li>
+</ul>
+<h3 id="session-3-34">講義擴充：作詞與填詞</h3>
+<ul>
+<li>作詞：獨立存在的詞，依照流行歌曲的曲式結構創作，不一定具有可唱性；譜曲時必須多加考量律動與聲韻。</li>
+<li>填詞：為曲而填的詞，依照聲韻填寫，提高可唱性；考量旋律的曲線與高低，降低詞與曲的衝突；記憶點的配置是重點，必要時與歌名呼應。</li>
+<li>字調：國語一聲高平、二聲上揚、三聲先降後升、四聲下降。強拍與長音上的字，聲調盡量順著旋律的方向，避免倒字。</li>
+</ul>
+<h3 id="session-3-35">講義擴充：基本韻腳</h3>
+<table>
+<thead>
+<tr>
+<th>韻母</th>
+<th>常用韻腳</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ㄚ</td>
+<td>嗎、啊、他、花、回答、傷疤、牽掛、炎夏、抵達、尷尬、謊話、太傻、害怕</td>
+</tr>
+<tr>
+<td>ㄧ ㄩ</td>
+<td>你、意、雨、東西、抗拒、呼吸、空氣、可惜、天際、情侶、飄逸、伏筆、美麗</td>
+</tr>
+<tr>
+<td>ㄨ</td>
+<td>路、反覆、清楚、恍惚、結束、痛苦、相處、幸福</td>
+</tr>
+<tr>
+<td>ㄠ</td>
+<td>好、少、要、鬧、呵護、知道、明瞭、美好</td>
+</tr>
+<tr>
+<td>ㄝ ㄟ</td>
+<td>鐵、貼、會、喜帖、心碎、喝醉、歲月、完美、虛偽、摧毀、結尾</td>
+</tr>
+<tr>
+<td>ㄛ ㄡ</td>
+<td>我、國、酒、錯、頭、沉默、寂寞、錯過、看破、所有、承諾、分手、折磨、寄託</td>
+</tr>
+<tr>
+<td>ㄣ ㄥ</td>
+<td>吻、恨、人、聲、責任、天份、飛行、繁星、決心、心情、安靜、靠近、絕境、表情、安穩</td>
+</tr>
+<tr>
+<td>ㄜ</td>
+<td>了、的、個、樂、割捨、選擇、如何、顏色</td>
+</tr>
+<tr>
+<td>ㄞ ㄢ</td>
+<td>緩慢、蔚藍、一半、飄散、難堪、黑白、忍耐、戀愛、喜歡、絢爛、期盼、離開、等待、勇敢、溫暖、循環、浪漫</td>
+</tr>
+<tr>
+<td>ㄤ</td>
+<td>成長、嚮往、遠方、碰撞、淚光、模樣、綑綁、阻擋、珍藏、期望、冤枉、原諒、翅膀</td>
+</tr>
+<tr>
+<td>空韻</td>
+<td>字、知、癡、詩、靜止、手指、瑕疵、自私、意識、掩飾、計時</td>
+</tr>
+</tbody></table>
+<h3 id="session-3-36">講義擴充：一韻到底與換韻</h3>
+<table>
+<thead>
+<tr>
+<th>策略</th>
+<th>效果</th>
+<th>曲例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一韻到底</td>
+<td>句句同韻，韻律性高；韻腳受限，難度提升</td>
+<td>林夕〈想哭〉、方文山〈青花瓷〉、十一郎〈曲終人散〉</td>
+</tr>
+<tr>
+<td>斷句換韻</td>
+<td>依照口氣的差異換韻</td>
+<td>藤井樹〈當冬夜漸暖〉、林夕〈愛情轉移〉</td>
+</tr>
+<tr>
+<td>段落換韻</td>
+<td>段落式的情緒更迭</td>
+<td>娃娃〈流沙〉、李焯雄〈愛〉</td>
+</tr>
+<tr>
+<td>自由換韻</td>
+<td>韻律性降低，風險較大</td>
+<td>周杰倫〈白色風車〉</td>
+</tr>
+</tbody></table>
+<h3 id="session-3-37">課堂互動（網站簡報）</h3>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>手機同步</td>
+<td>今天的路線：替主歌押上第一個韻</td>
+</tr>
+<tr>
+<td>3</td>
+<td>舉手計票</td>
+<td>你們的曲式圖，完成到哪一步？</td>
+</tr>
+<tr>
+<td>9</td>
+<td>選擇題</td>
+<td>韻文的格律</td>
+</tr>
+<tr>
+<td>11</td>
+<td>先預測再揭曉</td>
+<td>國語有四個聲調，旋律要順著字的方向</td>
+</tr>
+<tr>
+<td>14</td>
+<td>曲例聆聽・YouTube</td>
+<td>四種押韻策略</td>
+</tr>
+<tr>
+<td>15</td>
+<td>選擇題</td>
+<td>哪一個詞語，不適合放進一韻到底的歌詞</td>
+</tr>
+<tr>
+<td>16</td>
+<td>韻腳檢查器</td>
+<td>韻腳檢查器：逐行標出句尾的韻母</td>
+</tr>
+<tr>
+<td>18</td>
+<td>韻腳檢查器・分段計時</td>
+<td>完成八句主歌初稿：兩段，各押一個韻</td>
+</tr>
+<tr>
+<td>19</td>
+<td>分組計分</td>
+<td>各組念出主歌，其他組別評分</td>
+</tr>
+<tr>
+<td>20</td>
+<td>創作範本卡</td>
+<td>創作範本卡：押韻方式與主歌</td>
+</tr>
+<tr>
+<td>22</td>
+<td>出場券 3-2-1</td>
+<td>離開教室前，寫下 3-2-1</td>
+</tr>
+<tr>
+<td>23</td>
+<td>自主學習追蹤</td>
+<td>課後練習：完成一項，點選一次打勾</td>
+</tr>
+<tr>
+<td>24</td>
+<td>課前問卷</td>
+<td>第四堂 歌詞創作（二）：修辭與作詞家</td>
+</tr>
+</tbody></table>
+<h3 id="session-3-38">課後練習</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 挑選一首喜愛的歌曲，用韻腳檢查器分析主歌與副歌，判斷它的押韻策略</li>
+<li><input disabled="" type="checkbox"> 從十一組韻腳中挑兩組，各蒐集十個詞語，加入素材庫的詞典</li>
+<li><input disabled="" type="checkbox"> 念讀主歌初稿，修正至少兩處不順口的句子</li>
+<li><input disabled="" type="checkbox"> 試著為主歌的第一句哼唱一段旋律，並且錄音</li>
+<li><input disabled="" type="checkbox"> 填寫第四堂課前問卷</li>
+</ul>
+</section>
+<section class="hb-sec"><div class="lesson-head" id="session-4" style="--c: #2f5fc4;" data-dot="#2f5fc4" data-item="第四堂　歌詞創作（二）修辭與作詞家"><div class="lh-no">Session 04</div><h2>歌詞創作（二）修辭與作詞家<small>Lyrics II · Rhetoric &amp; Lyricists</small></h2></div>
+<p>本堂目標：能辨識流行歌詞中常見的修辭法，並說明它們的效果；認識十八位當代華語作詞家與他們的代表作品；能用九大禁忌與修理清單，檢查自己的歌詞；下課前，每一組完成前副歌、副歌與破格句，寫入創作範本卡。</p>
+<h3 id="session-4-40">課前問卷</h3>
+<ul>
+<li>主歌初稿的完成程度</li>
+<li>作品使用的押韻策略</li>
+<li>已經熟悉的修辭法</li>
+<li>課前找到的一句印象深刻的歌詞</li>
+<li>最想認識的華語作詞家</li>
+</ul>
+<h3 id="session-4-41">課程綱要（180 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+<th>投影片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>00:00–00:25</td>
+<td>一句讓你印象深刻的歌詞、二十三種修辭法，分成五個家族</td>
+<td>3–4</td>
+</tr>
+<tr>
+<td>承</td>
+<td>00:25–01:20</td>
+<td>感嘆、設問、呼告、譬喻、轉化、象徵、借代、誇飾、摹寫、映襯、對偶、排比、類疊、層遞、頂真、回文、引用、仿擬、雙關、反語、歇後語、倒裝、雙聲疊韻、邊聆聽，邊找出至少兩種修辭、這句歌詞使用了哪一種修辭、再挑戰兩題</td>
+<td>5–14</td>
+</tr>
+<tr>
+<td>休</td>
+<td>01:20–01:30</td>
+<td>休息十分鐘</td>
+<td>15</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>01:30–02:30</td>
+<td>十八位作詞家，十八種文字的性格、認識作詞家、作詞的三個方向、翻開卡片，對照自己的歌詞、修理清單、完成前副歌、副歌與破格句</td>
+<td>16–21</td>
+</tr>
+<tr>
+<td>合</td>
+<td>02:30–03:00</td>
+<td>各組念出完整歌詞，其他組別找出修辭與禁忌、創作範本卡：歌名、記憶點與修辭法、離開教室前，寫下 3-2-1</td>
+<td>22–25</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td>課後</td>
+<td>三句話總結、出場券、課後練習與下一堂預告</td>
+<td>24、26、27</td>
+</tr>
+</tbody></table>
+<h3 id="session-4-42">講義擴充：二十三種修辭法</h3>
+<table>
+<thead>
+<tr>
+<th>修辭</th>
+<th>定義</th>
+<th>流行歌詞例句</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>感嘆</td>
+<td>藉嘆詞與助詞表露驚訝、傷感、痛惜或希望</td>
+<td>方文山〈說好的幸福呢〉：怎麼了　你累了　說好的幸福呢</td>
+</tr>
+<tr>
+<td>設問</td>
+<td>忽然從平敘轉為詢問，引起注意，促使對方自省</td>
+<td>李焯雄〈愛〉：你還記得嗎　記憶裡的炎夏</td>
+</tr>
+<tr>
+<td>引用</td>
+<td>援用名言、典故、俗語，加強說服力</td>
+<td>青峰〈小情歌〉：寫下我　度秒如年難捱的離騷</td>
+</tr>
+<tr>
+<td>誇飾</td>
+<td>超過客觀事實的鋪張，加深印象</td>
+<td>娃娃〈天天〉：我的心已經飛到這個城市的另一邊</td>
+</tr>
+<tr>
+<td>譬喻</td>
+<td>借彼喻此，以易知說明難知</td>
+<td>娃娃〈流沙〉：愛情好像流沙　我不掙扎</td>
+</tr>
+<tr>
+<td>轉化</td>
+<td>物擬人、人擬物、抽象化為具體</td>
+<td>林夕〈愛情轉移〉：愛情不停站　想開往地老天荒</td>
+</tr>
+<tr>
+<td>映襯</td>
+<td>將相反的觀念並列，對比越強烈印象越鮮明</td>
+<td>楊立德〈他不愛我〉：牽手的時候太冷清　擁抱的時候不夠靠近</td>
+</tr>
+<tr>
+<td>類疊</td>
+<td>同一個詞語接連反覆</td>
+<td>娃娃〈天天〉：天天說　天天說</td>
+</tr>
+<tr>
+<td>對偶</td>
+<td>上下兩句字數相等、句法相似</td>
+<td>林秋離〈剪愛〉：人變了心　言而無信　人斷了情　無謂傷心</td>
+</tr>
+<tr>
+<td>排比</td>
+<td>三句以上接連表現同性質的意象</td>
+<td>姚謙〈我願意〉：我願意為你　我願意為你</td>
+</tr>
+<tr>
+<td>借代</td>
+<td>以相關的事物代替本名</td>
+<td>十一郎〈曲終人散〉：你最後一身紅</td>
+</tr>
+<tr>
+<td>象徵</td>
+<td>以具體的意象表達抽象的情感</td>
+<td>李焯雄〈愛〉：沒結果的花　未完成的牽掛</td>
+</tr>
+<tr>
+<td>歇後語</td>
+<td>前半打比方，後半釋義</td>
+<td>許常德〈婚禮的祝福〉：我乾杯你隨意</td>
+</tr>
+<tr>
+<td>摹寫</td>
+<td>描摹事物的聲音、顏色與情狀</td>
+<td>方文山〈青花瓷〉：天青色等煙雨　而我在等妳</td>
+</tr>
+<tr>
+<td>層遞</td>
+<td>依照深淺、先後、大小層層排列</td>
+<td>周杰倫〈星晴〉：一步兩步三步四步望著天</td>
+</tr>
+<tr>
+<td>雙聲疊韻</td>
+<td>運用聲母或韻母相同的詞，增強節奏感</td>
+<td>方文山〈雙截棍〉：快使用雙截棍　哼哼哈兮</td>
+</tr>
+<tr>
+<td>反語</td>
+<td>用與本意相反的詞語表達本意</td>
+<td>張雨生〈動物的悲歌〉：這個家園充滿芬芳的青草</td>
+</tr>
+<tr>
+<td>呼告</td>
+<td>對不在現場的人直接呼喚、對話</td>
+<td>姚若龍〈分手快樂〉：分手快樂　祝你快樂</td>
+</tr>
+<tr>
+<td>仿擬</td>
+<td>改用熟悉語句的字眼，表達新的意思</td>
+<td>歌名與專輯名稱：陽光宅男、無樂不作、魔杰座</td>
+</tr>
+<tr>
+<td>雙關</td>
+<td>利用詞語的多義或諧音產生雙重意義</td>
+<td>林夕〈想哭〉：你說水星它沒有衛星好孤獨</td>
+</tr>
+<tr>
+<td>頂真</td>
+<td>前一句的結尾作為下一句的開頭</td>
+<td>丁曉雯〈祝福〉：說再見　再見不會太遙遠</td>
+</tr>
+<tr>
+<td>回文</td>
+<td>詞彙大多相同，詞序恰好相反</td>
+<td>陳曉娟〈葉子〉：孤單是一個人的狂歡　狂歡是一群人的孤單</td>
+</tr>
+<tr>
+<td>倒裝</td>
+<td>特意顛倒文法的順序</td>
+<td>方文山〈青花瓷〉：如傳世的青花瓷自顧自美麗</td>
+</tr>
+</tbody></table>
+<h3 id="session-4-43">講義擴充：當代華語作詞家</h3>
+<table>
+<thead>
+<tr>
+<th>作詞家</th>
+<th>背景</th>
+<th>代表作品</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>楊立德</td>
+<td>世新大學廣播電視系畢業，曾任唱片公司創意策劃</td>
+<td>愛人、奉獻、你看你看月亮的臉、他不愛我</td>
+</tr>
+<tr>
+<td>娃娃</td>
+<td>本名陳玉貞，曾任唱片公司 A&amp;R 總監</td>
+<td>就是愛你、天天、流沙、今天你要嫁給我</td>
+</tr>
+<tr>
+<td>陳克華</td>
+<td>詩人、眼科醫師與攝影家，詞作曾獲金鼎獎</td>
+<td>台北的天空、沉默的母親、九月的高跟鞋</td>
+</tr>
+<tr>
+<td>林秋離</td>
+<td>第四屆金曲獎最佳作詞人，作品七百多首</td>
+<td>哭砂、剪愛、聽海、天黑、曹操</td>
+</tr>
+<tr>
+<td>丁曉雯</td>
+<td>曾任歌手、唱片製作人與金曲獎評審</td>
+<td>你是我胸口永遠的痛、青蘋果樂園、祝福</td>
+</tr>
+<tr>
+<td>何厚華</td>
+<td>曾任多家唱片公司主管，企劃近百張專輯</td>
+<td>今生註定、願蒼天變了心、有多少愛可以重來</td>
+</tr>
+<tr>
+<td>陳樂融</td>
+<td>三度入圍金曲獎最佳作詞人</td>
+<td>瀟灑走一回、天天想你、對你愛不完</td>
+</tr>
+<tr>
+<td>鄔裕康</td>
+<td>曾任多家唱片公司主管</td>
+<td>原來你什麼都不要、我要快樂、忠孝東路走九遍</td>
+</tr>
+<tr>
+<td>廖瑩如</td>
+<td>曾任唱片公司企劃與 A&amp;R 總監</td>
+<td>天黑黑、逆光、值得</td>
+</tr>
+<tr>
+<td>姚謙</td>
+<td>曾任多家唱片公司總經理，台灣的「造星高手」</td>
+<td>我願意、味道、我多麼羨慕你、如果愛</td>
+</tr>
+<tr>
+<td>厲曼婷</td>
+<td>曾任雜誌主編與唱片公司主管</td>
+<td>倆倆相忘、離人、有一點動心</td>
+</tr>
+<tr>
+<td>許常德</td>
+<td>詞作超過一千首，國語與台語皆擅長</td>
+<td>婚禮的祝福、無字的情批、一天到晚游泳的魚</td>
+</tr>
+<tr>
+<td>十一郎</td>
+<td>本名蕭慧文，與張宇長期合作</td>
+<td>曲終人散、傘下、用心良苦、趁早</td>
+</tr>
+<tr>
+<td>方文山</td>
+<td>以〈威廉古堡〉、〈青花瓷〉獲金曲獎最佳作詞人</td>
+<td>青花瓷、東風破、七里香、倒帶</td>
+</tr>
+<tr>
+<td>林夕</td>
+<td>以〈臉〉、〈開門見山〉獲金曲獎最佳作詞人</td>
+<td>十年、想哭、愛情轉移、我最親愛的</td>
+</tr>
+<tr>
+<td>李焯雄</td>
+<td>以〈愛〉獲第十四屆金曲獎最佳作詞人</td>
+<td>愛、盛夏的果實、暖暖、可惜不是你</td>
+</tr>
+<tr>
+<td>姚若龍</td>
+<td>以〈最浪漫的事〉、〈永遠相信〉獲金曲獎最佳作詞人</td>
+<td>分手快樂、勇氣、你把我灌醉</td>
+</tr>
+<tr>
+<td>武雄</td>
+<td>推廣文字創作與台語文化的自由作詞人</td>
+<td>一了百了、子曰、點煙</td>
+</tr>
+</tbody></table>
+<p>作詞家的經歷整理自 2011 年講座教材，近況以各作詞家公開的資料為準。</p>
+<h3 id="session-4-44">講義擴充：結論與建議</h3>
+<ul>
+<li>主題與市場方向的確立：流行音樂是一種對話的藝術，也是時代的反映。找問題、找資料、找答案；答案就是你到底想說什麼，再循序漸進地說故事。檢視這首歌能否被公開檢視與評論。</li>
+<li>善用文字修辭技巧與工具：歌名與記憶點多加包裝；準備字典、詞典與依照音韻分類的句典；隨時蒐集字句，串連創意，為它取一個好名字。</li>
+<li>所有藝術的開端皆為模仿：理解流行歌曲的段落與格式，分析作詞家的手法與修辭，廣泛閱讀各種文體的文學作品。</li>
+</ul>
+<h3 id="session-4-45">講義擴充：歌詞的九大禁忌</h3>
+<ol>
+<li>未具備應有的段落或曲式。</li>
+<li>缺乏明顯與吸引人的標題。</li>
+<li>缺乏記憶點 Hook。</li>
+<li>使用太多非口語化的句子。</li>
+<li>使用太多古字或古語。</li>
+<li>使用無法演唱的字。</li>
+<li>歌詞中的故事沒有發展性。</li>
+<li>傳達的意念過於消極或偏激。</li>
+<li>寫了過多內心的隱私或自我意識。</li>
+</ol>
+<h3 id="session-4-46">講義擴充：隨時準備修理自己的歌詞</h3>
+<ul>
+<li>語言與字句是否適當，符合邏輯與層遞；詞句是否經得起時間的考驗。</li>
+<li>文字的可唱性；重複的記憶點是否到位。</li>
+<li>避免矯飾的韻腳，避免舉棋不定的構想（人稱與立場不斷改變）。</li>
+<li>學著評估他人的批評：內行、外行、惡意、嫉妒，或真心正面的建議。</li>
+<li>判斷什麼時候改寫，讓事實更吸引人、更打動人。</li>
+</ul>
+<h3 id="session-4-47">課堂互動（網站簡報）</h3>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>手機同步</td>
+<td>今天的路線：讓文字活起來，完成整首歌詞</td>
+</tr>
+<tr>
+<td>3</td>
+<td>舉手計票</td>
+<td>一句讓你印象深刻的歌詞</td>
+</tr>
+<tr>
+<td>12</td>
+<td>曲例聆聽・YouTube</td>
+<td>邊聆聽，邊找出至少兩種修辭</td>
+</tr>
+<tr>
+<td>13</td>
+<td>選擇題</td>
+<td>這句歌詞使用了哪一種修辭</td>
+</tr>
+<tr>
+<td>14</td>
+<td>選擇題</td>
+<td>再挑戰兩題</td>
+</tr>
+<tr>
+<td>16</td>
+<td>點選探索</td>
+<td>十八位作詞家，十八種文字的性格</td>
+</tr>
+<tr>
+<td>17</td>
+<td>選擇題</td>
+<td>認識作詞家</td>
+</tr>
+<tr>
+<td>19</td>
+<td>翻牌</td>
+<td>翻開卡片，對照自己的歌詞</td>
+</tr>
+<tr>
+<td>21</td>
+<td>創作範本卡・分段計時</td>
+<td>完成前副歌、副歌與破格句</td>
+</tr>
+<tr>
+<td>22</td>
+<td>分組計分・隨機點名</td>
+<td>各組念出完整歌詞，其他組別找出修辭與禁忌</td>
+</tr>
+<tr>
+<td>23</td>
+<td>創作範本卡</td>
+<td>創作範本卡：歌名、記憶點與修辭法</td>
+</tr>
+<tr>
+<td>25</td>
+<td>出場券 3-2-1</td>
+<td>離開教室前，寫下 3-2-1</td>
+</tr>
+<tr>
+<td>26</td>
+<td>自主學習追蹤</td>
+<td>課後練習：完成一項，點選一次打勾</td>
+</tr>
+<tr>
+<td>27</td>
+<td>課前問卷</td>
+<td>第五堂 旋律創作（一）：動機與和弦</td>
+</tr>
+</tbody></table>
+<h3 id="session-4-48">課後練習</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 挑一位作詞家，閱讀三首作品，列出他最常使用的三種修辭</li>
+<li><input disabled="" type="checkbox"> 用修理清單檢查整首歌詞，修改至少三處</li>
+<li><input disabled="" type="checkbox"> 念讀副歌十次，標出最重要的三個字</li>
+<li><input disabled="" type="checkbox"> 將完整歌詞寫入創作範本卡，下載文字檔備份</li>
+<li><input disabled="" type="checkbox"> 填寫第五堂課前問卷</li>
+</ul>
+</section>
+<section class="hb-sec"><div class="lesson-head" id="session-5" style="--c: #45b3e6;" data-dot="#45b3e6" data-item="第五堂　旋律創作（一）動機與和弦"><div class="lh-no">Session 05</div><h2>旋律創作（一）動機與和弦<small>Melody I · Motif &amp; Chords</small></h2></div>
+<p>本堂目標：能說明演奏曲與演唱曲的差異，分辨作曲與譜曲；能運用大調音階與五聲音階，設計級進與跳進的旋律；理解主和弦、下屬和弦、屬和弦的功能，運用經典和弦進行；下課前，每一組在 1645 進行上哼出副歌，並錄音記錄。</p>
+<h3 id="session-5-50">課前問卷</h3>
+<ul>
+<li>整首歌詞的完成程度</li>
+<li>歌詞使用的修辭法數量</li>
+<li>哼唱旋律並錄音的經驗</li>
+<li>對和弦與和弦進行的熟悉程度</li>
+<li>組內負責譜曲的方式</li>
+</ul>
+<h3 id="session-5-51">課程綱要（180 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+<th>投影片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>00:00–00:25</td>
+<td>歌詞完成之後，旋律從念讀開始、為人聲寫旋律，要替歌手留下呼吸</td>
+<td>3–4</td>
+</tr>
+<tr>
+<td>承</td>
+<td>00:25–01:20</td>
+<td>依詞譜曲的四個步驟、五聲音階：去掉 4 與 7，旋律立刻帶有東方色彩、級進平穩，跳進有張力、四種常見的旋律輪廓、用「聯結」完成一個樂句：動機、模進，回到主音、旋律的設計</td>
+<td>5–10</td>
+</tr>
+<tr>
+<td>休</td>
+<td>01:20–01:30</td>
+<td>休息十分鐘</td>
+<td>11</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>01:30–02:30</td>
+<td>和弦家族，各司其職、播放、移調，聆聽每一組進行的情緒、和弦的功能、旋律稍縱即逝，先錄音保存、在 1645 上，為副歌哼出旋律</td>
+<td>12–16</td>
+</tr>
+<tr>
+<td>合</td>
+<td>02:30–03:00</td>
+<td>錄下兩個版本，再選出一個、創作範本卡：調號、速度與記憶點、離開教室前，寫下 3-2-1</td>
+<td>17–20</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td>課後</td>
+<td>三句話總結、出場券、課後練習與下一堂預告</td>
+<td>19、21、22</td>
+</tr>
+</tbody></table>
+<h3 id="session-5-52">講義擴充：演奏曲與演唱曲</h3>
+<table>
+<thead>
+<tr>
+<th>面向</th>
+<th>演奏曲</th>
+<th>演唱曲</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>音域</td>
+<td>依樂器而定，可以非常寬廣</td>
+<td>配合人聲，常用音域約一個八度到一個半八度</td>
+</tr>
+<tr>
+<td>呼吸</td>
+<td>樂器不需要換氣</td>
+<td>樂句之間要留換氣的空間</td>
+</tr>
+<tr>
+<td>節奏</td>
+<td>由旋律與技巧主導</td>
+<td>由歌詞的字數與聲調帶動</td>
+</tr>
+<tr>
+<td>記憶點</td>
+<td>樂器的動機與音色</td>
+<td>歌詞與旋律一起出現的 Hook</td>
+</tr>
+<tr>
+<td>技巧</td>
+<td>可以炫技</td>
+<td>簡單明確，聆聽者能夠跟著哼唱</td>
+</tr>
+</tbody></table>
+<h3 id="session-5-53">講義擴充：作曲與譜曲</h3>
+<ul>
+<li>直接作曲：從一段動機、一組和弦或一段伴奏出發，先完成旋律再填詞。</li>
+<li>依詞譜曲：念讀歌詞，標出長短與重音，順著字的聲調找出音高，再用重複與模進發展動機。主歌字多、音符密集；副歌字少、長音較多。</li>
+</ul>
+<h3 id="session-5-54">講義擴充：音階與旋律</h3>
+<table>
+<thead>
+<tr>
+<th>音階</th>
+<th>組成</th>
+<th>色彩</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>大調音階</td>
+<td>1 2 3 4 5 6 7</td>
+<td>明亮、穩定</td>
+</tr>
+<tr>
+<td>五聲音階</td>
+<td>1 2 3 5 6</td>
+<td>沒有半音，帶有東方色彩</td>
+</tr>
+<tr>
+<td>藍調音階</td>
+<td>1 ♭3 4 ♯4 5 ♭7</td>
+<td>慵懶與張力，R&amp;B 與搖滾常用</td>
+</tr>
+</tbody></table>
+<ul>
+<li>級進：相鄰的音一步一步移動，平穩、口語，適合主歌。跳進：相隔三度以上，製造驚喜，適合副歌的開頭；跳進之後常往反方向級進。</li>
+<li>旋律線條：上行（情緒升高）、下行（放下、嘆息）、拱形（先揚後抑）、波浪（小範圍起伏）。</li>
+<li>主歌與副歌的對比：主歌在中低音域，副歌移到較高的音域；對比越清楚，副歌越像一次解放。</li>
+</ul>
+<h3 id="session-5-55">講義擴充：和弦家族與經典進行</h3>
+<table>
+<thead>
+<tr>
+<th>家族</th>
+<th>級數</th>
+<th>任務</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>主和弦</td>
+<td>1 與 6</td>
+<td>開始與結束</td>
+</tr>
+<tr>
+<td>裝飾和弦</td>
+<td>4 與 2</td>
+<td>放在屬和弦之前</td>
+</tr>
+<tr>
+<td>屬和弦</td>
+<td>5</td>
+<td>放在結束的主和弦之前</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>進行</th>
+<th>C 大調</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1645</td>
+<td>C Am F G</td>
+<td>五〇年代進行</td>
+</tr>
+<tr>
+<td>1564</td>
+<td>C G Am F</td>
+<td>萬用進行</td>
+</tr>
+<tr>
+<td>卡農進行</td>
+<td>C G Am Em F C F G</td>
+<td>帕海貝爾〈卡農〉</td>
+</tr>
+<tr>
+<td>4536</td>
+<td>F G Em Am</td>
+<td>副歌常用，情緒向上推進</td>
+</tr>
+<tr>
+<td>6415</td>
+<td>Am F C G</td>
+<td>從小調開始</td>
+</tr>
+<tr>
+<td>1625</td>
+<td>C Am7 Dm7 G7</td>
+<td>流行音樂育成中心教材</td>
+</tr>
+<tr>
+<td>2536</td>
+<td>Dm7 G7 Em7 Am</td>
+<td>流行音樂育成中心教材</td>
+</tr>
+<tr>
+<td>6543</td>
+<td>Am G F E</td>
+<td>下行的戲劇張力</td>
+</tr>
+</tbody></table>
+<p>和弦的組成：三個音恰恰好，四個、五個不嫌少。最常用的循環是 16451。</p>
+<h3 id="session-5-56">課堂互動（網站簡報）</h3>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>手機同步</td>
+<td>今天的路線：為副歌哼出第一段旋律</td>
+</tr>
+<tr>
+<td>3</td>
+<td>舉手計票</td>
+<td>歌詞完成之後，旋律從念讀開始</td>
+</tr>
+<tr>
+<td>6</td>
+<td>動機實驗室</td>
+<td>五聲音階：去掉 4 與 7，旋律立刻帶有東方色彩</td>
+</tr>
+<tr>
+<td>9</td>
+<td>動機實驗室</td>
+<td>用「聯結」完成一個樂句：動機、模進，回到主音</td>
+</tr>
+<tr>
+<td>10</td>
+<td>選擇題</td>
+<td>旋律的設計</td>
+</tr>
+<tr>
+<td>13</td>
+<td>和弦進行播放器</td>
+<td>播放、移調，聆聽每一組進行的情緒</td>
+</tr>
+<tr>
+<td>14</td>
+<td>選擇題</td>
+<td>和弦的功能</td>
+</tr>
+<tr>
+<td>15</td>
+<td>錄音</td>
+<td>旋律稍縱即逝，先錄音保存</td>
+</tr>
+<tr>
+<td>16</td>
+<td>和弦進行・分段計時</td>
+<td>在 1645 上，為副歌哼出旋律</td>
+</tr>
+<tr>
+<td>17</td>
+<td>錄音對照</td>
+<td>錄下兩個版本，再選出一個</td>
+</tr>
+<tr>
+<td>18</td>
+<td>創作範本卡</td>
+<td>創作範本卡：調號、速度與記憶點</td>
+</tr>
+<tr>
+<td>20</td>
+<td>出場券 3-2-1</td>
+<td>離開教室前，寫下 3-2-1</td>
+</tr>
+<tr>
+<td>21</td>
+<td>自主學習追蹤</td>
+<td>課後練習：完成一項，點選一次打勾</td>
+</tr>
+<tr>
+<td>22</td>
+<td>課前問卷</td>
+<td>第六堂 旋律與配唱：作曲家、音域與定調</td>
+</tr>
+</tbody></table>
+<h3 id="session-5-57">課後練習</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 每天播放一組經典和弦進行，哼唱五分鐘，錄下最好的一段</li>
+<li><input disabled="" type="checkbox"> 將副歌旋律寫成簡譜，標出和弦</li>
+<li><input disabled="" type="checkbox"> 念讀主歌，標出每一句的重音與換氣點</li>
+<li><input disabled="" type="checkbox"> 聆聽一首喜愛的歌，找出副歌第一個音比主歌高了多少</li>
+<li><input disabled="" type="checkbox"> 填寫第六堂課前問卷</li>
+</ul>
+</section>
+<section class="hb-sec"><div class="lesson-head" id="session-6" style="--c: #6cbb4b;" data-dot="#6cbb4b" data-item="第六堂　旋律與配唱：作曲家、音域與定調"><div class="lh-no">Session 06</div><h2>旋律與配唱：作曲家、音域與定調<small>Melody II · Composers &amp; Vocal Range</small></h2></div>
+<p>本堂目標：認識十二位當代華人作曲家與他們的代表作品；能用旋律檢查清單，評析並修改自己的旋律；能說明完全音域、可用音域與音準點，並測量主唱的音域；下課前，每一組替作品定調，錄下第一版人聲 Demo。</p>
+<h3 id="session-6-59">課前問卷</h3>
+<ul>
+<li>副歌旋律的完成程度</li>
+<li>作品的主唱</li>
+<li>主唱知道自己的音域嗎？</li>
+<li>演唱副歌時，最吃力的地方</li>
+<li>最想認識的作曲家</li>
+</ul>
+<h3 id="session-6-60">課程綱要（180 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+<th>投影片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>00:00–00:25</td>
+<td>上週的副歌旋律，現在還記得嗎？、從瓊瑤電影到 R&amp;B 與中國風</td>
+<td>3–4</td>
+</tr>
+<tr>
+<td>承</td>
+<td>00:25–01:20</td>
+<td>四首歌，四種作曲的身分、聆聽一首歌的旋律，可以觀察五件事、完成主歌與前副歌的旋律、串接整首之後，逐項檢查、作曲的態度</td>
+<td>5–9</td>
+</tr>
+<tr>
+<td>休</td>
+<td>01:20–01:30</td>
+<td>休息十分鐘</td>
+<td>10</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>01:30–02:30</td>
+<td>定調的依據，是可用音域、由 C4 開始，逐音往下、再往上、以主唱的可用最高音，決定歌曲的最高音、最後一次副歌升調，情緒再往上推一層、定調的計算</td>
+<td>12–16</td>
+</tr>
+<tr>
+<td>合</td>
+<td>02:30–03:00</td>
+<td>用新的調，錄下整首歌、創作範本卡：譜曲、調號與音域、離開教室前，寫下 3-2-1</td>
+<td>17–20</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td>課後</td>
+<td>三句話總結、出場券、課後練習與下一堂預告</td>
+<td>11、19、21、22</td>
+</tr>
+</tbody></table>
+<h3 id="session-6-61">講義擴充：當代華人作曲家</h3>
+<table>
+<thead>
+<tr>
+<th>作曲家</th>
+<th>背景</th>
+<th>代表作品</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>左宏元</td>
+<td>筆名古月，為瓊瑤電影創作大量歌曲，以《啞女情深》獲金馬獎最佳音樂</td>
+<td>千言萬語、海韻、一顆紅豆</td>
+</tr>
+<tr>
+<td>李泰祥</td>
+<td>阿美族作曲家，小提琴出身，融合古典與民歌</td>
+<td>橄欖樹、歡顏、告別</td>
+</tr>
+<tr>
+<td>陳志遠</td>
+<td>台灣流行音樂的編曲大師</td>
+<td>編曲：一樣的月光、一場遊戲一場夢</td>
+</tr>
+<tr>
+<td>陳小霞</td>
+<td>創作近千首，旋律溫柔深刻</td>
+<td>十年、約定、他不愛我</td>
+</tr>
+<tr>
+<td>殷文琦</td>
+<td>以〈北風〉獲金曲獎最佳作曲人，以〈吻別〉獲最佳編曲人</td>
+<td>吻別、北風、我是如此愛你</td>
+</tr>
+<tr>
+<td>李子恆</td>
+<td>金韻獎民歌比賽出身，曾任飛碟唱片音樂監製</td>
+<td>秋蟬、紅塵有你、牽手</td>
+</tr>
+<tr>
+<td>李正帆</td>
+<td>被李宗盛稱為難得一見的天才編曲家</td>
+<td>唯美浪漫的情歌</td>
+</tr>
+<tr>
+<td>熊美玲</td>
+<td>與林秋離長期搭檔</td>
+<td>一人一個夢、人情味</td>
+</tr>
+<tr>
+<td>黃國倫</td>
+<td>唱片製作人與詞曲作家</td>
+<td>我願意、眼淚</td>
+</tr>
+<tr>
+<td>陶喆</td>
+<td>華語「R&amp;B 教父」</td>
+<td>天天、流沙、就是愛你</td>
+</tr>
+<tr>
+<td>周杰倫</td>
+<td>融合 R&amp;B、嘻哈與中國風</td>
+<td>青花瓷、彩虹、白色風車</td>
+</tr>
+<tr>
+<td>順子</td>
+<td>1999 年金曲獎最佳作曲人</td>
+<td>回家</td>
+</tr>
+</tbody></table>
+<h3 id="session-6-62">講義擴充：旋律的評析與檢查</h3>
+<ul>
+<li>評析一首歌的旋律：動機重複了幾次、主歌與副歌的音域對比、強拍與長音上的字是否清楚、樂句之間的換氣、最後一句如何回到主音。</li>
+<li>旋律檢查清單：音域在主唱的可用音域之內、沒有倒字、留下換氣、副歌的 Hook 聆聽一次就能跟著哼唱、主副歌有對比、收尾回到主音。</li>
+</ul>
+<h3 id="session-6-63">講義擴充：旋律與配唱</h3>
+<table>
+<thead>
+<tr>
+<th>名詞</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>完全音域</td>
+<td>能發出聲音的最低音到最高音，包含假音與勉強碰到的音，只作為參考</td>
+</tr>
+<tr>
+<td>可用音域</td>
+<td>音色穩定、可以反覆演唱、喉嚨保持放鬆的範圍；定調的依據</td>
+</tr>
+<tr>
+<td>音準點</td>
+<td>主唱最舒服、共鳴最飽滿的幾個音；副歌的長音與 Hook 放在這附近</td>
+</tr>
+<tr>
+<td>聲區減少</td>
+<td>以正確的發聲方式，讓真假音之間的換聲平順；旋律避免在換聲點停留長音</td>
+</tr>
+</tbody></table>
+<ul>
+<li>好的 Vocal 決定了創作百分之八十的重要性。</li>
+<li>自定調：移調半音數 ＝ 可用最高音 − 歌曲最高音。兩者相同，或歌曲再降低一到兩個半音，保留餘裕。</li>
+<li>轉調：後副歌之後的副歌常升高半音或全音，製造氣氛的遞進；升調後的最高音，仍要在主唱的可用音域之內。</li>
+</ul>
+<h3 id="session-6-64">課堂互動（網站簡報）</h3>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>手機同步</td>
+<td>今天的路線：完成整首旋律，替主唱定調</td>
+</tr>
+<tr>
+<td>3</td>
+<td>舉手計票</td>
+<td>上週的副歌旋律，現在還記得嗎？</td>
+</tr>
+<tr>
+<td>4</td>
+<td>點選探索</td>
+<td>從瓊瑤電影到 R&amp;B 與中國風</td>
+</tr>
+<tr>
+<td>5</td>
+<td>曲例聆聽・YouTube</td>
+<td>四首歌，四種作曲的身分</td>
+</tr>
+<tr>
+<td>7</td>
+<td>和弦進行・錄音</td>
+<td>完成主歌與前副歌的旋律</td>
+</tr>
+<tr>
+<td>8</td>
+<td>翻牌</td>
+<td>串接整首之後，逐項檢查</td>
+</tr>
+<tr>
+<td>9</td>
+<td>選擇題</td>
+<td>作曲的態度</td>
+</tr>
+<tr>
+<td>13</td>
+<td>動手實驗・音域測量</td>
+<td>由 C4 開始，逐音往下、再往上</td>
+</tr>
+<tr>
+<td>14</td>
+<td>動手計算・自定調</td>
+<td>以主唱的可用最高音，決定歌曲的最高音</td>
+</tr>
+<tr>
+<td>16</td>
+<td>選擇題</td>
+<td>定調的計算</td>
+</tr>
+<tr>
+<td>17</td>
+<td>錄音對照</td>
+<td>用新的調，錄下整首歌</td>
+</tr>
+<tr>
+<td>18</td>
+<td>創作範本卡</td>
+<td>創作範本卡：譜曲、調號與音域</td>
+</tr>
+<tr>
+<td>20</td>
+<td>出場券 3-2-1</td>
+<td>離開教室前，寫下 3-2-1</td>
+</tr>
+<tr>
+<td>21</td>
+<td>自主學習追蹤</td>
+<td>課後練習：完成一項，點選一次打勾</td>
+</tr>
+<tr>
+<td>22</td>
+<td>課前問卷</td>
+<td>第七堂 音樂的魔法師：編曲與製作</td>
+</tr>
+</tbody></table>
+<h3 id="session-6-65">課後練習</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 用旋律檢查清單逐項檢查整首歌，修改至少兩處</li>
+<li><input disabled="" type="checkbox"> 將整首旋律寫成簡譜，標出和弦與換氣點</li>
+<li><input disabled="" type="checkbox"> 主唱用新的調演唱三次，記錄最吃力的一句</li>
+<li><input disabled="" type="checkbox"> 挑一位作曲家，聆聽三首作品，寫下他的旋律特色</li>
+<li><input disabled="" type="checkbox"> 填寫第七堂課前問卷</li>
+</ul>
+</section>
+<section class="hb-sec"><div class="lesson-head" id="session-7" style="--c: #d6e03a;" data-dot="#d6e03a" data-item="第七堂　音樂的魔法師：編曲與製作"><div class="lh-no">Session 07</div><h2>音樂的魔法師：編曲與製作<small>Arrangement &amp; Production</small></h2></div>
+<p>本堂目標：能說明編曲的意義，以及編曲之前要決定的五件事；能分辨主律動、副律動、主旋律、過門與襯底五大要素；理解配唱與編曲的關係，學會替人聲留下空間；下課前，每一組完成作品的樂器配置，寫入創作範本卡。</p>
+<h3 id="session-7-67">課前問卷</h3>
+<ul>
+<li>整首旋律的完成程度</li>
+<li>作品正式的調與速度</li>
+<li>想像中的編曲風格</li>
+<li>可以參與錄音的樂器</li>
+<li>使用過的錄音或編曲軟體</li>
+</ul>
+<h3 id="session-7-68">課程綱要（180 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+<th>投影片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>00:00–00:25</td>
+<td>你們的作品，適合什麼樣的聲音？、編曲，是一首歌的重新包裝</td>
+<td>3–4</td>
+</tr>
+<tr>
+<td>承</td>
+<td>00:25–01:20</td>
+<td>編曲之前，先決定五件事、每一件樂器，都扮演其中一個角色、逐一開關五大要素，聆聽每一層的作用、樂器配置由少漸多，如同衣著、段落的長度，用四的倍數安排、編曲的第一個任務：讓人聲清楚呈現、編曲裡的三種鉤子、五大要素</td>
+<td>5–12</td>
+</tr>
+<tr>
+<td>休</td>
+<td>01:20–01:30</td>
+<td>休息十分鐘</td>
+<td>13</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>01:30–02:30</td>
+<td>聆聽四首歌，標出五大要素與 Hook、除了現場演出，大部分的音樂都經過電腦處理、錄音的四個層級、混音：聲音的形成、音場的設定、軌道的編排、為作品勾選樂器配置，再規劃每一段的編制</td>
+<td>14–18</td>
+</tr>
+<tr>
+<td>合</td>
+<td>02:30–03:00</td>
+<td>各組用兩分鐘，介紹作品的編曲計畫、離開教室前，寫下 3-2-1</td>
+<td>19–21</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td>課後</td>
+<td>三句話總結、出場券、課後練習與下一堂預告</td>
+<td>20、22、23</td>
+</tr>
+</tbody></table>
+<h3 id="session-7-69">講義擴充：何謂編曲</h3>
+<p>編曲是一首歌的重新包裝：依照歌曲的旋律與情緒，決定由哪些樂器演奏、在哪裡出現、扮演什麼角色。詞曲是骨架，編曲是血肉與衣著。</p>
+<p>編曲前的準備工作：決定風格、決定速度、歌曲定調、旋律置入、樂器配置。</p>
+<h3 id="session-7-70">講義擴充：編曲五大要素</h3>
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>英文</th>
+<th>角色</th>
+<th>常用樂器</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>主律動</td>
+<td>Main Rhythm</td>
+<td>決定音樂的主要風格</td>
+<td>鼓、貝斯</td>
+</tr>
+<tr>
+<td>副律動</td>
+<td>Sub Rhythm</td>
+<td>輔助主律動，規律地填滿和聲與節奏</td>
+<td>吉他、鍵盤、打擊樂器</td>
+</tr>
+<tr>
+<td>主旋律</td>
+<td>Lead</td>
+<td>曲子的主要角色</td>
+<td>人聲、獨奏樂器</td>
+</tr>
+<tr>
+<td>過門</td>
+<td>Fill In</td>
+<td>連接不同的段落，填補空隙，不會規律地反覆</td>
+<td>不限</td>
+</tr>
+<tr>
+<td>襯底</td>
+<td>Pad</td>
+<td>氣氛的主要來源，如同畫布</td>
+<td>弦樂、合成器等沒有明顯拍點的樂器</td>
+</tr>
+</tbody></table>
+<ul>
+<li>四的法則：段落最少兩小節（八拍），通常是四小節、八小節。練習時，起承轉合的長度為 2-4-4-2 小節，熟練之後擴充為 4-8-8-4。</li>
+<li>樂器配置由少漸多，如同衣著；最後一次副歌之前減收，再一起回來，氣氛更有層次。</li>
+<li>畫龍點睛的 Hook：情緒鉤子、表情鉤子、其他聲音素材的鉤子。</li>
+<li>配唱與編曲的關係：讓出空間、避開人聲的頻率、配合主唱的調。</li>
+</ul>
+<h3 id="session-7-71">講義擴充：記錄保存</h3>
+<table>
+<thead>
+<tr>
+<th>錄音層級</th>
+<th>設備</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>陽春</td>
+<td>手機錄音</td>
+<td>記錄靈感、排練</td>
+</tr>
+<tr>
+<td>基本</td>
+<td>手機或電腦搭配外接麥克風、耳機</td>
+<td>作品 Demo、課堂發表</td>
+</tr>
+<tr>
+<td>進階</td>
+<td>錄音介面、電容式麥克風、數位音樂工作站</td>
+<td>投稿比賽、網路發表</td>
+</tr>
+<tr>
+<td>專業</td>
+<td>錄音室、錄音師與製作人</td>
+<td>正式發行</td>
+</tr>
+</tbody></table>
+<ul>
+<li>數位音樂：取樣器錄下真實樂器的音色，透過 MIDI 鍵盤即時演奏；MIDI 記錄演奏的指令，可以隨時更換音色與修改音符。</li>
+<li>混音概念：聲音的形成、音場的設定、軌道的編排。調整各軌音量讓主旋律突顯，各軌與總音量控制在 0 dB 以下；以相位 Pan 分配左右；總輸出加上限制器 Limiter。</li>
+</ul>
+<h3 id="session-7-72">課堂互動（網站簡報）</h3>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>手機同步</td>
+<td>今天的路線：替作品穿上合適的衣服</td>
+</tr>
+<tr>
+<td>3</td>
+<td>舉手計票</td>
+<td>你們的作品，適合什麼樣的聲音？</td>
+</tr>
+<tr>
+<td>4</td>
+<td>曲例聆聽・YouTube</td>
+<td>編曲，是一首歌的重新包裝</td>
+</tr>
+<tr>
+<td>7</td>
+<td>編曲混音台</td>
+<td>逐一開關五大要素，聆聽每一層的作用</td>
+</tr>
+<tr>
+<td>12</td>
+<td>選擇題</td>
+<td>五大要素</td>
+</tr>
+<tr>
+<td>14</td>
+<td>曲例聆聽・分段計時</td>
+<td>聆聽四首歌，標出五大要素與 Hook</td>
+</tr>
+<tr>
+<td>18</td>
+<td>創作範本卡・分段計時</td>
+<td>為作品勾選樂器配置，再規劃每一段的編制</td>
+</tr>
+<tr>
+<td>19</td>
+<td>分組計分・隨機點名</td>
+<td>各組用兩分鐘，介紹作品的編曲計畫</td>
+</tr>
+<tr>
+<td>21</td>
+<td>出場券 3-2-1</td>
+<td>離開教室前，寫下 3-2-1</td>
+</tr>
+<tr>
+<td>22</td>
+<td>自主學習追蹤</td>
+<td>課後練習：完成一項，點選一次打勾</td>
+</tr>
+<tr>
+<td>23</td>
+<td>課前問卷</td>
+<td>第八堂 詞曲創作範例研討與成果發表</td>
+</tr>
+</tbody></table>
+<h3 id="session-7-73">課後練習</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 挑選一首喜愛的歌，寫下五大要素各由哪一件樂器負責</li>
+<li><input disabled="" type="checkbox"> 依照編曲計畫，錄製作品的伴奏，至少一件樂器</li>
+<li><input disabled="" type="checkbox"> 戴上耳機，聆聽伴奏錄製人聲，完成作品 Demo</li>
+<li><input disabled="" type="checkbox"> 調整人聲與伴奏的音量，讓歌詞清楚可辨</li>
+<li><input disabled="" type="checkbox"> 填寫第八堂課前問卷</li>
+</ul>
+</section>
+<section class="hb-sec"><div class="lesson-head" id="session-8" style="--c: #f4a62a;" data-dot="#f4a62a" data-item="第八堂　範例研討與成果發表"><div class="lh-no">Session 08</div><h2>範例研討與成果發表<small>Fixing, Feedback &amp; Showcase</small></h2></div>
+<p>本堂目標：能運用修正回饋的四個步驟，持續修改作品；能給予具體的回饋，也能評估他人的批評；完成並發表一首包含詞、曲、編曲與 Demo 的作品；回顧八堂課的重點，寫下下一首歌的起點。</p>
+<h3 id="session-8-75">課前問卷</h3>
+<ul>
+<li>作品 Demo 的完成程度</li>
+<li>發表的形式</li>
+<li>作品最滿意的地方</li>
+<li>最希望在研討時獲得建議的地方</li>
+<li>發表前的心情</li>
+</ul>
+<h3 id="session-8-76">課程綱要（180 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+<th>投影片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>00:00–00:25</td>
+<td>一週之後，你們的 Demo 完成了嗎？、作品完成之後的四個步驟</td>
+<td>3–4</td>
+</tr>
+<tr>
+<td>承</td>
+<td>00:25–01:20</td>
+<td>給予回饋：一個讚美、一個提問、一個建議、收到意見時，先分辨它的來源、用今天的回饋方式，先練習評析一首經典、兩組互相聆聽，老師輪流加入討論、完整的創作範本卡：確認每一個欄位，送給老師</td>
+<td>5–9</td>
+</tr>
+<tr>
+<td>休</td>
+<td>01:20–01:30</td>
+<td>休息十分鐘</td>
+<td>10</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>01:30–02:30</td>
+<td>每組八分鐘：介紹、發表、回饋、介紹、發表、回饋，每組自動循環、成果發表評分表、錄下今天的發表，作為作品的第一個版本</td>
+<td>11–14</td>
+</tr>
+<tr>
+<td>合</td>
+<td>02:30–03:00</td>
+<td>是非題：八堂課的觀念、音樂創作的本質、推廣與自我實現、最後一張出場券</td>
+<td>15–18</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td>課後</td>
+<td>三句話總結、出場券、課後練習與下一堂預告</td>
+<td>17、19、20</td>
+</tr>
+</tbody></table>
+<h3 id="session-8-77">講義擴充：修正回饋</h3>
+<table>
+<thead>
+<tr>
+<th>步驟</th>
+<th>重點</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>反覆聆聽</td>
+<td>自我反省：隔一天再聆聽，找出不順的地方</td>
+</tr>
+<tr>
+<td>客觀分析</td>
+<td>大眾接收：請不同的人聆聽，收集意見</td>
+</tr>
+<tr>
+<td>再度修正</td>
+<td>主客並重：保留初衷，也採納合理的建議</td>
+</tr>
+<tr>
+<td>循環創作</td>
+<td>重新出發，超越舊我</td>
+</tr>
+</tbody></table>
+<ul>
+<li>給予回饋：一個讚美、一個提問、一個建議；回饋針對作品，不針對人。</li>
+<li>評估他人的批評：內行的建議認真考慮；外行的感受代表市場的反應；帶有惡意或出於嫉妒的評論保持平常心；正面的鼓勵好好收下。三個人以上指出同一個問題，就是該改寫的時候。</li>
+</ul>
+<h3 id="session-8-78">講義擴充：成果發表</h3>
+<table>
+<thead>
+<tr>
+<th>流程</th>
+<th>時間</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>介紹</td>
+<td>2 分鐘</td>
+<td>歌名、主題、人稱與創作的起點</td>
+</tr>
+<tr>
+<td>發表</td>
+<td>4 分鐘</td>
+<td>現場演唱或播放 Demo</td>
+</tr>
+<tr>
+<td>回饋</td>
+<td>2 分鐘</td>
+<td>一個讚美、一個提問、一個建議</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>評分面向</th>
+<th>重點</th>
+<th>分數</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>歌詞</td>
+<td>主題清楚、押韻自然、修辭到位</td>
+<td>3</td>
+</tr>
+<tr>
+<td>旋律</td>
+<td>Hook 好記、音域合適、沒有倒字</td>
+<td>3</td>
+</tr>
+<tr>
+<td>曲式</td>
+<td>段落完整，情緒層層推進</td>
+<td>2</td>
+</tr>
+<tr>
+<td>編曲與 Demo</td>
+<td>五大要素清楚，人聲清晰可辨</td>
+<td>1</td>
+</tr>
+<tr>
+<td>台風</td>
+<td>介紹清楚，演出投入</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id="session-8-79">講義擴充：結論</h3>
+<ul>
+<li>音樂創作的意義：用旋律與文字記錄生命的點滴，將感受與感動對等地移轉到聆聽者的心底。</li>
+<li>創作的推廣：作品發表之後，才真正開始與世界對話。</li>
+<li>創作的自我實現：好的音樂不需要高深的技巧堆砌，充分表達內心的情感，就是無法仿造的藝術。</li>
+</ul>
+<p>音樂創作的路很長，我們都永遠需要彼此的鼓勵。</p>
+<h3 id="session-8-80">參考書目</h3>
+<ol>
+<li>Pamela Phillips Oland 著，沈雁譯，《白金暢銷歌詞創作》，豐采音樂。</li>
+<li>Bob Monaco、James Riordan 著，李岳奇譯，《如何進入唱片事業》，豐采音樂。</li>
+<li>Rikky Rooksby 著，蕭良悌、曾愷茵譯，《寫一首簡單的歌》，典絃音樂文化。</li>
+<li>陳樂融，《我，作詞家》，天下文化。</li>
+<li>黃志華、朱耀偉、梁偉詩，《詞家有道》，匯智出版社。</li>
+<li>沈謙，《修辭學》，五南圖書出版。</li>
+</ol>
+<h3 id="session-8-81">課堂互動（網站簡報）</h3>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>手機同步</td>
+<td>今天的路線：修好作品，然後勇敢地發表</td>
+</tr>
+<tr>
+<td>3</td>
+<td>舉手計票</td>
+<td>一週之後，你們的 Demo 完成了嗎？</td>
+</tr>
+<tr>
+<td>6</td>
+<td>翻牌</td>
+<td>收到意見時，先分辨它的來源</td>
+</tr>
+<tr>
+<td>7</td>
+<td>曲例聆聽・YouTube</td>
+<td>用今天的回饋方式，先練習評析一首經典</td>
+</tr>
+<tr>
+<td>8</td>
+<td>分段計時・師生討論</td>
+<td>兩組互相聆聽，老師輪流加入討論</td>
+</tr>
+<tr>
+<td>9</td>
+<td>創作範本卡</td>
+<td>完整的創作範本卡：確認每一個欄位，送給老師</td>
+</tr>
+<tr>
+<td>11</td>
+<td>隨機點名</td>
+<td>每組八分鐘：介紹、發表、回饋</td>
+</tr>
+<tr>
+<td>12</td>
+<td>分段計時・循環</td>
+<td>介紹、發表、回饋，每組自動循環</td>
+</tr>
+<tr>
+<td>13</td>
+<td>分組計分</td>
+<td>成果發表評分表</td>
+</tr>
+<tr>
+<td>14</td>
+<td>錄音</td>
+<td>錄下今天的發表，作為作品的第一個版本</td>
+</tr>
+<tr>
+<td>15</td>
+<td>迷思破解・翻牌</td>
+<td>是非題：八堂課的觀念</td>
+</tr>
+<tr>
+<td>18</td>
+<td>出場券 3-2-1</td>
+<td>最後一張出場券</td>
+</tr>
+<tr>
+<td>19</td>
+<td>課程回饋問卷</td>
+<td>課程回饋問卷</td>
+</tr>
+</tbody></table>
+
+</section>
+</main>
 
 <footer>© 畫素音樂工作坊 Pixel Studio・Songwriting Lab 詞曲創作</footer>
 
@@ -64,18 +2606,23 @@
 <script src="../assets/youtube.js?v=20261016a"></script>
 <script src="../assets/config.js?v=20261014h"></script>
 <script src="../assets/backend.js?v=20261016c"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <script>
 (function () {
   var NUM = { '一': 1, '二': 2, '三': 3, '四': 4, '五': 5, '六': 6, '七': 7, '八': 8 };
   var COLOR = ['', '#e8412b', '#e2407f', '#9a5fd0', '#2f5fc4', '#45b3e6', '#6cbb4b', '#d6e03a', '#f4a62a'];
   var main = document.getElementById('content'), toc = document.getElementById('toc'), prog = document.getElementById('progress');
-  fetch('handbook.md?v=20261014pol')
-    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+  var pre = main.hasAttribute('data-prerendered');
+  function loadMarked() { return window.marked ? Promise.resolve() : new Promise(function (ok, no) { var s = document.createElement('script'); s.src = 'https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js'; s.onload = ok; s.onerror = no; document.head.appendChild(s); }); }
+  (pre ? (location.hash ? Promise.resolve(null) : new Promise(function (ok) { requestAnimationFrame(function () { setTimeout(function () { ok(null); }, 0); }); })) : loadMarked().then(function () { return fetch('handbook.md?v=20261014pol'); }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }))
     .then(function (md) {
-      main.innerHTML = marked.parse(md, { gfm: true });
+      if (md !== null) main.innerHTML = marked.parse(md, { gfm: true });
+      main.querySelectorAll('img').forEach(function (i) { i.loading = 'lazy'; i.decoding = 'async'; });
       var heads = [], items = [];
-      main.querySelectorAll('h2,h3').forEach(function (h) {
+      if (pre) main.querySelectorAll('.lesson-head,h3').forEach(function (h) {
+        if (h.tagName === 'H3') { items.push({ href: '#' + h.id, label: h.textContent.trim(), sub: true }); return; }
+        heads.push(h); items.push({ href: '#' + h.id, label: h.getAttribute('data-item'), dot: h.getAttribute('data-dot') });
+      });
+      else main.querySelectorAll('h2,h3').forEach(function (h) {
         if (h.tagName === 'H3') {
           var parent = heads[heads.length - 1];
           h.id = (parent ? parent.id : 'sec') + '-' + (items.length + 1);
@@ -95,6 +2642,8 @@
         var a = document.createElement('a'); a.href = '#' + id; a.textContent = n ? '第' + m[1] + '堂' : '課程總覽'; a.setAttribute('data-id', id); toc.appendChild(a);
         items.push({ href: '#' + id, label: n ? '第' + m[1] + '堂　' + parts[0].replace(/^第.堂｜/, '').trim() : '課程總覽', dot: n ? COLOR[n] : null });
       });
+      // 每一章包成 section，畫面外的章節延後計算版面（content-visibility），長講義才不會卡住
+      if (!pre) heads.forEach(function (h) { var sec = document.createElement('section'); sec.className = 'hb-sec'; h.parentNode.insertBefore(sec, h); var n = h; while (n && (n === h || !(n.classList && n.classList.contains('lesson-head')))) { var nx = n.nextSibling; sec.appendChild(n); n = nx; } });
       main.querySelectorAll('input[type=checkbox]').forEach(function (c) { c.removeAttribute('disabled'); if (c.parentNode) c.setAttribute('aria-label', c.parentNode.textContent.trim()); });
       // 每堂開頭放課前問卷與投影片連結
       heads.forEach(function (h) {
@@ -117,7 +2666,7 @@
         var max = document.documentElement.scrollHeight - innerHeight;
         prog.style.width = (max > 0 ? scrollY / max * 100 : 0) + '%';
         var cur = heads[0];
-        heads.forEach(function (h) { if (h.getBoundingClientRect().top < innerHeight * 0.3) cur = h; });
+        heads.forEach(function (h) { if (h.parentNode.getBoundingClientRect().top < innerHeight * 0.3) cur = h; });
         chips.forEach(function (c) {
           var on = cur && c.getAttribute('data-id') === cur.id;
           if (on && !c.classList.contains('cur')) c.scrollIntoView({ block: 'nearest', inline: 'center' });
