@@ -177,3 +177,10 @@
 /* 標題避免單字落行，內文避免最後一行只剩一兩個字 */
 .home h2,.home h3,.home .about-statement{text-wrap:balance}
 .home p{text-wrap:pretty}
+
+/* Keep every course label visible on small screens. */
+@media(max-width:599px){
+ .home .studio-band .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px;justify-items:center;white-space:normal;transform:none!important;animation:none!important;padding-inline:18px;width:100%;box-sizing:border-box}
+ .home .studio-band i{display:none!important}
+ .home .studio-band span{min-width:0;min-height:24px;font-size:12px;letter-spacing:.06em;text-align:center;justify-content:center;white-space:nowrap}
+}

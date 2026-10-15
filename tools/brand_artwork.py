@@ -24,6 +24,7 @@ def build():
         im = Image.open(target); im.thumbnail((720,216), Image.Resampling.LANCZOS)
         buf = io.BytesIO(); im.save(buf, format='PNG', optimize=True)
         logos[color] = uri(buf.getvalue(), 'image/png')
+    overrides = json.loads((ROOT / 'tools/artwork_branding_overrides.json').read_text(encoding='utf-8'))
     mapping = {}; report = []
     for folder in ('guitar','piano','teaching'):
         for p in sorted((ASSETS/folder).iterdir()):
@@ -59,6 +60,15 @@ def build():
                 if p.stem in ('breath-wall-tissue-white','breath-wall-white'):
                     side='right';x=w-lw-margin;color='black';opacity=.50
                 content=f'<image width="{w}" height="{h}" href="{uri(original,"image/jpeg" if p.suffix==".jpg" else "image/webp")}"/>'
+            override = overrides.get(p.stem)
+            if override:
+                color = override.get('logo', color);opacity=override.get('opacity',opacity)
+                lw=w*override.get('width_fraction',lw/w)
+                side=override.get('corner',side)
+                x=w-lw-w*.025 if side.endswith('right') or side=='right' else w*.025
+                y=h-lw*.3-w*.025 if not side.startswith('top-') else w*.025
+                if 'x_fraction' in override:x=w*override['x_fraction']
+                if 'y_fraction' in override:y=h*override['y_fraction']
             logo=f'<image x="{x}" y="{y}" width="{lw}" height="{lw*.3}" opacity="{opacity}" href="{logos[color]}"/>'
             out=p.with_name(p.stem+'.branded.svg')
             out.write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{out_h}" viewBox="0 0 {w} {out_h}">{content}{logo}</svg>\n',encoding='utf-8',newline='\n')

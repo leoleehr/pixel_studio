@@ -54,8 +54,8 @@
     "output": "site/assets/guitar/finger-anatomy.branded.svg",
     "corner": "top-left",
     "logo": "white",
-    "opacity": 0.65,
-    "width_fraction": 0.2,
+    "opacity": 0.55,
+    "width_fraction": 0.15,
     "transparent": true,
     "canvas_unchanged": true
   },
@@ -82,7 +82,7 @@
   {
     "source": "site/assets/guitar/fretting-technique.jpg",
     "output": "site/assets/guitar/fretting-technique.branded.svg",
-    "corner": "top-right",
+    "corner": "left",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
@@ -113,9 +113,9 @@
     "source": "site/assets/guitar/pick-grip.jpg",
     "output": "site/assets/guitar/pick-grip.branded.svg",
     "corner": "left",
-    "logo": "white",
-    "opacity": 0.65,
-    "width_fraction": 0.2,
+    "logo": "black",
+    "opacity": 0.55,
+    "width_fraction": 0.18,
     "transparent": true,
     "canvas_unchanged": true
   },
@@ -194,8 +194,8 @@
     "output": "site/assets/piano/hands-keyboard.branded.svg",
     "corner": "right",
     "logo": "white",
-    "opacity": 0.65,
-    "width_fraction": 0.2,
+    "opacity": 0.55,
+    "width_fraction": 0.13,
     "transparent": true,
     "canvas_unchanged": true
   },
@@ -322,9 +322,9 @@
   {
     "source": "site/assets/teaching/bracing-fan.webp",
     "output": "site/assets/teaching/bracing-fan.branded.svg",
-    "corner": "top-right",
-    "logo": "white",
-    "opacity": 0.65,
+    "corner": "bottom-center",
+    "logo": "black",
+    "opacity": 0.55,
     "width_fraction": 0.2,
     "transparent": true,
     "canvas_unchanged": true
@@ -332,9 +332,9 @@
   {
     "source": "site/assets/teaching/bracing-x.webp",
     "output": "site/assets/teaching/bracing-x.branded.svg",
-    "corner": "top-right",
-    "logo": "white",
-    "opacity": 0.65,
+    "corner": "bottom-center",
+    "logo": "black",
+    "opacity": 0.55,
     "width_fraction": 0.2,
     "transparent": true,
     "canvas_unchanged": true
@@ -342,20 +342,20 @@
   {
     "source": "site/assets/teaching/breath-in-white.webp",
     "output": "site/assets/teaching/breath-in-white.branded.svg",
-    "corner": "right",
+    "corner": "top-right",
     "logo": "white",
     "opacity": 0.65,
-    "width_fraction": 0.2,
+    "width_fraction": 0.24,
     "transparent": true,
     "canvas_unchanged": true
   },
   {
     "source": "site/assets/teaching/breath-out-white.webp",
     "output": "site/assets/teaching/breath-out-white.branded.svg",
-    "corner": "left",
+    "corner": "top-right",
     "logo": "white",
     "opacity": 0.65,
-    "width_fraction": 0.2,
+    "width_fraction": 0.24,
     "transparent": true,
     "canvas_unchanged": true
   },
@@ -412,7 +412,7 @@
   {
     "source": "site/assets/teaching/capo-side-v2.webp",
     "output": "site/assets/teaching/capo-side-v2.branded.svg",
-    "corner": "left",
+    "corner": "top-right",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
@@ -522,7 +522,7 @@
   {
     "source": "site/assets/teaching/chuck-after.webp",
     "output": "site/assets/teaching/chuck-after.branded.svg",
-    "corner": "top-right",
+    "corner": "right",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
@@ -532,7 +532,7 @@
   {
     "source": "site/assets/teaching/chuck-before.webp",
     "output": "site/assets/teaching/chuck-before.branded.svg",
-    "corner": "top-right",
+    "corner": "right",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
@@ -622,7 +622,7 @@
   {
     "source": "site/assets/teaching/harmonic-release.webp",
     "output": "site/assets/teaching/harmonic-release.branded.svg",
-    "corner": "top-left",
+    "corner": "top-right",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
@@ -632,7 +632,7 @@
   {
     "source": "site/assets/teaching/harmonic-touch.webp",
     "output": "site/assets/teaching/harmonic-touch.branded.svg",
-    "corner": "top-left",
+    "corner": "top-right",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
@@ -652,7 +652,7 @@
   {
     "source": "site/assets/teaching/mic-straight-white.webp",
     "output": "site/assets/teaching/mic-straight-white.branded.svg",
-    "corner": "top-right",
+    "corner": "top-left",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
@@ -662,7 +662,7 @@
   {
     "source": "site/assets/teaching/mute-play.webp",
     "output": "site/assets/teaching/mute-play.branded.svg",
-    "corner": "top-right",
+    "corner": "right",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
@@ -672,7 +672,7 @@
   {
     "source": "site/assets/teaching/mute-ready.webp",
     "output": "site/assets/teaching/mute-ready.branded.svg",
-    "corner": "top-right",
+    "corner": "right",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
@@ -702,10 +702,10 @@
   {
     "source": "site/assets/teaching/piano-five-fingers.webp",
     "output": "site/assets/teaching/piano-five-fingers.branded.svg",
-    "corner": "left",
+    "corner": "right",
     "logo": "white",
-    "opacity": 0.65,
-    "width_fraction": 0.2,
+    "opacity": 0.55,
+    "width_fraction": 0.14,
     "transparent": true,
     "canvas_unchanged": true
   },
@@ -722,7 +722,7 @@
   {
     "source": "site/assets/teaching/piano-pedal-down.webp",
     "output": "site/assets/teaching/piano-pedal-down.branded.svg",
-    "corner": "top-left",
+    "corner": "right",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
@@ -732,7 +732,7 @@
   {
     "source": "site/assets/teaching/piano-pedal-up.webp",
     "output": "site/assets/teaching/piano-pedal-up.branded.svg",
-    "corner": "top-left",
+    "corner": "right",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
@@ -742,7 +742,7 @@
   {
     "source": "site/assets/teaching/piano-pedals.webp",
     "output": "site/assets/teaching/piano-pedals.branded.svg",
-    "corner": "top-left",
+    "corner": "right",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
@@ -942,9 +942,9 @@
   {
     "source": "site/assets/teaching/truss-nut.webp",
     "output": "site/assets/teaching/truss-nut.branded.svg",
-    "corner": "top-right",
-    "logo": "white",
-    "opacity": 0.65,
+    "corner": "right",
+    "logo": "black",
+    "opacity": 0.55,
     "width_fraction": 0.2,
     "transparent": true,
     "canvas_unchanged": true
