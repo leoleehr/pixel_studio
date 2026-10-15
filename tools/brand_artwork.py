@@ -58,7 +58,7 @@ def build():
                 content=f'<image width="{w}" height="{h}" href="{uri(original,"image/jpeg" if p.suffix==".jpg" else "image/webp")}"/>'
             logo=f'<image x="{x}" y="{y}" width="{lw}" height="{lw*.3}" href="{logos[color]}"/>'
             out=p.with_name(p.stem+'.branded.svg')
-            out.write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{out_h}" viewBox="0 0 {w} {out_h}">{content}{plate}{logo}</svg>\n',encoding='utf-8')
+            out.write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{out_h}" viewBox="0 0 {w} {out_h}">{content}{plate}{logo}</svg>\n',encoding='utf-8',newline='\n')
             mapping[p.name]=out.name
             report.append({'source':p.relative_to(ROOT).as_posix(),'output':out.relative_to(ROOT).as_posix(),'corner':side,'logo':color})
     # Only references change, never the original artwork generators.
@@ -73,6 +73,6 @@ def build():
             updated = updated.replace("file + '-photo.jpg", "file + '-photo.branded.svg")
             updated = updated.replace("it[0] + '-photo.jpg", "it[0] + '-photo.branded.svg")
         if updated!=text:p.write_text(updated,encoding='utf-8',newline='\n')
-    (ROOT/'tools/artwork_branding_manifest.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (ROOT/'tools/artwork_branding_manifest.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
     print('Branded',len(report),'artworks')
 if __name__=='__main__':build()
