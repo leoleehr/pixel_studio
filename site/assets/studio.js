@@ -71,7 +71,7 @@
       previous.stop(context.currentTime + .15);
       oscillator = null;
     }
-    playing = false; group.closest('.voice-art').classList.remove('listening'); button.textContent = '▶ 聆聽聲音'; button.setAttribute('aria-pressed', 'false');
+    playing = false; group.closest('.voice-art').classList.remove('listening'); button.textContent = '▶︎ 聆聽聲音'; button.setAttribute('aria-pressed', 'false');
   }
   slider.addEventListener('input', draw);
   button.addEventListener('click', async function () {

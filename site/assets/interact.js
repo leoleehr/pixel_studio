@@ -206,7 +206,7 @@
 
   /* ---------- 6. 聲波實驗室：振幅、頻率、波長 ---------- */
   $$('.wavelab').forEach(function (w) {
-    w.innerHTML = '<canvas></canvas><div class="wl-ctrl"><label>頻率 <input type="range" class="f" min="0" max="1000" value="500"></label><label>振幅 <input type="range" class="a" min="0" max="100" value="60"></label></div><div class="wl-row"><div class="wl-read"></div><div class="btn-row"><button type="button" class="btn p220">220 Hz</button><button type="button" class="btn p440">440 Hz</button><button type="button" class="btn p880">880 Hz</button><button type="button" class="btn primary play">▶ 播放</button></div></div>';
+    w.innerHTML = '<canvas></canvas><div class="wl-ctrl"><label>頻率 <input type="range" class="f" min="0" max="1000" value="500"></label><label>振幅 <input type="range" class="a" min="0" max="100" value="60"></label></div><div class="wl-row"><div class="wl-read"></div><div class="btn-row"><button type="button" class="btn p220">220 Hz</button><button type="button" class="btn p440">440 Hz</button><button type="button" class="btn p880">880 Hz</button><button type="button" class="btn primary play">▶︎ 播放</button></div></div>';
     var cv = w.querySelector('canvas'), fr = w.querySelector('.f'), am = w.querySelector('.a'), rd = w.querySelector('.wl-read'), play = w.querySelector('.play');
     var osc = null, gain = null;
     function freq() { return 110 * Math.pow(8, fr.value / 1000); }
@@ -227,7 +227,7 @@
       for (var i = 0; i <= c.w; i += 2) { var y = c.h / 2 - Math.sin(i / c.w * cyc * Math.PI * 2) * a * (c.h / 2 - 8); i ? x.lineTo(i, y) : x.moveTo(i, y); }
       x.stroke();
     }
-    function stop() { if (osc) { gain.gain.setTargetAtTime(0, ac().currentTime, 0.03); var o = osc; setTimeout(function () { o.stop(); }, 150); osc = null; } play.textContent = '▶ 播放'; }
+    function stop() { if (osc) { gain.gain.setTargetAtTime(0, ac().currentTime, 0.03); var o = osc; setTimeout(function () { o.stop(); }, 150); osc = null; } play.textContent = '▶︎ 播放'; }
     play.onclick = function () {
       if (osc) return stop();
       var c = ac(); osc = c.createOscillator(); gain = c.createGain(); gain.gain.value = 0;
@@ -373,7 +373,7 @@
     var an = null, raf = 0, t0 = 0, last = 0, rec = null, chunks = [], blob = null, url = '', recent = [], playing = false;
     p.innerHTML = '<div class="rl-read"><div><small>音高</small><b class="rl-note">--</b><span class="rl-hz"></span></div><div><small>音量</small><b class="rl-db">--</b><span class="rl-bar"><i></i></span></div><div><small>錄製</small><b class="rl-time">0.0 秒</b></div></div>' +
       '<canvas class="rl-cv"></canvas><div class="rl-legend"><span class="lg-pitch">━ 音高</span><span class="lg-vol">▇ 音量</span><span class="lg-ov">▨ 聲區</span><span class="muted">錄完後在圖上拖曳選一段，再按腔體按鈕標記；兩種共鳴重疊的地方就是聲區</span></div>' +
-      '<div class="btn-row rl-main"><button type="button" class="btn primary go">● 開始錄製</button><button type="button" class="btn play" disabled>▶ 播放</button><button type="button" class="btn clear">清除</button><span class="rl-sep"></span>' + ZONES.map(function (z) { return '<button type="button" class="btn rl-z" data-z="' + z.k + '" disabled style="--zc:' + z.col + '">標記為' + z.name + '</button>'; }).join('') + '</div>' +
+      '<div class="btn-row rl-main"><button type="button" class="btn primary go">● 開始錄製</button><button type="button" class="btn play" disabled>▶︎ 播放</button><button type="button" class="btn clear">清除</button><span class="rl-sep"></span>' + ZONES.map(function (z) { return '<button type="button" class="btn rl-z" data-z="' + z.k + '" disabled style="--zc:' + z.col + '">標記為' + z.name + '</button>'; }).join('') + '</div>' +
       '<ul class="rl-marks"></ul><p class="rl-sum"></p>' +
       '<div class="btn-row rl-out"><button type="button" class="btn png">下載觀測圖</button><a class="btn wav" href="#">下載錄音</a><button type="button" class="btn primary up">上傳給老師</button></div><audio class="rl-audio"></audio>';
     var cv = p.querySelector('canvas'), go = p.querySelector('.go'), play = p.querySelector('.play'), au = p.querySelector('audio'), wav = p.querySelector('.wav');
@@ -439,7 +439,7 @@
         return '<li style="--zc:' + z.col + '"><b>' + z.name + '</b> ' + mk.a.toFixed(1) + '–' + mk.b.toFixed(1) + ' 秒　' + (st ? '音高 ' + rng(st) + '（中位 ' + nameOf(st.mid).name + '）　平均音量 ' + Math.round(st.db) + ' dB' : '這段沒有偵測到聲音') + ' <button type="button" class="rl-del" data-i="' + i + '" aria-label="刪除標記">×</button></li>';
       }).join('') + overlaps().map(function (o) {
         var st = stats(o.a, o.b);
-        return '<li class="rl-ov"><b>聲區</b> ' + zoneOf(o.from).name + '↔' + zoneOf(o.to).name + '　' + o.a.toFixed(1) + '–' + o.b.toFixed(1) + ' 秒　' + (st ? '音高 ' + rng(st) + '（約 ' + nameOf(st.mid).name + '）　平均音量 ' + Math.round(st.db) + ' dB' : '這段沒有偵測到聲音') + '</li>';
+        return '<li class="rl-ov"><b>聲區</b> ' + zoneOf(o.from).name + '↔︎' + zoneOf(o.to).name + '　' + o.a.toFixed(1) + '–' + o.b.toFixed(1) + ' 秒　' + (st ? '音高 ' + rng(st) + '（約 ' + nameOf(st.mid).name + '）　平均音量 ' + Math.round(st.db) + ' dB' : '這段沒有偵測到聲音') + '</li>';
       }).join('');
       $$('.rl-del', ul).forEach(function (b) { b.onclick = function () { marks.splice(+b.getAttribute('data-i'), 1); save(); refresh(); }; });
       var ch = marks.filter(function (m) { return m.z === 'chest'; })[0], hd = marks.filter(function (m) { return m.z === 'head'; })[0], sum = p.querySelector('.rl-sum');
@@ -504,7 +504,7 @@
       au.currentTime = sel ? sel.a : 0; au.play(); playing = true; play.textContent = '■ 停止播放';
       (function tick() { if (!playing) return; draw(au.currentTime); if (sel && au.currentTime >= sel.b) { au.pause(); return; } requestAnimationFrame(tick); })();
     };
-    au.onpause = au.onended = function () { playing = false; play.textContent = '▶ 播放'; draw(); };
+    au.onpause = au.onended = function () { playing = false; play.textContent = '▶︎ 播放'; draw(); };
     function px(e) { var r = cv.getBoundingClientRect(); return (e.clientX - r.left) * (cv.clientWidth / (r.width || 1)); } // 投影片整體縮放時，換算回畫布的版面座標
     cv.addEventListener('pointerdown', function (e) { if (raf || !data.length) return; var g = geo(); drag = g.Tm(px(e)); sel = { a: drag, b: drag }; cv.setPointerCapture(e.pointerId); draw(); });
     cv.addEventListener('pointermove', function (e) { if (drag === null) return; var t = geo().Tm(px(e)); sel = { a: Math.min(drag, t), b: Math.max(drag, t) }; draw(); });
@@ -532,7 +532,7 @@
     };
     p.querySelector('.up').onclick = function () {
       if (!data.length) { say('先錄一段共鳴轉換', 'warn'); return; }
-      var summary = { marks: marks.map(function (mk) { var st = stats(mk.a, mk.b); return { zone: zoneOf(mk.z).name, from: mk.a, to: mk.b, low: st && nameOf(st.lo).name, high: st && nameOf(st.hi).name, db: st && Math.round(st.db) }; }), zones: overlaps().map(function (o) { var st = stats(o.a, o.b); return { between: zoneOf(o.from).name + '↔' + zoneOf(o.to).name, from: o.a, to: o.b, pitch: st && nameOf(st.mid).name, low: st && nameOf(st.lo).name, high: st && nameOf(st.hi).name }; }), summary: p.querySelector('.rl-sum').innerText };
+      var summary = { marks: marks.map(function (mk) { var st = stats(mk.a, mk.b); return { zone: zoneOf(mk.z).name, from: mk.a, to: mk.b, low: st && nameOf(st.lo).name, high: st && nameOf(st.hi).name, db: st && Math.round(st.db) }; }), zones: overlaps().map(function (o) { var st = stats(o.a, o.b); return { between: zoneOf(o.from).name + '↔︎' + zoneOf(o.to).name, from: o.a, to: o.b, pitch: st && nameOf(st.mid).name, low: st && nameOf(st.lo).name, high: st && nameOf(st.hi).name }; }), summary: p.querySelector('.rl-sum').innerText };
       report(p, 'resonance', { item: '共鳴轉換', result: summary.marks.map(function (m) { return m.zone + ' ' + (m.low || '--') + '–' + (m.high || '--') + ' ' + (m.db === null ? '' : m.db + ' dB'); }).join('／') || '未標記', detail: summary });
       if (!window.PixelBackend) return;
       snapshot().toBlob(function (img) {
@@ -608,7 +608,7 @@
       (isScale ? '' : '<label><input type="checkbox" class="o-back"> 和弦走完再下行</label>') + '</div>' +
       '<div class="pr-now"><div class="pr-big">--</div><div class="pr-sub"></div></div>' +
       (isScale ? '' : '<div class="pr-chords"></div>') + '<div class="pr-staff"></div><div class="pr-cells"></div>' +
-      '<div class="btn-row pr-run"><button type="button" class="btn primary go">▶ 開始跟唱</button>' + (isScale ? '' : '<button type="button" class="btn pass">唱穩了 +5 Bpm</button><span class="pr-rec"></span>') + '<span class="pr-msg muted"></span></div>';
+      '<div class="btn-row pr-run"><button type="button" class="btn primary go">▶︎ 開始跟唱</button>' + (isScale ? '' : '<button type="button" class="btn pass">唱穩了 +5 Bpm</button><span class="pr-rec"></span>') + '<span class="pr-msg muted"></span></div>';
     var sel = p.querySelector('.start'), big = p.querySelector('.pr-big'), sub = p.querySelector('.pr-sub'), cells = p.querySelector('.pr-cells'), staffEl = p.querySelector('.pr-staff'), shownChord = -1, chordsEl = p.querySelector('.pr-chords'), msg = p.querySelector('.pr-msg'), go = p.querySelector('.go');
     function save() { LS.set(key, st); }
     function chordOrder() { var up = [0, 1, 2, 3, 4, 5, 6]; return st.back ? up.concat([5, 4, 3, 2, 1, 0]) : up; }
@@ -719,7 +719,7 @@
     function stop(m) {
       playing = false; clearTimeout(timer); clearInterval(raf);
       if (master) { try { master.gain.setValueAtTime(0, ctx.currentTime); master.disconnect(); } catch (e) {} master = null; }
-      go.textContent = '▶ 開始跟唱'; p.classList.remove('playing'); msg.textContent = m || '';
+      go.textContent = '▶︎ 開始跟唱'; p.classList.remove('playing'); msg.textContent = m || '';
       $$('.pr-cell', cells).forEach(function (c) { c.classList.remove('on'); }); paintStatic();
     }
     go.onclick = function () { playing ? stop() : start(); };
@@ -861,7 +861,7 @@
 
   /* ---------- 唱名提示：唱名練習時在影片下方顯示目前旋律的唱名 ----------
    * 內容來源（依序）：老師在這台電腦貼上 → 後台「歌詞」分頁（代碼 data-id）→ 尚未設定
-   * 格式：一行一句；行首可加時間「0:45」對應影片秒數，播放時自動跟著換行；沒有時間就用 ◀ ▶ 手動換行
+   * 格式：一行一句；行首可加時間「0:45」對應影片秒數，播放時自動跟著換行；沒有時間就用 ◀︎ ▶︎ 手動換行
    * 同一張投影片的分段計時進入 data-phase（預設第 1 段）時自動展開
    */
   var SOLFA_N = { '1': 'Do', '2': 'Re', '3': 'Mi', '4': 'Fa', '5': 'Sol', '6': 'La', '7': 'Si', '0': '' };
@@ -871,7 +871,7 @@
     var bars = Math.ceil(Math.max.apply(null, notes.map(function (n) { return n.at; })) / 4 + 0.001), total = bars * 4;
     var key = 'solfa-start-' + LESSON + '-' + (b.getAttribute('data-id') || 'solfa'), startAt = LS.get(key, null), t0 = 0, tick = 0, mode = '', shown = -1, open = false;
     b.classList.add('score');
-    b.innerHTML = '<div class="sf-head"><b>唱名提示</b><span class="sf-src muted">' + esc(keyTxt) + '・' + bpm + ' Bpm・副歌前 ' + bars + ' 小節</span><span class="sf-btns"><button type="button" class="btn go">▶ 跟唱</button><button type="button" class="btn mark">設定副歌起點</button><button type="button" class="btn tog">顯示</button></span></div>' +
+    b.innerHTML = '<div class="sf-head"><b>唱名提示</b><span class="sf-src muted">' + esc(keyTxt) + '・' + bpm + ' Bpm・副歌前 ' + bars + ' 小節</span><span class="sf-btns"><button type="button" class="btn go">▶︎ 跟唱</button><button type="button" class="btn mark">設定副歌起點</button><button type="button" class="btn tog">顯示</button></span></div>' +
       '<div class="sf-body"><div class="sf-bar"></div><p class="sf-hint muted"></p></div>';
     var barEl = b.querySelector('.sf-bar'), hint = b.querySelector('.sf-hint');
     function digit(n) { return '<span class="sf-d">' + n.n + (n.low ? '<i class="lo"></i>' : '') + (n.high ? '<i class="hi"></i>' : '') + '</span>'; }
@@ -889,8 +889,8 @@
     function videoCtl() { return window.PixelYT && window.PixelYT.find ? window.PixelYT.find(b.closest('.slide')) : null; }
     function loop() {
       var beat;
-      if (mode === 'video') { var c = videoCtl(), pl = c && c.player; if (!pl || !pl.getCurrentTime || startAt === null) return; beat = (pl.getCurrentTime() - startAt) * bpm / 60; if (beat < -4 || beat > total + 2) { hint.textContent = '影片到 ' + fmt(startAt) + ' 自動跟唱，或按「▶ 跟唱」'; return; } }
-      else { beat = (performance.now() - t0) / 1000 * bpm / 60 - 4; if (beat > total + 1) { stopRun(); hint.textContent = '四小節唱完了，按「▶ 跟唱」再來一次'; return; } }
+      if (mode === 'video') { var c = videoCtl(), pl = c && c.player; if (!pl || !pl.getCurrentTime || startAt === null) return; beat = (pl.getCurrentTime() - startAt) * bpm / 60; if (beat < -4 || beat > total + 2) { hint.textContent = '影片到 ' + fmt(startAt) + ' 自動跟唱，或按「▶︎ 跟唱」'; return; } }
+      else { beat = (performance.now() - t0) / 1000 * bpm / 60 - 4; if (beat > total + 1) { stopRun(); hint.textContent = '四小節唱完了，按「▶︎ 跟唱」再來一次'; return; } }
       hint.textContent = '第 ' + (Math.min(bars - 1, Math.max(0, Math.floor(beat / 4))) + 1) + ' / ' + bars + ' 小節・' + (beat < 0 ? '預備 ' + Math.ceil(-beat) : '跟著亮起的唱名唱');
       if (beat >= 0) hl(beat); else if (shown !== 0) renderBar(0);
     }
@@ -899,7 +899,7 @@
     function stopRun() { clearInterval(tick); tick = 0; mode = ''; }
     function show(on) {
       open = on; b.classList.toggle('open', on); b.querySelector('.tog').textContent = on ? '收起' : '顯示';
-      if (on) { renderBar(0); hint.textContent = startAt !== null ? '影片到 ' + fmt(startAt) + ' 自動跟唱，或按「▶ 跟唱」' : '按「▶ 跟唱」開始；副歌開始時按「設定副歌起點」可同步影片'; run('video'); }
+      if (on) { renderBar(0); hint.textContent = startAt !== null ? '影片到 ' + fmt(startAt) + ' 自動跟唱，或按「▶︎ 跟唱」' : '按「▶︎ 跟唱」開始；副歌開始時按「設定副歌起點」可同步影片'; run('video'); }
       else stopRun();
     }
     b.querySelector('.tog').onclick = function () { show(!open); };
@@ -917,9 +917,9 @@
     if (b.hasAttribute('data-score')) return solfaScore(b);
     var lid = b.getAttribute('data-id') || 'solfa', key = 'solfa-' + LESSON + '-' + lid, want = parseInt(b.getAttribute('data-phase') || '0', 10);
     var rows = [], cur = 0, src = '', tick = 0, open = false;
-    b.innerHTML = '<div class="sf-head"><b>唱名提示</b><span class="sf-src muted"></span><span class="sf-btns"><button type="button" class="btn prev" aria-label="上一句">◀</button><button type="button" class="btn next" aria-label="下一句">▶</button><button type="button" class="btn tog">顯示</button><button type="button" class="btn edit">貼上唱名</button></span></div>' +
+    b.innerHTML = '<div class="sf-head"><b>唱名提示</b><span class="sf-src muted"></span><span class="sf-btns"><button type="button" class="btn prev" aria-label="上一句">◀︎</button><button type="button" class="btn next" aria-label="下一句">▶︎</button><button type="button" class="btn tog">顯示</button><button type="button" class="btn edit">貼上唱名</button></span></div>' +
       '<div class="sf-body"><p class="sf-prev"></p><p class="sf-cur"></p><p class="sf-next"></p></div>' +
-      '<div class="sf-editor"><p class="muted">一行一句簡譜，例如「0:45 3 3 2 1 | 6̣ 1 2 –」。行首的時間對應影片播放秒數，播放時會自動換行；不寫時間就用 ◀ ▶ 換行。內容只存在這台電腦；要讓學員手機也看得到，請貼到課程試算表「歌詞」分頁，代碼 ' + esc(lid) + '。</p><textarea rows="8"></textarea><div class="btn-row"><button type="button" class="btn primary save">儲存並顯示</button><button type="button" class="btn cancel">取消</button></div></div>';
+      '<div class="sf-editor"><p class="muted">一行一句簡譜，例如「0:45 3 3 2 1 | 6̣ 1 2 –」。行首的時間對應影片播放秒數，播放時會自動換行；不寫時間就用 ◀︎ ▶︎ 換行。內容只存在這台電腦；要讓學員手機也看得到，請貼到課程試算表「歌詞」分頁，代碼 ' + esc(lid) + '。</p><textarea rows="8"></textarea><div class="btn-row"><button type="button" class="btn primary save">儲存並顯示</button><button type="button" class="btn cancel">取消</button></div></div>';
     var ta = b.querySelector('textarea'), srcEl = b.querySelector('.sf-src');
     function tsec(t) { var m = t.match(/^\[?(\d+):(\d{1,2})\]?\s*/); return m ? { s: +m[1] * 60 + +m[2], rest: t.slice(m[0].length) } : null; }
     function parse(text) {
@@ -1039,7 +1039,7 @@
     var key = 'range-me', st = LS.get(key, { lo: null, hi: null, flo: null, fhi: null }), ref = 60, an = null, raf = 0, frame = 0, buf = new Float32Array(2048), recent = [];
     p.innerHTML = '<div class="rg-read"><div><small>可用音域</small><b class="rg-use">--</b></div><div><small>完全音域</small><b class="rg-full">--</b></div><div><small>可用度數</small><b class="rg-deg">--</b></div></div>' +
       '<div class="rg-ref"><button type="button" class="btn dn" aria-label="往下一個音">▼</button><div class="rg-note"><small>參考音</small><b>C4</b><span class="rg-sung">你唱的音：--</span></div><button type="button" class="btn up" aria-label="往上一個音">▲</button></div>' +
-      '<div class="btn-row"><button type="button" class="btn play">▶ 播放參考音</button><button type="button" class="btn primary mic">● 開始偵測</button><button type="button" class="btn setlo">設為可用最低</button><button type="button" class="btn sethi">設為可用最高</button><button type="button" class="btn clear">清除</button></div>' +
+      '<div class="btn-row"><button type="button" class="btn play">▶︎ 播放參考音</button><button type="button" class="btn primary mic">● 開始偵測</button><button type="button" class="btn setlo">設為可用最低</button><button type="button" class="btn sethi">設為可用最高</button><button type="button" class="btn clear">清除</button></div>' +
       '<p class="rg-state muted">由 C4 開始，以 /a/ 逐音往下演唱；聲音變虛、音準不穩時，將前一個音設為「可用最低」。再回到 C4 往上，以同樣的方式設定「可用最高」。</p>';
     var noteB = p.querySelector('.rg-note b'), sung = p.querySelector('.rg-sung'), state = p.querySelector('.rg-state'), mic = p.querySelector('.mic');
     function nm(m) { return m === null || m === undefined ? '--' : nameOf(m).name; }
@@ -1142,7 +1142,7 @@
       '<div class="rg-head"><div><b class="rg-name"></b><span class="rg-tip"></span></div><div class="rg-tempo"><button type="button" class="btn rg-dn" aria-label="減速">−</button><span class="rg-bpm"></span><button type="button" class="btn rg-up" aria-label="加速">＋</button></div></div>' +
       '<canvas class="rg-cv"></canvas>' +
       '<div class="rg-status"><span class="rg-state">先按「示範播放」聽一次，再按「開始挑戰」用 Ta 唱出節奏</span><span class="rg-score"></span></div>' +
-      '<div class="btn-row"><button type="button" class="btn rg-demo">▶ 示範播放</button><button type="button" class="btn primary rg-go">● 開始挑戰</button><button type="button" class="btn rg-tap" disabled>拍點（J 鍵）</button><button type="button" class="btn rg-mode">改用拍點鍵</button></div>';
+      '<div class="btn-row"><button type="button" class="btn rg-demo">▶︎ 示範播放</button><button type="button" class="btn primary rg-go">● 開始挑戰</button><button type="button" class="btn rg-tap" disabled>拍點（J 鍵）</button><button type="button" class="btn rg-mode">改用拍點鍵</button></div>';
     var pats = g.querySelector('.rg-pats'), cv = g.querySelector('.rg-cv'), state = g.querySelector('.rg-state'), scoreEl = g.querySelector('.rg-score');
     var go = g.querySelector('.rg-go'), demo = g.querySelector('.rg-demo'), tapB = g.querySelector('.rg-tap'), modeB = g.querySelector('.rg-mode');
     RHYTHMS.forEach(function (r, k) {
@@ -1561,9 +1561,9 @@
     $$('li', u).forEach(function (li, k) {
       // 原生 checkbox 疊在 li::before 的勾選框上（透明），整列仍可點選；清單保留 list 語意
       var box = document.createElement('input'); box.type = 'checkbox'; box.className = 'check-input';
-      box.checked = !!st[k]; box.setAttribute('aria-label', li.textContent.replace(/▶/g, '').trim());
+      box.checked = !!st[k]; box.setAttribute('aria-label', li.textContent.replace(/▶\uFE0E?/g, '').trim());
       li.insertBefore(box, li.firstChild); li.classList.toggle('done', !!st[k]);
-      var tg = function () { st[k] = !st[k]; box.checked = !!st[k]; li.classList.toggle('done', !!st[k]); LS.set(key, st); report(u, 'homework', { item: li.textContent.replace(/▶/g, '').trim(), result: st[k] ? '完成' : '取消', value: st[k] ? 1 : 0 }); };
+      var tg = function () { st[k] = !st[k]; box.checked = !!st[k]; li.classList.toggle('done', !!st[k]); LS.set(key, st); report(u, 'homework', { item: li.textContent.replace(/▶\uFE0E?/g, '').trim(), result: st[k] ? '完成' : '取消', value: st[k] ? 1 : 0 }); };
       box.onchange = function () { if (box.checked !== !!st[k]) tg(); };
       box.onkeydown = function (e) { e.stopPropagation(); if (e.key === 'Enter') { e.preventDefault(); tg(); } };
       li.onclick = function (e) { if (e.target === box || e.target.closest('a,button,input,select,textarea')) return; tg(); };

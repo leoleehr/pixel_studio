@@ -56,7 +56,7 @@
     var full = lookup[ids[0]].images[0].src;
     im.src = url('thumbs/' + full.replace(/\.[a-z0-9]+$/i, '.webp')); im.width = 240; im.height = 96;
     im.onerror = function () { im.onerror = null; im.src = url(full); };
-    im.alt = ''; im.loading = 'lazy'; im.decoding = 'async'; text.textContent = '放大圖解 ↗';
+    im.alt = ''; im.loading = 'lazy'; im.decoding = 'async'; text.textContent = '放大圖解 ↗︎';
     button.append(im, text); button.addEventListener('click', function () { open(ids); }); wrap.appendChild(button);
   });
   var shared = new URLSearchParams(location.search).get('diagram');

@@ -157,14 +157,14 @@
   }
   document.querySelectorAll('.metro').forEach(function (m) {
     var bpm = parseInt(m.getAttribute('data-bpm'), 10) || 60, beat = 0, mid = null;
-    m.innerHTML = '<button type="button" class="go">▶ 節拍器</button><button type="button" class="dn" aria-label="減速">−</button><span class="bpm"></span><button type="button" class="up" aria-label="加速">＋</button><span class="dots"><span></span><span></span><span></span><span></span></span>';
+    m.innerHTML = '<button type="button" class="go">▶︎ 節拍器</button><button type="button" class="dn" aria-label="減速">−</button><span class="bpm"></span><button type="button" class="up" aria-label="加速">＋</button><span class="dots"><span></span><span></span><span></span><span></span></span>';
     var dots = m.querySelectorAll('.dots span'), lab = m.querySelector('.bpm'), go = m.querySelector('.go');
     function label() { lab.textContent = bpm + ' Bpm'; }
     function tick() {
       dots.forEach(function (d, k) { d.classList.toggle('on', k === beat); d.classList.toggle('first', k === 0); });
       click(beat === 0); beat = (beat + 1) % 4;
     }
-    function stop() { if (mid) clearInterval(mid); mid = null; go.textContent = '▶ 節拍器'; dots.forEach(function (d) { d.classList.remove('on'); }); }
+    function stop() { if (mid) clearInterval(mid); mid = null; go.textContent = '▶︎ 節拍器'; dots.forEach(function (d) { d.classList.remove('on'); }); }
     function start() { stop(); beat = 0; tick(); mid = setInterval(tick, 60000 / bpm); go.textContent = '■ 停止'; }
     go.onclick = function () { mid ? stop() : start(); };
     m.querySelector('.up').onclick = function () { bpm = Math.min(200, bpm + 5); label(); if (mid) start(); };

@@ -343,7 +343,7 @@
       })(c);
     });
     Object.keys(OPS).forEach(function (k) { var b = btn(OPS[k].label); b.setAttribute('data-op', k); b.onclick = function () { op = k; draw(); play(); }; ops.appendChild(b); });
-    var bP = btn('▶ 播放', 'primary'), bR = btn('還原動機');
+    var bP = btn('▶︎ 播放', 'primary'), bR = btn('還原動機');
     bP.onclick = function () { clock.tid ? stop() : play(); };
     bR.onclick = function () { base = parseJianpu(def); LS.set(id, base); draw(); };
     ctl.appendChild(bP); ctl.appendChild(bR);
@@ -365,7 +365,7 @@
     });
     clock.onVisual = function (st) { $$('span', num).forEach(function (s) { s.classList.toggle('now', +s.getAttribute('data-i') === st); }); };
     function play() { stop(); seq = result(); if (clock.start()) bP.textContent = '■ 停止'; }
-    function stop() { clock.stop(); bP.textContent = '▶ 播放'; $$('span', num).forEach(function (s) { s.classList.remove('now'); }); }
+    function stop() { clock.stop(); bP.textContent = '▶︎ 播放'; $$('span', num).forEach(function (s) { s.classList.remove('now'); }); }
     players.push(stop);
     draw();
   });
@@ -401,7 +401,7 @@
     var sel = el('select'); KEY_NAMES.forEach(function (n, i) { sel.appendChild(new Option(n + ' 大調', i)); }); sel.onchange = function () { key = +sel.value; draw(); };
     var rng = el('input'); rng.type = 'range'; rng.min = 50; rng.max = 140; rng.value = bpm; var bl = el('b', '', bpm + ' BPM');
     rng.oninput = function () { bpm = +rng.value; bl.textContent = bpm + ' BPM'; };
-    var bP = btn('▶ 播放', 'primary'); bP.onclick = function () { clock.tid ? stop() : play(); };
+    var bP = btn('▶︎ 播放', 'primary'); bP.onclick = function () { clock.tid ? stop() : play(); };
     var lk = el('label'); lk.appendChild(document.createTextNode('調性 ')); lk.appendChild(sel);
     var lb = el('label'); lb.appendChild(document.createTextNode('速度 ')); lb.appendChild(rng);
     ctl.appendChild(bP); ctl.appendChild(lk); ctl.appendChild(lb); ctl.appendChild(bl);
@@ -420,7 +420,7 @@
     });
     clock.onVisual = function (st) { var cs = chords(), bar = Math.floor(st / 4) % cs.length; [].forEach.call(bars.children, function (d, i) { d.classList.toggle('now', i === bar); }); };
     function play() { if (clock.start()) bP.textContent = '■ 停止'; }
-    function stop() { clock.stop(); bP.textContent = '▶ 播放'; [].forEach.call(bars.children, function (d) { d.classList.remove('now'); }); }
+    function stop() { clock.stop(); bP.textContent = '▶︎ 播放'; [].forEach.call(bars.children, function (d) { d.classList.remove('now'); }); }
     players.push(stop);
     draw();
   });
@@ -449,7 +449,7 @@
     var on = (ar.getAttribute('data-on') || 'mr sr lead fill pad').split(/\s+/), bpm = +(ar.getAttribute('data-bpm') || 92), build = false, gains = {}, vols = {};
     ar.innerHTML = '';
     var root = el('div', 'ar'), ctl = el('div', 'ar-ctl'), list = el('div', 'ar-tracks');
-    var bP = btn('▶ 播放', 'primary'), bB = btn('由少漸多'), bA = btn('全部開啟'), barL = el('span', 'ar-bar', '第 1 小節｜C');
+    var bP = btn('▶︎ 播放', 'primary'), bB = btn('由少漸多'), bA = btn('全部開啟'), barL = el('span', 'ar-bar', '第 1 小節｜C');
     bP.onclick = function () { clock.tid ? stop() : play(); };
     bB.onclick = function () { build = true; on = []; draw(); if (!clock.tid) play(); };
     bA.onclick = function () { build = false; on = TRACKS.map(function (t) { return t.k; }); draw(); };
@@ -485,7 +485,7 @@
       });
     };
     function play() { if (clock.start()) bP.textContent = '■ 停止'; }
-    function stop() { clock.stop(); bP.textContent = '▶ 播放'; $$('.ar-steps i', list).forEach(function (c) { c.classList.remove('now'); }); }
+    function stop() { clock.stop(); bP.textContent = '▶︎ 播放'; $$('.ar-steps i', list).forEach(function (c) { c.classList.remove('now'); }); }
     players.push(stop);
     draw();
   });
