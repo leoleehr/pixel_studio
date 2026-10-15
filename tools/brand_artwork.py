@@ -77,6 +77,9 @@ def build():
                          f'<g clip-path="url(#left-half)"><use href="#original-photo" transform="translate(0 {h}) scale(1 -1)"/></g>'
                          '<g clip-path="url(#right-half)"><use href="#original-photo"/></g></g>')
             logo=f'<image x="{x}" y="{y}" width="{lw}" height="{lw*.3}" opacity="{opacity}" href="{logos[color]}"/>'
+            for extra in (override or {}).get('extra_logos', []):
+                ew=w*extra['width_fraction'];ex=w*extra['x_fraction'];ey=h*extra['y_fraction']
+                logo+=f'<image x="{ex}" y="{ey}" width="{ew}" height="{ew*.3}" opacity="{extra.get("opacity",opacity)}" href="{logos[extra.get("logo",color)]}"/>'
             out=p.with_name(p.stem+'.branded.svg')
             out.write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{out_h}" viewBox="0 0 {w} {out_h}">{content}{logo}</svg>\n',encoding='utf-8',newline='\n')
             mapping[p.name]=out.name

@@ -454,11 +454,11 @@
     ],
     "images": [
       {
-        "src": "harmonic-touch.branded.svg",
+        "src": "harmonic-touch-v2.branded.svg",
         "caption": "1：指尖輕觸第 12 格琴衍正上方"
       },
       {
-        "src": "harmonic-release.branded.svg",
+        "src": "harmonic-release-v2.branded.svg",
         "caption": "2：撥弦後離開，讓琴弦繼續振動"
       }
     ],

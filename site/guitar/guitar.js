@@ -336,31 +336,31 @@
 
   /* ---------- 吉他構造圖 ---------- */
   var PARTS = [
-    { id: 'head', zh: '琴頭', en: 'Headstock', x: 150, y: 52, d: '固定旋鈕的位置，品牌標誌通常位於此處。' },
-    { id: 'tuner', zh: '旋鈕', en: 'Tuning Machines', x: 98, y: 58, d: '固定琴弦，以轉緊、轉鬆的方式調音。品質良好的旋鈕齒輪精密、不易走音，常見全封閉（油壓）式與開放式。' },
-    { id: 'nut', zh: '上弦枕', en: 'Nut', x: 196, y: 112, t: [172, 112], d: '固定六條琴弦的間距。材質越堅硬，振動損耗越少，常見牛骨、塑膠、Tusq。' },
-    { id: 'board', zh: '指板', en: 'Fretboard', x: 98, y: 214, t: [136, 214], d: '左手按弦的接觸面，常用玫瑰木、黑檀木或楓木。木材越堅硬，越耐磨損。' },
-    { id: 'fret', zh: '琴衍（琴格）', en: 'Frets', x: 196, y: 168, t: [168, 168], d: '指板上的金屬條。按在兩條琴衍之間，弦長就固定在前一條琴衍，發出穩定的音高。' },
-    { id: 'inlay', zh: '指板記號', en: 'Position Markers', x: 98, y: 290, t: [150, 290], d: '標示在第 3、5、7、9、12 格，方便快速找到位置；第 12 格有兩個圓點，正好是空弦的高八度。' },
-    { id: 'neck', zh: '琴頸', en: 'Neck', x: 196, y: 262, t: [172, 262], d: '連接琴頭與琴身，內部藏著調整彎度的鋼筋（Truss Rod）。' },
-    { id: 'top', zh: '面板', en: 'Top', x: 64, y: 590, d: '琴身正面的木板，是音色最主要的來源。面板振動，將琴弦的能量轉換為你聽到的聲音。' },
-    { id: 'hole', zh: '響孔', en: 'Sound Hole', x: 150, y: 366, d: '琴身內的空氣從這裡進出共鳴，將聲音傳送出來。' },
-    { id: 'rosette', zh: '響孔邊飾', en: 'Rosette', x: 205, y: 384, t: [182, 382], d: '響孔外圈的裝飾，同時補強響孔邊緣，用料包括塑膠、木片或貝殼。' },
-    { id: 'guard', zh: '防刮板', en: 'Pickguard', x: 232, y: 428, t: [200, 430], d: '保護面板，避免刷弦時被彈片刮傷。' },
-    { id: 'bridge', zh: '琴橋', en: 'Bridge', x: 92, y: 493, t: [112, 495], d: '黏在面板上，承受琴弦的拉力，將振動傳到面板。' },
-    { id: 'saddle', zh: '下弦枕', en: 'Saddle', x: 150, y: 486, t: [150, 496], d: '琴弦振動的終點，將振動傳進琴橋與面板。高度決定弦距（琴弦與指板的距離）。' },
-    { id: 'pin', zh: '弦釘', en: 'Bridge Pins', x: 210, y: 500, t: [182, 495], d: '將弦尾固定在琴橋的小釘子，換弦時才需要拔起。' },
-    { id: 'binding', zh: '琴身邊飾', en: 'Binding', x: 282, y: 535, d: '琴身邊緣的封邊，保護接縫，也能觀察做工的細緻程度。' },
-    { id: 'side', zh: '側板與背板', en: 'Sides & Back', x: 30, y: 386, d: '琴身的側面與背面，和面板一同圍出共鳴箱，影響低音的厚度與餘韻。' }
+    { id: 'head', zh: '琴頭', en: 'Headstock', x: 650, y: 55, t: [515, 95], d: '固定旋鈕的位置，品牌標誌通常位於此處。' },
+    { id: 'tuner', zh: '旋鈕', en: 'Tuning Machines', x: 345, y: 90, t: [445, 120], d: '固定琴弦，以轉緊、轉鬆的方式調音。品質良好的旋鈕齒輪精密、不易走音，常見全封閉（油壓）式與開放式。' },
+    { id: 'nut', zh: '上弦枕', en: 'Nut', x: 660, y: 225, t: [515, 225], d: '固定六條琴弦的間距。材質越堅硬，振動損耗越少，常見牛骨、塑膠、Tusq。' },
+    { id: 'board', zh: '指板', en: 'Fretboard', x: 350, y: 380, t: [490, 400], d: '左手按弦的接觸面，常用玫瑰木、黑檀木或楓木。木材越堅硬，越耐磨損。' },
+    { id: 'fret', zh: '琴衍（琴格）', en: 'Frets', x: 665, y: 460, t: [535, 455], d: '指板上的金屬條。按在兩條琴衍之間，弦長就固定在前一條琴衍，發出穩定的音高。' },
+    { id: 'inlay', zh: '指板記號', en: 'Position Markers', x: 350, y: 640, t: [493, 644], d: '標示在第 3、5、7、9、12 格，方便快速找到位置；第 12 格有兩個圓點，正好是空弦的高八度。' },
+    { id: 'neck', zh: '琴頸', en: 'Neck', x: 665, y: 555, t: [550, 555], d: '連接琴頭與琴身，內部藏著調整彎度的鋼筋（Truss Rod）。' },
+    { id: 'top', zh: '面板', en: 'Top', x: 350, y: 1250, t: [430, 1240], d: '琴身正面的木板，是音色最主要的來源。面板振動，將琴弦的能量轉換為你聽到的聲音。' },
+    { id: 'hole', zh: '響孔', en: 'Sound Hole', x: 350, y: 925, t: [510, 925], d: '琴身內的空氣從這裡進出共鳴，將聲音傳送出來。' },
+    { id: 'rosette', zh: '響孔邊飾', en: 'Rosette', x: 700, y: 840, t: [595, 870], d: '響孔外圈的裝飾，同時補強響孔邊緣，用料包括塑膠、木片或貝殼。' },
+    { id: 'guard', zh: '防刮板', en: 'Pickguard', x: 780, y: 1040, t: [640, 1020], d: '保護面板，避免刷弦時被彈片刮傷。' },
+    { id: 'bridge', zh: '琴橋', en: 'Bridge', x: 315, y: 1140, t: [420, 1140], d: '黏在面板上，承受琴弦的拉力，將振動傳到面板。' },
+    { id: 'saddle', zh: '下弦枕', en: 'Saddle', x: 680, y: 1110, t: [530, 1128], d: '琴弦振動的終點，將振動傳進琴橋與面板。高度決定弦距（琴弦與指板的距離）。' },
+    { id: 'pin', zh: '弦釘', en: 'Bridge Pins', x: 680, y: 1200, t: [555, 1150], d: '將弦尾固定在琴橋的小釘子，換弦時才需要拔起。' },
+    { id: 'binding', zh: '琴身邊飾', en: 'Binding', x: 875, y: 1350, t: [790, 1330], d: '琴身邊緣的封邊，保護接縫，也能觀察做工的細緻程度。' },
+    { id: 'side', zh: '側板與背板', en: 'Sides & Back', x: 195, y: 970, t: [295, 960], d: '琴身的側面與背面，和面板一同圍出共鳴箱，影響低音的厚度與餘韻。' }
   ];
   function fretY(n) { return 108 + 442 * (1 - Math.pow(2, -n / 12)); }
   function anatomySVG() {
-    var s = '<svg class="gfig" viewBox="0 0 310 650" role="group" aria-label="真實木吉他正面構造圖，共 16 個部位">';
-    s += '<image href="' + GUITAR_IMAGE + 'acoustic-front.branded.svg?v=20261015revision17" x="0" y="0" width="310" height="650" preserveAspectRatio="xMidYMid slice"/>';
+    var s = '<svg class="gfig" viewBox="0 0 1024 1536" role="group" aria-label="真實木吉他正面構造圖，共 16 個部位">';
+    s += '<image href="' + GUITAR_IMAGE + 'acoustic-front.branded.svg?v=20261015guitar20" x="0" y="0" width="1024" height="1536" preserveAspectRatio="xMidYMid meet"/>';
     PARTS.forEach(function (p, i) {
       s += '<g class="hot" data-part="' + i + '" tabindex="0" role="button" aria-label="' + (i + 1) + ' ' + p.zh + '">' +
-        (p.t ? '<line x1="' + p.x + '" y1="' + p.y + '" x2="' + p.t[0] + '" y2="' + p.t[1] + '" class="lead"/><circle cx="' + p.t[0] + '" cy="' + p.t[1] + '" r="2.6" class="dot"/>' : '') +
-        '<circle cx="' + p.x + '" cy="' + p.y + '" r="12"/><text x="' + p.x + '" y="' + (p.y + 4.5) + '" class="n">' + (i + 1) + '</text></g>';
+        (p.t ? '<line x1="' + p.x + '" y1="' + p.y + '" x2="' + p.t[0] + '" y2="' + p.t[1] + '" class="lead"/><circle cx="' + p.t[0] + '" cy="' + p.t[1] + '" r="6" class="dot"/>' : '') +
+        '<circle cx="' + p.x + '" cy="' + p.y + '" r="28"/><text style="font-size:27px" x="' + p.x + '" y="' + (p.y + 9) + '" class="n">' + (i + 1) + '</text></g>';
     });
     return s + '</svg>';
   }
@@ -395,7 +395,7 @@
   var bodyOutlineCount = 0;
   function bodyOutline(b) {
     var names = {'Jumbo':'jumbo','Dreadnought':'dreadnought','Grand Auditorium':'ga','Auditorium':'om','Grand Concert':'gc','Concert':'concert'};
-    return '<img loading="lazy" decoding="async" class="gfig body-photo" src="' + GUITAR_TEACHING + 'body-' + names[b.id] + '.branded.svg?v=20261015revision17" alt="' + b.zh + '筒身寫實外形" width="506" height="506">';
+    return '<img loading="lazy" decoding="async" class="gfig body-photo" src="' + GUITAR_TEACHING + 'body-' + names[b.id] + '.branded.svg?v=20261015guitar20" alt="' + b.zh + '筒身寫實外形" width="506" height="506">';
   }
   function mountBodies(root) {
     root.innerHTML = '<div class="bodies">' + BODIES.map(function (b, i) {
@@ -409,22 +409,22 @@
   }
   function sizesHTML() {
     return '<div class="sizes">' + [['1/4', '2–5 歲', 0.55], ['1/2', '5–8 歲', 0.68], ['3/4', '8–12 歲', 0.82], ['Full', '12 歲以上', 1]].map(function (z) {
-      return '<div style="--h:' + Math.round(z[2] * 230) + 'px">' + '<img loading="lazy" decoding="async" src="' + GUITAR_IMAGE + 'folk-photo.branded.svg?v=20261015revision17" alt="' + z[0] + '相對尺寸示意">' + '<b>' + z[0] + '</b><span>' + z[1] + '</span></div>';
+      return '<div style="--h:' + Math.round(z[2] * 230) + 'px">' + '<img loading="lazy" decoding="async" src="' + GUITAR_IMAGE + 'folk-photo.branded.svg?v=20261015guitar20" alt="' + z[0] + '相對尺寸示意">' + '<b>' + z[0] + '</b><span>' + z[1] + '</span></div>';
     }).join('') + '</div>';
   }
   function laminateSVG() {
     return '<svg class="gfig" viewBox="0 0 600 390" role="img" aria-label="響孔邊緣放大切面：左側合板有三層木片與膠合線；右側單板由同一塊木料連續延伸">' +
       '<text x="12" y="26" class="big">合板 Laminated</text><text x="312" y="26" class="big">單板 Solid</text>' +
-      '<image href="' + GUITAR_IMAGE + 'soundboard-cutaway.branded.svg?v=20261015revision17" x="0" y="42" width="600" height="300"/>' +
+      '<image href="' + GUITAR_IMAGE + 'soundboard-cutaway.branded.svg?v=20261015guitar20" x="0" y="42" width="600" height="300"/>' +
       '<text x="12" y="368" style="font-size:15px">多層木片，切面可見膠合線</text>' +
       '<text x="312" y="368" style="font-size:15px">同一塊木料，切面木紋連續</text>' +
       '<text x="300" y="388" class="en mid" style="font-size:11px">響孔邊緣放大切面示意</text></svg>';
   }
   function bracingSVG() {
-    return '<div class="demo-inline-duo"><figure><img src="' + GUITAR_TEACHING + 'bracing-x.branded.svg?v=20261015revision17" alt="面板內側 X 型力木"><figcaption>X 型力木｜鋼弦民謠吉他</figcaption></figure><figure><img src="' + GUITAR_TEACHING + 'bracing-fan.branded.svg?v=20261015revision17" alt="面板內側扇形力木"><figcaption>扇形力木｜古典吉他</figcaption></figure></div>';
+    return '<div class="demo-inline-duo"><figure><img src="' + GUITAR_TEACHING + 'bracing-x.branded.svg?v=20261015guitar20" alt="面板內側 X 型力木"><figcaption>X 型力木｜鋼弦民謠吉他</figcaption></figure><figure><img src="' + GUITAR_TEACHING + 'bracing-fan.branded.svg?v=20261015guitar20" alt="面板內側扇形力木"><figcaption>扇形力木｜古典吉他</figcaption></figure></div>';
   }
   function trussSVG() {
-    return '<figure class="demo-inline"><img loading="lazy" decoding="async" src="' + GUITAR_TEACHING + 'truss-cutaway.branded.svg?v=20261015revision17" alt="琴頸剖面中的鋼筋與指板"><figcaption>琴頸剖面｜鋼筋位於木製琴頸內</figcaption></figure>';
+    return '<figure class="demo-inline"><img loading="lazy" decoding="async" src="' + GUITAR_TEACHING + 'truss-cutaway.branded.svg?v=20261015guitar20" alt="琴頸剖面中的鋼筋與指板"><figcaption>琴頸剖面｜鋼筋位於木製琴頸內</figcaption></figure>';
   }
   /* 標準調音：六條空弦與音程 */
   function tuningSVG() {
@@ -446,9 +446,9 @@
   function postureSVG() {
     return '<svg class="gfig" viewBox="0 0 620 330" role="img" aria-label="木吉他坐姿：坐在椅子前三分之一，背部自然挺直，琴身靠近身體並置於右大腿，琴頸微微上揚">' +
       '<defs><clipPath id="posture-photo-clip"><rect x="0" y="28" width="390" height="260" rx="12"/></clipPath></defs>' +
-      '<image href="' + GUITAR_TEACHING + 'guitar-posture-white.branded.svg?v=20261015revision17" x="0" y="28" width="390" height="260" preserveAspectRatio="xMidYMid slice" clip-path="url(#posture-photo-clip)"/>' +
-      '<path d="M14 55 L98 94 M166 111 L298 147 M270 236 L145 220 M180 274 L276 267" class="lead" stroke-width="2"/>' +
-      '<circle cx="98" cy="94" r="4" class="dot"/><circle cx="298" cy="147" r="4" class="dot"/><circle cx="145" cy="220" r="4" class="dot"/><circle cx="276" cy="267" r="4" class="dot"/>' +
+      '<image href="' + GUITAR_TEACHING + 'guitar-posture-white.branded.svg?v=20261015guitar20" x="0" y="28" width="390" height="260" preserveAspectRatio="xMidYMid slice" clip-path="url(#posture-photo-clip)"/>' +
+      '<path d="M14 55 L154 76 M285 75 L269 109 M18 153 L126 152 M180 274 L157 186" class="lead" stroke-width="2"/>' +
+      '<circle cx="154" cy="76" r="4" class="dot"/><circle cx="269" cy="109" r="4" class="dot"/><circle cx="126" cy="152" r="4" class="dot"/><circle cx="157" cy="186" r="4" class="dot"/>' +
       '<text x="414" y="72" class="big" style="fill:var(--accent)">01</text><text x="446" y="72">背部自然挺直</text>' +
       '<text x="414" y="126" class="big" style="fill:var(--accent)">02</text><text x="446" y="126">琴頸微微上揚</text>' +
       '<text x="414" y="180" class="big" style="fill:var(--accent)">03</text><text x="446" y="180">琴身靠近身體</text>' +
@@ -458,7 +458,7 @@
   function pickSVG() {
     return '<svg class="gfig" viewBox="0 0 540 235" role="img" aria-label="持彈片特寫：拇指指腹與食指側面輕夾彈片，尖端露出約 2 到 3 公釐">' +
       '<defs><clipPath id="pick-photo-clip"><rect x="0" y="20" width="282" height="188" rx="12"/></clipPath></defs>' +
-      '<image href="' + GUITAR_IMAGE + 'pick-grip.branded.svg?v=20261015revision17" x="0" y="20" width="282" height="188" preserveAspectRatio="xMidYMid slice" clip-path="url(#pick-photo-clip)"/>' +
+      '<image href="' + GUITAR_IMAGE + 'pick-grip.branded.svg?v=20261015guitar20" x="0" y="20" width="282" height="188" preserveAspectRatio="xMidYMid slice" clip-path="url(#pick-photo-clip)"/>' +
       '<path d="M302 64 L231 118" class="lead" stroke-width="2"/><circle cx="231" cy="118" r="4" class="dot"/>' +
       '<text x="302" y="57" class="big" style="fill:var(--accent)">拇指</text><text x="355" y="57">指腹輕壓彈片</text>' +
       '<text x="302" y="111" class="big" style="fill:var(--accent)">食指</text><text x="355" y="111">第一節側面支撐</text>' +
@@ -469,7 +469,7 @@
     var s = '<svg class="gfig" viewBox="0 0 800 440" role="img" aria-label="吉他指法：左手食指 1、中指 2、無名指 3、小指 4，拇指不編號；右手拇指 T、食指 1、中指 2、無名指 3">';
     s += '<defs><clipPath id="guitar-left-photo"><rect x="0" y="42" width="400" height="320" rx="10"/></clipPath><clipPath id="guitar-right-photo"><rect x="400" y="42" width="400" height="320" rx="10"/></clipPath></defs>';
     s += '<text x="18" y="28" class="big">左手｜按弦</text><text x="420" y="28" class="big">右手｜撥弦</text>';
-    s += '<image href="' + GUITAR_IMAGE + 'finger-anatomy.branded.svg?v=20261015revision17" x="-400" y="42" width="800" height="533.333" clip-path="url(#guitar-left-photo)"/><image href="' + GUITAR_IMAGE + 'finger-anatomy.branded.svg?v=20261015revision17" x="400" y="42" width="800" height="533.333" clip-path="url(#guitar-right-photo)"/>';
+    s += '<image href="' + GUITAR_IMAGE + 'finger-anatomy.branded.svg?v=20261015guitar20" x="-400" y="42" width="800" height="533.333" clip-path="url(#guitar-left-photo)"/><image href="' + GUITAR_IMAGE + 'finger-anatomy.branded.svg?v=20261015guitar20" x="400" y="42" width="800" height="533.333" clip-path="url(#guitar-right-photo)"/>';
     var markers = [['1',157,119],['2',220,84],['3',277,119],['4',328,175],['T',760,280],['1',640,117],['2',580,84],['3',528,119]];
     markers.forEach(function (f, i) {
       s += '<circle cx="' + f[1] + '" cy="' + f[2] + '" r="15" fill="' + (i < 4 ? '#6cbb4b' : '#c9ccd1') + '" stroke="#111315" stroke-width="2"/><text x="' + f[1] + '" y="' + (f[2] + 5) + '" class="n" style="font-size:16px">' + f[0] + '</text>';
@@ -485,12 +485,12 @@
   var PHOTO_FAMILY = {oud:'烏德琴', classical:'古典吉他', flamenco:'佛朗明哥吉他', folk:'民謠吉他', electric:'電吉他', steel:'夏威夷吉他', ukulele:'烏克麗麗、班鳩琴與曼陀鈴'};
   function familyPhoto(key) {
     var file = key === 'ukulele' ? 'relatives' : key;
-    return '<img loading="lazy" decoding="async" class="guitar-photo" src="' + GUITAR_IMAGE + file + '-photo.branded.svg?v=20261015revision17" alt="' + PHOTO_FAMILY[key] + '寫實器材圖" width="512" height="512">';
+    return '<img loading="lazy" decoding="async" class="guitar-photo" src="' + GUITAR_IMAGE + file + '-photo.branded.svg?v=20261015guitar20" alt="' + PHOTO_FAMILY[key] + '寫實器材圖" width="512" height="512">';
   }
   function evolutionSVG() {
     var items = [['oud','烏德琴','Oud'],['lute','魯特琴','Lute'],['vihuela','比維拉琴','Vihuela'],['renaissance','四組弦吉他','Renaissance'],['baroque','五組弦吉他','Baroque'],['classical-history','六弦吉他','Modern']];
     return '<div class="guitar-evolution-photos">' + items.map(function (it) {
-      return '<figure><img loading="lazy" decoding="async" src="' + GUITAR_IMAGE + it[0] + '-photo.branded.svg?v=20261015revision17" alt="' + it[1] + '寫實重建圖"><figcaption><b>' + it[1] + '</b><span>' + it[2] + '</span></figcaption></figure>';
+      return '<figure><img loading="lazy" decoding="async" src="' + GUITAR_IMAGE + it[0] + '-photo.branded.svg?v=20261015guitar20" alt="' + it[1] + '寫實重建圖"><figcaption><b>' + it[1] + '</b><span>' + it[2] + '</span></figcaption></figure>';
     }).join('') + '</div>';
   }
   var FIGS = { anatomy: mountAnatomy, bodies: mountBodies, evolution: function (n) { n.innerHTML = evolutionSVG(); },

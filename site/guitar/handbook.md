@@ -233,45 +233,45 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="g01"><h3>木材近拍｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/wood-spruce.branded.svg?v=20261015fretting19" alt="雲杉：細直木紋" loading="eager"><figcaption>雲杉：細直木紋</figcaption></figure>
-<figure><img src="../assets/teaching/wood-cedar.branded.svg?v=20261015fretting19" alt="紅杉：暖褐色木紋" loading="eager"><figcaption>紅杉：暖褐色木紋</figcaption></figure>
-<figure><img src="../assets/teaching/wood-mahogany.branded.svg?v=20261015fretting19" alt="桃花心木：開放木孔" loading="eager"><figcaption>桃花心木：開放木孔</figcaption></figure>
-<figure><img src="../assets/teaching/wood-rosewood.branded.svg?v=20261015fretting19" alt="玫瑰木：深色條紋" loading="eager"><figcaption>玫瑰木：深色條紋</figcaption></figure>
-<figure><img src="../assets/teaching/wood-maple.branded.svg?v=20261015fretting19" alt="楓木：淺色木紋" loading="eager"><figcaption>楓木：淺色木紋</figcaption></figure>
-<figure><img src="../assets/teaching/wood-koa.branded.svg?v=20261015fretting19" alt="相思木：金褐色紋理" loading="eager"><figcaption>相思木：金褐色紋理</figcaption></figure>
-<figure><img src="../assets/teaching/wood-walnut.branded.svg?v=20261015fretting19" alt="胡桃木：褐色紋理" loading="eager"><figcaption>胡桃木：褐色紋理</figcaption></figure>
-<figure><img src="../assets/teaching/wood-basswood.branded.svg?v=20261015fretting19" alt="椴木：細緻淺色木紋" loading="eager"><figcaption>椴木：細緻淺色木紋</figcaption></figure>
+<figure><img src="../assets/teaching/wood-spruce.branded.svg?v=20261015guitar20" alt="雲杉：細直木紋" loading="eager"><figcaption>雲杉：細直木紋</figcaption></figure>
+<figure><img src="../assets/teaching/wood-cedar.branded.svg?v=20261015guitar20" alt="紅杉：暖褐色木紋" loading="eager"><figcaption>紅杉：暖褐色木紋</figcaption></figure>
+<figure><img src="../assets/teaching/wood-mahogany.branded.svg?v=20261015guitar20" alt="桃花心木：開放木孔" loading="eager"><figcaption>桃花心木：開放木孔</figcaption></figure>
+<figure><img src="../assets/teaching/wood-rosewood.branded.svg?v=20261015guitar20" alt="玫瑰木：深色條紋" loading="eager"><figcaption>玫瑰木：深色條紋</figcaption></figure>
+<figure><img src="../assets/teaching/wood-maple.branded.svg?v=20261015guitar20" alt="楓木：淺色木紋" loading="eager"><figcaption>楓木：淺色木紋</figcaption></figure>
+<figure><img src="../assets/teaching/wood-koa.branded.svg?v=20261015guitar20" alt="相思木：金褐色紋理" loading="eager"><figcaption>相思木：金褐色紋理</figcaption></figure>
+<figure><img src="../assets/teaching/wood-walnut.branded.svg?v=20261015guitar20" alt="胡桃木：褐色紋理" loading="eager"><figcaption>胡桃木：褐色紋理</figcaption></figure>
+<figure><img src="../assets/teaching/wood-basswood.branded.svg?v=20261015guitar20" alt="椴木：細緻淺色木紋" loading="eager"><figcaption>椴木：細緻淺色木紋</figcaption></figure>
 </div>
 <p class="teaching-note">木色與紋理會因木料而異；圖像用於辨識外觀，音色仍需實際聆聽。</p>
 </div>
 
 <div class="teaching-book" data-demo-group="g02"><h3>六種筒身｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/body-jumbo.branded.svg?v=20261015fretting19" alt="Jumbo｜寬大的下半部與明顯腰身" loading="eager"><figcaption>Jumbo｜寬大的下半部與明顯腰身</figcaption></figure>
-<figure><img src="../assets/teaching/body-dreadnought.branded.svg?v=20261015fretting19" alt="Dreadnought｜方肩、較平緩的腰線" loading="eager"><figcaption>Dreadnought｜方肩、較平緩的腰線</figcaption></figure>
-<figure><img src="../assets/teaching/body-ga.branded.svg?v=20261015fretting19" alt="Grand Auditorium｜中大型、腰線明顯" loading="eager"><figcaption>Grand Auditorium｜中大型、腰線明顯</figcaption></figure>
-<figure><img src="../assets/teaching/body-om.branded.svg?v=20261015fretting19" alt="Auditorium／OM｜較小、上下比例均衡" loading="eager"><figcaption>Auditorium／OM｜較小、上下比例均衡</figcaption></figure>
-<figure><img src="../assets/teaching/body-gc.branded.svg?v=20261015fretting19" alt="Grand Concert｜緊湊琴身" loading="eager"><figcaption>Grand Concert｜緊湊琴身</figcaption></figure>
-<figure><img src="../assets/teaching/body-concert.branded.svg?v=20261015fretting19" alt="Concert｜小型琴身" loading="eager"><figcaption>Concert｜小型琴身</figcaption></figure>
+<figure><img src="../assets/teaching/body-jumbo.branded.svg?v=20261015guitar20" alt="Jumbo｜寬大的下半部與明顯腰身" loading="eager"><figcaption>Jumbo｜寬大的下半部與明顯腰身</figcaption></figure>
+<figure><img src="../assets/teaching/body-dreadnought.branded.svg?v=20261015guitar20" alt="Dreadnought｜方肩、較平緩的腰線" loading="eager"><figcaption>Dreadnought｜方肩、較平緩的腰線</figcaption></figure>
+<figure><img src="../assets/teaching/body-ga.branded.svg?v=20261015guitar20" alt="Grand Auditorium｜中大型、腰線明顯" loading="eager"><figcaption>Grand Auditorium｜中大型、腰線明顯</figcaption></figure>
+<figure><img src="../assets/teaching/body-om.branded.svg?v=20261015guitar20" alt="Auditorium／OM｜較小、上下比例均衡" loading="eager"><figcaption>Auditorium／OM｜較小、上下比例均衡</figcaption></figure>
+<figure><img src="../assets/teaching/body-gc.branded.svg?v=20261015guitar20" alt="Grand Concert｜緊湊琴身" loading="eager"><figcaption>Grand Concert｜緊湊琴身</figcaption></figure>
+<figure><img src="../assets/teaching/body-concert.branded.svg?v=20261015guitar20" alt="Concert｜小型琴身" loading="eager"><figcaption>Concert｜小型琴身</figcaption></figure>
 </div>
 <p class="teaching-note">外形為類型示意，各廠牌命名與尺寸可能不同。</p>
 </div>
 
 <div class="teaching-book" data-demo-group="g03"><h3>尺寸與持琴比例｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/sizes.branded.svg?v=20261015fretting19" alt="1/4、1/2、3/4 與全尺寸的相對比例" loading="eager"><figcaption>1/4、1/2、3/4 與全尺寸的相對比例</figcaption></figure>
-<figure><img src="../assets/teaching/guitar-posture-white.branded.svg?v=20261015fretting19" alt="試抱時確認手臂能自然落在琴身上" loading="eager"><figcaption>試抱時確認手臂能自然落在琴身上</figcaption></figure>
+<figure><img src="../assets/teaching/sizes.branded.svg?v=20261015guitar20" alt="1/4、1/2、3/4 與全尺寸的相對比例" loading="eager"><figcaption>1/4、1/2、3/4 與全尺寸的相對比例</figcaption></figure>
+<figure><img src="../assets/teaching/guitar-posture-white.branded.svg?v=20261015guitar20" alt="試抱時確認手臂能自然落在琴身上" loading="eager"><figcaption>試抱時確認手臂能自然落在琴身上</figcaption></figure>
 </div>
 <p class="teaching-note">尺寸圖為相對比例示意；選琴仍以實際試抱與手臂活動空間為準。</p>
 </div>
 
 <div class="teaching-book" data-demo-group="g04"><h3>面板內側力木｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/bracing-x.branded.svg?v=20261015fretting19" alt="鋼弦吉他的 X 型力木" loading="eager"><figcaption>鋼弦吉他的 X 型力木</figcaption></figure>
-<figure><img src="../assets/teaching/bracing-fan.branded.svg?v=20261015fretting19" alt="古典吉他的扇形力木" loading="eager"><figcaption>古典吉他的扇形力木</figcaption></figure>
+<figure><img src="../assets/teaching/bracing-x.branded.svg?v=20261015guitar20" alt="鋼弦吉他的 X 型力木" loading="eager"><figcaption>鋼弦吉他的 X 型力木</figcaption></figure>
+<figure><img src="../assets/teaching/bracing-fan.branded.svg?v=20261015guitar20" alt="古典吉他的扇形力木" loading="eager"><figcaption>古典吉他的扇形力木</figcaption></figure>
 </div>
 </div>
 
 <div class="teaching-book" data-demo-group="g05"><h3>琴頸內部鋼筋｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/truss-cutaway.branded.svg?v=20261015fretting19" alt="剖面中的指板、琴頸與鋼筋" loading="eager"><figcaption>剖面中的指板、琴頸與鋼筋</figcaption></figure>
-<figure><img src="../assets/teaching/truss-nut.branded.svg?v=20261015fretting19" alt="響孔側的調整螺帽近拍" loading="eager"><figcaption>響孔側的調整螺帽近拍</figcaption></figure>
+<figure><img src="../assets/teaching/truss-cutaway.branded.svg?v=20261015guitar20" alt="剖面中的指板、琴頸與鋼筋" loading="eager"><figcaption>剖面中的指板、琴頸與鋼筋</figcaption></figure>
+<figure><img src="../assets/teaching/truss-nut.branded.svg?v=20261015guitar20" alt="響孔側的調整螺帽近拍" loading="eager"><figcaption>響孔側的調整螺帽近拍</figcaption></figure>
 </div>
 <p class="teaching-note">剖面為構造示意，調整位置依琴款而異。</p>
 </div>
@@ -385,8 +385,8 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="g06"><h3>四指爬格子｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/crawl-ready.branded.svg?v=20261015fretting19" alt="1：四根手指自然彎曲，各負責一格" loading="eager"><figcaption>1：四根手指自然彎曲，各負責一格</figcaption></figure>
-<figure><img src="../assets/teaching/crawl-next.branded.svg?v=20261015fretting19" alt="2：依序落指，手腕保持自然" loading="eager"><figcaption>2：依序落指，手腕保持自然</figcaption></figure>
+<figure><img src="../assets/teaching/crawl-ready.branded.svg?v=20261015guitar20" alt="1：四根手指自然彎曲，各負責一格" loading="eager"><figcaption>1：四根手指自然彎曲，各負責一格</figcaption></figure>
+<figure><img src="../assets/teaching/crawl-next.branded.svg?v=20261015guitar20" alt="2：依序落指，手腕保持自然" loading="eager"><figcaption>2：依序落指，手腕保持自然</figcaption></figure>
 </div>
 <p class="teaching-note">食指、中指、無名指、小指依序為 1、2、3、4；實際彈奏順序見譜例。</p>
 </div>
@@ -486,14 +486,14 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="g07"><h3>開放和弦手型｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/chord-c.branded.svg?v=20261015fretting19" alt="C：食指 2 弦 1 格、中指 4 弦 2 格、無名指 5 弦 3 格" loading="eager"><figcaption>C：食指 2 弦 1 格、中指 4 弦 2 格、無名指 5 弦 3 格</figcaption></figure>
-<figure><img src="../assets/teaching/chord-am.branded.svg?v=20261015fretting19" alt="Am：食指 2 弦 1 格、中指 4 弦 2 格、無名指 3 弦 2 格" loading="eager"><figcaption>Am：食指 2 弦 1 格、中指 4 弦 2 格、無名指 3 弦 2 格</figcaption></figure>
-<figure><img src="../assets/teaching/chord-g.branded.svg?v=20261015fretting19" alt="G：中指 6 弦 3 格、食指 5 弦 2 格、小指或無名指 1 弦 3 格" loading="eager"><figcaption>G：中指 6 弦 3 格、食指 5 弦 2 格、小指或無名指 1 弦 3 格</figcaption></figure>
-<figure><img src="../assets/teaching/chord-small-f.branded.svg?v=20261015fretting19" alt="小 F：食指壓住 1、2 弦 1 格" loading="eager"><figcaption>小 F：食指壓住 1、2 弦 1 格</figcaption></figure>
-<figure><img src="../assets/teaching/chord-d.branded.svg?v=20261015fretting19" alt="D：食指 3 弦 2 格、中指 1 弦 2 格、無名指 2 弦 3 格" loading="eager"><figcaption>D：食指 3 弦 2 格、中指 1 弦 2 格、無名指 2 弦 3 格</figcaption></figure>
-<figure><img src="../assets/teaching/../guitar/fretting-front.branded.svg?v=20261015fretting19" alt="正面：觀察指尖按弦與手指自然弧度" loading="eager"><figcaption>正面：觀察指尖按弦與手指自然弧度</figcaption></figure>
-<figure><img src="../assets/teaching/../guitar/fretting-oblique.branded.svg?v=20261015fretting19" alt="斜側面：觀察指尖與琴弦的接觸位置" loading="eager"><figcaption>斜側面：觀察指尖與琴弦的接觸位置</figcaption></figure>
-<figure><img src="../assets/teaching/../guitar/fretting-thumb.branded.svg?v=20261015fretting19" alt="背面：拇指自然支撐琴頸" loading="eager"><figcaption>背面：拇指自然支撐琴頸</figcaption></figure>
+<figure><img src="../assets/teaching/chord-c.branded.svg?v=20261015guitar20" alt="C：食指 2 弦 1 格、中指 4 弦 2 格、無名指 5 弦 3 格" loading="eager"><figcaption>C：食指 2 弦 1 格、中指 4 弦 2 格、無名指 5 弦 3 格</figcaption></figure>
+<figure><img src="../assets/teaching/chord-am.branded.svg?v=20261015guitar20" alt="Am：食指 2 弦 1 格、中指 4 弦 2 格、無名指 3 弦 2 格" loading="eager"><figcaption>Am：食指 2 弦 1 格、中指 4 弦 2 格、無名指 3 弦 2 格</figcaption></figure>
+<figure><img src="../assets/teaching/chord-g.branded.svg?v=20261015guitar20" alt="G：中指 6 弦 3 格、食指 5 弦 2 格、小指或無名指 1 弦 3 格" loading="eager"><figcaption>G：中指 6 弦 3 格、食指 5 弦 2 格、小指或無名指 1 弦 3 格</figcaption></figure>
+<figure><img src="../assets/teaching/chord-small-f.branded.svg?v=20261015guitar20" alt="小 F：食指壓住 1、2 弦 1 格" loading="eager"><figcaption>小 F：食指壓住 1、2 弦 1 格</figcaption></figure>
+<figure><img src="../assets/teaching/chord-d.branded.svg?v=20261015guitar20" alt="D：食指 3 弦 2 格、中指 1 弦 2 格、無名指 2 弦 3 格" loading="eager"><figcaption>D：食指 3 弦 2 格、中指 1 弦 2 格、無名指 2 弦 3 格</figcaption></figure>
+<figure><img src="../assets/teaching/../guitar/fretting-front.branded.svg?v=20261015guitar20" alt="正面：觀察指尖按弦與手指自然弧度" loading="eager"><figcaption>正面：觀察指尖按弦與手指自然弧度</figcaption></figure>
+<figure><img src="../assets/teaching/../guitar/fretting-oblique.branded.svg?v=20261015guitar20" alt="斜側面：觀察指尖與琴弦的接觸位置" loading="eager"><figcaption>斜側面：觀察指尖與琴弦的接觸位置</figcaption></figure>
+<figure><img src="../assets/teaching/../guitar/fretting-thumb.branded.svg?v=20261015guitar20" alt="背面：拇指自然支撐琴頸" loading="eager"><figcaption>背面：拇指自然支撐琴頸</figcaption></figure>
 </div>
 <p class="teaching-note">以投影片和弦圖核對弦與格位，照片用於觀察手指彎曲與手腕位置。</p>
 </div>
@@ -589,8 +589,8 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="g08"><h3>刷弦手腕｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/strum-down.branded.svg?v=20261015fretting19" alt="1：手腕帶動下刷，手臂自然支撐" loading="eager"><figcaption>1：手腕帶動下刷，手臂自然支撐</figcaption></figure>
-<figure><img src="../assets/teaching/strum-up.branded.svg?v=20261015fretting19" alt="2：以相同路徑上刷，彈片輕掠琴弦" loading="eager"><figcaption>2：以相同路徑上刷，彈片輕掠琴弦</figcaption></figure>
+<figure><img src="../assets/teaching/strum-down.branded.svg?v=20261015guitar20" alt="1：手腕帶動下刷，手臂自然支撐" loading="eager"><figcaption>1：手腕帶動下刷，手臂自然支撐</figcaption></figure>
+<figure><img src="../assets/teaching/strum-up.branded.svg?v=20261015guitar20" alt="2：以相同路徑上刷，彈片輕掠琴弦" loading="eager"><figcaption>2：以相同路徑上刷，彈片輕掠琴弦</figcaption></figure>
 </div>
 </div>
 
@@ -781,8 +781,8 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="g09"><h3>Capo 夾位｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/capo-front-v2.branded.svg?v=20261015fretting19" alt="壓桿橫跨指板與六條弦，放在格位內、靠近琴衍。" loading="eager"><figcaption>壓桿橫跨指板與六條弦，放在格位內、靠近琴衍。</figcaption></figure>
-<figure><img src="../assets/teaching/capo-side-v2.branded.svg?v=20261015fretting19" alt="上方橡膠墊壓住琴弦，下方夾爪貼合琴頸背面。" loading="eager"><figcaption>上方橡膠墊壓住琴弦，下方夾爪貼合琴頸背面。</figcaption></figure>
+<figure><img src="../assets/teaching/capo-front-v2.branded.svg?v=20261015guitar20" alt="壓桿橫跨指板與六條弦，放在格位內、靠近琴衍。" loading="eager"><figcaption>壓桿橫跨指板與六條弦，放在格位內、靠近琴衍。</figcaption></figure>
+<figure><img src="../assets/teaching/capo-side-v2.branded.svg?v=20261015guitar20" alt="上方橡膠墊壓住琴弦，下方夾爪貼合琴頸背面。" loading="eager"><figcaption>上方橡膠墊壓住琴弦，下方夾爪貼合琴頸背面。</figcaption></figure>
 </div>
 </div>
 
@@ -898,8 +898,8 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="g10"><h3>右手指彈姿勢｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/fingerstyle-ready.branded.svg?v=20261015fretting19" alt="T 拇指在低音弦，1、2、3 分別對應 3、2、1 弦" loading="eager"><figcaption>T 拇指在低音弦，1、2、3 分別對應 3、2、1 弦</figcaption></figure>
-<figure><img src="../assets/teaching/fingerstyle-pluck.branded.svg?v=20261015fretting19" alt="手指往掌心方向撥弦，手腕自然" loading="eager"><figcaption>手指往掌心方向撥弦，手腕自然</figcaption></figure>
+<figure><img src="../assets/teaching/fingerstyle-ready.branded.svg?v=20261015guitar20" alt="T 拇指在低音弦，1、2、3 分別對應 3、2、1 弦" loading="eager"><figcaption>T 拇指在低音弦，1、2、3 分別對應 3、2、1 弦</figcaption></figure>
+<figure><img src="../assets/teaching/fingerstyle-pluck.branded.svg?v=20261015guitar20" alt="手指往掌心方向撥弦，手腕自然" loading="eager"><figcaption>手指往掌心方向撥弦，手腕自然</figcaption></figure>
 </div>
 </div>
 
@@ -996,23 +996,23 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="g07"><h3>開放和弦手型｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/chord-c.branded.svg?v=20261015fretting19" alt="C：食指 2 弦 1 格、中指 4 弦 2 格、無名指 5 弦 3 格" loading="eager"><figcaption>C：食指 2 弦 1 格、中指 4 弦 2 格、無名指 5 弦 3 格</figcaption></figure>
-<figure><img src="../assets/teaching/chord-am.branded.svg?v=20261015fretting19" alt="Am：食指 2 弦 1 格、中指 4 弦 2 格、無名指 3 弦 2 格" loading="eager"><figcaption>Am：食指 2 弦 1 格、中指 4 弦 2 格、無名指 3 弦 2 格</figcaption></figure>
-<figure><img src="../assets/teaching/chord-g.branded.svg?v=20261015fretting19" alt="G：中指 6 弦 3 格、食指 5 弦 2 格、小指或無名指 1 弦 3 格" loading="eager"><figcaption>G：中指 6 弦 3 格、食指 5 弦 2 格、小指或無名指 1 弦 3 格</figcaption></figure>
-<figure><img src="../assets/teaching/chord-small-f.branded.svg?v=20261015fretting19" alt="小 F：食指壓住 1、2 弦 1 格" loading="eager"><figcaption>小 F：食指壓住 1、2 弦 1 格</figcaption></figure>
-<figure><img src="../assets/teaching/chord-d.branded.svg?v=20261015fretting19" alt="D：食指 3 弦 2 格、中指 1 弦 2 格、無名指 2 弦 3 格" loading="eager"><figcaption>D：食指 3 弦 2 格、中指 1 弦 2 格、無名指 2 弦 3 格</figcaption></figure>
-<figure><img src="../assets/teaching/../guitar/fretting-front.branded.svg?v=20261015fretting19" alt="正面：觀察指尖按弦與手指自然弧度" loading="eager"><figcaption>正面：觀察指尖按弦與手指自然弧度</figcaption></figure>
-<figure><img src="../assets/teaching/../guitar/fretting-oblique.branded.svg?v=20261015fretting19" alt="斜側面：觀察指尖與琴弦的接觸位置" loading="eager"><figcaption>斜側面：觀察指尖與琴弦的接觸位置</figcaption></figure>
-<figure><img src="../assets/teaching/../guitar/fretting-thumb.branded.svg?v=20261015fretting19" alt="背面：拇指自然支撐琴頸" loading="eager"><figcaption>背面：拇指自然支撐琴頸</figcaption></figure>
+<figure><img src="../assets/teaching/chord-c.branded.svg?v=20261015guitar20" alt="C：食指 2 弦 1 格、中指 4 弦 2 格、無名指 5 弦 3 格" loading="eager"><figcaption>C：食指 2 弦 1 格、中指 4 弦 2 格、無名指 5 弦 3 格</figcaption></figure>
+<figure><img src="../assets/teaching/chord-am.branded.svg?v=20261015guitar20" alt="Am：食指 2 弦 1 格、中指 4 弦 2 格、無名指 3 弦 2 格" loading="eager"><figcaption>Am：食指 2 弦 1 格、中指 4 弦 2 格、無名指 3 弦 2 格</figcaption></figure>
+<figure><img src="../assets/teaching/chord-g.branded.svg?v=20261015guitar20" alt="G：中指 6 弦 3 格、食指 5 弦 2 格、小指或無名指 1 弦 3 格" loading="eager"><figcaption>G：中指 6 弦 3 格、食指 5 弦 2 格、小指或無名指 1 弦 3 格</figcaption></figure>
+<figure><img src="../assets/teaching/chord-small-f.branded.svg?v=20261015guitar20" alt="小 F：食指壓住 1、2 弦 1 格" loading="eager"><figcaption>小 F：食指壓住 1、2 弦 1 格</figcaption></figure>
+<figure><img src="../assets/teaching/chord-d.branded.svg?v=20261015guitar20" alt="D：食指 3 弦 2 格、中指 1 弦 2 格、無名指 2 弦 3 格" loading="eager"><figcaption>D：食指 3 弦 2 格、中指 1 弦 2 格、無名指 2 弦 3 格</figcaption></figure>
+<figure><img src="../assets/teaching/../guitar/fretting-front.branded.svg?v=20261015guitar20" alt="正面：觀察指尖按弦與手指自然弧度" loading="eager"><figcaption>正面：觀察指尖按弦與手指自然弧度</figcaption></figure>
+<figure><img src="../assets/teaching/../guitar/fretting-oblique.branded.svg?v=20261015guitar20" alt="斜側面：觀察指尖與琴弦的接觸位置" loading="eager"><figcaption>斜側面：觀察指尖與琴弦的接觸位置</figcaption></figure>
+<figure><img src="../assets/teaching/../guitar/fretting-thumb.branded.svg?v=20261015guitar20" alt="背面：拇指自然支撐琴頸" loading="eager"><figcaption>背面：拇指自然支撐琴頸</figcaption></figure>
 </div>
 <p class="teaching-note">以投影片和弦圖核對弦與格位，照片用於觀察手指彎曲與手腕位置。</p>
 </div>
 
 <div class="teaching-book" data-demo-group="g11"><h3>封閉和弦手型｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/chord-barre.branded.svg?v=20261015fretting19" alt="食指橫按，其他手指保持彎曲" loading="eager"><figcaption>食指橫按，其他手指保持彎曲</figcaption></figure>
-<figure><img src="../assets/teaching/../guitar/fretting-front.branded.svg?v=20261015fretting19" alt="正面：觀察指尖按弦與手指自然弧度" loading="eager"><figcaption>正面：觀察指尖按弦與手指自然弧度</figcaption></figure>
-<figure><img src="../assets/teaching/../guitar/fretting-oblique.branded.svg?v=20261015fretting19" alt="斜側面：觀察指尖與琴弦的接觸位置" loading="eager"><figcaption>斜側面：觀察指尖與琴弦的接觸位置</figcaption></figure>
-<figure><img src="../assets/teaching/../guitar/fretting-thumb.branded.svg?v=20261015fretting19" alt="背面：拇指自然支撐琴頸" loading="eager"><figcaption>背面：拇指自然支撐琴頸</figcaption></figure>
+<figure><img src="../assets/teaching/chord-barre.branded.svg?v=20261015guitar20" alt="食指橫按，其他手指保持彎曲" loading="eager"><figcaption>食指橫按，其他手指保持彎曲</figcaption></figure>
+<figure><img src="../assets/teaching/../guitar/fretting-front.branded.svg?v=20261015guitar20" alt="正面：觀察指尖按弦與手指自然弧度" loading="eager"><figcaption>正面：觀察指尖按弦與手指自然弧度</figcaption></figure>
+<figure><img src="../assets/teaching/../guitar/fretting-oblique.branded.svg?v=20261015guitar20" alt="斜側面：觀察指尖與琴弦的接觸位置" loading="eager"><figcaption>斜側面：觀察指尖與琴弦的接觸位置</figcaption></figure>
+<figure><img src="../assets/teaching/../guitar/fretting-thumb.branded.svg?v=20261015guitar20" alt="背面：拇指自然支撐琴頸" loading="eager"><figcaption>背面：拇指自然支撐琴頸</figcaption></figure>
 </div>
 <p class="teaching-note">檢查各弦發聲，再調整食指角度與壓力。</p>
 </div>
@@ -1308,37 +1308,37 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="g12"><h3>搥弦、勾弦、滑弦｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/hammer-sequence.branded.svg?v=20261015fretting19" alt="搥弦：低格保留，另一指落至較高格" loading="eager"><figcaption>搥弦：低格保留，另一指落至較高格</figcaption></figure>
-<figure><img src="../assets/teaching/pull-sequence.branded.svg?v=20261015fretting19" alt="勾弦：高格輕勾離弦，低格保留" loading="eager"><figcaption>勾弦：高格輕勾離弦，低格保留</figcaption></figure>
-<figure><img src="../assets/teaching/slide-sequence.branded.svg?v=20261015fretting19" alt="滑弦：沿同一條弦保持接觸移動" loading="eager"><figcaption>滑弦：沿同一條弦保持接觸移動</figcaption></figure>
-<figure><img src="../assets/teaching/hammer-before.branded.svg?v=20261015fretting19" alt="食指伸直抬起，觀察離弦空間" loading="eager"><figcaption>食指伸直抬起，觀察離弦空間</figcaption></figure>
-<figure><img src="../assets/teaching/hammer-after.branded.svg?v=20261015fretting19" alt="近拍觀察指尖落弦時的弧度" loading="eager"><figcaption>近拍觀察指尖落弦時的弧度</figcaption></figure>
+<figure><img src="../assets/teaching/hammer-sequence.branded.svg?v=20261015guitar20" alt="搥弦：低格保留，另一指落至較高格" loading="eager"><figcaption>搥弦：低格保留，另一指落至較高格</figcaption></figure>
+<figure><img src="../assets/teaching/pull-sequence.branded.svg?v=20261015guitar20" alt="勾弦：高格輕勾離弦，低格保留" loading="eager"><figcaption>勾弦：高格輕勾離弦，低格保留</figcaption></figure>
+<figure><img src="../assets/teaching/slide-sequence.branded.svg?v=20261015guitar20" alt="滑弦：沿同一條弦保持接觸移動" loading="eager"><figcaption>滑弦：沿同一條弦保持接觸移動</figcaption></figure>
+<figure><img src="../assets/teaching/hammer-before.branded.svg?v=20261015guitar20" alt="食指伸直抬起，觀察離弦空間" loading="eager"><figcaption>食指伸直抬起，觀察離弦空間</figcaption></figure>
+<figure><img src="../assets/teaching/hammer-after.branded.svg?v=20261015guitar20" alt="近拍觀察指尖落弦時的弧度" loading="eager"><figcaption>近拍觀察指尖落弦時的弧度</figcaption></figure>
 </div>
 </div>
 
 <div class="teaching-book" data-demo-group="g13"><h3>悶音、切音與打板｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/mute-ready.branded.svg?v=20261015fretting19" alt="悶音：掌側靠近琴橋與下弦枕" loading="eager"><figcaption>悶音：掌側靠近琴橋與下弦枕</figcaption></figure>
-<figure><img src="../assets/teaching/mute-play.branded.svg?v=20261015fretting19" alt="維持輕觸，再以彈片撥奏" loading="eager"><figcaption>維持輕觸，再以彈片撥奏</figcaption></figure>
-<figure><img src="../assets/teaching/chuck-before.branded.svg?v=20261015fretting19" alt="切音：先刷弦" loading="eager"><figcaption>切音：先刷弦</figcaption></figure>
-<figure><img src="../assets/teaching/chuck-after.branded.svg?v=20261015fretting19" alt="手掌接觸琴弦，將聲音切斷" loading="eager"><figcaption>手掌接觸琴弦，將聲音切斷</figcaption></figure>
-<figure><img src="../assets/teaching/slap-before.branded.svg?v=20261015fretting19" alt="打板：手掌抬起少許" loading="eager"><figcaption>打板：手掌抬起少許</figcaption></figure>
-<figure><img src="../assets/teaching/slap-after.branded.svg?v=20261015fretting19" alt="以掌側或拇指輕落琴弦／琴身" loading="eager"><figcaption>以掌側或拇指輕落琴弦／琴身</figcaption></figure>
+<figure><img src="../assets/teaching/mute-ready.branded.svg?v=20261015guitar20" alt="悶音：掌側靠近琴橋與下弦枕" loading="eager"><figcaption>悶音：掌側靠近琴橋與下弦枕</figcaption></figure>
+<figure><img src="../assets/teaching/mute-play.branded.svg?v=20261015guitar20" alt="維持輕觸，再以彈片撥奏" loading="eager"><figcaption>維持輕觸，再以彈片撥奏</figcaption></figure>
+<figure><img src="../assets/teaching/chuck-before.branded.svg?v=20261015guitar20" alt="切音：先刷弦" loading="eager"><figcaption>切音：先刷弦</figcaption></figure>
+<figure><img src="../assets/teaching/chuck-after.branded.svg?v=20261015guitar20" alt="手掌接觸琴弦，將聲音切斷" loading="eager"><figcaption>手掌接觸琴弦，將聲音切斷</figcaption></figure>
+<figure><img src="../assets/teaching/slap-before.branded.svg?v=20261015guitar20" alt="打板：手掌抬起少許" loading="eager"><figcaption>打板：手掌抬起少許</figcaption></figure>
+<figure><img src="../assets/teaching/slap-after.branded.svg?v=20261015guitar20" alt="以掌側或拇指輕落琴弦／琴身" loading="eager"><figcaption>以掌側或拇指輕落琴弦／琴身</figcaption></figure>
 </div>
 </div>
 
 <div class="teaching-book" data-demo-group="g14"><h3>自然泛音｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/harmonic-touch.branded.svg?v=20261015fretting19" alt="1：指尖輕觸第 12 格琴衍正上方" loading="eager"><figcaption>1：指尖輕觸第 12 格琴衍正上方</figcaption></figure>
-<figure><img src="../assets/teaching/harmonic-release.branded.svg?v=20261015fretting19" alt="2：撥弦後離開，讓琴弦繼續振動" loading="eager"><figcaption>2：撥弦後離開，讓琴弦繼續振動</figcaption></figure>
+<figure><img src="../assets/teaching/harmonic-touch-v2.branded.svg?v=20261015guitar20" alt="1：指尖輕觸第 12 格琴衍正上方" loading="eager"><figcaption>1：指尖輕觸第 12 格琴衍正上方</figcaption></figure>
+<figure><img src="../assets/teaching/harmonic-release-v2.branded.svg?v=20261015guitar20" alt="2：撥弦後離開，讓琴弦繼續振動" loading="eager"><figcaption>2：撥弦後離開，讓琴弦繼續振動</figcaption></figure>
 </div>
 <p class="teaching-note">輕觸琴弦，不將琴弦按到指板。</p>
 </div>
 
 <div class="teaching-book" data-demo-group="g15"><h3>推弦、鬆弦、揉音與顫音｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/bend-motion.branded.svg?v=20261015fretting19" alt="推弦／鬆弦的側向往返方向" loading="eager"><figcaption>推弦／鬆弦的側向往返方向</figcaption></figure>
-<figure><img src="../assets/teaching/vibrato-motion.branded.svg?v=20261015fretting19" alt="揉音以較小幅度改變張力" loading="eager"><figcaption>揉音以較小幅度改變張力</figcaption></figure>
-<figure><img src="../assets/teaching/hammer-sequence.branded.svg?v=20261015fretting19" alt="顫音：持續交替搥弦與勾弦" loading="eager"><figcaption>顫音：持續交替搥弦與勾弦</figcaption></figure>
-<figure><img src="../assets/teaching/bend-raised.branded.svg?v=20261015fretting19" alt="食指按弦作小幅側向推揉；琴頸保持平直" loading="eager"><figcaption>食指按弦作小幅側向推揉；琴頸保持平直</figcaption></figure>
-<figure><img src="../assets/teaching/vibrato-center.branded.svg?v=20261015fretting19" alt="保持彎曲的指尖與自然手腕" loading="eager"><figcaption>保持彎曲的指尖與自然手腕</figcaption></figure>
+<figure><img src="../assets/teaching/bend-motion.branded.svg?v=20261015guitar20" alt="推弦／鬆弦的側向往返方向" loading="eager"><figcaption>推弦／鬆弦的側向往返方向</figcaption></figure>
+<figure><img src="../assets/teaching/vibrato-motion.branded.svg?v=20261015guitar20" alt="揉音以較小幅度改變張力" loading="eager"><figcaption>揉音以較小幅度改變張力</figcaption></figure>
+<figure><img src="../assets/teaching/hammer-sequence.branded.svg?v=20261015guitar20" alt="顫音：持續交替搥弦與勾弦" loading="eager"><figcaption>顫音：持續交替搥弦與勾弦</figcaption></figure>
+<figure><img src="../assets/teaching/bend-raised.branded.svg?v=20261015guitar20" alt="食指按弦作小幅側向推揉；琴頸保持平直" loading="eager"><figcaption>食指按弦作小幅側向推揉；琴頸保持平直</figcaption></figure>
+<figure><img src="../assets/teaching/vibrato-center.branded.svg?v=20261015guitar20" alt="保持彎曲的指尖與自然手腕" loading="eager"><figcaption>保持彎曲的指尖與自然手腕</figcaption></figure>
 </div>
 </div>
 
@@ -1435,16 +1435,16 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="g09"><h3>Capo 夾位｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/capo-front-v2.branded.svg?v=20261015fretting19" alt="壓桿橫跨指板與六條弦，放在格位內、靠近琴衍。" loading="eager"><figcaption>壓桿橫跨指板與六條弦，放在格位內、靠近琴衍。</figcaption></figure>
-<figure><img src="../assets/teaching/capo-side-v2.branded.svg?v=20261015fretting19" alt="上方橡膠墊壓住琴弦，下方夾爪貼合琴頸背面。" loading="eager"><figcaption>上方橡膠墊壓住琴弦，下方夾爪貼合琴頸背面。</figcaption></figure>
+<figure><img src="../assets/teaching/capo-front-v2.branded.svg?v=20261015guitar20" alt="壓桿橫跨指板與六條弦，放在格位內、靠近琴衍。" loading="eager"><figcaption>壓桿橫跨指板與六條弦，放在格位內、靠近琴衍。</figcaption></figure>
+<figure><img src="../assets/teaching/capo-side-v2.branded.svg?v=20261015guitar20" alt="上方橡膠墊壓住琴弦，下方夾爪貼合琴頸背面。" loading="eager"><figcaption>上方橡膠墊壓住琴弦，下方夾爪貼合琴頸背面。</figcaption></figure>
 </div>
 </div>
 
 <div class="teaching-book" data-demo-group="g16"><h3>保養與換弦｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/care-wipe.branded.svg?v=20261015fretting19" alt="1：彈奏後擦去琴弦與琴身手汗" loading="eager"><figcaption>1：彈奏後擦去琴弦與琴身手汗</figcaption></figure>
-<figure><img src="../assets/teaching/care-pin.branded.svg?v=20261015fretting19" alt="2：放鬆琴弦後取出弦釘" loading="eager"><figcaption>2：放鬆琴弦後取出弦釘</figcaption></figure>
-<figure><img src="../assets/teaching/care-string.branded.svg?v=20261015fretting19" alt="3：以弦釘固定弦尾" loading="eager"><figcaption>3：以弦釘固定弦尾</figcaption></figure>
-<figure><img src="../assets/teaching/care-wind.branded.svg?v=20261015fretting19" alt="4：旋鈕整齊纏弦，再逐步調音" loading="eager"><figcaption>4：旋鈕整齊纏弦，再逐步調音</figcaption></figure>
+<figure><img src="../assets/teaching/care-wipe.branded.svg?v=20261015guitar20" alt="1：彈奏後擦去琴弦與琴身手汗" loading="eager"><figcaption>1：彈奏後擦去琴弦與琴身手汗</figcaption></figure>
+<figure><img src="../assets/teaching/care-pin.branded.svg?v=20261015guitar20" alt="2：放鬆琴弦後取出弦釘" loading="eager"><figcaption>2：放鬆琴弦後取出弦釘</figcaption></figure>
+<figure><img src="../assets/teaching/care-string.branded.svg?v=20261015guitar20" alt="3：以弦釘固定弦尾" loading="eager"><figcaption>3：以弦釘固定弦尾</figcaption></figure>
+<figure><img src="../assets/teaching/care-wind.branded.svg?v=20261015guitar20" alt="4：旋鈕整齊纏弦，再逐步調音" loading="eager"><figcaption>4：旋鈕整齊纏弦，再逐步調音</figcaption></figure>
 </div>
 </div>
 
