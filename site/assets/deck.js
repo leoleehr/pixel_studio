@@ -16,9 +16,10 @@
   slides.forEach(function (s, k) {
     s.id = 's' + (k + 1);
     if (s.classList.contains('cover')) { // 封面：右側彩色聲波主視覺、右下角白色直式標誌
+      if (s.querySelector('.cover-art')) return; // 已寫在 HTML 裡（tools/deck_cover.py）
       var art = document.createElement('div'); art.className = 'cover-art'; art.setAttribute('aria-hidden', 'true');
       art.innerHTML = '<span class="ca-glow"></span><img src="' + BRAND + 'pixel-studio-symbol-color.svg" alt="">';
-      var sig = document.createElement('img'); sig.className = 'cover-sig'; sig.src = BRAND + 'pixel-studio-primary-mono-white.svg'; sig.alt = 'Pixel Studio 畫素音樂工作坊';
+      var sig = document.createElement('img'); sig.className = 'cover-sig'; sig.src = BRAND + 'pixel-studio-primary-mono-white.svg'; sig.alt = 'Pixel Studio 畫素音樂工作坊'; sig.loading = 'lazy';
       s.insertBefore(art, s.firstChild); s.appendChild(sig);
       return;
     }
@@ -28,7 +29,7 @@
     s.appendChild(c);
     var b = document.createElement('div');
     b.className = 'slide-brand';
-    b.innerHTML = '<img src="' + BRAND + 'pixel-studio-horizontal-mono-white.svg" alt="Pixel Studio 畫素音樂工作坊">';
+    b.innerHTML = '<img src="' + BRAND + 'pixel-studio-horizontal-mono-white.svg" alt="Pixel Studio 畫素音樂工作坊" loading="lazy" decoding="async">';
     s.appendChild(b);
   });
 
@@ -197,6 +198,8 @@
 
   fit();
   show(fromHash());
+  // 桌機簡報：載入完成後利用閒置時間預先下載各張投影片的延遲載入圖片，換頁時不必等
+  addEventListener('load', function () { (window.requestIdleCallback || setTimeout)(function () { if (!mq.matches) document.querySelectorAll('.slide img[loading="lazy"]').forEach(function (im) { im.loading = 'eager'; }); }, { timeout: 4000 }); });
   if (mq.matches && location.hash) {
     var t = document.getElementById('s' + (fromHash() + 1));
     if (t) setTimeout(function () { t.scrollIntoView(); }, 50);

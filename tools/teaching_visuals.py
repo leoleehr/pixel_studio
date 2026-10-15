@@ -44,13 +44,21 @@ def imports(text, page, viewer=True):
     text = text.replace('</head>', f'<link rel="stylesheet" href="{base}/teaching-visuals.css?v={VERSION}">\n</head>')
     if viewer:
         text = re.sub(r'<script[^>]*src="[^"]*(?:teaching/manifest|teaching-visuals)\.js[^"]*"[^>]*></script>\s*', '', text)
-        scripts = f'<script src="{base}/teaching/manifest.js?v={VERSION}"></script>\n<script src="{base}/teaching-visuals.js?v={VERSION}"></script>\n'
+        # 投影片頁的腳本都用 defer（依序執行、不阻擋解析）；這兩支要跟著 defer，順序才會在 deck.js 之後
+        d = ' defer' if re.search(r'<script src="[^"]*deck\.js[^"]*" defer>', text) else ''
+        scripts = f'<script src="{base}/teaching/manifest.js?v={VERSION}"{d}></script>\n<script src="{base}/teaching-visuals.js?v={VERSION}"{d}></script>\n'
         text = text.replace('</body>', scripts + '</body>')
     return text
 
 def install_all():
     data = manifest()
     (ROOT / 'site/assets/teaching/manifest.js').write_text('window.PixelTeachingVisuals = ' + json.dumps(data, ensure_ascii=False) + ';\n', encoding='utf-8')
+    # 「放大圖解」按鈕縮圖（需要 Playwright；沒有時保留舊縮圖，頁面會在缺檔時退回原圖）
+    try:
+        import build_teaching_thumbs
+        build_teaching_thumbs.build()
+    except ImportError as e:
+        print('略過縮圖：', e)
     for (course, lesson), mapping in targets(data).items():
         for source in ([False] if course == 'vocal' else [True, False]):
             p = page_path(course, lesson, source)

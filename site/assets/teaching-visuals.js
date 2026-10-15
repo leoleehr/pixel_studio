@@ -52,7 +52,11 @@
     h.parentNode.insertBefore(wrap, h); wrap.appendChild(h);
     var button = document.createElement('button'), im = document.createElement('img'), text = document.createElement('span');
     button.type = 'button'; button.className = 'teaching-launch'; button.setAttribute('aria-label', '放大圖解：' + ids.map(function (id) { return lookup[id].title; }).join('、'));
-    im.src = url(lookup[ids[0]].images[0].src); im.alt = ''; im.loading = 'lazy'; text.textContent = '放大圖解 ↗';
+    // 按鈕縮圖用 thumbs/ 的小圖（tools/build_teaching_thumbs.py 產生）；缺檔時退回原圖
+    var full = lookup[ids[0]].images[0].src;
+    im.src = url('thumbs/' + full.replace(/\.[a-z0-9]+$/i, '.webp')); im.width = 240; im.height = 96;
+    im.onerror = function () { im.onerror = null; im.src = url(full); };
+    im.alt = ''; im.loading = 'lazy'; im.decoding = 'async'; text.textContent = '放大圖解 ↗';
     button.append(im, text); button.addEventListener('click', function () { open(ids); }); wrap.appendChild(button);
   });
   var shared = new URLSearchParams(location.search).get('diagram');
