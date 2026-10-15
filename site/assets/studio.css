@@ -51,3 +51,8 @@ footer .footer-logo{display:block;height:96px;width:auto;max-width:100%}
 footer .footer-logo{height:120px;margin-left:-20px}
 @media(max-width:860px){.topbar .brand-logo{height:52px;margin-left:-9px}footer .footer-logo{height:88px;margin-left:-15px}}
 @media(max-width:599px){.topbar .brand-logo{height:46px;margin-left:-8px}footer .footer-logo{height:70px;margin-left:-12px}}
+/* 全站導覽列使用同一條欄線，換頁時標誌位置不跳動 */
+.topbar .wrap{max-width:1440px;padding-inline:clamp(24px,5vw,80px)}
+@media(max-width:599px){.topbar .wrap{padding-inline:24px}}
+/* 深藍編號底色改用白字，對比 5.9:1 */
+.sv-item[style*="2f5fc4"] .no{color:#fff}

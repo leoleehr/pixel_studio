@@ -122,7 +122,7 @@ a{color:inherit;text-decoration:none}
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
-<div class="toolbar"><button type="button" onclick="window.print()">列印／另存 Pdf</button><a class="ghost" href="songwriting-handbook.pdf" download="詞曲創作八堂_講義與教案.pdf">下載 Pdf</a><a class="ghost" href="handbook.html">回網頁版</a></div>
+<div class="toolbar"><button type="button" onclick="window.print()">列印／另存 PDF</button><a class="ghost" href="songwriting-handbook.pdf" download="詞曲創作八堂_講義與教案.pdf">下載 PDF</a><a class="ghost" href="handbook.html">回網頁版</a></div>
 
 <div class="sheet cover">
   <div class="brandblock"><img class="logo-new" src="../assets/brand/pixel-studio-primary-dark.svg" alt="Pixel Studio"><div class="cn">畫素音樂工作坊</div></div>
@@ -141,7 +141,7 @@ a{color:inherit;text-decoration:none}
   <h2>目錄</h2>
   <p class="lead">八堂、每堂 180 分鐘：課前問卷、起承轉合的課程綱要、擴充講義、課堂互動與課後練習。</p>
   <ol id="toc"></ol>
-  <p class="note">曲例影片：各堂開頭列出原教材的曲例，掃描 Qr Code 或點擊連結，即可在 Youtube 觀看；講義只摘錄分析所需的歌詞短句。互動投影片、韻腳檢查器、動機實驗室與創作範本卡，請至課程網站開啟。</p>
+  <p class="note">曲例影片：各堂開頭列出原教材的曲例，掃描 QR Code 或點擊連結，即可在 YouTube 觀看；講義只摘錄分析所需的歌詞短句。互動投影片、韻腳檢查器、動機實驗室與創作範本卡，請至課程網站開啟。</p>
 </div>
 
 <main class="sheet md" id="content"></main>
@@ -181,7 +181,7 @@ a{color:inherit;text-decoration:none}
         if (list) {
           li.lastChild.insertAdjacentHTML('beforeend', '<div class="s">' + list.join('、') + '</div>');
           var box = document.createElement('div'); box.className = 'songs';
-          box.innerHTML = '<div class="h">本堂曲例<span>掃描 Qr Code 或點擊連結，在 Youtube 觀看</span></div><div class="g"></div>';
+          box.innerHTML = '<div class="h">本堂曲例<span>掃描 QR Code 或點擊連結，在 YouTube 觀看</span></div><div class="g"></div>';
           list.forEach(function (name) {
             var sg = PIXEL_SONGS[name], url = 'https://youtu.be/' + sg.id, el = document.createElement('div'); el.className = 'song';
             el.innerHTML = '<div class="qr"></div><div><b>' + name + '</b><span>' + sg.artist + '・' + sg.kind + '</span><a href="' + url + '">youtu.be/' + sg.id + '</a></div>';

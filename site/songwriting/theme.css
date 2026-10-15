@@ -4,6 +4,7 @@
 .btn.primary{color:#0a0a0a}.btn.primary:hover{background:#ea5d93}
 /* 小字的粉紅在深底上對比不足 4.5，提亮一點 */
 .pb-chip>span{color:color-mix(in srgb,var(--accent) 80%,#fff)}
+.md{--amber:#ec6498}.topbar nav a.cur{color:#ec6498}
 .live-dot{box-shadow:0 0 12px rgba(var(--accent-rgb),.4)}
 .slide .c-pink{color:var(--accent)}
 
