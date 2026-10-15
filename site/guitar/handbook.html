@@ -66,7 +66,7 @@
 <script src="../assets/config.js?v=20261014h"></script>
 <script src="../assets/backend.js?v=20261016c"></script>
 <script src="../assets/ps-audio.js?v=20261014s"></script>
-<script src="guitar.js?v=20261015faces2"></script>
+<script src="guitar.js?v=20261015contour4"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <script>window.GUITAR_READY = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];</script>
 <script>
@@ -74,7 +74,7 @@
   var NUM = { '一': 1, '二': 2, '三': 3, '四': 4, '五': 5, '六': 6, '七': 7, '八': 8, '九': 9, '十': 10, '十一': 11, '十二': 12 };
   var COLOR = ['', '#e8412b', '#e2407f', '#9a5fd0', '#2f5fc4', '#45b3e6', '#6cbb4b', '#d6e03a', '#f4a62a', '#e8412b', '#e2407f', '#9a5fd0', '#45b3e6'];
   var main = document.getElementById('content'), toc = document.getElementById('toc'), prog = document.getElementById('progress');
-  fetch('handbook.md?v=20261015faces2')
+  fetch('handbook.md?v=20261015contour4')
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
     .then(function (md) {
       main.innerHTML = marked.parse(md, { gfm: true });

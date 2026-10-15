@@ -369,9 +369,9 @@ Oct 5, 2026 · @Leo Lee
 </div>
 
 <div class="teaching-book" data-demo-group="v05"><h3>呼吸活動操作｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/breath-wall-white.webp?v=20261015tongue3" alt="男主角面向牆壁，腹部輕抵牆面，觀察吸吐氣時的起伏。" loading="eager"><figcaption>男主角面向牆壁，腹部輕抵牆面，觀察吸吐氣時的起伏。</figcaption></figure>
-<figure><img src="../assets/teaching/breath-pair-paper-white.webp?v=20261015tongue3" alt="一人捏住紙張上緣，讓紙張下垂；兩人從兩側輪流吹動紙張。" loading="eager"><figcaption>一人捏住紙張上緣，讓紙張下垂；兩人從兩側輪流吹動紙張。</figcaption></figure>
-<figure><img src="../assets/teaching/breath-wall-tissue-white.webp?v=20261015tongue3" alt="以持續氣流托住牆面上的單張薄衛生紙。" loading="eager"><figcaption>以持續氣流托住牆面上的單張薄衛生紙。</figcaption></figure>
+<figure><img src="../assets/teaching/breath-wall-white.webp?v=20261015contour4" alt="男主角面向牆壁，腹部輕抵牆面，觀察吸吐氣時的起伏。" loading="eager"><figcaption>男主角面向牆壁，腹部輕抵牆面，觀察吸吐氣時的起伏。</figcaption></figure>
+<figure><img src="../assets/teaching/breath-pair-paper-white.webp?v=20261015contour4" alt="一人捏住紙張上緣，讓紙張下垂；兩人從兩側輪流吹動紙張。" loading="eager"><figcaption>一人捏住紙張上緣，讓紙張下垂；兩人從兩側輪流吹動紙張。</figcaption></figure>
+<figure><img src="../assets/teaching/breath-wall-tissue-white.webp?v=20261015contour4" alt="以持續氣流托住牆面上的單張薄衛生紙。" loading="eager"><figcaption>以持續氣流托住牆面上的單張薄衛生紙。</figcaption></figure>
 <figure><img src="../assets/teaching/breath-tissue-white.webp?v=20261015tongue3" alt="拿住衛生紙上緣，以穩定氣流吹動下垂的衛生紙。" loading="eager"><figcaption>拿住衛生紙上緣，以穩定氣流吹動下垂的衛生紙。</figcaption></figure>
 </div>
 </div>
@@ -480,7 +480,7 @@ Oct 5, 2026 · @Leo Lee
 
 <div class="teaching-book" data-demo-group="v07"><h3>哈欠、哼鳴與手貼胸口｜圖解示範</h3><div class="teaching-photo-grid">
 <figure><img src="../assets/teaching/voice-yawn-white.webp?v=20261015tongue3" alt="下巴自然下垂，模擬輕哈欠" loading="eager"><figcaption>下巴自然下垂，模擬輕哈欠</figcaption></figure>
-<figure><img src="../assets/teaching/voice-hum-white.webp?v=20261015tongue3" alt="嘴唇輕閉，哼出 /m/" loading="eager"><figcaption>嘴唇輕閉，哼出 /m/</figcaption></figure>
+<figure><img src="../assets/teaching/voice-hum-white.webp?v=20261015contour4" alt="嘴唇輕閉，哼出 /m/" loading="eager"><figcaption>嘴唇輕閉，哼出 /m/</figcaption></figure>
 <figure><img src="../assets/teaching/voice-chest-white.webp?v=20261015tongue3" alt="手掌輕貼胸口，觀察振動感受" loading="eager"><figcaption>手掌輕貼胸口，觀察振動感受</figcaption></figure>
 </div>
 </div>
