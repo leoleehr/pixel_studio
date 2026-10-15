@@ -154,5 +154,23 @@
     "logo": "black",
     "width_fraction": 0.18,
     "opacity": 0.5
+  },
+  "fretting-front": {
+    "corner": "top-right",
+    "logo": "black",
+    "width_fraction": 0.23,
+    "opacity": 0.5
+  },
+  "fretting-oblique": {
+    "corner": "top-right",
+    "logo": "black",
+    "width_fraction": 0.23,
+    "opacity": 0.5
+  },
+  "fretting-thumb": {
+    "corner": "top-right",
+    "logo": "black",
+    "width_fraction": 0.23,
+    "opacity": 0.5
   }
 }
