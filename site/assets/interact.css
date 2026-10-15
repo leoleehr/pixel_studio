@@ -630,3 +630,7 @@ table.mini-scale th{width:5.5em;text-align:left}
 @media (max-width:900px),(orientation:portrait) and (max-width:1100px){.melo-col .yt{max-width:none}}
 .ms-key{display:flex;align-items:center;gap:4px;font-size:12px}
 .ms-keysel{font:inherit;font-size:13px;background:#0d0d10;color:var(--ink);border:1px solid var(--line-2);border-radius:6px;padding:2px 4px}
+/* 作業勾選：透明的原生 checkbox 疊在勾選框上，鍵盤焦點顯示在整列 */
+.checks[data-id] .check-input{position:absolute;left:0;top:16px;width:24px;height:24px;margin:0;opacity:0;cursor:pointer;z-index:1}
+.checks[data-id] li:has(.check-input:focus-visible){outline:2px solid var(--amber);outline-offset:4px;border-radius:8px}
+@media (max-width:900px),(orientation:portrait) and (max-width:1100px){.checks[data-id] .check-input{top:13px;width:20px;height:20px}}

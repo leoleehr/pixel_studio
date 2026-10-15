@@ -1557,11 +1557,16 @@
   /* ---------- 16. 作業勾選 ---------- */
   $$('.checks[data-id]').forEach(function (u) {
     var key = 'checks-' + u.getAttribute('data-id'), st = LS.get(key, []);
-    u.setAttribute('role', 'group'); if (!u.hasAttribute('aria-label')) u.setAttribute('aria-label', '作業勾選');
+    if (!u.hasAttribute('aria-label')) u.setAttribute('aria-label', '作業勾選');
     $$('li', u).forEach(function (li, k) {
-      li.classList.toggle('done', !!st[k]); li.tabIndex = 0; li.setAttribute('role', 'checkbox'); li.setAttribute('aria-checked', !!st[k]);
-      var tg = function () { st[k] = !st[k]; li.classList.toggle('done', !!st[k]); li.setAttribute('aria-checked', !!st[k]); LS.set(key, st); report(u, 'homework', { item: li.textContent.replace(/▶/g, '').trim(), result: st[k] ? '完成' : '取消', value: st[k] ? 1 : 0 }); };
-      li.onclick = tg; li.onkeydown = function (e) { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); tg(); } };
+      // 原生 checkbox 疊在 li::before 的勾選框上（透明），整列仍可點選；清單保留 list 語意
+      var box = document.createElement('input'); box.type = 'checkbox'; box.className = 'check-input';
+      box.checked = !!st[k]; box.setAttribute('aria-label', li.textContent.replace(/▶/g, '').trim());
+      li.insertBefore(box, li.firstChild); li.classList.toggle('done', !!st[k]);
+      var tg = function () { st[k] = !st[k]; box.checked = !!st[k]; li.classList.toggle('done', !!st[k]); LS.set(key, st); report(u, 'homework', { item: li.textContent.replace(/▶/g, '').trim(), result: st[k] ? '完成' : '取消', value: st[k] ? 1 : 0 }); };
+      box.onchange = function () { if (box.checked !== !!st[k]) tg(); };
+      box.onkeydown = function (e) { e.stopPropagation(); if (e.key === 'Enter') { e.preventDefault(); tg(); } };
+      li.onclick = function (e) { if (e.target === box || e.target.closest('a,button,input,select,textarea')) return; tg(); };
     });
   });
 
