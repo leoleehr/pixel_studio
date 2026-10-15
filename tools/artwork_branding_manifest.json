@@ -1,0 +1,740 @@
+[
+  {
+    "source": "site/assets/guitar/acoustic-front.jpg",
+    "output": "site/assets/guitar/acoustic-front.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/guitar/baroque-photo.jpg",
+    "output": "site/assets/guitar/baroque-photo.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/guitar/classical-history-photo.jpg",
+    "output": "site/assets/guitar/classical-history-photo.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/guitar/classical-photo.jpg",
+    "output": "site/assets/guitar/classical-photo.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/guitar/electric-photo.jpg",
+    "output": "site/assets/guitar/electric-photo.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/guitar/finger-anatomy.jpg",
+    "output": "site/assets/guitar/finger-anatomy.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/guitar/flamenco-photo.jpg",
+    "output": "site/assets/guitar/flamenco-photo.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/guitar/folk-photo.jpg",
+    "output": "site/assets/guitar/folk-photo.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/guitar/fretting-technique.jpg",
+    "output": "site/assets/guitar/fretting-technique.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/guitar/lute-photo.jpg",
+    "output": "site/assets/guitar/lute-photo.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/guitar/oud-photo.jpg",
+    "output": "site/assets/guitar/oud-photo.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/guitar/pick-grip.jpg",
+    "output": "site/assets/guitar/pick-grip.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/guitar/relatives-photo.jpg",
+    "output": "site/assets/guitar/relatives-photo.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/guitar/renaissance-photo.jpg",
+    "output": "site/assets/guitar/renaissance-photo.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/guitar/soundboard-cutaway.jpg",
+    "output": "site/assets/guitar/soundboard-cutaway.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/guitar/steel-photo.jpg",
+    "output": "site/assets/guitar/steel-photo.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/guitar/vihuela-photo.jpg",
+    "output": "site/assets/guitar/vihuela-photo.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/piano/digital-piano.jpg",
+    "output": "site/assets/piano/digital-piano.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/piano/grand-piano.jpg",
+    "output": "site/assets/piano/grand-piano.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/piano/hands-keyboard.jpg",
+    "output": "site/assets/piano/hands-keyboard.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/piano/piano-action.jpg",
+    "output": "site/assets/piano/piano-action.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/piano/synth-keyboard.jpg",
+    "output": "site/assets/piano/synth-keyboard.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/piano/upright-piano.jpg",
+    "output": "site/assets/piano/upright-piano.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/airflow.svg",
+    "output": "site/assets/teaching/airflow.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/bend-motion.svg",
+    "output": "site/assets/teaching/bend-motion.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/bend-raised.webp",
+    "output": "site/assets/teaching/bend-raised.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/body-concert.webp",
+    "output": "site/assets/teaching/body-concert.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/body-dreadnought.webp",
+    "output": "site/assets/teaching/body-dreadnought.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/body-ga.webp",
+    "output": "site/assets/teaching/body-ga.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/body-gc.webp",
+    "output": "site/assets/teaching/body-gc.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/body-jumbo.webp",
+    "output": "site/assets/teaching/body-jumbo.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/body-om.webp",
+    "output": "site/assets/teaching/body-om.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/bracing-fan.webp",
+    "output": "site/assets/teaching/bracing-fan.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/bracing-x.webp",
+    "output": "site/assets/teaching/bracing-x.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/breath-in-white.webp",
+    "output": "site/assets/teaching/breath-in-white.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/breath-out-white.webp",
+    "output": "site/assets/teaching/breath-out-white.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/breath-pair-paper-white.webp",
+    "output": "site/assets/teaching/breath-pair-paper-white.branded.svg",
+    "corner": "right",
+    "logo": "black"
+  },
+  {
+    "source": "site/assets/teaching/breath-tissue-white.webp",
+    "output": "site/assets/teaching/breath-tissue-white.branded.svg",
+    "corner": "left",
+    "logo": "black"
+  },
+  {
+    "source": "site/assets/teaching/breath-wall-tissue-white.webp",
+    "output": "site/assets/teaching/breath-wall-tissue-white.branded.svg",
+    "corner": "left",
+    "logo": "black"
+  },
+  {
+    "source": "site/assets/teaching/breath-wall-white.webp",
+    "output": "site/assets/teaching/breath-wall-white.branded.svg",
+    "corner": "left",
+    "logo": "black"
+  },
+  {
+    "source": "site/assets/teaching/capo-front-v2.webp",
+    "output": "site/assets/teaching/capo-front-v2.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/capo-side-v2.webp",
+    "output": "site/assets/teaching/capo-side-v2.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/care-pin.webp",
+    "output": "site/assets/teaching/care-pin.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/care-string.webp",
+    "output": "site/assets/teaching/care-string.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/care-wind.svg",
+    "output": "site/assets/teaching/care-wind.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/care-wipe.webp",
+    "output": "site/assets/teaching/care-wipe.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/chord-am.svg",
+    "output": "site/assets/teaching/chord-am.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/chord-barre.webp",
+    "output": "site/assets/teaching/chord-barre.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/chord-c.svg",
+    "output": "site/assets/teaching/chord-c.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/chord-d.svg",
+    "output": "site/assets/teaching/chord-d.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/chord-g.svg",
+    "output": "site/assets/teaching/chord-g.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/chord-small-f.svg",
+    "output": "site/assets/teaching/chord-small-f.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/chuck-after.webp",
+    "output": "site/assets/teaching/chuck-after.branded.svg",
+    "corner": "right",
+    "logo": "black"
+  },
+  {
+    "source": "site/assets/teaching/chuck-before.webp",
+    "output": "site/assets/teaching/chuck-before.branded.svg",
+    "corner": "right",
+    "logo": "black"
+  },
+  {
+    "source": "site/assets/teaching/crawl-next.webp",
+    "output": "site/assets/teaching/crawl-next.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/crawl-ready.webp",
+    "output": "site/assets/teaching/crawl-ready.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/fingerstyle-pluck.webp",
+    "output": "site/assets/teaching/fingerstyle-pluck.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/fingerstyle-ready.webp",
+    "output": "site/assets/teaching/fingerstyle-ready.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/guitar-posture-white.webp",
+    "output": "site/assets/teaching/guitar-posture-white.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/hammer-after.webp",
+    "output": "site/assets/teaching/hammer-after.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/hammer-before.webp",
+    "output": "site/assets/teaching/hammer-before.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/hammer-sequence.svg",
+    "output": "site/assets/teaching/hammer-sequence.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/harmonic-release.webp",
+    "output": "site/assets/teaching/harmonic-release.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/harmonic-touch.webp",
+    "output": "site/assets/teaching/harmonic-touch.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/mic-offset-white.webp",
+    "output": "site/assets/teaching/mic-offset-white.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/mic-straight-white.webp",
+    "output": "site/assets/teaching/mic-straight-white.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/mute-play.webp",
+    "output": "site/assets/teaching/mute-play.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/mute-ready.webp",
+    "output": "site/assets/teaching/mute-ready.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/piano-cross-after.webp",
+    "output": "site/assets/teaching/piano-cross-after.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/piano-cross-before.webp",
+    "output": "site/assets/teaching/piano-cross-before.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/piano-five-fingers.webp",
+    "output": "site/assets/teaching/piano-five-fingers.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/piano-hand-curve.webp",
+    "output": "site/assets/teaching/piano-hand-curve.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/piano-pedal-down.webp",
+    "output": "site/assets/teaching/piano-pedal-down.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/piano-pedal-up.webp",
+    "output": "site/assets/teaching/piano-pedal-up.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/piano-pedals.webp",
+    "output": "site/assets/teaching/piano-pedals.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/piano-posture-white.webp",
+    "output": "site/assets/teaching/piano-posture-white.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/piano-relay-left.webp",
+    "output": "site/assets/teaching/piano-relay-left.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/piano-relay-right.webp",
+    "output": "site/assets/teaching/piano-relay-right.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/piano-scale-motion.svg",
+    "output": "site/assets/teaching/piano-scale-motion.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/piano-tenth-motion.svg",
+    "output": "site/assets/teaching/piano-tenth-motion.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/piano-under-after.webp",
+    "output": "site/assets/teaching/piano-under-after.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/piano-under-before.webp",
+    "output": "site/assets/teaching/piano-under-before.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/pull-sequence.svg",
+    "output": "site/assets/teaching/pull-sequence.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/resonance.svg",
+    "output": "site/assets/teaching/resonance.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/sizes.svg",
+    "output": "site/assets/teaching/sizes.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/slap-after.webp",
+    "output": "site/assets/teaching/slap-after.branded.svg",
+    "corner": "right",
+    "logo": "black"
+  },
+  {
+    "source": "site/assets/teaching/slap-before.webp",
+    "output": "site/assets/teaching/slap-before.branded.svg",
+    "corner": "right",
+    "logo": "black"
+  },
+  {
+    "source": "site/assets/teaching/slide-sequence.svg",
+    "output": "site/assets/teaching/slide-sequence.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/strum-down.webp",
+    "output": "site/assets/teaching/strum-down.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/strum-up.webp",
+    "output": "site/assets/teaching/strum-up.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/teacher-leo-white.webp",
+    "output": "site/assets/teaching/teacher-leo-white.branded.svg",
+    "corner": "right",
+    "logo": "black"
+  },
+  {
+    "source": "site/assets/teaching/tongue-anatomy.webp",
+    "output": "site/assets/teaching/tongue-anatomy.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/tongue.svg",
+    "output": "site/assets/teaching/tongue.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/truss-cutaway.webp",
+    "output": "site/assets/teaching/truss-cutaway.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/truss-nut.webp",
+    "output": "site/assets/teaching/truss-nut.branded.svg",
+    "corner": "right",
+    "logo": "black"
+  },
+  {
+    "source": "site/assets/teaching/vibrato-center.webp",
+    "output": "site/assets/teaching/vibrato-center.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/vibrato-motion.svg",
+    "output": "site/assets/teaching/vibrato-motion.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/vocal-seated-white.webp",
+    "output": "site/assets/teaching/vocal-seated-white.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/vocal-standing-white.webp",
+    "output": "site/assets/teaching/vocal-standing-white.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/voice-air-hand-white.webp",
+    "output": "site/assets/teaching/voice-air-hand-white.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/voice-anatomy.jpg",
+    "output": "site/assets/teaching/voice-anatomy.branded.svg",
+    "corner": "left",
+    "logo": "black"
+  },
+  {
+    "source": "site/assets/teaching/voice-chest-white.webp",
+    "output": "site/assets/teaching/voice-chest-white.branded.svg",
+    "corner": "left",
+    "logo": "black"
+  },
+  {
+    "source": "site/assets/teaching/voice-hum-white.webp",
+    "output": "site/assets/teaching/voice-hum-white.branded.svg",
+    "corner": "right",
+    "logo": "black"
+  },
+  {
+    "source": "site/assets/teaching/voice-no-pinch-white.webp",
+    "output": "site/assets/teaching/voice-no-pinch-white.branded.svg",
+    "corner": "right",
+    "logo": "black"
+  },
+  {
+    "source": "site/assets/teaching/voice-pinch-white.webp",
+    "output": "site/assets/teaching/voice-pinch-white.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/voice-yawn-white.webp",
+    "output": "site/assets/teaching/voice-yawn-white.branded.svg",
+    "corner": "left",
+    "logo": "black"
+  },
+  {
+    "source": "site/assets/teaching/vowel-a-white.webp",
+    "output": "site/assets/teaching/vowel-a-white.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/vowel-e-white.webp",
+    "output": "site/assets/teaching/vowel-e-white.branded.svg",
+    "corner": "right",
+    "logo": "black"
+  },
+  {
+    "source": "site/assets/teaching/vowel-i-white.webp",
+    "output": "site/assets/teaching/vowel-i-white.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/vowel-o-white.webp",
+    "output": "site/assets/teaching/vowel-o-white.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/vowel-u-white.webp",
+    "output": "site/assets/teaching/vowel-u-white.branded.svg",
+    "corner": "right",
+    "logo": "black"
+  },
+  {
+    "source": "site/assets/teaching/warmup-forward-white.webp",
+    "output": "site/assets/teaching/warmup-forward-white.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/warmup-neck-white.webp",
+    "output": "site/assets/teaching/warmup-neck-white.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/warmup-shoulders-white.webp",
+    "output": "site/assets/teaching/warmup-shoulders-white.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/warmup-wrists-white.webp",
+    "output": "site/assets/teaching/warmup-wrists-white.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/wood-basswood.webp",
+    "output": "site/assets/teaching/wood-basswood.branded.svg",
+    "corner": "right",
+    "logo": "black"
+  },
+  {
+    "source": "site/assets/teaching/wood-cedar.webp",
+    "output": "site/assets/teaching/wood-cedar.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/wood-koa.webp",
+    "output": "site/assets/teaching/wood-koa.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/wood-mahogany.webp",
+    "output": "site/assets/teaching/wood-mahogany.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/wood-maple.webp",
+    "output": "site/assets/teaching/wood-maple.branded.svg",
+    "corner": "right",
+    "logo": "black"
+  },
+  {
+    "source": "site/assets/teaching/wood-rosewood.webp",
+    "output": "site/assets/teaching/wood-rosewood.branded.svg",
+    "corner": "left",
+    "logo": "white"
+  },
+  {
+    "source": "site/assets/teaching/wood-spruce.webp",
+    "output": "site/assets/teaching/wood-spruce.branded.svg",
+    "corner": "left",
+    "logo": "black"
+  },
+  {
+    "source": "site/assets/teaching/wood-walnut.webp",
+    "output": "site/assets/teaching/wood-walnut.branded.svg",
+    "corner": "right",
+    "logo": "white"
+  }
+]

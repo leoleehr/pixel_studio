@@ -1,7 +1,7 @@
 .teaching-heading{display:flex;align-items:center;justify-content:space-between;gap:18px}
 .teaching-heading>h2{flex:1;min-width:0}
 .teaching-launch{flex:0 0 112px;display:grid;grid-template-columns:1fr;gap:4px;padding:5px;border:1px solid var(--line-2,#555);border-radius:9px;background:var(--card,#212421);color:var(--ink,#f4f4f0);font:600 12px/1.3 "Noto Sans TC",sans-serif;cursor:pointer}
-.teaching-launch img{display:block;width:100%;height:48px;object-fit:cover;border-radius:5px}
+.teaching-launch img{display:block;width:100%;height:48px;object-fit:contain;border-radius:5px}
 .teaching-launch:focus-visible,.teaching-close:focus-visible{outline:3px solid var(--accent,#6cbb4b);outline-offset:3px}
 .teaching-launch:hover{border-color:var(--accent,#6cbb4b)}
 .teaching-dialog{margin:auto;width:min(1140px,calc(100vw - 32px));max-width:none;max-height:calc(100dvh - 32px);padding:0;border:1px solid #535750;border-radius:16px;background:#151716;color:#f4f4f0;box-shadow:0 24px 100px #0009;font-family:"Noto Sans TC",sans-serif}

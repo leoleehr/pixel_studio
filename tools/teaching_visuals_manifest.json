@@ -13,35 +13,35 @@
     ],
     "images": [
       {
-        "src": "wood-spruce.webp",
+        "src": "wood-spruce.branded.svg",
         "caption": "雲杉：細直木紋"
       },
       {
-        "src": "wood-cedar.webp",
+        "src": "wood-cedar.branded.svg",
         "caption": "紅杉：暖褐色木紋"
       },
       {
-        "src": "wood-mahogany.webp",
+        "src": "wood-mahogany.branded.svg",
         "caption": "桃花心木：開放木孔"
       },
       {
-        "src": "wood-rosewood.webp",
+        "src": "wood-rosewood.branded.svg",
         "caption": "玫瑰木：深色條紋"
       },
       {
-        "src": "wood-maple.webp",
+        "src": "wood-maple.branded.svg",
         "caption": "楓木：淺色木紋"
       },
       {
-        "src": "wood-koa.webp",
+        "src": "wood-koa.branded.svg",
         "caption": "相思木：金褐色紋理"
       },
       {
-        "src": "wood-walnut.webp",
+        "src": "wood-walnut.branded.svg",
         "caption": "胡桃木：褐色紋理"
       },
       {
-        "src": "wood-basswood.webp",
+        "src": "wood-basswood.branded.svg",
         "caption": "椴木：細緻淺色木紋"
       }
     ],
@@ -61,27 +61,27 @@
     ],
     "images": [
       {
-        "src": "body-jumbo.webp",
+        "src": "body-jumbo.branded.svg",
         "caption": "Jumbo｜寬大的下半部與明顯腰身"
       },
       {
-        "src": "body-dreadnought.webp",
+        "src": "body-dreadnought.branded.svg",
         "caption": "Dreadnought｜方肩、較平緩的腰線"
       },
       {
-        "src": "body-ga.webp",
+        "src": "body-ga.branded.svg",
         "caption": "Grand Auditorium｜中大型、腰線明顯"
       },
       {
-        "src": "body-om.webp",
+        "src": "body-om.branded.svg",
         "caption": "Auditorium／OM｜較小、上下比例均衡"
       },
       {
-        "src": "body-gc.webp",
+        "src": "body-gc.branded.svg",
         "caption": "Grand Concert｜緊湊琴身"
       },
       {
-        "src": "body-concert.webp",
+        "src": "body-concert.branded.svg",
         "caption": "Concert｜小型琴身"
       }
     ],
@@ -101,11 +101,11 @@
     ],
     "images": [
       {
-        "src": "sizes.svg",
+        "src": "sizes.branded.svg",
         "caption": "1/4、1/2、3/4 與全尺寸的相對比例"
       },
       {
-        "src": "guitar-posture-white.webp",
+        "src": "guitar-posture-white.branded.svg",
         "caption": "試抱時確認手臂能自然落在琴身上"
       }
     ],
@@ -125,11 +125,11 @@
     ],
     "images": [
       {
-        "src": "bracing-x.webp",
+        "src": "bracing-x.branded.svg",
         "caption": "鋼弦吉他的 X 型力木"
       },
       {
-        "src": "bracing-fan.webp",
+        "src": "bracing-fan.branded.svg",
         "caption": "古典吉他的扇形力木"
       }
     ],
@@ -149,11 +149,11 @@
     ],
     "images": [
       {
-        "src": "truss-cutaway.webp",
+        "src": "truss-cutaway.branded.svg",
         "caption": "剖面中的指板、琴頸與鋼筋"
       },
       {
-        "src": "truss-nut.webp",
+        "src": "truss-nut.branded.svg",
         "caption": "響孔側的調整螺帽近拍"
       }
     ],
@@ -174,11 +174,11 @@
     ],
     "images": [
       {
-        "src": "crawl-ready.webp",
+        "src": "crawl-ready.branded.svg",
         "caption": "1：四根手指自然彎曲，各負責一格"
       },
       {
-        "src": "crawl-next.webp",
+        "src": "crawl-next.branded.svg",
         "caption": "2：依序落指，手腕保持自然"
       }
     ],
@@ -207,27 +207,27 @@
     ],
     "images": [
       {
-        "src": "chord-c.svg",
+        "src": "chord-c.branded.svg",
         "caption": "C：食指 2 弦 1 格、中指 4 弦 2 格、無名指 5 弦 3 格"
       },
       {
-        "src": "chord-am.svg",
+        "src": "chord-am.branded.svg",
         "caption": "Am：食指 2 弦 1 格、中指 4 弦 2 格、無名指 3 弦 2 格"
       },
       {
-        "src": "chord-g.svg",
+        "src": "chord-g.branded.svg",
         "caption": "G：中指 6 弦 3 格、食指 5 弦 2 格、小指或無名指 1 弦 3 格"
       },
       {
-        "src": "chord-small-f.svg",
+        "src": "chord-small-f.branded.svg",
         "caption": "小 F：食指壓住 1、2 弦 1 格"
       },
       {
-        "src": "chord-d.svg",
+        "src": "chord-d.branded.svg",
         "caption": "D：食指 3 弦 2 格、中指 1 弦 2 格、無名指 2 弦 3 格"
       },
       {
-        "src": "../guitar/fretting-technique.jpg",
+        "src": "../guitar/fretting-technique.branded.svg",
         "caption": "觀察指尖弧度與拇指支撐；各和弦格位見上方指位圖"
       }
     ],
@@ -247,11 +247,11 @@
     ],
     "images": [
       {
-        "src": "strum-down.webp",
+        "src": "strum-down.branded.svg",
         "caption": "1：手腕帶動下刷，手臂自然支撐"
       },
       {
-        "src": "strum-up.webp",
+        "src": "strum-up.branded.svg",
         "caption": "2：以相同路徑上刷，彈片輕掠琴弦"
       }
     ],
@@ -285,11 +285,11 @@
     ],
     "images": [
       {
-        "src": "capo-front-v2.webp",
+        "src": "capo-front-v2.branded.svg",
         "caption": "壓桿橫跨指板與六條弦，放在格位內、靠近琴衍。"
       },
       {
-        "src": "capo-side-v2.webp",
+        "src": "capo-side-v2.branded.svg",
         "caption": "上方橡膠墊壓住琴弦，下方夾爪貼合琴頸背面。"
       }
     ],
@@ -309,11 +309,11 @@
     ],
     "images": [
       {
-        "src": "fingerstyle-ready.webp",
+        "src": "fingerstyle-ready.branded.svg",
         "caption": "T 拇指在低音弦，1、2、3 分別對應 3、2、1 弦"
       },
       {
-        "src": "fingerstyle-pluck.webp",
+        "src": "fingerstyle-pluck.branded.svg",
         "caption": "手指往掌心方向撥弦，手腕自然"
       }
     ],
@@ -334,11 +334,11 @@
     ],
     "images": [
       {
-        "src": "chord-barre.webp",
+        "src": "chord-barre.branded.svg",
         "caption": "食指橫按，其他手指保持彎曲"
       },
       {
-        "src": "../guitar/fretting-technique.jpg",
+        "src": "../guitar/fretting-technique.branded.svg",
         "caption": "琴頸背面的拇指支撐位置"
       }
     ],
@@ -361,23 +361,23 @@
     ],
     "images": [
       {
-        "src": "hammer-sequence.svg",
+        "src": "hammer-sequence.branded.svg",
         "caption": "搥弦：低格保留，另一指落至較高格"
       },
       {
-        "src": "pull-sequence.svg",
+        "src": "pull-sequence.branded.svg",
         "caption": "勾弦：高格輕勾離弦，低格保留"
       },
       {
-        "src": "slide-sequence.svg",
+        "src": "slide-sequence.branded.svg",
         "caption": "滑弦：沿同一條弦保持接觸移動"
       },
       {
-        "src": "hammer-before.webp",
+        "src": "hammer-before.branded.svg",
         "caption": "近拍觀察手指自然彎曲與離弦空間"
       },
       {
-        "src": "hammer-after.webp",
+        "src": "hammer-after.branded.svg",
         "caption": "近拍觀察指尖落弦時的弧度"
       }
     ],
@@ -398,27 +398,27 @@
     ],
     "images": [
       {
-        "src": "mute-ready.webp",
+        "src": "mute-ready.branded.svg",
         "caption": "悶音：掌側靠近琴橋與下弦枕"
       },
       {
-        "src": "mute-play.webp",
+        "src": "mute-play.branded.svg",
         "caption": "維持輕觸，再以彈片撥奏"
       },
       {
-        "src": "chuck-before.webp",
+        "src": "chuck-before.branded.svg",
         "caption": "切音：先刷弦"
       },
       {
-        "src": "chuck-after.webp",
+        "src": "chuck-after.branded.svg",
         "caption": "手掌接觸琴弦，將聲音切斷"
       },
       {
-        "src": "slap-before.webp",
+        "src": "slap-before.branded.svg",
         "caption": "打板：手掌抬起少許"
       },
       {
-        "src": "slap-after.webp",
+        "src": "slap-after.branded.svg",
         "caption": "以掌側或拇指輕落琴弦／琴身"
       }
     ],
@@ -438,11 +438,11 @@
     ],
     "images": [
       {
-        "src": "harmonic-touch.webp",
+        "src": "harmonic-touch.branded.svg",
         "caption": "1：指尖輕觸第 12 格琴衍正上方"
       },
       {
-        "src": "harmonic-release.webp",
+        "src": "harmonic-release.branded.svg",
         "caption": "2：撥弦後離開，讓琴弦繼續振動"
       }
     ],
@@ -462,23 +462,23 @@
     ],
     "images": [
       {
-        "src": "bend-motion.svg",
+        "src": "bend-motion.branded.svg",
         "caption": "推弦／鬆弦的側向往返方向"
       },
       {
-        "src": "vibrato-motion.svg",
+        "src": "vibrato-motion.branded.svg",
         "caption": "揉音以較小幅度改變張力"
       },
       {
-        "src": "hammer-sequence.svg",
+        "src": "hammer-sequence.branded.svg",
         "caption": "顫音：持續交替搥弦與勾弦"
       },
       {
-        "src": "bend-raised.webp",
+        "src": "bend-raised.branded.svg",
         "caption": "近拍觀察按弦與支撐手指"
       },
       {
-        "src": "vibrato-center.webp",
+        "src": "vibrato-center.branded.svg",
         "caption": "保持彎曲的指尖與自然手腕"
       }
     ],
@@ -498,19 +498,19 @@
     ],
     "images": [
       {
-        "src": "care-wipe.webp",
+        "src": "care-wipe.branded.svg",
         "caption": "1：彈奏後擦去琴弦與琴身手汗"
       },
       {
-        "src": "care-pin.webp",
+        "src": "care-pin.branded.svg",
         "caption": "2：放鬆琴弦後取出弦釘"
       },
       {
-        "src": "care-string.webp",
+        "src": "care-string.branded.svg",
         "caption": "3：以弦釘固定弦尾"
       },
       {
-        "src": "care-wind.svg",
+        "src": "care-wind.branded.svg",
         "caption": "4：旋鈕整齊纏弦，再逐步調音"
       }
     ],
@@ -530,11 +530,11 @@
     ],
     "images": [
       {
-        "src": "piano-posture-white.webp",
+        "src": "piano-posture-white.branded.svg",
         "caption": "側面：肩膀放鬆，手肘與琴鍵接近同一平面"
       },
       {
-        "src": "piano-hand-curve.webp",
+        "src": "piano-hand-curve.branded.svg",
         "caption": "近拍：手指成弧、手腕自然"
       }
     ],
@@ -554,15 +554,15 @@
     ],
     "images": [
       {
-        "src": "piano-pedals.webp",
+        "src": "piano-pedals.branded.svg",
         "caption": "三個踏板的實際位置"
       },
       {
-        "src": "piano-pedal-down.webp",
+        "src": "piano-pedal-down.branded.svg",
         "caption": "腳跟留在地面，以前腳掌踩下延音踏板"
       },
       {
-        "src": "piano-pedal-up.webp",
+        "src": "piano-pedal-up.branded.svg",
         "caption": "前腳掌放開，腳跟繼續支撐"
       }
     ],
@@ -588,11 +588,11 @@
     ],
     "images": [
       {
-        "src": "piano-five-fingers.webp",
+        "src": "piano-five-fingers.branded.svg",
         "caption": "五根手指各對應一個琴鍵"
       },
       {
-        "src": "../piano/hands-keyboard.jpg",
+        "src": "../piano/hands-keyboard.branded.svg",
         "caption": "由上方觀察左右手位置"
       }
     ],
@@ -613,23 +613,23 @@
     ],
     "images": [
       {
-        "src": "piano-scale-motion.svg",
+        "src": "piano-scale-motion.branded.svg",
         "caption": "穿指與跨指的確切音名、手指編號與移動路徑"
       },
       {
-        "src": "piano-under-before.webp",
+        "src": "piano-under-before.branded.svg",
         "caption": "近拍觀察手指與琴鍵的接觸"
       },
       {
-        "src": "piano-under-after.webp",
+        "src": "piano-under-after.branded.svg",
         "caption": "手位移動時保持手腕自然"
       },
       {
-        "src": "piano-cross-before.webp",
+        "src": "piano-cross-before.branded.svg",
         "caption": "其他手指自然抬起，準備下一個音"
       },
       {
-        "src": "piano-cross-after.webp",
+        "src": "piano-cross-after.branded.svg",
         "caption": "手掌跟著指位平移"
       }
     ],
@@ -651,11 +651,11 @@
     ],
     "images": [
       {
-        "src": "piano-relay-left.webp",
+        "src": "piano-relay-left.branded.svg",
         "caption": "左手完成低音區，右手預先準備"
       },
       {
-        "src": "piano-relay-right.webp",
+        "src": "piano-relay-right.branded.svg",
         "caption": "右手接續高音區，保持律動連續"
       }
     ],
@@ -676,15 +676,15 @@
     ],
     "images": [
       {
-        "src": "piano-tenth-motion.svg",
+        "src": "piano-tenth-motion.branded.svg",
         "caption": "根音、五音與十度音依序彈奏的手位路徑"
       },
       {
-        "src": "piano-relay-left.webp",
+        "src": "piano-relay-left.branded.svg",
         "caption": "由上方觀察低音區與高音區的左右手分工"
       },
       {
-        "src": "piano-relay-right.webp",
+        "src": "piano-relay-right.branded.svg",
         "caption": "雙手交接時保持自然弧度與連續律動"
       }
     ],
@@ -704,11 +704,11 @@
     ],
     "images": [
       {
-        "src": "voice-anatomy.jpg",
+        "src": "voice-anatomy.branded.svg",
         "caption": "喉部、聲帶、口腔、鼻腔與氣管的相對位置"
       },
       {
-        "src": "airflow.svg",
+        "src": "airflow.branded.svg",
         "caption": "肺部氣流經氣管、聲帶，進入聲道"
       }
     ],
@@ -739,11 +739,11 @@
     ],
     "images": [
       {
-        "src": "vocal-standing-white.webp",
+        "src": "vocal-standing-white.branded.svg",
         "caption": "站姿：重心穩定、膝蓋與肩膀放鬆"
       },
       {
-        "src": "vocal-seated-white.webp",
+        "src": "vocal-seated-white.branded.svg",
         "caption": "彈唱：坐穩、吉他靠近身體、視線自然向前"
       }
     ],
@@ -763,23 +763,23 @@
     ],
     "images": [
       {
-        "src": "warmup-shoulders-white.webp",
+        "src": "warmup-shoulders-white.branded.svg",
         "caption": "小幅度肩關節轉動，雙臂自然"
       },
       {
-        "src": "warmup-forward-white.webp",
+        "src": "warmup-forward-white.branded.svg",
         "caption": "以髖部帶動小幅前傾，頭頸自然"
       },
       {
-        "src": "vocal-standing-white.webp",
+        "src": "vocal-standing-white.branded.svg",
         "caption": "回到自然站姿，檢查肩頸是否放鬆"
       },
       {
-        "src": "warmup-neck-white.webp",
+        "src": "warmup-neck-white.branded.svg",
         "caption": "輕柔側傾頭部，保持肩膀放鬆，不用力拉扯頸部。"
       },
       {
-        "src": "warmup-wrists-white.webp",
+        "src": "warmup-wrists-white.branded.svg",
         "caption": "輕柔活動手腕，手臂與肩膀維持放鬆。"
       }
     ],
@@ -807,11 +807,11 @@
     ],
     "images": [
       {
-        "src": "breath-in-white.webp",
+        "src": "breath-in-white.branded.svg",
         "caption": "雙手放在下肋與腰側，感受吸氣時的擴張"
       },
       {
-        "src": "breath-out-white.webp",
+        "src": "breath-out-white.branded.svg",
         "caption": "吐氣時維持穩定，肩膀自然放鬆"
       }
     ],
@@ -831,19 +831,19 @@
     ],
     "images": [
       {
-        "src": "breath-wall-white.webp",
+        "src": "breath-wall-white.branded.svg",
         "caption": "面向牆壁，腹部輕抵牆面，觀察吸吐氣時的起伏。"
       },
       {
-        "src": "breath-pair-paper-white.webp",
+        "src": "breath-pair-paper-white.branded.svg",
         "caption": "一人捏住紙張上緣中央，讓紙張下垂；兩人從兩側輪流吹動紙張下半部。"
       },
       {
-        "src": "breath-wall-tissue-white.webp",
+        "src": "breath-wall-tissue-white.branded.svg",
         "caption": "以持續氣流托住牆面上的單張薄衛生紙。"
       },
       {
-        "src": "breath-tissue-white.webp",
+        "src": "breath-tissue-white.branded.svg",
         "caption": "捏住紙張上緣中央，以穩定氣息吹動紙張下半部。"
       }
     ],
@@ -863,11 +863,11 @@
     ],
     "images": [
       {
-        "src": "voice-anatomy.jpg",
+        "src": "voice-anatomy.branded.svg",
         "caption": "實際構造：口腔、咽腔、鼻腔與喉部"
       },
       {
-        "src": "resonance.svg",
+        "src": "resonance.branded.svg",
         "caption": "聲道構造與頭／胸振動感受分別標示"
       }
     ],
@@ -899,15 +899,15 @@
     ],
     "images": [
       {
-        "src": "voice-yawn-white.webp",
+        "src": "voice-yawn-white.branded.svg",
         "caption": "下巴自然下垂，模擬輕哈欠"
       },
       {
-        "src": "voice-hum-white.webp",
+        "src": "voice-hum-white.branded.svg",
         "caption": "嘴唇輕閉，哼出 /m/"
       },
       {
-        "src": "voice-chest-white.webp",
+        "src": "voice-chest-white.branded.svg",
         "caption": "手掌輕貼胸口，觀察振動感受"
       }
     ],
@@ -927,11 +927,11 @@
     ],
     "images": [
       {
-        "src": "voice-no-pinch-white.webp",
+        "src": "voice-no-pinch-white.branded.svg",
         "caption": "1：以舒服音高唱長音"
       },
       {
-        "src": "voice-pinch-white.webp",
+        "src": "voice-pinch-white.branded.svg",
         "caption": "2：輕捏鼻翼，比較聲音的改變"
       }
     ],
@@ -951,23 +951,23 @@
     ],
     "images": [
       {
-        "src": "vowel-a-white.webp",
+        "src": "vowel-a-white.branded.svg",
         "caption": "/a/：下巴自然下垂"
       },
       {
-        "src": "vowel-i-white.webp",
+        "src": "vowel-i-white.branded.svg",
         "caption": "/i/：嘴角微展，保留內部空間"
       },
       {
-        "src": "vowel-u-white.webp",
+        "src": "vowel-u-white.branded.svg",
         "caption": "/u/：嘴唇圓攏"
       },
       {
-        "src": "vowel-e-white.webp",
+        "src": "vowel-e-white.branded.svg",
         "caption": "/e/：下巴微開"
       },
       {
-        "src": "vowel-o-white.webp",
+        "src": "vowel-o-white.branded.svg",
         "caption": "/o/：嘴唇成圓"
       }
     ],
@@ -987,11 +987,11 @@
     ],
     "images": [
       {
-        "src": "tongue.svg",
+        "src": "tongue.branded.svg",
         "caption": "比較舌尖在前方與稍向後的構形"
       },
       {
-        "src": "voice-air-hand-white.webp",
+        "src": "voice-air-hand-white.branded.svg",
         "caption": "手掌放在嘴前，觀察送氣差異"
       }
     ],
@@ -1017,11 +1017,11 @@
     ],
     "images": [
       {
-        "src": "mic-straight-white.webp",
+        "src": "mic-straight-white.branded.svg",
         "caption": "正對麥克風：留意送氣直接撞擊網罩"
       },
       {
-        "src": "mic-offset-white.webp",
+        "src": "mic-offset-white.branded.svg",
         "caption": "略偏離氣流正前方，保持演唱距離"
       }
     ],
