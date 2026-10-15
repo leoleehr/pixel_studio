@@ -5,7 +5,7 @@
   --line:rgba(244,244,240,.12);--line-2:rgba(244,244,240,.24);
   --lab:var(--pixel-lime,#d6e03a);--lab-ink:#0b0d0e;
   --wave:linear-gradient(90deg,#e8412b 0%,#e2407f 14%,#8a4fc0 28%,#2f5fc4 42%,#45b3e6 56%,#6cbb4b 70%,#d6e03a 84%,#f4a62a 94%,#e8412b 100%);
-  --sans:"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;
+  --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",Arial,sans-serif;
   --display:"Space Grotesk",Arial,sans-serif;
   --r:4px;--gutter:48px;
 }

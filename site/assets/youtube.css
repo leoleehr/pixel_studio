@@ -33,7 +33,7 @@
 .ytp.error .ytp-time{color:var(--red,#ec4a36);font-family:inherit}
 
 .yt-chip{display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:14px;font-weight:700;color:#fff;background:rgba(255,0,0,.12);border:1px solid rgba(255,64,64,.45);border-radius:999px;padding:3px 12px 3px 4px;margin:0 2px;cursor:pointer;vertical-align:middle;line-height:1.5}
-.yt-chip i{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:#ff3333;color:#fff;font-style:normal;font-size:9px;padding-left:1px}
+.yt-chip i{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:#d92020;color:#fff;font-style:normal;font-size:9px;padding-left:1px}
 .yt-chip:hover{background:rgba(255,0,0,.2)}
 
 /* 右下角小播放器（行內按鈕使用） */

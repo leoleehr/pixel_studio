@@ -55,7 +55,7 @@
 
 /* ---------- 韻腳檢查器 .rhyme ---------- */
 .rh{display:grid;grid-template-columns:1.05fr .95fr;gap:16px;align-items:start}
-.rh textarea{width:100%;min-height:200px;resize:vertical;background:var(--card-2);border:1px solid var(--line-2);border-radius:var(--r);color:var(--ink);font:500 20px/1.75 "Noto Sans TC",sans-serif;padding:12px 14px}
+.rh textarea{width:100%;min-height:200px;resize:vertical;background:var(--card-2);border:1px solid var(--line-2);border-radius:var(--r);color:var(--ink);font:500 20px/1.75 "Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",sans-serif;padding:12px 14px}
 .rh textarea:focus{outline:2px solid rgba(var(--accent-rgb),.6);border-color:transparent}
 .rh-lines{display:grid;gap:4px;max-height:232px;overflow:auto}
 .rh-line{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r-sm);padding:4px 10px;font-size:16px}
@@ -133,7 +133,7 @@
 .sc-grid{display:grid;grid-template-columns:repeat(var(--cols,2),minmax(0,1fr));gap:10px 14px}
 .sc label{display:grid;gap:4px;font-size:14px;color:var(--muted);font-weight:500}
 .sc label.wide{grid-column:1/-1}
-.sc input,.sc textarea,.sc select{width:100%;background:var(--card-2);border:1px solid var(--line-2);border-radius:10px;color:var(--ink);font:500 17px/1.55 "Noto Sans TC",sans-serif;padding:8px 10px}
+.sc input,.sc textarea,.sc select{width:100%;background:var(--card-2);border:1px solid var(--line-2);border-radius:10px;color:var(--ink);font:500 17px/1.55 "Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",sans-serif;padding:8px 10px}
 .sc textarea{min-height:74px;resize:vertical}
 .sc input:focus,.sc textarea:focus,.sc select:focus{outline:2px solid rgba(var(--accent-rgb),.55);border-color:transparent}
 .sc-checks{display:flex;flex-wrap:wrap;gap:6px}
@@ -147,7 +147,7 @@
 .nb-tabs{display:flex;gap:6px;margin-bottom:8px}
 .nb-tabs .btn.on{background:var(--accent);border-color:var(--accent);color:#1d0510;font-weight:700}
 .nb-add{display:flex;gap:8px}
-.nb-add input{flex:1;background:var(--card-2);border:1px solid var(--line-2);border-radius:10px;color:var(--ink);font:500 18px "Noto Sans TC",sans-serif;padding:8px 12px}
+.nb-add input{flex:1;background:var(--card-2);border:1px solid var(--line-2);border-radius:10px;color:var(--ink);font:500 18px "Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",sans-serif;padding:8px 12px}
 .nb-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;min-height:44px;align-content:flex-start}
 .nb-list span{background:var(--card);border:1px solid var(--line-2);border-radius:999px;padding:4px 12px;font-size:16px;cursor:pointer}
 .nb-list span:hover{border-color:#e8412b;text-decoration:line-through}
@@ -164,7 +164,7 @@
 
 /* ---------- 作詞家／作曲家卡 ---------- */
 .people{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
-.people button{border:1px solid var(--line-2);background:var(--card);color:var(--ink);border-radius:var(--r-sm);padding:10px 6px;font:700 17px "Noto Sans TC",sans-serif;cursor:pointer;text-align:center}
+.people button{border:1px solid var(--line-2);background:var(--card);color:var(--ink);border-radius:var(--r-sm);padding:10px 6px;font:700 17px "Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",sans-serif;cursor:pointer;text-align:center}
 .people button small{display:block;font:500 12px var(--display);color:var(--muted);margin-top:2px}
 .people button.on{background:var(--accent);border-color:var(--accent);color:#1d0510}
 .people button.on small{color:#1d0510}

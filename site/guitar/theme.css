@@ -14,7 +14,7 @@
 .gfig .acc{fill:var(--accent)}.gfig .acc-s{fill:none;stroke:var(--accent);stroke-width:2}
 .gfig .lead{stroke:var(--accent);stroke-width:1.4;fill:none}
 .gfig .dot{fill:var(--accent)}
-.gfig text{fill:var(--ink,#f1f0e8);font-family:"Noto Sans TC",sans-serif;font-size:15px}
+.gfig text{fill:var(--ink,#f1f0e8);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",sans-serif;font-size:15px}
 .gfig text.en{font-family:"Space Grotesk",Arial,sans-serif;fill:var(--muted,#aaafa2);font-size:12.5px}
 .gfig text.big{font-size:19px;font-weight:700}
 .gfig text.n{font-family:"Space Grotesk",Arial,sans-serif;font-weight:700;fill:#0b130a;font-size:13px;text-anchor:middle}
@@ -253,7 +253,7 @@
 .chart{display:grid;grid-template-columns:repeat(4,1fr);border-left:2px solid var(--line-2)}
 .chart>div{border-right:2px solid var(--line-2);border-bottom:1px solid var(--line);padding:14px 16px;font:700 30px var(--display);min-height:74px;display:flex;align-items:center;gap:12px}
 .chart>div small{font:500 14px var(--display);color:var(--muted)}
-.chart .sec{grid-column:1/-1;border-right:0;font:500 15px var(--sans,"Noto Sans TC");color:var(--accent);min-height:0;padding:10px 0 4px 12px}
+.chart .sec{grid-column:1/-1;border-right:0;font:500 15px var(--sans,"Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans CJK TC");color:var(--accent);min-height:0;padding:10px 0 4px 12px}
 @media (max-width:900px){
   .meters{grid-template-columns:1fr 1fr}
   .chart>div{font-size:22px;padding:10px;min-height:56px}

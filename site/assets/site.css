@@ -1,6 +1,8 @@
 /* Space Grotesk（SIL OFL 1.1，授權見 fonts/OFL-SpaceGrotesk.txt）自架，免去跨網域連線 */
 @font-face{font-family:"Space Grotesk";font-style:normal;font-weight:500 700;font-display:swap;src:url(fonts/space-grotesk-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:"Space Grotesk";font-style:normal;font-weight:500 700;font-display:swap;src:url(fonts/space-grotesk-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+/* 按鈕與表單元件預設不繼承字型（Windows 會落回 Arial）：統一繼承頁面字型 */
+:where(button,input,select,textarea){font-family:inherit}
 /* ===== Pixel Studio 課程網站：設計系統 v3（首頁、講義） ===== */
 :root{
   color-scheme:dark;
@@ -10,12 +12,12 @@
   --blue:#45b3e6; --yellow:#e3d83a; --red:#ec4a36; --green:#6cbb4b; --accent:#f4a62a; --amber:var(--accent);
   --rainbow:linear-gradient(90deg,#e8412b,#e2407f,#8a4fc0,#2f5fc4,#45b3e6,#6cbb4b,#d6e03a,#f4a62a,#e8412b);
   --r-lg:22px; --r:16px; --r-sm:12px;
-  --display:"Space Grotesk","Noto Sans TC",system-ui,sans-serif;
+  --display:"Space Grotesk","Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",system-ui,sans-serif;
   --tabbar:0px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{background:var(--bg);color:var(--ink);font-family:"Noto Sans TC",system-ui,sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;padding-bottom:var(--tabbar)}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",system-ui,sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;padding-bottom:var(--tabbar)}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
   background:radial-gradient(60% 45% at 85% 0%,rgba(var(--accent-rgb,244,166,42),.09),transparent 70%),radial-gradient(50% 40% at 0% 30%,rgba(69,179,230,.06),transparent 70%)}
 a{color:var(--amber)}
@@ -43,7 +45,7 @@ img.pixel-word{display:block;width:auto}
 .topbar .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--muted);font-size:13px;letter-spacing:.08em}
 .topbar .pixel-word{height:15px}
 .brand-en{font-family:"Allura",cursive;font-size:28px;font-weight:400;letter-spacing:.01em;line-height:1;color:#f3f0e9;white-space:nowrap}
-.hero-cn{font-family:"Noto Sans TC",system-ui,sans-serif;font-weight:500;font-size:20px;letter-spacing:.28em;color:#f3f0e9;margin:-14px 0 26px;padding-left:.22em}
+.hero-cn{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",system-ui,sans-serif;font-weight:500;font-size:20px;letter-spacing:.28em;color:#f3f0e9;margin:-14px 0 26px;padding-left:.22em}
 .br-m{display:none}
 .topbar nav{display:flex;gap:4px}
 .topbar nav a{color:var(--ink);text-decoration:none;font-size:15px;padding:8px 14px;border-radius:999px;opacity:.85}
