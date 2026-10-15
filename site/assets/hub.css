@@ -122,3 +122,6 @@
 /* 方框上下各留 10%：圖名與特效開關在方框上方同一列，圖說在方框下方，左右皆對齊方框邊線 */
 .hub .voice-art .art-label{left:0;top:10px}
 .hub .voice-art .art-caption{right:0;top:calc(90% + 10px);bottom:auto}
+/* 主標「每個」：無彩色流動光澤（與彩色「畫素」同速），漸層以半個圖塊為週期，動畫無縫循環 */
+.hub .hero-copy h1 .mono-flow{font-weight:700;background:linear-gradient(90deg,#f3f0e9 0%,#9a9e98 12.5%,#ffffff 25%,#b9bdb6 37.5%,#f3f0e9 50%,#9a9e98 62.5%,#ffffff 75%,#b9bdb6 87.5%,#f3f0e9 100%) 0 0/300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:hub-spectrum 10s linear infinite}
+@media(prefers-reduced-motion:reduce){.hub .hero-copy h1 .mono-flow{animation:none}}
