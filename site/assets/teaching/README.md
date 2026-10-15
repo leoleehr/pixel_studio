@@ -33,6 +33,6 @@ All corner logos must be transparent: no background plates, borders, shadows, or
 
 ## Figure-specific revisions
 
-`tools/artwork_branding_overrides.json` keeps approved logo positions and the left-panel vertical flip for `fretting-technique`. The flip is an SVG transform of the source photo; the right panel and upright logo remain independent. `tools/build_line_chords.py` and `tools/build_line_motion.py` rebuild the ten guitar fingerboard diagrams as editable lines and numbered circles. Run them before `tools/brand_artwork.py`.
+`tools/artwork_branding_overrides.json` keeps approved logo positions. `fretting-technique` is a three-view reference-based redraw (front, oblique and rear thumb support), with no panel flip. `tools/build_line_chords.py` and `tools/build_line_motion.py` rebuild the ten guitar fingerboard diagrams as editable lines and numbered circles. Run them before `tools/brand_artwork.py`.
 
 `teacher-student-artwork.jpg` is the original student gift artwork photograph supplied for the homepage. Preserve its drawing and lettering when updating publication assets.
