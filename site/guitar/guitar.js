@@ -189,7 +189,7 @@
         var px = o.x(pv.t), yy = Math.max(sg.lo, pv.lo) + 10;
         s += '<path d="M' + (px + 2) + ' ' + yy + 'Q' + ((px + x) / 2) + ' ' + (yy + 12) + ' ' + (x - 2) + ' ' + yy + '" class="ntie"/>'; ext(yy + 12);
       } else if (tech === 's' && pv) s += '<line x1="' + (o.x(pv.t) + 9) + '" y1="' + pv.lo + '" x2="' + (x - 9) + '" y2="' + sg.lo + '" class="nstem"/>';
-      else if (tech === 'b' || tech === 'v') { var ty = Math.min(sg.hi - 14, -10); s += '<text x="' + x + '" y="' + ty + '" class="ntext">' + (tech === 'b' ? 'full ↗' : '∿∿∿') + '</text>'; ext(ty - 12); }
+      else if (tech === 'b' || tech === 'v') { var ty = Math.min(sg.hi - 14, -10); s += '<text x="' + x + '" y="' + ty + '" class="ntext">' + (tech === 'b' ? 'full ↗︎' : '∿∿∿') + '</text>'; ext(ty - 12); }
     }
     groups.forEach(function (g) {
       if (!g.list[0].group) return;
@@ -539,7 +539,7 @@
     root.classList.add('chord-row');
     root.innerHTML = keys.map(function (k) {
       var c = CHORDS[k], label = k in labels ? labels[k] : plain ? '' : (c.degree ? 'C 調 ' + c.degree + ' 級' : '');
-      return '<div class="card chord-card"><div class="ch-head"><b>' + c.name + '</b><span>' + label + '</span></div><div class="fig">' + diagram(k, { strings: true }) + '</div><p>' + (plain ? '' : c.tip) + '</p><button type="button" class="btn" data-hear="' + k + '">▶ 試聽</button></div>';
+      return '<div class="card chord-card"><div class="ch-head"><b>' + c.name + '</b><span>' + label + '</span></div><div class="fig">' + diagram(k, { strings: true }) + '</div><p>' + (plain ? '' : c.tip) + '</p><button type="button" class="btn" data-hear="' + k + '">▶︎ 試聽</button></div>';
     }).join('');
     root.addEventListener('click', function (e) {
       var b = e.target.closest('[data-hear]'), a = b && PS.audio.ctx(); if (!a) return;
@@ -711,7 +711,7 @@
     root.classList.add('tuner');
     root.innerHTML = '<div class="strings">' + OPEN.map(function (o, i) { return '<button type="button" data-s="' + i + '"><b>' + o.n + '</b><small>' + (6 - i) + ' 弦・' + o.n + o.o + '</small></button>'; }).join('') + '</div>' +
       '<div class="dial"><span class="read">‧‧</span><span class="cents"></span><i class="zone"></i><i class="scale"></i><i class="needle"></i><span class="lbl l">偏低 ♭</span><span class="lbl r">偏高 ♯</span></div>' +
-      '<div class="row" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button type="button" class="btn primary mic">🎙 開始調音</button><button type="button" class="btn ref">▶ 播放參考音</button><span class="msg">選擇一條琴弦，先聆聽參考音，再按下「開始調音」，撥奏那條空弦。</span></div>';
+      '<div class="row" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button type="button" class="btn primary mic">🎙 開始調音</button><button type="button" class="btn ref">▶︎ 播放參考音</button><span class="msg">選擇一條琴弦，先聆聽參考音，再按下「開始調音」，撥奏那條空弦。</span></div>';
     var cur = 0, stream = null, raf = 0, an = null, buf = null, okSince = 0, done = {};
     var needle = $('.needle', root), read = $('.read', root), cents = $('.cents', root), msg = $('.msg', root), micBtn = $('.mic', root);
     function pick(i) { cur = i; $$('.strings button', root).forEach(function (b, k) { b.classList.toggle('on', k === i); }); }
@@ -870,7 +870,7 @@
           if (e.rest) { body += '<g data-ev="' + e.i + '"><text x="' + x + '" y="' + (y0 + 2.5 * TS + 5) + '" class="tnum">–</text></g>'; return; }
           body += '<g data-ev="' + e.i + '">';
           e.notes.forEach(function (nt) {
-            var y = y0 + (nt.s - 1) * TS, label = nt.tech === 'n' ? '<' + nt.f + '>' : nt.f + (nt.tech === 'b' ? '↗' : nt.tech === 'v' ? '~' : '');
+            var y = y0 + (nt.s - 1) * TS, label = nt.tech === 'n' ? '<' + nt.f + '>' : nt.f + (nt.tech === 'b' ? '↗︎' : nt.tech === 'v' ? '~' : '');
             body += '<rect x="' + (x - 12) + '" y="' + (y - 7.5) + '" width="24" height="15" rx="4" class="tbg"/><text x="' + x + '" y="' + (y + 5.5) + '" class="tnum">' + label + '</text>';
             if ('hps'.indexOf(nt.tech) > -1 && nt.tech) body += '<text x="' + (x - 22) + '" y="' + (y0 - 4) + '" class="ttech">' + nt.tech.toUpperCase() + '</text>';
           });
@@ -964,7 +964,7 @@
   function earQuiz(root, opts) {
     var pool = opts.pool, cur = null, n = 0, ok = 0, answered = true;
     root.classList.add('ear');
-    root.innerHTML = '<div class="ear-top"><button type="button" class="btn primary play">▶ 出題</button><button type="button" class="btn again" disabled>↻ 再聽一次</button><span class="ear-score">0 / 0</span></div>' +
+    root.innerHTML = '<div class="ear-top"><button type="button" class="btn primary play">▶︎ 出題</button><button type="button" class="btn again" disabled>↻ 再聽一次</button><span class="ear-score">0 / 0</span></div>' +
       '<div class="ear-opts">' + pool.map(function (k) { return '<button type="button" class="btn" data-k="' + k + '" disabled>' + opts.label(k) + '</button>'; }).join('') + '</div><p class="ear-msg" aria-live="polite">' + opts.hint + '</p>';
     var msg = $('.ear-msg', root), score = $('.ear-score', root), again = $('.again', root);
     function enable(on) { $$('[data-k]', root).forEach(function (b) { b.disabled = !on; b.classList.remove('right', 'wrong'); }); }
@@ -1034,7 +1034,7 @@
     root.classList.add('capo');
     root.innerHTML = '<div class="capo-a card"><div class="capo-row"><span class="field">我使用的指型</span><span class="seg-slot"></span></div>' +
       '<div class="capo-row"><label class="field">Capo 夾在第 <input type="range" min="0" max="9" value="2" aria-label="Capo 格數"><output>2</output> 格</label></div>' +
-      '<div class="capo-out"><span>實際聽到的調性</span><b class="capo-key"></b><button type="button" class="btn small hear">▶ 試聽</button></div></div>' +
+      '<div class="capo-out"><span>實際聽到的調性</span><b class="capo-key"></b><button type="button" class="btn small hear">▶︎ 試聽</button></div></div>' +
       '<div class="capo-b card"><div class="capo-row"><span class="field">歌手想唱的調性</span><span class="seg-slot2"></span></div><ul class="capo-list"></ul></div>';
     $('.seg-slot', root).appendChild(seg('指型', shapes.map(function (k) { return [k, k]; }), shape, function (v) { shape = v; upd(); }));
     $('.seg-slot2', root).appendChild(seg('目標調', ['C', 'D', 'E', 'F', 'G', 'A', 'Bb', 'B'].map(function (k) { return [k, k]; }), target, function (v) { target = v; upd(); }));

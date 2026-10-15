@@ -18,6 +18,17 @@
 @media(max-width:599px){body{overflow:hidden}.entry{padding:23px 22px 20px}.entry:after{background-size:40px 40px}.masthead{align-items:flex-start}.eyebrow{font-size:9px;letter-spacing:.12em}.coordinates{display:none}.identity{width:min(86vw,440px);min-width:0;transform:translateY(-8vh)}.copy{bottom:10%;width:calc(100% - 12px)}.copy h1{font-size:15px;letter-spacing:.18em}.copy p{max-width:290px;margin:auto;font-size:10px;line-height:1.8;letter-spacing:.12em}.copy .index{margin-top:13px}.foot{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;align-items:center;row-gap:18px;font-size:9px;letter-spacing:.1em}.foot>span:first-child{grid-column:1;grid-row:2}.enter{grid-column:1/3;grid-row:1;justify-self:center;min-height:48px}.slogan{grid-column:2;grid-row:2;max-width:unset;text-align:right;font-size:8px;line-height:1.6;letter-spacing:.07em}.progress{bottom:-20px}}
 @media(max-height:620px) and (min-width:600px){.entry{padding-top:20px;padding-bottom:18px}.identity{width:clamp(170px,44vh,420px);min-width:0;transform:translateY(-9vh)}.copy{bottom:2%}.eyebrow,.coordinates,.foot{font-size:9px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.beam{display:none}}
+/* 進入工作室：CI 色譜細框按鈕（深色底），箭頭用 SVG，iOS 不會換成 emoji */
+.enter{--spec:linear-gradient(90deg,var(--red),var(--pink),var(--purple),var(--blue),var(--cyan),var(--green),var(--lime),var(--amber),var(--red));gap:14px;min-height:50px;padding:0 20px 0 24px;border:1px solid transparent;border-radius:2px;background:linear-gradient(#0b0c0d,#0b0c0d) padding-box,var(--spec) border-box;background-size:100% 100%,200% 100%;color:var(--paper);font-size:12px;letter-spacing:.28em;box-shadow:0 0 0 rgba(108,187,75,0);transition:color .25s,box-shadow .35s,transform .25s;animation:enter-flow 9s linear infinite}
+.enter-label{padding-left:.28em}
+.enter .arrow{display:block;flex:none;transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+.enter:hover,.enter:focus-visible{color:#fff;box-shadow:0 0 24px rgba(69,179,230,.18),0 0 48px rgba(226,64,127,.12);animation-duration:3s}
+.enter:hover .arrow,.enter:focus-visible .arrow{transform:translate(2px,-2px)}
+.enter:active{transform:translateY(1px)}
+.enter:focus-visible{outline:2px solid var(--lime);outline-offset:6px}
+@keyframes enter-flow{to{background-position:0 0,200% 0}}
+@media(max-width:599px){.enter{min-height:48px;padding:0 18px 0 20px;font-size:12px;letter-spacing:.24em}}
+@media(prefers-reduced-motion:reduce){.enter{animation:none}}
 </style>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pixel Studio 畫素音樂工作坊">
@@ -55,7 +66,7 @@
   </section>
   <footer class="foot">
     <span>© Pixel Studio</span>
-    <button class="enter" id="enter" type="button"><span>進入工作室</span><span class="arrow" aria-hidden="true">↗</span><span class="sr-only">；或等待動畫結束自動進入</span></button>
+    <button class="enter" id="enter" type="button"><span class="enter-label">進入工作室</span><svg class="arrow" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></svg><span class="sr-only">；或等待動畫結束自動進入</span></button>
     <span class="slogan">Music · Studio</span>
   </footer>
   <div class="progress" aria-hidden="true"></div>

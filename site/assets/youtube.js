@@ -127,7 +127,7 @@
   function chip(name) {
     var s = SONGS[name], el = document.createElement('button');
     el.type = 'button'; el.className = 'yt-chip';
-    el.innerHTML = '<i aria-hidden="true">▶</i>' + esc(name);
+    el.innerHTML = '<i aria-hidden="true">▶︎</i>' + esc(name);
     el.setAttribute('aria-label', '播放 ' + (s ? s.artist : '') + '《' + name + '》');
     el.onclick = function (e) { e.stopPropagation(); if (s) openDock(name); };
     return el;

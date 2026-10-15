@@ -210,7 +210,7 @@
     var pick = el('div', 'st-pick'), box = el('div', 'kb-box'), ctl = el('div', 'st-ctl'), note = el('p', 'st-note');
     list.forEach(function (k) { var b = btn(SCALES[k].name); b.setAttribute('data-k', k); b.onclick = function () { cur = k; stop(); draw(); }; pick.appendChild(b); });
     var hands = el('div', 'st-hands'); [['R', '右手'], ['L', '左手']].forEach(function (h) { var b = btn(h[1]); b.setAttribute('data-h', h[0]); b.onclick = function () { hand = h[0]; stop(); draw(); }; hands.appendChild(b); });
-    var bP = btn('▶ 播放', 'primary'); bP.onclick = function () { clock.tid ? stop() : play(); };
+    var bP = btn('▶︎ 播放', 'primary'); bP.onclick = function () { clock.tid ? stop() : play(); };
     var rng = el('input'); rng.type = 'range'; rng.min = 40; rng.max = 132; rng.value = bpm; rng.setAttribute('aria-label', '速度');
     var bl = el('b', '', bpm + ' BPM'); rng.oninput = function () { bpm = +rng.value; bl.textContent = bpm + ' BPM'; };
     var lab = el('label'); lab.appendChild(document.createTextNode('速度 ')); lab.appendChild(rng);
@@ -232,7 +232,7 @@
     clock.onVisual = function (s) { K.clear('now'); if (q[s]) K.mark([q[s][0]], 'now'); };
     clock.onEnd = function () { stop(); };
     function play() { stop(); q = seq(); if (clock.start()) bP.textContent = '■ 停止'; }
-    function stop() { clock.stop(); bP.textContent = '▶ 播放'; K.clear('now'); }
+    function stop() { clock.stop(); bP.textContent = '▶︎ 播放'; K.clear('now'); }
     stoppers.push(stop);
     draw();
   });
@@ -259,7 +259,7 @@
     quals.forEach(function (k) { var b = btn(QUAL[k].zh + (k ? '（' + k + '）' : '')); b.setAttribute('data-q', k); b.onclick = function () { q = k; inv = Math.min(inv, QUAL[q].iv.length - 1); draw(true); }; qRow.appendChild(b); });
     var invNames = ['原位', '第一轉位', '第二轉位', '第三轉位'];
     if (!cl.hasAttribute('data-noinv')) invNames.forEach(function (n, i) { var b = btn(n); b.setAttribute('data-i', i); b.onclick = function () { if (i < QUAL[q].iv.length) { inv = i; draw(true); } }; invRow.appendChild(b); });
-    var bB = btn('▶ 柱式和弦', 'primary'), bA = btn('▶ 分散和弦');
+    var bB = btn('▶︎ 柱式和弦', 'primary'), bA = btn('▶︎ 分散和弦');
     bB.onclick = function () { notes().forEach(function (m) { piano(m, 0, 1.4, 0.2); }); };
     bA.onclick = function () { var c = ac(); if (!c) return; notes().forEach(function (m, i) { piano(m, c.currentTime + 0.05 + i * 0.22, 1.2, 0.22); }); };
     row.appendChild(bB); row.appendChild(bA);
@@ -331,7 +331,7 @@
     ap.innerHTML = '';
     var pick = el('div', 'ap-pick'), grid = el('div', 'ap-grid'), box = el('div', 'kb-box'), ctl = el('div', 'ap-ctl'), desc = el('p', 'ap-desc'), bars = el('div', 'ap-bars');
     plist.forEach(function (k) { var b = btn(PAT[k].name); b.setAttribute('data-k', k); b.onclick = function () { cur = k; restart(); }; pick.appendChild(b); });
-    var bP = btn('▶ 播放', 'primary'); bP.onclick = function () { clock.tid ? stop() : play(); };
+    var bP = btn('▶︎ 播放', 'primary'); bP.onclick = function () { clock.tid ? stop() : play(); };
     var sel = el('select'); sel.setAttribute('aria-label', '和弦進行'); progs.forEach(function (p, i) { sel.appendChild(new Option(p.join(' → '), i)); }); sel.onchange = function () { pi = +sel.value; restart(); };
     var rng = el('input'); rng.type = 'range'; rng.min = 40; rng.max = 140; rng.value = bpm; rng.setAttribute('aria-label', '速度');
     var bl = el('b', '', bpm + ' BPM'); rng.oninput = function () { bpm = +rng.value; bl.textContent = bpm + ' BPM'; };
@@ -370,7 +370,7 @@
       K.clear('now'); if (tok && tok !== '-') K.mark(tok.split('+').filter(function (x) { return TOK[x] != null; }).map(function (x) { return v[TOK[x]]; }), 'now');
     };
     function play() { if (clock.start()) bP.textContent = '■ 停止'; }
-    function stop() { clock.stop(); bP.textContent = '▶ 播放'; K.clear('now'); $$('.ap-cell', grid).forEach(function (c) { c.classList.remove('now'); }); $$('span', bars).forEach(function (b) { b.classList.remove('now'); }); }
+    function stop() { clock.stop(); bP.textContent = '▶︎ 播放'; K.clear('now'); $$('.ap-cell', grid).forEach(function (c) { c.classList.remove('now'); }); $$('span', bars).forEach(function (b) { b.classList.remove('now'); }); }
     function restart() { var was = !!clock.tid; stop(); draw(); if (was) play(); }
     stoppers.push(stop);
     draw();
@@ -425,7 +425,7 @@
     var useM = true, useA = true;
     sp.innerHTML = '';
     var sheet = el('div', 'sp-sheet'), box = el('div', 'kb-box'), ctl = el('div', 'ap-ctl');
-    var bP = btn('▶ 播放', 'primary'); bP.onclick = function () { clock.tid ? stop() : play(); };
+    var bP = btn('▶︎ 播放', 'primary'); bP.onclick = function () { clock.tid ? stop() : play(); };
     var tM = btn('右手旋律：開'), tA = btn('左手伴奏：開');
     tM.onclick = function () { useM = !useM; tM.textContent = '右手旋律：' + (useM ? '開' : '關'); };
     tA.onclick = function () { useA = !useA; tA.textContent = '左手伴奏：' + (useA ? '開' : '關'); };
@@ -479,7 +479,7 @@
     };
     clock.onEnd = function () { stop(); };
     function play() { if (clock.start()) bP.textContent = '■ 停止'; }
-    function stop() { clock.stop(); bP.textContent = '▶ 播放'; K.clear('now'); $$('.sp-mel i', sheet).forEach(function (i) { i.classList.remove('now'); }); }
+    function stop() { clock.stop(); bP.textContent = '▶︎ 播放'; K.clear('now'); $$('.sp-mel i', sheet).forEach(function (i) { i.classList.remove('now'); }); }
     stoppers.push(stop);
   });
 
