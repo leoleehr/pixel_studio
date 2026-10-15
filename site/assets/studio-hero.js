@@ -22,5 +22,7 @@
     try { localStorage.setItem(KEY, on ? 'on' : 'off'); } catch (e) {}
     sync();
   });
-  sync();
+  /* 先畫出靜態標誌，載入完成後的下一格畫面才啟動流光特效，讓首屏更快出現 */
+  function start() { requestAnimationFrame(function () { requestAnimationFrame(sync); }); }
+  if (document.readyState === 'complete') start(); else addEventListener('load', start);
 })();
