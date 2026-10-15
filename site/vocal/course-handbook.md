@@ -202,7 +202,7 @@ Oct 5, 2026 · @Leo Lee
 | 00:00–00:20 | 起 | 兩位學員分享曲式作業。全班以 /s/ 吐氣，老師計時，並將每人的秒數寫在白板，引導學員思考：同樣的肺，為何有人 10 秒、有人 30 秒。 | 節拍器、碼表 |
 | 00:20–00:55 | 承 | 講解發聲原理與聆聽的重要性；對照正確與錯誤的姿勢，包含自彈自唱的坐姿；說明聲帶保養八項。老師帶領暖身五步驟與四種基本呼吸，學員雙手叉腰，感受腹部與側腰的擴張 | 投影、鏡子 |
 | 00:55–01:05 | 休息 | 喝溫水 |  |
-| 01:05–01:40 | 轉 | 「呼吸運動會」分組競賽：吐氣彈壁、紙張乒乓球、面牆吹衛生紙、吹動衛生紙。接著以節拍器 80 Bpm 進行 /s/、/hei/、/hu/ 三組肌肉訓練，各四小節 | 衛生紙、A4 紙、節拍器 |
+| 01:05–01:40 | 轉 | 「呼吸運動會」分組競賽：吐氣彈壁、紙張乒乓球、面牆吹衛生紙、吹動紙張。接著以節拍器 80 Bpm 進行 /s/、/hei/、/hu/ 三組肌肉訓練，各四小節 | 衛生紙、A4 紙、節拍器 |
 | 01:40–02:00 | 合 | 《刻在我心底的名字》副歌：全班先在歌詞上標出換氣點 ∨，再齊唱、分組演唱。最後重新測量 /s/ 秒數，與開場比較 | 吉他、歌譜 |
 
 ### 講義擴充：發聲的路徑
@@ -275,9 +275,9 @@ Oct 5, 2026 · @Leo Lee
 **五、呼吸小遊戲**
 
 1. **吐氣彈壁**：面向牆壁，腹部輕抵牆面，觀察吸吐氣時腹部的起伏。
-2. **紙張乒乓球**（兩人）：一人拿住紙張上緣，讓紙張自然下垂；兩人從兩側輪流吹動紙張，觀察擺動。
+2. **紙張乒乓球**（兩人）：一人捏住紙張上緣中央，讓紙張自然下垂；兩人從兩側輪流吹動紙張下半部，觀察擺動。
 3. **面牆吹衛生紙**：將單張薄衛生紙貼在牆面，放開手後以持續氣流讓衛生紙保持不落下。
-4. **吹動衛生紙**：原講義以燭火練習，教室內改用一張懸垂的衛生紙；以 /s/ 吹氣，讓紙張穩定飄動，角度維持不變。
+4. **吹動紙張**：捏住紙張上緣中央，讓紙張自然下垂；以穩定氣息吹動紙張下半部，觀察擺動是否平穩。
 
 ### 講義擴充：歌曲應用與換氣點
 
@@ -369,10 +369,10 @@ Oct 5, 2026 · @Leo Lee
 </div>
 
 <div class="teaching-book" data-demo-group="v05"><h3>呼吸活動操作｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/breath-wall-white.webp?v=20261015contour4" alt="男主角面向牆壁，腹部輕抵牆面，觀察吸吐氣時的起伏。" loading="eager"><figcaption>男主角面向牆壁，腹部輕抵牆面，觀察吸吐氣時的起伏。</figcaption></figure>
-<figure><img src="../assets/teaching/breath-pair-paper-white.webp?v=20261015contour4" alt="一人捏住紙張上緣，讓紙張下垂；兩人從兩側輪流吹動紙張。" loading="eager"><figcaption>一人捏住紙張上緣，讓紙張下垂；兩人從兩側輪流吹動紙張。</figcaption></figure>
-<figure><img src="../assets/teaching/breath-wall-tissue-white.webp?v=20261015contour4" alt="以持續氣流托住牆面上的單張薄衛生紙。" loading="eager"><figcaption>以持續氣流托住牆面上的單張薄衛生紙。</figcaption></figure>
-<figure><img src="../assets/teaching/breath-tissue-white.webp?v=20261015tongue3" alt="拿住衛生紙上緣，以穩定氣流吹動下垂的衛生紙。" loading="eager"><figcaption>拿住衛生紙上緣，以穩定氣流吹動下垂的衛生紙。</figcaption></figure>
+<figure><img src="../assets/teaching/breath-wall-white.webp?v=20261015breath5" alt="面向牆壁，腹部輕抵牆面，觀察吸吐氣時的起伏。" loading="eager"><figcaption>面向牆壁，腹部輕抵牆面，觀察吸吐氣時的起伏。</figcaption></figure>
+<figure><img src="../assets/teaching/breath-pair-paper-white.webp?v=20261015breath5" alt="一人捏住紙張上緣中央，讓紙張下垂；兩人從兩側輪流吹動紙張下半部。" loading="eager"><figcaption>一人捏住紙張上緣中央，讓紙張下垂；兩人從兩側輪流吹動紙張下半部。</figcaption></figure>
+<figure><img src="../assets/teaching/breath-wall-tissue-white.webp?v=20261015breath5" alt="以持續氣流托住牆面上的單張薄衛生紙。" loading="eager"><figcaption>以持續氣流托住牆面上的單張薄衛生紙。</figcaption></figure>
+<figure><img src="../assets/teaching/breath-tissue-white.webp?v=20261015breath5" alt="捏住紙張上緣中央，以穩定氣息吹動紙張下半部。" loading="eager"><figcaption>捏住紙張上緣中央，以穩定氣息吹動紙張下半部。</figcaption></figure>
 </div>
 </div>
 

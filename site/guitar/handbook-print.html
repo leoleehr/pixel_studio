@@ -179,7 +179,7 @@ a{color:inherit;text-decoration:none}
 
 <script src="songs.js?v=20261014h"></script>
 <script src="../assets/ps-audio.js?v=20261014s"></script>
-<script src="guitar.js?v=20261015contour4"></script>
+<script src="guitar.js?v=20261015breath5"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
@@ -188,7 +188,7 @@ a{color:inherit;text-decoration:none}
   var COLOR = ['', '#e8412b', '#e2407f', '#8a4fc0', '#2f5fc4', '#2f8fc4', '#4f9e3a', '#b5a400', '#e08a12', '#e8412b', '#e2407f', '#8a4fc0', '#2f8fc4'];
   var DESC = ['', '認識吉他的起源與各部位名稱，將六條琴弦調準', '閱讀六線譜，讓左右手協調合作', '四個和弦，就能彈奏大量的流行歌曲', '學會右手刷法，讓歌曲產生律動', '為華爾滋與慢歌設計伴奏', '分析歌曲段落，學會使用 Capo', '理解和弦的組成，學會基本指法', '掌握封閉和弦的按壓位置', '讓伴奏行進的低音線', '理解和弦總是結伴出現的原因', '搥弦、勾弦、滑弦、悶音、推弦，讓吉他開口說話', '找到自己的調，創作一首自己的歌'];
   var main = document.getElementById('content'), toc = document.getElementById('toc');
-  fetch('handbook.md?v=20261015contour4').then(function (r) { return r.text(); }).then(function (md) {
+  fetch('handbook.md?v=20261015breath5').then(function (r) { return r.text(); }).then(function (md) {
     var tmp = document.createElement('div'); tmp.innerHTML = marked.parse(md, { gfm: true });
     // 拿掉文件標題與署名行，改用封面
     var h1 = tmp.querySelector('h1'); if (h1) { var nx = h1.nextElementSibling; h1.remove(); if (nx && nx.tagName === 'P') nx.remove(); }

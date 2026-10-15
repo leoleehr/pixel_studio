@@ -258,7 +258,7 @@
 
 <div class="teaching-book" data-demo-group="g03"><h3>尺寸與持琴比例｜圖解示範</h3><div class="teaching-photo-grid">
 <figure><img src="../assets/teaching/sizes.svg?v=20261015faces2" alt="1/4、1/2、3/4 與全尺寸的相對比例" loading="eager"><figcaption>1/4、1/2、3/4 與全尺寸的相對比例</figcaption></figure>
-<figure><img src="../assets/teaching/guitar-posture-white.webp?v=20261015contour4" alt="試抱時確認手臂能自然落在琴身上" loading="eager"><figcaption>試抱時確認手臂能自然落在琴身上</figcaption></figure>
+<figure><img src="../assets/teaching/guitar-posture-white.webp?v=20261015breath5" alt="試抱時確認手臂能自然落在琴身上" loading="eager"><figcaption>試抱時確認手臂能自然落在琴身上</figcaption></figure>
 </div>
 <p class="teaching-note">尺寸圖為相對比例示意；選琴仍以實際試抱與手臂活動空間為準。</p>
 </div>

@@ -832,11 +832,11 @@
     "images": [
       {
         "src": "breath-wall-white.webp",
-        "caption": "男主角面向牆壁，腹部輕抵牆面，觀察吸吐氣時的起伏。"
+        "caption": "面向牆壁，腹部輕抵牆面，觀察吸吐氣時的起伏。"
       },
       {
         "src": "breath-pair-paper-white.webp",
-        "caption": "一人捏住紙張上緣，讓紙張下垂；兩人從兩側輪流吹動紙張。"
+        "caption": "一人捏住紙張上緣中央，讓紙張下垂；兩人從兩側輪流吹動紙張下半部。"
       },
       {
         "src": "breath-wall-tissue-white.webp",
@@ -844,7 +844,7 @@
       },
       {
         "src": "breath-tissue-white.webp",
-        "caption": "拿住衛生紙上緣，以穩定氣流吹動下垂的衛生紙。"
+        "caption": "捏住紙張上緣中央，以穩定氣息吹動紙張下半部。"
       }
     ],
     "note": ""
