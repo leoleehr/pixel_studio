@@ -170,3 +170,5 @@
 .hands.photo-hands .tip{fill:var(--accent);stroke:#101210;stroke-width:3}
 .hands.photo-hands .finger-num{font:700 28px "Space Grotesk",sans-serif;fill:#101210;text-anchor:middle}
 .hands.photo-hands .hand-label{font:700 22px "Noto Sans TC",sans-serif;fill:#f3f0e9;text-anchor:middle}
+/* 年代標籤提亮，深色卡片上維持 4.5:1 */
+.era .yr{color:color-mix(in srgb,var(--c,var(--accent)) 62%,#fff)}
