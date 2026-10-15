@@ -82,10 +82,10 @@
   {
     "source": "site/assets/guitar/fretting-technique.jpg",
     "output": "site/assets/guitar/fretting-technique.branded.svg",
-    "corner": "top-left",
-    "logo": "white",
-    "opacity": 0.55,
-    "width_fraction": 0.16,
+    "corner": "bottom-right",
+    "logo": "black",
+    "opacity": 0.5,
+    "width_fraction": 0.14,
     "transparent": true,
     "canvas_unchanged": true
   },

@@ -144,10 +144,10 @@
     "width_fraction": 0.2
   },
   "fretting-technique": {
-    "flip_left_vertical": true,
-    "corner": "top-left",
-    "width_fraction": 0.16,
-    "opacity": 0.55
+    "corner": "bottom-right",
+    "logo": "black",
+    "width_fraction": 0.14,
+    "opacity": 0.5
   },
   "teacher-student-artwork": {
     "corner": "top-left",
