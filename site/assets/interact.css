@@ -306,7 +306,7 @@
 .cavity-map .z-chest{fill:rgba(69,179,230,.18);stroke:var(--navy);stroke-width:1.5}
 .cavity-map .fold{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
 .cavity-map .lead-line{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 3}
-.cavity-map text{fill:var(--ink);font-size:20px;font-weight:700;text-anchor:middle;dominant-baseline:middle;font-family:"Noto Sans TC",sans-serif}
+.cavity-map text{fill:var(--ink);font-size:20px;font-weight:700;text-anchor:middle;dominant-baseline:middle;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",sans-serif}
 .cavity-map text.small{font-size:14px;font-weight:500;fill:var(--muted);text-anchor:start}
 @media (max-width:900px),(orientation:portrait) and (max-width:1100px){
   .cavity-map svg{max-width:220px}

@@ -934,7 +934,7 @@
     var keyPc = mode.indexOf('key:') === 0 ? NAMES.indexOf(mode.slice(4)) : 0;
     var inKey = function (pc) { return MAJOR.indexOf((pc - keyPc + 12) % 12) > -1; };
     var label = function (pc) { var n = NAMES[pc]; return keyPc && n.length > 1 ? n : n; };
-    var s = '<svg class="gfig fretboard" viewBox="0 0 ' + W + ' 172" role="img" aria-label="指板音名，點選音符可以聽聲音">';
+    var s = '<svg class="gfig fretboard" viewBox="0 0 ' + W + ' 172" role="group" aria-label="指板音名，點選音符可以聽聲音">';
     s += '<rect x="' + x0 + '" y="14" width="' + (fw * (maxF + 0.5)) + '" height="130" class="wood-b"/><rect x="' + (x0 - 4) + '" y="14" width="6" height="130" class="nut"/>';
     for (var f = 1; f <= maxF; f++) s += '<line x1="' + (x0 + fw * f) + '" x2="' + (x0 + fw * f) + '" y1="14" y2="144" class="fr"/><text x="' + (x0 + fw * (f - 0.5)) + '" y="166" class="sl" style="text-anchor:middle">' + f + '</text>';
     [3, 5, 7, 9].forEach(function (f) { if (f <= maxF) s += '<circle cx="' + (x0 + fw * (f - 0.5)) + '" cy="79" r="5" class="inl"/>'; });
