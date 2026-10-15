@@ -5,8 +5,8 @@
 - WebP 圖像為 AI 製作的寫實教學示意，並非實際課堂拍攝紀錄。
 - 指板、指法順序、鍵盤音位與動作箭頭使用可編輯 SVG。和弦位置以標示的弦序、格位與指號為準；照片輔助觀察手部姿態。
 - 木色、筒身、內部構造與零件外觀會因製造商而異。
-- `tongue-anatomy.branded.svg?v=20261015revision16` 為 AI 重繪的口腔剖面示意，呈現舌尖靠前與稍向後的構形；`tongue.branded.svg?v=20261015revision16` 保留可編輯的大字中文標示，並非個人的醫療影像。
-- `voice-anatomy.branded.svg?v=20261015revision16` 依美國 NIDCD 的 Taking Care of Your Voice 教育資料重繪，採繁體中文標示，呈現發聲構造及吞嚥、發聲、安靜呼吸三種聲帶狀態；屬 AI 教學示意。`resonance.branded.svg?v=20261015revision16` 使用該重繪圖加上中文教學說明。
+- `tongue-anatomy.branded.svg?v=20261015revision17` 為 AI 重繪的口腔剖面示意，呈現舌尖靠前與稍向後的構形；`tongue.branded.svg?v=20261015revision17` 保留可編輯的大字中文標示，並非個人的醫療影像。
+- `voice-anatomy.branded.svg?v=20261015revision17` 依美國 NIDCD 的 Taking Care of Your Voice 教育資料重繪，採繁體中文標示，呈現發聲構造及吞嚥、發聲、安靜呼吸三種聲帶狀態；屬 AI 教學示意。`resonance.branded.svg?v=20261015revision17` 使用該重繪圖加上中文教學說明。
 
 ## Vocal Lab 示範主角
 
@@ -30,3 +30,9 @@
 Website artwork uses `.branded.svg` derivatives, with the original image embedded unchanged and a small, translucent official monochrome horizontal logo. Run `python -X utf8 tools/brand_artwork.py` after rebuilding original artwork, then prerender handbooks and regenerate PDFs. Layout decisions are recorded in `tools/artwork_branding_manifest.json`; source artwork and the full-resolution official PNG logos are retained.
 
 All corner logos must be transparent: no background plates, borders, shadows, or added canvas. Keep the original dimensions and choose black/white for contrast and use any of the four corners to avoid the subject. This user requirement overrides the CI suggestion to add plates on busy photos.
+
+## Figure-specific revisions
+
+`tools/artwork_branding_overrides.json` keeps approved logo positions and the left-panel vertical flip for `fretting-technique`. The flip is an SVG transform of the source photo; the right panel and upright logo remain independent. `tools/build_line_chords.py` and `tools/build_line_motion.py` rebuild the ten guitar fingerboard diagrams as editable lines and numbered circles. Run them before `tools/brand_artwork.py`.
+
+`teacher-student-artwork.jpg` is the original student gift artwork photograph supplied for the homepage. Preserve its drawing and lettering when updating publication assets.
