@@ -69,6 +69,13 @@ def build():
                 y=h-lw*.3-w*.025 if not side.startswith('top-') else w*.025
                 if 'x_fraction' in override:x=w*override['x_fraction']
                 if 'y_fraction' in override:y=h*override['y_fraction']
+            if override and override.get('flip_left_vertical'):
+                data_uri=uri(original,'image/jpeg' if p.suffix=='.jpg' else 'image/webp')
+                content=(f'<g><defs><image id="original-photo" width="{w}" height="{h}" href="{data_uri}"/>'
+                         f'<clipPath id="left-half"><rect width="{w/2}" height="{h}"/></clipPath>'
+                         f'<clipPath id="right-half"><rect x="{w/2}" width="{w/2}" height="{h}"/></clipPath></defs>'
+                         f'<g clip-path="url(#left-half)"><use href="#original-photo" transform="translate(0 {h}) scale(1 -1)"/></g>'
+                         '<g clip-path="url(#right-half)"><use href="#original-photo"/></g></g>')
             logo=f'<image x="{x}" y="{y}" width="{lw}" height="{lw*.3}" opacity="{opacity}" href="{logos[color]}"/>'
             out=p.with_name(p.stem+'.branded.svg')
             out.write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{out_h}" viewBox="0 0 {w} {out_h}">{content}{logo}</svg>\n',encoding='utf-8',newline='\n')

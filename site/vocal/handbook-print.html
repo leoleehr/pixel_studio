@@ -121,7 +121,7 @@ a{color:inherit;text-decoration:none}
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="../assets/teaching-visuals.css?v=20261015revision16">
+<link rel="stylesheet" href="../assets/teaching-visuals.css?v=20261015revision17">
 </head>
 <body>
 <div class="toolbar"><button type="button" onclick="window.print()">列印／另存 PDF</button><a class="ghost" href="vocal-class-handbook.pdf" download="流行歌唱班_講義與教案.pdf">下載 PDF</a><a class="ghost" href="handbook.html">回網頁版</a></div>
@@ -160,7 +160,7 @@ a{color:inherit;text-decoration:none}
   var COLOR = ['', '#e8412b', '#e2407f', '#8a4fc0', '#2f8fc4', '#4f9e3a', '#b5a400'];
   var DESC = ['', '理解聲音的形成與擴大，認識好主唱的條件', '找到歌唱氣息的來源，讓氣息穩定又持久', '讓聲音更明亮、更厚實、傳得更遠', '讓每個字都清楚又圓潤', '將技巧轉化為歌曲的表情', '找到適合自己的歌曲與演唱的調'];
   var main = document.getElementById('content'), toc = document.getElementById('toc');
-  fetch('course-handbook.md?v=20261015revision16').then(function (r) { return r.text(); }).then(function (md) {
+  fetch('course-handbook.md?v=20261015revision17').then(function (r) { return r.text(); }).then(function (md) {
     var tmp = document.createElement('div'); tmp.innerHTML = marked.parse(md, { gfm: true });
     // 拿掉文件標題與署名行，改用封面
     var h1 = tmp.querySelector('h1'); if (h1) { var nx = h1.nextElementSibling; h1.remove(); if (nx && nx.tagName === 'P') nx.remove(); }

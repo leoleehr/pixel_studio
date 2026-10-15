@@ -82,10 +82,10 @@
   {
     "source": "site/assets/guitar/fretting-technique.jpg",
     "output": "site/assets/guitar/fretting-technique.branded.svg",
-    "corner": "left",
+    "corner": "top-left",
     "logo": "white",
-    "opacity": 0.65,
-    "width_fraction": 0.2,
+    "opacity": 0.55,
+    "width_fraction": 0.16,
     "transparent": true,
     "canvas_unchanged": true
   },
@@ -910,6 +910,16 @@
     "canvas_unchanged": true
   },
   {
+    "source": "site/assets/teaching/teacher-student-artwork.jpg",
+    "output": "site/assets/teaching/teacher-student-artwork.branded.svg",
+    "corner": "top-left",
+    "logo": "black",
+    "opacity": 0.5,
+    "width_fraction": 0.18,
+    "transparent": true,
+    "canvas_unchanged": true
+  },
+  {
     "source": "site/assets/teaching/tongue-anatomy.webp",
     "output": "site/assets/teaching/tongue-anatomy.branded.svg",
     "corner": "left",
@@ -1012,7 +1022,7 @@
   {
     "source": "site/assets/teaching/voice-chest-white.webp",
     "output": "site/assets/teaching/voice-chest-white.branded.svg",
-    "corner": "top-left",
+    "corner": "top-right",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
@@ -1022,7 +1032,7 @@
   {
     "source": "site/assets/teaching/voice-hum-white.webp",
     "output": "site/assets/teaching/voice-hum-white.branded.svg",
-    "corner": "top-left",
+    "corner": "top-right",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
@@ -1062,7 +1072,7 @@
   {
     "source": "site/assets/teaching/vowel-a-white.webp",
     "output": "site/assets/teaching/vowel-a-white.branded.svg",
-    "corner": "top-left",
+    "corner": "top-right",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
@@ -1072,7 +1082,7 @@
   {
     "source": "site/assets/teaching/vowel-e-white.webp",
     "output": "site/assets/teaching/vowel-e-white.branded.svg",
-    "corner": "top-left",
+    "corner": "top-right",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
@@ -1092,7 +1102,7 @@
   {
     "source": "site/assets/teaching/vowel-o-white.webp",
     "output": "site/assets/teaching/vowel-o-white.branded.svg",
-    "corner": "top-left",
+    "corner": "top-right",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
@@ -1102,7 +1112,7 @@
   {
     "source": "site/assets/teaching/vowel-u-white.webp",
     "output": "site/assets/teaching/vowel-u-white.branded.svg",
-    "corner": "top-left",
+    "corner": "top-right",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
@@ -1112,7 +1122,7 @@
   {
     "source": "site/assets/teaching/warmup-forward-white.webp",
     "output": "site/assets/teaching/warmup-forward-white.branded.svg",
-    "corner": "top-left",
+    "corner": "top-right",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
@@ -1132,7 +1142,7 @@
   {
     "source": "site/assets/teaching/warmup-shoulders-white.webp",
     "output": "site/assets/teaching/warmup-shoulders-white.branded.svg",
-    "corner": "left",
+    "corner": "top-right",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,
@@ -1142,7 +1152,7 @@
   {
     "source": "site/assets/teaching/warmup-wrists-white.webp",
     "output": "site/assets/teaching/warmup-wrists-white.branded.svg",
-    "corner": "left",
+    "corner": "top-right",
     "logo": "white",
     "opacity": 0.65,
     "width_fraction": 0.2,

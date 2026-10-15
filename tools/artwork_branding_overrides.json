@@ -77,5 +77,82 @@
     "corner": "right",
     "width_fraction": 0.13,
     "opacity": 0.55
+  },
+  "warmup-shoulders-white": {
+    "corner": "top-right",
+    "opacity": 0.65,
+    "width_fraction": 0.2
+  },
+  "warmup-forward-white": {
+    "corner": "top-right",
+    "opacity": 0.65,
+    "width_fraction": 0.2
+  },
+  "vocal-standing-white": {
+    "corner": "top-right",
+    "opacity": 0.65,
+    "width_fraction": 0.2
+  },
+  "warmup-neck-white": {
+    "corner": "top-right",
+    "opacity": 0.65,
+    "width_fraction": 0.2
+  },
+  "warmup-wrists-white": {
+    "corner": "top-right",
+    "opacity": 0.65,
+    "width_fraction": 0.2
+  },
+  "voice-yawn-white": {
+    "corner": "top-right",
+    "opacity": 0.65,
+    "width_fraction": 0.2
+  },
+  "voice-hum-white": {
+    "corner": "top-right",
+    "opacity": 0.65,
+    "width_fraction": 0.2
+  },
+  "voice-chest-white": {
+    "corner": "top-right",
+    "opacity": 0.65,
+    "width_fraction": 0.2
+  },
+  "vowel-a-white": {
+    "corner": "top-right",
+    "opacity": 0.65,
+    "width_fraction": 0.2
+  },
+  "vowel-i-white": {
+    "corner": "top-right",
+    "opacity": 0.65,
+    "width_fraction": 0.2
+  },
+  "vowel-u-white": {
+    "corner": "top-right",
+    "opacity": 0.65,
+    "width_fraction": 0.2
+  },
+  "vowel-e-white": {
+    "corner": "top-right",
+    "opacity": 0.65,
+    "width_fraction": 0.2
+  },
+  "vowel-o-white": {
+    "corner": "top-right",
+    "opacity": 0.65,
+    "width_fraction": 0.2
+  },
+  "fretting-technique": {
+    "flip_left_vertical": true,
+    "corner": "top-left",
+    "width_fraction": 0.16,
+    "opacity": 0.55
+  },
+  "teacher-student-artwork": {
+    "corner": "top-left",
+    "logo": "black",
+    "width_fraction": 0.18,
+    "opacity": 0.5
   }
 }
