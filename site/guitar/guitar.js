@@ -395,7 +395,7 @@
   var bodyOutlineCount = 0;
   function bodyOutline(b) {
     var names = {'Jumbo':'jumbo','Dreadnought':'dreadnought','Grand Auditorium':'ga','Auditorium':'om','Grand Concert':'gc','Concert':'concert'};
-    return '<img class="gfig body-photo" src="' + GUITAR_TEACHING + 'body-' + names[b.id] + '.branded.svg?v=20261015revision16" alt="' + b.zh + '筒身寫實外形" width="506" height="506">';
+    return '<img loading="lazy" decoding="async" class="gfig body-photo" src="' + GUITAR_TEACHING + 'body-' + names[b.id] + '.branded.svg?v=20261015revision16" alt="' + b.zh + '筒身寫實外形" width="506" height="506">';
   }
   function mountBodies(root) {
     root.innerHTML = '<div class="bodies">' + BODIES.map(function (b, i) {
@@ -409,7 +409,7 @@
   }
   function sizesHTML() {
     return '<div class="sizes">' + [['1/4', '2–5 歲', 0.55], ['1/2', '5–8 歲', 0.68], ['3/4', '8–12 歲', 0.82], ['Full', '12 歲以上', 1]].map(function (z) {
-      return '<div style="--h:' + Math.round(z[2] * 230) + 'px">' + '<img src="' + GUITAR_IMAGE + 'folk-photo.branded.svg?v=20261015revision16" alt="' + z[0] + '相對尺寸示意">' + '<b>' + z[0] + '</b><span>' + z[1] + '</span></div>';
+      return '<div style="--h:' + Math.round(z[2] * 230) + 'px">' + '<img loading="lazy" decoding="async" src="' + GUITAR_IMAGE + 'folk-photo.branded.svg?v=20261015revision16" alt="' + z[0] + '相對尺寸示意">' + '<b>' + z[0] + '</b><span>' + z[1] + '</span></div>';
     }).join('') + '</div>';
   }
   function laminateSVG() {
@@ -424,7 +424,7 @@
     return '<div class="demo-inline-duo"><figure><img src="' + GUITAR_TEACHING + 'bracing-x.branded.svg?v=20261015revision16" alt="面板內側 X 型力木"><figcaption>X 型力木｜鋼弦民謠吉他</figcaption></figure><figure><img src="' + GUITAR_TEACHING + 'bracing-fan.branded.svg?v=20261015revision16" alt="面板內側扇形力木"><figcaption>扇形力木｜古典吉他</figcaption></figure></div>';
   }
   function trussSVG() {
-    return '<figure class="demo-inline"><img src="' + GUITAR_TEACHING + 'truss-cutaway.branded.svg?v=20261015revision16" alt="琴頸剖面中的鋼筋與指板"><figcaption>琴頸剖面｜鋼筋位於木製琴頸內</figcaption></figure>';
+    return '<figure class="demo-inline"><img loading="lazy" decoding="async" src="' + GUITAR_TEACHING + 'truss-cutaway.branded.svg?v=20261015revision16" alt="琴頸剖面中的鋼筋與指板"><figcaption>琴頸剖面｜鋼筋位於木製琴頸內</figcaption></figure>';
   }
   /* 標準調音：六條空弦與音程 */
   function tuningSVG() {
@@ -485,12 +485,12 @@
   var PHOTO_FAMILY = {oud:'烏德琴', classical:'古典吉他', flamenco:'佛朗明哥吉他', folk:'民謠吉他', electric:'電吉他', steel:'夏威夷吉他', ukulele:'烏克麗麗、班鳩琴與曼陀鈴'};
   function familyPhoto(key) {
     var file = key === 'ukulele' ? 'relatives' : key;
-    return '<img class="guitar-photo" src="' + GUITAR_IMAGE + file + '-photo.branded.svg?v=20261015revision16" alt="' + PHOTO_FAMILY[key] + '寫實器材圖" width="512" height="512">';
+    return '<img loading="lazy" decoding="async" class="guitar-photo" src="' + GUITAR_IMAGE + file + '-photo.branded.svg?v=20261015revision16" alt="' + PHOTO_FAMILY[key] + '寫實器材圖" width="512" height="512">';
   }
   function evolutionSVG() {
     var items = [['oud','烏德琴','Oud'],['lute','魯特琴','Lute'],['vihuela','比維拉琴','Vihuela'],['renaissance','四組弦吉他','Renaissance'],['baroque','五組弦吉他','Baroque'],['classical-history','六弦吉他','Modern']];
     return '<div class="guitar-evolution-photos">' + items.map(function (it) {
-      return '<figure><img src="' + GUITAR_IMAGE + it[0] + '-photo.branded.svg?v=20261015revision16" alt="' + it[1] + '寫實重建圖"><figcaption><b>' + it[1] + '</b><span>' + it[2] + '</span></figcaption></figure>';
+      return '<figure><img loading="lazy" decoding="async" src="' + GUITAR_IMAGE + it[0] + '-photo.branded.svg?v=20261015revision16" alt="' + it[1] + '寫實重建圖"><figcaption><b>' + it[1] + '</b><span>' + it[2] + '</span></figcaption></figure>';
     }).join('') + '</div>';
   }
   var FIGS = { anatomy: mountAnatomy, bodies: mountBodies, evolution: function (n) { n.innerHTML = evolutionSVG(); },

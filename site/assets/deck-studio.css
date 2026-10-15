@@ -47,3 +47,7 @@ body::before{display:none}
 }
 /* 時間軸小字不透明，深底白字維持 4.5:1 以上；卡片上的紅色強調字稍微提亮 */
 .timeline small,.routine small{opacity:1}.slide .c-red{color:#f05a47}
+/* 手機版封面主視覺由 deck.js 插入：插入前先保留同樣高度（200px 減上下邊距 4px），首屏不跳動 */
+@media (max-width:900px),(orientation:portrait) and (max-width:1100px){.slide.cover:not(:has(>.cover-art))>:first-child{margin-top:196px}}
+/* 手機版投影片直向排列：畫面外的投影片延後渲染（背景圖、版面都不提前計算）；以錨點直接跳到某張時完整排版 */
+@media (max-width:900px),(orientation:portrait) and (max-width:1100px){.slide:not(.cover){content-visibility:auto;contain-intrinsic-size:auto 640px}:root:has(.slide:target) .slide{content-visibility:visible}}

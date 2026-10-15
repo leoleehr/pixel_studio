@@ -13,7 +13,7 @@
 <link rel="preload" href="../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<script>/* 中文字型策略：首次造訪用系統中文字型（符合 CI：正黑體／蘋方），不在首屏重排；瀏覽器閒置時只把本頁用得到的 Noto Sans TC 分組下載進快取，之後每頁一開始就套用 */(function(){var K="ps-font",U="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap";function apply(){var l=document.createElement("link");l.rel="stylesheet";l.href=U;document.head.appendChild(l)}var c=0;try{c=localStorage.getItem(K)}catch(e){}if(c){apply();return}var n=navigator.connection;if(n&&(n.saveData||/2g/.test(n.effectiveType||"")))return;function inRange(r,cps){return r.split(",").some(function(p){var m=p.trim().replace(/^U\+/i,"").split("-"),a=parseInt(m[0],16),b=m[1]?parseInt(m[1],16):a;return cps.some(function(x){return x>=a&&x<=b})})}function warm(){if(!window.FontFace||!window.fetch)return;var seen={},cps=[],t=document.body.textContent;for(var i=0;i<t.length;i++){var x=t.charCodeAt(i);if(x>=0x2E80&&!seen[x]){seen[x]=1;cps.push(x)}}fetch(U).then(function(r){return r.text()}).then(function(css){var jobs=[];css.replace(/@font-face\s*\{([^}]*)\}/g,function(_,b){var s=/url\(([^)]+)\)/.exec(b),r=/unicode-range:\s*([^;]+)/.exec(b);if(s&&r&&inRange(r[1],cps))jobs.push(new FontFace("Noto Sans TC","url("+s[1]+")",{weight:"400 900",unicodeRange:r[1]}).load());return _});return Promise.all(jobs)}).then(function(){try{localStorage.setItem(K,"1")}catch(e){}}).catch(function(){})}addEventListener("load",function(){(window.requestIdleCallback||function(f){setTimeout(f,2000)})(warm,{timeout:4000})})})()</script>
+<script>/* 中文字型策略：首次造訪用系統中文字型（符合 CI：正黑體／蘋方），不在首屏重排；首次繪製與載入完成後，利用閒置時間逐一把本頁用得到的 Noto Sans TC 分組下載進快取，之後每頁一開始就套用 */(function(){var K="ps-font",U="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap";function apply(){var l=document.createElement("link");l.rel="stylesheet";l.href=U;document.head.appendChild(l)}var c=0;try{c=localStorage.getItem(K)}catch(e){}if(c){apply();return}var n=navigator.connection;if(n&&(n.saveData||/2g/.test(n.effectiveType||"")))return;var idle=window.requestIdleCallback||function(f){return setTimeout(f,300)};function inRange(r,cps){return r.split(",").some(function(p){var m=p.trim().replace(/^U\+/i,"").split("-"),a=parseInt(m[0],16),b=m[1]?parseInt(m[1],16):a;return cps.some(function(x){return x>=a&&x<=b})})}function warm(){if(!window.FontFace||!window.fetch)return;var seen={},cps=[],t=document.body.textContent;for(var i=0;i<t.length;i++){var x=t.charCodeAt(i);if(x>=0x2E80&&!seen[x]){seen[x]=1;cps.push(x)}}fetch(U).then(function(r){return r.text()}).then(function(css){var q=[];css.replace(/@font-face\s*\{([^}]*)\}/g,function(_,b){var s=/url\(([^)]+)\)/.exec(b),r=/unicode-range:\s*([^;]+)/.exec(b);if(s&&r&&inRange(r[1],cps))q.push([s[1],r[1]]);return _});function next(){if(!q.length){try{localStorage.setItem(K,"1")}catch(e){}return}var j=q.shift();new FontFace("Noto Sans TC","url("+j[0]+")",{weight:"400 900",unicodeRange:j[1]}).load().then(function(){idle(next,{timeout:3000})},function(){idle(next,{timeout:3000})})}idle(next,{timeout:3000})}).catch(function(){})}var painted=0,loaded=0;function go(){if(painted&&loaded)idle(warm,{timeout:5000})}try{new PerformanceObserver(function(l){if(!painted&&l.getEntriesByName("first-contentful-paint").length){painted=1;go()}}).observe({type:"paint",buffered:true})}catch(e){painted=1}addEventListener("load",function(){loaded=1;setTimeout(function(){painted=1;go()},3000);go()})})()</script>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=optional"></noscript>
 <link rel="stylesheet" href="../assets/site.css?v=20261016c">
 <link rel="stylesheet" href="../assets/youtube.css?v=20261015b">
@@ -29,8 +29,8 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="../assets/teaching-visuals.css?v=20261015revision16">
 <script>/* 從章節錨點進入時完整排版，落點才精準 */if(location.hash)document.documentElement.classList.add('hb-deep')</script>
+<link rel="stylesheet" href="../assets/teaching-visuals.css?v=20261015revision16">
 </head>
 <body id="top">
 <header class="topbar">
@@ -48,7 +48,7 @@
 <nav class="toc" aria-label="講義目錄"><div class="wrap" id="toc"><a href="#overview" data-id="overview">課程總覽</a><a href="#lesson-1" data-id="lesson-1">第一堂</a><a href="#lesson-2" data-id="lesson-2">第二堂</a><a href="#lesson-3" data-id="lesson-3">第三堂</a><a href="#lesson-4" data-id="lesson-4">第四堂</a><a href="#lesson-5" data-id="lesson-5">第五堂</a><a href="#lesson-6" data-id="lesson-6">第六堂</a></div></nav>
 
 <aside class="wrap" aria-label="講義下載"><div class="dl-bar"><div><b>講義與教案 PDF</b><span>A4 排版・40 頁・含歌曲 QR Code，可列印或分享</span></div><a class="btn primary" href="vocal-class-handbook.pdf" download="流行歌唱班_講義與教案.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>下載 PDF</a></div></aside>
-<main class="wrap md" id="content" data-prerendered="c8fd086cce">
+<main class="wrap md" id="content" data-prerendered="dfa97a6543">
 <h1>亞東吉他社 流行歌唱班｜六堂課程講義與教案</h1>
 <p>Oct 5, 2026 · @Leo Lee</p>
 <section class="hb-sec"><div class="lesson-head" id="overview" data-item="課程總覽"><div class="lh-no">Overview</div><h2>課程總覽</h2></div>
@@ -2465,7 +2465,7 @@
   var main = document.getElementById('content'), toc = document.getElementById('toc'), prog = document.getElementById('progress');
   var pre = main.hasAttribute('data-prerendered');
   function loadMarked() { return window.marked ? Promise.resolve() : new Promise(function (ok, no) { var s = document.createElement('script'); s.src = 'https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js'; s.onload = ok; s.onerror = no; document.head.appendChild(s); }); }
-  (pre ? (location.hash ? Promise.resolve(null) : new Promise(function (ok) { requestAnimationFrame(function () { setTimeout(function () { ok(null); }, 0); }); })) : loadMarked().then(function () { return fetch('course-handbook.md?v=20261015breath5'); }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }))
+  (pre ? (location.hash ? Promise.resolve(null) : new Promise(function (ok) { requestAnimationFrame(function () { setTimeout(function () { ok(null); }, 0); }); })) : loadMarked().then(function () { return fetch('course-handbook.md?v=20261015revision16'); }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }))
     .then(function (md) {
       if (md !== null) main.innerHTML = marked.parse(md, { gfm: true });
       main.querySelectorAll('img').forEach(function (i) { i.loading = 'lazy'; i.decoding = 'async'; });

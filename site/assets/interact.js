@@ -26,7 +26,8 @@
   function say(msg, kind) { if (window.PixelBackend) window.PixelBackend.toast(msg, kind); }
   function onLeave(root, fn) { stoppers.push({ slide: root.closest('.slide'), fn: fn }); }
   // backend.js 在本檔之後載入：需要 PixelBackend 的動作等所有腳本載入後再執行
-  function later(fn) { if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn); else setTimeout(fn, 0); }
+  // 等 DOMContentLoaded（所有同步或 defer 的腳本都已執行）；以 Navigation Timing 判斷是否已觸發，defer 載入時也正確
+  function later(fn) { var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0]; if (document.readyState === 'complete' || (nav && nav.domContentLoadedEventStart > 0)) setTimeout(fn, 0); else document.addEventListener('DOMContentLoaded', fn); }
 
   /* ---------- 下載／分享檔案 ----------
    * 手機優先用系統分享選單（可存到照片、檔案）；LINE、Facebook 等 App 內建瀏覽器會擋下載，改用長按儲存或提示改用瀏覽器開啟。
