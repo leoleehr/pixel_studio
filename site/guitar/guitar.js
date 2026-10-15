@@ -646,7 +646,9 @@
     }).join('') + '</div>';
   }
   function mountPattern(n) { n.innerHTML = '<div class="pgrid">' + grid(n.getAttribute('data-pattern-grid'), n.getAttribute('data-chord') || 'C') + '</div>'; }
-  $$('[data-pattern-grid]').forEach(mountPattern);
+  // 預先產生的講義由頁面在章節接近畫面時才掛上（PS.guitar.mount），這裡略過
+  function auto(n) { return !n.closest('[data-prerendered]'); }
+  $$('[data-pattern-grid]').filter(auto).forEach(mountPattern);
   $$('[data-strum-player]').forEach(function (root) {
     var keys = (root.getAttribute('data-strum-player') || 'A B').split(/\s+/), key = keys[0];
     var modes = (root.getAttribute('data-chords') || 'prog C').split(/\s+/), mode = modes[0];
@@ -885,7 +887,7 @@
     var v = vol || (notes.length > 1 ? 0.2 : 0.32);
     PS.audio.strum(f, time, 'down', { duration: harm ? 2.4 : dur, volume: legato ? v * 0.55 : harm ? v * 0.6 : v, gap: 0.012 });
   }
-  $$('[data-tab]').forEach(mountTab);
+  $$('[data-tab]').filter(auto).forEach(mountTab);
   function mountTab(root) {
     var tab = parseTab(root.getAttribute('data-tab')), per = +(root.getAttribute('data-per-row') || 4), player = root.hasAttribute('data-play');
     root._tab = tab; root._p0 = per;
@@ -1132,8 +1134,11 @@
   function paintAll() {
     $$('.rnote-slot').forEach(function (x) { paintRhythm(x, 1); });
     // 手機：五線譜＋六線譜改用較窄的畫布，每行少放幾小節，字與音符才不會太小
-    $$('.tabbox').forEach(function (b) {
-      var f = $('.tabfig', b), cw = f && f.clientWidth; if (!b._tab || !cw) return;
+    // 先一次讀完寬度、再一次寫入，避免每個譜例都強迫重算整頁版面
+    var jobs = [];
+    $$('.tabbox').forEach(function (b) { if (!b._tab) return; var f = $('.tabfig', b); if (f) jobs.push([b, f, f.clientWidth]); });
+    jobs.forEach(function (j) {
+      var b = j[0], f = j[1], cw = j[2]; if (!cw) return;
       var W = cw < 700 ? Math.round(cw / 0.8) : 900, p = Math.max(1, Math.min(b._p0, Math.floor((W - 56) / 160))), key = W + ':' + p;
       if (f._key !== key) { f._key = key; f._p = p; f.innerHTML = tabSVG(b._tab, p, W); }
     });

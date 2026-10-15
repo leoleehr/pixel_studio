@@ -10,10 +10,11 @@
 <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png?v=20261014h">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=20261014h">
 <meta name="theme-color" content="#101210">
+<link rel="preload" href="../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<script>/* 第一格畫面之後才載入網路字型，首屏先用系統字型，不讓 1MB 中文字型拖慢首次繪製 */requestAnimationFrame(function(){requestAnimationFrame(function(){var l=document.createElement("link");l.rel="stylesheet";l.href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&family=Space+Grotesk:wght@500..700&display=swap";document.head.appendChild(l)})})</script>
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&family=Space+Grotesk:wght@500..700&display=swap"></noscript>
+<script>/* 中文字型策略：首次造訪用系統中文字型（符合 CI：正黑體／蘋方），不在首屏重排；瀏覽器閒置時只把本頁用得到的 Noto Sans TC 分組下載進快取，之後每頁一開始就套用 */(function(){var K="ps-font",U="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap";function apply(){var l=document.createElement("link");l.rel="stylesheet";l.href=U;document.head.appendChild(l)}var c=0;try{c=localStorage.getItem(K)}catch(e){}if(c){apply();return}var n=navigator.connection;if(n&&(n.saveData||/2g/.test(n.effectiveType||"")))return;function inRange(r,cps){return r.split(",").some(function(p){var m=p.trim().replace(/^U\+/i,"").split("-"),a=parseInt(m[0],16),b=m[1]?parseInt(m[1],16):a;return cps.some(function(x){return x>=a&&x<=b})})}function warm(){if(!window.FontFace||!window.fetch)return;var seen={},cps=[],t=document.body.textContent;for(var i=0;i<t.length;i++){var x=t.charCodeAt(i);if(x>=0x2E80&&!seen[x]){seen[x]=1;cps.push(x)}}fetch(U).then(function(r){return r.text()}).then(function(css){var jobs=[];css.replace(/@font-face\s*\{([^}]*)\}/g,function(_,b){var s=/url\(([^)]+)\)/.exec(b),r=/unicode-range:\s*([^;]+)/.exec(b);if(s&&r&&inRange(r[1],cps))jobs.push(new FontFace("Noto Sans TC","url("+s[1]+")",{weight:"400 900",unicodeRange:r[1]}).load());return _});return Promise.all(jobs)}).then(function(){try{localStorage.setItem(K,"1")}catch(e){}}).catch(function(){})}addEventListener("load",function(){(window.requestIdleCallback||function(f){setTimeout(f,2000)})(warm,{timeout:4000})})})()</script>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=optional"></noscript>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Music&text=%F0%9D%84%9E%E2%99%AF%E2%99%AE&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css?v=20261016c">
 <link rel="stylesheet" href="../assets/backend.css?v=20261015b">
@@ -31,6 +32,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/teaching-visuals.css?v=20261015faces2">
+<script>/* 從章節錨點進入時完整排版，落點才精準 */if(location.hash)document.documentElement.classList.add('hb-deep')</script>
 </head>
 <body id="top" data-course="piano">
 <header class="topbar">
@@ -45,10 +47,2769 @@
   </div>
   <span class="bar-progress" id="progress"></span>
 </header>
-<nav class="toc" aria-label="講義目錄"><div class="wrap" id="toc"></div></nav>
+<nav class="toc" aria-label="講義目錄"><div class="wrap" id="toc"><a href="#overview" data-id="overview">課程總覽</a><a href="#session-1" data-id="session-1">第一堂</a><a href="#session-2" data-id="session-2">第二堂</a><a href="#session-3" data-id="session-3">第三堂</a><a href="#session-4" data-id="session-4">第四堂</a><a href="#session-5" data-id="session-5">第五堂</a><a href="#session-6" data-id="session-6">第六堂</a><a href="#session-7" data-id="session-7">第七堂</a><a href="#session-8" data-id="session-8">第八堂</a><a href="#session-9" data-id="session-9">第九堂</a><a href="#session-10" data-id="session-10">第十堂</a><a href="#session-11" data-id="session-11">第十一堂</a><a href="#session-12" data-id="session-12">第十二堂</a></div></nav>
 
 <aside class="wrap" aria-label="講義下載"><div class="dl-bar"><div><b>講義與教案 PDF</b><span>A4 排版・十二堂課・含曲例 QR Code，可列印或分享</span></div><a class="btn primary" href="piano-handbook.pdf" download="流行鋼琴十二堂_講義與教案.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>下載 PDF</a></div></aside>
-<main class="wrap md" id="content"><p class="loading">講義載入中…</p></main>
+<main class="wrap md" id="content" data-prerendered="a02c020ae7">
+<h1>Pixel Studio Piano Lab｜流行鋼琴初階十二堂講義與教案</h1>
+<p>主講：畫素音樂工作坊 李奕勳｜教材來源：畫素音樂工作坊爵士鋼琴班課程進度表（初級）、流行鋼琴入門教材、鋼琴入門與和弦講義、分散和弦伴奏法，2026 年重新整理、校訂。</p>
+<section class="hb-sec"><div class="lesson-head" id="overview" data-item="課程總覽"><div class="lh-no">Overview</div><h2>課程總覽</h2></div>
+<p>許多人在孩提時代學過鋼琴，大多在父母的要求下學習古典鋼琴，後來就放下了。這門課從基礎樂理與和弦概論出發，將彈奏技巧結合之後，先達到自彈自唱的目標，再進一步加強相對音感，培養自由伴奏與基本編曲的能力。不論平常聆聽什麼樣的音樂，都能彈奏出一首屬於自己的樂曲。</p>
+<p>課程共十二堂，每堂 120 分鐘，合計 24 小時。前八堂奠定識譜、運指、和弦與伴奏，第八堂期中自彈自唱；後四堂深入級數、和弦進行與節奏型態，第十二堂期末發表。</p>
+<h3 id="overview-2">教學目標</h3>
+<ol>
+<li>能閱讀大譜表與簡譜，以正確的姿勢與指法彈奏音階。</li>
+<li>理解和弦的組成、轉位與級數，能看著和弦譜為歌曲伴奏。</li>
+<li>能運用 Slow Soul、華爾滋、4 Beats、8 Beats、Slow Rock、十度音等伴奏型。</li>
+<li>能自彈自唱一首單一調性的歌曲，並依照級數移調。</li>
+</ol>
+<h3 id="overview-3">十二堂進度表</h3>
+<table>
+<thead>
+<tr>
+<th>堂</th>
+<th>主題</th>
+<th>對應課綱（初級）</th>
+<th>核心內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>認識鋼琴與流行鋼琴</td>
+<td>爵士鋼琴概論</td>
+<td>起源、構造、種類、古典流行爵士、坐姿、手指編號、踏板</td>
+</tr>
+<tr>
+<td>2</td>
+<td>基礎樂理與識譜</td>
+<td>基礎樂理與識譜能力</td>
+<td>音名唱名簡譜、大譜表、時值、拍號、全音半音、音程</td>
+</tr>
+<tr>
+<td>3</td>
+<td>音階運指</td>
+<td>音階運指</td>
+<td>大調公式、穿指與跨指、C、G、F 大調</td>
+</tr>
+<tr>
+<td>4</td>
+<td>和弦組成與結構</td>
+<td>和弦組成與結構</td>
+<td>大小增減三和弦、順階和弦、轉位</td>
+</tr>
+<tr>
+<td>5</td>
+<td>基本歌曲彈奏（一）</td>
+<td>基本歌曲彈奏（一）</td>
+<td>簡譜與和弦譜、左手三種彈法、和弦選搭</td>
+</tr>
+<tr>
+<td>6</td>
+<td>基本歌曲彈奏（二）與節奏型態</td>
+<td>基本歌曲彈奏（二）；節奏型態認識（一）</td>
+<td>指位譜、Slow Soul、華爾滋</td>
+</tr>
+<tr>
+<td>7</td>
+<td>伴奏技巧強化（4＋8）</td>
+<td>伴奏技巧強化（4＋8）</td>
+<td>4 Beats、8 Beats、單手 8 度、雙手 16 度</td>
+</tr>
+<tr>
+<td>8</td>
+<td>單一調性歌曲與自彈自唱</td>
+<td>單一調性歌曲演奏；自彈自唱技巧</td>
+<td>調性、和弦譜、前奏尾奏、期中發表</td>
+</tr>
+<tr>
+<td>9</td>
+<td>級數和弦與調性關係</td>
+<td>級數和弦與調性關係</td>
+<td>級數、和弦功能、終止式、移調</td>
+</tr>
+<tr>
+<td>10</td>
+<td>根音連結、複合和弦與常用和弦行進</td>
+<td>根音連結與複合和弦；常用和弦行進</td>
+<td>分數和弦、低音線、1645、1564、卡農、2-5-1</td>
+</tr>
+<tr>
+<td>11</td>
+<td>節奏型態（二）與十度、十六度伴奏</td>
+<td>節奏型態認識（二）；十度與十六度伴奏</td>
+<td>Slow Rock、進行曲、十度音、雙手十六度</td>
+</tr>
+<tr>
+<td>12</td>
+<td>大小調關係與 G 大調歌曲彈奏</td>
+<td>大小調關係；G 大調歌曲彈奏</td>
+<td>關係調、三種小調、G 大調、期末發表</td>
+</tr>
+</tbody></table>
+<h3 id="overview-4">每堂 120 分鐘的共同節奏</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>20 分鐘</td>
+<td>熱手、回顧上週練習與出場券、引導主題</td>
+</tr>
+<tr>
+<td>承</td>
+<td>35 分鐘</td>
+<td>新觀念講解、示範與小測驗</td>
+</tr>
+<tr>
+<td>休</td>
+<td>10 分鐘</td>
+<td>放鬆手指與肩膀</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>35 分鐘</td>
+<td>播放器練習、分組挑戰、歌曲彈奏</td>
+</tr>
+<tr>
+<td>合</td>
+<td>20 分鐘</td>
+<td>合奏或發表、錄音、出場券、課後練習</td>
+</tr>
+</tbody></table>
+<h3 id="overview-5">教具清單</h3>
+<ul>
+<li>鋼琴或數位鋼琴（建議至少 61 鍵、具有琴鍵力度感應），延音踏板</li>
+<li>教室投影與音響設備；節拍器</li>
+<li>學員手機：掃描投影片 Qr Code，使用鍵盤、找音遊戲、音階運指、和弦實驗室、伴奏型播放器與錄音</li>
+</ul>
+<h3 id="overview-6">評量方式</h3>
+<ul>
+<li>課前問卷與出場券：掌握每位學員的進度與問題</li>
+<li>課後練習勾選與七天紀錄：培養每天練琴的習慣</li>
+<li>期中發表（第八堂）：一首 C 調歌曲的自彈自唱或彈奏</li>
+<li>期末發表（第十二堂）：一首使用兩種以上伴奏型的歌曲，C 大調或 G 大調</li>
+</ul>
+<h3 id="overview-7">課堂互動設計原則</h3>
+<ul>
+<li>新觀念控制在 35 分鐘以內，其餘時間留給彈奏</li>
+<li>先聆聽、再分解、最後雙手合併；速度由慢到快，穩定比速度重要</li>
+<li>伴奏一律以指位譜 L5 L3 L2 L1、R1 R2 R5 記錄，換和弦時手指位置不變</li>
+<li>歌曲以簡譜記錄，換調時簡譜不變、和弦依照級數更換</li>
+</ul>
+</section>
+<section class="hb-sec"><div class="lesson-head" id="session-1" style="--c: #e8412b;" data-dot="#e8412b" data-item="第一堂　認識鋼琴與流行鋼琴"><div class="lh-no">Session 01</div><h2>認識鋼琴與流行鋼琴<small>Meet The Piano · Pop Piano</small></h2></div>
+<p>本堂目標：能說明鋼琴的起源、發聲原理與常見的種類；能分辨古典鋼琴、流行鋼琴與爵士鋼琴的差異；以正確的坐姿與手形，認識雙手的手指編號與踏板；下課前，每個人在鍵盤上找到中央 C，用五指位置彈奏 Do Re Mi Fa Sol。</p>
+<h3 id="session-1-9">課前問卷（入班問卷）</h3>
+<ul>
+<li>學習鋼琴的經驗</li>
+<li>其他會演奏的樂器</li>
+<li>家中練習用的樂器</li>
+<li>能夠閱讀的樂譜</li>
+<li>自我評分（1 到 5 分）</li>
+<li>最想用鋼琴彈奏的三首歌</li>
+<li>十二堂課結束時，最希望達成的一件事</li>
+<li>每週可以練琴的時間</li>
+</ul>
+<h3 id="session-1-10">課程綱要（120 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+<th>投影片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>00:00–00:20</td>
+<td>許多人小時候都學過鋼琴，後來卻放下了、六歲那年，我被鋼琴老師請回家</td>
+<td>3–4</td>
+</tr>
+<tr>
+<td>承</td>
+<td>00:20–00:55</td>
+<td>Pianoforte：能夠彈出「弱」與「強」的樂器、按下琴鍵，琴槌敲擊琴弦、先預測，再揭曉、從音樂廳到房間，鍵盤樂器的家族、流行鋼琴，是爵士鋼琴的基礎、聆聽四段鋼琴，猜猜屬於哪一種風格</td>
+<td>5–10</td>
+</tr>
+<tr>
+<td>休</td>
+<td>00:55–01:05</td>
+<td>休息十分鐘</td>
+<td>11</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>01:05–01:40</td>
+<td>坐穩、放鬆，手指像握住一顆球、拇指是 1，小指是 5，左右手都一樣、三個踏板，各有任務、兩個黑鍵左邊的白鍵，就是 C、迷思還是事實？</td>
+<td>12–16</td>
+</tr>
+<tr>
+<td>合</td>
+<td>01:40–02:00</td>
+<td>C 五指位置：一根手指負責一個琴鍵、右手、左手各彈奏一次 Do Re Mi Fa Sol、離開教室前，寫下 3-2-1</td>
+<td>17–20</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td>課後</td>
+<td>三句話總結、出場券、課後練習與下一堂預告</td>
+<td>19、21、22、23</td>
+</tr>
+</tbody></table>
+<h3 id="session-1-11">講義擴充：鋼琴的起源與構造</h3>
+<ul>
+<li>鋼琴全名 Pianoforte，意思是「弱強」；為了稱呼方便，省略 forte，只保留 piano。</li>
+<li>1709 年，義大利人克里斯多佛利以撥弦古鋼琴（大鍵琴，Harpsichord）為原形，改用琴槌擊弦，製作出具有強弱變化的鋼琴。</li>
+<li>鋼琴原理上屬於擊弦樂器，必須透過鍵盤彈奏，所以歸類為鍵盤樂器。88 個琴鍵，音域從 A0 到 C8，以十二平均律調音。</li>
+<li>發聲路徑：琴鍵 → 琴槌 → 琴弦 → 響板（共鳴板）。放開琴鍵時，制音器止住琴弦的振動。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>種類</th>
+<th>特色</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>平台鋼琴 Grand Piano</td>
+<td>琴弦水平排列，琴槌由下往上擊弦，觸鍵靈敏</td>
+</tr>
+<tr>
+<td>直立鋼琴 Upright Piano</td>
+<td>琴弦垂直排列，琴槌從前方擊弦，最常見於家庭</td>
+</tr>
+<tr>
+<td>靜音鋼琴 Silent Piano</td>
+<td>傳統鋼琴加上靜音裝置，可以戴耳機練習</td>
+</tr>
+<tr>
+<td>數位鋼琴 Digital Piano</td>
+<td>取樣真實鋼琴的音色，可以連接電腦使用 MIDI</td>
+</tr>
+<tr>
+<td>電子琴、合成器 Keyboard</td>
+<td>49 到 88 鍵，內建大量音色與節奏</td>
+</tr>
+</tbody></table>
+<h3 id="session-1-12">講義擴充：古典、流行與爵士</h3>
+<ul>
+<li>古典鋼琴依照樂譜彈奏；流行鋼琴注重「自由拍」，伴奏自由選擇，加入裝飾音、插音，並以搶拍、拖拍的切分音彈出流行的味道。</li>
+<li>流行鋼琴的和聲多為協和的三和弦，旋律依照原曲加入裝飾音與切分音，節奏多採用各國傳統舞曲的律動。</li>
+<li>爵士鋼琴使用不協和的七和弦，以即興演奏將旋律自由變奏，並以低音行進伴奏。三和弦是七和弦的基礎，所以流行鋼琴可以視為爵士鋼琴的基礎。</li>
+</ul>
+<h3 id="session-1-13">講義擴充：坐姿、手指與踏板</h3>
+<ul>
+<li>坐在椅子的前半部，身體對準中央 C；手肘與琴鍵大約在同一平面，肩膀放鬆，手指彎曲成圓弧。</li>
+<li>手指編號：左右手的拇指都是 1，小指都是 5。本課程的伴奏譜寫成 L5 L3 L2 L1、R1 R2 R5。</li>
+<li>右踏板是延音踏板，換和弦時要換踏板；左踏板是弱音踏板；中間的踏板依琴款不同，為選擇性延音或靜音裝置。</li>
+<li>鋼琴每年至少調音一次，適合的環境約為攝氏 20 度、濕度五到六成，避免陽光直射。</li>
+</ul>
+<h3 id="session-1-14">課堂互動（網站簡報）</h3>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>手機同步</td>
+<td>今天的路線：認識你面前的八十八個琴鍵</td>
+</tr>
+<tr>
+<td>3</td>
+<td>舉手計票</td>
+<td>許多人小時候都學過鋼琴，後來卻放下了</td>
+</tr>
+<tr>
+<td>7</td>
+<td>選擇題</td>
+<td>先預測，再揭曉</td>
+</tr>
+<tr>
+<td>10</td>
+<td>曲例聆聽・YouTube</td>
+<td>聆聽四段鋼琴，猜猜屬於哪一種風格</td>
+</tr>
+<tr>
+<td>15</td>
+<td>可彈奏的鍵盤</td>
+<td>兩個黑鍵左邊的白鍵，就是 C</td>
+</tr>
+<tr>
+<td>16</td>
+<td>迷思破解・翻牌</td>
+<td>迷思還是事實？</td>
+</tr>
+<tr>
+<td>17</td>
+<td>音階運指</td>
+<td>C 五指位置：一根手指負責一個琴鍵</td>
+</tr>
+<tr>
+<td>18</td>
+<td>錄音</td>
+<td>右手、左手各彈奏一次 Do Re Mi Fa Sol</td>
+</tr>
+<tr>
+<td>20</td>
+<td>出場券 3-2-1</td>
+<td>離開教室前，寫下 3-2-1</td>
+</tr>
+<tr>
+<td>21</td>
+<td>自主學習紀錄</td>
+<td>每天 10 分鐘熱手課表</td>
+</tr>
+<tr>
+<td>22</td>
+<td>自主學習追蹤</td>
+<td>課後練習：完成一項，點選一次打勾</td>
+</tr>
+<tr>
+<td>23</td>
+<td>課前問卷</td>
+<td>第二堂 基礎樂理與識譜</td>
+</tr>
+</tbody></table>
+<h3 id="session-1-15">課後練習</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 不看講義，說出鋼琴發聲的路徑：琴鍵、琴槌、琴弦、響板</li>
+<li><input disabled="" type="checkbox"> 閉上眼睛，用觸覺找到兩個黑鍵一組的位置，再彈出 C</li>
+<li><input disabled="" type="checkbox"> 右手與左手的 C 五指位置，各彈奏十次，五個音的音量平均</li>
+<li><input disabled="" type="checkbox"> 聆聽一首鋼琴伴奏的流行歌曲，判斷它比較接近流行還是爵士</li>
+<li><input disabled="" type="checkbox"> 填寫第二堂課前問卷</li>
+</ul>
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="p01"><h3 id="session-1-16">坐姿與手形｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/piano-posture-white.webp?v=20261015faces2" width="1272" height="1237" alt="側面：肩膀放鬆，手肘與琴鍵接近同一平面" loading="lazy" decoding="async"><figcaption>側面：肩膀放鬆，手肘與琴鍵接近同一平面</figcaption></figure>
+<figure><img src="../assets/teaching/piano-hand-curve.webp?v=20261015faces2" width="504" height="493" alt="近拍：手指成弧、手腕自然" loading="lazy" decoding="async"><figcaption>近拍：手指成弧、手腕自然</figcaption></figure>
+</div>
+</div>
+
+<div class="teaching-book" data-demo-group="p02"><h3 id="session-1-17">踏板與腳部操作｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/piano-pedals.webp?v=20261015faces2" width="501" height="493" alt="三個踏板的實際位置" loading="lazy" decoding="async"><figcaption>三個踏板的實際位置</figcaption></figure>
+<figure><img src="../assets/teaching/piano-pedal-down.webp?v=20261015faces2" width="507" height="515" alt="腳跟留在地面，以前腳掌踩下延音踏板" loading="lazy" decoding="async"><figcaption>腳跟留在地面，以前腳掌踩下延音踏板</figcaption></figure>
+<figure><img src="../assets/teaching/piano-pedal-up.webp?v=20261015faces2" width="504" height="515" alt="前腳掌放開，腳跟繼續支撐" loading="lazy" decoding="async"><figcaption>前腳掌放開，腳跟繼續支撐</figcaption></figure>
+</div>
+<p class="teaching-note">平台鋼琴與直立鋼琴的中踏板功能可能不同，依琴款確認。</p>
+</div>
+
+<div class="teaching-book" data-demo-group="p03"><h3 id="session-1-18">五指位置與指位譜｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/piano-five-fingers.webp?v=20261015faces2" width="501" height="515" alt="五根手指各對應一個琴鍵" loading="lazy" decoding="async"><figcaption>五根手指各對應一個琴鍵</figcaption></figure>
+<figure><img src="../assets/teaching/../piano/hands-keyboard.jpg?v=20261015faces2" width="1500" height="750" alt="由上方觀察左右手位置" loading="lazy" decoding="async"><figcaption>由上方觀察左右手位置</figcaption></figure>
+</div>
+<p class="teaching-note">指法編號從拇指 1 到小指 5；音高與手位以鍵盤圖核對。</p>
+</div>
+
+<!-- teaching-visuals-end -->
+
+</section>
+<section class="hb-sec"><div class="lesson-head" id="session-2" style="--c: #e2407f;" data-dot="#e2407f" data-item="第二堂　基礎樂理與識譜"><div class="lh-no">Session 02</div><h2>基礎樂理與識譜<small>Basic Theory · Reading Music</small></h2></div>
+<p>本堂目標：能說出音名、唱名與簡譜的對應，並在鍵盤上找到每一個音；能閱讀大譜表上中央 C 附近的音，理解音符時值與拍號；理解全音、半音與升降記號，能計算兩個音之間的音程；下課前，在找音遊戲中連續答對十題。</p>
+<h3 id="session-2-20">課前問卷</h3>
+<ul>
+<li>上一堂的課後練習，完成的項數</li>
+<li>五指位置彈奏時，五個音的音量是否平均</li>
+<li>閉上眼睛找到中央 C 的把握</li>
+<li>最想加強的樂理</li>
+<li>練琴時感到緊繃的部位</li>
+</ul>
+<h3 id="session-2-21">課程綱要（120 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+<th>投影片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>00:00–00:20</td>
+<td>五指位置，現在穩定了嗎？、音的三要素：高低、大小、音色</td>
+<td>3–4</td>
+</tr>
+<tr>
+<td>承</td>
+<td>00:20–00:55</td>
+<td>同一個音，有三種稱呼、切換音名、唱名、簡譜，觀察每個白鍵的名字、高音譜號屬於右手，低音譜號屬於左手、二分法：每往下一級，長度剩下一半、上方是每小節幾拍，下方是幾分音符為一拍、譜表與拍子</td>
+<td>5–10</td>
+</tr>
+<tr>
+<td>休</td>
+<td>00:55–01:05</td>
+<td>休息十分鐘</td>
+<td>11</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>01:05–01:40</td>
+<td>相鄰的兩個琴鍵，相差一個半音、升、降、還原：讓音往上或往下移動半音、兩個音之間的距離，以「度」計算、點選兩個琴鍵，計算音程並聆聽協和度、音程的計算</td>
+<td>12–16</td>
+</tr>
+<tr>
+<td>合</td>
+<td>01:40–02:00</td>
+<td>看見音名，點出正確的琴鍵、看見五線譜上的音，點出正確的琴鍵、離開教室前，寫下 3-2-1</td>
+<td>17–20</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td>課後</td>
+<td>三句話總結、出場券、課後練習與下一堂預告</td>
+<td>19、21、22</td>
+</tr>
+</tbody></table>
+<h3 id="session-2-22">講義擴充：音名、唱名與簡譜</h3>
+<table>
+<thead>
+<tr>
+<th>級數</th>
+<th>Ⅰ 主音</th>
+<th>Ⅱ 上主音</th>
+<th>Ⅲ 中音</th>
+<th>Ⅳ 下屬音</th>
+<th>Ⅴ 屬音</th>
+<th>Ⅵ 下中音</th>
+<th>Ⅶ 導音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>音名</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+<td>A</td>
+<td>B</td>
+</tr>
+<tr>
+<td>唱名</td>
+<td>Do</td>
+<td>Re</td>
+<td>Mi</td>
+<td>Fa</td>
+<td>Sol</td>
+<td>La</td>
+<td>Si</td>
+</tr>
+<tr>
+<td>簡譜</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+</tr>
+</tbody></table>
+<ul>
+<li>音的三要素：高低（頻率）、大小（振幅）、音色（泛音）。A4 為 440 Hz。</li>
+<li>大譜表由高音譜表與低音譜表組成。中央 C 位於高音譜表的下加一線；高音譜表第一線是 E4，低音譜表第一線是 G2。</li>
+</ul>
+<h3 id="session-2-23">講義擴充：時值與拍號</h3>
+<table>
+<thead>
+<tr>
+<th>音符</th>
+<th>4/4 中的拍數</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>全音符</td>
+<td>4 拍</td>
+</tr>
+<tr>
+<td>二分音符</td>
+<td>2 拍</td>
+</tr>
+<tr>
+<td>四分音符</td>
+<td>1 拍</td>
+</tr>
+<tr>
+<td>八分音符</td>
+<td>½ 拍</td>
+</tr>
+<tr>
+<td>十六分音符</td>
+<td>¼ 拍</td>
+</tr>
+</tbody></table>
+<ul>
+<li>附點增加原本時值的一半；三連音將一拍平均分成三份。</li>
+<li>二拍子系統（2/4、4/4）、三拍子系統（3/4、6/8），以及由兩者組合的變化拍子（5/4、7/8）。</li>
+</ul>
+<h3 id="session-2-24">講義擴充：半音、變化記號與音程</h3>
+<ul>
+<li>相鄰的兩個琴鍵相差半音，兩個半音是一個全音；E–F、B–C 之間沒有黑鍵，本身就相差半音。</li>
+<li>升記號 ♯ 升高半音、降記號 ♭ 降低半音、還原記號 ♮ 取消升降。寫在小節中的是臨時記號，寫在譜號旁的是調號。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>半音數</th>
+<th>音程</th>
+<th>協和度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>完全一度</td>
+<td>完全協和</td>
+</tr>
+<tr>
+<td>1</td>
+<td>小二度</td>
+<td>不協和</td>
+</tr>
+<tr>
+<td>2</td>
+<td>大二度</td>
+<td>不協和</td>
+</tr>
+<tr>
+<td>3</td>
+<td>小三度</td>
+<td>不完全協和</td>
+</tr>
+<tr>
+<td>4</td>
+<td>大三度</td>
+<td>不完全協和</td>
+</tr>
+<tr>
+<td>5</td>
+<td>完全四度</td>
+<td>完全協和</td>
+</tr>
+<tr>
+<td>6</td>
+<td>增四度、減五度</td>
+<td>不協和</td>
+</tr>
+<tr>
+<td>7</td>
+<td>完全五度</td>
+<td>完全協和</td>
+</tr>
+<tr>
+<td>8</td>
+<td>小六度</td>
+<td>不完全協和</td>
+</tr>
+<tr>
+<td>9</td>
+<td>大六度</td>
+<td>不完全協和</td>
+</tr>
+<tr>
+<td>10</td>
+<td>小七度</td>
+<td>不協和</td>
+</tr>
+<tr>
+<td>11</td>
+<td>大七度</td>
+<td>不協和</td>
+</tr>
+<tr>
+<td>12</td>
+<td>完全八度</td>
+<td>完全協和</td>
+</tr>
+</tbody></table>
+<h3 id="session-2-25">課堂互動（網站簡報）</h3>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>手機同步</td>
+<td>今天的路線：閱讀樂譜，在鍵盤上找到每一個音</td>
+</tr>
+<tr>
+<td>3</td>
+<td>舉手計票</td>
+<td>五指位置，現在穩定了嗎？</td>
+</tr>
+<tr>
+<td>6</td>
+<td>可彈奏的鍵盤</td>
+<td>切換音名、唱名、簡譜，觀察每個白鍵的名字</td>
+</tr>
+<tr>
+<td>10</td>
+<td>選擇題</td>
+<td>譜表與拍子</td>
+</tr>
+<tr>
+<td>15</td>
+<td>音程計算</td>
+<td>點選兩個琴鍵，計算音程並聆聽協和度</td>
+</tr>
+<tr>
+<td>16</td>
+<td>選擇題</td>
+<td>音程的計算</td>
+</tr>
+<tr>
+<td>17</td>
+<td>找音遊戲</td>
+<td>看見音名，點出正確的琴鍵</td>
+</tr>
+<tr>
+<td>18</td>
+<td>找音遊戲・五線譜</td>
+<td>看見五線譜上的音，點出正確的琴鍵</td>
+</tr>
+<tr>
+<td>20</td>
+<td>出場券 3-2-1</td>
+<td>離開教室前，寫下 3-2-1</td>
+</tr>
+<tr>
+<td>21</td>
+<td>自主學習追蹤</td>
+<td>課後練習：完成一項，點選一次打勾</td>
+</tr>
+<tr>
+<td>22</td>
+<td>課前問卷</td>
+<td>第三堂 音階運指</td>
+</tr>
+</tbody></table>
+<h3 id="session-2-26">課後練習</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 找音遊戲（音名）連續答對二十題</li>
+<li><input disabled="" type="checkbox"> 找音遊戲（五線譜）連續答對十題</li>
+<li><input disabled="" type="checkbox"> 在鍵盤上彈出 C 到 G、C 到 E、E 到 F，說出它們的音程</li>
+<li><input disabled="" type="checkbox"> 將〈小星星〉的簡譜 1 1 5 5 6 6 5 寫成音名與唱名</li>
+<li><input disabled="" type="checkbox"> 填寫第三堂課前問卷</li>
+</ul>
+</section>
+<section class="hb-sec"><div class="lesson-head" id="session-3" style="--c: #9a5fd0;" data-dot="#9a5fd0" data-item="第三堂　音階運指"><div class="lh-no">Session 03</div><h2>音階運指<small>Scales &amp; Fingering</small></h2></div>
+<p>本堂目標：能說明大調音階「全全半全全全半」的組成規則；能運用拇指穿越與中指跨越，彈奏一個八度的音階；能以正確的指法彈奏 C 大調，並認識 G 大調與 F 大調的指法；下課前，右手與左手各以 60 BPM 彈奏 C 大調音階上下行。</p>
+<h3 id="session-3-28">課前問卷</h3>
+<ul>
+<li>找音遊戲（五線譜）連續答對的題數</li>
+<li>最容易混淆的部分</li>
+<li>每天練琴的時間</li>
+<li>五根手指中，最難控制的一根</li>
+<li>左手的熟練程度</li>
+</ul>
+<h3 id="session-3-29">課程綱要（120 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+<th>投影片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>00:00–00:20</td>
+<td>找音遊戲，你的成績是多少？、從主音出發，依照固定的距離排列</td>
+<td>3–4</td>
+</tr>
+<tr>
+<td>承</td>
+<td>00:20–00:55</td>
+<td>全、全、半、全、全、全、半、手指不夠用的時候，拇指穿過，中指跨過、跟著亮起的琴鍵與指法，彈奏 C 大調上下行、指法與公式</td>
+<td>5–8</td>
+</tr>
+<tr>
+<td>休</td>
+<td>00:55–01:05</td>
+<td>休息十分鐘</td>
+<td>9</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>01:05–01:40</td>
+<td>更換主音，觀察升降記號與指法的改變、三個調，兩種指法、雙手同時彈奏：拇指穿越的時間不一樣、〈卡農〉的旋律裡，有一段一段的下行音階、音階接力：一人一個音，穩定地傳下去</td>
+<td>10–14</td>
+</tr>
+<tr>
+<td>合</td>
+<td>01:40–02:00</td>
+<td>錄下右手與左手的 C 大調音階、離開教室前，寫下 3-2-1</td>
+<td>15–17</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td>課後</td>
+<td>三句話總結、出場券、課後練習與下一堂預告</td>
+<td>16、18、19、20</td>
+</tr>
+</tbody></table>
+<h3 id="session-3-30">講義擴充：大調音階與指法</h3>
+<ul>
+<li>大調音階的公式：全、全、半、全、全、全、半。分成「全全半」兩組音型，中間以一個全音連接。</li>
+<li>從 G 開始依照公式排列，第七音必須升高成 F♯；從 F 開始，第四音必須降低成 B♭。</li>
+<li>十二平均律將一個八度分成十二個均等的半音，不論在哪一個調彈奏都一樣均勻。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>調性</th>
+<th>音階</th>
+<th>右手上行</th>
+<th>左手上行</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>C 大調</td>
+<td>C D E F G A B C</td>
+<td>1 2 3 1 2 3 4 5</td>
+<td>5 4 3 2 1 3 2 1</td>
+</tr>
+<tr>
+<td>G 大調</td>
+<td>G A B C D E F♯ G</td>
+<td>1 2 3 1 2 3 4 5</td>
+<td>5 4 3 2 1 3 2 1</td>
+</tr>
+<tr>
+<td>F 大調</td>
+<td>F G A B♭ C D E F</td>
+<td>1 2 3 4 1 2 3 4</td>
+<td>5 4 3 2 1 3 2 1</td>
+</tr>
+<tr>
+<td>A 小調</td>
+<td>A B C D E F G A</td>
+<td>1 2 3 1 2 3 4 5</td>
+<td>5 4 3 2 1 3 2 1</td>
+</tr>
+</tbody></table>
+<ul>
+<li>右手上行在第 3 指之後拇指穿越，下行時第 3 指跨過拇指；左手相反。</li>
+<li>練習順序：右手、左手，最後雙手合併；從 50 BPM 開始，穩定之後每次增加 4 BPM。</li>
+</ul>
+<h3 id="session-3-31">課堂互動（網站簡報）</h3>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>手機同步</td>
+<td>今天的路線：十根手指，流暢地走過八個音</td>
+</tr>
+<tr>
+<td>3</td>
+<td>舉手計票</td>
+<td>找音遊戲，你的成績是多少？</td>
+</tr>
+<tr>
+<td>7</td>
+<td>音階運指</td>
+<td>跟著亮起的琴鍵與指法，彈奏 C 大調上下行</td>
+</tr>
+<tr>
+<td>8</td>
+<td>選擇題</td>
+<td>指法與公式</td>
+</tr>
+<tr>
+<td>10</td>
+<td>音階運指</td>
+<td>更換主音，觀察升降記號與指法的改變</td>
+</tr>
+<tr>
+<td>13</td>
+<td>曲例聆聽・YouTube</td>
+<td>〈卡農〉的旋律裡，有一段一段的下行音階</td>
+</tr>
+<tr>
+<td>14</td>
+<td>分組任務・計分</td>
+<td>音階接力：一人一個音，穩定地傳下去</td>
+</tr>
+<tr>
+<td>15</td>
+<td>錄音對照</td>
+<td>錄下右手與左手的 C 大調音階</td>
+</tr>
+<tr>
+<td>17</td>
+<td>出場券 3-2-1</td>
+<td>離開教室前，寫下 3-2-1</td>
+</tr>
+<tr>
+<td>18</td>
+<td>自主學習紀錄</td>
+<td>每天 15 分鐘音階課表</td>
+</tr>
+<tr>
+<td>19</td>
+<td>自主學習追蹤</td>
+<td>課後練習：完成一項，點選一次打勾</td>
+</tr>
+<tr>
+<td>20</td>
+<td>課前問卷</td>
+<td>第四堂 和弦組成與結構</td>
+</tr>
+</tbody></table>
+<h3 id="session-3-32">課後練習</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 不看講義，寫出大調音階的公式與 C 大調的指法</li>
+<li><input disabled="" type="checkbox"> 右手 C 大調音階上下行，60 BPM 連續五次不中斷</li>
+<li><input disabled="" type="checkbox"> 左手 C 大調音階上下行，60 BPM 連續五次不中斷</li>
+<li><input disabled="" type="checkbox"> 挑戰雙手合併，或彈奏 G 大調音階</li>
+<li><input disabled="" type="checkbox"> 填寫第四堂課前問卷</li>
+</ul>
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="p04"><h3 id="session-3-33">穿指與跨指｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/piano-scale-motion.svg?v=20261015faces2" width="1000" height="800" alt="穿指與跨指的確切音名、手指編號與移動路徑" loading="lazy" decoding="async"><figcaption>穿指與跨指的確切音名、手指編號與移動路徑</figcaption></figure>
+<figure><img src="../assets/teaching/piano-under-before.webp?v=20261015faces2" width="437" height="435" alt="近拍觀察手指與琴鍵的接觸" loading="lazy" decoding="async"><figcaption>近拍觀察手指與琴鍵的接觸</figcaption></figure>
+<figure><img src="../assets/teaching/piano-under-after.webp?v=20261015faces2" width="436" height="435" alt="手位移動時保持手腕自然" loading="lazy" decoding="async"><figcaption>手位移動時保持手腕自然</figcaption></figure>
+<figure><img src="../assets/teaching/piano-cross-before.webp?v=20261015faces2" width="436" height="435" alt="其他手指自然抬起，準備下一個音" loading="lazy" decoding="async"><figcaption>其他手指自然抬起，準備下一個音</figcaption></figure>
+<figure><img src="../assets/teaching/piano-cross-after.webp?v=20261015faces2" width="433" height="435" alt="手掌跟著指位平移" loading="lazy" decoding="async"><figcaption>手掌跟著指位平移</figcaption></figure>
+</div>
+</div>
+
+<!-- teaching-visuals-end -->
+
+</section>
+<section class="hb-sec"><div class="lesson-head" id="session-4" style="--c: #2f5fc4;" data-dot="#2f5fc4" data-item="第四堂　和弦組成與結構"><div class="lh-no">Session 04</div><h2>和弦組成與結構<small>Chords &amp; Inversions</small></h2></div>
+<p>本堂目標：能說明和聲與和弦的定義，以三度疊出三和弦；能分辨大、小、增、減四種三和弦的組成與聽感；能說出 C 大調的七個順階和弦，並彈奏三種轉位；下課前，右手以轉位彈奏 C → F → G → C，手不跳動。</p>
+<h3 id="session-4-35">課前問卷</h3>
+<ul>
+<li>C 大調音階最穩定的速度</li>
+<li>穿指與跨指的順暢程度</li>
+<li>已經會按的和弦</li>
+<li>雙手同時彈奏音階</li>
+</ul>
+<h3 id="session-4-36">課程綱要（120 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+<th>投影片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>00:00–00:20</td>
+<td>C 大調音階，你最穩定的速度是多少？、兩個音以上是和聲，三個音以三度堆疊是和弦</td>
+<td>3–4</td>
+</tr>
+<tr>
+<td>承</td>
+<td>00:20–00:55</td>
+<td>大三度與小三度，組合出四種顏色、更換根音與性質，聆聽和弦的顏色、推算和弦、以音階的每一個音為根音，疊出七個和弦</td>
+<td>5–8</td>
+</tr>
+<tr>
+<td>休</td>
+<td>00:55–01:05</td>
+<td>休息十分鐘</td>
+<td>9</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>01:05–01:40</td>
+<td>同樣三個音，更換最下面的音、點選轉位，觀察最低音的改變、轉位讓右手少移動，和弦之間連得更順、迷思還是事實？、和弦快問快答：老師喊名稱，各組彈出來</td>
+<td>10–14</td>
+</tr>
+<tr>
+<td>合</td>
+<td>01:40–02:00</td>
+<td>跟著播放器彈奏 C → F → G → C，右手試著加上轉位、離開教室前，寫下 3-2-1</td>
+<td>15–17</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td>課後</td>
+<td>三句話總結、出場券、課後練習與下一堂預告</td>
+<td>16、18、19</td>
+</tr>
+</tbody></table>
+<h3 id="session-4-37">講義擴充：三和弦</h3>
+<table>
+<thead>
+<tr>
+<th>和弦</th>
+<th>組成</th>
+<th>C 為根音</th>
+<th>符號</th>
+<th>聽感</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>大三和弦</td>
+<td>大三度 ＋ 小三度</td>
+<td>C E G</td>
+<td>C</td>
+<td>明亮、開朗</td>
+</tr>
+<tr>
+<td>小三和弦</td>
+<td>小三度 ＋ 大三度</td>
+<td>C E♭ G</td>
+<td>Cm</td>
+<td>柔和、憂傷</td>
+</tr>
+<tr>
+<td>增三和弦</td>
+<td>大三度 ＋ 大三度</td>
+<td>C E G♯</td>
+<td>C+、Caug</td>
+<td>懸疑、不安</td>
+</tr>
+<tr>
+<td>減三和弦</td>
+<td>小三度 ＋ 小三度</td>
+<td>C E♭ G♭</td>
+<td>Cdim、C°</td>
+<td>緊張、詭異</td>
+</tr>
+</tbody></table>
+<ul>
+<li>和聲是兩個以上的音同時發聲；和弦是三個或三個以上的音，以三度堆疊而成。</li>
+<li>掛四和弦（sus4）將三音換成四音，例如 Csus4 = C F G，聽起來懸而未決，想回到大三和弦。</li>
+</ul>
+<h3 id="session-4-38">講義擴充：C 大調的順階和弦</h3>
+<table>
+<thead>
+<tr>
+<th>級數</th>
+<th>Ⅰ</th>
+<th>Ⅱm</th>
+<th>Ⅲm</th>
+<th>Ⅳ</th>
+<th>Ⅴ</th>
+<th>Ⅵm</th>
+<th>Ⅶdim</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>和弦</td>
+<td>C</td>
+<td>Dm</td>
+<td>Em</td>
+<td>F</td>
+<td>G</td>
+<td>Am</td>
+<td>Bdim</td>
+</tr>
+<tr>
+<td>組成音</td>
+<td>1 3 5</td>
+<td>2 4 6</td>
+<td>3 5 7</td>
+<td>4 6 1</td>
+<td>5 7 2</td>
+<td>6 1 3</td>
+<td>7 2 4</td>
+</tr>
+</tbody></table>
+<h3 id="session-4-39">講義擴充：轉位</h3>
+<table>
+<thead>
+<tr>
+<th>位置</th>
+<th>C 和弦</th>
+<th>最低音</th>
+<th>右手指法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>原位</td>
+<td>C E G</td>
+<td>根音</td>
+<td>1 3 5</td>
+</tr>
+<tr>
+<td>第一轉位</td>
+<td>E G C</td>
+<td>三音</td>
+<td>1 2 5</td>
+</tr>
+<tr>
+<td>第二轉位</td>
+<td>G C E</td>
+<td>五音</td>
+<td>1 3 5</td>
+</tr>
+</tbody></table>
+<ul>
+<li>轉位讓相鄰的和弦保留共同音，其他的音就近移動。C → F → G → C 可以彈成 C E G → C F A → B D G → C E G。</li>
+<li>密集式：三個音在一個八度之內；開放式：音與音之間拉開，聲音更寬廣。</li>
+</ul>
+<h3 id="session-4-40">課堂互動（網站簡報）</h3>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>手機同步</td>
+<td>今天的路線：用三個音疊出和弦</td>
+</tr>
+<tr>
+<td>3</td>
+<td>舉手計票</td>
+<td>C 大調音階，你最穩定的速度是多少？</td>
+</tr>
+<tr>
+<td>6</td>
+<td>和弦實驗室</td>
+<td>更換根音與性質，聆聽和弦的顏色</td>
+</tr>
+<tr>
+<td>7</td>
+<td>選擇題</td>
+<td>推算和弦</td>
+</tr>
+<tr>
+<td>8</td>
+<td>順階和弦</td>
+<td>以音階的每一個音為根音，疊出七個和弦</td>
+</tr>
+<tr>
+<td>11</td>
+<td>和弦實驗室・轉位</td>
+<td>點選轉位，觀察最低音的改變</td>
+</tr>
+<tr>
+<td>13</td>
+<td>迷思破解・翻牌</td>
+<td>迷思還是事實？</td>
+</tr>
+<tr>
+<td>14</td>
+<td>分組任務・計分</td>
+<td>和弦快問快答：老師喊名稱，各組彈出來</td>
+</tr>
+<tr>
+<td>15</td>
+<td>伴奏型播放器</td>
+<td>跟著播放器彈奏 C → F → G → C，右手試著加上轉位</td>
+</tr>
+<tr>
+<td>17</td>
+<td>出場券 3-2-1</td>
+<td>離開教室前，寫下 3-2-1</td>
+</tr>
+<tr>
+<td>18</td>
+<td>自主學習追蹤</td>
+<td>課後練習：完成一項，點選一次打勾</td>
+</tr>
+<tr>
+<td>19</td>
+<td>課前問卷</td>
+<td>第五堂 基本歌曲彈奏（一）</td>
+</tr>
+</tbody></table>
+<h3 id="session-4-41">課後練習</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 彈奏 C 大調七個順階和弦，說出每一個和弦的名稱與性質</li>
+<li><input disabled="" type="checkbox"> 從任意根音推算大三和弦與小三和弦，至少六組</li>
+<li><input disabled="" type="checkbox"> 右手以轉位彈奏 C → F → G → C，連續十次手不跳動</li>
+<li><input disabled="" type="checkbox"> 左手彈奏 C、F、G 的根音，右手同時按住和弦</li>
+<li><input disabled="" type="checkbox"> 填寫第五堂課前問卷</li>
+</ul>
+</section>
+<section class="hb-sec"><div class="lesson-head" id="session-5" style="--c: #45b3e6;" data-dot="#45b3e6" data-item="第五堂　基本歌曲彈奏（一）"><div class="lh-no">Session 05</div><h2>基本歌曲彈奏（一）<small>First Songs · Melody &amp; Chords</small></h2></div>
+<p>本堂目標：能閱讀簡譜與和弦譜，為旋律安排右手的指法；能以左手根音、五度音與柱式和弦三種方式伴奏；理解如何依照旋律的音，選擇合適的和弦；下課前，雙手完成〈小星星〉，並以 3/4 拍彈奏〈生日快樂歌〉。</p>
+<h3 id="session-5-43">課前問卷</h3>
+<ul>
+<li>能夠立刻彈出的和弦數量</li>
+<li>以轉位彈奏 C → F → G → C 的狀態</li>
+<li>分辨大和弦與小和弦的把握</li>
+<li>最想先學會的一首歌</li>
+</ul>
+<h3 id="session-5-44">課程綱要（120 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+<th>投影片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>00:00–00:20</td>
+<td>C、F、G 三個和弦，你能閉著眼睛按出來嗎？、一首歌的鋼琴，分成兩個角色</td>
+<td>3–4</td>
+</tr>
+<tr>
+<td>承</td>
+<td>00:20–00:55</td>
+<td>一格一小節，上方是和弦，下方是旋律、先找出旋律的最低音與最高音，再決定手的位置、由簡單到豐富：根音、五度、柱式和弦、跟著播放器，彈奏左手的柱式和弦與分散和弦</td>
+<td>5–8</td>
+</tr>
+<tr>
+<td>休</td>
+<td>00:55–01:05</td>
+<td>休息十分鐘</td>
+<td>9</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>01:05–01:40</td>
+<td>旋律的音落在哪一個和弦裡，就選擇那個和弦、為旋律選擇和弦、〈小星星〉：右手旋律，左手換和弦、同一首〈小星星〉，三種左手</td>
+<td>10–13</td>
+</tr>
+<tr>
+<td>合</td>
+<td>01:40–02:00</td>
+<td>〈生日快樂歌〉：3/4 拍，從「祝你」的弱起開始、離開教室前，寫下 3-2-1</td>
+<td>14–16</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td>課後</td>
+<td>三句話總結、出場券、課後練習與下一堂預告</td>
+<td>15、17、18、19</td>
+</tr>
+</tbody></table>
+<h3 id="session-5-45">講義擴充：簡譜與和弦譜</h3>
+<table>
+<thead>
+<tr>
+<th>寫法</th>
+<th>意思</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5</td>
+<td>四分音符，一拍</td>
+</tr>
+<tr>
+<td>5 -</td>
+<td>延長一拍，共兩拍</td>
+</tr>
+<tr>
+<td>數字下方一條線</td>
+<td>八分音符</td>
+</tr>
+<tr>
+<td>0</td>
+<td>休止</td>
+</tr>
+<tr>
+<td>數字上方或下方加點</td>
+<td>高八度或低八度</td>
+</tr>
+</tbody></table>
+<ul>
+<li>讀譜順序：念出唱名、拍出節奏、找到和弦，最後才放到鍵盤上。</li>
+<li>在簡譜上寫下指法數字，每次都用同一套指法。</li>
+</ul>
+<h3 id="session-5-46">講義擴充：左手的三種彈法</h3>
+<table>
+<thead>
+<tr>
+<th>彈法</th>
+<th>C 和弦</th>
+<th>左手指法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>根音</td>
+<td>C</td>
+<td>5</td>
+</tr>
+<tr>
+<td>五度音</td>
+<td>C G</td>
+<td>5 1</td>
+</tr>
+<tr>
+<td>柱式和弦</td>
+<td>C E G</td>
+<td>5 3 1</td>
+</tr>
+</tbody></table>
+<h3 id="session-5-47">講義擴充：和弦內音與和弦選搭</h3>
+<table>
+<thead>
+<tr>
+<th>和弦</th>
+<th>和弦內音</th>
+<th>適合的旋律音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>C（Ⅰ）</td>
+<td>1 3 5</td>
+<td>Do、Mi、Sol</td>
+</tr>
+<tr>
+<td>F（Ⅳ）</td>
+<td>4 6 1</td>
+<td>Fa、La、Do</td>
+</tr>
+<tr>
+<td>G（Ⅴ）</td>
+<td>5 7 2</td>
+<td>Sol、Si、Re</td>
+</tr>
+</tbody></table>
+<ul>
+<li>依照每小節第一拍的旋律音選擇和弦；樂句結尾常是 G → C。</li>
+<li>〈小星星〉：C｜F C｜F C｜G C｜C F｜C G｜C F｜C G｜C｜F C｜F C｜G C。</li>
+<li>〈生日快樂歌〉（3/4，弱起）：C｜G｜G｜C｜C｜F｜C G｜C。</li>
+</ul>
+<h3 id="session-5-48">課堂互動（網站簡報）</h3>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>手機同步</td>
+<td>今天的路線：完成你在鋼琴上的第一首歌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>舉手計票</td>
+<td>C、F、G 三個和弦，你能閉著眼睛按出來嗎？</td>
+</tr>
+<tr>
+<td>4</td>
+<td>曲例聆聽・YouTube</td>
+<td>一首歌的鋼琴，分成兩個角色</td>
+</tr>
+<tr>
+<td>8</td>
+<td>伴奏型播放器</td>
+<td>跟著播放器，彈奏左手的柱式和弦與分散和弦</td>
+</tr>
+<tr>
+<td>11</td>
+<td>選擇題</td>
+<td>為旋律選擇和弦</td>
+</tr>
+<tr>
+<td>12</td>
+<td>歌曲彈奏</td>
+<td>〈小星星〉：右手旋律，左手換和弦</td>
+</tr>
+<tr>
+<td>13</td>
+<td>分組任務・計分</td>
+<td>同一首〈小星星〉，三種左手</td>
+</tr>
+<tr>
+<td>14</td>
+<td>歌曲彈奏</td>
+<td>〈生日快樂歌〉：3/4 拍，從「祝你」的弱起開始</td>
+</tr>
+<tr>
+<td>16</td>
+<td>出場券 3-2-1</td>
+<td>離開教室前，寫下 3-2-1</td>
+</tr>
+<tr>
+<td>17</td>
+<td>自主學習紀錄</td>
+<td>每天 15 分鐘歌曲課表</td>
+</tr>
+<tr>
+<td>18</td>
+<td>自主學習追蹤</td>
+<td>課後練習：完成一項，點選一次打勾</td>
+</tr>
+<tr>
+<td>19</td>
+<td>課前問卷</td>
+<td>第六堂 基本歌曲彈奏（二）與節奏型態</td>
+</tr>
+</tbody></table>
+<h3 id="session-5-49">課後練習</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 〈小星星〉三種左手版本，各雙手彈奏一次</li>
+<li><input disabled="" type="checkbox"> 〈生日快樂歌〉雙手彈奏，第一拍的和弦換對</li>
+<li><input disabled="" type="checkbox"> 挑選一首簡單的兒歌，自己在簡譜上標出和弦與指法</li>
+<li><input disabled="" type="checkbox"> 錄下〈小星星〉的雙手版本</li>
+<li><input disabled="" type="checkbox"> 填寫第六堂課前問卷</li>
+</ul>
+</section>
+<section class="hb-sec"><div class="lesson-head" id="session-6" style="--c: #6cbb4b;" data-dot="#6cbb4b" data-item="第六堂　基本歌曲彈奏（二）與節奏型態"><div class="lh-no">Session 06</div><h2>基本歌曲彈奏（二）與節奏型態<small>Rhythm Patterns I · Slow Soul &amp; Waltz</small></h2></div>
+<p>本堂目標：能閱讀 L5 L3 L2 L1、R1 R2 R5 的指位譜，彈奏分散和弦；能彈奏 Slow Soul 的四種伴奏型，並說出它們的差別；能以 3/4 華爾滋的蹦洽洽與分散和弦伴奏；下課前，以 Slow Soul 彈奏〈小星星〉，以華爾滋彈奏〈生日快樂歌〉。</p>
+<h3 id="session-6-51">課前問卷</h3>
+<ul>
+<li>雙手彈奏〈小星星〉的狀態</li>
+<li>左手最習慣的彈法</li>
+<li>雙手協調的程度</li>
+<li>使用延音踏板的經驗</li>
+</ul>
+<h3 id="session-6-52">課程綱要（120 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+<th>投影片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>00:00–00:20</td>
+<td>〈小星星〉的雙手版本，完成了嗎？、同樣是抒情，四拍與三拍的伴奏不一樣</td>
+<td>3–4</td>
+</tr>
+<tr>
+<td>承</td>
+<td>00:20–00:55</td>
+<td>指位譜：用手指的位置，寫下伴奏、Slow Soul：時下流行歌曲最常見的節奏、Slow Soul 四種伴奏：先聆聽，再跟著彈奏、閱讀指位譜</td>
+<td>5–8</td>
+</tr>
+<tr>
+<td>休</td>
+<td>00:55–01:05</td>
+<td>休息十分鐘</td>
+<td>9</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>01:05–01:40</td>
+<td>強、弱、弱：三拍子的四種伴奏、先聆聽拍號與速度，再決定左手、迷思還是事實？、〈小星星〉換成 Slow Soul，雙手合併</td>
+<td>10–13</td>
+</tr>
+<tr>
+<td>合</td>
+<td>01:40–02:00</td>
+<td>〈生日快樂歌〉：換成 3/4 分散和弦、錄下四拍與三拍兩個版本、離開教室前，寫下 3-2-1</td>
+<td>14–17</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td>課後</td>
+<td>三句話總結、出場券、課後練習與下一堂預告</td>
+<td>16、18、19</td>
+</tr>
+</tbody></table>
+<h3 id="session-6-53">講義擴充：分散和弦伴奏法與指位譜</h3>
+<p>以 C 和弦為例：L5 = C3（根音）、L3 = E3（三音）、L2 = G3（五音）、L1 = C4（高八度根音）、R1 = E4、R2 = G4、R5 = C5。換和弦時，手指的位置不變，整隻手移到新的根音。</p>
+<h3 id="session-6-54">講義擴充：Slow Soul</h3>
+<table>
+<thead>
+<tr>
+<th>型態</th>
+<th>簡譜（C 和弦）</th>
+<th>指位</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>（一）</td>
+<td>1̣ 5̣ 1 3 5 －</td>
+<td>L5 L2 L1 R1 R2</td>
+</tr>
+<tr>
+<td>（二）</td>
+<td>1̣ 5̣ 1 3 5 1̇ 5 3</td>
+<td>L5 L2 L1 R1 R2 R5 R2 R1</td>
+</tr>
+<tr>
+<td>（三）</td>
+<td>（1 3 5）× 4</td>
+<td>L5＋L3＋L2</td>
+</tr>
+<tr>
+<td>（四）</td>
+<td>1̣ 5̣ 1 5̣ 3 5̣ 1 5̣</td>
+<td>L5 L2 L1 L2 R1 L2 L1 L2</td>
+</tr>
+</tbody></table>
+<h3 id="session-6-55">講義擴充：3/4 華爾滋</h3>
+<table>
+<thead>
+<tr>
+<th>拍式</th>
+<th>指位</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>4 Beats 單手 8 度</td>
+<td>L5 L3 L2</td>
+</tr>
+<tr>
+<td>蹦洽洽</td>
+<td>L5、和弦、和弦</td>
+</tr>
+<tr>
+<td>8 Beats 單手 8 度</td>
+<td>L5 L3 L2 L1 L2 L1</td>
+</tr>
+<tr>
+<td>8 Beats 雙手 16 度</td>
+<td>L5 L2 L1 R1 R2 R5</td>
+</tr>
+</tbody></table>
+<h3 id="session-6-56">講義擴充：選擇伴奏型</h3>
+<table>
+<thead>
+<tr>
+<th>歌曲感覺</th>
+<th>速度</th>
+<th>建議的伴奏型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>抒情慢歌</td>
+<td>60–80 BPM</td>
+<td>Slow Soul（一）（二）</td>
+</tr>
+<tr>
+<td>中板流行</td>
+<td>80–110 BPM</td>
+<td>Slow Soul（三）（四）、8 Beats</td>
+</tr>
+<tr>
+<td>圓舞曲、生日歌</td>
+<td>3/4</td>
+<td>華爾滋</td>
+</tr>
+<tr>
+<td>兒歌、輕快歌曲</td>
+<td>100 BPM 以上</td>
+<td>柱式和弦、4 Beats</td>
+</tr>
+</tbody></table>
+<h3 id="session-6-57">課堂互動（網站簡報）</h3>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>手機同步</td>
+<td>今天的路線：讓左手開始流動</td>
+</tr>
+<tr>
+<td>3</td>
+<td>舉手計票</td>
+<td>〈小星星〉的雙手版本，完成了嗎？</td>
+</tr>
+<tr>
+<td>4</td>
+<td>曲例聆聽・YouTube</td>
+<td>同樣是抒情，四拍與三拍的伴奏不一樣</td>
+</tr>
+<tr>
+<td>7</td>
+<td>伴奏型播放器</td>
+<td>Slow Soul 四種伴奏：先聆聽，再跟著彈奏</td>
+</tr>
+<tr>
+<td>8</td>
+<td>選擇題</td>
+<td>閱讀指位譜</td>
+</tr>
+<tr>
+<td>10</td>
+<td>伴奏型播放器</td>
+<td>強、弱、弱：三拍子的四種伴奏</td>
+</tr>
+<tr>
+<td>12</td>
+<td>迷思破解・翻牌</td>
+<td>迷思還是事實？</td>
+</tr>
+<tr>
+<td>13</td>
+<td>歌曲彈奏</td>
+<td>〈小星星〉換成 Slow Soul，雙手合併</td>
+</tr>
+<tr>
+<td>14</td>
+<td>歌曲彈奏</td>
+<td>〈生日快樂歌〉：換成 3/4 分散和弦</td>
+</tr>
+<tr>
+<td>15</td>
+<td>錄音對照</td>
+<td>錄下四拍與三拍兩個版本</td>
+</tr>
+<tr>
+<td>17</td>
+<td>出場券 3-2-1</td>
+<td>離開教室前，寫下 3-2-1</td>
+</tr>
+<tr>
+<td>18</td>
+<td>自主學習追蹤</td>
+<td>課後練習：完成一項，點選一次打勾</td>
+</tr>
+<tr>
+<td>19</td>
+<td>課前問卷</td>
+<td>第七堂 伴奏技巧強化（4＋8）</td>
+</tr>
+</tbody></table>
+<h3 id="session-6-58">課後練習</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Slow Soul 四種伴奏，搭配 C → Am → F → G，各彈奏兩輪</li>
+<li><input disabled="" type="checkbox"> 3/4 蹦洽洽與分散和弦，搭配 C → G → G → C，各彈奏兩輪</li>
+<li><input disabled="" type="checkbox"> 〈小星星〉挑選一種 Slow Soul，雙手完整彈奏並錄音</li>
+<li><input disabled="" type="checkbox"> 挑選期中想彈唱的 C 調歌曲，找好和弦譜</li>
+<li><input disabled="" type="checkbox"> 填寫第七堂課前問卷</li>
+</ul>
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="p03"><h3 id="session-6-59">五指位置與指位譜｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/piano-five-fingers.webp?v=20261015faces2" width="501" height="515" alt="五根手指各對應一個琴鍵" loading="lazy" decoding="async"><figcaption>五根手指各對應一個琴鍵</figcaption></figure>
+<figure><img src="../assets/teaching/../piano/hands-keyboard.jpg?v=20261015faces2" width="1500" height="750" alt="由上方觀察左右手位置" loading="lazy" decoding="async"><figcaption>由上方觀察左右手位置</figcaption></figure>
+</div>
+<p class="teaching-note">指法編號從拇指 1 到小指 5；音高與手位以鍵盤圖核對。</p>
+</div>
+
+<!-- teaching-visuals-end -->
+
+</section>
+<section class="hb-sec"><div class="lesson-head" id="session-7" style="--c: #d6e03a;" data-dot="#d6e03a" data-item="第七堂　伴奏技巧強化（4＋8）"><div class="lh-no">Session 07</div><h2>伴奏技巧強化（4＋8）<small>Accompaniment · 4 Beats &amp; 8 Beats</small></h2></div>
+<p>本堂目標：能說明 4 Beats 與 8 Beats 的差別，依照速度選擇伴奏密度；能彈奏單手 8 度與雙手 16 度的分散和弦；理解左右手接力時的指法與手的位置；下課前，以 C → Am → F → G 完成一段「主歌 4 Beats、副歌 8 Beats」的伴奏。</p>
+<h3 id="session-7-61">課前問卷</h3>
+<ul>
+<li>最熟練的 Slow Soul 伴奏</li>
+<li>華爾滋的熟練程度</li>
+<li>期中想彈唱的歌曲</li>
+<li>期中發表的形式</li>
+</ul>
+<h3 id="session-7-62">課程綱要（120 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+<th>投影片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>00:00–00:20</td>
+<td>Slow Soul 四種伴奏，你最喜歡哪一種？、主歌與副歌，鋼琴的音符數量不一樣</td>
+<td>3–4</td>
+</tr>
+<tr>
+<td>承</td>
+<td>00:20–00:55</td>
+<td>一拍一個音，或一拍兩個音、4 Beats：單手 8 度三種、雙手 16 度三種、交接的那一拍，聲音不能斷、伴奏的密度與音域</td>
+<td>5–8</td>
+</tr>
+<tr>
+<td>休</td>
+<td>00:55–01:05</td>
+<td>休息十分鐘</td>
+<td>9</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>01:05–01:40</td>
+<td>8 Beats：單手三種、雙手三種、4/4 拍的十二種伴奏、主歌 4 Beats，副歌 8 Beats、伴奏接力：每人負責一種型態</td>
+<td>10–13</td>
+</tr>
+<tr>
+<td>合</td>
+<td>01:40–02:00</td>
+<td>錄下主歌與副歌兩種伴奏、離開教室前，寫下 3-2-1</td>
+<td>14–16</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td>課後</td>
+<td>三句話總結、出場券、課後練習與下一堂預告</td>
+<td>15、17、18、19</td>
+</tr>
+</tbody></table>
+<h3 id="session-7-63">講義擴充：分散和弦伴奏法（4/4）</h3>
+<table>
+<thead>
+<tr>
+<th>拍式</th>
+<th>音域</th>
+<th>每小節的指位</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>4 Beats</td>
+<td>單手 8 度</td>
+<td>L5 L3 L2 L1</td>
+</tr>
+<tr>
+<td>4 Beats</td>
+<td>單手 8 度</td>
+<td>L5 L3 L2 L1｜L2 L1 L2 L1</td>
+</tr>
+<tr>
+<td>4 Beats</td>
+<td>單手 8 度</td>
+<td>L5 L3 L2 L1｜L3 L2 L1 L3｜L2 L1 L3 L2｜L1 L3 L2 L1</td>
+</tr>
+<tr>
+<td>4 Beats</td>
+<td>雙手 16 度</td>
+<td>L5 L3 L2 L1｜R1 R2 R5 R2</td>
+</tr>
+<tr>
+<td>4 Beats</td>
+<td>雙手 16 度</td>
+<td>L5 L3 L2 L1｜R5 R2 R1 R2</td>
+</tr>
+<tr>
+<td>4 Beats</td>
+<td>雙手 16 度</td>
+<td>L5 L3 L2 L1｜R1 R2 R5 R2｜R1 L1 L2 L3｜L5 L3 L2 L1</td>
+</tr>
+<tr>
+<td>8 Beats</td>
+<td>單手 8 度</td>
+<td>L5 L3 L2 L1 L5 L3 L2 L1</td>
+</tr>
+<tr>
+<td>8 Beats</td>
+<td>單手 8 度</td>
+<td>L5 L3 L2 L1 L3 L1 L2 L1</td>
+</tr>
+<tr>
+<td>8 Beats</td>
+<td>單手 16 度</td>
+<td>L5 L3 L2 L1 L3 L2 L1 L2</td>
+</tr>
+<tr>
+<td>8 Beats</td>
+<td>雙手 16 度</td>
+<td>L5 L3 L2 L1 R1 R2 R5 R2</td>
+</tr>
+<tr>
+<td>8 Beats</td>
+<td>雙手 16 度</td>
+<td>L5 L2 L1 R1 R2 R5 R2 R1</td>
+</tr>
+<tr>
+<td>8 Beats</td>
+<td>雙手 16 度</td>
+<td>L5 L2 L1 R2 R5 R2 R1 R2</td>
+</tr>
+</tbody></table>
+<ul>
+<li>4 Beats 每拍一個音，穩重；8 Beats 每拍兩個音，流動。</li>
+<li>左右手接力：左手彈奏 L1 時，右手已懸在 R1 上方；搭配延音踏板，讓兩個八度連成一片。</li>
+<li>段落轉換：主歌 4 Beats 單手 8 度，前副歌 4 Beats 雙手 16 度，副歌 8 Beats 雙手 16 度。</li>
+</ul>
+<h3 id="session-7-64">課堂互動（網站簡報）</h3>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>手機同步</td>
+<td>今天的路線：左右手接力，彈出兩個八度的聲音</td>
+</tr>
+<tr>
+<td>3</td>
+<td>舉手計票</td>
+<td>Slow Soul 四種伴奏，你最喜歡哪一種？</td>
+</tr>
+<tr>
+<td>4</td>
+<td>曲例聆聽・YouTube</td>
+<td>主歌與副歌，鋼琴的音符數量不一樣</td>
+</tr>
+<tr>
+<td>6</td>
+<td>伴奏型播放器</td>
+<td>4 Beats：單手 8 度三種、雙手 16 度三種</td>
+</tr>
+<tr>
+<td>8</td>
+<td>選擇題</td>
+<td>伴奏的密度與音域</td>
+</tr>
+<tr>
+<td>10</td>
+<td>伴奏型播放器</td>
+<td>8 Beats：單手三種、雙手三種</td>
+</tr>
+<tr>
+<td>13</td>
+<td>分組任務・計分</td>
+<td>伴奏接力：每人負責一種型態</td>
+</tr>
+<tr>
+<td>14</td>
+<td>錄音對照</td>
+<td>錄下主歌與副歌兩種伴奏</td>
+</tr>
+<tr>
+<td>16</td>
+<td>出場券 3-2-1</td>
+<td>離開教室前，寫下 3-2-1</td>
+</tr>
+<tr>
+<td>17</td>
+<td>自主學習紀錄</td>
+<td>每天 20 分鐘伴奏課表</td>
+</tr>
+<tr>
+<td>18</td>
+<td>自主學習追蹤</td>
+<td>課後練習：完成一項，點選一次打勾</td>
+</tr>
+<tr>
+<td>19</td>
+<td>課前問卷</td>
+<td>第八堂 單一調性歌曲與自彈自唱</td>
+</tr>
+</tbody></table>
+<h3 id="session-7-65">課後練習</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 4 Beats 六種伴奏，各搭配 C → Am → F → G 彈奏兩輪</li>
+<li><input disabled="" type="checkbox"> 8 Beats 六種伴奏，挑選三種，練習到 72 BPM</li>
+<li><input disabled="" type="checkbox"> 為期中曲目設計主歌與副歌的伴奏型，寫在和弦譜上</li>
+<li><input disabled="" type="checkbox"> 錄下期中曲目的伴奏，不唱歌</li>
+<li><input disabled="" type="checkbox"> 填寫第八堂課前問卷</li>
+</ul>
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="p05"><h3 id="session-7-66">左右手交接｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/piano-relay-left.webp?v=20261015faces2" width="437" height="436" alt="左手完成低音區，右手預先準備" loading="lazy" decoding="async"><figcaption>左手完成低音區，右手預先準備</figcaption></figure>
+<figure><img src="../assets/teaching/piano-relay-right.webp?v=20261015faces2" width="436" height="436" alt="右手接續高音區，保持律動連續" loading="lazy" decoding="async"><figcaption>右手接續高音區，保持律動連續</figcaption></figure>
+</div>
+</div>
+
+<!-- teaching-visuals-end -->
+
+</section>
+<section class="hb-sec"><div class="lesson-head" id="session-8" style="--c: #f4a62a;" data-dot="#f4a62a" data-item="第八堂　單一調性歌曲與自彈自唱"><div class="lh-no">Session 08</div><h2>單一調性歌曲與自彈自唱<small>One Key · Sing &amp; Play</small></h2></div>
+<p>本堂目標：能從和弦譜判斷一首歌的調性，閱讀流行歌曲的段落；能為歌曲設計前奏與尾奏；能依照四個步驟練習自彈自唱，並在需要時簡化伴奏；完成期中發表：一首 C 調歌曲的自彈自唱或彈奏。</p>
+<h3 id="session-8-68">課前問卷</h3>
+<ul>
+<li>期中曲目</li>
+<li>主歌與副歌使用的伴奏型</li>
+<li>伴奏的熟練程度</li>
+<li>自彈自唱最困難的地方</li>
+</ul>
+<h3 id="session-8-69">課程綱要（120 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+<th>投影片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>00:00–00:20</td>
+<td>期中曲目準備好了嗎？、自彈自唱時，鋼琴的音量要低於歌聲</td>
+<td>3–4</td>
+</tr>
+<tr>
+<td>承</td>
+<td>00:20–00:55</td>
+<td>第一個和弦與最後一個和弦，通常就是調性、一張和弦譜，記錄了整首歌的地圖、借用副歌的最後四小節，當作前奏、單一調性的完整練習：C 調、4/4、十六小節</td>
+<td>5–8</td>
+</tr>
+<tr>
+<td>休</td>
+<td>00:55–01:05</td>
+<td>休息十分鐘</td>
+<td>9</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>01:05–01:40</td>
+<td>伴奏熟練到無需思考，才有餘力演唱、演唱吃力時，先簡化雙手、自彈自唱的觀念、兩人一組，互相聆聽彩排</td>
+<td>10–13</td>
+</tr>
+<tr>
+<td>合</td>
+<td>01:40–02:00</td>
+<td>每人兩分鐘：一段主歌，一段副歌、錄下期中發表，第十二堂再聆聽一次、離開教室前，寫下 3-2-1</td>
+<td>14–17</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td>課後</td>
+<td>三句話總結、出場券、課後練習與下一堂預告</td>
+<td>16、18、19</td>
+</tr>
+</tbody></table>
+<h3 id="session-8-70">講義擴充：判斷調性與閱讀和弦譜</h3>
+<ul>
+<li>單一調性：整首歌沒有轉調。看第一個與最後一個和弦，再看出現最多的三個和弦。</li>
+<li>和弦譜常見記號：Intro、Verse、Chorus、反覆記號、第一次與第二次結尾、D.S.、D.C.、Coda、N.C.。</li>
+</ul>
+<h3 id="session-8-71">講義擴充：前奏與尾奏</h3>
+<ul>
+<li>前奏：借用副歌最後四小節的和弦，最後停在 G，準備進入主歌。</li>
+<li>尾奏：重複最後一句的和弦並放慢，最後以 C 和弦的分散和弦結束，踩住延音踏板。</li>
+</ul>
+<h3 id="session-8-72">講義擴充：自彈自唱的四個步驟</h3>
+<ol>
+<li>背熟伴奏：不依賴樂譜，整首伴奏連續彈奏兩次不中斷。</li>
+<li>伴奏加上哼唱：讓手與嘴巴分工。</li>
+<li>伴奏加上唱名：確認每個音落在哪一拍。</li>
+<li>伴奏加上歌詞：從主歌開始，一段一段加入。</li>
+</ol>
+<p>演唱吃力時，先簡化伴奏：只用左手、減少音符、在換氣的地方只彈奏根音。</p>
+<h3 id="session-8-73">講義擴充：期中發表</h3>
+<p>評量五個面向：穩定、和弦、段落、平衡（伴奏比歌聲或旋律輕）、台風。練習曲〈Jingle Bells〉：C｜C｜C｜C｜F｜C｜G｜G｜C｜C｜C｜C｜F｜C｜G｜C。</p>
+<h3 id="session-8-74">課堂互動（網站簡報）</h3>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>手機同步</td>
+<td>今天的路線：一邊彈奏，一邊演唱</td>
+</tr>
+<tr>
+<td>3</td>
+<td>舉手計票</td>
+<td>期中曲目準備好了嗎？</td>
+</tr>
+<tr>
+<td>4</td>
+<td>曲例聆聽・YouTube</td>
+<td>自彈自唱時，鋼琴的音量要低於歌聲</td>
+</tr>
+<tr>
+<td>8</td>
+<td>歌曲彈奏</td>
+<td>單一調性的完整練習：C 調、4/4、十六小節</td>
+</tr>
+<tr>
+<td>12</td>
+<td>選擇題</td>
+<td>自彈自唱的觀念</td>
+</tr>
+<tr>
+<td>13</td>
+<td>分段計時・隨機點名</td>
+<td>兩人一組，互相聆聽彩排</td>
+</tr>
+<tr>
+<td>14</td>
+<td>分段計時・評分</td>
+<td>每人兩分鐘：一段主歌，一段副歌</td>
+</tr>
+<tr>
+<td>15</td>
+<td>錄音</td>
+<td>錄下期中發表，第十二堂再聆聽一次</td>
+</tr>
+<tr>
+<td>17</td>
+<td>出場券 3-2-1</td>
+<td>離開教室前，寫下 3-2-1</td>
+</tr>
+<tr>
+<td>18</td>
+<td>自主學習追蹤</td>
+<td>課後練習：完成一項，點選一次打勾</td>
+</tr>
+<tr>
+<td>19</td>
+<td>課前問卷</td>
+<td>第九堂 級數和弦與調性關係</td>
+</tr>
+</tbody></table>
+<h3 id="session-8-75">課後練習</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 重新聆聽期中錄音，寫下最想改進的一件事</li>
+<li><input disabled="" type="checkbox"> 〈Jingle Bells〉雙手完整彈奏，並嘗試自彈自唱</li>
+<li><input disabled="" type="checkbox"> 為期中曲目補上前奏與尾奏</li>
+<li><input disabled="" type="checkbox"> 尋找一首新的 C 調歌曲，標出段落與換氣點</li>
+<li><input disabled="" type="checkbox"> 填寫第九堂課前問卷</li>
+</ul>
+</section>
+<section class="hb-sec"><div class="lesson-head" id="session-9" style="--c: #e8412b;" data-dot="#e8412b" data-item="第九堂　級數和弦與調性關係"><div class="lh-no">Session 09</div><h2>級數和弦與調性關係<small>Chord Degrees &amp; Keys</small></h2></div>
+<p>本堂目標：能以羅馬數字表示和弦的級數，說出大調的順階和弦；理解主和弦、下屬和弦、屬和弦的功能與常見的終止式；能依照級數，將一組和弦進行移到 G 大調與 F 大調；下課前，以 C 大調與 G 大調各彈奏一次〈Jingle Bells〉。</p>
+<h3 id="session-9-77">課前問卷</h3>
+<ul>
+<li>期中發表最滿意的地方</li>
+<li>期中發表最想改進的地方</li>
+<li>對「級數」「Ⅰ Ⅳ Ⅴ」的熟悉程度</li>
+<li>希望能夠移調的原因</li>
+</ul>
+<h3 id="session-9-78">課程綱要（120 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+<th>投影片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>00:00–00:20</td>
+<td>期中發表之後，你最想改進什麼？、歌手說「太高了，降低一點」，伴奏要怎麼辦？</td>
+<td>3–4</td>
+</tr>
+<tr>
+<td>承</td>
+<td>00:20–00:55</td>
+<td>以羅馬數字，記錄和弦在調裡的位置、切換調性，點選和弦卡片，觀察級數不變的規律、主和弦是家，下屬和弦出門，屬和弦想回家、樂句的結尾，和弦如何回家、級數與功能</td>
+<td>5–9</td>
+</tr>
+<tr>
+<td>休</td>
+<td>00:55–01:05</td>
+<td>休息十分鐘</td>
+<td>10</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>01:05–01:40</td>
+<td>三個步驟，將和弦譜搬到另一個調、同一組 Ⅰ Ⅵm Ⅳ Ⅴ，四個調依序聆聽、移調快問快答</td>
+<td>11–13</td>
+</tr>
+<tr>
+<td>合</td>
+<td>01:40–02:00</td>
+<td>〈Jingle Bells〉G 大調：簡譜不變，和弦換成 G、C、D、離開教室前，寫下 3-2-1</td>
+<td>14–16</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td>課後</td>
+<td>三句話總結、出場券、課後練習與下一堂預告</td>
+<td>15、17、18</td>
+</tr>
+</tbody></table>
+<h3 id="session-9-79">講義擴充：級數</h3>
+<table>
+<thead>
+<tr>
+<th>級數</th>
+<th>Ⅰ</th>
+<th>Ⅱm</th>
+<th>Ⅲm</th>
+<th>Ⅳ</th>
+<th>Ⅴ</th>
+<th>Ⅵm</th>
+<th>Ⅶdim</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>C 大調</td>
+<td>C</td>
+<td>Dm</td>
+<td>Em</td>
+<td>F</td>
+<td>G</td>
+<td>Am</td>
+<td>Bdim</td>
+</tr>
+<tr>
+<td>G 大調</td>
+<td>G</td>
+<td>Am</td>
+<td>Bm</td>
+<td>C</td>
+<td>D</td>
+<td>Em</td>
+<td>F♯dim</td>
+</tr>
+<tr>
+<td>F 大調</td>
+<td>F</td>
+<td>Gm</td>
+<td>Am</td>
+<td>B♭</td>
+<td>C</td>
+<td>Dm</td>
+<td>Edim</td>
+</tr>
+<tr>
+<td>D 大調</td>
+<td>D</td>
+<td>Em</td>
+<td>F♯m</td>
+<td>G</td>
+<td>A</td>
+<td>Bm</td>
+<td>C♯dim</td>
+</tr>
+</tbody></table>
+<h3 id="session-9-80">講義擴充：和弦的功能與終止式</h3>
+<ul>
+<li>主和弦 Ⅰ（Ⅵm、Ⅲm 可代替）：安定、結束。下屬和弦 Ⅳ（Ⅱm 相似）：離開、流動。屬和弦 Ⅴ（Ⅶdim 相似）：張力、想回家。</li>
+<li>Ⅰ、Ⅳ、Ⅴ 為主要三和弦，許多民謠與兒歌只用這三個和弦。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>終止式</th>
+<th>級數</th>
+<th>聽感</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>正格終止</td>
+<td>Ⅴ → Ⅰ</td>
+<td>確定、完整</td>
+</tr>
+<tr>
+<td>變格終止</td>
+<td>Ⅳ → Ⅰ</td>
+<td>溫和</td>
+</tr>
+<tr>
+<td>半終止</td>
+<td>→ Ⅴ</td>
+<td>等待下一句</td>
+</tr>
+<tr>
+<td>假終止</td>
+<td>Ⅴ → Ⅵm</td>
+<td>轉了彎</td>
+</tr>
+</tbody></table>
+<h3 id="session-9-81">講義擴充：依照級數移調</h3>
+<ol>
+<li>寫出原調和弦的級數。</li>
+<li>選擇新的調。</li>
+<li>依照級數換成新調的和弦。旋律的簡譜數字不需要改變。</li>
+</ol>
+<h3 id="session-9-82">課堂互動（網站簡報）</h3>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>手機同步</td>
+<td>今天的路線：找到和弦背後的數字規律</td>
+</tr>
+<tr>
+<td>3</td>
+<td>舉手計票</td>
+<td>期中發表之後，你最想改進什麼？</td>
+</tr>
+<tr>
+<td>6</td>
+<td>順階和弦</td>
+<td>切換調性，點選和弦卡片，觀察級數不變的規律</td>
+</tr>
+<tr>
+<td>8</td>
+<td>伴奏型播放器</td>
+<td>樂句的結尾，和弦如何回家</td>
+</tr>
+<tr>
+<td>9</td>
+<td>選擇題</td>
+<td>級數與功能</td>
+</tr>
+<tr>
+<td>12</td>
+<td>伴奏型播放器</td>
+<td>同一組 Ⅰ Ⅵm Ⅳ Ⅴ，四個調依序聆聽</td>
+</tr>
+<tr>
+<td>13</td>
+<td>分組任務・計分</td>
+<td>移調快問快答</td>
+</tr>
+<tr>
+<td>14</td>
+<td>歌曲彈奏</td>
+<td>〈Jingle Bells〉G 大調：簡譜不變，和弦換成 G、C、D</td>
+</tr>
+<tr>
+<td>16</td>
+<td>出場券 3-2-1</td>
+<td>離開教室前，寫下 3-2-1</td>
+</tr>
+<tr>
+<td>17</td>
+<td>自主學習追蹤</td>
+<td>課後練習：完成一項，點選一次打勾</td>
+</tr>
+<tr>
+<td>18</td>
+<td>課前問卷</td>
+<td>第十堂 根音連結、複合和弦與常用和弦行進</td>
+</tr>
+</tbody></table>
+<h3 id="session-9-83">課後練習</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 寫出 C、G、F 大調的七個順階和弦與級數</li>
+<li><input disabled="" type="checkbox"> 將期中曲目的和弦譜，標上級數</li>
+<li><input disabled="" type="checkbox"> 將期中曲目移到另一個調，彈奏一次</li>
+<li><input disabled="" type="checkbox"> 〈Jingle Bells〉以 C 大調與 G 大調各彈奏一次</li>
+<li><input disabled="" type="checkbox"> 填寫第十堂課前問卷</li>
+</ul>
+</section>
+<section class="hb-sec"><div class="lesson-head" id="session-10" style="--c: #e2407f;" data-dot="#e2407f" data-item="第十堂　根音連結、複合和弦與常用和弦行進"><div class="lh-no">Session 10</div><h2>根音連結、複合和弦與常用和弦行進<small>Bass Lines · Slash Chords · Progressions</small></h2></div>
+<p>本堂目標：能閱讀複合和弦的寫法，例如 C/E、G/B、Am/G；能以根音連結，讓相鄰和弦的低音級進；能彈奏 1645、1564、卡農進行與 2-5-1，並說出它們的聽感；下課前，全班以下行低音線合奏卡農進行。</p>
+<h3 id="session-10-85">課前問卷</h3>
+<ul>
+<li>能夠寫出順階和弦的調性</li>
+<li>期中曲目移調的進度</li>
+<li>聽過「卡農進行」嗎</li>
+<li>喜愛的歌曲中，你注意到重複出現的和弦</li>
+</ul>
+<h3 id="session-10-86">課程綱要（120 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+<th>投影片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>00:00–00:20</td>
+<td>期中曲目移調了嗎？、只聆聽最低的聲音：它一直往下走</td>
+<td>3–4</td>
+</tr>
+<tr>
+<td>承</td>
+<td>00:20–00:55</td>
+<td>斜線左邊是和弦，右邊是低音、相鄰的兩個低音，最好只差一步、切換兩組和弦，比較低音跳躍與低音級進、讀出複合和弦</td>
+<td>5–8</td>
+</tr>
+<tr>
+<td>休</td>
+<td>00:55–01:05</td>
+<td>休息十分鐘</td>
+<td>9</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>01:05–01:40</td>
+<td>流行歌曲最常用的五組和弦進行、切換和弦進行，跟著彈奏，感受情緒的差別、迷思還是事實？、設計一條低音線</td>
+<td>10–13</td>
+</tr>
+<tr>
+<td>合</td>
+<td>01:40–02:00</td>
+<td>一半同學彈奏低音線，一半同學彈奏右手和弦、離開教室前，寫下 3-2-1</td>
+<td>14–16</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td>課後</td>
+<td>三句話總結、出場券、課後練習與下一堂預告</td>
+<td>15、17、18</td>
+</tr>
+</tbody></table>
+<h3 id="session-10-87">講義擴充：複合和弦</h3>
+<ul>
+<li>寫法：斜線左邊是和弦，右邊是低音。C/E 念作 C over E，又稱分數和弦、分割和弦。</li>
+<li>左手彈奏斜線右邊的低音，右手照常彈奏和弦。C/E 等於 C 的第一轉位；Am/G、C/B 的低音不在和弦裡，只為了讓低音線級進。</li>
+</ul>
+<h3 id="session-10-88">講義擴充：根音連結</h3>
+<table>
+<thead>
+<tr>
+<th>原本</th>
+<th>C</th>
+<th>G</th>
+<th>Am</th>
+<th>Em</th>
+<th>F</th>
+<th>C</th>
+<th>F</th>
+<th>G</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>根音連結</td>
+<td>C</td>
+<td>G/B</td>
+<td>Am</td>
+<td>Em/G</td>
+<td>F</td>
+<td>C/E</td>
+<td>F</td>
+<td>G</td>
+</tr>
+<tr>
+<td>低音</td>
+<td>C</td>
+<td>B</td>
+<td>A</td>
+<td>G</td>
+<td>F</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+</tr>
+</tbody></table>
+<p>另一條常見的下行低音線：C → C/B → Am → Am/G → F → C/E → Dm → G。</p>
+<h3 id="session-10-89">講義擴充：常用和弦行進</h3>
+<table>
+<thead>
+<tr>
+<th>名稱</th>
+<th>級數</th>
+<th>C 大調</th>
+<th>聽感</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1645</td>
+<td>Ⅰ Ⅵm Ⅳ Ⅴ</td>
+<td>C Am F G</td>
+<td>溫暖懷舊</td>
+</tr>
+<tr>
+<td>1564</td>
+<td>Ⅰ Ⅴ Ⅵm Ⅳ</td>
+<td>C G Am F</td>
+<td>明亮有力</td>
+</tr>
+<tr>
+<td>卡農進行</td>
+<td>Ⅰ Ⅴ Ⅵm Ⅲm Ⅳ Ⅰ Ⅳ Ⅴ</td>
+<td>C G Am Em F C F G</td>
+<td>優雅、經典</td>
+</tr>
+<tr>
+<td>4536</td>
+<td>Ⅳ Ⅴ Ⅲm Ⅵm</td>
+<td>F G Em Am</td>
+<td>情緒往上推</td>
+</tr>
+<tr>
+<td>2-5-1</td>
+<td>Ⅱm Ⅴ Ⅰ</td>
+<td>Dm G C</td>
+<td>回家的路</td>
+</tr>
+<tr>
+<td>16451</td>
+<td>Ⅰ Ⅵm Ⅳ Ⅴ Ⅰ</td>
+<td>C Am F G C</td>
+<td>主和弦開始與結束</td>
+</tr>
+</tbody></table>
+<h3 id="session-10-90">課堂互動（網站簡報）</h3>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>手機同步</td>
+<td>今天的路線：讓低音一步一步走下樓梯</td>
+</tr>
+<tr>
+<td>3</td>
+<td>舉手計票</td>
+<td>期中曲目移調了嗎？</td>
+</tr>
+<tr>
+<td>4</td>
+<td>曲例聆聽・YouTube</td>
+<td>只聆聽最低的聲音：它一直往下走</td>
+</tr>
+<tr>
+<td>7</td>
+<td>伴奏型播放器</td>
+<td>切換兩組和弦，比較低音跳躍與低音級進</td>
+</tr>
+<tr>
+<td>8</td>
+<td>選擇題</td>
+<td>讀出複合和弦</td>
+</tr>
+<tr>
+<td>11</td>
+<td>伴奏型播放器</td>
+<td>切換和弦進行，跟著彈奏，感受情緒的差別</td>
+</tr>
+<tr>
+<td>12</td>
+<td>迷思破解・翻牌</td>
+<td>迷思還是事實？</td>
+</tr>
+<tr>
+<td>13</td>
+<td>分組任務・計分</td>
+<td>設計一條低音線</td>
+</tr>
+<tr>
+<td>14</td>
+<td>伴奏型播放器・全班合奏</td>
+<td>一半同學彈奏低音線，一半同學彈奏右手和弦</td>
+</tr>
+<tr>
+<td>16</td>
+<td>出場券 3-2-1</td>
+<td>離開教室前，寫下 3-2-1</td>
+</tr>
+<tr>
+<td>17</td>
+<td>自主學習追蹤</td>
+<td>課後練習：完成一項，點選一次打勾</td>
+</tr>
+<tr>
+<td>18</td>
+<td>課前問卷</td>
+<td>第十一堂 節奏型態（二）與十度、十六度伴奏</td>
+</tr>
+</tbody></table>
+<h3 id="session-10-91">課後練習</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 彈奏卡農進行的兩個版本：一般低音與下行低音線</li>
+<li><input disabled="" type="checkbox"> 1645、1564、4536、2-5-1 各彈奏兩輪，說出聽感</li>
+<li><input disabled="" type="checkbox"> 為期中曲目加入一個複合和弦</li>
+<li><input disabled="" type="checkbox"> 聆聽一首喜愛的歌曲，找出它使用的和弦進行</li>
+<li><input disabled="" type="checkbox"> 填寫第十一堂課前問卷</li>
+</ul>
+</section>
+<section class="hb-sec"><div class="lesson-head" id="session-11" style="--c: #9a5fd0;" data-dot="#9a5fd0" data-item="第十一堂　節奏型態（二）與十度、十六度伴奏"><div class="lh-no">Session 11</div><h2>節奏型態（二）與十度、十六度伴奏<small>Rhythm Patterns II · Tenths &amp; Sixteenths</small></h2></div>
+<p>本堂目標：能以 12/8 的三連音律動彈奏 Slow Rock 伴奏；能彈奏 2/4 進行曲的蹦洽伴奏，並辨識 Bossa Nova 的風格；能彈奏十度音伴奏與雙手十六度的分散和弦；下課前，以三種不同的節奏型態彈奏同一組和弦，讓同學猜出風格。</p>
+<h3 id="session-11-93">課前問卷</h3>
+<ul>
+<li>卡農進行下行低音線的狀態</li>
+<li>最熟練的和弦進行</li>
+<li>左手張開，拇指到小指能跨幾個白鍵</li>
+<li>想學習的音樂風格</li>
+</ul>
+<h3 id="session-11-94">課程綱要（120 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+<th>投影片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>00:00–00:20</td>
+<td>卡農進行的下行低音線，練好了嗎？、十度音、Slow Rock、Bossa Nova</td>
+<td>3–4</td>
+</tr>
+<tr>
+<td>承</td>
+<td>00:20–00:55</td>
+<td>12/8：每一拍分成三份，帶有搖擺感、Slow Rock 與進行曲：先聆聽，再跟著彈奏、兩拍子的「蹦洽」，以及巴西的 Bossa Nova、節奏型態</td>
+<td>5–8</td>
+</tr>
+<tr>
+<td>休</td>
+<td>00:55–01:05</td>
+<td>休息十分鐘</td>
+<td>9</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>01:05–01:40</td>
+<td>十度音：三音的高八度、十度音與雙手十六度：伴奏音域擴大到兩個八度、十二堂學過的伴奏型，總整理、風格猜猜看</td>
+<td>10–13</td>
+</tr>
+<tr>
+<td>合</td>
+<td>01:40–02:00</td>
+<td>錄下兩種新的伴奏、離開教室前，寫下 3-2-1</td>
+<td>14–16</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td>課後</td>
+<td>三句話總結、出場券、課後練習與下一堂預告</td>
+<td>15、17、18</td>
+</tr>
+</tbody></table>
+<h3 id="session-11-95">講義擴充：節奏型態（二）</h3>
+<table>
+<thead>
+<tr>
+<th>風格</th>
+<th>拍號</th>
+<th>伴奏型</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Slow Rock</td>
+<td>12/8</td>
+<td>L5 L2 L1　R1 L1 L2</td>
+<td>每拍三個音，帶有搖擺感</td>
+</tr>
+<tr>
+<td>進行曲</td>
+<td>2/4</td>
+<td>根音、和弦、五音、和弦</td>
+<td>蹦洽，輕快有朝氣</td>
+</tr>
+<tr>
+<td>Bossa Nova</td>
+<td>4/4</td>
+<td>低音在一、三拍，和弦切分</td>
+<td>源自巴西，中級課程再深入</td>
+</tr>
+</tbody></table>
+<p>原教材的節奏型態另有 Rumba、Cha Cha、Tango、Disco、Boogie Woogie 與古典風格，流行鋼琴的伴奏多半來自各國的傳統舞曲。</p>
+<h3 id="session-11-96">講義擴充：十度與十六度伴奏</h3>
+<ul>
+<li>十度音是三音的高八度。十度音伴奏彈奏 1 5 10 5 10 5 10 5：根音、五音、十度音，再於五音與十度音之間來回，理查‧克萊德曼的作品常用這種伴奏。</li>
+<li>雙手十六度：左手彈奏完 L5 L3 L2 L1，交給右手 R1 R2 R5，音域擴大到兩個八度。</li>
+<li>手掌較小時，以分散的方式彈奏，不必同時按住十度。</li>
+</ul>
+<h3 id="session-11-97">課堂互動（網站簡報）</h3>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>手機同步</td>
+<td>今天的路線：為同一組和弦換上不同的風格</td>
+</tr>
+<tr>
+<td>3</td>
+<td>舉手計票</td>
+<td>卡農進行的下行低音線，練好了嗎？</td>
+</tr>
+<tr>
+<td>4</td>
+<td>曲例聆聽・YouTube</td>
+<td>十度音、Slow Rock、Bossa Nova</td>
+</tr>
+<tr>
+<td>6</td>
+<td>伴奏型播放器</td>
+<td>Slow Rock 與進行曲：先聆聽，再跟著彈奏</td>
+</tr>
+<tr>
+<td>8</td>
+<td>選擇題</td>
+<td>節奏型態</td>
+</tr>
+<tr>
+<td>11</td>
+<td>伴奏型播放器</td>
+<td>十度音與雙手十六度：伴奏音域擴大到兩個八度</td>
+</tr>
+<tr>
+<td>13</td>
+<td>分組任務・計分</td>
+<td>風格猜猜看</td>
+</tr>
+<tr>
+<td>14</td>
+<td>錄音對照</td>
+<td>錄下兩種新的伴奏</td>
+</tr>
+<tr>
+<td>16</td>
+<td>出場券 3-2-1</td>
+<td>離開教室前，寫下 3-2-1</td>
+</tr>
+<tr>
+<td>17</td>
+<td>自主學習追蹤</td>
+<td>課後練習：完成一項，點選一次打勾</td>
+</tr>
+<tr>
+<td>18</td>
+<td>課前問卷</td>
+<td>第十二堂 大小調關係與 G 大調歌曲彈奏</td>
+</tr>
+</tbody></table>
+<h3 id="session-11-98">課後練習</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Slow Rock 搭配 C → Am → F → G，三連音保持平均</li>
+<li><input disabled="" type="checkbox"> 十度音伴奏搭配卡農進行，彈奏兩輪</li>
+<li><input disabled="" type="checkbox"> 為期末曲目選擇兩種伴奏型，標在和弦譜上</li>
+<li><input disabled="" type="checkbox"> 錄下期末曲目的伴奏</li>
+<li><input disabled="" type="checkbox"> 填寫第十二堂課前問卷</li>
+</ul>
+<!-- teaching-visuals-start -->
+
+<div class="teaching-book" data-demo-group="p06"><h3 id="session-11-99">十度音與雙手十六度｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/piano-tenth-motion.svg?v=20261015faces2" width="1000" height="800" alt="根音、五音與十度音依序彈奏的手位路徑" loading="lazy" decoding="async"><figcaption>根音、五音與十度音依序彈奏的手位路徑</figcaption></figure>
+<figure><img src="../assets/teaching/piano-relay-left.webp?v=20261015faces2" width="437" height="436" alt="由上方觀察低音區與高音區的左右手分工" loading="lazy" decoding="async"><figcaption>由上方觀察低音區與高音區的左右手分工</figcaption></figure>
+<figure><img src="../assets/teaching/piano-relay-right.webp?v=20261015faces2" width="436" height="436" alt="雙手交接時保持自然弧度與連續律動" loading="lazy" decoding="async"><figcaption>雙手交接時保持自然弧度與連續律動</figcaption></figure>
+</div>
+<p class="teaching-note">分散彈奏時以手臂平移協助，不必同時張開手掌壓住十度。</p>
+</div>
+
+<!-- teaching-visuals-end -->
+
+</section>
+<section class="hb-sec"><div class="lesson-head" id="session-12" style="--c: #45b3e6;" data-dot="#45b3e6" data-item="第十二堂　大小調關係與"><div class="lh-no">Session 12</div><h2>大小調關係與<small>G 大調歌曲彈奏 Major &amp; Minor · Songs In G</small></h2></div>
+<p>本堂目標：能找出大調的關係小調，理解兩者共用同一組調號；能分辨自然小調、和聲小調與旋律小調；能彈奏 G 大調的音階與順階和弦，並以 G 大調彈奏歌曲；完成期末發表：一首使用兩種以上伴奏型的歌曲。</p>
+<h3 id="session-12-101">課前問卷</h3>
+<ul>
+<li>期末曲目</li>
+<li>期末曲目的調性</li>
+<li>使用的伴奏型</li>
+<li>發表前的心情</li>
+</ul>
+<h3 id="session-12-102">課程綱要（120 分鐘）</h3>
+<table>
+<thead>
+<tr>
+<th>段落</th>
+<th>時間</th>
+<th>內容</th>
+<th>投影片</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起</td>
+<td>00:00–00:20</td>
+<td>同一組白鍵，更換起點，情緒就不一樣</td>
+<td>3</td>
+</tr>
+<tr>
+<td>承</td>
+<td>00:20–00:55</td>
+<td>大調的第六級，就是關係小調的主音、自然、和聲、旋律：改變的都是第六與第七個音、A 自然小調與 A 和聲小調：聆聽第七個音的差別、A 小調的 Ⅰ Ⅳ Ⅴ：Am、Dm、E、G 大調：一個升記號 F♯，七個順階和弦、大小調與 G 大調</td>
+<td>4–9</td>
+</tr>
+<tr>
+<td>休</td>
+<td>00:55–01:05</td>
+<td>休息十分鐘</td>
+<td>10</td>
+</tr>
+<tr>
+<td>轉</td>
+<td>01:05–01:40</td>
+<td>先熱手：G 大調音階，第七個音是黑鍵 F♯、簡譜不變，和弦換成 G、C、D</td>
+<td>11–12</td>
+</tr>
+<tr>
+<td>合</td>
+<td>01:40–02:00</td>
+<td>每人三分鐘：前奏、兩種伴奏型、尾奏、錄下期末發表，與第一天的錄音比較、十二堂課，十二個關鍵字、最後一張出場券</td>
+<td>13–17</td>
+</tr>
+<tr>
+<td>收尾</td>
+<td>課後</td>
+<td>三句話總結、出場券、課後練習與下一堂預告</td>
+<td>16、18、19</td>
+</tr>
+</tbody></table>
+<h3 id="session-12-103">講義擴充：關係大小調</h3>
+<table>
+<thead>
+<tr>
+<th>大調</th>
+<th>關係小調</th>
+<th>調號</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>C 大調</td>
+<td>A 小調</td>
+<td>沒有升降</td>
+</tr>
+<tr>
+<td>G 大調</td>
+<td>E 小調</td>
+<td>F♯</td>
+</tr>
+<tr>
+<td>F 大調</td>
+<td>D 小調</td>
+<td>B♭</td>
+</tr>
+</tbody></table>
+<p>將大調的主音往下移動小三度，就是關係小調的主音；兩者共用同一組調號。</p>
+<h3 id="session-12-104">講義擴充：三種小調音階</h3>
+<table>
+<thead>
+<tr>
+<th>音階</th>
+<th>A 小調</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>自然小調</td>
+<td>A B C D E F G A</td>
+<td>全半全全半全全</td>
+</tr>
+<tr>
+<td>和聲小調</td>
+<td>A B C D E F G♯ A</td>
+<td>第七音升高半音，F–G♯ 為增二度</td>
+</tr>
+<tr>
+<td>旋律小調</td>
+<td>上行 A B C D E F♯ G♯ A，下行同自然小調</td>
+<td>為了歌唱避開增二度</td>
+</tr>
+</tbody></table>
+<ul>
+<li>A 和聲小調的順階和弦：Ⅰ、Ⅳ 為小和弦，Ⅴ、Ⅵ 為大和弦，Ⅱ、Ⅶ 為減和弦，Ⅲ 為增和弦。小調歌曲常見 Am → Dm → E → Am。</li>
+</ul>
+<h3 id="session-12-105">講義擴充：G 大調</h3>
+<ul>
+<li>調號：一個升記號 F♯。音階：G A B C D E F♯ G，指法與 C 大調相同。</li>
+<li>順階和弦：G、Am、Bm、C、D、Em、F♯dim；主要三和弦 G、C、D。</li>
+<li>〈生日快樂歌〉G 大調：G｜D｜D｜G｜G｜C｜G D｜G。</li>
+</ul>
+<h3 id="session-12-106">講義擴充：期末發表</h3>
+<p>一首使用兩種以上伴奏型的歌曲，C 大調或 G 大調皆可，包含前奏與尾奏。評量面向：穩定、伴奏、和聲、完整。</p>
+<h3 id="session-12-107">參考書目</h3>
+<ol>
+<li>紀華麟，《和弦完全 PLAY》，樂匠音樂叢書。</li>
+<li>招敏慧，《流行鋼琴自學秘笈》，麥書文化。</li>
+<li>楊鴻棋，《爵士鋼琴獨奏大全》，立誼音樂叢書。</li>
+<li>楊善蘭，《快樂學爵士》，立誼音樂叢書。</li>
+<li>彭萬雄，《流行好爵士》，立誼音樂叢書。</li>
+</ol>
+<h3 id="session-12-108">課堂互動（網站簡報）</h3>
+<table>
+<thead>
+<tr>
+<th>投影片</th>
+<th>互動</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>手機同步</td>
+<td>今天的路線：認識另一個調，完成期末發表</td>
+</tr>
+<tr>
+<td>3</td>
+<td>舉手計票</td>
+<td>同一組白鍵，更換起點，情緒就不一樣</td>
+</tr>
+<tr>
+<td>6</td>
+<td>音階運指</td>
+<td>A 自然小調與 A 和聲小調：聆聽第七個音的差別</td>
+</tr>
+<tr>
+<td>7</td>
+<td>伴奏型播放器</td>
+<td>A 小調的 Ⅰ Ⅳ Ⅴ：Am、Dm、E</td>
+</tr>
+<tr>
+<td>8</td>
+<td>順階和弦</td>
+<td>G 大調：一個升記號 F♯，七個順階和弦</td>
+</tr>
+<tr>
+<td>9</td>
+<td>選擇題</td>
+<td>大小調與 G 大調</td>
+</tr>
+<tr>
+<td>11</td>
+<td>音階運指</td>
+<td>先熱手：G 大調音階，第七個音是黑鍵 F♯</td>
+</tr>
+<tr>
+<td>12</td>
+<td>歌曲彈奏</td>
+<td>簡譜不變，和弦換成 G、C、D</td>
+</tr>
+<tr>
+<td>13</td>
+<td>分段計時・隨機點名</td>
+<td>每人三分鐘：前奏、兩種伴奏型、尾奏</td>
+</tr>
+<tr>
+<td>14</td>
+<td>錄音對照</td>
+<td>錄下期末發表，與第一天的錄音比較</td>
+</tr>
+<tr>
+<td>15</td>
+<td>翻牌</td>
+<td>十二堂課，十二個關鍵字</td>
+</tr>
+<tr>
+<td>17</td>
+<td>出場券 3-2-1</td>
+<td>最後一張出場券</td>
+</tr>
+<tr>
+<td>18</td>
+<td>課程回饋問卷</td>
+<td>課程回饋問卷</td>
+</tr>
+</tbody></table>
+
+</section>
+</main>
 
 <footer>© 畫素音樂工作坊 Pixel Studio・Piano Lab 流行鋼琴</footer>
 
@@ -65,18 +2826,23 @@
 <script src="../assets/youtube.js?v=20261016a"></script>
 <script src="../assets/config.js?v=20261014h"></script>
 <script src="../assets/backend.js?v=20261016c"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <script>
 (function () {
   var NUM = { '一': 1, '二': 2, '三': 3, '四': 4, '五': 5, '六': 6, '七': 7, '八': 8, '九': 9, '十': 10, '十一': 11, '十二': 12 };
   var COLOR = ['', '#e8412b', '#e2407f', '#9a5fd0', '#2f5fc4', '#45b3e6', '#6cbb4b', '#d6e03a', '#f4a62a', '#e8412b', '#e2407f', '#9a5fd0', '#45b3e6'];
   var main = document.getElementById('content'), toc = document.getElementById('toc'), prog = document.getElementById('progress');
-  fetch('handbook.md?v=20261015faces2')
-    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+  var pre = main.hasAttribute('data-prerendered');
+  function loadMarked() { return window.marked ? Promise.resolve() : new Promise(function (ok, no) { var s = document.createElement('script'); s.src = 'https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js'; s.onload = ok; s.onerror = no; document.head.appendChild(s); }); }
+  (pre ? (location.hash ? Promise.resolve(null) : new Promise(function (ok) { requestAnimationFrame(function () { setTimeout(function () { ok(null); }, 0); }); })) : loadMarked().then(function () { return fetch('handbook.md?v=20261015faces2'); }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }))
     .then(function (md) {
-      main.innerHTML = marked.parse(md, { gfm: true });
+      if (md !== null) main.innerHTML = marked.parse(md, { gfm: true });
+      main.querySelectorAll('img').forEach(function (i) { i.loading = 'lazy'; i.decoding = 'async'; });
       var heads = [], items = [];
-      main.querySelectorAll('h2,h3').forEach(function (h) {
+      if (pre) main.querySelectorAll('.lesson-head,h3').forEach(function (h) {
+        if (h.tagName === 'H3') { items.push({ href: '#' + h.id, label: h.textContent.trim(), sub: true }); return; }
+        heads.push(h); items.push({ href: '#' + h.id, label: h.getAttribute('data-item'), dot: h.getAttribute('data-dot') });
+      });
+      else main.querySelectorAll('h2,h3').forEach(function (h) {
         if (h.tagName === 'H3') {
           var parent = heads[heads.length - 1];
           h.id = (parent ? parent.id : 'sec') + '-' + (items.length + 1);
@@ -96,6 +2862,8 @@
         var a = document.createElement('a'); a.href = '#' + id; a.textContent = n ? '第' + m[1] + '堂' : '課程總覽'; a.setAttribute('data-id', id); toc.appendChild(a);
         items.push({ href: '#' + id, label: n ? '第' + m[1] + '堂　' + parts[0].replace(/^第.{1,2}堂｜/, '').trim() : '課程總覽', dot: n ? COLOR[n] : null });
       });
+      // 每一章包成 section，畫面外的章節延後計算版面（content-visibility），長講義才不會卡住
+      if (!pre) heads.forEach(function (h) { var sec = document.createElement('section'); sec.className = 'hb-sec'; h.parentNode.insertBefore(sec, h); var n = h; while (n && (n === h || !(n.classList && n.classList.contains('lesson-head')))) { var nx = n.nextSibling; sec.appendChild(n); n = nx; } });
       main.querySelectorAll('input[type=checkbox]').forEach(function (c) { c.removeAttribute('disabled'); if (c.parentNode) c.setAttribute('aria-label', c.parentNode.textContent.trim()); });
       // 每堂開頭放課前問卷與投影片連結
       heads.forEach(function (h) {
@@ -118,7 +2886,7 @@
         var max = document.documentElement.scrollHeight - innerHeight;
         prog.style.width = (max > 0 ? scrollY / max * 100 : 0) + '%';
         var cur = heads[0];
-        heads.forEach(function (h) { if (h.getBoundingClientRect().top < innerHeight * 0.3) cur = h; });
+        heads.forEach(function (h) { if (h.parentNode.getBoundingClientRect().top < innerHeight * 0.3) cur = h; });
         chips.forEach(function (c) {
           var on = cur && c.getAttribute('data-id') === cur.id;
           if (on && !c.classList.contains('cur')) c.scrollIntoView({ block: 'nearest', inline: 'center' });

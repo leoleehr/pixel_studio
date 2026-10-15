@@ -1,3 +1,6 @@
+/* Space Grotesk（SIL OFL 1.1，授權見 fonts/OFL-SpaceGrotesk.txt）自架，免去跨網域連線 */
+@font-face{font-family:"Space Grotesk";font-style:normal;font-weight:500 700;font-display:swap;src:url(fonts/space-grotesk-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Space Grotesk";font-style:normal;font-weight:500 700;font-display:swap;src:url(fonts/space-grotesk-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
 /* ===== Pixel Studio 課程網站：設計系統 v3（首頁、講義） ===== */
 :root{
   color-scheme:dark;
@@ -256,3 +259,6 @@ footer{margin-top:24px;padding:28px 0 40px;color:var(--faint);font-size:13px;tex
 h1,h2,h3,h4{text-wrap:balance}p,li,dd,figcaption,blockquote,.sv-item small,.desc{text-wrap:pretty}.sv-item b{text-wrap:balance}
 /* 講義與問卷由 JS 填入內容：先保留目錄列高度與主要區塊高度，避免版面跳動 */
 .toc:has(.wrap:empty){min-height:60px;box-sizing:border-box}main#content,main#app{min-height:100vh}
+/* 講義：畫面外的章節延後計算版面 */
+.hb-sec{content-visibility:auto;contain-intrinsic-size:auto 2400px}
+.hb-deep .hb-sec{content-visibility:visible}
