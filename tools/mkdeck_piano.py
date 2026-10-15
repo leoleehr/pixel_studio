@@ -8,7 +8,7 @@ import pathlib
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from deck_cover import static_cover
+from deck_cover import static_cover, lazy_images
 from build_deck_css import build as build_deck_css
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -74,6 +74,7 @@ def build(n):
     src = (ROOT / 'tools' / 'piano' / ('p%s.html' % nn)).read_text(encoding='utf-8')
     meta, body = src.split('\n', 1)
     body = static_cover(body, '../../')  # 封面主視覺寫進 HTML（最大內容元素）
+    body = lazy_images(body)  # 畫面外投影片的圖延遲載入
     title, _en, desc = meta.split('|')
     fmt = dict(title=title, zh=ZH[n], desc=desc, nn=nn, v=VER)
     out = ROOT / 'site' / 'piano' / ('p' + nn)
