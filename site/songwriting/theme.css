@@ -409,6 +409,7 @@ body .slide .c-pink,body .slide th,body .slide .tp-out tr.main td,body .slide .p
 .ld-chips button small{margin-left:4px;font:500 12px var(--display);color:var(--faint)}
 .ld-chips button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#1d0510;font-weight:700}
 .ld-chips button[aria-pressed="true"] small{color:#1d0510}
+.ld-who{font-size:14px;padding:3px 8px;border-radius:999px;border:1px solid var(--line-2);background:var(--card-2);color:var(--ink)}
 .ld-reel{display:grid;place-items:center;gap:2px;min-height:96px;border:1px dashed rgba(var(--accent-rgb),.6);border-radius:var(--r);padding:10px;text-align:center}
 .ld-reel b{font-size:30px;line-height:1.3}
 .ld-reel small{font-size:13.5px;color:var(--muted)}

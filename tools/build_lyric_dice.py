@@ -13,9 +13,11 @@ for ln in io.open(POOL, encoding='utf-8').read().splitlines():
     if not ln: continue
     if ln.startswith('# '): continue
     if ln.startswith('#'):
-        head = ln[1:].split(' ', 1); sec = head[0]; src = head[1] if len(head) > 1 else None; continue
+        head = ln[1:].split(' ', 1); sec = head[0]; src = head[1] if len(head) > 1 else None
+        if src and sec.startswith('style'): src = 'style:' + src  # 作詞家風格（意象詞與仿寫句）
+        continue
     for it in (ln.split() if sec.endswith('words') else [ln]):
-        if src: SRC[it] = src  # 出處：老師的作品
+        if src and src not in SRC.setdefault(it, []): SRC[it].append(src)
         (words if sec.endswith('words') else lines).append(it)
 
 JS = r"""
@@ -66,13 +68,16 @@ async def main():
         for v in 'aoeiu':
             print(kind, v, ' '.join('%d:%d' % (n, len(data[kind].get(v, {}).get(str(n), []))) for n in range(lo, hi + 1)))
     print('dropped (teacher)', [d for d in drop if d[1] in SRC])
-    print('teacher used', sum(1 for k in data for v in data[k].values() for b in v.values() for w in b if w in SRC), 'of', len(SRC))
+    used = {w for k in data for v in data[k].values() for b in v.values() for w in b}
+    import collections
+    per = collections.Counter(src for w in used for src in SRC.get(w, []) if src.startswith('style:'))
+    print('sourced used', len(used & set(SRC)), 'of', len(SRC)); print('per lyricist', dict(per))
     io.open(OUT, 'w', encoding='utf-8', newline='\n').write(
         '/* ===== Songwriting Lab：歌詞創作骰子的詞庫與金句庫 =====\n'
         ' * 由 tools/build_lyric_dice.py 依照 tools/lyric-dice-pool.txt 產生，請勿手動修改。\n'
         ' * 依句尾字的韻母分成五個母音韻腳：a（ㄚ）、o（ㄛ ㄡ）、e（ㄜ ㄝ ㄟ）、i（ㄧ ㄩ）、u（ㄨ），再依字數分組。\n'
         ' * src：取自老師作品的詞句與歌名。\n'
         ' */\nwindow.PIXEL_LYRIC_DICE = ' + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + ';\n'
-        'window.PIXEL_LYRIC_DICE.src = ' + json.dumps({w: s for w, s in SRC.items() if any(w in b for k in data for v in data[k].values() for b in v.values())}, ensure_ascii=False, separators=(',', ':')) + ';\n')
+        'window.PIXEL_LYRIC_DICE.src = ' + json.dumps({w: s for w, s in SRC.items() if any(w in b for v in data['lines'].values() for b in v.values())}, ensure_ascii=False, separators=(',', ':')) + ';\n')
 
 asyncio.run(main())
