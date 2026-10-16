@@ -419,7 +419,11 @@ body .slide .c-pink,body .slide th,body .slide .tp-out tr.main td,body .slide .p
 .ld-bank-head h3{margin:0;font-size:17px;color:var(--accent)}
 .ld-bank-head small{flex:1;font-size:13px;color:var(--faint)}
 .ld-bank-head .btn{padding:3px 12px;font-size:13.5px}
-.ld-bank-body{min-height:132px;max-height:204px;overflow:auto;margin-top:4px}
+.ld-bank-body{height:168px;overflow-y:scroll;margin-top:4px;padding-right:8px;scrollbar-width:auto;scrollbar-color:var(--accent) rgba(255,255,255,.08)}
+/* 草稿區文字量最大：右側捲軸固定顯示 */
+.ld-bank-body::-webkit-scrollbar{width:10px}
+.ld-bank-body::-webkit-scrollbar-track{background:rgba(255,255,255,.08);border-radius:999px}
+.ld-bank-body::-webkit-scrollbar-thumb{background:var(--accent);border-radius:999px;border:2px solid var(--card)}
 .ld-bank-body .ld-note{margin:4px 0}
 .ld-bank-row{display:flex;gap:8px;align-items:flex-start;margin-top:4px}
 .ld-bank-words,.ld-bank-lines{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:5px 8px}
@@ -453,7 +457,7 @@ body .slide .c-pink,body .slide th,body .slide .tp-out tr.main td,body .slide .p
   .wv{overflow-x:auto;grid-template-columns:repeat(var(--n),56px)}
   .ch-resp{font-size:26px}
   .ld{grid-template-columns:1fr}
-  .ld-bank-body{max-height:none;min-height:0}
+  .ld-bank-body{height:auto;max-height:360px;min-height:0}
   .ld-bank-head{flex-wrap:wrap}
   .ld-head{flex-wrap:wrap}.ld-head .ld-note{white-space:normal}
   .ld-die .wk-foot{flex-wrap:wrap}.ld-die .ld-hist{flex-basis:100%}
