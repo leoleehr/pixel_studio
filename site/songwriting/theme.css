@@ -424,6 +424,8 @@ body .slide .c-pink,body .slide th,body .slide .tp-out tr.main td,body .slide .p
 .ld-bank-body li.ld-new{animation:ld-new 1.6s ease-out}
 @keyframes ld-new{0%,40%{background:rgba(var(--accent-rgb),.35);border-color:var(--accent)}100%{background:none}}
 .ld-bank-head .btn{padding:3px 12px;font-size:13.5px}
+.ld-bank-head .ld-clear{padding:3px 10px;font-size:12.5px;color:var(--muted)}
+.ld-bank-head .ld-clear.armed{background:#5a1a12;border-color:#e8412b;color:#fff}
 .ld-bank-body{position:relative;height:168px;overflow-y:scroll;margin-top:4px;padding-right:8px;scrollbar-width:auto;scrollbar-color:var(--accent) rgba(255,255,255,.08)}
 /* 草稿區文字量最大：右側捲軸固定顯示 */
 .ld-bank-body::-webkit-scrollbar{width:10px}
