@@ -24,18 +24,18 @@ JS = r"""
 (items) => {
   function groupOf(py) {
     py = (py || '').toLowerCase().replace(/v/g, 'ü');
-    if (/^(zh|ch|sh|r|z|c|s)i$/.test(py)) return 'zi';
+    if (/^(zh|ch|sh|r|z|c|s)i$/.test(py)) return 'x';
     var f = py.replace(/^(zh|ch|sh|[bpmfdtnlgkhjqxrzcsyw])/, '');
     if (/^[jqxy]u/.test(py) && f[0] === 'u') f = 'ü' + f.slice(1);
     if (py[0] === 'y' && f[0] !== 'i' && f[0] !== 'ü' && f[0] !== 'u') f = 'i' + f;
     if (py[0] === 'w' && f[0] !== 'u') f = 'u' + f;
-    if (/(ng|n)$/.test(f) || /(ao|ai|ou|iu|uai)$/.test(f) && !/(ou|iu)$/.test(f)) return '';
+    if (/(ng|n)$/.test(f) || /(ao|ai|ou|iu|uai)$/.test(f) && !/(ou|iu)$/.test(f)) return 'x';
     if (/(ou|iu|iou|uo)$/.test(f) || f === 'o') return 'o';
     if (/^(a|ia|ua)$/.test(f)) return 'a';
     if (/(ie|üe|ue|ei|ui|uei)$/.test(f) || f === 'e' || py === 'er') return 'e';
     if (/^(i|ü)$/.test(f)) return 'i';
     if (f === 'u') return 'u';
-    return '';
+    return 'x';  // 其他：ㄞ ㄠ ㄢ ㄣ ㄤ ㄥ 與空韻
   }
   return items.map(function (w) {
     var han = w.replace(/[^㐀-鿿]/g, '').replace(/妳/g, '你');  // 台灣讀音：妳 nǐ
@@ -65,7 +65,7 @@ async def main():
             if r['w'] not in data[kind][r['v']][str(r['n'])]:
                 data[kind][r['v']][str(r['n'])].append(r['w'])
     for kind, lo, hi in (('words', 1, 4), ('lines', 5, 10)):
-        for v in 'aoeiu':
+        for v in 'aoeiux':
             print(kind, v, ' '.join('%d:%d' % (n, len(data[kind].get(v, {}).get(str(n), []))) for n in range(lo, hi + 1)))
     print('dropped (teacher)', [d for d in drop if d[1] in SRC])
     used = {w for k in data for v in data[k].values() for b in v.values() for w in b}

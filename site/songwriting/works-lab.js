@@ -554,8 +554,9 @@
     T.on(load);
   });
   /* ========== 10. 歌詞創作骰子（詞庫在 lyric-dice.js） ========== */
-  var VOW = [['a', 'ㄚ', 'a'], ['o', 'ㄛ ㄡ', 'o'], ['e', 'ㄜ ㄝ ㄟ', 'e'], ['i', 'ㄧ ㄩ', 'i'], ['u', 'ㄨ', 'u']];
-  var VOWZH = {}; VOW.forEach(function (v) { VOWZH[v[0]] = v[1]; });
+  // 五個母音韻腳，其餘句尾（ㄞ ㄠ ㄢ ㄣ ㄤ ㄥ 與空韻）歸入「其他」
+  var VOW = [['a', 'ㄚ', 'a'], ['o', 'ㄛ ㄡ', 'o'], ['e', 'ㄜ ㄝ ㄟ', 'e'], ['i', 'ㄧ ㄩ', 'i'], ['u', 'ㄨ', 'u'], ['x', '其他', '']];
+  var VOWZH = {}; VOW.forEach(function (v) { VOWZH[v[0]] = v[0] === 'x' ? '其他韻腳' : v[1] + ' 韻'; });
   function pickOne(a) { return a[Math.floor(Math.random() * a.length)]; }
   $$('.lyricdice').forEach(function (root) {
     var D = window.PIXEL_LYRIC_DICE; if (!D) return;
@@ -583,7 +584,7 @@
         row.appendChild(g); card.appendChild(row); return g;
       }
       var gLen = chips('字數', [[0, '隨機']].concat(d.lens.map(function (n) { return [n, n + ' ' + d.unit]; })), 'len');
-      var gV = chips('韻腳', [['', '隨機']].concat(VOW.map(function (v) { return [v[0], v[1] + '<small>' + v[2] + '</small>']; })), 'v');
+      var gV = chips('韻腳', [['', '隨機']].concat(VOW.map(function (v) { return [v[0], v[1] + (v[2] ? '<small>' + v[2] + '</small>' : '')]; })), 'v');
       // 只有金句標示出處：老師的作品、作詞家風格的仿寫練習句
       var gS = null, who = null;
       if (d.src) {
@@ -618,7 +619,7 @@
         $$('button', gLen).forEach(function (b) { b.setAttribute('aria-pressed', String(+b.dataset.v === st.len)); });
         $$('button', gV).forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.v === st.v)); });
         if (gS) { $$('button', gS).forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.v === st.src)); }); who.hidden = st.src !== 'style'; }
-        if (st.res) { big.textContent = st.res.w; meta.textContent = st.res.n + ' ' + d.unit + '・' + VOWZH[st.res.v] + ' 韻' + label(st.res.w); }
+        if (st.res) { big.textContent = st.res.w; meta.textContent = st.res.n + ' ' + d.unit + '・' + VOWZH[st.res.v] + label(st.res.w); }
         hist.innerHTML = st.hist.length ? '<span class="ld-lab">剛才擲出</span>' + st.hist.map(function (h) { return '<span>' + esc(h) + '</span>'; }).join('') : '';
       }
       function save() { LS.set('ldice-' + d.k, st); }
