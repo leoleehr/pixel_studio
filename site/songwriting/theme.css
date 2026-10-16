@@ -469,6 +469,28 @@ body .slide .c-pink,body .slide th,body .slide .tp-out tr.main td,body .slide .p
 .quiz:has(.lyricbox) .quiz-foot{margin-top:6px}
 .quiz:has(.lyricbox) .why{font-size:16px;line-height:1.5;padding:8px 14px;margin-top:8px}
 
+/* 旋律波動：精簡版、段落編輯、範例曲影片、歌詞 */
+.wave.compact .wv-cell{height:17px}
+.wave.compact .wk-tip{margin-bottom:4px}
+.wave.compact .wv-svg{height:34px}
+.wv-edit{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin-bottom:6px}
+.wv-edit[hidden]{display:none}
+.wv-edit button.f-intro,.wv-edit button.f-verse,.wv-edit button.f-pre,.wv-edit button.f-chorus,.wv-edit button.f-inter,.wv-edit button.f-bridge,.wv-edit button.f-outro{border:0;border-radius:999px;padding:3px 10px;font-size:13px;color:#fff;background:var(--sc);cursor:pointer}
+.wv-edit :is(.f-chorus,.f-inter,.f-bridge,.f-outro){color:#141414!important}
+.wv-edit .btn{padding:3px 10px;font-size:13px}
+.wv-yt{margin-bottom:8px;gap:10px}
+.wv-yt .ytp{display:grid;grid-template-columns:128px minmax(0,1fr);grid-template-rows:auto auto;align-items:center}
+.wv-yt .ytp-screen{grid-row:1/3}
+.wv-yt .ytp-big{width:38px;height:38px;margin:-19px 0 0 -19px}
+.wv-yt .ytp-bar{padding:6px 10px;gap:6px}
+.wv-yt .ytp-btn{width:32px;height:32px;border-radius:9px}
+.slide .wave .wk-tip,.slide .wave .wk-msg{font-size:15px;line-height:1.5}
+.wv-yt .ytp-meta>*{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wv-yt .ytp-time{display:none}
+.wave.compact .wk-foot{margin-top:0}
+.wave.compact .wk-foot .wk-msg{margin:0 0 0 8px;flex:1}
+.wv-lyrics{height:186px;margin:6px 0 0}
+
 /* 淺色段落底（粉紅、橘、紅、綠、淺藍）改用深色字，對比 4.5 以上 */
 :is(.wk-strip span,.rh2-sn):is(.f-chorus,.f-inter,.f-post,.f-tag,.f-outro,.f-bridge),.am thead th:is(.f-chorus,.f-inter,.f-post,.f-tag,.f-outro,.f-bridge) span{color:#141414}
 
@@ -483,6 +505,7 @@ body .slide .c-pink,body .slide th,body .slide .tp-out tr.main td,body .slide .p
   .ld{grid-template-columns:1fr}
   .ld-bank-body{height:auto;max-height:360px;min-height:0}
   .lyricbox{height:240px}
+  .wv-lyrics{height:260px}
   .ld-bank-head{flex-wrap:wrap}
   .ld-head{flex-wrap:wrap}.ld-head .ld-note{white-space:normal}
   .ld-die .wk-foot{flex-wrap:wrap}.ld-die .ld-hist{flex-basis:100%}
