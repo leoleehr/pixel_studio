@@ -38,7 +38,7 @@ JS = r"""
     return '';
   }
   return items.map(function (w) {
-    var han = w.replace(/[^㐀-鿿]/g, '');
+    var han = w.replace(/[^㐀-鿿]/g, '').replace(/妳/g, '你');  // 台灣讀音：妳 nǐ
     var arr = pinyinPro.pinyin(han, { toneType: 'none', type: 'array' });
     var sym = pinyinPro.pinyin(han, { type: 'array' });
     var last = arr[arr.length - 1];
