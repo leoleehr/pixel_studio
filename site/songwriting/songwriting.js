@@ -486,6 +486,7 @@
     };
     function play() { if (clock.start()) bP.textContent = '■ 停止'; }
     function stop() { clock.stop(); bP.textContent = '▶︎ 播放'; $$('.ar-steps i', list).forEach(function (c) { c.classList.remove('now'); }); }
+    ar.pixelArrangement = { select: function (keys) { build = false; on = keys.filter(function (k) { return TRACKS.some(function (t) { return t.k === k; }); }); draw(); }, play: play, stop: stop };
     players.push(stop);
     draw();
   });
