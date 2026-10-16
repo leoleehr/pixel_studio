@@ -13,7 +13,7 @@ from build_deck_css import build as build_deck_css
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 ZH = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二']
-VER = "20261016a"
+VER = "20261016b"
 
 HEAD = '''<!doctype html>
 <html lang="zh-Hant">

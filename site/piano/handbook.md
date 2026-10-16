@@ -25,11 +25,11 @@
 | 4 | 和弦組成與結構 | 和弦組成與結構 | 大小增減三和弦、順階和弦、轉位 |
 | 5 | 基本歌曲彈奏（一） | 基本歌曲彈奏（一） | 簡譜與和弦譜、左手三種彈法、和弦選搭 |
 | 6 | 基本歌曲彈奏 和弦與旋律（二）節奏型態 | 基本歌曲彈奏（二）；節奏型態認識（一） | 指位譜、Slow Soul、華爾滋 |
-| 7 | 伴奏技巧強化（4＋8） | 伴奏技巧強化（4＋8） | 4 Beats、8 Beats、單手 8 度、雙手 16 度 |
+| 7 | 伴奏技巧強化（4＋8） | 伴奏技巧強化（4＋8） | 4 Beats、8 Beats、單手 8 度、雙手兩個八度（15 度） |
 | 8 | 單一調性歌曲與自彈自唱 | 單一調性歌曲演奏；自彈自唱技巧 | 調性、和弦譜、前奏尾奏、期中發表 |
 | 9 | 級數和弦與調性關係 | 級數和弦與調性關係 | 級數、和弦功能、終止式、移調 |
 | 10 | 根音連結、複合和弦與常用和弦行進 | 根音連結與複合和弦；常用和弦行進 | 分數和弦、低音線、1645、1564、卡農、2-5-1 |
-| 11 | 節奏型態（二）與十度、十六度伴奏 | 節奏型態認識（二）；十度與十六度伴奏 | Slow Rock、進行曲、十度音、雙手十六度 |
+| 11 | 節奏型態（二）與十度、十五度伴奏 | 節奏型態認識（二）；十度與十五度伴奏 | Slow Rock、進行曲、十度音、雙手兩個八度（十五度） |
 | 12 | 大小調關係與 G 大調歌曲彈奏 | 大小調關係；G 大調歌曲彈奏 | 關係調、三種小調、G 大調、期末發表 |
 
 ### 每堂 120 分鐘的共同節奏
@@ -62,13 +62,6 @@
 - 伴奏一律以指位譜 L5 L3 L2 L1、R1 R2 R5 記錄，換和弦時手指位置不變
 - 歌曲以簡譜記錄，換調時簡譜不變、和弦依照級數更換
 
-<!-- learning-notes-start -->
-### 能力路線與練習紀錄
-
-[開啟課程能力路線](index.html#lessons)：依本課順序連接先備能力與作品；只讀取本機已有作業勾選。網站練習紀錄圖沿用原七天表格，缺值保留空白，秒數、次數與分鐘分開檢視。PDF保留本表作書面紀錄，不填入示範成績。
-
-<!-- learning-notes-end -->
-
 ## 第一堂｜認識鋼琴與流行鋼琴 Meet The Piano · Pop Piano
 
 本堂目標：能說明鋼琴的起源、發聲原理與常見的種類；能分辨古典鋼琴、流行鋼琴與爵士鋼琴的差異；以正確的坐姿與手形，認識雙手的手指編號與踏板；下課前，每個人在鍵盤上找到中央 C，用五指位置彈奏 Do Re Mi Fa Sol。
@@ -91,9 +84,9 @@
 | 起 | 00:00–00:20 | 許多人小時候都學過鋼琴，後來卻放下了、六歲那年，我被鋼琴老師請回家 | 3–4 |
 | 承 | 00:20–00:55 | Pianoforte：能夠彈出「弱」與「強」的樂器、按下琴鍵，琴槌敲擊琴弦、先預測，再揭曉、從音樂廳到房間，鍵盤樂器的家族、流行鋼琴，是爵士鋼琴的基礎、聆聽四段鋼琴，猜猜屬於哪一種風格 | 5–10 |
 | 休 | 00:55–01:05 | 休息十分鐘 | 11 |
-| 轉 | 01:05–01:40 | 坐穩、放鬆，手指像握住一顆球、拇指是 1，小指是 5，左右手都一樣、三個踏板，各有任務、兩個黑鍵左邊的白鍵，就是 C、迷思還是事實？ | 12–16 |
-| 合 | 01:40–02:00 | C 五指位置：一根手指負責一個琴鍵、右手、左手各彈奏一次 Do Re Mi Fa Sol、離開教室前，寫下 3-2-1 | 17–20 |
-| 收尾 | 課後 | 三句話總結、出場券、課後練習與下一堂預告 | 19、21、22、23 |
+| 轉 | 01:05–01:40 | 拇指是 1，小指是 5，左右手都一樣、兩個黑鍵左邊的白鍵，就是 C、迷思還是事實？ | 12–14 |
+| 合 | 01:40–02:00 | 右手、左手各彈奏一次 Do Re Mi Fa Sol、離開教室前，寫下 3-2-1 | 15–17 |
+| 收尾 | 課後 | 三句話總結、出場券、課後練習與下一堂預告 | 16、18、19、20 |
 
 ### 講義擴充：鋼琴的起源與構造
 
@@ -131,14 +124,13 @@
 | 3 | 舉手計票 | 許多人小時候都學過鋼琴，後來卻放下了 |
 | 7 | 選擇題 | 先預測，再揭曉 |
 | 10 | 曲例聆聽・YouTube | 聆聽四段鋼琴，猜猜屬於哪一種風格 |
-| 15 | 可彈奏的鍵盤 | 兩個黑鍵左邊的白鍵，就是 C |
-| 16 | 迷思破解・翻牌 | 迷思還是事實？ |
-| 17 | 音階運指 | C 五指位置：一根手指負責一個琴鍵 |
-| 18 | 錄音 | 右手、左手各彈奏一次 Do Re Mi Fa Sol |
-| 20 | 出場券 3-2-1 | 離開教室前，寫下 3-2-1 |
-| 21 | 自主學習紀錄 | 每天 10 分鐘熱手課表 |
-| 22 | 自主學習追蹤 | 課後練習：完成一項，點選一次打勾 |
-| 23 | 課前問卷 | 第二堂 基礎樂理與識譜 |
+| 13 | 可彈奏的鍵盤 | 兩個黑鍵左邊的白鍵，就是 C |
+| 14 | 迷思破解・翻牌 | 迷思還是事實？ |
+| 15 | 錄音 | 右手、左手各彈奏一次 Do Re Mi Fa Sol |
+| 17 | 出場券 3-2-1 | 離開教室前，寫下 3-2-1 |
+| 18 | 自主學習紀錄 | 每天 10 分鐘熱手課表 |
+| 19 | 自主學習追蹤 | 課後練習：完成一項，點選一次打勾 |
+| 20 | 課前問卷 | 第二堂 基礎樂理與識譜 |
 
 ### 課後練習
 
@@ -151,22 +143,22 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="p01"><h3>坐姿與手形｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/piano-posture-white.branded.svg?v=20261015revision17" alt="側面：肩膀放鬆，手肘與琴鍵接近同一平面" loading="eager"><figcaption>側面：肩膀放鬆，手肘與琴鍵接近同一平面</figcaption></figure>
-<figure><img src="../assets/teaching/piano-hand-curve.branded.svg?v=20261015revision17" alt="近拍：手指成弧、手腕自然" loading="eager"><figcaption>近拍：手指成弧、手腕自然</figcaption></figure>
+<figure><img src="../assets/teaching/piano-posture-white.branded.svg?v=20261015identity21" alt="側面：肩膀放鬆，手肘與琴鍵接近同一平面" loading="eager"><figcaption>側面：肩膀放鬆，手肘與琴鍵接近同一平面</figcaption></figure>
+<figure><img src="../assets/teaching/piano-hand-curve.branded.svg?v=20261015identity21" alt="近拍：手指成弧、手腕自然" loading="eager"><figcaption>近拍：手指成弧、手腕自然</figcaption></figure>
 </div>
 </div>
 
 <div class="teaching-book" data-demo-group="p02"><h3>踏板與腳部操作｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/piano-pedals.branded.svg?v=20261015revision17" alt="三個踏板的實際位置" loading="eager"><figcaption>三個踏板的實際位置</figcaption></figure>
-<figure><img src="../assets/teaching/piano-pedal-down.branded.svg?v=20261015revision17" alt="腳跟留在地面，以前腳掌踩下延音踏板" loading="eager"><figcaption>腳跟留在地面，以前腳掌踩下延音踏板</figcaption></figure>
-<figure><img src="../assets/teaching/piano-pedal-up.branded.svg?v=20261015revision17" alt="前腳掌放開，腳跟繼續支撐" loading="eager"><figcaption>前腳掌放開，腳跟繼續支撐</figcaption></figure>
+<figure><img src="../assets/teaching/piano-pedals.branded.svg?v=20261015identity21" alt="三個踏板的實際位置" loading="eager"><figcaption>三個踏板的實際位置</figcaption></figure>
+<figure><img src="../assets/teaching/piano-pedal-down.branded.svg?v=20261015identity21" alt="腳跟留在地面，以前腳掌踩下延音踏板" loading="eager"><figcaption>腳跟留在地面，以前腳掌踩下延音踏板</figcaption></figure>
+<figure><img src="../assets/teaching/piano-pedal-up.branded.svg?v=20261015identity21" alt="前腳掌放開，腳跟繼續支撐" loading="eager"><figcaption>前腳掌放開，腳跟繼續支撐</figcaption></figure>
 </div>
 <p class="teaching-note">平台鋼琴與直立鋼琴的中踏板功能可能不同，依琴款確認。</p>
 </div>
 
 <div class="teaching-book" data-demo-group="p03"><h3>五指位置與指位譜｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/piano-five-fingers.branded.svg?v=20261015revision17" alt="五根手指各對應一個琴鍵" loading="eager"><figcaption>五根手指各對應一個琴鍵</figcaption></figure>
-<figure><img src="../assets/teaching/../piano/hands-keyboard.branded.svg?v=20261015revision17" alt="由上方觀察左右手位置" loading="eager"><figcaption>由上方觀察左右手位置</figcaption></figure>
+<figure><img src="../assets/teaching/piano-five-fingers.branded.svg?v=20261015identity21" alt="五根手指各對應一個琴鍵" loading="eager"><figcaption>五根手指各對應一個琴鍵</figcaption></figure>
+<figure><img src="../assets/teaching/../piano/hands-keyboard.branded.svg?v=20261015identity21" alt="由上方觀察左右手位置" loading="eager"><figcaption>由上方觀察左右手位置</figcaption></figure>
 </div>
 <p class="teaching-note">指法編號從拇指 1 到小指 5；音高與手位以鍵盤圖核對。</p>
 </div>
@@ -190,7 +182,7 @@
 | 段落 | 時間 | 內容 | 投影片 |
 | --- | --- | --- | --- |
 | 起 | 00:00–00:20 | 五指位置，現在穩定了嗎？、音的三要素：高低、大小、音色 | 3–4 |
-| 承 | 00:20–00:55 | 同一個音，有三種稱呼、切換音名、唱名、簡譜，觀察每個白鍵的名字、高音譜號屬於右手，低音譜號屬於左手、二分法：每往下一級，長度剩下一半、上方是每小節幾拍，下方是幾分音符為一拍、譜表與拍子 | 5–10 |
+| 承 | 00:20–00:55 | 同一個音，有三種稱呼、切換音名、唱名、簡譜，觀察每個白鍵的名字、大譜表完整呈現整體音符的絕對位置、二分法：每往下一級，長度剩下一半、上方是每小節幾拍，下方是幾分音符為一拍、譜表與拍子 | 5–10 |
 | 休 | 00:55–01:05 | 休息十分鐘 | 11 |
 | 轉 | 01:05–01:40 | 相鄰的兩個琴鍵，相差一個半音、升、降、還原：讓音往上或往下移動半音、兩個音之間的距離，以「度」計算、點選兩個琴鍵，計算音程並聆聽協和度、音程的計算 | 12–16 |
 | 合 | 01:40–02:00 | 看見音名，點出正確的琴鍵、看見五線譜上的音，點出正確的琴鍵、離開教室前，寫下 3-2-1 | 17–20 |
@@ -282,11 +274,11 @@
 | 段落 | 時間 | 內容 | 投影片 |
 | --- | --- | --- | --- |
 | 起 | 00:00–00:20 | 找音遊戲，你的成績是多少？、從主音出發，依照固定的距離排列 | 3–4 |
-| 承 | 00:20–00:55 | 全、全、半、全、全、全、半、手指不夠用的時候，拇指穿過，中指跨過、跟著亮起的琴鍵與指法，彈奏 C 大調上下行、指法與公式 | 5–8 |
-| 休 | 00:55–01:05 | 休息十分鐘 | 9 |
-| 轉 | 01:05–01:40 | 更換主音，觀察升降記號與指法的改變、三個調，兩種指法、雙手同時彈奏：拇指穿越的時間不一樣、〈卡農〉的旋律裡，有一段一段的下行音階、音階接力：一人一個音，穩定地傳下去 | 10–14 |
-| 合 | 01:40–02:00 | 錄下右手與左手的 C 大調音階、離開教室前，寫下 3-2-1 | 15–17 |
-| 收尾 | 課後 | 三句話總結、出場券、課後練習與下一堂預告 | 16、18、19、20 |
+| 承 | 00:20–00:55 | 全、全、半、全、全、全、半、跟著亮起的琴鍵與指法，彈奏 C 大調上下行、指法與公式 | 5–7 |
+| 休 | 00:55–01:05 | 休息十分鐘 | 8 |
+| 轉 | 01:05–01:40 | 更換主音，觀察升降記號與指法的改變、三個調，兩種指法、〈卡農〉的旋律裡，有一段一段的下行音階、音階接力：一人一個音，穩定地傳下去 | 9–12 |
+| 合 | 01:40–02:00 | 錄下右手與左手的 C 大調音階、離開教室前，寫下 3-2-1 | 13–15 |
+| 收尾 | 課後 | 三句話總結、出場券、課後練習與下一堂預告 | 14、16、17、18 |
 
 ### 講義擴充：大調音階與指法
 
@@ -310,16 +302,16 @@
 | --- | --- | --- |
 | 2 | 手機同步 | 今天的路線：十根手指，流暢地走過八個音 |
 | 3 | 舉手計票 | 找音遊戲，你的成績是多少？ |
-| 7 | 音階運指 | 跟著亮起的琴鍵與指法，彈奏 C 大調上下行 |
-| 8 | 選擇題 | 指法與公式 |
-| 10 | 音階運指 | 更換主音，觀察升降記號與指法的改變 |
-| 13 | 曲例聆聽・YouTube | 〈卡農〉的旋律裡，有一段一段的下行音階 |
-| 14 | 分組任務・計分 | 音階接力：一人一個音，穩定地傳下去 |
-| 15 | 錄音對照 | 錄下右手與左手的 C 大調音階 |
-| 17 | 出場券 3-2-1 | 離開教室前，寫下 3-2-1 |
-| 18 | 自主學習紀錄 | 每天 15 分鐘音階課表 |
-| 19 | 自主學習追蹤 | 課後練習：完成一項，點選一次打勾 |
-| 20 | 課前問卷 | 第四堂 和弦組成與結構 |
+| 6 | 音階運指 | 跟著亮起的琴鍵與指法，彈奏 C 大調上下行 |
+| 7 | 選擇題 | 指法與公式 |
+| 9 | 音階運指 | 更換主音，觀察升降記號與指法的改變 |
+| 11 | 曲例聆聽・YouTube | 〈卡農〉的旋律裡，有一段一段的下行音階 |
+| 12 | 分組任務・計分 | 音階接力：一人一個音，穩定地傳下去 |
+| 13 | 錄音對照 | 錄下右手與左手的 C 大調音階 |
+| 15 | 出場券 3-2-1 | 離開教室前，寫下 3-2-1 |
+| 16 | 自主學習紀錄 | 每天 15 分鐘音階課表 |
+| 17 | 自主學習追蹤 | 課後練習：完成一項，點選一次打勾 |
+| 18 | 課前問卷 | 第四堂 和弦組成與結構 |
 
 ### 課後練習
 
@@ -332,20 +324,15 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="p04"><h3>穿指與跨指｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/piano-scale-motion.branded.svg?v=20261015revision17" alt="穿指與跨指的確切音名、手指編號與移動路徑" loading="eager"><figcaption>穿指與跨指的確切音名、手指編號與移動路徑</figcaption></figure>
-<figure><img src="../assets/teaching/piano-under-before.branded.svg?v=20261015revision17" alt="近拍觀察手指與琴鍵的接觸" loading="eager"><figcaption>近拍觀察手指與琴鍵的接觸</figcaption></figure>
-<figure><img src="../assets/teaching/piano-under-after.branded.svg?v=20261015revision17" alt="手位移動時保持手腕自然" loading="eager"><figcaption>手位移動時保持手腕自然</figcaption></figure>
-<figure><img src="../assets/teaching/piano-cross-before.branded.svg?v=20261015revision17" alt="其他手指自然抬起，準備下一個音" loading="eager"><figcaption>其他手指自然抬起，準備下一個音</figcaption></figure>
-<figure><img src="../assets/teaching/piano-cross-after.branded.svg?v=20261015revision17" alt="手掌跟著指位平移" loading="eager"><figcaption>手掌跟著指位平移</figcaption></figure>
+<figure><img src="../assets/teaching/piano-scale-motion.branded.svg?v=20261015identity21" alt="穿指與跨指的確切音名、手指編號與移動路徑" loading="eager"><figcaption>穿指與跨指的確切音名、手指編號與移動路徑</figcaption></figure>
+<figure><img src="../assets/teaching/piano-under-before.branded.svg?v=20261015identity21" alt="近拍觀察手指與琴鍵的接觸" loading="eager"><figcaption>近拍觀察手指與琴鍵的接觸</figcaption></figure>
+<figure><img src="../assets/teaching/piano-under-after.branded.svg?v=20261015identity21" alt="手位移動時保持手腕自然" loading="eager"><figcaption>手位移動時保持手腕自然</figcaption></figure>
+<figure><img src="../assets/teaching/piano-cross-before.branded.svg?v=20261015identity21" alt="其他手指自然抬起，準備下一個音" loading="eager"><figcaption>其他手指自然抬起，準備下一個音</figcaption></figure>
+<figure><img src="../assets/teaching/piano-cross-after.branded.svg?v=20261015identity21" alt="手掌跟著指位平移" loading="eager"><figcaption>手掌跟著指位平移</figcaption></figure>
 </div>
 </div>
 
 <!-- teaching-visuals-end -->
-
-<!-- learning-notes-start -->
-<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>雙手同步指法</h4><p>C大調上行，右手在F穿指，左手在A跨指；兩個動作並不同時發生。</p><figure class="learning-print"><img src="../assets/learning/print/piano-dual-hands.svg" alt="雙手同步指法的關鍵狀態圖" loading="eager"><figcaption>雙手同步指法｜關鍵狀態</figcaption></figure><p><a href="p03/#12">開啟互動練習</a></p></div>
-
-<!-- learning-notes-end -->
 
 ## 第四堂｜和弦組成與結構 Chords & Inversions
 
@@ -423,11 +410,6 @@
 - [ ] 右手以轉位彈奏 C → F → G → C，連續十次手不跳動
 - [ ] 左手彈奏 C、F、G 的根音，右手同時按住和弦
 - [ ] 填寫第五堂課前問卷
-
-<!-- learning-notes-start -->
-<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>最近音連接</h4><p>C→F→G→C可比較原位與就近連接。C→F保留C4，E4到F4、G4到A4。</p><figure class="learning-print"><img src="../assets/learning/print/piano-voice-leading.svg" alt="最近音連接的關鍵狀態圖" loading="eager"><figcaption>最近音連接｜關鍵狀態</figcaption></figure><p><a href="p04/#12">開啟互動練習</a></p></div>
-
-<!-- learning-notes-end -->
 
 ## 第五堂｜基本歌曲彈奏（一） First Songs · Melody & Chords
 
@@ -525,11 +507,11 @@
 | 段落 | 時間 | 內容 | 投影片 |
 | --- | --- | --- | --- |
 | 起 | 00:00–00:20 | 〈小星星〉的雙手版本，完成了嗎？、同樣是抒情，四拍與三拍的伴奏不一樣 | 3–4 |
-| 承 | 00:20–00:55 | 指位譜：用手指的位置，寫下伴奏、Slow Soul：時下流行歌曲最常見的節奏、Slow Soul 四種伴奏：先聆聽，再跟著彈奏、閱讀指位譜 | 5–8 |
-| 休 | 00:55–01:05 | 休息十分鐘 | 9 |
-| 轉 | 01:05–01:40 | 強、弱、弱：三拍子的四種伴奏、先聆聽拍號與速度，再決定左手、迷思還是事實？、〈小星星〉換成 Slow Soul，雙手合併 | 10–13 |
-| 合 | 01:40–02:00 | 〈生日快樂歌〉：換成 3/4 分散和弦、錄下四拍與三拍兩個版本、離開教室前，寫下 3-2-1 | 14–17 |
-| 收尾 | 課後 | 三句話總結、出場券、課後練習與下一堂預告 | 16、18、19 |
+| 承 | 00:20–00:55 | Slow Soul：時下流行歌曲最常見的節奏、Slow Soul 四種伴奏：先聆聽，再跟著彈奏、閱讀指位譜 | 5–7 |
+| 休 | 00:55–01:05 | 休息十分鐘 | 8 |
+| 轉 | 01:05–01:40 | 強、弱、弱：三拍子的四種伴奏、先聆聽拍號與速度，再決定左手、迷思還是事實？、〈小星星〉換成 Slow Soul，雙手合併 | 9–12 |
+| 合 | 01:40–02:00 | 〈生日快樂歌〉：換成 3/4 分散和弦、錄下四拍與三拍兩個版本、離開教室前，寫下 3-2-1 | 13–16 |
+| 收尾 | 課後 | 三句話總結、出場券、課後練習與下一堂預告 | 15、17、18 |
 
 ### 講義擴充：分散和弦伴奏法與指位譜
 
@@ -551,7 +533,7 @@
 | 4 Beats 單手 8 度 | L5 L3 L2 |
 | 蹦洽洽 | L5、和弦、和弦 |
 | 8 Beats 單手 8 度 | L5 L3 L2 L1 L2 L1 |
-| 8 Beats 雙手 16 度 | L5 L2 L1 R1 R2 R5 |
+| 8 Beats 雙手兩個八度（15 度） | L5 L2 L1 R1 R2 R5 |
 
 ### 講義擴充：選擇伴奏型
 
@@ -569,16 +551,16 @@
 | 2 | 手機同步 | 今天的路線：讓左手開始流動 |
 | 3 | 舉手計票 | 〈小星星〉的雙手版本，完成了嗎？ |
 | 4 | 曲例聆聽・YouTube | 同樣是抒情，四拍與三拍的伴奏不一樣 |
-| 7 | 伴奏型播放器 | Slow Soul 四種伴奏：先聆聽，再跟著彈奏 |
-| 8 | 選擇題 | 閱讀指位譜 |
-| 10 | 伴奏型播放器 | 強、弱、弱：三拍子的四種伴奏 |
-| 12 | 迷思破解・翻牌 | 迷思還是事實？ |
-| 13 | 歌曲彈奏 | 〈小星星〉換成 Slow Soul，雙手合併 |
-| 14 | 歌曲彈奏 | 〈生日快樂歌〉：換成 3/4 分散和弦 |
-| 15 | 錄音對照 | 錄下四拍與三拍兩個版本 |
-| 17 | 出場券 3-2-1 | 離開教室前，寫下 3-2-1 |
-| 18 | 自主學習追蹤 | 課後練習：完成一項，點選一次打勾 |
-| 19 | 課前問卷 | 第七堂 伴奏技巧強化（4＋8） |
+| 6 | 伴奏型播放器 | Slow Soul 四種伴奏：先聆聽，再跟著彈奏 |
+| 7 | 選擇題 | 閱讀指位譜 |
+| 9 | 伴奏型播放器 | 強、弱、弱：三拍子的四種伴奏 |
+| 11 | 迷思破解・翻牌 | 迷思還是事實？ |
+| 12 | 歌曲彈奏 | 〈小星星〉換成 Slow Soul，雙手合併 |
+| 13 | 歌曲彈奏 | 〈生日快樂歌〉：換成 3/4 分散和弦 |
+| 14 | 錄音對照 | 錄下四拍與三拍兩個版本 |
+| 16 | 出場券 3-2-1 | 離開教室前，寫下 3-2-1 |
+| 17 | 自主學習追蹤 | 課後練習：完成一項，點選一次打勾 |
+| 18 | 課前問卷 | 第七堂 伴奏技巧強化（4＋8） |
 
 ### 課後練習
 
@@ -591,22 +573,17 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="p03"><h3>五指位置與指位譜｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/piano-five-fingers.branded.svg?v=20261015revision17" alt="五根手指各對應一個琴鍵" loading="eager"><figcaption>五根手指各對應一個琴鍵</figcaption></figure>
-<figure><img src="../assets/teaching/../piano/hands-keyboard.branded.svg?v=20261015revision17" alt="由上方觀察左右手位置" loading="eager"><figcaption>由上方觀察左右手位置</figcaption></figure>
+<figure><img src="../assets/teaching/piano-five-fingers.branded.svg?v=20261015identity21" alt="五根手指各對應一個琴鍵" loading="eager"><figcaption>五根手指各對應一個琴鍵</figcaption></figure>
+<figure><img src="../assets/teaching/../piano/hands-keyboard.branded.svg?v=20261015identity21" alt="由上方觀察左右手位置" loading="eager"><figcaption>由上方觀察左右手位置</figcaption></figure>
 </div>
 <p class="teaching-note">指法編號從拇指 1 到小指 5；音高與手位以鍵盤圖核對。</p>
 </div>
 
 <!-- teaching-visuals-end -->
 
-<!-- learning-notes-start -->
-<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>按拍號選伴奏</h4><p>同一組C和弦可依拍號比較本課既有的伴奏型，避免只憑BPM決定風格。</p><figure class="learning-print"><img src="../assets/learning/print/piano-accompaniment.svg" alt="按拍號選伴奏的關鍵狀態圖" loading="eager"><figcaption>按拍號選伴奏｜關鍵狀態</figcaption></figure><p><a href="p06/#11">開啟互動練習</a></p></div>
-
-<!-- learning-notes-end -->
-
 ## 第七堂｜伴奏技巧強化（4＋8） Accompaniment · 4 Beats & 8 Beats
 
-本堂目標：能說明 4 Beats 與 8 Beats 的差別，依照速度選擇伴奏密度；能彈奏單手 8 度與雙手 16 度的分散和弦；理解左右手接力時的指法與手的位置；下課前，以 C → Am → F → G 完成一段「主歌 4 Beats、副歌 8 Beats」的伴奏。
+本堂目標：能說明 4 Beats 與 8 Beats 的差別，依照速度選擇伴奏密度；能彈奏單手 8 度與雙手兩個八度（15 度）的分散和弦；理解左右手接力時的指法與手的位置；下課前，以 C → Am → F → G 完成一段「主歌 4 Beats、副歌 8 Beats」的伴奏。
 
 ### 課前問卷
 
@@ -620,11 +597,11 @@
 | 段落 | 時間 | 內容 | 投影片 |
 | --- | --- | --- | --- |
 | 起 | 00:00–00:20 | Slow Soul 四種伴奏，你最喜歡哪一種？、主歌與副歌，鋼琴的音符數量不一樣 | 3–4 |
-| 承 | 00:20–00:55 | 一拍一個音，或一拍兩個音、4 Beats：單手 8 度三種、雙手 16 度三種、交接的那一拍，聲音不能斷、伴奏的密度與音域 | 5–8 |
-| 休 | 00:55–01:05 | 休息十分鐘 | 9 |
-| 轉 | 01:05–01:40 | 8 Beats：單手三種、雙手三種、4/4 拍的十二種伴奏、主歌 4 Beats，副歌 8 Beats、伴奏接力：每人負責一種型態 | 10–13 |
-| 合 | 01:40–02:00 | 錄下主歌與副歌兩種伴奏、離開教室前，寫下 3-2-1 | 14–16 |
-| 收尾 | 課後 | 三句話總結、出場券、課後練習與下一堂預告 | 15、17、18、19 |
+| 承 | 00:20–00:55 | 一拍一個音，或一拍兩個音、伴奏的密度與音域 | 5–6 |
+| 休 | 00:55–01:05 | 休息十分鐘 | 7 |
+| 轉 | 01:05–01:40 | 4/4 拍的十二種伴奏、主歌 4 Beats，副歌 8 Beats、伴奏接力：每人負責一種型態 | 8–10 |
+| 合 | 01:40–02:00 | 錄下主歌與副歌兩種伴奏、離開教室前，寫下 3-2-1 | 11–13 |
+| 收尾 | 課後 | 三句話總結、出場券、課後練習與下一堂預告 | 12、14、15、16 |
 
 ### 講義擴充：分散和弦伴奏法（4/4）
 
@@ -633,19 +610,19 @@
 | 4 Beats | 單手 8 度 | L5 L3 L2 L1 |
 | 4 Beats | 單手 8 度 | L5 L3 L2 L1｜L2 L1 L2 L1 |
 | 4 Beats | 單手 8 度 | L5 L3 L2 L1｜L3 L2 L1 L3｜L2 L1 L3 L2｜L1 L3 L2 L1 |
-| 4 Beats | 雙手 16 度 | L5 L3 L2 L1｜R1 R2 R5 R2 |
-| 4 Beats | 雙手 16 度 | L5 L3 L2 L1｜R5 R2 R1 R2 |
-| 4 Beats | 雙手 16 度 | L5 L3 L2 L1｜R1 R2 R5 R2｜R1 L1 L2 L3｜L5 L3 L2 L1 |
+| 4 Beats | 雙手兩個八度（15 度） | L5 L3 L2 L1｜R1 R2 R5 R2 |
+| 4 Beats | 雙手兩個八度（15 度） | L5 L3 L2 L1｜R5 R2 R1 R2 |
+| 4 Beats | 雙手兩個八度（15 度） | L5 L3 L2 L1｜R1 R2 R5 R2｜R1 L1 L2 L3｜L5 L3 L2 L1 |
 | 8 Beats | 單手 8 度 | L5 L3 L2 L1 L5 L3 L2 L1 |
 | 8 Beats | 單手 8 度 | L5 L3 L2 L1 L3 L1 L2 L1 |
-| 8 Beats | 單手 16 度 | L5 L3 L2 L1 L3 L2 L1 L2 |
-| 8 Beats | 雙手 16 度 | L5 L3 L2 L1 R1 R2 R5 R2 |
-| 8 Beats | 雙手 16 度 | L5 L2 L1 R1 R2 R5 R2 R1 |
-| 8 Beats | 雙手 16 度 | L5 L2 L1 R2 R5 R2 R1 R2 |
+| 8 Beats | 單手兩個八度（15 度） | L5 L3 L2 L1 L3 L2 L1 L2 |
+| 8 Beats | 雙手兩個八度（15 度） | L5 L3 L2 L1 R1 R2 R5 R2 |
+| 8 Beats | 雙手兩個八度（15 度） | L5 L2 L1 R1 R2 R5 R2 R1 |
+| 8 Beats | 雙手兩個八度（15 度） | L5 L2 L1 R2 R5 R2 R1 R2 |
 
 - 4 Beats 每拍一個音，穩重；8 Beats 每拍兩個音，流動。
 - 左右手接力：左手彈奏 L1 時，右手已懸在 R1 上方；搭配延音踏板，讓兩個八度連成一片。
-- 段落轉換：主歌 4 Beats 單手 8 度，前副歌 4 Beats 雙手 16 度，副歌 8 Beats 雙手 16 度。
+- 段落轉換：主歌 4 Beats 單手 8 度，前副歌 4 Beats 雙手兩個八度（15 度），副歌 8 Beats 雙手兩個八度（15 度）。
 
 ### 課堂互動（網站簡報）
 
@@ -654,15 +631,13 @@
 | 2 | 手機同步 | 今天的路線：左右手接力，彈出兩個八度的聲音 |
 | 3 | 舉手計票 | Slow Soul 四種伴奏，你最喜歡哪一種？ |
 | 4 | 曲例聆聽・YouTube | 主歌與副歌，鋼琴的音符數量不一樣 |
-| 6 | 伴奏型播放器 | 4 Beats：單手 8 度三種、雙手 16 度三種 |
-| 8 | 選擇題 | 伴奏的密度與音域 |
-| 10 | 伴奏型播放器 | 8 Beats：單手三種、雙手三種 |
-| 13 | 分組任務・計分 | 伴奏接力：每人負責一種型態 |
-| 14 | 錄音對照 | 錄下主歌與副歌兩種伴奏 |
-| 16 | 出場券 3-2-1 | 離開教室前，寫下 3-2-1 |
-| 17 | 自主學習紀錄 | 每天 20 分鐘伴奏課表 |
-| 18 | 自主學習追蹤 | 課後練習：完成一項，點選一次打勾 |
-| 19 | 課前問卷 | 第八堂 單一調性歌曲與自彈自唱 |
+| 6 | 選擇題 | 伴奏的密度與音域 |
+| 10 | 分組任務・計分 | 伴奏接力：每人負責一種型態 |
+| 11 | 錄音對照 | 錄下主歌與副歌兩種伴奏 |
+| 13 | 出場券 3-2-1 | 離開教室前，寫下 3-2-1 |
+| 14 | 自主學習紀錄 | 每天 20 分鐘伴奏課表 |
+| 15 | 自主學習追蹤 | 課後練習：完成一項，點選一次打勾 |
+| 16 | 課前問卷 | 第八堂 單一調性歌曲與自彈自唱 |
 
 ### 課後練習
 
@@ -675,8 +650,8 @@
 <!-- teaching-visuals-start -->
 
 <div class="teaching-book" data-demo-group="p05"><h3>左右手交接｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/piano-relay-left.branded.svg?v=20261015revision17" alt="左手完成低音區，右手預先準備" loading="eager"><figcaption>左手完成低音區，右手預先準備</figcaption></figure>
-<figure><img src="../assets/teaching/piano-relay-right.branded.svg?v=20261015revision17" alt="右手接續高音區，保持律動連續" loading="eager"><figcaption>右手接續高音區，保持律動連續</figcaption></figure>
+<figure><img src="../assets/teaching/piano-relay-left.branded.svg?v=20261015identity21" alt="左手完成低音區，右手預先準備" loading="eager"><figcaption>左手完成低音區，右手預先準備</figcaption></figure>
+<figure><img src="../assets/teaching/piano-relay-right.branded.svg?v=20261015identity21" alt="右手接續高音區，保持律動連續" loading="eager"><figcaption>右手接續高音區，保持律動連續</figcaption></figure>
 </div>
 </div>
 
@@ -767,11 +742,11 @@
 | 段落 | 時間 | 內容 | 投影片 |
 | --- | --- | --- | --- |
 | 起 | 00:00–00:20 | 期中發表之後，你最想改進什麼？、歌手說「太高了，降低一點」，伴奏要怎麼辦？ | 3–4 |
-| 承 | 00:20–00:55 | 以羅馬數字，記錄和弦在調裡的位置、切換調性，點選和弦卡片，觀察級數不變的規律、主和弦是家，下屬和弦出門，屬和弦想回家、樂句的結尾，和弦如何回家、級數與功能 | 5–9 |
-| 休 | 00:55–01:05 | 休息十分鐘 | 10 |
-| 轉 | 01:05–01:40 | 三個步驟，將和弦譜搬到另一個調、同一組 Ⅰ Ⅵm Ⅳ Ⅴ，四個調依序聆聽、移調快問快答 | 11–13 |
-| 合 | 01:40–02:00 | 〈Jingle Bells〉G 大調：簡譜不變，和弦換成 G、C、D、離開教室前，寫下 3-2-1 | 14–16 |
-| 收尾 | 課後 | 三句話總結、出場券、課後練習與下一堂預告 | 15、17、18 |
+| 承 | 00:20–00:55 | 以羅馬數字，記錄和弦在調裡的位置、切換調性，點選和弦卡片，觀察級數不變的規律、主和弦是家，下屬和弦出門，屬和弦想回家、四種終止式：樂句結尾的標點符號、樂句的結尾，和弦如何回家、級數與功能 | 5–10 |
+| 休 | 00:55–01:05 | 休息十分鐘 | 11 |
+| 轉 | 01:05–01:40 | 三個步驟，將和弦譜搬到另一個調、同一組 Ⅰ Ⅵm Ⅳ Ⅴ，四個調依序聆聽、移調快問快答 | 12–14 |
+| 合 | 01:40–02:00 | 〈Jingle Bells〉G 大調：簡譜不變，和弦換成 G、C、D、離開教室前，寫下 3-2-1 | 15–17 |
+| 收尾 | 課後 | 三句話總結、出場券、課後練習與下一堂預告 | 16、18、19 |
 
 ### 講義擴充：級數
 
@@ -807,14 +782,14 @@
 | 2 | 手機同步 | 今天的路線：找到和弦背後的數字規律 |
 | 3 | 舉手計票 | 期中發表之後，你最想改進什麼？ |
 | 6 | 順階和弦 | 切換調性，點選和弦卡片，觀察級數不變的規律 |
-| 8 | 伴奏型播放器 | 樂句的結尾，和弦如何回家 |
-| 9 | 選擇題 | 級數與功能 |
-| 12 | 伴奏型播放器 | 同一組 Ⅰ Ⅵm Ⅳ Ⅴ，四個調依序聆聽 |
-| 13 | 分組任務・計分 | 移調快問快答 |
-| 14 | 歌曲彈奏 | 〈Jingle Bells〉G 大調：簡譜不變，和弦換成 G、C、D |
-| 16 | 出場券 3-2-1 | 離開教室前，寫下 3-2-1 |
-| 17 | 自主學習追蹤 | 課後練習：完成一項，點選一次打勾 |
-| 18 | 課前問卷 | 第十堂 根音連結、複合和弦與常用和弦行進 |
+| 9 | 伴奏型播放器 | 樂句的結尾，和弦如何回家 |
+| 10 | 選擇題 | 級數與功能 |
+| 13 | 伴奏型播放器 | 同一組 Ⅰ Ⅵm Ⅳ Ⅴ，四個調依序聆聽 |
+| 14 | 分組任務・計分 | 移調快問快答 |
+| 15 | 歌曲彈奏 | 〈Jingle Bells〉G 大調：簡譜不變，和弦換成 G、C、D |
+| 17 | 出場券 3-2-1 | 離開教室前，寫下 3-2-1 |
+| 18 | 自主學習追蹤 | 課後練習：完成一項，點選一次打勾 |
+| 19 | 課前問卷 | 第十堂 根音連結、複合和弦與常用和弦行進 |
 
 ### 課後練習
 
@@ -886,7 +861,7 @@
 | 14 | 伴奏型播放器・全班合奏 | 一半同學彈奏低音線，一半同學彈奏右手和弦 |
 | 16 | 出場券 3-2-1 | 離開教室前，寫下 3-2-1 |
 | 17 | 自主學習追蹤 | 課後練習：完成一項，點選一次打勾 |
-| 18 | 課前問卷 | 第十一堂 節奏型態（二）與十度、十六度伴奏 |
+| 18 | 課前問卷 | 第十一堂 節奏型態（二）與十度、十五度伴奏 |
 
 ### 課後練習
 
@@ -896,9 +871,9 @@
 - [ ] 聆聽一首喜愛的歌曲，找出它使用的和弦進行
 - [ ] 填寫第十一堂課前問卷
 
-## 第十一堂｜節奏型態（二）與十度、十六度伴奏 Rhythm Patterns II · Tenths & Sixteenths
+## 第十一堂｜節奏型態（二）與十度、十五度伴奏 Rhythm Patterns II · Tenths & Two Octaves
 
-本堂目標：能以 12/8 的三連音律動彈奏 Slow Rock 伴奏；能彈奏 2/4 進行曲的蹦洽伴奏，並辨識 Bossa Nova 的風格；能彈奏十度音伴奏與雙手十六度的分散和弦；下課前，以三種不同的節奏型態彈奏同一組和弦，讓同學猜出風格。
+本堂目標：能以 12/8 的三連音律動彈奏 Slow Rock 伴奏；能彈奏 2/4 進行曲的蹦洽伴奏，並辨識 Bossa Nova 的風格；能彈奏十度音伴奏與雙手兩個八度（十五度）的分散和弦；下課前，以三種不同的節奏型態彈奏同一組和弦，讓同學猜出風格。
 
 ### 課前問卷
 
@@ -914,9 +889,9 @@
 | 起 | 00:00–00:20 | 卡農進行的下行低音線，練好了嗎？、十度音、Slow Rock、Bossa Nova | 3–4 |
 | 承 | 00:20–00:55 | 12/8：每一拍分成三份，帶有搖擺感、Slow Rock 與進行曲：先聆聽，再跟著彈奏、兩拍子的「蹦洽」，以及巴西的 Bossa Nova、節奏型態 | 5–8 |
 | 休 | 00:55–01:05 | 休息十分鐘 | 9 |
-| 轉 | 01:05–01:40 | 十度音：三音的高八度、十度音與雙手十六度：伴奏音域擴大到兩個八度、十二堂學過的伴奏型，總整理、風格猜猜看 | 10–13 |
-| 合 | 01:40–02:00 | 錄下兩種新的伴奏、離開教室前，寫下 3-2-1 | 14–16 |
-| 收尾 | 課後 | 三句話總結、出場券、課後練習與下一堂預告 | 15、17、18 |
+| 轉 | 01:05–01:40 | 十二堂學過的伴奏型，總整理、風格猜猜看 | 10–11 |
+| 合 | 01:40–02:00 | 錄下兩種新的伴奏、離開教室前，寫下 3-2-1 | 12–14 |
+| 收尾 | 課後 | 三句話總結、出場券、課後練習與下一堂預告 | 13、15、16 |
 
 ### 講義擴充：節奏型態（二）
 
@@ -928,10 +903,10 @@
 
 原教材的節奏型態另有 Rumba、Cha Cha、Tango、Disco、Boogie Woogie 與古典風格，流行鋼琴的伴奏多半來自各國的傳統舞曲。
 
-### 講義擴充：十度與十六度伴奏
+### 講義擴充：十度與十五度伴奏
 
 - 十度音是三音的高八度。十度音伴奏彈奏 1 5 10 5 10 5 10 5：根音、五音、十度音，再於五音與十度音之間來回，理查‧克萊德曼的作品常用這種伴奏。
-- 雙手十六度：左手彈奏完 L5 L3 L2 L1，交給右手 R1 R2 R5，音域擴大到兩個八度。
+- 雙手兩個八度（十五度）：左手彈奏完 L5 L3 L2 L1，交給右手 R1 R2 R5，音域擴大到兩個八度。
 - 手掌較小時，以分散的方式彈奏，不必同時按住十度。
 
 ### 課堂互動（網站簡報）
@@ -943,12 +918,11 @@
 | 4 | 曲例聆聽・YouTube | 十度音、Slow Rock、Bossa Nova |
 | 6 | 伴奏型播放器 | Slow Rock 與進行曲：先聆聽，再跟著彈奏 |
 | 8 | 選擇題 | 節奏型態 |
-| 11 | 伴奏型播放器 | 十度音與雙手十六度：伴奏音域擴大到兩個八度 |
-| 13 | 分組任務・計分 | 風格猜猜看 |
-| 14 | 錄音對照 | 錄下兩種新的伴奏 |
-| 16 | 出場券 3-2-1 | 離開教室前，寫下 3-2-1 |
-| 17 | 自主學習追蹤 | 課後練習：完成一項，點選一次打勾 |
-| 18 | 課前問卷 | 第十二堂 大小調關係與 G 大調歌曲彈奏 |
+| 11 | 分組任務・計分 | 風格猜猜看 |
+| 12 | 錄音對照 | 錄下兩種新的伴奏 |
+| 14 | 出場券 3-2-1 | 離開教室前，寫下 3-2-1 |
+| 15 | 自主學習追蹤 | 課後練習：完成一項，點選一次打勾 |
+| 16 | 課前問卷 | 第十二堂 大小調關係與 G 大調歌曲彈奏 |
 
 ### 課後練習
 
@@ -960,10 +934,10 @@
 
 <!-- teaching-visuals-start -->
 
-<div class="teaching-book" data-demo-group="p06"><h3>十度音與雙手十六度｜圖解示範</h3><div class="teaching-photo-grid">
-<figure><img src="../assets/teaching/piano-tenth-motion.branded.svg?v=20261015revision17" alt="根音、五音與十度音依序彈奏的手位路徑" loading="eager"><figcaption>根音、五音與十度音依序彈奏的手位路徑</figcaption></figure>
-<figure><img src="../assets/teaching/piano-relay-left.branded.svg?v=20261015revision17" alt="由上方觀察低音區與高音區的左右手分工" loading="eager"><figcaption>由上方觀察低音區與高音區的左右手分工</figcaption></figure>
-<figure><img src="../assets/teaching/piano-relay-right.branded.svg?v=20261015revision17" alt="雙手交接時保持自然弧度與連續律動" loading="eager"><figcaption>雙手交接時保持自然弧度與連續律動</figcaption></figure>
+<div class="teaching-book" data-demo-group="p06"><h3>十度音與雙手兩個八度（十五度）｜圖解示範</h3><div class="teaching-photo-grid">
+<figure><img src="../assets/teaching/piano-tenth-motion.branded.svg?v=20261015identity21" alt="根音、五音與十度音依序彈奏的手位路徑" loading="eager"><figcaption>根音、五音與十度音依序彈奏的手位路徑</figcaption></figure>
+<figure><img src="../assets/teaching/piano-relay-left.branded.svg?v=20261015identity21" alt="由上方觀察低音區與高音區的左右手分工" loading="eager"><figcaption>由上方觀察低音區與高音區的左右手分工</figcaption></figure>
+<figure><img src="../assets/teaching/piano-relay-right.branded.svg?v=20261015identity21" alt="雙手交接時保持自然弧度與連續律動" loading="eager"><figcaption>雙手交接時保持自然弧度與連續律動</figcaption></figure>
 </div>
 <p class="teaching-note">分散彈奏時以手臂平移協助，不必同時張開手掌壓住十度。</p>
 </div>

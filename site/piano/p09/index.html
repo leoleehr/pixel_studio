@@ -16,8 +16,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script>/* 中文字型策略：首次造訪用系統中文字型（符合 CI：正黑體／蘋方），不在首屏重排；載入完成 5 秒後，利用閒置時間逐一把本頁用得到的 Noto Sans TC 分組下載進快取，之後每頁一開始就套用 */(function(){var K="ps-font",U="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap";function apply(){var l=document.createElement("link");l.rel="stylesheet";l.href=U;document.head.appendChild(l)}var c=0;try{c=localStorage.getItem(K)}catch(e){}if(c){apply();return}var n=navigator.connection;if(n&&(n.saveData||/2g/.test(n.effectiveType||"")))return;var idle=window.requestIdleCallback||function(f){return setTimeout(f,300)};function inRange(r,cps){return r.split(",").some(function(p){var m=p.trim().replace(/^U\+/i,"").split("-"),a=parseInt(m[0],16),b=m[1]?parseInt(m[1],16):a;return cps.some(function(x){return x>=a&&x<=b})})}function warm(){if(!window.FontFace||!window.fetch)return;var seen={},cps=[],t=document.body.textContent;for(var i=0;i<t.length;i++){var x=t.charCodeAt(i);if(x>=0x2E80&&!seen[x]){seen[x]=1;cps.push(x)}}fetch(U).then(function(r){return r.text()}).then(function(css){var q=[];css.replace(/@font-face\s*\{([^}]*)\}/g,function(_,b){var s=/url\(([^)]+)\)/.exec(b),r=/unicode-range:\s*([^;]+)/.exec(b);if(s&&r&&inRange(r[1],cps))q.push([s[1],r[1]]);return _});function next(){if(!q.length){try{localStorage.setItem(K,"1")}catch(e){}return}var j=q.shift();new FontFace("Noto Sans TC","url("+j[0]+")",{weight:"400 900",unicodeRange:j[1]}).load().then(function(){idle(next,{timeout:3000})},function(){idle(next,{timeout:3000})})}idle(next,{timeout:3000})}).catch(function(){})}var painted=0,loaded=0,started=0;function go(){if(painted&&loaded&&!started){started=1;setTimeout(function(){idle(warm,{timeout:5000})},5000)}}try{new PerformanceObserver(function(l){if(!painted&&l.getEntriesByName("first-contentful-paint").length){painted=1;go()}}).observe({type:"paint",buffered:true})}catch(e){painted=1}addEventListener("load",function(){loaded=1;setTimeout(function(){painted=1;go()},3000);go()})})()</script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Music&text=%F0%9D%84%9E%F0%9D%84%A2%E2%99%AF%E2%99%AD&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="../../assets/deck-bundle.css?v=20261016a">
-<link rel="stylesheet" href="../theme.css?v=20261014r">
+<link rel="stylesheet" href="../../assets/deck-bundle.css?v=20261016b">
+<link rel="stylesheet" href="../theme.css?v=20261016b">
+<link rel="stylesheet" href="../../assets/learning-tools.css?v=20261016learning2">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pixel Studio 畫素音樂工作坊">
 <meta property="og:title" content="級數和弦與調性關係｜第九堂｜Piano Lab">
@@ -26,7 +27,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="../../assets/learning-tools.css?v=20261016learning2">
 </head>
 <body data-title="第九堂｜級數和弦與調性關係" data-course="piano" data-lesson="p09" data-home="../index.html#lessons">
 <div class="progress" id="progress"></div>
@@ -126,6 +126,18 @@
     <div class="card"><div class="big-num c-pink">D</div><h3>屬和弦 Ⅴ</h3><p>充滿張力，最想回到主和弦；Ⅶdim 也有相同的傾向。</p></div>
   </div>
   <div class="card" style="margin-top:14px"><p>Ⅰ、Ⅳ、Ⅴ 合稱「主要三和弦」，音階的七個音，都包含在這三個和弦裡。許多民謠與兒歌，只用這三個和弦就能完成。</p></div>
+</section>
+
+<!-- 8a 終止式說明 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">承</span>終止式</div>
+  <h2 style="margin-bottom:12px">四種終止式：樂句結尾的標點符號</h2>
+  <div class="grid2 cadence-cards" style="gap:14px">
+    <div class="card"><h3 class="c-gold">正格終止<small>強烈的句號</small></h3><p><b>Ⅴ → Ⅰ</b>（C 大調：G → C）</p><p>最常見、最穩定的終止，聽起來圓滿，如同回到家。兩個和弦都用原位，旋律又停在主音 Do，稱為完全正格終止，多半放在全曲結尾；使用轉位或旋律不停在 Do，則是不完全正格終止，像段落的句號。</p></div>
+    <div class="card"><h3 class="c-cyan">變格終止<small>教會的「阿門」</small></h3><p><b>Ⅳ → Ⅰ</b>（C 大調：F → C）</p><p>聖詩最後唱到「阿門」時，幾乎都使用這個終止。少了 Ⅴ 到 Ⅰ 的強烈導向，聲音柔和、平靜而莊嚴，穩定度僅次於正格終止。</p></div>
+    <div class="card"><h3 class="c-red">半終止<small>懸而未決的逗號</small></h3><p><b>任何和弦 → Ⅴ</b>（常見 Ⅰ → Ⅴ、Ⅳ → Ⅴ）</p><p>音樂停在充滿動力的屬和弦，話還沒說完，聽眾期待下一句。多出現在樂句的前半段，如同一個問句。</p></div>
+    <div class="card"><h3 class="c-green">假終止<small>驚奇的轉折</small></h3><p><b>Ⅴ → Ⅵm</b>（C 大調：G → Am），有時接到 Ⅳ</p><p>耳朵期待回到 Ⅰ，卻轉進小和弦，色彩瞬間變暗。又稱阻礙終止，音樂的能量被延續，樂曲必須繼續發展。</p></div>
+  </div>
 </section>
 
 <!-- 8 終止式 -->
@@ -274,17 +286,17 @@
   <a href="../index.html">課程首頁</a>
 </nav>
 
-<script src="../../assets/pixel.js?v=20261014r" defer></script>
-<script src="../../assets/ui.js?v=20261014r" defer></script>
-<script src="../../assets/deck.js?v=20261015b" defer></script>
+<script src="../../assets/pixel.js?v=20261016b" defer></script>
+<script src="../../assets/ui.js?v=20261016b" defer></script>
+<script src="../../assets/deck.js?v=20261016b" defer></script>
 <script src="../../assets/vendor/qrcode.min.js" defer></script>
-<script src="../../assets/interact.js?v=20261016a" defer></script>
-<script src="../../assets/config.js?v=20261014r" defer></script>
-<script src="../../assets/backend.js?v=20261015b" defer></script>
-<script src="../../assets/ps-audio.js?v=20261014r" defer></script>
+<script src="../../assets/interact.js?v=20261016b" defer></script>
+<script src="../../assets/config.js?v=20261016b" defer></script>
+<script src="../../assets/backend.js?v=20261016b" defer></script>
+<script src="../../assets/ps-audio.js?v=20261016b" defer></script>
 <script src="../piano.js?v=20261016learning2" defer></script>
-<script src="../songs.js?v=20261014r" defer></script>
-<script src="../../assets/youtube.js?v=20261016a" defer></script>
+<script src="../songs.js?v=20261016b" defer></script>
+<script src="../../assets/youtube.js?v=20261016b" defer></script>
 <script src="../../assets/learning-tools.js?v=20261016learning2" defer></script>
 </body>
 </html>

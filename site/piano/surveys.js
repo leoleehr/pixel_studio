@@ -52,7 +52,7 @@ window.PIXEL_SURVEYS = [
   ] },
   { id: 'p-pre-8', lesson: 8, title: '第八堂課前問卷', intro: '準備期中發表。', questions: [
     { q: '期中曲目', type: 'short' },
-    { q: '主歌與副歌使用的伴奏型', type: 'short', placeholder: '例如：主歌 4 Beats、副歌 8 Beats 雙手 16 度' },
+    { q: '主歌與副歌使用的伴奏型', type: 'short', placeholder: '例如：主歌 4 Beats、副歌 8 Beats 雙手兩個八度（15 度）' },
     { q: '伴奏的熟練程度', type: 'scale', low: '還需要看譜', high: '已經背熟' },
     { q: '自彈自唱最困難的地方', type: 'multi', options: ['手和嘴巴無法分工', '換氣', '唱的音太高或太低', '一邊唱一邊彈會亂拍', '還沒有嘗試'] }
   ] },
@@ -77,7 +77,7 @@ window.PIXEL_SURVEYS = [
   { id: 'p-pre-12', lesson: 12, title: '第十二堂課前問卷', intro: '準備期末發表。', questions: [
     { q: '期末曲目', type: 'short' },
     { q: '期末曲目的調性', type: 'single', options: ['C 大調', 'G 大調', 'A 小調', '其他調性'] },
-    { q: '使用的伴奏型', type: 'multi', options: ['Slow Soul', '4 Beats', '8 Beats', '華爾滋', 'Slow Rock', '十度音', '雙手 16 度'] },
+    { q: '使用的伴奏型', type: 'multi', options: ['Slow Soul', '4 Beats', '8 Beats', '華爾滋', 'Slow Rock', '十度音', '雙手兩個八度（15 度）'] },
     { q: '發表前的心情', type: 'scale', low: '非常緊張', high: '非常期待' }
   ] },
   { id: 'p-feedback', lesson: 0, title: '課程回饋問卷', intro: '十二堂課結束了，謝謝你一路彈奏到這裡。你的回饋會讓下一屆的課程更加完善。', questions: [

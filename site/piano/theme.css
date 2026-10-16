@@ -172,3 +172,11 @@
 .hands.photo-hands .hand-label{font:700 22px "Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",sans-serif;fill:#f3f0e9;text-anchor:middle}
 /* 年代標籤提亮，深色卡片上維持 4.5:1 */
 .era .yr{color:color-mix(in srgb,var(--c,var(--accent)) 62%,#fff)}
+
+/* 簡譜八分音符：數字下方加底線 */
+.jp-eighth{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+/* 終止式說明卡 */
+.cadence-cards .card{padding:14px 18px}
+.cadence-cards h3{display:flex;align-items:baseline;gap:10px;margin:0 0 6px;font-size:22px}
+.cadence-cards h3 small{font-size:15px;font-weight:500;color:var(--muted)}
+.slide .cadence-cards p{margin:0 0 6px;font-size:16px;line-height:1.6}
