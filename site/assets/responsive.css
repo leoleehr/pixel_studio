@@ -130,3 +130,11 @@ button,.btn,.flip,.dm-cell,.poll-hit,.order-tile{-webkit-user-select:none;user-s
 @media (pointer:coarse){
   input,select,textarea{font-size:16px!important}
 }
+
+/* Contents lives in the fixed header instead of covering lesson controls. */
+.sheet[hidden]{display:none!important}.sheet button:focus-visible,.sheet a:focus-visible{outline:3px solid var(--accent,var(--amber));outline-offset:-3px}.sheet-head button{min-width:44px;min-height:44px}.sheet-list a .ix{color:var(--ink)}
+@media(max-width:900px),(orientation:portrait) and (max-width:1100px){
+ .toc-docked .toc-fab{display:flex;position:static;inset:auto;flex:none;align-items:center;justify-content:center;gap:0;width:44px;height:44px;min-height:44px;margin:0;padding:0;border-radius:10px;border:1px solid var(--line-2);box-shadow:none;font-size:0;background:transparent;color:var(--ink)}
+ .toc-docked .toc-fab svg{width:22px;height:22px}.appbar.toc-docked .ab-count{padding-inline:3px;font-size:11px}.appbar.toc-docked .ab-title b{font-size:14px}.topbar .wrap.toc-docked{gap:8px}
+ html{scroll-padding-top:70px;scroll-padding-bottom:20px}.sheet-list{scroll-padding-block:8px}
+}

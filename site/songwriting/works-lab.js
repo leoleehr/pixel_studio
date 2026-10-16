@@ -383,13 +383,19 @@
     var lyr = root.hasAttribute('data-lyrics') ? el('div', 'lyricbox wv-lyrics') : null;
     foot.append(bRef, bClr); root.append(T.bar, meta, edit, box, svgBox, foot, msg); if (lyr) root.appendChild(lyr);
     if (root.classList.contains('compact')) foot.appendChild(msg);  // 精簡版：回饋與按鈕同一列
-    var work, secs, st, showRef = false, key;
+    var work, secs, st, showRef = false, key, selected=0;
+    var mobile=el('div','wv-mobile'),pickLabel=el('label','','編輯段落 '),pick=el('select'),levelLabel=el('label','','音域位置（0 為未設定） '),level=el('input'),value=el('output'),row=el('div','wv-mobile-level'),overview=el('div','wv-mobile-overview');
+    level.type='range';level.min=0;level.max=7;level.step=1;pickLabel.appendChild(pick);levelLabel.appendChild(level);mobile.append(pickLabel,levelLabel,row,overview);root.insertBefore(mobile,box);
+    var lower=btn('降低一格'),higher=btn('升高一格');row.append(lower,value,higher);
+    function setLevel(v){st[selected]=Math.max(0,Math.min(7,v));LS.set(key,st);draw();}
+    pick.onchange=function(){selected=+pick.value;draw();};level.oninput=function(){setLevel(+level.value);};lower.onclick=function(){setLevel(st[selected]-1);};higher.onclick=function(){setLevel(st[selected]+1);};
+    function syncMobile(){selected=Math.min(selected,secs.length-1);pick.replaceChildren();overview.replaceChildren();secs.forEach(function(s,i){var name=(i+1)+'. '+(s.name||SECZH[s.k]);pick.add(new Option(name,i));var b=btn(name+'：'+(st[i]||'未設定'));b.type='button';b.setAttribute('aria-pressed',i===selected);b.onclick=function(){selected=i;draw();pick.focus({preventScroll:true});};overview.appendChild(b);});pick.value=selected;level.value=st[selected];value.textContent=st[selected]?'音域 '+st[selected]:'尚未設定';level.setAttribute('aria-valuetext',value.textContent);lower.disabled=st[selected]===0;higher.disabled=st[selected]===7;}
     function saveSecs() { LS.set(key + '-secs', secs); LS.set(key, st); }
     function load(k) {
       work = W[k]; key = 'wave-' + k;
       secs = (work.editable && LS.get(key + '-secs', null)) || work.sections.map(function (s) { return { k: s.k, name: s.name }; });
       st = LS.get(key, null); if (!st || st.length !== secs.length) st = secs.map(function () { return 0; });
-      showRef = false; edit.hidden = !work.editable;
+      showRef = false; selected=0;edit.hidden = !work.editable;
       meta.innerHTML = work.artist
         ? '邊聽〈' + esc(work.title) + '〉，邊替每一段點選旋律的音域位置（7 最高、1 最低）。' + (work.editable ? '段落先依常見曲式排列，請依實際聆聽增減。' : '')
         : '依照歌詞的情緒，替每一段點選旋律的音域位置（7 最高、1 最低）。' + (work.key ? '原曲：' + (work.meter || '4/4') + '，' + work.key + ' 大調' + (work.bpm ? '，每分鐘 ' + work.bpm + ' 拍' : '') + '。' : '');
@@ -423,7 +429,7 @@
       var mine = st.map(function (v, i) { return v ? pt(i, v) : null; }).filter(Boolean);
       var ref = secs.map(function (s, i) { return pt(i, (WAVE_REF[s.k] || 3) + (isLast(i) ? 1 : 0)); });
       svgBox.innerHTML = '<svg viewBox="0 0 ' + Wd + ' ' + H + '" preserveAspectRatio="none" class="wv-svg" aria-hidden="true">' + (showRef ? '<path class="wv-ref" d="M' + ref.join(' L') + '"/>' : '') + (mine.length > 1 ? '<path class="wv-mine" d="M' + mine.join(' L') + '"/>' : '') + '</svg>';
-      check();
+      syncMobile();check();
     }
     function isLast(i) { if (secs[i].k !== 'chorus') return false; for (var j = i + 1; j < secs.length; j++) if (secs[j].k === 'chorus') return false; return secs.filter(function (s) { return s.k === 'chorus'; }).length > 2; }
     function avg(k) { var a = []; secs.forEach(function (s, i) { if (s.k === k && st[i]) a.push(st[i]); }); return a.length ? a.reduce(function (x, y) { return x + y; }, 0) / a.length : 0; }
