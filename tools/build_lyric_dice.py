@@ -7,13 +7,16 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 POOL = ROOT / 'tools' / 'lyric-dice-pool.txt'; OUT = ROOT / 'site' / 'songwriting' / 'lyric-dice.js'
 # 拼音程式庫的讀音與台灣習慣不同的字詞，直接指定韻腳
 FIX = {'執著': 'o'}
-words, lines, sec = [], [], None
+words, lines, sec, src, SRC = [], [], None, None, {}
 for ln in io.open(POOL, encoding='utf-8').read().splitlines():
     ln = ln.strip()
     if not ln: continue
     if ln.startswith('# '): continue
-    if ln.startswith('#'): sec = ln[1:]; continue
-    (words.extend(ln.split()) if sec == 'words' else lines.append(ln))
+    if ln.startswith('#'):
+        head = ln[1:].split(' ', 1); sec = head[0]; src = head[1] if len(head) > 1 else None; continue
+    for it in (ln.split() if sec.endswith('words') else [ln]):
+        if src: SRC[it] = src  # 出處：老師的作品
+        (words if sec.endswith('words') else lines).append(it)
 
 JS = r"""
 (items) => {
@@ -62,11 +65,14 @@ async def main():
     for kind, lo, hi in (('words', 1, 4), ('lines', 5, 10)):
         for v in 'aoeiu':
             print(kind, v, ' '.join('%d:%d' % (n, len(data[kind].get(v, {}).get(str(n), []))) for n in range(lo, hi + 1)))
-    print('dropped', drop)
+    print('dropped (teacher)', [d for d in drop if d[1] in SRC])
+    print('teacher used', sum(1 for k in data for v in data[k].values() for b in v.values() for w in b if w in SRC), 'of', len(SRC))
     io.open(OUT, 'w', encoding='utf-8', newline='\n').write(
         '/* ===== Songwriting Lab：歌詞創作骰子的詞庫與金句庫 =====\n'
         ' * 由 tools/build_lyric_dice.py 依照 tools/lyric-dice-pool.txt 產生，請勿手動修改。\n'
         ' * 依句尾字的韻母分成五個母音韻腳：a（ㄚ）、o（ㄛ ㄡ）、e（ㄜ ㄝ ㄟ）、i（ㄧ ㄩ）、u（ㄨ），再依字數分組。\n'
-        ' */\nwindow.PIXEL_LYRIC_DICE = ' + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + ';\n')
+        ' * src：取自老師作品的詞句與歌名。\n'
+        ' */\nwindow.PIXEL_LYRIC_DICE = ' + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + ';\n'
+        'window.PIXEL_LYRIC_DICE.src = ' + json.dumps({w: s for w, s in SRC.items() if any(w in b for k in data for v in data[k].values() for b in v.values())}, ensure_ascii=False, separators=(',', ':')) + ';\n')
 
 asyncio.run(main())

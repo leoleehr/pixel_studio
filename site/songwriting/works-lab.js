@@ -559,13 +559,14 @@
   function pickOne(a) { return a[Math.floor(Math.random() * a.length)]; }
   $$('.lyricdice').forEach(function (root) {
     var D = window.PIXEL_LYRIC_DICE; if (!D) return;
+    var SRC = D.src || {};
     var DIE = [
       { k: 'words', name: '詞源骰子', note: '擲出一個詞語，作為歌詞的素材或句尾的韻腳。', lens: [1, 2, 3, 4], unit: '字', nb: 'words', nbName: '詞典' },
       { k: 'lines', name: '金句骰子', note: '擲出一句歌詞，試著接寫下一句，或改寫成自己的版本。', lens: [5, 6, 7, 8, 9, 10], unit: '字', nb: 'lines', nbName: '句典' }
     ];
     var box = el('div', 'ld'), dice = [];
     DIE.forEach(function (d) {
-      var st = LS.get('ldice-' + d.k, { len: 0, v: '', res: null, hist: [] });
+      var st = LS.get('ldice-' + d.k, { len: 0, v: '', src: '', res: null, hist: [] }); st.src = st.src || '';
       var card = el('section', 'ld-die');
       card.setAttribute('aria-label', d.name);
       card.appendChild(el('h3', 'ld-name', d.name));
@@ -575,29 +576,33 @@
         var g = el('div', 'ld-chips'); g.setAttribute('role', 'group'); g.setAttribute('aria-label', d.name + label);
         opts.forEach(function (o) {
           var b = el('button', '', o[1]); b.type = 'button'; b.dataset.v = o[0];
-          b.onclick = function () { st[key] = key === 'len' ? +o[0] : o[0]; save(); paint(); };
+          b.onclick = function () { st[key] = key === 'len' ? +o[0] : o[0]; save(); paint(); hint(); };
           g.appendChild(b);
         });
         row.appendChild(g); card.appendChild(row); return g;
       }
       var gLen = chips('字數', [[0, '隨機']].concat(d.lens.map(function (n) { return [n, n + ' ' + d.unit]; })), 'len');
       var gV = chips('韻腳', [['', '隨機']].concat(VOW.map(function (v) { return [v[0], v[1] + '<small>' + v[2] + '</small>']; })), 'v');
+      var gS = chips('來源', [['', '全部'], ['leo', '老師的作品']], 'src');
       var reel = el('div', 'ld-reel'), big = el('b', '', '？'), meta = el('small', '', '選好字數與韻腳，按下「擲骰子」。');
       reel.setAttribute('aria-live', 'polite'); reel.append(big, meta); card.appendChild(reel);
       var foot = el('div', 'btn-row wk-foot'), bGo = btn('擲骰子', 'primary'), bNb = btn('加入素材庫');
       foot.append(bGo, bNb); card.appendChild(foot);
       var hist = el('div', 'ld-hist'); card.appendChild(hist);
-      function pool(len, v) { var out = []; (v ? [v] : VOW.map(function (x) { return x[0]; })).forEach(function (vv) { (len ? [len] : d.lens).forEach(function (n) { ((D[d.k][vv] || {})[n] || []).forEach(function (w) { out.push({ w: w, v: vv, n: n }); }); }); }); return out; }
+      function pool(len, v) { var out = []; (v ? [v] : VOW.map(function (x) { return x[0]; })).forEach(function (vv) { (len ? [len] : d.lens).forEach(function (n) { ((D[d.k][vv] || {})[n] || []).forEach(function (w) { if (st.src !== 'leo' || SRC[w]) out.push({ w: w, v: vv, n: n }); }); }); }); return out; }
+      // 只用老師作品時，字數與韻腳的組合可能沒有詞句
+      function hint() { if (!pool(st.len, st.v).length) { big.textContent = '？'; meta.textContent = '老師的作品裡沒有這個組合，請換一個字數或韻腳。'; } else if (st.res) paint(); }
       function paint() {
         $$('button', gLen).forEach(function (b) { b.setAttribute('aria-pressed', String(+b.dataset.v === st.len)); });
         $$('button', gV).forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.v === st.v)); });
-        if (st.res) { big.textContent = st.res.w; meta.textContent = st.res.n + ' ' + d.unit + '・' + VOWZH[st.res.v] + ' 韻'; }
+        $$('button', gS).forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.v === st.src)); });
+        if (st.res) { big.textContent = st.res.w; meta.textContent = st.res.n + ' ' + d.unit + '・' + VOWZH[st.res.v] + ' 韻' + (SRC[st.res.w] ? '・出自〈' + SRC[st.res.w] + '〉' : ''); }
         hist.innerHTML = st.hist.length ? '<span class="ld-lab">剛才擲出</span>' + st.hist.map(function (h) { return '<span>' + esc(h) + '</span>'; }).join('') : '';
       }
       function save() { LS.set('ldice-' + d.k, st); }
       function roll(forceV, done) {
         var v = forceV != null ? forceV : st.v, list = pool(st.len, v);
-        if (!list.length) return;
+        if (!list.length) { hint(); return; }
         var last = st.res && st.res.w, t = 0; reel.classList.add('spin'); bGo.disabled = true;
         var iv = setInterval(function () {
           big.textContent = pickOne(list).w;
