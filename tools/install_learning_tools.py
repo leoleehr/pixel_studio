@@ -4,7 +4,7 @@ import os
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '20261016learning1'
+VERSION = '20261016learning2'
 
 def enhance_file(path):
     path = Path(path)
@@ -15,7 +15,7 @@ def enhance_file(path):
     if path.name == 'handbook-print.html':
         path.write_text(text, encoding='utf-8', newline='\n')
         return
-    text = re.sub(r'((?:piano|songwriting)\.js\?v=)[^"\s>]+', r'\g<1>'+VERSION, text)
+    text = re.sub(r'((?:(?:piano|songwriting)\.js|learning-tools\.(?:js|css)|learning-print\.css)\?v=)[^"\s>]+', r'\g<1>'+VERSION, text)
     if 'ps-audio.js' not in text:
         audio = f'<script src="{base}/ps-audio.js?v={VERSION}" defer></script>\n'
         if 'learning-tools.js' in text:

@@ -600,7 +600,7 @@
 <!-- teaching-visuals-end -->
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>按拍號選伴奏</h4><p>同一組C和弦可依拍號比較本課既有的伴奏型，避免只憑BPM決定風格。</p><figure class="learning-print"><img src="../assets/learning/print/piano-accompaniment.svg" alt="按拍號選伴奏的關鍵狀態圖" loading="eager"><figcaption>按拍號選伴奏｜關鍵狀態</figcaption></figure><p><a href="p06/#7">開啟互動練習</a></p></div>
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>按拍號選伴奏</h4><p>同一組C和弦可依拍號比較本課既有的伴奏型，避免只憑BPM決定風格。</p><figure class="learning-print"><img src="../assets/learning/print/piano-accompaniment.svg" alt="按拍號選伴奏的關鍵狀態圖" loading="eager"><figcaption>按拍號選伴奏｜關鍵狀態</figcaption></figure><p><a href="p06/#11">開啟互動練習</a></p></div>
 
 <!-- learning-notes-end -->
 
