@@ -13,7 +13,8 @@
  ['bass-map',/guitar\/ch05/,'「蹦」：彈奏和弦名稱'],
  ['dual-hands',/piano\/p03/,'雙手同時彈奏'],
  ['arrangement',/songwriting\/s07/,'樂器配置由少漸多'],
- ['accompaniment',/guitar\/ch05|piano\/p06/,'先聆聽'],
+ ['accompaniment',/guitar\/ch05/,'先聆聽歌曲的拍號與速度'],
+ ['accompaniment',/piano\/p06/,'先聆聽拍號與速度'],
  ['rhetoric',/songwriting\/s04/,'類疊、層遞']
  ];
  const pending={},stops=[];
