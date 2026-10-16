@@ -641,22 +641,28 @@
       bNb.onclick = function () {
         if (!st.res) return;
         var nb = LS.get('notebook', { words: [], lines: [], tunes: [] }); nb[d.nb] = nb[d.nb] || [];
-        if (nb[d.nb].indexOf(st.res.w) < 0) nb[d.nb].push(st.res.w);
-        LS.set('notebook', nb); drawBank();
+        var at = nb[d.nb].indexOf(st.res.w);
+        if (at > -1) { drawBank(d.nb, at, '「' + st.res.w + '」已經在草稿區裡，再擲一次換一個吧。'); return; }
+        if (bankCount(nb) >= BANK_MAX) { drawBank(null, -1, '草稿區已滿 ' + BANK_MAX + ' 個，請先移除用不到的詞句。'); return; }
+        nb[d.nb].push(st.res.w); LS.set('notebook', nb);
+        drawBank(d.nb, nb[d.nb].length - 1, '');
       };
       paint(); box.appendChild(card);
     });
     // 歌詞草稿區：資料與第一堂的素材庫共用（詞典、句典），加入之後直接排列在下方
     var bank = el('section', 'ld-bank'), bankBody = el('div', 'ld-bank-body');
     bank.setAttribute('aria-label', '歌詞草稿區');
-    var bankHead = el('div', 'ld-bank-head', '<h3>歌詞草稿區</h3><small>點選詞句右側的 × 即可移除；內容與第一堂的素材庫共用。</small>');
+    // 草稿區最多 50 個詞句（詞語與金句合計）
+    var BANK_MAX = 50;
+    function bankCount(nb) { return (nb.words || []).length + (nb.lines || []).length; }
+    var bankHead = el('div', 'ld-bank-head', '<h3>歌詞草稿區</h3><b class="ld-bank-n"></b><small>點選詞句右側的 × 即可移除；內容與第一堂的素材庫共用。</small><span class="ld-bank-msg" role="status"></span>');
     var bCopy = btn('複製全部');
     bCopy.onclick = function () {
       var nb = LS.get('notebook', { words: [], lines: [] }), text = '【詞典】\n' + (nb.words || []).join('、') + '\n\n【句典】\n' + (nb.lines || []).join('\n');
       if (navigator.clipboard) navigator.clipboard.writeText(text).then(function () { if (window.PixelBackend) window.PixelBackend.toast('已複製歌詞草稿區', 'ok'); });
     };
     bankHead.appendChild(bCopy); bank.append(bankHead, bankBody);
-    function drawBank() {
+    function drawBank(newK, newI, note) {
       var nb = LS.get('notebook', { words: [], lines: [], tunes: [] });
       function list(k, cls) {
         return (nb[k] || []).map(function (w, i) { return '<li><span>' + esc(w) + '</span><button type="button" data-k="' + k + '" data-i="' + i + '" aria-label="移除 ' + esc(w) + '">×</button></li>'; }).join('');
@@ -667,6 +673,14 @@
       $$('button[data-k]', bankBody).forEach(function (b) {
         b.onclick = function () { var nb2 = LS.get('notebook', { words: [], lines: [], tunes: [] }); nb2[b.dataset.k].splice(+b.dataset.i, 1); LS.set('notebook', nb2); drawBank(); };
       });
+      bankHead.querySelector('.ld-bank-n').textContent = bankCount(nb) + ' / ' + BANK_MAX;
+      bankHead.querySelector('.ld-bank-msg').textContent = note || '';
+      // 新加入（或重複）的詞句：捲到看得見的位置並短暫標亮
+      if (newK != null && newI > -1) {
+        var li = bankBody.querySelector('button[data-k="' + newK + '"][data-i="' + newI + '"]');
+        li = li && li.parentNode;
+        if (li) { bankBody.scrollTop = Math.max(0, li.offsetTop - bankBody.clientHeight / 2); li.classList.add('ld-new'); }
+      }
     }
     drawBank();
     root.append(box, bank);
