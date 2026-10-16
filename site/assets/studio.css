@@ -1,5 +1,5 @@
 /* Pixel Studio — voice as a living instrument. */
-:root{--bg:#101210;--surface:#181c17;--card:#1e231c;--card-2:#252b22;--ink:#f1f0e8;--muted:#aaaFA2;--faint:#90988b;--line:rgba(237,241,225,.13);--line-2:rgba(237,241,225,.23);--accent:#f4a62a;--amber:var(--accent);--r-lg:4px;--r:4px;--r-sm:3px}
+:root{--bg:#101210;--surface:#181c17;--card:#1e231c;--card-2:#252b22;--ink:#f1f0e8;--muted:#aaaFA2;--faint:#90988b;--line:rgba(237,241,225,.13);--line-2:rgba(237,241,225,.23);--accent:var(--pixel-amber,#f4a62a);--amber:var(--accent);--r-lg:4px;--r:4px;--r-sm:3px}
 ::selection{background:var(--accent,#f4a62a);color:#101210}
 body::before{display:none}a{color:var(--amber)}
 :focus-visible{outline:2px solid var(--amber);outline-offset:5px}

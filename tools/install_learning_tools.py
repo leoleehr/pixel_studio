@@ -4,7 +4,11 @@ import os
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '20261016learning2'
+VERSION = '20261016review1'
+
+def refresh_versions(text):
+    names = r'(?:piano\.js|songwriting\.js|works-lab\.js|ui\.js|responsive\.css|youtube\.css|deck-bundle\.css|studio\.css|theme\.css|learning-tools\.(?:js|css)|learning-print\.css)'
+    return re.sub(r'('+names+r'\?v=)[^"\s>]+', r'\g<1>'+VERSION, text)
 
 def enhance_file(path):
     path = Path(path)
@@ -15,7 +19,7 @@ def enhance_file(path):
     if path.name == 'handbook-print.html':
         path.write_text(text, encoding='utf-8', newline='\n')
         return
-    text = re.sub(r'((?:(?:piano|songwriting)\.js|learning-tools\.(?:js|css)|learning-print\.css)\?v=)[^"\s>]+', r'\g<1>'+VERSION, text)
+    text = refresh_versions(text)
     if 'ps-audio.js' not in text:
         audio = f'<script src="{base}/ps-audio.js?v={VERSION}" defer></script>\n'
         if 'learning-tools.js' in text:
@@ -30,6 +34,9 @@ def enhance_file(path):
     path.write_text(text, encoding='utf-8', newline='\n')
 
 def install():
+    for path in (ROOT/'site').rglob('*.html'):
+        text=path.read_text(encoding='utf-8');updated=refresh_versions(text)
+        if updated != text:path.write_text(updated,encoding='utf-8',newline='\n')
     for course, pattern in [('vocal','slides/lesson-*/index.html'),('guitar','ch*/index.html'),('piano','p*/index.html'),('songwriting','s*/index.html')]:
         for path in (ROOT/'site'/course).glob(pattern):
             enhance_file(path)

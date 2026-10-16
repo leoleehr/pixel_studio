@@ -16,7 +16,7 @@ ENTRIES = [
  ('word-ending','vocal','slides/lesson-04/',4,'長音收尾','母音先延續，再清楚收尾；愛由a轉i、心以舌尖收n、星以舌根收ng。收音時點可依示範調整。'),
  ('bass-map','guitar','ch05/',5,'根音與交替低音','依和弦找出根音與另一個和弦音。C/E等交替方式不一律是五度，仍以教材指法為準。'),
  ('dual-hands','piano','p03/',3,'雙手同步指法','C大調上行，右手在F穿指，左手在A跨指；兩個動作並不同時發生。'),
- ('arrangement','songwriting','s07/',7,'段落配器','以段落對照主律動、副律動、主旋律、過門與襯底；可以讀取自己的曲式積木，再試聽配器差別。'),
+ ('arrangement','songwriting','s07/',7,'段落配器','以段落對照主律動、副律動、主旋律、過門與襯底；可以讀取自己的曲式積木，按曲式分別儲存配置，再試聽聲部差別。'),
  ('accompaniment','guitar','ch05/',5,'按拍號選伴奏','先選拍號，再以相同和弦比較速度與伴奏型；推薦不是唯一正解。'),
  ('accompaniment','piano','p06/',6,'按拍號選伴奏','同一組C和弦可依拍號比較本課既有的伴奏型，避免只憑BPM決定風格。'),
  ('rhetoric','songwriting','s04/',4,'句內修辭標記','類疊看重複詞，頂真看前尾接後頭，映襯看對照片語。網站以原創短句提供選擇與標記。'),
@@ -84,7 +84,7 @@ def build():
                     blocks=blocks.copy();blocks[0]=blocks[0].replace('<h4>','<h3>互動練習與圖解</h3><h4>',1)
                     parts[i]=part.rstrip()+'\n\n<!-- learning-notes-start -->\n'+''.join(blocks)+'\n<!-- learning-notes-end -->\n\n'
             elif re.match(r'## 課程總覽',part):
-                parts[i]=part.rstrip()+'\n\n<!-- learning-notes-start -->\n### 能力路線與練習紀錄\n\n[開啟課程能力路線](index.html#lessons)：依本課順序連接先備能力與作品；只讀取本機已有作業勾選。網站練習紀錄圖沿用原七天表格，缺值保留空白，秒數、次數與分鐘分開檢視。PDF保留本表作書面紀錄，不填入示範成績。\n\n<!-- learning-notes-end -->\n\n'
+                parts[i]=part.rstrip()+'\n\n<!-- learning-notes-start -->\n### 能力路線與練習紀錄\n\n[開啟課程能力路線](index.html#lessons)：各堂課卡片整合建議先備與本機作業勾選，另可展開課程路線總覽。網站練習紀錄圖沿用原七天表格，缺值保留空白，秒數、次數與分鐘分開檢視。PDF保留本表作書面紀錄，不填入示範成績。\n\n<!-- learning-notes-end -->\n\n'
         path.write_text(''.join(parts),encoding='utf-8',newline='\n')
     print('Updated four handbooks and',len(ENTRIES),'key-state diagrams')
 

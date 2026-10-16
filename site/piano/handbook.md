@@ -62,6 +62,13 @@
 - 伴奏一律以指位譜 L5 L3 L2 L1、R1 R2 R5 記錄，換和弦時手指位置不變
 - 歌曲以簡譜記錄，換調時簡譜不變、和弦依照級數更換
 
+<!-- learning-notes-start -->
+### 能力路線與練習紀錄
+
+[開啟課程能力路線](index.html#lessons)：各堂課卡片整合建議先備與本機作業勾選，另可展開課程路線總覽。網站練習紀錄圖沿用原七天表格，缺值保留空白，秒數、次數與分鐘分開檢視。PDF保留本表作書面紀錄，不填入示範成績。
+
+<!-- learning-notes-end -->
+
 ## 第一堂｜認識鋼琴與流行鋼琴 Meet The Piano · Pop Piano
 
 本堂目標：能說明鋼琴的起源、發聲原理與常見的種類；能分辨古典鋼琴、流行鋼琴與爵士鋼琴的差異；以正確的坐姿與手形，認識雙手的手指編號與踏板；下課前，每個人在鍵盤上找到中央 C，用五指位置彈奏 Do Re Mi Fa Sol。
@@ -334,6 +341,11 @@
 
 <!-- teaching-visuals-end -->
 
+<!-- learning-notes-start -->
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>雙手同步指法</h4><p>C大調上行，右手在F穿指，左手在A跨指；兩個動作並不同時發生。</p><figure class="learning-print"><img src="../assets/learning/print/piano-dual-hands.svg" alt="雙手同步指法的關鍵狀態圖" loading="eager"><figcaption>雙手同步指法｜關鍵狀態</figcaption></figure><p><a href="p03/#12">開啟互動練習</a></p></div>
+
+<!-- learning-notes-end -->
+
 ## 第四堂｜和弦組成與結構 Chords & Inversions
 
 本堂目標：能說明和聲與和弦的定義，以三度疊出三和弦；能分辨大、小、增、減四種三和弦的組成與聽感；能說出 C 大調的七個順階和弦，並彈奏三種轉位；下課前，右手以轉位彈奏 C → F → G → C，手不跳動。
@@ -410,6 +422,11 @@
 - [ ] 右手以轉位彈奏 C → F → G → C，連續十次手不跳動
 - [ ] 左手彈奏 C、F、G 的根音，右手同時按住和弦
 - [ ] 填寫第五堂課前問卷
+
+<!-- learning-notes-start -->
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>最近音連接</h4><p>C→F→G→C可比較原位與就近連接。C→F保留C4，E4到F4、G4到A4。</p><figure class="learning-print"><img src="../assets/learning/print/piano-voice-leading.svg" alt="最近音連接的關鍵狀態圖" loading="eager"><figcaption>最近音連接｜關鍵狀態</figcaption></figure><p><a href="p04/#12">開啟互動練習</a></p></div>
+
+<!-- learning-notes-end -->
 
 ## 第五堂｜基本歌曲彈奏（一） First Songs · Melody & Chords
 
@@ -580,6 +597,11 @@
 </div>
 
 <!-- teaching-visuals-end -->
+
+<!-- learning-notes-start -->
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>按拍號選伴奏</h4><p>同一組C和弦可依拍號比較本課既有的伴奏型，避免只憑BPM決定風格。</p><figure class="learning-print"><img src="../assets/learning/print/piano-accompaniment.svg" alt="按拍號選伴奏的關鍵狀態圖" loading="eager"><figcaption>按拍號選伴奏｜關鍵狀態</figcaption></figure><p><a href="p06/#11">開啟互動練習</a></p></div>
+
+<!-- learning-notes-end -->
 
 ## 第七堂｜伴奏技巧強化（4＋8） Accompaniment · 4 Beats & 8 Beats
 
