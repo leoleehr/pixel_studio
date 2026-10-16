@@ -95,3 +95,7 @@ if __name__ == '__main__':
 
     from teaching_visuals import install_all
     install_all()
+
+    # 課程首頁的投影片張數（Session 1・3 小時・34 Slides）
+    from update_slide_counts import update as update_slide_counts
+    update_slide_counts('piano')
