@@ -8,6 +8,7 @@
  * .arrmap     編曲地圖：為每一段安排樂器的編制，觀察能量曲線
  * .cheer      現場默契測驗：用麥克風測量觀眾呼應的音量
  * .leoworks   作品全貌：完整歌詞、曲式、韻腳、修辭與討論題
+ * .lyricdice  歌詞創作骰子：詞源骰子（1～4 字）與金句骰子（5～10 字），依五個母音韻腳抽出詞句
  */
 (function () {
   'use strict';
@@ -551,5 +552,79 @@
       }).join('');
     }
     T.on(load);
+  });
+  /* ========== 10. 歌詞創作骰子（詞庫在 lyric-dice.js） ========== */
+  var VOW = [['a', 'ㄚ', 'a'], ['o', 'ㄛ ㄡ', 'o'], ['e', 'ㄜ ㄝ ㄟ', 'e'], ['i', 'ㄧ ㄩ', 'i'], ['u', 'ㄨ', 'u']];
+  var VOWZH = {}; VOW.forEach(function (v) { VOWZH[v[0]] = v[1]; });
+  function pickOne(a) { return a[Math.floor(Math.random() * a.length)]; }
+  $$('.lyricdice').forEach(function (root) {
+    var D = window.PIXEL_LYRIC_DICE; if (!D) return;
+    var DIE = [
+      { k: 'words', name: '詞源骰子', note: '擲出一個詞語，作為歌詞的素材或句尾的韻腳。', lens: [1, 2, 3, 4], unit: '字', nb: 'words', nbName: '詞典' },
+      { k: 'lines', name: '金句骰子', note: '擲出一句歌詞，試著接寫下一句，或改寫成自己的版本。', lens: [5, 6, 7, 8, 9, 10], unit: '字', nb: 'lines', nbName: '句典' }
+    ];
+    var box = el('div', 'ld'), dice = [];
+    DIE.forEach(function (d) {
+      var st = LS.get('ldice-' + d.k, { len: 0, v: '', res: null, hist: [] });
+      var card = el('section', 'ld-die');
+      card.setAttribute('aria-label', d.name);
+      card.appendChild(el('h3', 'ld-name', d.name));
+      card.appendChild(el('p', 'ld-note', d.note));
+      function chips(label, opts, key) {
+        var row = el('div', 'ld-row'); row.appendChild(el('span', 'ld-lab', label));
+        var g = el('div', 'ld-chips'); g.setAttribute('role', 'group'); g.setAttribute('aria-label', d.name + label);
+        opts.forEach(function (o) {
+          var b = el('button', '', o[1]); b.type = 'button'; b.dataset.v = o[0];
+          b.onclick = function () { st[key] = key === 'len' ? +o[0] : o[0]; save(); paint(); };
+          g.appendChild(b);
+        });
+        row.appendChild(g); card.appendChild(row); return g;
+      }
+      var gLen = chips('字數', [[0, '隨機']].concat(d.lens.map(function (n) { return [n, n + ' ' + d.unit]; })), 'len');
+      var gV = chips('韻腳', [['', '隨機']].concat(VOW.map(function (v) { return [v[0], v[1] + '<small>' + v[2] + '</small>']; })), 'v');
+      var reel = el('div', 'ld-reel'), big = el('b', '', '？'), meta = el('small', '', '選好字數與韻腳，按下「擲骰子」。');
+      reel.setAttribute('aria-live', 'polite'); reel.append(big, meta); card.appendChild(reel);
+      var foot = el('div', 'btn-row wk-foot'), bGo = btn('擲骰子', 'primary'), bNb = btn('加入素材庫');
+      foot.append(bGo, bNb); card.appendChild(foot);
+      var hist = el('div', 'ld-hist'); card.appendChild(hist);
+      function pool(len, v) { var out = []; (v ? [v] : VOW.map(function (x) { return x[0]; })).forEach(function (vv) { (len ? [len] : d.lens).forEach(function (n) { ((D[d.k][vv] || {})[n] || []).forEach(function (w) { out.push({ w: w, v: vv, n: n }); }); }); }); return out; }
+      function paint() {
+        $$('button', gLen).forEach(function (b) { b.setAttribute('aria-pressed', String(+b.dataset.v === st.len)); });
+        $$('button', gV).forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.v === st.v)); });
+        if (st.res) { big.textContent = st.res.w; meta.textContent = st.res.n + ' ' + d.unit + '・' + VOWZH[st.res.v] + ' 韻'; }
+        hist.innerHTML = st.hist.length ? '<span class="ld-lab">剛才擲出</span>' + st.hist.map(function (h) { return '<span>' + esc(h) + '</span>'; }).join('') : '';
+      }
+      function save() { LS.set('ldice-' + d.k, st); }
+      function roll(forceV, done) {
+        var v = forceV != null ? forceV : st.v, list = pool(st.len, v);
+        if (!list.length) return;
+        var last = st.res && st.res.w, t = 0; reel.classList.add('spin'); bGo.disabled = true;
+        var iv = setInterval(function () {
+          big.textContent = pickOne(list).w;
+          if (++t < 12) return;
+          clearInterval(iv); reel.classList.remove('spin'); bGo.disabled = false;
+          var cand = list.filter(function (x) { return x.w !== last; }); st.res = pickOne(cand.length ? cand : list);
+          st.hist = [st.res.w].concat(st.hist.filter(function (h) { return h !== st.res.w; })).slice(0, 8);
+          save(); paint(); report(root, 'lyricdice', { item: d.name, result: st.res.w });
+          if (done) done(st.res);
+        }, 60);
+      }
+      bGo.onclick = function () { roll(); };
+      bNb.onclick = function () {
+        if (!st.res) return;
+        var nb = LS.get('notebook', { words: [], lines: [], tunes: [] }); nb[d.nb] = nb[d.nb] || [];
+        if (nb[d.nb].indexOf(st.res.w) < 0) nb[d.nb].push(st.res.w);
+        LS.set('notebook', nb); if (window.PixelBackend) window.PixelBackend.toast('已加入素材庫的' + d.nbName + '：' + st.res.w, 'ok');
+      };
+      paint(); box.appendChild(card); dice.push({ roll: roll, st: st, setV: function (v) { st.v = v; save(); paint(); } });
+    });
+    // 兩顆一起擲：詞語與金句押同一個韻腳
+    var both = el('div', 'ld-both'), bBoth = btn('兩顆一起擲（同一個韻腳）'), out = el('p', 'ld-out', '同時擲出詞語與金句，試著用這個詞語，接寫在金句的下一句。');
+    both.append(bBoth, out);
+    bBoth.onclick = function () {
+      var v = dice[0].st.v || dice[1].st.v || pickOne(VOW)[0], got = [];
+      dice.forEach(function (x, i) { x.setV(v); x.roll(null, function (r) { got[i] = r.w; if (got[0] && got[1]) out.innerHTML = '同押 <b>' + VOWZH[v] + '</b> 韻：以「<b>' + esc(got[0]) + '</b>」作為下一句的句尾，接在「' + esc(got[1]) + '」之後。'; }); });
+    };
+    root.append(box, both);
   });
 })();
