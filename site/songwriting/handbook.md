@@ -69,7 +69,7 @@
 <!-- learning-notes-start -->
 ### 能力路線與練習紀錄
 
-[開啟課程能力路線](index.html#lessons)：依本課順序連接先備能力與作品；只讀取本機已有作業勾選。網站練習紀錄圖沿用原七天表格，缺值保留空白，秒數、次數與分鐘分開檢視。PDF保留本表作書面紀錄，不填入示範成績。
+[開啟課程能力路線](index.html#lessons)：各堂課卡片整合建議先備與本機作業勾選，另可展開課程路線總覽。網站練習紀錄圖沿用原七天表格，缺值保留空白，秒數、次數與分鐘分開檢視。PDF保留本表作書面紀錄，不填入示範成績。
 
 <!-- learning-notes-end -->
 
@@ -816,7 +816,7 @@
 - [ ] 填寫第八堂課前問卷
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>段落配器</h4><p>以段落對照主律動、副律動、主旋律、過門與襯底；可以讀取自己的曲式積木，再試聽配器差別。</p><figure class="learning-print"><img src="../assets/learning/print/songwriting-arrangement.svg" alt="段落配器的關鍵狀態圖" loading="eager"><figcaption>段落配器｜關鍵狀態</figcaption></figure><p><a href="s07/#8">開啟互動練習</a></p></div>
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>段落配器</h4><p>以段落對照主律動、副律動、主旋律、過門與襯底；可以讀取自己的曲式積木，按曲式分別儲存配置，再試聽聲部差別。</p><figure class="learning-print"><img src="../assets/learning/print/songwriting-arrangement.svg" alt="段落配器的關鍵狀態圖" loading="eager"><figcaption>段落配器｜關鍵狀態</figcaption></figure><p><a href="s07/#8">開啟互動練習</a></p></div>
 
 <!-- learning-notes-end -->
 
