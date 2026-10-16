@@ -83,6 +83,8 @@ def build(n):
     out = ROOT / 'site' / 'songwriting' / ('s' + nn)
     out.mkdir(parents=True, exist_ok=True)
     (out / 'index.html').write_text(HEAD.format(**fmt) + body.rstrip() + '\n' + TAIL.format(**fmt), encoding='utf-8', newline='\n')
+    from install_learning_tools import enhance_file
+    enhance_file(out / 'index.html')
     print('built', out / 'index.html', body.count('<section class="slide'), 'slides')
 
 
