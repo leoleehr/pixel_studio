@@ -13,7 +13,7 @@ from build_deck_css import build as build_deck_css
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 ZH = ['', '一', '二', '三', '四', '五', '六', '七', '八']
-VER = "20261016r"
+VER = "20261016s"
 
 HEAD = '''<!doctype html>
 <html lang="zh-Hant">
@@ -63,8 +63,7 @@ TAIL = '''</div>
 <script src="../songwriting.js?v={v}" defer></script>
 <script src="../songs.js?v={v}" defer></script>
 <script src="../leo-works.js?v={v}" defer></script>
-<script src="../lyric-dice.js?v={v}" defer></script>
-<script src="../works-lab.js?v={v}" defer></script>
+{dice}<script src="../works-lab.js?v={v}" defer></script>
 <script src="../../assets/youtube.js?v={v}" defer></script>
 </body>
 </html>
@@ -79,6 +78,8 @@ def build(n):
     body = lazy_images(body)  # 畫面外投影片的圖延遲載入
     title, _en, desc = meta.split('|')
     fmt = dict(title=title, zh=ZH[n], desc=desc, nn=nn, v=VER)
+    # 歌詞創作骰子的詞庫較大（約 270 KB），只在有骰子的投影片載入
+    fmt['dice'] = '<script src="../lyric-dice.js?v=%s" defer></script>\n' % VER if 'class="lyricdice"' in body else ''
     out = ROOT / 'site' / 'songwriting' / ('s' + nn)
     out.mkdir(parents=True, exist_ok=True)
     (out / 'index.html').write_text(HEAD.format(**fmt) + body.rstrip() + '\n' + TAIL.format(**fmt), encoding='utf-8', newline='\n')
