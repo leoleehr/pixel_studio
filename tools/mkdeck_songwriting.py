@@ -13,7 +13,7 @@ from build_deck_css import build as build_deck_css
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 ZH = ['', '一', '二', '三', '四', '五', '六', '七', '八']
-VER = "20261016a"
+VER = "20261016b"
 
 HEAD = '''<!doctype html>
 <html lang="zh-Hant">
@@ -62,6 +62,8 @@ TAIL = '''</div>
 <script src="../../assets/ps-audio.js?v={v}" defer></script>
 <script src="../songwriting.js?v={v}" defer></script>
 <script src="../songs.js?v={v}" defer></script>
+<script src="../leo-works.js?v={v}" defer></script>
+<script src="../works-lab.js?v={v}" defer></script>
 <script src="../../assets/youtube.js?v={v}" defer></script>
 </body>
 </html>
