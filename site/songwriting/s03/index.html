@@ -15,8 +15,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script>/* 中文字型策略：首次造訪用系統中文字型（符合 CI：正黑體／蘋方），不在首屏重排；載入完成 5 秒後，利用閒置時間逐一把本頁用得到的 Noto Sans TC 分組下載進快取，之後每頁一開始就套用 */(function(){var K="ps-font",U="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap";function apply(){var l=document.createElement("link");l.rel="stylesheet";l.href=U;document.head.appendChild(l)}var c=0;try{c=localStorage.getItem(K)}catch(e){}if(c){apply();return}var n=navigator.connection;if(n&&(n.saveData||/2g/.test(n.effectiveType||"")))return;var idle=window.requestIdleCallback||function(f){return setTimeout(f,300)};function inRange(r,cps){return r.split(",").some(function(p){var m=p.trim().replace(/^U\+/i,"").split("-"),a=parseInt(m[0],16),b=m[1]?parseInt(m[1],16):a;return cps.some(function(x){return x>=a&&x<=b})})}function warm(){if(!window.FontFace||!window.fetch)return;var seen={},cps=[],t=document.body.textContent;for(var i=0;i<t.length;i++){var x=t.charCodeAt(i);if(x>=0x2E80&&!seen[x]){seen[x]=1;cps.push(x)}}fetch(U).then(function(r){return r.text()}).then(function(css){var q=[];css.replace(/@font-face\s*\{([^}]*)\}/g,function(_,b){var s=/url\(([^)]+)\)/.exec(b),r=/unicode-range:\s*([^;]+)/.exec(b);if(s&&r&&inRange(r[1],cps))q.push([s[1],r[1]]);return _});function next(){if(!q.length){try{localStorage.setItem(K,"1")}catch(e){}return}var j=q.shift();new FontFace("Noto Sans TC","url("+j[0]+")",{weight:"400 900",unicodeRange:j[1]}).load().then(function(){idle(next,{timeout:3000})},function(){idle(next,{timeout:3000})})}idle(next,{timeout:3000})}).catch(function(){})}var painted=0,loaded=0,started=0;function go(){if(painted&&loaded&&!started){started=1;setTimeout(function(){idle(warm,{timeout:5000})},5000)}}try{new PerformanceObserver(function(l){if(!painted&&l.getEntriesByName("first-contentful-paint").length){painted=1;go()}}).observe({type:"paint",buffered:true})}catch(e){painted=1}addEventListener("load",function(){loaded=1;setTimeout(function(){painted=1;go()},3000);go()})})()</script>
-<link rel="stylesheet" href="../../assets/deck-bundle.css?v=20261016a">
-<link rel="stylesheet" href="../theme.css?v=20261016a">
+<link rel="stylesheet" href="../../assets/deck-bundle.css?v=20261016b">
+<link rel="stylesheet" href="../theme.css?v=20261016b">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pixel Studio 畫素音樂工作坊">
 <meta property="og:title" content="歌詞創作（一）從詩到詞｜第三堂｜Songwriting Lab">
@@ -259,6 +259,19 @@
   </div>
 </section>
 
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>韻腳填空</div>
+  <div class="kicker"><span class="tag t-zhuan">轉</span>押韻練習：老師的作品</div>
+  <h2 style="margin-bottom:12px">韻腳填空：〈El Nino〉的副歌</h2>
+  <div class="cloze" data-title="El Nino 副歌" data-why="副歌的韻腳分成兩層：句中停頓處的「象、想、芒、香」押 ㄤ 韻，句尾的「化、恙、馬、畫」以 ㄚ 韻為主。兩組韻腳交錯出現，讓長句也有清楚的節奏。">
+也許是妳的笑容 造成了聖嬰{現象/效應/危機/風暴} 把南北極的冰山都{融化/消融/崩裂/不見}
+海水淹到我頭上 我也懶得去{想/管/問/理} 只要見到妳的笑就{無恙/開心/滿足/安心}
+也許是妳的眼眸 透露出無邪{光芒/眼神/純真/溫柔} 只一眼就讓我中箭{落馬/倒地/昏迷/失守}
+也許是妳的氣息 散佈了春的{花香/味道/溫柔/空氣} 卻是我無法靠近欣賞的{圖畫/風景/作品/星空}
+  </div>
+  <p class="wk-tip" style="margin-top:10px">先念出整句，再選出押韻又符合語意的詞語。</p>
+</section>
+
 <!-- 15 小測 -->
 <section class="slide">
   <div class="ix-tag"><b>互動</b>選擇題</div>
@@ -284,6 +297,23 @@
   <div class="kicker"><span class="tag t-zhuan">轉</span>工具示範</div>
   <h2 style="margin-bottom:10px">韻腳檢查器：逐行標出句尾的韻母</h2>
   <div class="rhyme" data-id="s03-demo" data-sample="清晨的公車站牌下\n你說春天就快抵達\n我數著你圍巾上的花\n想說的話又吞回去吧\n\n雨停在第二個路口\n我們都沒有回頭\n來不及說出的溫柔\n留在昨天的風中"></div>
+</section>
+
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>韻腳檢查器</div>
+  <div class="kicker"><span class="tag t-zhuan">轉</span>押韻分析：老師的作品</div>
+  <h2 style="margin-bottom:10px">用韻腳檢查器，分析〈微型鳳凰〉的押韻策略</h2>
+  <div class="grid2" style="grid-template-columns:1.35fr .65fr;align-items:start">
+    <div class="rhyme" data-id="s03-leo" data-sample="多少次的徬徨\n讓自己懷疑失去方向\n別害怕\n在你的內心還有不認輸的倔強\n\n展翅高飛的鳳凰\n一無顧忌勇敢往前闖\n就算逆著風\n也要用力揮動著翅膀"></div>
+    <div>
+      <ul class="clean compact">
+        <li>原稿每一行很長，依照演唱的停頓拆成短句</li>
+        <li>觀察 ㄤ 韻出現的位置，判斷押韻策略</li>
+        <li>找出沒有押韻的句子，說明它在旋律裡的作用</li>
+      </ul>
+      <div class="reveal" data-label="老師的說明" style="margin-top:12px"><p>前副歌與副歌幾乎都押 ㄤ 韻：徬徨、方向、倔強、鳳凰、往前闖、翅膀。「別害怕」「就算逆著風」是句中的短停頓，旋律在這裡換氣，下一句再回到 ㄤ 韻，整段接近一韻到底。</p></div>
+    </div>
+  </div>
 </section>
 
 <!-- 17 人稱立場 -->
@@ -398,16 +428,18 @@
   <a href="../index.html">課程首頁</a>
 </nav>
 
-<script src="../../assets/pixel.js?v=20261014z" defer></script>
-<script src="../../assets/ui.js?v=20261014z" defer></script>
-<script src="../../assets/deck.js?v=20261015b" defer></script>
+<script src="../../assets/pixel.js?v=20261016b" defer></script>
+<script src="../../assets/ui.js?v=20261016b" defer></script>
+<script src="../../assets/deck.js?v=20261016b" defer></script>
 <script src="../../assets/vendor/qrcode.min.js" defer></script>
-<script src="../../assets/interact.js?v=20261016a" defer></script>
-<script src="../../assets/config.js?v=20261014z" defer></script>
-<script src="../../assets/backend.js?v=20261015b" defer></script>
-<script src="../../assets/ps-audio.js?v=20261014z" defer></script>
-<script src="../songwriting.js?v=20261014z" defer></script>
-<script src="../songs.js?v=20261014z" defer></script>
-<script src="../../assets/youtube.js?v=20261016a" defer></script>
+<script src="../../assets/interact.js?v=20261016b" defer></script>
+<script src="../../assets/config.js?v=20261016b" defer></script>
+<script src="../../assets/backend.js?v=20261016b" defer></script>
+<script src="../../assets/ps-audio.js?v=20261016b" defer></script>
+<script src="../songwriting.js?v=20261016b" defer></script>
+<script src="../songs.js?v=20261016b" defer></script>
+<script src="../leo-works.js?v=20261016b" defer></script>
+<script src="../works-lab.js?v=20261016b" defer></script>
+<script src="../../assets/youtube.js?v=20261016b" defer></script>
 </body>
 </html>
