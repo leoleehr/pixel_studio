@@ -661,7 +661,20 @@
       var nb = LS.get('notebook', { words: [], lines: [] }), text = '【詞典】\n' + (nb.words || []).join('、') + '\n\n【句典】\n' + (nb.lines || []).join('\n');
       if (navigator.clipboard) navigator.clipboard.writeText(text).then(function () { if (window.PixelBackend) window.PixelBackend.toast('已複製歌詞草稿區', 'ok'); });
     };
-    bankHead.appendChild(bCopy); bank.append(bankHead, bankBody);
+    // 全部清除：按第一次變成「確定清除？」，三秒內再按一次才清除，避免誤觸
+    var bClr = btn('全部清除', 'ld-clear'), clrTimer = 0;
+    bClr.onclick = function () {
+      var nb = LS.get('notebook', { words: [], lines: [], tunes: [] });
+      if (!bankCount(nb)) return;
+      if (!bClr.classList.contains('armed')) {
+        bClr.classList.add('armed'); bClr.textContent = '確定清除？';
+        clrTimer = setTimeout(function () { bClr.classList.remove('armed'); bClr.textContent = '全部清除'; }, 3000);
+        return;
+      }
+      clearTimeout(clrTimer); bClr.classList.remove('armed'); bClr.textContent = '全部清除';
+      nb.words = []; nb.lines = []; LS.set('notebook', nb); drawBank(null, -1, '已清除草稿區。');
+    };
+    bankHead.append(bCopy, bClr); bank.append(bankHead, bankBody);
     function drawBank(newK, newI, note) {
       var nb = LS.get('notebook', { words: [], lines: [], tunes: [] });
       function list(k, cls) {
