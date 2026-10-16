@@ -8,7 +8,7 @@
  * .arrmap     編曲地圖：為每一段安排樂器的編制，觀察能量曲線
  * .cheer      現場默契測驗：用麥克風測量觀眾呼應的音量
  * .leoworks   作品全貌：完整歌詞、曲式、韻腳、修辭與討論題
- * .lyricdice  歌詞創作骰子：詞源骰子（1～4 字）與金句骰子（5～10 字），依五個母音韻腳抽出詞句
+ * .lyricdice  歌詞創作骰子：詞源骰子（1～4 字）與金句骰子（5～10 字），依五個母音韻腳抽出詞句，加入下方的素材庫
  */
 (function () {
   'use strict';
@@ -641,17 +641,33 @@
         if (!st.res) return;
         var nb = LS.get('notebook', { words: [], lines: [], tunes: [] }); nb[d.nb] = nb[d.nb] || [];
         if (nb[d.nb].indexOf(st.res.w) < 0) nb[d.nb].push(st.res.w);
-        LS.set('notebook', nb); if (window.PixelBackend) window.PixelBackend.toast('已加入素材庫的' + d.nbName + '：' + st.res.w, 'ok');
+        LS.set('notebook', nb); drawBank();
       };
-      paint(); box.appendChild(card); dice.push({ roll: roll, st: st, setV: function (v) { st.v = v; save(); paint(); } });
+      paint(); box.appendChild(card);
     });
-    // 兩顆一起擲：詞語與金句押同一個韻腳
-    var both = el('div', 'ld-both'), bBoth = btn('兩顆一起擲（同一個韻腳）'), out = el('p', 'ld-out', '同時擲出詞語與金句，試著用這個詞語，接寫在金句的下一句。');
-    both.append(bBoth, out);
-    bBoth.onclick = function () {
-      var v = dice[0].st.v || dice[1].st.v || pickOne(VOW)[0], got = [];
-      dice.forEach(function (x, i) { x.setV(v); x.roll(null, function (r) { got[i] = r.w; if (got[0] && got[1]) out.innerHTML = '同押 <b>' + VOWZH[v] + '</b> 韻：以「<b>' + esc(got[0]) + '</b>」作為下一句的句尾，接在「' + esc(got[1]) + '」之後。'; }); });
+    // 素材庫：與第一堂的素材庫共用（詞典、句典），加入之後直接排列在下方
+    var bank = el('section', 'ld-bank'), bankBody = el('div', 'ld-bank-body');
+    bank.setAttribute('aria-label', '素材庫');
+    var bankHead = el('div', 'ld-bank-head', '<h3>素材庫</h3><small>點選詞句右側的 × 即可移除；內容與第一堂的素材庫共用。</small>');
+    var bCopy = btn('複製全部');
+    bCopy.onclick = function () {
+      var nb = LS.get('notebook', { words: [], lines: [] }), text = '【詞典】\n' + (nb.words || []).join('、') + '\n\n【句典】\n' + (nb.lines || []).join('\n');
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(function () { if (window.PixelBackend) window.PixelBackend.toast('已複製素材庫', 'ok'); });
     };
-    root.append(box, both);
+    bankHead.appendChild(bCopy); bank.append(bankHead, bankBody);
+    function drawBank() {
+      var nb = LS.get('notebook', { words: [], lines: [], tunes: [] });
+      function list(k, cls) {
+        return (nb[k] || []).map(function (w, i) { return '<li><span>' + esc(w) + '</span><button type="button" data-k="' + k + '" data-i="' + i + '" aria-label="移除 ' + esc(w) + '">×</button></li>'; }).join('');
+      }
+      bankBody.innerHTML = (nb.words || []).length || (nb.lines || []).length
+        ? '<div class="ld-bank-row"><span class="ld-lab">詞語</span><ul class="ld-bank-words">' + list('words') + '</ul></div><div class="ld-bank-row"><span class="ld-lab">金句</span><ol class="ld-bank-lines">' + list('lines') + '</ol></div>'
+        : '<p class="ld-note">擲出喜歡的詞語或金句之後，按下「加入素材庫」，就會排列在這裡。</p>';
+      $$('button[data-k]', bankBody).forEach(function (b) {
+        b.onclick = function () { var nb2 = LS.get('notebook', { words: [], lines: [], tunes: [] }); nb2[b.dataset.k].splice(+b.dataset.i, 1); LS.set('notebook', nb2); drawBank(); };
+      });
+    }
+    drawBank();
+    root.append(box, bank);
   });
 })();
