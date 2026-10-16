@@ -562,11 +562,12 @@
     var SRC = D.src || {};
     var DIE = [
       { k: 'words', name: '詞源骰子', note: '擲出一個詞語，作為歌詞的素材或句尾的韻腳。', lens: [1, 2, 3, 4], unit: '字', nb: 'words', nbName: '詞典' },
-      { k: 'lines', name: '金句骰子', note: '擲出一句歌詞，試著接寫下一句，或改寫成自己的版本。', lens: [5, 6, 7, 8, 9, 10], unit: '字', nb: 'lines', nbName: '句典' }
+      { k: 'lines', name: '金句骰子', note: '擲出一句歌詞，試著接寫下一句，或改寫成自己的版本。', lens: [5, 6, 7, 8, 9, 10], unit: '字', nb: 'lines', nbName: '句典', src: true }
     ];
     var box = el('div', 'ld'), dice = [];
     DIE.forEach(function (d) {
-      var st = LS.get('ldice-' + d.k, { len: 0, v: '', src: '', res: null, hist: [] }); st.src = st.src || '';
+      var st = LS.get('ldice-' + d.k, { len: 0, v: '', src: '', who: '', res: null, hist: [] });
+      if (!d.src) st.src = ''; st.src = st.src || ''; st.who = st.who || '';
       var card = el('section', 'ld-die');
       card.setAttribute('aria-label', d.name);
       card.appendChild(el('h3', 'ld-name', d.name));
@@ -583,20 +584,41 @@
       }
       var gLen = chips('字數', [[0, '隨機']].concat(d.lens.map(function (n) { return [n, n + ' ' + d.unit]; })), 'len');
       var gV = chips('韻腳', [['', '隨機']].concat(VOW.map(function (v) { return [v[0], v[1] + '<small>' + v[2] + '</small>']; })), 'v');
-      var gS = chips('來源', [['', '全部'], ['leo', '老師的作品']], 'src');
+      // 只有金句標示出處：老師的作品、作詞家風格的仿寫練習句
+      var gS = null, who = null;
+      if (d.src) {
+        gS = chips('來源', [['', '全部'], ['leo', '老師的作品'], ['style', '作詞家風格']], 'src');
+        var names = []; Object.keys(SRC).forEach(function (w) { SRC[w].forEach(function (x) { if (x.indexOf('style:') === 0 && names.indexOf(x.slice(6)) < 0) names.push(x.slice(6)); }); });
+        who = el('select', 'ld-who'); who.setAttribute('aria-label', '選擇作詞家');
+        who.innerHTML = '<option value="">全部作詞家</option>' + names.map(function (n) { return '<option>' + esc(n) + '</option>'; }).join('');
+        who.value = st.who; who.onchange = function () { st.who = who.value; save(); hint(); };
+        gS.appendChild(who);
+      }
       var reel = el('div', 'ld-reel'), big = el('b', '', '？'), meta = el('small', '', '選好字數與韻腳，按下「擲骰子」。');
       reel.setAttribute('aria-live', 'polite'); reel.append(big, meta); card.appendChild(reel);
       var foot = el('div', 'btn-row wk-foot'), bGo = btn('擲骰子', 'primary'), bNb = btn('加入素材庫');
       foot.append(bGo, bNb); card.appendChild(foot);
       var hist = el('div', 'ld-hist'); card.appendChild(hist);
-      function pool(len, v) { var out = []; (v ? [v] : VOW.map(function (x) { return x[0]; })).forEach(function (vv) { (len ? [len] : d.lens).forEach(function (n) { ((D[d.k][vv] || {})[n] || []).forEach(function (w) { if (st.src !== 'leo' || SRC[w]) out.push({ w: w, v: vv, n: n }); }); }); }); return out; }
-      // 只用老師作品時，字數與韻腳的組合可能沒有詞句
-      function hint() { if (!pool(st.len, st.v).length) { big.textContent = '？'; meta.textContent = '老師的作品裡沒有這個組合，請換一個字數或韻腳。'; } else if (st.res) paint(); }
+      function pool(len, v) { var out = []; (v ? [v] : VOW.map(function (x) { return x[0]; })).forEach(function (vv) { (len ? [len] : d.lens).forEach(function (n) { ((D[d.k][vv] || {})[n] || []).forEach(function (w) { if (srcOK(w)) out.push({ w: w, v: vv, n: n }); }); }); }); return out; }
+      function srcOK(w) {
+        var s = SRC[w] || [];
+        if (st.src === 'leo') return s.some(function (x) { return x.indexOf('style:') !== 0; });
+        if (st.src === 'style') return s.some(function (x) { return st.who ? x === 'style:' + st.who : x.indexOf('style:') === 0; });
+        return true;
+      }
+      // 出處標示：依目前的來源篩選，優先顯示相符的那一個
+      function label(w) {
+        var s = SRC[w] || [], x = s.filter(function (y) { return st.src === 'style' ? (st.who ? y === 'style:' + st.who : y.indexOf('style:') === 0) : st.src === 'leo' ? y.indexOf('style:') !== 0 : true; })[0] || s[0];
+        if (!d.src || !x) return '';
+        return x.indexOf('style:') === 0 ? '・仿寫練習（' + x.slice(6) + '風格）' : '・出自〈' + x + '〉';
+      }
+      // 篩選來源之後，字數與韻腳的組合可能沒有詞句
+      function hint() { if (!pool(st.len, st.v).length) { big.textContent = '？'; meta.textContent = '這個來源沒有符合的詞句，請換一個字數或韻腳。'; } else if (st.res) paint(); }
       function paint() {
         $$('button', gLen).forEach(function (b) { b.setAttribute('aria-pressed', String(+b.dataset.v === st.len)); });
         $$('button', gV).forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.v === st.v)); });
-        $$('button', gS).forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.v === st.src)); });
-        if (st.res) { big.textContent = st.res.w; meta.textContent = st.res.n + ' ' + d.unit + '・' + VOWZH[st.res.v] + ' 韻' + (SRC[st.res.w] ? '・出自〈' + SRC[st.res.w] + '〉' : ''); }
+        if (gS) { $$('button', gS).forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.v === st.src)); }); who.hidden = st.src !== 'style'; }
+        if (st.res) { big.textContent = st.res.w; meta.textContent = st.res.n + ' ' + d.unit + '・' + VOWZH[st.res.v] + ' 韻' + label(st.res.w); }
         hist.innerHTML = st.hist.length ? '<span class="ld-lab">剛才擲出</span>' + st.hist.map(function (h) { return '<span>' + esc(h) + '</span>'; }).join('') : '';
       }
       function save() { LS.set('ldice-' + d.k, st); }
