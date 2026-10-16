@@ -16,6 +16,8 @@ OUT = ASSETS / 'deck-bundle.css'
 
 
 def build():
+    from build_home_css import build as build_home
+    build_home()
     parts = ['/* 自動產生：由 tools/build_deck_css.py 合併 ' + '、'.join(SOURCES) + '。請修改來源檔後重新執行，不要直接編輯本檔。 */\n']
     for name in SOURCES:
         css = (ASSETS / name).read_text(encoding='utf-8').replace('\r\n', '\n')

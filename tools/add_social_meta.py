@@ -7,6 +7,9 @@
 """
 import html, pathlib, re
 from urllib.parse import quote
+from build_home_css import build as build_home_css
+
+build_home_css()
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = ROOT / 'site'
