@@ -30,7 +30,8 @@
 .hub .hub-logo{position:relative;z-index:1;display:block;width:100%;height:auto}
 .hub .hub-logo-flow{position:absolute;inset:0;z-index:2;display:none;overflow:hidden;-webkit-mask:url(brand/primary-transparent.svg) center/contain no-repeat;mask:url(brand/primary-transparent.svg) center/contain no-repeat;pointer-events:none}
 .hub .hub-logo-flow::before{position:absolute;top:0;bottom:0;left:-100%;width:200%;background:var(--spectrum) 0 0/50% 100% repeat-x;animation:hub-logo-flow 7s linear infinite;content:""}
-@supports ((mask-image:url(x)) or (-webkit-mask-image:url(x))){.hub.fx-on .hub-logo-flow{display:block}.hub.fx-on .hub-logo-wrap .hub-logo{visibility:hidden}}
+/* 保留底層圖像，流光只疊加；特效啟動不應隱藏已完成繪製的 Logo。 */
+@supports ((mask-image:url(x)) or (-webkit-mask-image:url(x))){.hub.fx-on .hub-logo-flow{display:block}}
 .hub.fx-on .hub-logo-wrap{filter:drop-shadow(0 0 10px rgba(226,64,127,.26)) drop-shadow(0 0 24px rgba(69,179,230,.16))}
 @keyframes hub-logo-flow{from{transform:translateX(0)}to{transform:translateX(50%)}}
 .hub .hub-art .hero-spectral{position:absolute;z-index:3;top:25%;left:0;right:0;width:100%;max-width:100%;height:50%;overflow:visible;pointer-events:none}
