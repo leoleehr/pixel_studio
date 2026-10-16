@@ -95,3 +95,7 @@ if __name__ == '__main__':
     # 補齊社群分享標籤（og:image 等）
     import subprocess
     subprocess.run([sys.executable, "-X", "utf8", str(ROOT / "tools" / "add_social_meta.py")], check=True)
+
+    # 課程首頁的投影片張數（Session 1・3 小時・34 Slides）
+    from update_slide_counts import update as update_slide_counts
+    update_slide_counts('songwriting')
