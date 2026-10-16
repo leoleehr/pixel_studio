@@ -28,7 +28,8 @@
   // 底部抽屜：items = [{href, no, label, dot, ix}]
   function sheet(title, items) {
     var scrim = document.createElement('div'); scrim.className = 'sheet-scrim';
-    var box = document.createElement('div'); box.className = 'sheet'; box.setAttribute('role', 'dialog'); box.setAttribute('aria-label', title);
+    var box = document.createElement('div'); box.className = 'sheet'; box.setAttribute('role', 'dialog'); box.setAttribute('aria-label', title);box.setAttribute('aria-modal','true');box.hidden=true;box.inert=true;
+    box.id='pixel-sheet-'+document.querySelectorAll('.sheet').length;
     box.innerHTML = '<div class="sheet-head"><b>' + title + '</b><button type="button">關閉</button></div><nav class="sheet-list"></nav>';
     var list = box.querySelector('.sheet-list');
     items.forEach(function (it) {
@@ -38,14 +39,37 @@
       list.appendChild(a);
     });
     document.body.appendChild(scrim); document.body.appendChild(box);
-    function open() { document.documentElement.classList.add('sheet-open'); document.body.classList.add('sheet-open'); }
-    function close() { document.documentElement.classList.remove('sheet-open'); document.body.classList.remove('sheet-open'); }
+    var trigger=null,blocked=[],opened=false;
+    function open(e) {
+      if(opened)return;opened=true;trigger=e&&e.currentTarget instanceof HTMLElement?e.currentTarget:document.activeElement;
+      if(trigger){trigger.setAttribute('aria-expanded','true');trigger.setAttribute('aria-controls',box.id);}
+      box.hidden=false;box.inert=false;document.documentElement.classList.add('sheet-open');document.body.classList.add('sheet-open');
+      blocked=[].slice.call(document.body.children).filter(function(n){return n!==box&&n!==scrim&&!/^(SCRIPT|STYLE|LINK)$/.test(n.tagName);}).map(function(n){var state=n.inert;n.inert=true;return [n,state];});
+      box.querySelector('button').focus({preventScroll:true});
+    }
+    function close() {
+      if(!opened)return;opened=false;document.documentElement.classList.remove('sheet-open');document.body.classList.remove('sheet-open');
+      blocked.forEach(function(p){p[0].inert=p[1];});blocked=[];box.hidden=true;box.inert=true;
+      if(trigger&&trigger.isConnected){trigger.setAttribute('aria-expanded','false');trigger.focus({preventScroll:true});}
+    }
+    box.addEventListener('keydown',function(e){
+      if(e.key==='Escape'){e.preventDefault();e.stopPropagation();close();return;}
+      if(e.key!=='Tab')return;
+      var all=[].slice.call(box.querySelectorAll('a[href],button:not([disabled]),[tabindex="0"]')).filter(function(n){return n.getClientRects().length;});
+      if(!all.length){e.preventDefault();return;}
+      if(e.shiftKey&&document.activeElement===all[0]){e.preventDefault();all[all.length-1].focus();}
+      else if(!e.shiftKey&&document.activeElement===all[all.length-1]){e.preventDefault();all[0].focus();}
+    });
+    document.addEventListener('focusin',function(e){if(opened&&!box.contains(e.target))box.querySelector('button').focus({preventScroll:true});});
+    addEventListener('resize',function(){if(opened&&getComputedStyle(box).display==='none')close();});
     scrim.onclick = close; box.querySelector('button').onclick = close;
     addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
     return { open: open, close: close, list: list };
   }
 
   global.PixelUI = { ICON: ICON, labelTables: labelTables, sheet: sheet };
+  function dockContents(){var bar=document.querySelector('.appbar')||document.querySelector('.topbar .wrap');if(!bar)return;document.querySelectorAll('.toc-fab').forEach(function(b){if(b.parentNode===bar)return;b.setAttribute('aria-label','開啟目錄');b.setAttribute('aria-expanded','false');bar.appendChild(b);bar.classList.add('toc-docked');});}
+  new MutationObserver(dockContents).observe(document.body,{childList:true});dockContents();
 })(window);
 
 /* 可捲動區塊（譜例、鍵盤、步驟列、程式碼）沒有可聚焦的內容時，讓鍵盤也能捲動 */

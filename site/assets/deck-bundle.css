@@ -1103,6 +1103,14 @@ button,.btn,.flip,.dm-cell,.poll-hit,.order-tile{-webkit-user-select:none;user-s
   input,select,textarea{font-size:16px!important}
 }
 
+/* Contents lives in the fixed header instead of covering lesson controls. */
+.sheet[hidden]{display:none!important}.sheet button:focus-visible,.sheet a:focus-visible{outline:3px solid var(--accent,var(--amber));outline-offset:-3px}.sheet-head button{min-width:44px;min-height:44px}.sheet-list a .ix{color:var(--ink)}
+@media(max-width:900px),(orientation:portrait) and (max-width:1100px){
+ .toc-docked .toc-fab{display:flex;position:static;inset:auto;flex:none;align-items:center;justify-content:center;gap:0;width:44px;height:44px;min-height:44px;margin:0;padding:0;border-radius:10px;border:1px solid var(--line-2);box-shadow:none;font-size:0;background:transparent;color:var(--ink)}
+ .toc-docked .toc-fab svg{width:22px;height:22px}.appbar.toc-docked .ab-count{padding-inline:3px;font-size:11px}.appbar.toc-docked .ab-title b{font-size:14px}.topbar .wrap.toc-docked{gap:8px}
+ html{scroll-padding-top:70px;scroll-padding-bottom:20px}.sheet-list{scroll-padding-block:8px}
+}
+
 /* ===== deck-studio.css ===== */
 /* Shared studio palette; lesson colors retain their teaching roles. */
 :root{--bg:#101210;--paper:#141912;--card:#1c2319;--card-2:#252d20;--ink:#f1f0e8;--muted:#aab2a2;--faint:#929c88;--accent:#f4a62a;--amber:var(--accent);--line:rgba(237,241,225,.13);--line-2:rgba(237,241,225,.23);--frame:rgba(237,241,225,.2);--r-lg:6px;--r:4px;--r-sm:3px}
@@ -1210,3 +1218,14 @@ body::before{display:none}
   .yt-dock{left:10px;right:10px;width:auto;bottom:calc(76px + env(safe-area-inset-bottom))}
 }
 @media print{.yt-dock{display:none!important}}
+
+@media(max-width:900px),(orientation:portrait) and (max-width:1100px){
+ .slide .wv-yt .ytp{display:block}
+ .ytp-bar,.slide .ytp .ytp-bar{display:grid;grid-template-columns:44px 44px minmax(0,1fr) 44px;gap:8px;padding:12px;align-items:center}
+ .ytp .ytp-meta,.slide .ytp .ytp-meta{grid-column:1/-1;grid-row:1;margin:0;min-width:0;line-height:1.6}
+ .ytp .ytp-meta>*,.slide .ytp .ytp-meta>*{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}
+ .ytp .ytp-meta b{font-size:16px}.ytp .ytp-meta span{font-size:14px}
+ .ytp .ytp-btn,.slide .ytp .ytp-btn{width:44px;height:44px;min-height:44px}
+ .ytp-toggle{grid-column:1;grid-row:2}.ytp-stop{grid-column:2;grid-row:2}.ytp-time,.slide .wv-yt .ytp-time{display:block;grid-column:3;grid-row:2}.ytp-ext{grid-column:4;grid-row:2}
+ .ytp:has(.ytp-close) .ytp-meta{padding-right:48px}.ytp-close{grid-column:4;grid-row:1;align-self:start}
+}

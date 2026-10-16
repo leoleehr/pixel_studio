@@ -1,5 +1,5 @@
 /* Piano Lab 主題：沿用 Vocal Lab 版面，主色換成 CI 青藍（#45b3e6），並加上鍵盤、音階、和弦與伴奏型的互動工具 */
-:root{--accent:#45b3e6;--accent-rgb:69,179,230;--amber:var(--accent)}
+:root{--accent:var(--pixel-cyan,#45b3e6);--accent-rgb:69,179,230;--amber:var(--accent)}
 ::selection{background:var(--accent);color:#04121b}
 .btn.primary:hover{background:#68c3ee}
 .live-dot{box-shadow:0 0 12px rgba(var(--accent-rgb),.4)}
