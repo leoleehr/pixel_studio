@@ -454,6 +454,21 @@ body .slide .c-pink,body .slide th,body .slide .tp-out tr.main td,body .slide .p
 .ld-hist span{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:1px 7px}
 .ld-hist .ld-lab{border:0;padding:0 2px 0 0;min-width:0}
 
+/* 歌詞框（小測驗題目上方） */
+.lyricbox{height:196px;overflow-y:scroll;margin-bottom:10px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-sm);padding:8px 12px;scrollbar-color:var(--accent) rgba(255,255,255,.08)}
+.lyricbox::-webkit-scrollbar{width:10px}
+.lyricbox::-webkit-scrollbar-track{background:rgba(255,255,255,.08);border-radius:999px}
+.lyricbox::-webkit-scrollbar-thumb{background:var(--accent);border-radius:999px;border:2px solid var(--card)}
+.slide .lyricbox p.lb-title{margin:0 0 6px;font-size:16px;font-weight:700;line-height:1.4}
+.lb-title small{margin-left:8px;font-size:12.5px;font-weight:400;color:var(--muted)}
+.lb-sec{margin-bottom:6px}
+.slide .lyricbox p.lb-ln{margin:1px 0;font-size:15px;line-height:1.55}
+.quiz:has(.lyricbox) .q{font-size:20px;line-height:1.4;margin:0 0 8px}
+.quiz:has(.lyricbox) .quiz-opts{gap:6px}
+.quiz:has(.lyricbox) .quiz-opt{padding-top:6px;padding-bottom:6px;font-size:18px}
+.quiz:has(.lyricbox) .quiz-foot{margin-top:6px}
+.quiz:has(.lyricbox) .why{font-size:16px;line-height:1.5;padding:8px 14px;margin-top:8px}
+
 /* 淺色段落底（粉紅、橘、紅、綠、淺藍）改用深色字，對比 4.5 以上 */
 :is(.wk-strip span,.rh2-sn):is(.f-chorus,.f-inter,.f-post,.f-tag,.f-outro,.f-bridge),.am thead th:is(.f-chorus,.f-inter,.f-post,.f-tag,.f-outro,.f-bridge) span{color:#141414}
 
@@ -467,6 +482,7 @@ body .slide .c-pink,body .slide th,body .slide .tp-out tr.main td,body .slide .p
   .ch-resp{font-size:26px}
   .ld{grid-template-columns:1fr}
   .ld-bank-body{height:auto;max-height:360px;min-height:0}
+  .lyricbox{height:240px}
   .ld-bank-head{flex-wrap:wrap}
   .ld-head{flex-wrap:wrap}.ld-head .ld-note{white-space:normal}
   .ld-die .wk-foot{flex-wrap:wrap}.ld-die .ld-hist{flex-basis:100%}

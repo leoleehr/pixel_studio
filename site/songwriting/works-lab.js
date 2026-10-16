@@ -7,6 +7,7 @@
  * .wave       旋律波動：預測每一段旋律的音域位置，畫出整首歌的起伏
  * .arrmap     編曲地圖：為每一段安排樂器的編制，觀察能量曲線
  * .cheer      現場默契測驗：用麥克風測量觀眾呼應的音量
+ * .lyricbox   歌詞框：題目上方的整首歌詞
  * .leoworks   作品全貌：完整歌詞、曲式、韻腳、修辭與討論題
  * .lyricdice  歌詞創作骰子：詞源骰子（1～4 字）與金句骰子（5～10 字），依韻腳抽出詞句，加入下方的歌詞草稿區
  */
@@ -513,6 +514,18 @@
       }).catch(function () { busy = false; bGo.disabled = false; msg.textContent = '沒有取得麥克風的使用權限，請在瀏覽器的網址列允許麥克風。'; });
     };
     bR.onclick = function () { rounds = []; paint(); bGo.textContent = '開始測量'; msg.textContent = '按下「開始測量」之後倒數三秒，再由老師唱出「' + call + '」。'; };
+  });
+
+  /* ========== 歌詞框：在題目上方顯示整首歌詞（.lyricbox data-work="elnino"） ========== */
+  $$('.lyricbox').forEach(function (root) {
+    var work = W[root.getAttribute('data-work')]; if (!work) return;
+    var seen = {};
+    root.innerHTML = '<p class="lb-title">〈' + esc(work.title) + '〉<small>' + esc(work.credit || '') + '</small></p>' + work.sections.map(function (s) {
+      if (!s.lines.length) return '';
+      var key = s.lines.join('|'), rep = seen[key]; seen[key] = 1;
+      return '<div class="lb-sec"><span class="rh2-sn f-' + s.k + '">' + esc(s.name || SECZH[s.k]) + '</span>' + (rep ? '<p class="lb-ln muted">（同上）</p>' : s.lines.map(function (ln) { return '<p class="lb-ln">' + esc(ln) + '</p>'; }).join('')) + '</div>';
+    }).join('');
+    root.tabIndex = 0; root.setAttribute('role', 'region'); root.setAttribute('aria-label', work.title + ' 歌詞');
   });
 
   /* ========== 9. 作品全貌 ========== */
