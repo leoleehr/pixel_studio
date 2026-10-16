@@ -1,0 +1,8 @@
+PixelLearning.register('dual-hands',(root,K)=>{
+ const ctl=K.shell(root),plot=K.chart(root),status=K.status(root),player=K.player(root);const names=['C','D','E','F','G','A','B','C'],notes=[60,62,64,65,67,69,71,72],rh=[1,2,3,1,2,3,4,5],lh=[5,4,3,2,1,3,2,1];let step=0,bpm=50,hand='both',direction='up';
+ K.select('練習',[['both','雙手'],['right','右手'],['left','左手']],v=>{stop();hand=v;draw();},ctl);K.select('方向',[['up','上行'],['down','下行']],v=>{stop();direction=v;step=0;draw();},ctl);K.number('速度 BPM',50,30,120,v=>{stop();bpm=v;},ctl);
+ const slider=K.range('音階步驟',7,v=>{stop();step=v;draw();},ctl);
+ function ix(){return direction==='up'?step:7-step;}
+ function draw(){slider.value=step;const i=ix();K.svg(plot,155,w=>{const l=48,cw=(w-l-10)/8;let s='';[['音',names,32],['右手',rh,76],['左手',lh,120]].forEach(([label,arr,y])=>{s+=K.text(4,y+5,label);arr.forEach((n,j)=>s+=j===i?K.dot(l+(j+.5)*cw,y,n):K.text(l+(j+.5)*cw,y+5,n,'middle'));});return s;},'C大調雙手同步指法');let cue='';if(direction==='up'&&i===3)cue='右手第3指後，拇指穿到F。';if(direction==='up'&&i===5)cue='左手第3指跨到A。';if(direction==='down'&&i===4)cue='左手拇指穿到G。';if(direction==='down'&&i===2)cue='右手第3指跨到E。';status.textContent=names[i]+'｜右手 '+rh[i]+'、左手 '+lh[i]+'。'+cue;}
+ const play=K.button('播放八個音',()=>{stop();if(player.start(bpm,1,8,(s,t)=>{const i=direction==='up'?s:7-s;if(hand!=='left')player.tone(notes[i],t,.7);if(hand!=='right')player.tone(notes[i]-12,t,.7);},s=>{step=s;draw();},stop))play.textContent='播放中';},ctl,true);function stop(){player.stop();play.textContent='播放八個音';}K.button('下一音',()=>{stop();step=(step+1)%8;draw();},ctl);K.button('停止',stop,ctl);K.onStop(root,stop);K.note(root,'先右手、再左手、最後合手；上下行沿用同一組C大調指法反向讀取。');K.watch(plot,draw);draw();
+});
