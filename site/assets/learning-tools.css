@@ -21,6 +21,7 @@
 .learning-tool button[aria-pressed=true]{background:var(--accent);color:var(--bg,#101210)}
 .lt-reference{font-size:14px;margin:8px 0}.lt-reference summary{cursor:pointer;color:var(--ink,#f4f4f0);padding:7px 0}.lt-reference table{font-size:14px}
 @media(min-width:901px){.slide .lt-reference[open]{max-height:190px;overflow:auto;padding-right:8px}}
+@media(min-width:901px){.slide:has(.lt-reference[open]){overflow-y:auto}}
 .learning-tool .lt-matrix{display:grid;grid-template-columns:minmax(78px,1fr) repeat(5,minmax(30px,1fr));gap:4px;align-items:center;font-size:12px}
 .learning-tool .lt-matrix button{padding:4px;min-width:0;min-height:40px;border:1px solid var(--line-2,#666);background:transparent;color:inherit}
 .learning-tool .lt-matrix button[aria-pressed=true]{background:var(--accent);color:var(--bg,#101210)}
@@ -30,4 +31,4 @@
 .learning-tool .lt-highlight{background:var(--accent);color:var(--bg,#101210);padding:2px 3px;border-radius:3px}
 .learning-tool button:focus-visible,.learning-tool a:focus-visible,.learning-tool input:focus-visible,.learning-tool select:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 @media(max-width:600px){.learning-tool .lt-map{grid-template-columns:1fr}.learning-tool label{flex:1 1 140px}.learning-tool .lt-chart svg{max-height:none}.learning-tool .lt-matrix{font-size:11px;grid-template-columns:minmax(65px,1fr) repeat(5,minmax(29px,1fr))}.learning-tool .lt-controls{gap:8px}.learning-tool select{width:100%}.lt-reference{overflow-wrap:anywhere}}
-@media print{.learning-tool .lt-controls,.learning-tool input,.learning-tool button{display:none!important}.lt-reference{display:block}.lt-reference>table{display:table!important}.learning-tool{break-inside:avoid}.learning-tool .lt-status,.learning-tool .lt-note{color:inherit}}
+@media print{.learning-tool .lt-controls,.learning-tool input,.learning-tool button{display:none!important}.lt-reference{display:block}.slide .lt-reference[open]{max-height:none;overflow:visible}.lt-reference>table{display:table!important}.learning-tool{break-inside:avoid}.learning-tool .lt-status,.learning-tool .lt-note{color:inherit}}
