@@ -118,9 +118,8 @@
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-  items.forEach(function (el) {
-    if (el.getBoundingClientRect().top < innerHeight) el.classList.add('is-in'); else io.observe(el);
-  });
+  /* 初次可見性交給瀏覽器批次計算，不在載入期間強制同步 layout。 */
+  items.forEach(function (el) { io.observe(el); });
   /* 點選錨點直接跳段時，中間被跳過的區塊不會觸發 IntersectionObserver；捲動後補上，往回捲時內容已經在。 */
   var pending = false;
   addEventListener('scroll', function () {
@@ -128,8 +127,11 @@
     pending = true;
     requestAnimationFrame(function () {
       pending = false;
-      items.forEach(function (el) {
-        if (!el.classList.contains('is-in') && el.getBoundingClientRect().top < innerHeight) { el.classList.add('is-in'); io.unobserve(el); }
+      var entering = items.filter(function (el) {
+        return !el.classList.contains('is-in') && el.getBoundingClientRect().top < innerHeight;
+      });
+      entering.forEach(function (el) {
+        el.classList.add('is-in'); io.unobserve(el);
       });
     });
   }, { passive: true });
