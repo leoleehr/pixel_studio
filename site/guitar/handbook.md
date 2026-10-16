@@ -52,6 +52,13 @@
 - 先示範、再跟著做、最後各自練習；速度由慢到快，穩定比速度重要
 - 原教材的固定 BPM 只是示例，起始速度依照學員程度調整
 
+<!-- learning-notes-start -->
+### 能力路線與練習紀錄
+
+[開啟課程能力路線](index.html#lessons)：依本課順序連接先備能力與作品；只讀取本機已有作業勾選。網站練習紀錄圖沿用原七天表格，缺值保留空白，秒數、次數與分鐘分開檢視。PDF保留本表作書面紀錄，不填入示範成績。
+
+<!-- learning-notes-end -->
+
 ## 第一章｜認識吉他與調音 Meet The Guitar
 
 本章目標：能說明吉他的起源與種類，辨識 16 個部位的名稱，理解木料、筒身與尺寸如何影響音色，並學會挑選吉他；下課前將六條琴弦調準，以正確姿勢刷出第一個聲音。
@@ -500,6 +507,11 @@
 
 <!-- teaching-visuals-end -->
 
+<!-- learning-notes-start -->
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>換和弦路徑</h4><p>C→Am：食指與中指留在原位，無名指由5弦3格移到3弦2格。實際移動時先離弦。</p><figure class="learning-print"><img src="../assets/learning/print/guitar-chord-path.svg" alt="換和弦路徑的關鍵狀態圖" loading="eager"><figcaption>換和弦路徑｜關鍵狀態</figcaption></figure><p><a href="ch03/#15">開啟互動練習</a></p></div>
+
+<!-- learning-notes-end -->
+
 ## 第四章｜刷奏與切分 Strumming & Syncopation
 
 本章目標：右手穩定上下擺動：拍點往下、半拍往上；能辨識下刷、上刷、空刷，以及華語教材的 X、↓、↑；8 Beats 與切分 Folk Rock 搭配 C → G → Am → F，連續彈奏不斷拍；下課前，主歌 8 Beats、副歌切分，全班合奏一段。
@@ -693,6 +705,12 @@
 - [ ] 3/4 華爾滋彈完《生日快樂歌》，並且自彈自唱
 - [ ] 6/8 搖擺搭配 Am → F → C → G，56 BPM 連續兩輪
 - [ ] 選好期中彈唱曲目，填寫第六章課前問卷
+
+<!-- learning-notes-start -->
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>根音與交替低音</h4><p>依和弦找出根音與另一個和弦音。C/E等交替方式不一律是五度，仍以教材指法為準。</p><figure class="learning-print"><img src="../assets/learning/print/guitar-bass-map.svg" alt="根音與交替低音的關鍵狀態圖" loading="eager"><figcaption>根音與交替低音｜關鍵狀態</figcaption></figure><p><a href="ch05/#6">開啟互動練習</a></p></div>
+<div class="learning-book-block"><h4>按拍號選伴奏</h4><p>先選拍號，再以相同和弦比較速度與伴奏型；推薦不是唯一正解。</p><figure class="learning-print"><img src="../assets/learning/print/guitar-accompaniment.svg" alt="按拍號選伴奏的關鍵狀態圖" loading="eager"><figcaption>按拍號選伴奏｜關鍵狀態</figcaption></figure><p><a href="ch05/#16">開啟互動練習</a></p></div>
+
+<!-- learning-notes-end -->
 
 ## 第六章｜曲式分析與期中彈唱 Song Form & Capo & Showcase
 

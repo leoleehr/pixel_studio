@@ -58,6 +58,13 @@ Oct 5, 2026 · @Leo Lee
 
 **投影片編號**：以下各堂的「課堂互動」表中，編號都對應網站上現有的投影片。
 
+<!-- learning-notes-start -->
+### 能力路線與練習紀錄
+
+[開啟課程能力路線](index.html#lessons)：依本課順序連接先備能力與作品；只讀取本機已有作業勾選。網站練習紀錄圖沿用原七天表格，缺值保留空白，秒數、次數與分鐘分開檢視。PDF保留本表作書面紀錄，不填入示範成績。
+
+<!-- learning-notes-end -->
+
 ## 第一堂｜歌唱序論 Introduction To Vocal Music
 
 第一堂的任務是建立共同語言：以六組「三要素」說明聲音從產生到成為歌聲的過程，再以「流行歌曲曲式公式」理解一首歌的地圖。課堂最後，錄下每位學員的「第零號錄音」，第六堂再拿出來對照。
@@ -378,6 +385,11 @@ Oct 5, 2026 · @Leo Lee
 
 <!-- teaching-visuals-end -->
 
+<!-- learning-notes-start -->
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>呼吸拍點</h4><p>4拍吸氣、8拍吐氣。快吸慢吐的暫停與吐氣長度，可由老師調整。</p><figure class="learning-print"><img src="../assets/learning/print/vocal-breathing.svg" alt="呼吸拍點的關鍵狀態圖" loading="eager"><figcaption>呼吸拍點｜關鍵狀態</figcaption></figure><p><a href="slides/lesson-02/#12">開啟互動練習</a></p></div>
+
+<!-- learning-notes-end -->
+
 ## 第三堂｜歌唱共鳴條件
 
 第三堂讓學員分別找到口腔、頭腔、胸腔三種共鳴的位置，並以茄子蛋的兩首台語歌練習混合運用。依據戴意誠（1998）的說法，人聲三大要素為呼吸、共鳴與發聲；上一堂處理了呼吸，這一堂處理聲音的放大與美化。
@@ -643,6 +655,11 @@ Oct 5, 2026 · @Leo Lee
 </div>
 
 <!-- teaching-visuals-end -->
+
+<!-- learning-notes-start -->
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>長音收尾</h4><p>母音先延續，再清楚收尾；愛由a轉i、心以舌尖收n、星以舌根收ng。收音時點可依示範調整。</p><figure class="learning-print"><img src="../assets/learning/print/vocal-word-ending.svg" alt="長音收尾的關鍵狀態圖" loading="eager"><figcaption>長音收尾｜關鍵狀態</figcaption></figure><p><a href="slides/lesson-04/#8">開啟互動練習</a></p></div>
+
+<!-- learning-notes-end -->
 
 ## 第五堂｜歌唱綜合應用
 

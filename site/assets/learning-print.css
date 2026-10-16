@@ -1,0 +1,5 @@
+.learning-book-block{break-inside:avoid;page-break-inside:avoid;margin:18px 0}
+.learning-book-block h3,.learning-book-block h4{break-after:avoid;page-break-after:avoid}
+.learning-book-block figure{margin:12px 0;break-inside:avoid}
+.learning-book-block img{display:block;width:100%;max-width:600px;height:auto}
+.learning-book-block figcaption{font-size:12px}
