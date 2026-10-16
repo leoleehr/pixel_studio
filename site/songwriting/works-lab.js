@@ -530,7 +530,7 @@
     function load(k) {
       work = W[k];
       var meta = [work.date, work.credit, work.origin + (work.client ? '：' + work.client : ''), work.theme];
-      if (work.key) meta.push((work.meter || '4/4') + '・' + work.key + ' 大調' + (work.bpm ? '・' + work.bpm + ' BPM' : ''));
+      if (work.key || work.keyName) meta.push((work.meter || '4/4') + '・' + (work.keyName || work.key + ' 大調') + (work.bpm ? '・' + work.bpm + ' BPM' : ''));
       head.innerHTML = '<h3>' + esc(work.title) + '</h3><p class="lw-meta">' + meta.filter(Boolean).map(esc).join('<span>｜</span>') + '</p><p class="lw-story">' + esc(work.story || '') + '</p>';
       strip.innerHTML = '<span class="wk-strip-t">曲式</span>' + work.sections.map(function (s) { return '<span class="f-' + s.k + '">' + esc(s.name || SECZH[s.k]) + '</span>'; }).join('');
       tools.style.display = work.noLyrics ? 'none' : '';
