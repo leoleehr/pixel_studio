@@ -483,5 +483,5 @@
     stoppers.push(stop);
   });
 
-  window.PixelPiano = { play: piano, staffSVG: staffSVG };
+  window.PixelPiano = { play: piano, staffSVG: staffSVG, patterns: PAT };
 })();
