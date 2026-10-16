@@ -14,6 +14,8 @@
 (function () {
   'use strict';
   var W = window.PIXEL_LEO_WORKS || {}, ORDER = window.PIXEL_LEO_ORDER || Object.keys(W);
+  // 範例曲（非老師作品）：只有段落結構，供旋律波動等練習使用
+  var REF = window.PIXEL_REF_SONGS || {}; Object.keys(REF).forEach(function (k) { if (!W[k]) W[k] = REF[k]; });
   var NS = 'pixel:songwriting:';
   var LS = {
     get: function (k, d) { try { var v = localStorage.getItem(NS + k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
@@ -27,7 +29,7 @@
   function report(root, type, data) { if (window.PixelBackend) window.PixelBackend.log(type, data, { slide: slideNo(root) }); }
   function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
   function ids(node, attr) { return (node.getAttribute(attr) || '').split(',').map(function (s) { return s.trim(); }).filter(function (k) { return W[k]; }); }
-  var SECZH = { intro: '前奏', verse: '主歌', pre: '前副歌', chorus: '副歌', post: '後副歌', bridge: '橋段', tag: '破格句', outro: '尾奏' };
+  var SECZH = { intro: '前奏', verse: '主歌', pre: '前副歌', chorus: '副歌', inter: '間奏', post: '後副歌', bridge: '橋段', tag: '破格句', outro: '尾奏' };
   // 可捲動的區塊要能用鍵盤聚焦
   function scroller(node, label, root) {
     var h = root && root.closest('.slide') && root.closest('.slide').querySelector('h2');
@@ -364,18 +366,44 @@
   });
 
   /* ========== 6. 旋律波動 ========== */
-  var WAVE_REF = { intro: 2, verse: 3, pre: 5, chorus: 6, post: 6, bridge: 5, tag: 4, outro: 2 };
+  var WAVE_REF = { intro: 2, verse: 3, pre: 5, chorus: 6, inter: 3, post: 6, bridge: 5, tag: 4, outro: 2 };
+  var WAVE_ADD = ['intro', 'verse', 'pre', 'chorus', 'inter', 'bridge', 'outro'];
   $$('.wave').forEach(function (root) {
     var list = ids(root, 'data-works'); if (!list.length) return;
     var T = tabs(root, list, 'wave-' + (root.getAttribute('data-id') || 'main'));
     var meta = el('p', 'wk-tip'), box = el('div', 'wv'), svgBox = el('div', 'wv-curve'), msg = el('p', 'wk-msg');
     var foot = el('div', 'btn-row wk-foot'), bRef = btn('對照常見安排'), bClr = btn('清空');
-    foot.append(bRef, bClr); root.append(T.bar, meta, box, svgBox, foot, msg);
+    // 範例曲的段落可以邊聽邊增減
+    var edit = el('div', 'wv-edit'); edit.appendChild(el('span', 'ld-lab', '段落'));
+    WAVE_ADD.forEach(function (k) { var b = el('button', 'f-' + k, '＋' + SECZH[k]); b.type = 'button'; b.onclick = function () { secs.push({ k: k, name: SECZH[k] }); st.push(0); saveSecs(); draw(); }; edit.appendChild(b); });
+    var bPop = btn('刪除最後一段'), bReset = btn('重設段落');
+    bPop.onclick = function () { if (secs.length > 1) { secs.pop(); st.pop(); saveSecs(); draw(); } };
+    bReset.onclick = function () { secs = work.sections.map(function (s) { return { k: s.k, name: s.name }; }); st = secs.map(function () { return 0; }); saveSecs(); draw(); };
+    edit.append(bPop, bReset);
+    var lyr = root.hasAttribute('data-lyrics') ? el('div', 'lyricbox wv-lyrics') : null;
+    foot.append(bRef, bClr); root.append(T.bar, meta, edit, box, svgBox, foot, msg); if (lyr) root.appendChild(lyr);
+    if (root.classList.contains('compact')) foot.appendChild(msg);  // 精簡版：回饋與按鈕同一列
     var work, secs, st, showRef = false, key;
+    function saveSecs() { LS.set(key + '-secs', secs); LS.set(key, st); }
     function load(k) {
-      work = W[k]; key = 'wave-' + k; secs = work.sections; st = LS.get(key, null) || secs.map(function () { return 0; }); showRef = false;
-      meta.innerHTML = '依照歌詞的情緒，替每一段點選旋律的音域位置（7 最高、1 最低）。' + (work.key ? '原曲：' + (work.meter || '4/4') + '，' + work.key + ' 大調' + (work.bpm ? '，每分鐘 ' + work.bpm + ' 拍' : '') + '。' : '');
+      work = W[k]; key = 'wave-' + k;
+      secs = (work.editable && LS.get(key + '-secs', null)) || work.sections.map(function (s) { return { k: s.k, name: s.name }; });
+      st = LS.get(key, null); if (!st || st.length !== secs.length) st = secs.map(function () { return 0; });
+      showRef = false; edit.hidden = !work.editable;
+      meta.innerHTML = work.artist
+        ? '邊聽〈' + esc(work.title) + '〉，邊替每一段點選旋律的音域位置（7 最高、1 最低）。' + (work.editable ? '段落先依常見曲式排列，請依實際聆聽增減。' : '')
+        : '依照歌詞的情緒，替每一段點選旋律的音域位置（7 最高、1 最低）。' + (work.key ? '原曲：' + (work.meter || '4/4') + '，' + work.key + ' 大調' + (work.bpm ? '，每分鐘 ' + work.bpm + ' 拍' : '') + '。' : '');
+      if (lyr) lyrics();
       draw();
+    }
+    function lyrics() {
+      var seen = {};
+      lyr.innerHTML = '<p class="lb-title">〈' + esc(work.title) + '〉<small>' + esc(work.credit || '') + '</small></p>' + work.sections.map(function (s) {
+        if (!s.lines || !s.lines.length) return '';
+        var key2 = s.lines.join('|'), rep = seen[key2]; seen[key2] = 1;
+        return '<div class="lb-sec"><span class="rh2-sn f-' + s.k + '">' + esc(s.name || SECZH[s.k]) + '</span>' + (rep ? '<p class="lb-ln muted">（同上）</p>' : s.lines.map(function (ln) { return '<p class="lb-ln">' + esc(ln) + '</p>'; }).join('')) + '</div>';
+      }).join('');
+      lyr.tabIndex = 0; lyr.setAttribute('role', 'region'); lyr.setAttribute('aria-label', work.title + ' 歌詞');
     }
     function draw() {
       box.innerHTML = ''; box.style.setProperty('--n', secs.length);

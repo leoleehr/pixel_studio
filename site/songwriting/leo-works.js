@@ -235,3 +235,13 @@ window.PIXEL_LEO_WORKS = {
 };
 // 作品排列順序（依創作年份）
 window.PIXEL_LEO_ORDER = ['far', 'elnino', 'sevenhundred', 'changmian', 'taoyuan', 'yuanli', 'heal', 'phoenix', 'xmas', 'secret'];
+
+// 旋律波動的範例曲：只收錄段落結構，不收錄歌詞（歌詞屬於原作者）。editable 表示段落可依聆聽增減。
+window.PIXEL_REF_SONGS = {
+  lostyou: { title: '在這座城市遺失了你', artist: '告五人', credit: '詞曲：潘雲安', editable: true,
+    sections: [{ k: 'intro', name: '前奏' }, { k: 'verse', name: '主歌一' }, { k: 'chorus', name: '副歌' }, { k: 'inter', name: '間奏' }, { k: 'verse', name: '主歌二' }, { k: 'chorus', name: '副歌' }, { k: 'bridge', name: '橋段' }, { k: 'chorus', name: '副歌' }, { k: 'outro', name: '尾奏' }] },
+  saygoodbye: { title: '說了再見', artist: '周杰倫', credit: '詞：古小力、黃凌嘉・曲：周杰倫', editable: true,
+    sections: [{ k: 'intro', name: '前奏' }, { k: 'verse', name: '主歌一' }, { k: 'chorus', name: '副歌' }, { k: 'inter', name: '間奏' }, { k: 'verse', name: '主歌二' }, { k: 'chorus', name: '副歌' }, { k: 'bridge', name: '橋段' }, { k: 'chorus', name: '副歌' }, { k: 'outro', name: '尾奏' }] },
+  apt: { title: 'APT.', artist: 'ROSÉ & Bruno Mars', credit: '詞曲：ROSÉ、Bruno Mars 等', editable: true,
+    sections: [{ k: 'intro', name: '前奏' }, { k: 'chorus', name: '副歌' }, { k: 'verse', name: '主歌一' }, { k: 'pre', name: '前副歌' }, { k: 'chorus', name: '副歌' }, { k: 'verse', name: '主歌二' }, { k: 'pre', name: '前副歌' }, { k: 'chorus', name: '副歌' }, { k: 'bridge', name: '橋段' }, { k: 'pre', name: '前副歌' }, { k: 'chorus', name: '副歌' }] }
+};

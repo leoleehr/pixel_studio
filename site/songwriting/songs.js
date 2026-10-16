@@ -35,7 +35,11 @@ window.PIXEL_SONGS = {
   'With Or Without You': { artist: 'U2', id: 'ujNeHIo7oTE', kind: '議題擴大・U2', src: '官方 Mv' },
   "Knockin' On Heaven's Door": { artist: 'Bob Dylan', id: 'rm9coqlk8fY', kind: '議題擴大・Bob Dylan', src: '官方音檔' },
   '就是愛你': { artist: '陶喆', id: 'WVaOxR0ajw4', kind: '歌詞記憶點・詞：娃娃・曲：陶喆', src: '官方 Mv' },
-  '橄欖樹': { artist: '齊豫', id: 'LZb8fJZFhlo', kind: '詞：三毛・曲：李泰祥', src: '官方歌詞影片' }
+  '橄欖樹': { artist: '齊豫', id: 'LZb8fJZFhlo', kind: '詞：三毛・曲：李泰祥', src: '官方歌詞影片' },
+  // 旋律波動的範例曲（第五堂），2026-10-16 以 oEmbed 確認為官方頻道上傳
+  '在這座城市遺失了你': { artist: '告五人', id: 'PlCbgZxonJs', kind: '詞曲：潘雲安', src: '官方 Mv' },
+  '說了再見': { artist: '周杰倫', id: 'KKsioz-zaZY', kind: '詞：古小力、黃凌嘉・曲：周杰倫', src: '官方 Mv' },
+  'APT.': { artist: 'ROSÉ & Bruno Mars', id: 'ekr2nIex040', kind: '詞曲：ROSÉ、Bruno Mars 等', src: '官方 Mv' }
 };
 
 // 講義每一堂開頭的曲例
