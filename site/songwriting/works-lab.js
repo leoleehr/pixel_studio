@@ -600,6 +600,8 @@
       var foot = el('div', 'btn-row wk-foot'), bGo = btn('擲骰子', 'primary'), bNb = btn('加入草稿區');
       var hist = el('div', 'ld-hist');
       foot.append(bGo, bNb, hist); card.appendChild(foot);
+      // 詞源骰子少一列「來源」，下方的空白放寫作提醒
+      if (!d.src) card.appendChild(el('p', 'ld-memo', '<b>備註</b>歌詞創作是一個故事，都要有起承轉合與記憶點。'));
       function pool(len, v) { var out = []; (v ? [v] : VOW.map(function (x) { return x[0]; })).forEach(function (vv) { (len ? [len] : d.lens).forEach(function (n) { ((D[d.k][vv] || {})[n] || []).forEach(function (w) { if (srcOK(w)) out.push({ w: w, v: vv, n: n }); }); }); }); return out; }
       function srcOK(w) {
         var s = SRC[w] || [];
