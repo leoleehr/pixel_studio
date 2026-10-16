@@ -66,6 +66,13 @@
 - 先聆聽範例、再分析手法、最後動手創作；所有藝術的開端皆為模仿，模仿的是手法與結構
 - 歌詞範例只摘錄分析所需的短句，完整作品請聆聽官方影片
 
+<!-- learning-notes-start -->
+### 能力路線與練習紀錄
+
+[開啟課程能力路線](index.html#lessons)：依本課順序連接先備能力與作品；只讀取本機已有作業勾選。網站練習紀錄圖沿用原七天表格，缺值保留空白，秒數、次數與分鐘分開檢視。PDF保留本表作書面紀錄，不填入示範成績。
+
+<!-- learning-notes-end -->
+
 ## 第一堂｜初探詞曲創作 1st Step About Songwriting
 
 本堂目標：能說明創作的分級，理解商業與藝術之間的流動；能從生活取材、情感訴求、議題擴大三個方向，確立一首歌的主題；建立自己的詞典、句典、曲典，並學會篩選合適的素材；下課前，每一組完成創作範本卡的第一筆：歌名、主題與記憶點。
@@ -396,6 +403,11 @@
 - [ ] 試著為主歌的第一句哼唱一段旋律，並且錄音
 - [ ] 填寫第四堂課前問卷
 
+<!-- learning-notes-start -->
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>字調與旋律</h4><p>字調與旋律的方向可疊圖比較；方向不同時需回到字義及整句試唱，不能只憑曲線判定。</p><figure class="learning-print"><img src="../assets/learning/print/songwriting-tone-melody.svg" alt="字調與旋律的關鍵狀態圖" loading="eager"><figcaption>字調與旋律｜關鍵狀態</figcaption></figure><p><a href="s03/#11">開啟互動練習</a></p></div>
+
+<!-- learning-notes-end -->
+
 ## 第四堂｜歌詞創作（二）修辭與作詞家 Lyrics II · Rhetoric & Lyricists
 
 本堂目標：能辨識流行歌詞中常見的修辭法，並說明它們的效果；認識十八位當代華語作詞家與他們的代表作品；能用九大禁忌與修理清單，檢查自己的歌詞；下課前，每一組完成前副歌、副歌與破格句，寫入創作範本卡。
@@ -527,6 +539,11 @@
 - [ ] 念讀副歌十次，標出最重要的三個字
 - [ ] 將完整歌詞寫入創作範本卡，下載文字檔備份
 - [ ] 填寫第五堂課前問卷
+
+<!-- learning-notes-start -->
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>句內修辭標記</h4><p>類疊看重複詞，頂真看前尾接後頭，映襯看對照片語。網站以原創短句提供選擇與標記。</p><figure class="learning-print"><img src="../assets/learning/print/songwriting-rhetoric.svg" alt="句內修辭標記的關鍵狀態圖" loading="eager"><figcaption>句內修辭標記｜關鍵狀態</figcaption></figure><p><a href="s04/#9">開啟互動練習</a></p></div>
+
+<!-- learning-notes-end -->
 
 ## 第五堂｜旋律創作（一）動機與和弦 Melody I · Motif & Chords
 
@@ -797,6 +814,11 @@
 - [ ] 戴上耳機，聆聽伴奏錄製人聲，完成作品 Demo
 - [ ] 調整人聲與伴奏的音量，讓歌詞清楚可辨
 - [ ] 填寫第八堂課前問卷
+
+<!-- learning-notes-start -->
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>段落配器</h4><p>以段落對照主律動、副律動、主旋律、過門與襯底；可以讀取自己的曲式積木，再試聽配器差別。</p><figure class="learning-print"><img src="../assets/learning/print/songwriting-arrangement.svg" alt="段落配器的關鍵狀態圖" loading="eager"><figcaption>段落配器｜關鍵狀態</figcaption></figure><p><a href="s07/#8">開啟互動練習</a></p></div>
+
+<!-- learning-notes-end -->
 
 ## 第八堂｜範例研討與成果發表 Fixing, Feedback & Showcase
 
