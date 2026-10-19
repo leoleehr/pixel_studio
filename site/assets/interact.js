@@ -183,6 +183,50 @@
     var row = el('div', 'btn-row'); row.appendChild(go); row.appendChild(rs); row.appendChild(out); t.appendChild(row);
   });
 
+  /* 歌手與歌曲調查：老師即時輸入，重複的歌曲合併計票，再抽出一首現場示範 */
+  $$('.songpoll').forEach(function (p) {
+    var id = 'songpoll-' + p.getAttribute('data-id'), list = LS.get(id, []), pickedAt = -1;
+    p.innerHTML = '<form class="sp-form"><input class="sp-artist" placeholder="歌手" aria-label="歌手" maxlength="40" autocomplete="off"><input class="sp-song" placeholder="歌曲名稱" aria-label="歌曲名稱" maxlength="60" autocomplete="off"><button type="submit" class="btn primary">加入</button></form>' +
+      '<ol class="sp-list" aria-live="polite"></ol><p class="sp-sum muted"></p>' +
+      '<div class="btn-row"><button type="button" class="btn sp-pick">抽一首示範</button><button type="button" class="btn sp-save">儲存到後台</button><button type="button" class="btn sp-clear">清除</button></div>';
+    var form = p.querySelector('.sp-form'), ia = p.querySelector('.sp-artist'), is = p.querySelector('.sp-song'), ol = p.querySelector('.sp-list'), sum = p.querySelector('.sp-sum'), clr = p.querySelector('.sp-clear'), armed = 0;
+    function key(o) { return (o.artist + '|' + o.song).replace(/\s+/g, '').toLowerCase(); }
+    function save() { LS.set(id, list); draw(); }
+    function order() { return list.map(function (o, k) { return k; }).sort(function (a, b) { return list[b].n - list[a].n || a - b; }); }
+    function draw() {
+      ol.innerHTML = '';
+      order().forEach(function (k, r) {
+        var o = list[k], li = el('li', 'sp-item' + (o.done ? ' done' : '') + (k === pickedAt ? ' picked' : ''));
+        li.innerHTML = '<span class="sp-rank">' + (r + 1) + '</span><span class="sp-name"><b>' + esc(o.song || '（未填歌曲）') + '</b><small>' + esc(o.artist || '（未填歌手）') + '</small></span><span class="sp-n">' + o.n + ' 票</span>' +
+          '<button type="button" class="btn sp-up" aria-label="' + esc(o.song) + ' 加一票">＋1</button><button type="button" class="btn sp-done" aria-pressed="' + (o.done ? 'true' : 'false') + '">' + (o.done ? '已示範' : '示範') + '</button><button type="button" class="btn sp-del" aria-label="刪除 ' + esc(o.song) + '">×</button>';
+        li.querySelector('.sp-up').onclick = function () { o.n++; save(); };
+        li.querySelector('.sp-done').onclick = function () { o.done = !o.done; save(); };
+        li.querySelector('.sp-del').onclick = function () { list.splice(k, 1); if (pickedAt === k) pickedAt = -1; else if (pickedAt > k) pickedAt--; save(); };
+        ol.appendChild(li);
+      });
+      var votes = list.reduce(function (a, o) { return a + o.n; }, 0);
+      sum.textContent = list.length ? '共 ' + list.length + ' 首歌、' + votes + ' 票；重複的歌曲會自動加一票' : '輸入歌手與歌曲名稱，按 Enter 或「加入」';
+      clr.textContent = armed ? '再按一次清除' : '清除';
+    }
+    form.onsubmit = function (e) {
+      e.preventDefault();
+      var o = { artist: ia.value.trim(), song: is.value.trim(), n: 1, done: false };
+      if (!o.artist && !o.song) { is.focus(); return; }
+      var hit = list.filter(function (x) { return key(x) === key(o); })[0];
+      if (hit) hit.n++; else list.push(o);
+      ia.value = ''; is.value = ''; ia.focus(); save();
+    };
+    p.querySelector('.sp-pick').onclick = function () {
+      var pool = list.map(function (o, k) { return k; }).filter(function (k) { return !list[k].done; });
+      if (!pool.length) { say(list.length ? '每一首都示範過了' : '先加入歌曲', 'warn'); return; }
+      pickedAt = pool[Math.floor(Math.random() * pool.length)]; draw();
+      var li = ol.querySelector('.picked'); if (li && li.scrollIntoView) li.scrollIntoView({ block: 'nearest' });
+    };
+    p.querySelector('.sp-save').onclick = function () { report(p, 'songpoll', { item: '歌手與歌曲調查', result: order().map(function (k) { return list[k].song + '／' + list[k].artist + ' ' + list[k].n; }).join('、'), value: list.length, detail: { songs: list } }); say('已記錄調查結果', 'ok'); };
+    clr.onclick = function () { if (!armed) { armed = 1; draw(); setTimeout(function () { armed = 0; draw(); }, 3000); return; } armed = 0; list = []; pickedAt = -1; save(); };
+    draw();
+  });
+
   /* ---------- 4. 隨機點名 ---------- */
   $$('.picker').forEach(function (p) {
     var names = LS.get('names', []), used = [];
