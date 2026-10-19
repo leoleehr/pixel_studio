@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script>/* 中文字型策略：首次造訪用系統中文字型（符合 CI：正黑體／蘋方），不在首屏重排；載入完成 5 秒後，利用閒置時間逐一把本頁用得到的 Noto Sans TC 分組下載進快取，之後每頁一開始就套用 */(function(){var K="ps-font",U="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap";function apply(){var l=document.createElement("link");l.rel="stylesheet";l.href=U;document.head.appendChild(l)}var c=0;try{c=localStorage.getItem(K)}catch(e){}if(c){apply();return}var n=navigator.connection;if(n&&(n.saveData||/2g/.test(n.effectiveType||"")))return;var idle=window.requestIdleCallback||function(f){return setTimeout(f,300)};function inRange(r,cps){return r.split(",").some(function(p){var m=p.trim().replace(/^U\+/i,"").split("-"),a=parseInt(m[0],16),b=m[1]?parseInt(m[1],16):a;return cps.some(function(x){return x>=a&&x<=b})})}function warm(){if(!window.FontFace||!window.fetch)return;var seen={},cps=[],t=document.body.textContent;for(var i=0;i<t.length;i++){var x=t.charCodeAt(i);if(x>=0x2E80&&!seen[x]){seen[x]=1;cps.push(x)}}fetch(U).then(function(r){return r.text()}).then(function(css){var q=[];css.replace(/@font-face\s*\{([^}]*)\}/g,function(_,b){var s=/url\(([^)]+)\)/.exec(b),r=/unicode-range:\s*([^;]+)/.exec(b);if(s&&r&&inRange(r[1],cps))q.push([s[1],r[1]]);return _});function next(){if(!q.length){try{localStorage.setItem(K,"1")}catch(e){}return}var j=q.shift();new FontFace("Noto Sans TC","url("+j[0]+")",{weight:"400 900",unicodeRange:j[1]}).load().then(function(){idle(next,{timeout:3000})},function(){idle(next,{timeout:3000})})}idle(next,{timeout:3000})}).catch(function(){})}var painted=0,loaded=0,started=0;function go(){if(painted&&loaded&&!started){started=1;setTimeout(function(){idle(warm,{timeout:5000})},5000)}}try{new PerformanceObserver(function(l){if(!painted&&l.getEntriesByName("first-contentful-paint").length){painted=1;go()}}).observe({type:"paint",buffered:true})}catch(e){painted=1}addEventListener("load",function(){loaded=1;setTimeout(function(){painted=1;go()},3000);go()})})()</script>
-<link rel="stylesheet" href="../../../assets/deck-bundle.css?v=20261019a">
+<link rel="stylesheet" href="../../../assets/deck-bundle.css?v=20261019b">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pixel Studio 畫素音樂工作坊">
 <meta property="og:title" content="歌唱序論｜第一堂">
@@ -185,7 +185,40 @@
   </div>
 </section>
 
-<!-- 10 歌唱三大要素 -->
+<!-- 10 老師示範聆聽：甲乙丙丁 -->
+<section class="slide">
+  <div class="ix-tag"><b>示範</b>老師這樣聆聽</div>
+  <div class="kicker"><span class="tag t-cheng">承</span>③ 歌唱的聆聽條件｜老師示範</div>
+  <h2 style="margin-bottom:16px">三個條件，分三遍聆聽〈甲乙丙丁〉</h2>
+  <div class="split song-split">
+    <div class="yt" data-song="甲乙丙丁"></div>
+    <div class="listen-guide">
+      <div class="card"><h3><b class="c-navy">音準 Pitch</b>｜留意句尾長音</h3><p>長音是否停在同一個高度，或慢慢往下沉。副歌往上推的句子，留意音高直接落準，或從下方滑上去尋找。</p></div>
+      <div class="card"><h3><b class="c-gold">音色 Tone</b>｜比較主歌與副歌</h3><p>哪一段貼近耳邊、像在說話，哪一段放開音量、變得明亮。同一位歌手，在同一首歌裡切換兩種聲音的顏色。</p></div>
+      <div class="card"><h3><b class="c-red">速度與節奏 Tempo</b>｜跟著拍子點頭</h3><p>先找出每小節的第一拍，再留意歌詞落在拍點上，或刻意晚半拍才開口。慢歌最容易拖拍，長音唱滿，下一句仍要準時進入。</p></div>
+      <p class="muted lg-order">第一遍只聆聽音準，第二遍比較音色，第三遍跟著拍子點頭。每一遍只專注一件事，才能察覺細微的差異。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 11 學生聆聽練習：太陽與地球 -->
+<section class="slide">
+  <div class="ix-tag"><b>互動</b>聆聽練習・拍點測速</div>
+  <div class="kicker"><span class="tag t-cheng">承</span>③ 歌唱的聆聽條件｜換你練習</div>
+  <h2 style="margin-bottom:16px">換你聆聽〈太陽與地球〉，每列選一個答案</h2>
+  <div class="split song-split">
+    <div class="yt" data-song="太陽與地球"></div>
+    <div class="listen-sheet">
+      <div class="ls-row"><div class="ls-k"><b class="c-navy">音準</b><span>副歌的長音</span></div><div class="pill-row sec-track" data-mode="pick" role="group" aria-label="音準：副歌的長音"><button type="button" class="pill">穩穩停住</button><button type="button" class="pill">尾音下沉</button><button type="button" class="pill">尾音上飄</button></div></div>
+      <div class="ls-row"><div class="ls-k"><b class="c-gold">音色</b><span>主歌進入副歌</span></div><div class="pill-row sec-track" data-mode="pick" role="group" aria-label="音色：主歌進入副歌"><button type="button" class="pill">差異不大</button><button type="button" class="pill">變得明亮</button><button type="button" class="pill">變得厚實</button></div></div>
+      <div class="ls-row"><div class="ls-k"><b class="c-red">速度</b><span>整首歌的拍速</span></div><div class="pill-row sec-track" data-mode="pick" role="group" aria-label="速度：整首歌的拍速"><button type="button" class="pill">偏慢 80 以下</button><button type="button" class="pill">中等 80 到 110</button><button type="button" class="pill">偏快 110 以上</button></div></div>
+      <div class="taptempo"></div>
+      <p class="muted ls-note">先完整聆聽一次，每列選一個答案；再跟著拍子點按「拍點測速」，核對速度。最後與同組夥伴對照答案，說出各自的理由。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 12 歌唱三大要素 -->
 <section class="slide">
   <div class="kicker"><span class="tag t-cheng">承</span>④ 歌唱的基本三大要素</div>
   <h2>這門課的主軸</h2>
@@ -196,7 +229,7 @@
   </div>
 </section>
 
-<!-- 11 音樂三大要素 + 手指投票 -->
+<!-- 13 音樂三大要素 + 手指投票 -->
 <section class="slide">
   <div class="ix-tag"><b>互動</b>手指投票</div>
   <div class="kicker"><span class="tag t-cheng">承</span>⑤ 音樂的基本構成三大要素</div>
@@ -213,7 +246,7 @@
   </div>
 </section>
 
-<!-- 12 好主唱 + 想配對分享 -->
+<!-- 14 好主唱 + 想配對分享 -->
 <section class="slide">
   <div class="ix-tag"><b>互動</b>思考、配對、分享</div>
   <div class="kicker"><span class="tag t-cheng">承</span>⑥ 好主唱的條件</div>
@@ -229,7 +262,7 @@
   </div>
 </section>
 
-<!-- 13 休息 -->
+<!-- 15 休息 -->
 <section class="slide center">
   <div class="kicker">Break</div>
   <div class="timer" id="timer">10:00</div>
@@ -238,7 +271,7 @@
   <div class="btn-row"><button type="button" class="btn" id="timerBtn">開始倒數</button><button type="button" class="btn" id="timerReset">重設</button></div>
 </section>
 
-<!-- 14 曲式排序遊戲 -->
+<!-- 16 曲式排序遊戲 -->
 <section class="slide">
   <div class="ix-tag"><b>互動</b>排序遊戲</div>
   <div class="kicker"><span class="tag t-zhuan">轉</span>01:05–01:40</div>
@@ -250,7 +283,7 @@
   </div>
 </section>
 
-<!-- 15 各段角色：翻牌 -->
+<!-- 17 各段角色：翻牌 -->
 <section class="slide">
   <div class="ix-tag"><b>互動</b>提取練習・翻牌</div>
   <div class="kicker"><span class="tag t-zhuan">轉</span>每一段的角色</div>
@@ -265,7 +298,7 @@
   </div>
 </section>
 
-<!-- 16 曲式偵探 + 分組搶答 -->
+<!-- 18 曲式偵探 + 分組搶答 -->
 <section class="slide">
   <div class="ix-tag"><b>互動</b>分組搶答</div>
   <div class="kicker"><span class="tag t-zhuan">轉</span>曲式偵探：邱振哲《太陽》</div>
@@ -284,7 +317,7 @@
   </div>
 </section>
 
-<!-- 17 分組任務 -->
+<!-- 19 分組任務 -->
 <section class="slide">
   <div class="ix-tag"><b>互動</b>合作學習・分段計時</div>
   <div class="kicker"><span class="tag t-zhuan">轉</span>分組任務｜15 分鐘</div>
@@ -301,7 +334,7 @@
   </div>
 </section>
 
-<!-- 18 第零號錄音 -->
+<!-- 20 第零號錄音 -->
 <section class="slide">
   <div class="ix-tag"><b>互動</b>自我評量・前測</div>
   <div class="kicker"><span class="tag t-he">合</span>01:40–02:00</div>
@@ -316,13 +349,13 @@
   </div>
 </section>
 
-<!-- 19 三句話 -->
+<!-- 21 三句話 -->
 <section class="slide center">
   <div class="kicker">Today In Three Lines</div>
   <p class="quote">聲音有原理，<br>歌曲有結構，<br>進步有紀錄。</p>
 </section>
 
-<!-- 20 出場券 -->
+<!-- 22 出場券 -->
 <section class="slide">
   <div class="ix-tag"><b>互動</b>出場券 3-2-1</div>
   <div class="kicker"><span class="tag t-he">合</span>Exit Ticket</div>
@@ -333,7 +366,7 @@
   </div>
 </section>
 
-<!-- 21 課後練習 -->
+<!-- 23 課後練習 -->
 <section class="slide">
   <div class="ix-tag"><b>互動</b>自主學習追蹤</div>
   <div class="kicker">Homework</div>
@@ -347,7 +380,7 @@
   </ul>
 </section>
 
-<!-- 22 下週預告 -->
+<!-- 24 下週預告 -->
 <section class="slide">
   <div class="ix-tag"><b>互動</b>課前問卷</div>
   <div class="kicker">Next Week</div>
@@ -375,8 +408,8 @@
 <script src="../../../assets/ui.js?v=20261016review1" defer></script>
 <script src="../../../assets/deck.js?v=20261015b" defer></script>
 <script src="../../../assets/vendor/qrcode.min.js" defer></script>
-<script src="../../../assets/interact.js?v=20261019a" defer></script>
-<script src="../../songs.js?v=20261014v" defer></script>
+<script src="../../../assets/interact.js?v=20261019b" defer></script>
+<script src="../../songs.js?v=20261019a" defer></script>
 <script src="../../../assets/youtube.js?v=20261016a" defer></script>
 <script src="../../../assets/config.js?v=20261014v" defer></script>
 <script src="../../../assets/backend.js?v=20261015b" defer></script>
