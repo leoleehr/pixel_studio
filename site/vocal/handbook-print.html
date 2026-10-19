@@ -153,7 +153,7 @@ a{color:inherit;text-decoration:none}
 
 <div class="sheet end"><img class="logo-new endlogo" src="../assets/brand/pixel-studio-primary-mono-black.svg" alt="Pixel Studio"><p class="endcn">畫素音樂工作坊</p><p>Pixel Studio・Established Since 2008</p></div>
 
-<script src="songs.js?v=20261019a"></script>
+<script src="songs.js?v=20261019b"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <script src="../assets/vendor/qrcode.min.js"></script>
 <script>
@@ -163,7 +163,7 @@ a{color:inherit;text-decoration:none}
   var COLOR = ['', '#e8412b', '#e2407f', '#8a4fc0', '#2f8fc4', '#4f9e3a', '#b5a400'];
   var DESC = ['', '理解聲音的形成與擴大，認識好主唱的條件', '找到歌唱氣息的來源，讓氣息穩定又持久', '讓聲音更明亮、更厚實、傳得更遠', '讓每個字都清楚又圓潤', '將技巧轉化為歌曲的表情', '找到適合自己的歌曲與演唱的調'];
   var main = document.getElementById('content'), toc = document.getElementById('toc');
-  fetch('course-handbook.md?v=20261019b').then(function (r) { return r.text(); }).then(function (md) {
+  fetch('course-handbook.md?v=20261019d').then(function (r) { return r.text(); }).then(function (md) {
     var tmp = document.createElement('div'); tmp.innerHTML = marked.parse(md, { gfm: true });
     // 拿掉文件標題與署名行，改用封面
     var h1 = tmp.querySelector('h1'); if (h1) { var nx = h1.nextElementSibling; h1.remove(); if (nx && nx.tagName === 'P') nx.remove(); }
