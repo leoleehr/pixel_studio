@@ -159,6 +159,14 @@
     r.parentNode.insertBefore(b, r);
   });
 
+  /* 段落標記：點選目前聽到的段落，之前的段落淡化；再點一次清除 */
+  $$('.sec-track').forEach(function (t) {
+    var pills = $$('.pill', t), cur = -1;
+    function paint() { pills.forEach(function (p, k) { p.classList.toggle('on', k === cur); p.classList.toggle('done', k < cur); p.setAttribute('aria-pressed', k === cur ? 'true' : 'false'); }); }
+    pills.forEach(function (p, k) { p.onclick = function () { cur = cur === k ? -1 : k; paint(); }; });
+    paint();
+  });
+
   /* ---------- 4. 隨機點名 ---------- */
   $$('.picker').forEach(function (p) {
     var names = LS.get('names', []), used = [];
