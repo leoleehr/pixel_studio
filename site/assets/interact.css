@@ -269,15 +269,22 @@
 .lg-row b{font-size:17px}
 .listen-guide .lg-row p{font-size:16px;line-height:1.5}
 .listen-guide .taptempo{margin-top:2px}
-.listen-sheet .ls-row{display:grid;grid-template-columns:7.2em 1fr;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.listen-sheet .ls-row{display:grid;grid-template-columns:7.2em 1fr;gap:12px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
 .listen-sheet .ls-k b{display:block;font-size:20px}
 .listen-sheet .ls-k span{font-size:14px;color:var(--muted)}
-.listen-sheet .sec-track{gap:8px}
+.listen-sheet .sec-track{gap:6px}
+.listen-sheet .sec-track .pill{padding:5px 11px;font-size:15px}
 .taptempo{margin-top:14px}
 .taptempo .btn-row{align-items:center;justify-content:flex-start}
 .tt-out{font-size:17px;color:var(--muted)}
 .tt-out b{color:var(--amber);font-family:var(--display);font-size:22px}
 .listen-sheet .ls-note{font-size:15px;line-height:1.6;margin-top:10px}
+.listen-sheet .reveal-btn{margin-top:8px}
+.listen-sheet .ls-ans p{font-size:15px;line-height:1.55;margin:0 0 2px}
+.listen-sheet:has(.ls-ans.on) .ls-note{display:none}
+.listen-sheet:has(.ls-ans.on) .pill.ans{border-color:#5fd68a;box-shadow:0 0 0 1px #5fd68a inset}
+.listen-sheet:has(.ls-ans.on) .pill.ans::after{content:" ✓";color:#5fd68a;font-weight:700}
+.listen-sheet:has(.ls-ans.on) .pill.ans.on,.listen-sheet:has(.ls-ans.on) .pill.ans.on::after{color:#111}
 /* 歌手與歌曲調查 */
 .sp-form{display:grid;grid-template-columns:1fr 1.3fr auto;gap:8px;margin-bottom:10px}
 .sp-form input{font:inherit;font-size:17px;background:#0d0d10;color:var(--ink);border:1px solid var(--line-2);border-radius:10px;padding:8px 12px;min-width:0;outline:none}
