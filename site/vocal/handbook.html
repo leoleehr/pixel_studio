@@ -52,7 +52,7 @@
 <nav class="toc" aria-label="講義目錄"><div class="wrap" id="toc"><a href="#overview" data-id="overview">課程總覽</a><a href="#lesson-1" data-id="lesson-1">第一堂</a><a href="#lesson-2" data-id="lesson-2">第二堂</a><a href="#lesson-3" data-id="lesson-3">第三堂</a><a href="#lesson-4" data-id="lesson-4">第四堂</a><a href="#lesson-5" data-id="lesson-5">第五堂</a><a href="#lesson-6" data-id="lesson-6">第六堂</a></div></nav>
 
 <aside class="wrap" aria-label="講義下載"><div class="dl-bar"><div><b>講義與教案 PDF</b><span>A4 排版・40 頁・含歌曲 QR Code，可列印或分享</span></div><a class="btn primary" href="vocal-class-handbook.pdf" download="流行歌唱班_講義與教案.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>下載 PDF</a></div></aside>
-<main class="wrap md" id="content" data-prerendered="0c5233ab8e">
+<main class="wrap md" id="content" data-prerendered="0e8c19c2f5">
 <h1>亞東吉他社 流行歌唱班｜六堂課程講義與教案</h1>
 <p>Oct 5, 2026 · @Leo Lee</p>
 <section class="hb-sec" style="--ch-m:5903px;--ch-d:2698px"><div class="lesson-head" id="overview" data-item="課程總覽"><div class="lh-no">Overview</div><h2>課程總覽</h2></div>
@@ -204,7 +204,7 @@
 <!-- learning-notes-end -->
 
 </section>
-<section class="hb-sec" style="--ch-m:12718px;--ch-d:5615px"><div class="lesson-head" id="lesson-1" style="--c: #e8412b;" data-dot="#e8412b" data-item="第一堂　歌唱序論"><div class="lh-no">Lesson 01</div><h2>歌唱序論<small>Introduction To Vocal Music</small></h2></div>
+<section class="hb-sec" style="--ch-m:12766px;--ch-d:5690px"><div class="lesson-head" id="lesson-1" style="--c: #e8412b;" data-dot="#e8412b" data-item="第一堂　歌唱序論"><div class="lh-no">Lesson 01</div><h2>歌唱序論<small>Introduction To Vocal Music</small></h2></div>
 <p>第一堂的任務是建立共同語言：以六組「三要素」說明聲音從產生到成為歌聲的過程，再以「流行歌曲曲式公式」理解一首歌的地圖。課堂最後，錄下每位學員的「第零號錄音」，第六堂再拿出來對照。</p>
 <h3 id="lesson-1-9">課前問卷（入班問卷）</h3>
 <ol>
@@ -237,7 +237,7 @@
 <tr>
 <td>00:20–00:55</td>
 <td>承</td>
-<td>講解六組三要素（見下方講義）。吉他實驗：撥奏第六弦空弦 → 手掌蓋住音孔再撥奏 → 轉向牆角再撥奏，對照「振動、共鳴、空間」。學員分別在教室中央與牆角哼唱同一個音，寫下兩者的差異</td>
+<td>講解六組三要素（見下方講義）。吉他實驗：從第六弦到第一弦依序撥奏空弦音 → 重複一次，撥奏後馬上用右手將弦靜止 → 左手食指壓住所有弦的第 12 格再撥奏 → 面對牆壁由遠而近重做第 1 個實驗，對照「振動、共鳴、空間」。學員分別在教室中央與牆角哼唱同一個音，寫下兩者的差異</td>
 <td>吉他、投影</td>
 </tr>
 <tr>
@@ -2484,7 +2484,7 @@
   var main = document.getElementById('content'), toc = document.getElementById('toc'), prog = document.getElementById('progress');
   var pre = main.hasAttribute('data-prerendered');
   function loadMarked() { return window.marked ? Promise.resolve() : new Promise(function (ok, no) { var s = document.createElement('script'); s.src = 'https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js'; s.onload = ok; s.onerror = no; document.head.appendChild(s); }); }
-  (pre ? (location.hash ? Promise.resolve(null) : new Promise(function (ok) { requestAnimationFrame(function () { setTimeout(function () { ok(null); }, 0); }); })) : loadMarked().then(function () { return fetch('course-handbook.md?v=20261016learning1'); }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }))
+  (pre ? (location.hash ? Promise.resolve(null) : new Promise(function (ok) { requestAnimationFrame(function () { setTimeout(function () { ok(null); }, 0); }); })) : loadMarked().then(function () { return fetch('course-handbook.md?v=20261019a'); }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }))
     .then(function (md) {
       if (md !== null) main.innerHTML = marked.parse(md, { gfm: true });
       main.querySelectorAll('img').forEach(function (i) { i.loading = 'lazy'; i.decoding = 'async'; });
