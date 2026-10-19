@@ -52,7 +52,7 @@
 <nav class="toc" aria-label="講義目錄"><div class="wrap" id="toc"><a href="#overview" data-id="overview">課程總覽</a><a href="#lesson-1" data-id="lesson-1">第一堂</a><a href="#lesson-2" data-id="lesson-2">第二堂</a><a href="#lesson-3" data-id="lesson-3">第三堂</a><a href="#lesson-4" data-id="lesson-4">第四堂</a><a href="#lesson-5" data-id="lesson-5">第五堂</a><a href="#lesson-6" data-id="lesson-6">第六堂</a></div></nav>
 
 <aside class="wrap" aria-label="講義下載"><div class="dl-bar"><div><b>講義與教案 PDF</b><span>A4 排版・40 頁・含歌曲 QR Code，可列印或分享</span></div><a class="btn primary" href="vocal-class-handbook.pdf" download="流行歌唱班_講義與教案.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>下載 PDF</a></div></aside>
-<main class="wrap md" id="content" data-prerendered="a9686bd36b">
+<main class="wrap md" id="content" data-prerendered="ac93be908b">
 <h1>亞東吉他社 流行歌唱班｜六堂課程講義與教案</h1>
 <p>Oct 5, 2026 · @Leo Lee</p>
 <section class="hb-sec" style="--ch-m:5903px;--ch-d:2698px"><div class="lesson-head" id="overview" data-item="課程總覽"><div class="lh-no">Overview</div><h2>課程總覽</h2></div>
@@ -204,7 +204,7 @@
 <!-- learning-notes-end -->
 
 </section>
-<section class="hb-sec" style="--ch-m:14531px;--ch-d:6441px"><div class="lesson-head" id="lesson-1" style="--c: #e8412b;" data-dot="#e8412b" data-item="第一堂　歌唱序論"><div class="lh-no">Lesson 01</div><h2>歌唱序論<small>Introduction To Vocal Music</small></h2></div>
+<section class="hb-sec" style="--ch-m:14843px;--ch-d:6541px"><div class="lesson-head" id="lesson-1" style="--c: #e8412b;" data-dot="#e8412b" data-item="第一堂　歌唱序論"><div class="lh-no">Lesson 01</div><h2>歌唱序論<small>Introduction To Vocal Music</small></h2></div>
 <p>第一堂的任務是建立共同語言：以六組「三要素」說明聲音從產生到成為歌聲的過程，再以「流行歌曲曲式公式」理解一首歌的地圖。課堂最後，錄下每位學員的「第零號錄音」，第六堂再拿出來對照。</p>
 <h3 id="lesson-1-9">課前問卷（入班問卷）</h3>
 <ol>
@@ -390,7 +390,7 @@
 </tbody></table>
 <p><strong>範例：邱振哲《太陽》</strong>（第二堂練習曲）：前奏 → 主歌▲「你總感到落寞沮喪」→ 副歌★「我只想做你的太陽」→ 間奏之後回到▲ → ★ → 橋段「也許有一天你不再記得我」→ 回到★ → 尾奏。橋段的和弦由 F 切入，與主歌、副歌的 C 起頭形成對比，這就是「轉折」最明顯的訊號。</p>
 <h3 id="lesson-1-13">課堂互動（網站簡報）</h3>
-<p>25 張投影片中有 19 張帶有互動，避免連續兩張以上的純講述。</p>
+<p>25 張投影片中有 20 張帶有互動，避免連續兩張以上的純講述。</p>
 <table>
 <thead>
 <tr>
@@ -453,6 +453,12 @@
 <td>單選作答＋拍點測速</td>
 <td>引導練習</td>
 <td>播放盧廣仲〈太陽與地球〉，學員就音準、音色、速度各選一個答案，再跟著拍子點按「拍點測速」核對拍速，與同組夥伴對照理由；最後按「老師的答案」揭曉：副歌長音尾端下沉與上揚都會出現、副歌變得明亮、每分鐘約 66 拍屬於偏慢</td>
+</tr>
+<tr>
+<td>13 歌唱三大要素</td>
+<td>翻牌：先問一下自己</td>
+<td>自我提問、預告</td>
+<td>三張卡片對應第二至第四堂。翻牌後各有三個問題：呼吸問方式、換氣時間點與用力方式；共鳴問共鳴位置、高低音差異與傳遠的方法；發聲問母音口型、子音清晰度與每個字是否被聽懂</td>
 </tr>
 <tr>
 <td>14 音樂三要素</td>
@@ -2502,7 +2508,7 @@
   var main = document.getElementById('content'), toc = document.getElementById('toc'), prog = document.getElementById('progress');
   var pre = main.hasAttribute('data-prerendered');
   function loadMarked() { return window.marked ? Promise.resolve() : new Promise(function (ok, no) { var s = document.createElement('script'); s.src = 'https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js'; s.onload = ok; s.onerror = no; document.head.appendChild(s); }); }
-  (pre ? (location.hash ? Promise.resolve(null) : new Promise(function (ok) { requestAnimationFrame(function () { setTimeout(function () { ok(null); }, 0); }); })) : loadMarked().then(function () { return fetch('course-handbook.md?v=20261019e'); }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }))
+  (pre ? (location.hash ? Promise.resolve(null) : new Promise(function (ok) { requestAnimationFrame(function () { setTimeout(function () { ok(null); }, 0); }); })) : loadMarked().then(function () { return fetch('course-handbook.md?v=20261019f'); }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }))
     .then(function (md) {
       if (md !== null) main.innerHTML = marked.parse(md, { gfm: true });
       main.querySelectorAll('img').forEach(function (i) { i.loading = 'lazy'; i.decoding = 'async'; });
