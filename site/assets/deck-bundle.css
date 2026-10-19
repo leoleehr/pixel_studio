@@ -530,11 +530,18 @@ th[scope=row]{font-size:21px;color:inherit;letter-spacing:0;font-weight:700}
 .score.compact .score-grid{grid-template-columns:1fr 1fr;gap:8px}
 .score.compact .score-team{padding:8px 10px}
 .score.compact .score-pts{font-size:36px}
+.score.compact.row4 .score-grid{grid-template-columns:repeat(4,1fr)}
+.sec-track .pill{font:inherit;font-size:16px;line-height:1.4;padding:5px 13px;color:var(--ink);cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.sec-track .pill:hover{border-color:var(--amber)}
+.sec-track .pill.on{background:var(--amber);border-color:var(--amber);color:#111;font-weight:700}
+.sec-track .pill.done{color:var(--muted);border-color:rgba(var(--accent-rgb,244,166,42),.35)}
 .lyric-col .lm-line{font-size:30px;line-height:2.15}
 @media (max-width:900px),(orientation:portrait) and (max-width:1100px){
   .song-split,.song-split.rev{grid-template-columns:1fr}
   .song-split.rev .yt{order:-1}
   .lyric-col .lm-line{font-size:22px}
+  .score.compact.row4 .score-grid{grid-template-columns:1fr 1fr}
+  .sec-track .pill{min-height:44px;font-size:15px}
 }
 
 /* 歌詞換氣：整首歌、貼上歌詞 */
