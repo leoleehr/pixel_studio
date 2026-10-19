@@ -159,12 +159,28 @@
     r.parentNode.insertBefore(b, r);
   });
 
-  /* 段落標記：點選目前聽到的段落，之前的段落淡化；再點一次清除 */
+  /* 段落標記：點選目前聽到的段落，之前的段落淡化；再點一次清除。data-mode="pick" 只做單選 */
   $$('.sec-track').forEach(function (t) {
-    var pills = $$('.pill', t), cur = -1;
-    function paint() { pills.forEach(function (p, k) { p.classList.toggle('on', k === cur); p.classList.toggle('done', k < cur); p.setAttribute('aria-pressed', k === cur ? 'true' : 'false'); }); }
+    var pills = $$('.pill', t), cur = -1, pick = t.getAttribute('data-mode') === 'pick';
+    function paint() { pills.forEach(function (p, k) { p.classList.toggle('on', k === cur); p.classList.toggle('done', !pick && k < cur); p.setAttribute('aria-pressed', k === cur ? 'true' : 'false'); }); }
     pills.forEach(function (p, k) { p.onclick = function () { cur = cur === k ? -1 : k; paint(); }; });
     paint();
+  });
+
+  /* 拍點測速：跟著音樂連續點按，以最近 8 下的間隔算出每分鐘拍數 */
+  $$('.taptempo').forEach(function (t) {
+    var taps = [], go = btn('拍點測速', 'primary tt-tap'), rs = btn('重來'), out = el('span', 'tt-out', '跟著拍子連續點按 4 下以上');
+    out.setAttribute('aria-live', 'polite');
+    go.onclick = function () {
+      var now = performance.now();
+      if (taps.length && now - taps[taps.length - 1] > 2000) taps = [];
+      taps.push(now); if (taps.length > 8) taps.shift();
+      if (taps.length < 4) { out.textContent = '再點 ' + (4 - taps.length) + ' 下'; return; }
+      var bpm = Math.round(60000 * (taps.length - 1) / (taps[taps.length - 1] - taps[0]));
+      out.innerHTML = '<b>' + bpm + ' Bpm</b>・' + (bpm < 80 ? '偏慢' : bpm <= 110 ? '中等' : '偏快');
+    };
+    rs.onclick = function () { taps = []; out.textContent = '跟著拍子連續點按 4 下以上'; };
+    var row = el('div', 'btn-row'); row.appendChild(go); row.appendChild(rs); row.appendChild(out); t.appendChild(row);
   });
 
   /* ---------- 4. 隨機點名 ---------- */

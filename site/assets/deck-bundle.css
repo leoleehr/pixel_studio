@@ -535,6 +535,21 @@ th[scope=row]{font-size:21px;color:inherit;letter-spacing:0;font-weight:700}
 .sec-track .pill:hover{border-color:var(--amber)}
 .sec-track .pill.on{background:var(--amber);border-color:var(--amber);color:#111;font-weight:700}
 .sec-track .pill.done{color:var(--muted);border-color:rgba(var(--accent-rgb,244,166,42),.35)}
+/* 聆聽示範與聆聽練習 */
+.listen-guide{display:flex;flex-direction:column;gap:10px}
+.listen-guide .card{padding:12px 18px}
+.listen-guide h3{font-size:19px;margin-bottom:4px}
+.listen-guide p{font-size:17px;line-height:1.55}
+.listen-guide .lg-order{font-size:16px;margin-top:2px}
+.listen-sheet .ls-row{display:grid;grid-template-columns:7.2em 1fr;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.listen-sheet .ls-k b{display:block;font-size:20px}
+.listen-sheet .ls-k span{font-size:14px;color:var(--muted)}
+.listen-sheet .sec-track{gap:8px}
+.taptempo{margin-top:14px}
+.taptempo .btn-row{align-items:center;justify-content:flex-start}
+.tt-out{font-size:17px;color:var(--muted)}
+.tt-out b{color:var(--amber);font-family:var(--display);font-size:22px}
+.listen-sheet .ls-note{font-size:15px;line-height:1.6;margin-top:10px}
 .lyric-col .lm-line{font-size:30px;line-height:2.15}
 @media (max-width:900px),(orientation:portrait) and (max-width:1100px){
   .song-split,.song-split.rev{grid-template-columns:1fr}
@@ -542,6 +557,8 @@ th[scope=row]{font-size:21px;color:inherit;letter-spacing:0;font-weight:700}
   .lyric-col .lm-line{font-size:22px}
   .score.compact.row4 .score-grid{grid-template-columns:1fr 1fr}
   .sec-track .pill{min-height:44px;font-size:15px}
+  .listen-sheet .ls-row{grid-template-columns:1fr;gap:6px}
+  .listen-guide p{font-size:16px}
 }
 
 /* 歌詞換氣：整首歌、貼上歌詞 */

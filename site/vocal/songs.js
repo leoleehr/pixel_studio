@@ -2,6 +2,8 @@
 window.PIXEL_SONGS = {
   '刻在我心底的名字': { artist: '盧廣仲', id: 'm78lJuzftcc', kind: '官方 Mv' },
   '太陽': { artist: '邱振哲', id: '7vlVjfMl_Nk', kind: '官方 Mv' },
+  '甲乙丙丁': { artist: '李佳薇', id: 'YacpC7sUXMM', kind: '官方歌詞影片' },
+  '太陽與地球': { artist: '盧廣仲', id: 'i5YRIjxyJP8', kind: '官方 Mv' },
   '浪流連': { artist: '茄子蛋', id: '3Y0Ut5ozaKs', kind: '官方 Mv' },
   '浪子回頭': { artist: '茄子蛋', id: 'x3bDhtuC5yk', kind: '官方 Mv' },
   '不是因為天氣晴朗才愛你': { artist: '理想混蛋', id: '9_068Ekk_fs', kind: '官方歌詞影片' },
@@ -21,7 +23,7 @@ window.PIXEL_SONGS = {
   '我要我們在一起': { artist: '范曉萱', id: 'e5aSWm6dXHQ', kind: '官方 Mv' }
 };
 window.PIXEL_LESSON_SONGS = {
-  1: ['太陽', '刻在我心底的名字'],
+  1: ['太陽', '刻在我心底的名字', '甲乙丙丁', '太陽與地球'],
   2: ['刻在我心底的名字', '太陽'],
   3: ['浪流連', '浪子回頭'],
   4: ['不是因為天氣晴朗才愛你'],
