@@ -75,7 +75,8 @@
     }
     box.innerHTML = '<div class="pb-gbtn"></div>';
     loadGis().then(function () {
-      google.accounts.id.renderButton(box.querySelector('.pb-gbtn'), { type: 'standard', theme: 'filled_black', size: 'large', shape: 'pill', text: 'signin_with', locale: 'zh-TW', width: 260 });
+      var el = box.querySelector('.pb-gbtn');
+      google.accounts.id.renderButton(el, { type: 'standard', theme: 'filled_black', size: 'large', shape: 'pill', text: 'signin_with', logo_alignment: 'left', locale: 'zh-TW', width: Math.min(400, Math.max(200, Math.round(el.getBoundingClientRect().width || 300))) });
     }).catch(function () { box.innerHTML = '<p class="pb-inapp">無法載入 Google 登入，請確認網路連線後重新開啟。</p>'; });
   }
   function login(p) {
@@ -274,7 +275,8 @@
   function style() {
     var s = document.createElement('style');
     s.textContent = '.pb-gwrap{margin-bottom:14px}.pb-gwrap>span{display:block;font-size:13px;color:#c9c5bd;margin-bottom:6px}' +
-      '.pb-google{min-height:44px}.pb-gbtn{min-height:44px}' +
+      // color-scheme:light 讓 Google 按鈕的 iframe 保持透明，深色頁面上才不會出現白底
+      '.pb-google{min-height:44px}.pb-gbtn{min-height:44px;color-scheme:light;background:transparent;margin-top:2px}.pb-gbtn iframe{color-scheme:light}' +
       '.pb-acct{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#0d0d10;border:1px solid rgba(108,187,75,.45);border-radius:12px;padding:10px 12px;font-size:14px}' +
       '.pb-acct span{color:#6cbb4b;font-size:12px}.pb-acct b{font-weight:600;word-break:break-all;flex:1;min-width:0}' +
       '.pb-switch{font:inherit;font-size:13px;color:#9d998f;background:none;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:4px 12px;cursor:pointer}' +
