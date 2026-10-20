@@ -131,8 +131,12 @@ function doPost(e) {
   lock.waitLock(25000);
   var results = [];
   try {
+    // 同一筆資料可能從多個分頁重複送出，以資料編號略過六小時內已寫入的項目
+    var seen = CacheService.getScriptCache();
     items.forEach(function (it) {
-      try { results.push({ id: it.id, ok: true, url: handle(it, email) || '' }); }
+      var key = it.id ? 'item:' + String(it.id).slice(0, 60) : '';
+      if (key && seen.get(key)) { results.push({ id: it.id, ok: true, dup: true, url: seen.get(key) === '1' ? '' : seen.get(key) }); return; }
+      try { var url = handle(it, email) || ''; results.push({ id: it.id, ok: true, url: url }); if (key) seen.put(key, url || '1', 21600); }
       catch (err) { results.push({ id: it.id, ok: false, error: String(err) }); }
     });
     SpreadsheetApp.flush();
