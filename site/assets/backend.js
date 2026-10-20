@@ -173,6 +173,18 @@
     return fetch(URL_, { method: 'POST', body: JSON.stringify({ action: 'lyrics', id: id, code: p.code, session: a.session || '' }) }).then(function (r) { return r.json(); })
       .then(function (j) { return j && j.ok && j.text ? j.text : null; }).catch(function () { return null; });
   }
+  // 讀回自己填過的問卷：回傳 { found, time, answers }；尚未登入回傳 { needLogin: true }，無法確認時回傳 null
+  function fetchSurvey(title) {
+    var p = profile(), a = account();
+    if (!URL_ || !GID) return Promise.resolve(null);
+    if (!complete(p)) return Promise.resolve({ needLogin: true });
+    return fetch(URL_, { method: 'POST', body: JSON.stringify({ action: 'mySurvey', course: COURSE || 'vocal', title: title, code: p.code, session: a.session }) }).then(function (r) { return r.json(); })
+      .then(function (j) {
+        if (j && j.ok) return j;
+        if (j && j.error === 'session') { del(K.account); refreshChips(); return { needLogin: true }; }
+        return null;
+      }).catch(function () { return null; });
+  }
   // 問卷頁會帶入姓名、學校科系與課程代碼；Google 帳戶資料另外保存，不會被覆蓋
   function saveProfile(p) { var o = get(K.profile, {}) || {}; o.name = p.name; o.dept = p.dept; o.code = p.code; o.device = device; set(K.profile, o); refreshChips(); }
   function ensureProfile(reason) { var p = profile(); return complete(p) ? Promise.resolve(p) : openProfile(reason || (GID && p && p.name ? '請以 Google 帳戶登入，資料才能送到老師的試算表。' : '')); }
@@ -296,5 +308,5 @@
     if (document.querySelector('.ui')) document.body.appendChild(chip('corner'));
     setTimeout(flush, 1500);
   }
-  window.PixelBackend = { configured: !!URL_, google: !!GID, fetchLyrics: fetchLyrics, profile: profile, account: account, saveProfile: saveProfile, checkCode: checkCode, ensureProfile: ensureProfile, openProfile: openProfile, send: send, log: log, upload: upload, flush: flush, toast: toast, chip: chip };
+  window.PixelBackend = { configured: !!URL_, google: !!GID, fetchLyrics: fetchLyrics, fetchSurvey: fetchSurvey, profile: profile, account: account, saveProfile: saveProfile, checkCode: checkCode, ensureProfile: ensureProfile, openProfile: openProfile, send: send, log: log, upload: upload, flush: flush, toast: toast, chip: chip };
 })();
