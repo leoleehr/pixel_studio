@@ -6,7 +6,8 @@ Pixel Studio 四個 Lab（Vocal、Guitar、Piano、Songwriting）網站上的問
 
 | 試算表分頁 | 內容 |
 | --- | --- |
-| 學員名單 | 姓名、學校科系／公司名稱、參與課程、首次登錄與最後活動時間、送出次數 |
+| 班級名單 | 可送出資料的 Gmail；學員第一次登入時自動加入，狀態為「待確認」，老師改成「核准」後資料才會寫入（也可用選單「核准所有待確認學員」） |
+| 學員名單 | Gmail、姓名、學校科系／公司名稱、參與課程、首次登錄與最後活動時間、送出次數；以 Gmail 辨認同一位學員 |
 | 「Vocal Lab｜第一堂課前問卷（入班問卷）」等 | 每份問卷一個分頁，分頁名稱以課程開頭；一列一位學員，一欄一題 |
 | 互動紀錄 | 選擇題、排序遊戲、音準挑戰、吐氣測量、作業勾選、歌詞換氣標記、舉手計票、分組計分、歌手與歌曲調查等，含課程與堂次 |
 | 出場券 | 3-2-1 出場券的三個回答 |
@@ -14,7 +15,13 @@ Pixel Studio 四個 Lab（Vocal、Guitar、Piano、Songwriting）網站上的問
 | 錄音 | 錄音名稱、長度與 Drive 檔案連結（檔案存在「Pixel Studio_學員錄音／課程／第 N 堂」資料夾） |
 | 歌詞 | 老師填寫的換氣練習歌詞：「代碼」欄填 `l2-name`（Vocal 第二堂《刻在我心底的名字》），「歌詞」欄貼上主歌與副歌。學員手機以課程代碼讀取，歌詞不會放進公開網站 |
 
-學員第一次送出資料時，需要填寫姓名、學校科系／公司名稱與「課程代碼」。課程代碼只存在 Apps Script 的設定裡，不在公開的網站原始碼中，用來擋掉非本班的送出。四個 Lab 共用同一組代碼。
+學員第一次送出資料時，需要以 Google 帳戶登入（一般 Gmail 或學校的 Google 帳號都可以），並填寫姓名、學校科系／公司名稱與「課程代碼」。資料要同時通過三道確認才會寫入：
+
+1. **Google 登入**：後台向 Google 確認登入憑證屬於這個網站、信箱已通過驗證，再發給學員一張 180 天有效的登入證明，學員不必每小時重新登入。
+2. **課程代碼**：只存在 Apps Script 的設定裡，不在公開的網站原始碼中。四個 Lab 共用同一組代碼。
+3. **班級名單**：Gmail 的狀態必須是「核准」。尚未核准時，資料會先存在學員的瀏覽器，核准之後自動補送，不會遺失。老師本人的 Gmail 免核准。
+
+LINE、Facebook、Instagram 內建的瀏覽器無法使用 Google 登入；網站會提示學員改用 Chrome 或 Safari，LINE 另有「用預設瀏覽器開啟」按鈕。
 
 ## 安裝步驟（約 10 分鐘，只需做一次）
 
@@ -34,11 +41,20 @@ Pixel Studio 四個 Lab（Vocal、Guitar、Piano、Songwriting）網站上的問
 
    ```js
    window.PIXEL_CONFIG = {
-     endpoint: 'https://script.google.com/macros/s/……/exec'
+     endpoint: 'https://script.google.com/macros/s/……/exec',
+     googleClientId: '……apps.googleusercontent.com'
    };
    ```
 
    推送並部署到 Cloudflare 後，網站就會開始將資料送進試算表。網址也可以直接交給 Claude 代為填入與部署。
+
+## Google 登入設定（只需做一次）
+
+1. 開啟 https://console.cloud.google.com/projectcreate ，建立專案「Pixel Studio」。
+2. 「API 和服務 → OAuth 同意畫面」：應用程式名稱 Pixel Studio、目標對象「外部」，建立後在「目標對象」按「發布應用程式」。只使用信箱與姓名，不需要送審。
+3. 「用戶端 → 建立用戶端」：類型「網頁應用程式」，已授權的 JavaScript 來源填網站網址（例如 `https://pixel-studio.musicallanding.workers.dev`，本機測試另加 `http://localhost:8780`）。
+4. 將「用戶端 ID」同時填進 `Code.gs` 的 `GOOGLE_CLIENT_ID` 與網站 `site/assets/config.js` 的 `googleClientId`。用戶端 ID 是公開資訊；用戶端密碼用不到。
+5. 在 Apps Script 執行一次 `setup`，授權新增的「連線到外部服務」權限，再部署新版本。
 
 ## 日後修改程式
 
@@ -49,6 +65,7 @@ Pixel Studio 四個 Lab（Vocal、Guitar、Piano、Songwriting）網站上的問
 ## 隱私與注意事項
 
 - 試算表與錄音資料夾只有老師本人能開啟；錄音檔不會公開分享。
-- 學員在網站上的資料（姓名、學校科系／公司名稱、課程代碼、尚未送出的紀錄）存在各自的瀏覽器。共用電腦時，可在「學員資料」視窗按「換人使用」清除。
+- 學員在網站上的資料（Gmail 登入證明、姓名、學校科系／公司名稱、課程代碼、尚未送出的紀錄）存在各自的瀏覽器。共用電腦時，可在「學員資料」視窗按「換人使用」清除。
+- 停用某位學員：將「班級名單」的狀態改為「停用」，一分鐘內生效。
 - 網路中斷或後台尚未設定時，資料會先存在學員的瀏覽器，連線後自動補送。
 - Apps Script 每天有執行次數與總時間的免費額度，一般班級的使用量遠低於上限。
