@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>課程問卷｜流行歌唱班</title>
-<meta name="description" content="亞東吉他社流行歌唱班的課前問卷與課程回饋問卷，填寫後直接送給老師。">
+<title>課程問卷｜Vocal Lab</title>
+<meta name="description" content="亞東吉他社 Vocal Lab的課前問卷與課程回饋問卷，填寫後直接送給老師。">
 <link rel="icon" href="../assets/favicon.ico?v=20261014v" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="../assets/favicon.png?v=20261014v">
 <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png?v=20261014v">
@@ -88,8 +88,8 @@
 <link rel="stylesheet" href="../assets/brand/brand-tokens.css">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pixel Studio 畫素音樂工作坊">
-<meta property="og:title" content="課程問卷｜流行歌唱班">
-<meta property="og:description" content="亞東吉他社流行歌唱班的課前問卷與課程回饋問卷，填寫後直接送給老師。">
+<meta property="og:title" content="課程問卷｜Vocal Lab">
+<meta property="og:description" content="亞東吉他社 Vocal Lab的課前問卷與課程回饋問卷，填寫後直接送給老師。">
 <meta property="og:image" content="https://pixel-studio.musicallanding.workers.dev/vocal/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -113,7 +113,7 @@
 
 <main class="wrap sv" id="app"></main>
 
-<footer>© 畫素音樂工作坊 Pixel Studio・亞東科技大學吉他社 流行歌唱班</footer>
+<footer>© 畫素音樂工作坊 Pixel Studio・亞東科技大學吉他社 Vocal Lab</footer>
 
 <nav class="tabbar" aria-label="主選單">
   <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>首頁</a>
@@ -146,7 +146,7 @@
     return;
   }
 
-  document.title = sv.title + '｜流行歌唱班';
+  document.title = sv.title + '｜Vocal Lab';
   var p = PixelBackend.profile() || {};
   var html = '<div class="sv-head" style="--c:' + (sv.id === 'feedback' ? '#f4a62a' : COLOR[sv.lesson]) + '"><div class="lh-no">' + (sv.id === 'feedback' ? 'FEEDBACK' : 'Lesson ' + String(sv.lesson).padStart(2, '0') + '・PRE-CLASS') + '</div><h1>' + esc(sv.title) + '</h1><p>' + esc(sv.intro) + '</p></div>' + notice +
     (doneAt(sv.id) ? '<div class="sv-notice" style="color:var(--green);border-color:rgba(108,187,75,.4);background:rgba(108,187,75,.06)">你已在 ' + esc(doneAt(sv.id)) + ' 填寫過這份問卷，再次送出會新增一筆回覆。</div>' : '') +
