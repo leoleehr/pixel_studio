@@ -1,27 +1,41 @@
 /**
- * 流行歌唱班｜課程資料後台（Google Apps Script）
+ * Pixel Studio｜課程資料後台（Google Apps Script）
  *
- * 綁定在「流行歌唱班｜課程資料後台」試算表上，接收課程網站送來的資料：
+ * 綁定在課程資料試算表上，接收四個 Lab（Vocal、Guitar、Piano、Songwriting）網站送來的資料：
  *   學員名單、各份問卷、互動紀錄、出場券、練習紀錄、錄音（存到 Google Drive）。
+ * 每筆資料都標上課程；問卷依「課程｜問卷名稱」分頁，錄音依「課程／第 N 堂」分資料夾。
  *
  * 安裝步驟請見 backend/README.md。
  */
 
 var TABS = {
-  students: { name: '學員名單', head: ['首次登錄', '最後活動', '姓名', '學校科系／公司名稱', '裝置代碼', '送出次數'] },
-  interactions: { name: '互動紀錄', head: ['時間', '姓名', '學校科系／公司名稱', '堂次', '投影片', '互動類型', '項目', '結果', '數值', '詳細資料'] },
-  exit: { name: '出場券', head: ['時間', '姓名', '學校科系／公司名稱', '堂次', '今天學到的', '想多練習的', '想問老師的'] },
-  log: { name: '練習紀錄', head: ['時間', '姓名', '學校科系／公司名稱', '堂次', '天數', '欄位一', '欄位二', '欄位三'] },
-  rec: { name: '錄音', head: ['時間', '姓名', '學校科系／公司名稱', '堂次', '名稱', '長度（秒）', '檔案連結'] },
+  students: { name: '學員名單', head: ['首次登錄', '最後活動', '姓名', '學校科系／公司名稱', '參與課程', '裝置代碼', '送出次數'] },
+  interactions: { name: '互動紀錄', head: ['時間', '課程', '姓名', '學校科系／公司名稱', '堂次', '投影片', '互動類型', '項目', '結果', '數值', '詳細資料'] },
+  exit: { name: '出場券', head: ['時間', '課程', '姓名', '學校科系／公司名稱', '堂次', '今天學到的', '想多練習的', '想問老師的'] },
+  log: { name: '練習紀錄', head: ['時間', '課程', '姓名', '學校科系／公司名稱', '堂次', '天數', '欄位一', '欄位二', '欄位三'] },
+  rec: { name: '錄音', head: ['時間', '課程', '姓名', '學校科系／公司名稱', '堂次', '名稱', '長度（秒）', '檔案連結'] },
   lyrics: { name: '歌詞', head: ['代碼', '歌名', '歌詞（一行一句、空行分段；字後加 ∨ 大換氣、ˇ 小換氣為老師版）'] }
 };
+var COURSES = {
+  vocal: { label: 'Vocal Lab', unit: '堂' },
+  guitar: { label: 'Guitar Lab', unit: '章' },
+  piano: { label: 'Piano Lab', unit: '堂' },
+  songwriting: { label: 'Songwriting Lab', unit: '堂' }
+};
 var DEFAULT_CODE = 'PIXEL2026';
-var TYPE_LABEL = { quiz: '選擇題', order: '排序遊戲', poll: '舉手計票', score: '分組計分', pitch: '音準挑戰', rhythm: '節奏挑戰', breath: '吐氣測量', siren: '警笛滑音', resonance: '共鳴觀測', lyric: '歌詞換氣標記', note: '課堂筆記', dynamics: '情緒地圖', range: '音域測量', transpose: '自定調',  homework: '作業勾選' };
-var FOLDER_NAME = '流行歌唱班_學員錄音';
+var SERVICE = 'Pixel Studio 課程資料後台';
+var TYPE_LABEL = {
+  quiz: '選擇題', order: '排序遊戲', poll: '舉手計票', score: '分組計分', pitch: '音準挑戰', rhythm: '節奏挑戰', breath: '吐氣測量',
+  siren: '警笛滑音', resonance: '共鳴觀測', lyric: '歌詞換氣標記', note: '課堂筆記', dynamics: '情緒地圖', range: '音域測量', transpose: '自定調',
+  homework: '作業勾選', songpoll: '歌手與歌曲調查', notequiz: '音名測驗', cloze: '韻腳填空', rhyme: '押韻練習', rhetoric: '修辭獵人',
+  wordhunt: '關鍵字尋寶', dice: '歌詞骰子', lyricdice: '歌詞創作骰子', lyricform: '歌詞結構', notebook: '素材庫', songcard: '歌曲卡',
+  cheer: '鼓勵', form: '表單', interaction: '課堂互動'
+};
+var FOLDER_NAME = 'Pixel Studio_學員錄音';
 
 /* ---------- 選單 ---------- */
 function onOpen() {
-  SpreadsheetApp.getUi().createMenu('歌唱班後台')
+  SpreadsheetApp.getUi().createMenu('Pixel Studio 後台')
     .addItem('初始化工作表', 'setup')
     .addItem('設定課程代碼', 'setCode')
     .addItem('開啟錄音資料夾', 'openFolder')
@@ -73,7 +87,7 @@ function doGet(e) {
     return json({ ok: true, text: '' });
   }
   if (p.code !== undefined) return json({ ok: true, valid: p.code === classCode() });
-  return json({ ok: true, service: '流行歌唱班課程資料後台' });
+  return json({ ok: true, service: SERVICE });
 }
 
 function doPost(e) {
@@ -97,60 +111,70 @@ function doPost(e) {
 /* ---------- 依資料類型寫入 ---------- */
 function handle(it) {
   var p = it.profile || {}, d = it.data || {}, ts = it.ts ? new Date(it.ts) : new Date();
-  var name = clean(p.name), dept = clean(p.dept), lesson = it.lesson ? '第' + Number(it.lesson) + '堂' : '';
-  touchStudent(name, dept, p.device, ts);
+  var c = courseOf(it.course), lesson = lessonLabel(c, it.lesson);
+  var base = { '時間': ts, '課程': c.label, '姓名': clean(p.name), '學校科系／公司名稱': clean(p.dept), '堂次': lesson };
+  touchStudent(base['姓名'], base['學校科系／公司名稱'], c.label, p.device, ts);
   switch (it.type) {
     case 'profile':
       return '';
     case 'survey':
-      return writeSurvey(it, ts, name, dept);
+      return writeSurvey(it, c, base);
     case 'exit':
-      sheetOf(TABS.exit).appendRow([ts, name, dept, lesson].concat((d.answers || []).slice(0, 3).map(clean)));
+      var a = (d.answers || []).map(clean);
+      appendByHead(TABS.exit, merge(base, { '今天學到的': a[0], '想多練習的': a[1], '想問老師的': a[2] }));
       return '';
     case 'log7':
-      var sh = sheetOf(TABS.log);
-      (d.rows || []).forEach(function (r) { if (r.slice(1).some(function (v) { return String(v).trim(); })) sh.appendRow([ts, name, dept, lesson, '第' + (r[0]) + '天'].concat(r.slice(1).map(clean))); });
+      (d.rows || []).forEach(function (r) {
+        if (r.slice(1).some(function (v) { return String(v).trim(); })) appendByHead(TABS.log, merge(base, { '天數': '第' + r[0] + '天', '欄位一': clean(r[1]), '欄位二': clean(r[2]), '欄位三': clean(r[3]) }));
+      });
       return '';
     case 'recording':
       var blob = Utilities.newBlob(Utilities.base64Decode(d.base64), d.mime || 'audio/webm', safeName(d.filename || '錄音'));
-      var file = lessonFolder(it.lesson).createFile(blob);
-      file.setDescription(name + '（' + dept + '）' + lesson);
-      sheetOf(TABS.rec).appendRow([ts, name, dept, lesson, clean(d.label), d.seconds || '', file.getUrl()]);
+      var file = lessonFolder(c, it.lesson).createFile(blob);
+      file.setDescription(base['姓名'] + '（' + base['學校科系／公司名稱'] + '）' + c.label + ' ' + lesson);
+      appendByHead(TABS.rec, merge(base, { '名稱': clean(d.label), '長度（秒）': d.seconds || '', '檔案連結': file.getUrl() }));
       return file.getUrl();
     default:
-      sheetOf(TABS.interactions).appendRow([ts, name, dept, lesson, it.slide || '', TYPE_LABEL[it.type] || clean(it.type), clean(d.item), clean(d.result), d.value === undefined ? '' : d.value, JSON.stringify(d.detail || '')]);
+      appendByHead(TABS.interactions, merge(base, { '投影片': it.slide || '', '互動類型': TYPE_LABEL[it.type] || clean(it.type), '項目': clean(d.item), '結果': clean(d.result), '數值': d.value === undefined ? '' : d.value, '詳細資料': JSON.stringify(d.detail || '').slice(0, 45000) }));
       return '';
   }
 }
 
-function writeSurvey(it, ts, name, dept) {
+// 問卷：每份問卷一個分頁（課程名稱開頭，避免四個 Lab 的同名問卷混在一起），一欄一題
+function writeSurvey(it, c, base) {
   var d = it.data || {}, title = clean(d.title || '問卷'), qs = d.questions || [], ans = d.answers || [];
-  var sh = sheetOf({ name: title.slice(0, 90), head: ['時間', '姓名', '學校科系／公司名稱'] });
-  var head = sh.getRange(1, 1, 1, Math.max(3, sh.getLastColumn())).getValues()[0];
-  var row = [ts, name, dept];
-  qs.forEach(function (q, k) {
-    var col = head.indexOf(q);
-    if (col < 0) { col = head.length; head.push(q); sh.getRange(1, col + 1).setValue(q).setFontWeight('bold').setBackground('#f4efe3'); }
-    row[col] = clean(ans[k]);
-  });
-  for (var i = 0; i < row.length; i++) if (row[i] === undefined) row[i] = '';
-  sh.appendRow(row);
+  var row = { '時間': base['時間'], '姓名': base['姓名'], '學校科系／公司名稱': base['學校科系／公司名稱'] };
+  qs.forEach(function (q, k) { row[clean(q)] = clean(ans[k]); });
+  appendByHead({ name: (c.label + '｜' + title).slice(0, 90), head: ['時間', '姓名', '學校科系／公司名稱'] }, row);
   return '';
 }
 
 /* ---------- 工具 ---------- */
-function touchStudent(name, dept, device, ts) {
+// 依表頭名稱寫入；表頭缺少的欄位自動加在最後，舊版工作表也能繼續使用
+function appendByHead(def, obj) {
+  var sh = sheetOf(def), width = Math.max(1, sh.getLastColumn()), head = sh.getRange(1, 1, 1, width).getValues()[0];
+  Object.keys(obj).forEach(function (k) {
+    if (head.indexOf(k) < 0) { head.push(k); sh.getRange(1, head.length).setValue(k).setFontWeight('bold').setBackground('#f4efe3'); }
+  });
+  sh.appendRow(head.map(function (h) { var v = obj[h]; return v === undefined || v === null ? '' : v; }));
+}
+
+function touchStudent(name, dept, course, device, ts) {
   if (!name) return;
-  var sh = sheetOf(TABS.students), last = sh.getLastRow();
-  var vals = last > 1 ? sh.getRange(2, 1, last - 1, 6).getValues() : [];
+  var sh = sheetOf(TABS.students), head = sh.getRange(1, 1, 1, Math.max(1, sh.getLastColumn())).getValues()[0];
+  if (head.indexOf('參與課程') < 0) { head.push('參與課程'); sh.getRange(1, head.length).setValue('參與課程').setFontWeight('bold').setBackground('#f4efe3'); }
+  var col = function (h) { return head.indexOf(h); }, last = sh.getLastRow();
+  var vals = last > 1 ? sh.getRange(2, 1, last - 1, head.length).getValues() : [];
   for (var i = 0; i < vals.length; i++) {
-    if (vals[i][2] === name && vals[i][3] === dept) {
-      sh.getRange(i + 2, 2).setValue(ts);
-      sh.getRange(i + 2, 6).setValue((Number(vals[i][5]) || 0) + 1);
+    if (vals[i][col('姓名')] === name && vals[i][col('學校科系／公司名稱')] === dept) {
+      var r = i + 2, joined = String(vals[i][col('參與課程')] || '').split('、').filter(String);
+      sh.getRange(r, col('最後活動') + 1).setValue(ts);
+      sh.getRange(r, col('送出次數') + 1).setValue((Number(vals[i][col('送出次數')]) || 0) + 1);
+      if (joined.indexOf(course) < 0) { joined.push(course); sh.getRange(r, col('參與課程') + 1).setValue(joined.join('、')); }
       return;
     }
   }
-  sh.appendRow([ts, ts, name, dept, clean(device), 1]);
+  appendByHead(TABS.students, { '首次登錄': ts, '最後活動': ts, '姓名': name, '學校科系／公司名稱': dept, '參與課程': course, '裝置代碼': clean(device), '送出次數': 1 });
 }
 
 function sheetOf(def) {
@@ -172,11 +196,13 @@ function folder() {
   return f;
 }
 
-function lessonFolder(lesson) {
-  var root = folder(), name = lesson ? '第' + Number(lesson) + '堂' : '其他', it = root.getFoldersByName(name);
-  return it.hasNext() ? it.next() : root.createFolder(name);
-}
+function childFolder(parent, name) { var it = parent.getFoldersByName(name); return it.hasNext() ? it.next() : parent.createFolder(name); }
+function lessonFolder(c, lesson) { return childFolder(childFolder(folder(), c.label), lesson ? lessonLabel(c, lesson) : '其他'); }
 
+function courseOf(id) { var c = COURSES[id] || COURSES.vocal; return { id: COURSES[id] ? id : 'vocal', label: c.label, unit: c.unit }; }
+// 堂次可能是 3、ch03、p03、s03，一律取最後的數字
+function lessonLabel(c, lesson) { var m = /(\d+)$/.exec(String(lesson || '')); return m ? '第' + Number(m[1]) + c.unit : clean(lesson); }
+function merge(a, b) { var o = {}; Object.keys(a).forEach(function (k) { o[k] = a[k]; }); Object.keys(b).forEach(function (k) { o[k] = b[k]; }); return o; }
 function classCode() { return PropertiesService.getScriptProperties().getProperty('CLASS_CODE') || DEFAULT_CODE; }
 function clean(v) { return v === undefined || v === null ? '' : String(v).replace(/^[=+\-@]/, "'$&").slice(0, 5000); }
 function safeName(s) { return String(s).replace(/[\\/:*?"<>|]/g, '_').slice(0, 120); }
