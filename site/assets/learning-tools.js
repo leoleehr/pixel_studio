@@ -45,7 +45,7 @@
  const home=/\/(vocal|guitar|piano|songwriting)\/(?:index\.html)?$/.test(path);
  if(/\/handbook\.html$/.test(path)){const target=document.querySelector('#overview')?.closest('.hb-sec');if(target)mount('course-map',target);}
  if(home){const target=document.querySelector('#lessons .wrap')||document.querySelector('#lessons')||document.querySelector('main');if(target){mount('course-map',target);mount('practice-trends',target);}}
- if(document.querySelector('.log7,.checks[data-id]')&&!home){const group=document.querySelector('.log7')||document.querySelector('.checks[data-id]');const section=group.closest('.slide');if(section)addAt('practice-trends',section);}
+ if(document.querySelector('.log7,.checks[data-id]')&&!home){const log=document.querySelector('.log7'),group=log||document.querySelector('.checks[data-id]');const section=group.closest('.slide');if(section){if(log)addAt('practice-trends',section);else{/* 作業清單留在投影片上，趨勢圖收在清單下方 */const fold=K.el('details','lt-trend-fold'),host=document.createElement('div');fold.append(K.el('summary','','查看七天作業勾選趨勢'),host);group.after(fold);mount('practice-trends',host);}}}
  function fallback(root,message){root.textContent=message;const ref=root.closest('.slide')?.querySelector('.lt-reference')||root.parentElement.nextElementSibling;if(ref&&ref.matches('.lt-reference'))ref.open=true;}
  window.PixelLearning={kit:K,register(id,fn){(pending[id]||[]).forEach(root=>{try{fn(root,K);root.dataset.ready='1';}catch(e){fallback(root,'互動載入未完成，請使用原教材。');console.error(id,e);}});}};
  Object.keys(pending).forEach(id=>{const s=document.createElement('script');s.src=new URL(id+'.js'+version,base).href;s.onerror=()=>{(pending[id]||[]).forEach(r=>fallback(r,'互動暫時無法載入，原教材仍可查閱。'));};document.head.append(s);});
