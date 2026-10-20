@@ -125,6 +125,7 @@ function doPost(e) {
   var status = rosterStatus(email);
   if (status !== APPROVED) return json({ ok: false, error: 'roster', status: status || PENDING });
   if (body.action === 'lyrics') return json(lyrics(String(body.id || '')));
+  if (body.action === 'mySurvey') return json(mySurvey(email, body.course, body.title));
   var items = body.items || [];
   var lock = LockService.getScriptLock();
   lock.waitLock(25000);
@@ -172,23 +173,54 @@ function handle(it, email) {
 }
 
 // 問卷：每份問卷一個分頁（課程名稱開頭，避免四個 Lab 的同名問卷混在一起），一欄一題
+// 同一個 Gmail 每份問卷只保留一筆：再次送出時覆寫原本那一列，並累計修改次數
+function surveyDef(c, title) { return { name: (c.label + '｜' + clean(title || '問卷')).slice(0, 90), head: ['時間', '姓名', '學校科系／公司名稱', 'Gmail'] }; }
 function writeSurvey(it, c, base) {
-  var d = it.data || {}, title = clean(d.title || '問卷'), qs = d.questions || [], ans = d.answers || [];
+  var d = it.data || {}, qs = d.questions || [], ans = d.answers || [];
   var row = { '時間': base['時間'], '姓名': base['姓名'], '學校科系／公司名稱': base['學校科系／公司名稱'], 'Gmail': base['Gmail'] };
   qs.forEach(function (q, k) { row[clean(q)] = clean(ans[k]); });
-  appendByHead({ name: (c.label + '｜' + title).slice(0, 90), head: ['時間', '姓名', '學校科系／公司名稱', 'Gmail'] }, row);
+  var sh = sheetOf(surveyDef(c, d.title)), r = rowOfEmail(sh, base['Gmail']);
+  if (!r) { appendByHead(surveyDef(c, d.title), row); return ''; }
+  var head = headOf(sh, Object.keys(row).concat('修改次數')), old = sh.getRange(r, 1, 1, head.length).getValues()[0];
+  row['修改次數'] = (Number(old[head.indexOf('修改次數')]) || 0) + 1;
+  sh.getRange(r, 1, 1, head.length).setValues([valuesOf(head, row)]);
   return '';
+}
+
+// 學員讀回自己填過的問卷，問卷頁用來提醒「已填過」並帶入原本的填答
+function mySurvey(email, course, title) {
+  var c = courseOf(course), sh = SpreadsheetApp.getActive().getSheetByName(surveyDef(c, title).name);
+  var r = sh ? rowOfEmail(sh, email) : 0;
+  if (!r) return { ok: true, found: false };
+  var w = sh.getLastColumn(), head = sh.getRange(1, 1, 1, w).getValues()[0], v = sh.getRange(r, 1, 1, w).getValues()[0], answers = {};
+  head.forEach(function (h, k) { if (h) answers[h] = v[k] === null || v[k] === undefined ? '' : String(v[k]); });
+  var t = v[head.indexOf('時間')];
+  return { ok: true, found: true, time: t instanceof Date ? Utilities.formatDate(t, Session.getScriptTimeZone(), 'M/d HH:mm') : String(t || ''), answers: answers };
+}
+
+function rowOfEmail(sh, email) {
+  var last = sh.getLastRow(); if (last < 2) return 0;
+  var col = sh.getRange(1, 1, 1, Math.max(1, sh.getLastColumn())).getValues()[0].indexOf('Gmail');
+  if (col < 0) return 0;
+  var v = sh.getRange(2, col + 1, last - 1, 1).getValues();
+  for (var i = v.length - 1; i >= 0; i--) if (String(v[i][0]).trim().toLowerCase() === email) return i + 2;
+  return 0;
 }
 
 /* ---------- 工具 ---------- */
 // 依表頭名稱寫入；表頭缺少的欄位自動加在最後，舊版工作表也能繼續使用
 function appendByHead(def, obj) {
-  var sh = sheetOf(def), width = Math.max(1, sh.getLastColumn()), head = sh.getRange(1, 1, 1, width).getValues()[0];
-  Object.keys(obj).forEach(function (k) {
+  var sh = sheetOf(def);
+  sh.appendRow(valuesOf(headOf(sh, Object.keys(obj)), obj));
+}
+function headOf(sh, keys) {
+  var head = sh.getRange(1, 1, 1, Math.max(1, sh.getLastColumn())).getValues()[0];
+  keys.forEach(function (k) {
     if (head.indexOf(k) < 0) { head.push(k); sh.getRange(1, head.length).setValue(k).setFontWeight('bold').setBackground('#f4efe3'); }
   });
-  sh.appendRow(head.map(function (h) { var v = obj[h]; return v === undefined || v === null ? '' : v; }));
+  return head;
 }
+function valuesOf(head, obj) { return head.map(function (h) { var v = obj[h]; return v === undefined || v === null ? '' : v; }); }
 
 // 學員名單：以 Gmail 辨認同一位學員，姓名與學校科系以最新填寫為準
 function touchStudent(base, course, device, ts) {

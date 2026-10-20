@@ -72,6 +72,9 @@
 .sv-item small{display:block;font-size:13px;color:var(--muted)}
 .sv-item .st{margin-left:auto;font-size:12px;border-radius:999px;padding:3px 10px;white-space:nowrap;border:1px solid var(--line-2);color:var(--muted)}
 .sv-item .st.done{border-color:rgba(108,187,75,.5);color:var(--green)}
+.sv-ask .sv-hint{margin:6px 0 0 32px}
+.sv-ask .cta{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 0 32px}
+@media (max-width:860px){.sv-ask .sv-hint,.sv-ask .cta{margin-left:0}.sv-ask .cta .btn{flex:1}}
 .sv-notice{font-size:13.5px;color:var(--amber);background:rgba(244,166,42,.08);border:1px solid rgba(244,166,42,.35);border-radius:12px;padding:10px 14px;margin-bottom:14px}
 @media (max-width:860px){
   .sv{padding-top:18px}
@@ -124,7 +127,7 @@
 </nav>
 
 <script src="../assets/config.js?v=20261020g"></script>
-<script src="../assets/backend.js?v=20261020h"></script>
+<script src="../assets/backend.js?v=20261020i"></script>
 <script src="surveys.js?v=20261014pol"></script>
 <script>
 (function () {
@@ -150,7 +153,6 @@
   document.title = sv.title + '｜Songwriting Lab';
   var p = PixelBackend.profile() || {};
   var html = '<div class="sv-head" style="--c:' + (sv.id === 'sw-feedback' ? '#e2407f' : COLOR[sv.lesson]) + '"><div class="lh-no">' + (sv.id === 'sw-feedback' ? 'FEEDBACK' : 'Session ' + String(sv.lesson).padStart(2, '0') + '・PRE-CLASS') + '</div><h1>' + esc(sv.title) + '</h1><p>' + esc(sv.intro) + '</p></div>' + notice +
-    (doneAt(sv.id) ? '<div class="sv-notice" style="color:var(--green);border-color:rgba(108,187,75,.4);background:rgba(108,187,75,.06)">你已在 ' + esc(doneAt(sv.id)) + ' 填寫過這份問卷，再次送出會新增一筆回覆。</div>' : '') +
     '<form novalidate><div class="sv-card who"><div class="sv-q"><span class="n">✦</span>填寫者資料</div><div class="sv-body" style="margin-left:0"><div class="grid">' +
     '<label class="f"><span>姓名</span><input type="text" name="_name" autocomplete="name" maxlength="30" value="' + esc(p.name) + '"></label>' +
     '<label class="f"><span>學校科系／公司名稱</span><input type="text" name="_dept" list="sv-depts" maxlength="40" placeholder="例如：資訊工程系、公司名稱" value="' + esc(p.dept) + '"></label>' +
@@ -176,11 +178,41 @@
       (q.hint ? '<p class="sv-hint">' + esc(q.hint) + '</p>' : '') + '<div class="sv-body">' + body + '</div><p class="sv-err">這一題還沒有填寫</p></div>';
   });
   html += '<div class="sv-submit"><button type="submit" class="btn primary">送出問卷</button><p>送出時會附上你的姓名與學校科系／公司名稱，資料只提供給老師。</p></div></form>';
-  app.innerHTML = html;
-
-  var f = app.querySelector('form');
-  f.addEventListener('change', function (e) { var c = e.target.closest('.sv-card'); if (c) c.classList.remove('bad'); });
-  f.onsubmit = function (e) {
+  var head = html.slice(0, html.indexOf('<form')), f, editing = null;
+  function label() { return editing ? '送出修改' : '送出問卷'; }
+  function showForm(prev) {
+    editing = prev || null;
+    app.innerHTML = html;
+    f = app.querySelector('form');
+    f.addEventListener('change', function (e) { var c = e.target.closest('.sv-card'); if (c) c.classList.remove('bad'); });
+    f.onsubmit = submit;
+    var pp = PixelBackend.profile() || {};
+    ['name', 'dept', 'code'].forEach(function (k) { if (!f['_' + k].value) f['_' + k].value = pp[k] || ''; });
+    if (!prev) return;
+    fill(prev.answers || {});
+    f.querySelector('[type=submit]').textContent = label();
+    app.querySelector('form').insertAdjacentHTML('beforebegin', '<div class="sv-notice">你正在修改 ' + esc(prev.time) + ' 送出的填答，修改之後送出，會更新老師試算表上的同一筆資料。</div>');
+  }
+  // 依題目名稱帶回原本的填答（題目名稱與送出時的欄位名稱一致）
+  function pick(name, v) {
+    var hit = [].filter.call(f.querySelectorAll('input[name="' + name + '"]'), function (i) { return i.value === String(v); })[0];
+    if (hit) hit.checked = true;
+    return !!hit;
+  }
+  function fill(ans) {
+    sv.questions.forEach(function (q, k) {
+      var name = 'q' + k;
+      if (q.type === 'matrix') { q.rows.forEach(function (r, i) { pick(name + '_' + i, ans[q.q.replace(/（.*?）/, '') + '：' + r]); }); return; }
+      var v = ans[q.q + (q.unit ? '（' + q.unit + '）' : '')];
+      if (v === undefined || v === '') return;
+      if (q.type === 'multi') {
+        var rest = String(v).split('、').filter(function (x) { return !pick(name, x); }), o = f.querySelector('input[name="' + name + '_other"]');
+        if (o && rest.length) o.value = rest.join('、').replace(/^其他：/, '');
+      } else if (q.type === 'single' || q.type === 'scale') pick(name, v);
+      else f.querySelector('[name="' + name + '"]').value = v;
+    });
+  }
+  function submit(e) {
     e.preventDefault();
     var bad = [], questions = [], answers = [];
     var who = { name: f._name.value.trim(), dept: f._dept.value.trim(), code: f._code.value.trim() };
@@ -207,18 +239,38 @@
     if (bad.length) { bad[0].scrollIntoView({ behavior: 'smooth', block: 'center' }); PixelBackend.toast('還有 ' + bad.length + ' 題沒有填寫', 'warn'); return; }
     var btn = f.querySelector('[type=submit]'); btn.disabled = true; btn.textContent = '送出中…';
     PixelBackend.checkCode(who.code).then(function (ok) {
-      if (ok === false) { btn.disabled = false; btn.textContent = '送出問卷'; app.querySelector('.sv-card.who').classList.add('bad'); app.querySelector('.sv-card.who .sv-err').textContent = '課程代碼不正確，請向老師確認'; app.querySelector('.sv-card.who').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+      if (ok === false) { btn.disabled = false; btn.textContent = label(); app.querySelector('.sv-card.who').classList.add('bad'); app.querySelector('.sv-card.who .sv-err').textContent = '課程代碼不正確，請向老師確認'; app.querySelector('.sv-card.who').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
       PixelBackend.saveProfile(who);
-      return PixelBackend.send('survey', { title: sv.title, questions: questions, answers: answers }, { lesson: sv.lesson, okMsg: '問卷已送出' }).then(function (r) {
-        if (r && r.cancelled) { btn.disabled = false; btn.textContent = '送出問卷'; PixelBackend.toast('請先以 Google 帳戶登入，問卷才能送出', 'warn'); return; }
+      return PixelBackend.send('survey', { title: sv.title, questions: questions, answers: answers }, { lesson: sv.lesson, okMsg: editing ? '問卷已更新' : '問卷已送出' }).then(function (r) {
+        if (r && r.cancelled) { btn.disabled = false; btn.textContent = label(); PixelBackend.toast('請先以 Google 帳戶登入，問卷才能送出', 'warn'); return; }
         var d = new Date(), stamp = (d.getMonth() + 1) + '/' + d.getDate() + ' ' + String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
         try { localStorage.setItem('pixel:songwriting:survey-' + sv.id, stamp); } catch (e) {}
         var sent = r && r.sent;
-        app.innerHTML = '<div class="sv-done"><div class="ok">✓</div><h2>' + (sent ? '問卷已送出' : r.waiting ? '問卷已暫存' : '問卷已儲存') + '</h2><p>' + (sent ? '謝謝 ' + esc(who.name) + '，老師會在課前閱讀大家的回覆。' : (r.waiting ? '你的 Gmail 正在等待老師核准加入班級名單，問卷已儲存在這台裝置，核准之後會自動送出。' : '目前無法連線到後台，問卷已儲存在這台裝置，恢復連線之後會自動補送。')) + '</p><div class="cta"><a class="btn primary" href="survey.html">回到問卷列表</a><a class="btn" href="index.html#lessons">前往課程</a></div></div>';
+        app.innerHTML = '<div class="sv-done"><div class="ok">✓</div><h2>' + (sent ? (editing ? '問卷已更新' : '問卷已送出') : r.waiting ? '問卷已暫存' : '問卷已儲存') + '</h2><p>' + (sent ? '謝謝 ' + esc(who.name) + '，老師會在課前閱讀大家的回覆。' : (r.waiting ? '你的 Gmail 正在等待老師核准加入班級名單，問卷已儲存在這台裝置，核准之後會自動送出。' : '目前無法連線到後台，問卷已儲存在這台裝置，恢復連線之後會自動補送。')) + '</p><div class="cta"><a class="btn primary" href="survey.html">回到問卷列表</a><a class="btn" href="index.html#lessons">前往課程</a></div></div>';
         scrollTo(0, 0);
       });
     });
-  };
+  }
+
+  // 開啟問卷時先確認這個 Gmail 是否填過：填過就詢問是否修改，確認之後才帶入原本的填答
+  function card(mark, title, text, buttons) {
+    app.innerHTML = head + '<div class="sv-card sv-ask"><div class="sv-q"><span class="n">' + mark + '</span>' + title + '</div><p class="sv-hint">' + text + '</p><div class="cta">' + buttons + '</div></div>';
+  }
+  function start() {
+    if (!PixelBackend.configured || !PixelBackend.google) return showForm();
+    app.innerHTML = head + '<div class="sv-notice">正在確認你是否填過這份問卷…</div>';
+    PixelBackend.fetchSurvey(sv.title).then(function (j) {
+      if (j && j.needLogin) {
+        card('✦', '請先登入', '填寫問卷之前，請先以 Google 帳戶登入。系統會確認你是否填過這份問卷，填過的話，可以直接修改原本的填答。', '<button type="button" class="btn primary">以 Google 帳戶登入</button><a class="btn" href="survey.html">回到問卷列表</a>');
+        app.querySelector('.sv-ask .btn.primary').onclick = function () { PixelBackend.ensureProfile().then(start, function () {}); };
+      } else if (j && j.found) {
+        var a = PixelBackend.account() || {};
+        card('✓', '你已經填過這份問卷', '你在 ' + esc(j.time) + ' 以 ' + esc(a.email) + ' 送出過這份問卷。是否要修改原本的填答？', '<button type="button" class="btn primary">修改填答</button><a class="btn" href="survey.html">回到問卷列表</a>');
+        app.querySelector('.sv-ask .btn.primary').onclick = function () { showForm(j); scrollTo(0, 0); };
+      } else showForm();
+    });
+  }
+  start();
 })();
 </script>
 </body>
