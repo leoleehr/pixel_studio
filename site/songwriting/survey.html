@@ -123,8 +123,8 @@
   <a href="survey.html" class="cur"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6a1 1 0 0 1 1 1v1H8V5a1 1 0 0 1 1-1z"/><path d="M8 5H6a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2"/><path d="M9 12l2 2 4-4"/></svg>問卷</a>
 </nav>
 
-<script src="../assets/config.js?v=20261020a"></script>
-<script src="../assets/backend.js?v=20261016c"></script>
+<script src="../assets/config.js?v=20261020g"></script>
+<script src="../assets/backend.js?v=20261020g"></script>
 <script src="surveys.js?v=20261014pol"></script>
 <script>
 (function () {
@@ -210,10 +210,11 @@
       if (ok === false) { btn.disabled = false; btn.textContent = '送出問卷'; app.querySelector('.sv-card.who').classList.add('bad'); app.querySelector('.sv-card.who .sv-err').textContent = '課程代碼不正確，請向老師確認'; app.querySelector('.sv-card.who').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
       PixelBackend.saveProfile(who);
       return PixelBackend.send('survey', { title: sv.title, questions: questions, answers: answers }, { lesson: sv.lesson, okMsg: '問卷已送出' }).then(function (r) {
+        if (r && r.cancelled) { btn.disabled = false; btn.textContent = '送出問卷'; PixelBackend.toast('請先以 Google 帳戶登入，問卷才能送出', 'warn'); return; }
         var d = new Date(), stamp = (d.getMonth() + 1) + '/' + d.getDate() + ' ' + String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
         try { localStorage.setItem('pixel:songwriting:survey-' + sv.id, stamp); } catch (e) {}
         var sent = r && r.sent;
-        app.innerHTML = '<div class="sv-done"><div class="ok">✓</div><h2>' + (sent ? '問卷已送出' : '問卷已儲存') + '</h2><p>' + (sent ? '謝謝 ' + esc(who.name) + '，老師會在課前閱讀大家的回覆。' : '目前無法連線到後台，問卷已儲存在這台裝置，恢復連線之後會自動補送。') + '</p><div class="cta"><a class="btn primary" href="survey.html">回到問卷列表</a><a class="btn" href="index.html#lessons">前往課程</a></div></div>';
+        app.innerHTML = '<div class="sv-done"><div class="ok">✓</div><h2>' + (sent ? '問卷已送出' : r.waiting ? '問卷已暫存' : '問卷已儲存') + '</h2><p>' + (sent ? '謝謝 ' + esc(who.name) + '，老師會在課前閱讀大家的回覆。' : (r.waiting ? '你的 Gmail 正在等待老師核准加入班級名單，問卷已儲存在這台裝置，核准之後會自動送出。' : '目前無法連線到後台，問卷已儲存在這台裝置，恢復連線之後會自動補送。')) + '</p><div class="cta"><a class="btn primary" href="survey.html">回到問卷列表</a><a class="btn" href="index.html#lessons">前往課程</a></div></div>';
         scrollTo(0, 0);
       });
     });
