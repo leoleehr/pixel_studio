@@ -4,7 +4,7 @@
  * 綁定在課程資料試算表上，接收四個 Lab（Vocal、Guitar、Piano、Songwriting）網站送來的資料：
  *   學員名單、各份問卷、互動紀錄、出場券、練習紀錄、錄音（存到 Google Drive）。
  * 每筆資料都標上課程；問卷依「課程｜問卷名稱」分頁，錄音依「課程／第 N 堂」分資料夾。
- * 學員以 Google 帳戶登入，並且需要課程代碼；Gmail 列在「班級名單」且狀態為「核准」才會寫入資料。
+ * 學員以 Google 帳戶登入，並且需要課程代碼；第一次登入自動加入「班級名單」並核准，老師改為「停用」或「待確認」即停止寫入。
  *
  * 安裝步驟請見 backend/README.md。
  */
@@ -76,7 +76,7 @@ function setup() {
   UrlFetchApp.fetch('https://oauth2.googleapis.com/tokeninfo', { muteHttpExceptions: true }); // 授權時一併要求「連線到外部服務」
   try {
     SpreadsheetApp.getUi().alert('初始化完成', '工作表與錄音資料夾已建立。\n目前的課程代碼：' + props.getProperty('CLASS_CODE') +
-      '\n\n學員以 Google 帳戶登入後會出現在「班級名單」，狀態改為「核准」後資料才會寫入。' +
+      '\n\n學員以 Google 帳戶登入並輸入正確課程代碼後，會自動以「核准」加入「班級名單」；改為「停用」即停止寫入。' +
       '\n\n下一步：部署 → 新增部署作業 → 網頁應用程式（執行身分：我；存取權：所有人），並將網址提供給網站。', SpreadsheetApp.getUi().ButtonSet.OK);
   } catch (e) { Logger.log('目前的課程代碼：' + props.getProperty('CLASS_CODE')); }
 }
@@ -123,6 +123,7 @@ function doPost(e) {
   var email = sessionEmail(body.session);
   if (!email) return json({ ok: false, error: 'session' });
   var status = rosterStatus(email);
+  if (!status) { addStudent(email, '', ''); status = APPROVED; }
   if (status !== APPROVED) return json({ ok: false, error: 'roster', status: status || PENDING });
   if (body.action === 'lyrics') return json(lyrics(String(body.id || '')));
   if (body.action === 'mySurvey') return json(mySurvey(email, body.course, body.title));
@@ -259,7 +260,7 @@ function login(idToken, name, dept) {
   var t = JSON.parse(r.getContentText());
   if (t.aud !== GOOGLE_CLIENT_ID || String(t.email_verified) !== 'true' || !/accounts\.google\.com$/.test(t.iss || '')) return { ok: false, error: 'token' };
   var email = String(t.email).toLowerCase(), status = rosterStatus(email);
-  if (!status) { addPending(email, name || t.name || '', dept || ''); status = PENDING; }
+  if (!status) { addStudent(email, name || t.name || '', dept || ''); status = APPROVED; }
   return { ok: true, email: email, name: t.name || '', status: status, session: issueSession(email) };
 }
 
@@ -282,12 +283,13 @@ function rosterMap() {
   return map;
 }
 
-function addPending(email, name, dept) {
+// 課程代碼正確即自動核准；名單上已有的 Gmail 保留老師設定的狀態
+function addStudent(email, name, dept) {
   var lock = LockService.getScriptLock(); lock.waitLock(20000);
   try {
     CacheService.getScriptCache().remove('roster');
     if (rosterMap().hasOwnProperty(email)) return;
-    appendByHead(TABS.roster, { 'Gmail': email, '姓名': clean(name), '學校科系／公司名稱': clean(dept), '狀態': PENDING, '申請時間': new Date(), '備註': '學員登入時自動加入' });
+    appendByHead(TABS.roster, { 'Gmail': email, '姓名': clean(name), '學校科系／公司名稱': clean(dept), '狀態': APPROVED, '申請時間': new Date(), '備註': '學員登入時自動核准' });
     CacheService.getScriptCache().remove('roster');
   } finally { lock.releaseLock(); }
 }
