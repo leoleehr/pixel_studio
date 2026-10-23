@@ -60,7 +60,7 @@ window.PIXEL_SURVEYS = [
     { q: '六堂課中收穫最多的一項', type: 'single', options: ['呼吸', '共鳴', '發聲', '表情應用', '曲式'] },
     { q: '目前仍然最困擾的問題', type: 'text' },
     { q: '結業演唱的歌曲與預計使用的調', type: 'short' },
-    { q: '伴奏的需求', type: 'single', options: ['需要老師或社員伴奏', '自彈自唱', '使用伴奏音檔'] }
+    { q: '伴奏的需求', type: 'single', options: ['需要老師或同學伴奏', '自彈自唱', '使用伴奏音檔'] }
   ] },
   { id: 'feedback', lesson: 6, title: '課程回饋問卷', intro: '結業當天填寫，你的回饋會用來改進下一期的課程。', questions: [
     { q: '各構面滿意度（1 到 5 分）', type: 'matrix', hint: '1 分為非常不滿意，5 分為非常滿意', rows: ['教學方式', '教學內容', '講義內容', '講師專業', '講師態度'] },
