@@ -272,7 +272,7 @@
 
 <div class="teaching-book" data-demo-group="g04"><h3>面板內側力木｜圖解示範</h3><div class="teaching-photo-grid">
 <figure><img src="../assets/teaching/bracing-x.branded.svg?v=20261028identity" alt="鋼弦吉他的 X 型力木" loading="eager"><figcaption>鋼弦吉他的 X 型力木</figcaption></figure>
-<figure><img src="../assets/teaching/bracing-fan.branded.svg?v=20261028identity" alt="古典吉他的扇形力木" loading="eager"><figcaption>古典吉他的扇形力木</figcaption></figure>
+<figure><img src="../assets/teaching/bracing-fan.branded.svg?v=20261028fanlogo" alt="古典吉他的扇形力木" loading="eager"><figcaption>古典吉他的扇形力木</figcaption></figure>
 </div>
 </div>
 
