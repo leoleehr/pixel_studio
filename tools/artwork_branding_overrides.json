@@ -27,7 +27,7 @@
   "bracing-fan": {
     "corner": "top-right",
     "logo": "black",
-    "x_fraction": 0.59,
+    "x_fraction": 0.55,
     "y_fraction": 0.08,
     "width_fraction": 0.18,
     "opacity": 0.55

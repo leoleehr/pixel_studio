@@ -421,7 +421,7 @@
       '<text x="300" y="388" class="en mid" style="font-size:11px">響孔邊緣放大切面示意</text></svg>';
   }
   function bracingSVG() {
-    return '<div class="demo-inline-duo"><figure><img src="' + GUITAR_TEACHING + 'bracing-x.branded.svg?v=20261028identity" alt="面板內側 X 型力木"><figcaption>X 型力木｜鋼弦民謠吉他</figcaption></figure><figure><img src="' + GUITAR_TEACHING + 'bracing-fan.branded.svg?v=20261028identity" alt="面板內側扇形力木"><figcaption>扇形力木｜古典吉他</figcaption></figure></div>';
+    return '<div class="demo-inline-duo"><figure><img src="' + GUITAR_TEACHING + 'bracing-x.branded.svg?v=20261028identity" alt="面板內側 X 型力木"><figcaption>X 型力木｜鋼弦民謠吉他</figcaption></figure><figure><img src="' + GUITAR_TEACHING + 'bracing-fan.branded.svg?v=20261028fanlogo" alt="面板內側扇形力木"><figcaption>扇形力木｜古典吉他</figcaption></figure></div>';
   }
   function trussSVG() {
     return '<figure class="demo-inline"><img loading="lazy" decoding="async" src="' + GUITAR_TEACHING + 'truss-cutaway.branded.svg?v=20261028identity" alt="琴頸剖面中的鋼筋與指板"><figcaption>琴頸剖面｜鋼筋位於木製琴頸內</figcaption></figure>';
