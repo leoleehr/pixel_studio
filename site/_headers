@@ -1,3 +1,17 @@
+# 全站安全標頭：禁止 MIME 猜測、只送出來源網域、拒絕被其他網站嵌入；麥克風只留給本站的錄音與調音器
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000
+  X-Frame-Options: SAMEORIGIN
+  Content-Security-Policy: frame-ancestors 'self'
+  Permissions-Policy: microphone=(self), camera=(), geolocation=(), payment=(), usb=()
+
 # 靜態資產短效快取：10 分鐘內直接用快取，之後一天內先顯示舊版並在背景更新
 /assets/*
   Cache-Control: public, max-age=600, stale-while-revalidate=86400
+
+# 自架字型內容不會改變，長期快取
+/assets/fonts/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable

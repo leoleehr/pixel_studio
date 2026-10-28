@@ -1017,7 +1017,8 @@ table.mini-scale th{width:5.5em;text-align:left}
 .pb-save{flex:1;max-width:200px;margin-left:auto;background:var(--accent,#f4a62a);border:0;color:#102126}
 .pb-save:disabled{opacity:.6}
 .pb-clear{background:none;border:1px solid rgba(255,255,255,.14);color:#9d998f;padding:0 14px}
-.pb-note{font-size:12px;color:#6d6a64;margin-top:12px;line-height:1.6}
+.pb-note{font-size:12px;color:#a5a19a;margin-top:12px;line-height:1.6}
+.pb-note a{color:inherit;text-decoration:underline;margin-left:4px}
 .pb-open,.pb-open body{overflow:hidden}
 
 .pb-toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));z-index:130;transform:translate(-50%,20px);opacity:0;pointer-events:none;max-width:calc(100% - 32px);

@@ -79,7 +79,7 @@
     if (pyP) return pyP;
     pyP = new Promise(function (res, rej) {
       if (window.pinyinPro) return res(window.pinyinPro);
-      var s = document.createElement('script'); s.src = 'https://cdn.jsdelivr.net/npm/pinyin-pro@3.26.0/dist/index.js';
+      var s = document.createElement('script'); s.src = 'https://cdn.jsdelivr.net/npm/pinyin-pro@3.26.0/dist/index.js'; s.integrity = 'sha384-Mh/hPt6f6/FyxC9q47MC2CWfdGJGX0kxu06eJ5ApIsK7IccBAQZXUQCnOdqeAmY3'; s.crossOrigin = 'anonymous';
       s.onload = function () { window.pinyinPro ? res(window.pinyinPro) : rej(); }; s.onerror = function () { pyP = null; rej(); }; document.head.appendChild(s);
     });
     return pyP;
