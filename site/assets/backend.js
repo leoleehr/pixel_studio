@@ -1,12 +1,14 @@
 /* ===== Pixel Studio 資料回收：學員資料、送出佇列、Google 試算表後台 =====
  * 需要先載入 config.js。所有資料以 JSON 送到 Google Apps Script（見 backend/README.md）。
- * 設定 googleClientId 後，學員必須以 Google 帳戶登入，並由老師在「班級名單」核准後才會寫入資料。
+ * 設定 googleClientId 後，學員必須以 Google 帳戶登入並輸入課程代碼；代碼正確即自動加入「班級名單」，老師設為停用或待確認時暫停寫入。
  */
 (function () {
   'use strict';
   var CFG = window.PIXEL_CONFIG || {}, URL_ = (CFG.endpoint || '').trim(), GID = (CFG.googleClientId || '').trim();
   // 課程識別：body[data-course]（如 guitar）與 [data-lesson]；Vocal Lab 舊頁面沒有標記時沿用原本的鍵與 lesson-N 路徑
   var COURSE = document.body.getAttribute('data-course') || '';
+  // 隱私權政策與本檔同在網站根目錄之下（assets/backend.js → privacy.html），任何深度的頁面都能連到
+  var PRIVACY = (function () { try { return new URL('../privacy.html', document.currentScript.src).href; } catch (e) { return '/privacy.html'; } })();
   var LESSON = document.body.getAttribute('data-lesson') || (location.pathname.match(/lesson-(\d+)/) || [])[1];
   if (LESSON && /^\d+$/.test(LESSON)) LESSON = String(parseInt(LESSON, 10));
   var NS = 'pixel:' + (COURSE ? COURSE + ':' : '');
@@ -25,7 +27,8 @@
     if (!toastEl) { toastEl = document.createElement('div'); toastEl.className = 'pb-toast'; toastEl.setAttribute('role', 'status'); document.body.appendChild(toastEl); }
     toastEl.className = 'pb-toast on ' + (kind || '');
     toastEl.textContent = msg;
-    clearTimeout(toastT); toastT = setTimeout(function () { toastEl.classList.remove('on'); }, 3600);
+    // 成功訊息短暫顯示；提醒與錯誤留久一點，學員才不會錯過資料沒送出的狀態
+    clearTimeout(toastT); toastT = setTimeout(function () { toastEl.classList.remove('on'); }, kind === 'ok' ? 3600 : 8000);
   }
 
   /* ---------- Google 帳戶 ---------- */
@@ -90,7 +93,8 @@
     return p;
   }
   function complete(p) { return !!(p && p.name && p.dept && p.code && (!GID || (account() && account().session))); }
-  var modal = null, pending = [];
+  var modal = null, pending = [], opener = null;
+  var FOCUSABLE = 'button:not([disabled]), a[href], input:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])';
   function openProfile(reason) {
     return new Promise(function (resolve, reject) {
       pending.push({ resolve: resolve, reject: reject });
@@ -103,32 +107,48 @@
       modal.querySelector('.pb-err').textContent = '';
       modal.querySelector('.pb-clear').style.display = p.name || account() ? '' : 'none';
       if (GID) paintGoogle();
+      if (!modal.classList.contains('on')) opener = document.activeElement;
       modal.classList.add('on'); document.documentElement.classList.add('pb-open');
-      setTimeout(function () { modal.querySelector('[name=name]').focus(); }, 60);
+      // 背景暫停接受焦點；尚未登入 Google 時先停在登入區塊，已登入才進姓名欄
+      Array.prototype.forEach.call(document.body.children, function (el) { if (el !== modal && !el.hasAttribute('inert')) { el.setAttribute('inert', ''); el.dataset.pbInert = '1'; } });
+      setTimeout(function () { (GID && !account() && !INAPP ? modal.querySelector('.pb-google') : modal.querySelector('[name=name]')).focus(); }, 60);
     });
   }
   function closeProfile(ok) {
     modal.classList.remove('on'); document.documentElement.classList.remove('pb-open');
+    Array.prototype.forEach.call(document.querySelectorAll('[data-pb-inert]'), function (el) { el.removeAttribute('inert'); delete el.dataset.pbInert; });
+    if (opener && document.contains(opener)) opener.focus();
+    opener = null;
     var list = pending; pending = [];
     list.forEach(function (p) { ok ? p.resolve(profile()) : p.reject(new Error('cancel')); });
   }
   function build() {
-    modal = document.createElement('div'); modal.className = 'pb-modal'; modal.setAttribute('role', 'dialog'); modal.setAttribute('aria-label', '學員資料');
+    modal = document.createElement('div'); modal.className = 'pb-modal'; modal.setAttribute('role', 'dialog'); modal.setAttribute('aria-modal', 'true'); modal.setAttribute('aria-label', '學員資料');
     modal.innerHTML = '<form class="pb-box" novalidate>' +
       '<div class="pb-head"><b>學員資料</b><button type="button" class="pb-x" aria-label="關閉">✕</button></div>' +
       '<p class="pb-reason"></p>' +
-      (GID ? '<div class="pb-gwrap"><span>Google 帳戶</span><div class="pb-google"></div></div>' : '') +
+      (GID ? '<div class="pb-gwrap"><span>Google 帳戶</span><div class="pb-google" tabindex="-1" role="group" aria-label="Google 帳戶登入"></div></div>' : '') +
       '<label><span>姓名</span><input name="name" autocomplete="name" maxlength="30" required></label>' +
       '<label><span>學校科系／公司名稱</span><input name="dept" list="pb-depts" maxlength="40" placeholder="例如：資訊工程系、公司名稱" required></label>' +
       '<datalist id="pb-depts"><option value="資訊工程系"><option value="電機工程系"><option value="電子工程系"><option value="機械工程系"><option value="通訊工程系"><option value="材料與纖維系"><option value="工業管理系"><option value="資訊管理系"><option value="行銷與流通管理系"><option value="醫務管理系"><option value="護理系"><option value="應用外語系"></datalist>' +
       '<label><span>課程代碼</span><input name="code" autocomplete="off" maxlength="30" placeholder="老師在課堂上公布" required></label>' +
       '<p class="pb-err" aria-live="polite"></p>' +
       '<div class="pb-actions"><button type="button" class="pb-clear">換人使用</button><button type="submit" class="pb-save">儲存</button></div>' +
-      '<p class="pb-note">資料只會送到老師的課程試算表，用於課程回饋與學習紀錄。</p></form>';
+      '<p class="pb-note">資料與錄音只會送到老師的 Google 試算表與雲端硬碟，用於課程回饋與學習紀錄。<a href="' + PRIVACY + '" target="_blank" rel="noopener">隱私權政策</a></p></form>';
     document.body.appendChild(modal);
     var f = modal.querySelector('form'), err = modal.querySelector('.pb-err');
     modal.querySelector('.pb-x').onclick = function () { closeProfile(false); };
     modal.addEventListener('click', function (e) { if (e.target === modal) closeProfile(false); });
+    // Escape 關閉；Tab／Shift+Tab 在視窗內循環
+    modal.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); closeProfile(false); return; }
+      if (e.key !== 'Tab') return;
+      var list = Array.prototype.filter.call(modal.querySelectorAll(FOCUSABLE), function (el) { return el.offsetParent !== null; });
+      if (!list.length) return;
+      var first = list[0], last = list[list.length - 1], at = document.activeElement;
+      if (e.shiftKey && (at === first || at === modal.querySelector('.pb-google'))) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && at === last) { e.preventDefault(); first.focus(); }
+    });
     modal.querySelector('.pb-clear').onclick = function () {
       del(K.profile); del(K.account); idToken = ''; f.reset(); refreshChips();
       try { google.accounts.id.disableAutoSelect(); } catch (e) {}
@@ -194,7 +214,7 @@
   var ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>';
   function chip(cls) {
     var b = document.createElement('button'); b.type = 'button'; b.className = 'pb-chip ' + (cls || '');
-    b.onclick = function () { openProfile(); };
+    b.onclick = function () { openProfile().catch(function () {}); };
     chips.push(b); paint(b); return b;
   }
   function paint(b) {
@@ -215,7 +235,7 @@
   }
   // 後台拒收時的處理：資料留在佇列，等條件符合後自動補送
   function rejected(j) {
-    if (j.error === 'code') { toast('課程代碼不正確，請重新填寫學員資料', 'err'); openProfile('課程代碼不正確，請向老師確認後重新輸入。'); }
+    if (j.error === 'code') { toast('課程代碼不正確，請重新填寫學員資料', 'err'); openProfile('課程代碼不正確，請向老師確認後重新輸入。').catch(function () {}); }
     else if (j.error === 'session') { del(K.account); refreshChips(); toast('Google 登入已失效，請重新登入學員資料', 'warn'); }
     else if (j.error === 'roster') {
       var a = account(); if (a) { a.status = j.status; set(K.account, a); refreshChips(); }

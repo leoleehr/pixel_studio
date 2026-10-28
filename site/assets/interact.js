@@ -1587,17 +1587,25 @@
     prompts.forEach(function (pr, k) {
       var f = el('label', 'exit-field', '<span>' + esc(pr) + '</span><textarea rows="2"></textarea>');
       var ta = f.querySelector('textarea'); ta.value = st[k] || '';
-      ta.oninput = function () { st[k] = ta.value; LS.set(key, st); };
+      ta.oninput = function () { st[k] = ta.value; LS.set(key, st); mark(); };
       x.appendChild(f);
     });
     var foot = el('div', 'btn-row'), cp = btn('複製文字'), msg = el('span', 'muted'), sd = btn('送出給老師', 'primary');
     foot.appendChild(sd);
+    // 同樣的內容只送一次：送出中停用按鈕，送出（或已排入補送）後記下內容，改過文字才能再送
+    function answers() { return prompts.map(function (p, k) { return st[k] || ''; }); }
+    function mark() { var done = LS.get(key + '-sent', '') === JSON.stringify(answers()); sd.textContent = done ? '已送出' : '送出給老師'; sd.setAttribute('aria-pressed', String(done)); }
     sd.onclick = function () {
       if (!prompts.some(function (p, k) { return st[k] && st[k].trim(); })) { say('請先填寫' + label, 'warn'); return; }
-      if (!window.PixelBackend) return;
-      if (xk) window.PixelBackend.send('note', { item: label, result: prompts.map(function (p, k) { return p + '：' + (st[k] || ''); }).join('／'), detail: { prompts: prompts, answers: prompts.map(function (p, k) { return st[k] || ''; }) } }, { slide: slideNo(x), okMsg: label + '已送出' });
-      else window.PixelBackend.send('exit', { answers: prompts.map(function (p, k) { return st[k] || ''; }) }, { slide: slideNo(x), okMsg: '出場券已送出' });
+      if (!window.PixelBackend || sd.disabled) return;
+      var sig = JSON.stringify(answers());
+      if (LS.get(key + '-sent', '') === sig) { say('這份' + label + '已經送出，修改內容後才會再送一次', 'ok'); return; }
+      sd.disabled = true; sd.textContent = '送出中…';
+      var job = xk ? window.PixelBackend.send('note', { item: label, result: prompts.map(function (p, k) { return p + '：' + (st[k] || ''); }).join('／'), detail: { prompts: prompts, answers: answers() } }, { slide: slideNo(x), okMsg: label + '已送出' })
+        : window.PixelBackend.send('exit', { answers: answers() }, { slide: slideNo(x), okMsg: '出場券已送出' });
+      Promise.resolve(job).then(function (r) { if (r && !r.cancelled) LS.set(key + '-sent', sig); }, function () {}).then(function () { sd.disabled = false; mark(); });
     };
+    mark();
     cp.onclick = function () {
       var title = document.body.getAttribute('data-title') || document.title;
       var text = title + ' ' + label + '\n' + prompts.map(function (p, k) { return '■ ' + p + '\n' + (st[k] || ''); }).join('\n');
