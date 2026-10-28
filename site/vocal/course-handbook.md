@@ -366,7 +366,7 @@ Oct 5, 2026 · @Leo Lee
 <figure><img src="../assets/teaching/warmup-shoulders-white.branded.svg?v=20261028identity" alt="小幅度肩關節轉動，雙臂自然" loading="eager"><figcaption>小幅度肩關節轉動，雙臂自然</figcaption></figure>
 <figure><img src="../assets/teaching/warmup-forward-white.branded.svg?v=20261028identity" alt="以髖部帶動小幅前傾，頭頸自然" loading="eager"><figcaption>以髖部帶動小幅前傾，頭頸自然</figcaption></figure>
 <figure><img src="../assets/teaching/vocal-standing-white.branded.svg?v=20261028identity" alt="回到自然站姿，檢查肩頸是否放鬆" loading="eager"><figcaption>回到自然站姿，檢查肩頸是否放鬆</figcaption></figure>
-<figure><img src="../assets/teaching/warmup-neck-white.branded.svg?v=20261028identity" alt="輕柔側傾頭部，保持肩膀放鬆，不用力拉扯頸部。" loading="eager"><figcaption>輕柔側傾頭部，保持肩膀放鬆，不用力拉扯頸部。</figcaption></figure>
+<figure><img src="../assets/teaching/warmup-neck-white.branded.svg?v=20261028necklogo" alt="輕柔側傾頭部，保持肩膀放鬆，不用力拉扯頸部。" loading="eager"><figcaption>輕柔側傾頭部，保持肩膀放鬆，不用力拉扯頸部。</figcaption></figure>
 <figure><img src="../assets/teaching/warmup-wrists-white.branded.svg?v=20261028identity" alt="輕柔活動手腕，手臂與肩膀維持放鬆。" loading="eager"><figcaption>輕柔活動手腕，手臂與肩膀維持放鬆。</figcaption></figure>
 </div>
 <p class="teaching-note">各動作在舒服範圍內慢慢進行。</p>
