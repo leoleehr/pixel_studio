@@ -940,7 +940,7 @@
 <figure><img src="../assets/teaching/warmup-shoulders-white.branded.svg?v=20261028identity" width="1314" height="1197" alt="小幅度肩關節轉動，雙臂自然" loading="lazy" decoding="async"><figcaption>小幅度肩關節轉動，雙臂自然</figcaption></figure>
 <figure><img src="../assets/teaching/warmup-forward-white.branded.svg?v=20261028identity" width="1200" height="1310" alt="以髖部帶動小幅前傾，頭頸自然" loading="lazy" decoding="async"><figcaption>以髖部帶動小幅前傾，頭頸自然</figcaption></figure>
 <figure><img src="../assets/teaching/vocal-standing-white.branded.svg?v=20261028identity" width="1309" height="1201" alt="回到自然站姿，檢查肩頸是否放鬆" loading="lazy" decoding="async"><figcaption>回到自然站姿，檢查肩頸是否放鬆</figcaption></figure>
-<figure><img src="../assets/teaching/warmup-neck-white.branded.svg?v=20261028identity" width="1431" height="1099" alt="輕柔側傾頭部，保持肩膀放鬆，不用力拉扯頸部。" loading="lazy" decoding="async"><figcaption>輕柔側傾頭部，保持肩膀放鬆，不用力拉扯頸部。</figcaption></figure>
+<figure><img src="../assets/teaching/warmup-neck-white.branded.svg?v=20261028necklogo" width="1431" height="1099" alt="輕柔側傾頭部，保持肩膀放鬆，不用力拉扯頸部。" loading="lazy" decoding="async"><figcaption>輕柔側傾頭部，保持肩膀放鬆，不用力拉扯頸部。</figcaption></figure>
 <figure><img src="../assets/teaching/warmup-wrists-white.branded.svg?v=20261028identity" width="1283" height="1226" alt="輕柔活動手腕，手臂與肩膀維持放鬆。" loading="lazy" decoding="async"><figcaption>輕柔活動手腕，手臂與肩膀維持放鬆。</figcaption></figure>
 </div>
 <p class="teaching-note">各動作在舒服範圍內慢慢進行。</p>
@@ -2500,7 +2500,7 @@
   var main = document.getElementById('content'), toc = document.getElementById('toc'), prog = document.getElementById('progress');
   var pre = main.hasAttribute('data-prerendered');
   function loadMarked() { return window.marked ? Promise.resolve() : new Promise(function (ok, no) { var s = document.createElement('script'); s.src = 'https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js'; s.integrity = 'sha384-/TQbtLCAerC3jgaim+N78RZSDYV7ryeoBCVqTuzRrFec2akfBkHS7ACQ3PQhvMVi'; s.crossOrigin = 'anonymous'; s.onload = ok; s.onerror = no; document.head.appendChild(s); }); }
-  (pre ? (location.hash ? Promise.resolve(null) : new Promise(function (ok) { requestAnimationFrame(function () { setTimeout(function () { ok(null); }, 0); }); })) : loadMarked().then(function () { return fetch('course-handbook.md?v=20261023a'); }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }))
+  (pre ? (location.hash ? Promise.resolve(null) : new Promise(function (ok) { requestAnimationFrame(function () { setTimeout(function () { ok(null); }, 0); }); })) : loadMarked().then(function () { return fetch('course-handbook.md?v=20261028necklogo'); }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }))
     .then(function (md) {
       if (md !== null) main.innerHTML = marked.parse(md, { gfm: true });
       main.querySelectorAll('img').forEach(function (i) { i.loading = 'lazy'; i.decoding = 'async'; });
