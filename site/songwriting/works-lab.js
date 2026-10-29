@@ -708,7 +708,15 @@
     var bCopy = btn('複製全部');
     bCopy.onclick = function () {
       var nb = LS.get('notebook', { words: [], lines: [] }), text = '【詞典】\n' + (nb.words || []).join('、') + '\n\n【句典】\n' + (nb.lines || []).join('\n');
-      if (navigator.clipboard) navigator.clipboard.writeText(text).then(function () { if (window.PixelBackend) window.PixelBackend.toast('已複製歌詞草稿區', 'ok'); });
+      // LINE 等內建瀏覽器常擋剪貼簿：改用選取複製，仍失敗就提示手動複製
+      function legacy() {
+        var ta = document.createElement('textarea'), ok = false; ta.value = text; ta.setAttribute('readonly', ''); ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+        document.body.appendChild(ta); ta.select(); try { ok = document.execCommand('copy'); } catch (e) {} ta.remove();
+        if (!ok) return Promise.reject();
+      }
+      (navigator.clipboard ? navigator.clipboard.writeText(text).catch(legacy) : Promise.resolve().then(legacy)).then(function () {
+        if (window.PixelBackend) window.PixelBackend.toast('已複製歌詞草稿區', 'ok');
+      }, function () { if (window.PixelBackend) window.PixelBackend.toast('這個瀏覽器無法自動複製，請長按草稿區的詞句手動複製', 'warn'); });
     };
     // 全部清除：按第一次變成「確定清除？」，三秒內再按一次才清除，避免誤觸
     var bClr = btn('全部清除', 'ld-clear'), clrTimer = 0;
