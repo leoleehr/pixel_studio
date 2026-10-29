@@ -73,7 +73,14 @@
       box.innerHTML = '<p class="pb-inapp">LINE、Facebook、Instagram 內建的瀏覽器無法使用 Google 登入，請改用 Chrome 或 Safari 開啟這一頁。</p>' +
         (ext ? '<a class="pb-ext" href="' + esc(ext) + '">用預設瀏覽器開啟</a>' : '<button type="button" class="pb-ext">複製網址</button>');
       var b = box.querySelector('button.pb-ext');
-      if (b) b.onclick = function () { navigator.clipboard && navigator.clipboard.writeText(u).then(function () { toast('網址已複製，請貼到 Chrome 或 Safari', 'ok'); }); };
+      // 內建瀏覽器常擋剪貼簿：複製失敗時改成可長按選取的網址欄
+      if (b) b.onclick = function () {
+        (navigator.clipboard ? navigator.clipboard.writeText(u) : Promise.reject()).then(function () { toast('網址已複製，請貼到 Chrome 或 Safari', 'ok'); }, function () {
+          b.outerHTML = '<input class="pb-url" type="text" readonly aria-label="這一頁的網址" value="' + esc(u) + '">';
+          var f = box.querySelector('.pb-url'); f.focus(); f.select();
+          toast('無法自動複製，請長按網址選取後複製', 'warn');
+        });
+      };
       return;
     }
     box.innerHTML = '<div class="pb-gbtn"></div>';
@@ -313,6 +320,7 @@
       '.pb-acct span{color:#6cbb4b;font-size:12px}.pb-acct b{font-weight:600;word-break:break-all;flex:1;min-width:0}' +
       '.pb-switch{font:inherit;font-size:13px;color:#9d998f;background:none;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:4px 12px;cursor:pointer}' +
       '.pb-inapp{font-size:13.5px;line-height:1.6;color:#f4a62a;background:rgba(244,166,42,.08);border:1px solid rgba(244,166,42,.35);border-radius:12px;padding:10px 12px;margin:0 0 8px}' +
+      '.pb-url{width:100%;min-height:44px;font:inherit;font-size:13px;color:#f3f1ec;background:#0d0d10;border:1px solid rgba(244,166,42,.45);border-radius:12px;padding:0 12px}' +
       '.pb-ext{display:inline-flex;align-items:center;min-height:44px;font:inherit;font-size:14px;font-weight:700;color:#102126;background:#f4a62a;border:0;border-radius:12px;padding:0 16px;text-decoration:none;cursor:pointer}';
     document.head.appendChild(s);
   }

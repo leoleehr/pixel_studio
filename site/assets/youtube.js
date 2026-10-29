@@ -121,8 +121,11 @@
     if (dock) dock.destroy();
     var el = document.createElement('div'); el.className = 'yt-dock';
     document.body.appendChild(el);
-    dock = new Ctl(el, name, { closable: true, onClose: function () { dock = null; } });
+    dock = new Ctl(el, name, { closable: true, onClose: function () { dock = null; document.documentElement.classList.remove('yt-docked'); } });
     dock.play();
+    // 手機上播放器蓋住畫面下方：頁尾留出同樣高度，最後幾個按鈕才捲得出來
+    requestAnimationFrame(function () { document.documentElement.style.setProperty('--yt-dock-h', el.offsetHeight + 'px'); });
+    document.documentElement.classList.add('yt-docked');
   }
   function chip(name) {
     var s = SONGS[name], el = document.createElement('button');
