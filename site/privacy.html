@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>隱私權政策｜Pixel Studio 畫素音樂工作坊</title>
-<meta name="description" content="Pixel Studio 四個 Lab 課程網站如何蒐集、使用與保存學員資料，包括 Google 帳戶登入、問卷、課堂互動與錄音。">
+<meta name="description" content="Pixel Studio 四個 Lab 課程網站如何蒐集、使用與保存學員資料，包括 Google 帳戶登入、問卷、課堂互動、錄音與瀏覽統計。">
 <link rel="icon" href="assets/favicon.ico?v=2" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon.png?v=2">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2">
@@ -32,23 +32,27 @@
   .pv table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 15px; }
   .pv th, .pv td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,.1); color: #dcd8cf; }
   .pv th { color: #f3f0e9; font-weight: 600; width: 34%; }
+  .pv-btn { font: inherit; font-size: 15px; color: #101210; background: #f4a62a; border: 0; border-radius: 999px; padding: 8px 18px; min-height: 44px; cursor: pointer; }
+  .pv-btn:focus-visible { outline: 2px solid #f3f0e9; outline-offset: 3px; }
+  .pv-note { color: #9d998f; font-size: 14px; }
   @media (max-width: 560px) { .pv th, .pv td { display: block; width: auto; padding: 6px 0; } .pv th { padding-top: 14px; border-bottom: 0; } }
 </style>
 <meta property="og:type" content="website">
 <meta property="og:title" content="隱私權政策｜Pixel Studio 畫素音樂工作坊">
-<meta property="og:description" content="Pixel Studio 四個 Lab 課程網站如何蒐集、使用與保存學員資料，包括 Google 帳戶登入、問卷、課堂互動與錄音。">
+<meta property="og:description" content="Pixel Studio 四個 Lab 課程網站如何蒐集、使用與保存學員資料，包括 Google 帳戶登入、問卷、課堂互動、錄音與瀏覽統計。">
 <meta property="og:site_name" content="Pixel Studio 畫素音樂工作坊">
 <meta property="og:image" content="https://pixel-studio.musicallanding.workers.dev/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://pixel-studio.musicallanding.workers.dev/privacy">
+<script src="assets/analytics.js?v=20261030a" defer></script>
 </head>
 <body>
 <header class="pv-top"><div class="in"><a href="studio.html"><img src="assets/brand/pixel-studio-horizontal.svg" alt="Pixel Studio" width="2400" height="720"></a><a class="back" href="studio.html">回到首頁</a></div></header>
 <main class="pv">
   <div class="kicker">Privacy Policy</div>
   <h1>隱私權政策</h1>
-  <p class="date">適用於 Pixel Studio 畫素音樂工作坊的 Vocal Lab、Guitar Lab、Piano Lab、Songwriting Lab 課程網站。最後更新：2026 年 10 月 21 日</p>
+  <p class="date">適用於 Pixel Studio 畫素音樂工作坊的 Vocal Lab、Guitar Lab、Piano Lab、Songwriting Lab 課程網站。最後更新：2026 年 10 月 30 日</p>
 
   <p>課程網站由畫素音樂工作坊 李奕勳（以下稱「老師」）經營。網站蒐集學員資料的目的只有一個：讓老師了解每位學員的學習狀況，並在課堂上給予回饋。以下說明網站蒐集哪些資料、如何使用，以及學員可以行使的權利。</p>
 
@@ -58,6 +62,7 @@
     <tr><th>學員資料</th><td>學員自行填寫的姓名、學校科系或公司名稱，以及課程代碼。</td></tr>
     <tr><th>問卷與課堂互動</th><td>課前問卷、課程回饋問卷、出場券、練習紀錄，以及投影片中的選擇題、節奏挑戰、歌詞練習等互動結果。</td></tr>
     <tr><th>錄音</th><td>學員主動按下上傳的練唱或演奏錄音。網站不會在學員沒有操作的情況下錄音。</td></tr>
+    <tr><th>瀏覽統計</th><td>透過 Google Analytics 記錄瀏覽了哪些頁面、翻到第幾張投影片、用了哪些課堂工具，以及送出問卷或上傳錄音的次數，連同瀏覽器自動提供的裝置類型與大略地區。統計資料不含姓名、Gmail、作答內容與錄音。</td></tr>
     <tr><th>裝置代碼</th><td>瀏覽器隨機產生的一組代碼，用來區分同一位學員的不同裝置，不含任何個人資訊。</td></tr>
   </table>
 
@@ -67,17 +72,22 @@
     <li>讓老師在課前閱讀問卷、在課後整理學習紀錄，並針對錄音給予回饋。</li>
     <li>統計課程成效，作為調整教材與教學方式的依據。</li>
   </ul>
-  <p>資料不會用於廣告，不會出售，也不會提供給任何第三方。</p>
+  <p>資料不會用於廣告，也不會出售。學員的姓名、Gmail、作答內容與錄音只送到老師的 Google 試算表與雲端硬碟，不會提供給其他第三方；Google Analytics 只收到上面列出的瀏覽統計。</p>
 
   <h2>三、資料的保存位置</h2>
   <ul>
     <li><b>老師的 Google 試算表與 Google 雲端硬碟</b>：學員送出的資料與錄音，保存在老師本人的 Google 帳戶中，只有老師能開啟，錄音檔不會公開分享。</li>
     <li><b>學員自己的瀏覽器</b>：登入狀態、學員資料，以及網路中斷或老師暫停資料寫入時暫存的紀錄，保存在學員瀏覽器的本機儲存空間。共用電腦時，可在「學員資料」視窗按「換人使用」清除。</li>
   </ul>
+  <ul>
+    <li><b>Google Analytics</b>：瀏覽統計保存在老師的 Google Analytics 資源，最長保留 14 個月。網站關閉了 Google 信號與廣告個人化，統計資料不會用來投放廣告。Google Analytics 會在瀏覽器存放 Cookie（名稱以 _ga 開頭），用來區分不同的訪客。</li>
+  </ul>
   <p>網站本身架設在 Cloudflare，只提供網頁內容，不保存學員資料。</p>
 
   <h2>四、學員的權利</h2>
   <p>學員可以隨時來信要求查閱、更正或刪除自己的資料，老師收到後會盡快處理。學員也可以到 Google 帳戶的「第三方應用程式和服務」頁面，移除 Pixel Studio 的登入連結。</p>
+  <p>不想被納入瀏覽統計，可以按下面的按鈕。設定只對目前這個瀏覽器有效，換裝置或清除網站資料後要重新設定。</p>
+  <p><button type="button" class="pv-btn" id="ga-toggle" hidden></button> <span class="pv-note" id="ga-state" role="status"></span></p>
 
   <h2>五、聯絡方式</h2>
   <p>畫素音樂工作坊 李奕勳<br>電子郵件：<a href="mailto:musicallanding@gmail.com">musicallanding@gmail.com</a></p>
@@ -85,5 +95,25 @@
   <h2>六、政策更新</h2>
   <p>本政策若有修改，會更新在這一頁，並標示最後更新日期。</p>
 </main>
+<script>
+/* 瀏覽統計開關：寫入 ps-ga-optout，analytics.js 讀到就不載入 Google Analytics */
+(function () {
+  var K = 'ps-ga-optout', b = document.getElementById('ga-toggle'), st = document.getElementById('ga-state');
+  function off() { try { return localStorage.getItem(K) === '1'; } catch (e) { return false; } }
+  function draw() {
+    var o = off();
+    b.textContent = o ? '恢復瀏覽統計' : '停用瀏覽統計';
+    st.textContent = o ? '這個瀏覽器已停用瀏覽統計。' : '這個瀏覽器目前會納入瀏覽統計。';
+  }
+  try { localStorage.getItem(K); } catch (e) { st.textContent = '這個瀏覽器封鎖了網站儲存空間，無法記住設定。'; return; }
+  b.hidden = false;
+  b.addEventListener('click', function () {
+    try { if (off()) localStorage.removeItem(K); else localStorage.setItem(K, '1'); } catch (e) {}
+    window['ga-disable-G-86GRBXSLEW'] = off();
+    draw();
+  });
+  draw();
+})();
+</script>
 </body>
 </html>
