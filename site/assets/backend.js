@@ -270,12 +270,17 @@
       course: COURSE || 'vocal', cohort: (opts && opts.cohort) || '', lesson: (opts && opts.lesson) || LESSON || '', slide: (opts && opts.slide) || '', page: location.pathname.split('/').slice(-2).join('/'),
       profile: { name: p.name || '', dept: p.dept || '', device: device } };
   }
+  // 通知 analytics.js：只帶種類、課次與投影片，不含作答內容
+  function emit(kind, it) {
+    try { document.dispatchEvent(new CustomEvent('ps:activity', { detail: { kind: kind, type: it.type, lesson: it.lesson, slide: it.slide } })); } catch (e) {}
+  }
   // 一般資料：先放進佇列，再送出；沒有網路、尚未設定後台或尚未核准時，之後自動補送
   function send(type, data, opts) {
     opts = opts || {};
     return ensureProfile(opts.reason).then(function () {
       var it = itemOf(type, data, opts);
       enqueue(it);
+      emit('submit', it);
       if (!URL_) { if (!opts.silent && !warnedNoUrl) { warnedNoUrl = true; toast('後台尚未設定，資料已先存在這台裝置', 'warn'); } return { queued: true }; }
       return flush().then(function () {
         var still = get(K.queue, []).some(function (x) { return x.id === it.id; }), a = account();
@@ -289,6 +294,7 @@
   function log(type, data, opts) {
     var it = itemOf(type, data, opts || {});
     enqueue(it);
+    emit('interaction', it);
     if (complete(profile())) flush();
   }
   // 錄音：檔案較大，不進佇列，直接上傳
@@ -302,7 +308,7 @@
           return post([it], p.code);
         }).then(function (j) {
           var r = j && j.results && j.results[0];
-          if (r && r.ok) { toast('錄音已上傳給老師', 'ok'); return { ok: true, url: r.url }; }
+          if (r && r.ok) { emit('upload', { type: 'recording', lesson: meta.lesson || LESSON || '', slide: meta.slide || '' }); toast('錄音已上傳給老師', 'ok'); return { ok: true, url: r.url }; }
           if (j && j.error === 'roster') { toast('尚未加入班級名單，老師核准後才能上傳錄音', 'warn'); return { ok: false }; }
           if (j && j.error === 'session') { rejected(j); return { ok: false }; }
           toast(j && j.error === 'code' ? '課程代碼不正確' : '上傳失敗，請稍後再試', 'err'); return { ok: false };
