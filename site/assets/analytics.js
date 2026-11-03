@@ -13,6 +13,8 @@
   var path = location.pathname;
   var LAB = (path.match(/\/(vocal|guitar|piano|songwriting)(?:\/|$)/) || [])[1] || 'studio';
   // 課次取投影片資料夾名稱（lesson-02、ch03、p04、s03）；Lab 首頁、講義與問卷留空
+  // 英文版頁面在 en/ 底下，記成 en，其餘為 zh
+  var PAGE_LANG = /\/en\//.test(path) ? 'en' : 'zh';
   var LESSON = (path.replace(/index\.html$/, '').match(/\/(lesson-\d+|ch\d+|p\d+|s\d+)\/$/) || [])[1] || '';
 
   window.dataLayer = window.dataLayer || [];
@@ -25,7 +27,8 @@
     allow_google_signals: false,
     allow_ad_personalization_signals: false,
     lab: LAB,
-    lesson: LESSON
+    lesson: LESSON,
+    page_lang: PAGE_LANG
   });
   var s = document.createElement('script');
   s.async = true;
@@ -35,6 +38,7 @@
   function track(name, params) {
     params = params || {};
     params.lab = LAB;
+    params.page_lang = PAGE_LANG;
     if (LESSON && !params.lesson) params.lesson = LESSON;
     gtag('event', name, params);
   }
