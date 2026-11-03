@@ -1,0 +1,65 @@
+/* Shared, accessible teaching-photo viewer. */
+(function () {
+  'use strict';
+  var script = document.currentScript;
+  var base = new URL('../../assets/teaching/', script.src), enBase = new URL('teaching/', script.src), EN_FILES = ["airflow.branded.svg", "airflow.svg", "bend-motion.branded.svg", "bend-motion.svg", "care-wind.branded.svg", "care-wind.svg", "chord-am.branded.svg", "chord-am.svg", "chord-c.branded.svg", "chord-c.svg", "chord-d.branded.svg", "chord-d.svg", "chord-g.branded.svg", "chord-g.svg", "chord-small-f.branded.svg", "chord-small-f.svg", "hammer-sequence.branded.svg", "hammer-sequence.svg", "piano-scale-motion.branded.svg", "piano-scale-motion.svg", "piano-tenth-motion.branded.svg", "piano-tenth-motion.svg", "pull-sequence.branded.svg", "pull-sequence.svg", "resonance.branded.svg", "resonance.svg", "sizes.branded.svg", "sizes.svg", "slide-sequence.branded.svg", "slide-sequence.svg", "tongue.branded.svg", "tongue.svg", "vibrato-motion.branded.svg", "vibrato-motion.svg"];
+  var data = window.PixelTeachingVisuals || [];
+  var lookup = Object.fromEntries(data.map(function (x) { return [x.id, x]; }));
+  var dialog = document.createElement('dialog');
+  dialog.className = 'teaching-dialog';
+  dialog.setAttribute('aria-labelledby', 'teaching-dialog-title');
+  dialog.innerHTML = '<div class="teaching-dialog-top"><h2 id="teaching-dialog-title"></h2><button type="button" class="teaching-close" aria-label="Close diagram">Close ×</button></div><div class="teaching-dialog-body"></div>';
+  document.body.appendChild(dialog);
+  function url(src) {
+    var resolved = new URL(src, EN_FILES.indexOf(src.split('?')[0]) > -1 ? enBase : base);
+    var revision = new URL(script.src).searchParams.get('v');
+    if (revision) resolved.searchParams.set('v', revision);
+    return resolved.href;
+  }
+  function figure(item) {
+    var f = document.createElement('figure'), im = document.createElement('img'), cap = document.createElement('figcaption');
+    im.src = url(item.src); im.alt = item.caption; im.loading = 'eager';
+    cap.textContent = item.caption;
+    f.append(im, cap); return f;
+  }
+  function open(ids) {
+    var groups = ids.map(function (id) { return lookup[id]; }).filter(Boolean);
+    dialog.querySelector('h2').textContent = groups.map(function (g) { return g.title; }).join(' · ');
+    var body = dialog.querySelector('.teaching-dialog-body'); body.replaceChildren();
+    groups.forEach(function (g) {
+      var section = document.createElement('section'), title = document.createElement('h3'), grid = document.createElement('div');
+      section.dataset.demoGroup = g.id;
+      title.textContent = g.title; grid.className = 'teaching-photo-grid';
+      g.images.forEach(function (im) { grid.appendChild(figure(im)); });
+      if (groups.length > 1) section.appendChild(title);
+      section.appendChild(grid);
+      if (g.note) { var p = document.createElement('p'); p.className = 'teaching-note'; p.textContent = g.note; section.append(p); }
+      if (g.sources) { var links = document.createElement('p'); links.className = 'teaching-sources'; g.sources.forEach(function (source) { var a = document.createElement('a'); a.href = source.url; a.textContent = source.label; a.target = '_blank'; a.rel = 'noopener'; links.append(a, ' '); }); section.append(links); }
+      body.appendChild(section);
+    });
+    if (!dialog.open) dialog.showModal();
+    dialog.scrollTop = 0;
+  }
+  dialog.querySelector('.teaching-close').addEventListener('click', function () { dialog.close(); });
+  dialog.addEventListener('click', function (e) { if (e.target === dialog) { var r = dialog.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dialog.close(); } });
+  dialog.addEventListener('keydown', function (e) { e.stopPropagation(); });
+  document.querySelectorAll('.slide[data-teaching]').forEach(function (slide) {
+    var ids = slide.dataset.teaching.split(' ').filter(function (id) { return lookup[id]; });
+    if (!ids.length) return;
+    var h = slide.querySelector('h2'); if (!h || h.closest('.teaching-heading')) return;
+    var wrap = document.createElement('div'); wrap.className = 'teaching-heading';
+    wrap.style.marginBottom = h.style.marginBottom || '12px'; h.style.marginBottom = '0';
+    h.parentNode.insertBefore(wrap, h); wrap.appendChild(h);
+    var button = document.createElement('button'), im = document.createElement('img'), text = document.createElement('span');
+    button.type = 'button'; button.className = 'teaching-launch'; button.setAttribute('aria-label', 'Enlarge diagram: ' + ids.map(function (id) { return lookup[id].title; }).join('、'));
+    // 按鈕縮圖用 thumbs/ 的小圖（tools/build_teaching_thumbs.py 產生）；缺檔時退回原圖
+    var full = lookup[ids[0]].images[0].src;
+    im.src = url('thumbs/' + full.replace(/\.[a-z0-9]+$/i, '.webp')); im.width = 240; im.height = 96;
+    im.onerror = function () { im.onerror = null; im.src = url(full); };
+    im.alt = ''; im.loading = 'lazy'; im.decoding = 'async'; text.textContent = 'Enlarge diagram ↗︎';
+    button.append(im, text); button.addEventListener('click', function () { open(ids); }); wrap.appendChild(button);
+  });
+  var shared = new URLSearchParams(location.search).get('diagram');
+  if (shared && lookup[shared]) open([shared]);
+  document.body.setAttribute('data-teaching-ready', '1');
+})();

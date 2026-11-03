@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beats, reading music and warming up｜Chapter 2｜Guitar Lab</title>
+<meta name="description" content="Pixel Studio Guitar Lab Chapter 2 class slides: pitch and the staff, note names, solfège and numbered notation, note values and rests, time signatures, tab, fretting, finger crawls, fifth-fret tuning and the C major scale.">
+<link rel="icon" href="../../../assets/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="../../../assets/favicon.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="../../../assets/favicon-192.png?v=2">
+<link rel="apple-touch-icon" href="../../../assets/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#101210">
+<link rel="preload" href="../../../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../../assets/brand/pixel-studio-symbol-color.svg" as="image" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script>/* 中文字型策略：首次造訪用系統中文字型（符合 CI：正黑體／蘋方），不在首屏重排；載入完成 5 秒後，利用閒置時間逐一把本頁用得到的 Noto Sans TC 分組下載進快取，之後每頁一開始就套用 */(function(){var K="ps-font",U="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap";function apply(){var l=document.createElement("link");l.rel="stylesheet";l.href=U;document.head.appendChild(l)}var c=0;try{c=localStorage.getItem(K)}catch(e){}if(c){apply();return}var n=navigator.connection;if(n&&(n.saveData||/2g/.test(n.effectiveType||"")))return;var idle=window.requestIdleCallback||function(f){return setTimeout(f,300)};function inRange(r,cps){return r.split(",").some(function(p){var m=p.trim().replace(/^U\+/i,"").split("-"),a=parseInt(m[0],16),b=m[1]?parseInt(m[1],16):a;return cps.some(function(x){return x>=a&&x<=b})})}function warm(){if(!window.FontFace||!window.fetch)return;var seen={},cps=[],t=document.body.textContent;for(var i=0;i<t.length;i++){var x=t.charCodeAt(i);if(x>=0x2E80&&!seen[x]){seen[x]=1;cps.push(x)}}fetch(U).then(function(r){return r.text()}).then(function(css){var q=[];css.replace(/@font-face\s*\{([^}]*)\}/g,function(_,b){var s=/url\(([^)]+)\)/.exec(b),r=/unicode-range:\s*([^;]+)/.exec(b);if(s&&r&&inRange(r[1],cps))q.push([s[1],r[1]]);return _});function next(){if(!q.length){try{localStorage.setItem(K,"1")}catch(e){}return}var j=q.shift();new FontFace("Noto Sans TC","url("+j[0]+")",{weight:"400 900",unicodeRange:j[1]}).load().then(function(){idle(next,{timeout:3000})},function(){idle(next,{timeout:3000})})}idle(next,{timeout:3000})}).catch(function(){})}var painted=0,loaded=0,started=0;function go(){if(painted&&loaded&&!started){started=1;setTimeout(function(){idle(warm,{timeout:5000})},5000)}}try{new PerformanceObserver(function(l){if(!painted&&l.getEntriesByName("first-contentful-paint").length){painted=1;go()}}).observe({type:"paint",buffered:true})}catch(e){painted=1}addEventListener("load",function(){loaded=1;setTimeout(function(){painted=1;go()},3000);go()})})()</script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Music&text=%F0%9D%84%9E%E2%99%AF%E2%99%AE&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="../../assets/deck-bundle.css?v=20261029a">
+<link rel="stylesheet" href="../../../guitar/theme.css?v=20261016review1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pixel Studio">
+<meta property="og:title" content="Beats, reading music and warming up｜Chapter 2｜Guitar Lab">
+<meta property="og:description" content="Pixel Studio Guitar Lab Chapter 2 class slides: pitch and the staff, note names, solfège and numbered notation, note values and rests, time signatures, tab, fretting, finger crawls, fifth-fret tuning and the C major scale.">
+<meta property="og:image" content="https://pixel-studio.musicallanding.workers.dev/guitar/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../../assets/teaching-visuals.css?v=20261028identity">
+<link rel="stylesheet" href="../../../assets/learning-tools.css?v=20261020a">
+<link rel="canonical" href="https://pixel-studio.musicallanding.workers.dev/en/guitar/ch02/">
+<link rel="alternate" hreflang="zh-Hant" href="https://pixel-studio.musicallanding.workers.dev/guitar/ch02/">
+<link rel="alternate" hreflang="en" href="https://pixel-studio.musicallanding.workers.dev/en/guitar/ch02/">
+<link rel="alternate" hreflang="x-default" href="https://pixel-studio.musicallanding.workers.dev/guitar/ch02/">
+<meta property="og:url" content="https://pixel-studio.musicallanding.workers.dev/en/guitar/ch02/">
+<script src="../../../assets/analytics.js?v=20261104a" defer></script>
+<script src="../../../assets/lang.js?v=20261104a" defer></script>
+</head>
+<body data-title="Chapter 2｜Beats, reading music and warming up" data-course="guitar" data-lesson="ch02" data-home="../index.html#lessons">
+<div class="progress" id="progress"></div>
+<main class="deck" id="deck">
+<div class="stage" id="stage">
+<!-- 1 封面 -->
+<section class="slide cover"><div class="cover-art" aria-hidden="true"><span class="ca-glow"></span><img src="../../../assets/brand/pixel-studio-symbol-color.svg" alt="" width="1024" height="1024" fetchpriority="high"></div>
+  <div class="kicker">Pixel Studio Guitar Lab｜Folk guitar Chapter 2</div>
+  <h1>Beats, reading music and warming up</h1>
+  <p class="lead">Beat · Reading · Warm-up</p>
+  <p class="meta">Teacher: Leo Lee, Pixel Studio<br>musicallanding@gmail.com</p>
+<img class="cover-sig" src="../../../assets/brand/pixel-studio-primary-mono-white.svg" alt="Pixel Studio" width="1600" height="1440" loading="lazy" decoding="async"></section>
+
+<!-- 2 路線 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Phone sync</div>
+  <div class="kicker">Today · 120 Minutes</div>
+  <h2>Today's route: read music, wake up your fingers</h2>
+  <div class="timeline">
+    <div class="bar-qi" style="flex:20"><b>Open</b><small>Tuning, beat warm-up｜20 minutes</small></div>
+    <div class="bar-cheng" style="flex:35"><b>Build</b><small>Staff, note values, time signatures, tab｜35 minutes</small></div>
+    <div class="bar-rest" style="flex:10"><b>Break</b><small>10 minutes</small></div>
+    <div class="bar-zhuan" style="flex:35"><b>Turn</b><small>Fretting, finger crawls, fifth-fret tuning｜35 minutes</small></div>
+    <div class="bar-he" style="flex:20"><b>Close</b><small>C major scale, your first melody｜20 minutes</small></div>
+  </div>
+  <div class="split wide">
+    <ul class="clean compact">
+      <li>Clearly identify Do to Do on the staff and understand how note names, solfège and numbered notation match up</li>
+      <li>Understand note values from whole notes to sixteenths, and tell 2/4, 3/4, 4/4 and 6/8 apart</li>
+      <li>Read tab and complete finger-crawl warm-ups with a metronome</li>
+      <li>Play Ode to Joy on the C major scale before the end of class; scan this slide's QR code to practise along on your phone</li>
+    </ul>
+    <div class="qr" data-href="../../../guitar/ch02/self"></div>
+  </div>
+</section>
+
+<!-- 3 回顧 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Show-of-hands vote</div>
+  <div class="kicker"><span class="tag t-qi">Open</span>00:00–00:20 Last week in review</div>
+  <h2>Tune first, then share this week's practice</h2>
+  <div class="split">
+    <div>
+      <ul class="clean compact">
+        <li>Tune together as a class: start from string 6 E and tune each string in turn</li>
+        <li>The teacher answers the three most-asked questions from last week's exit tickets</li>
+        <li>Two students share their guitar's body shape and top wood</li>
+      </ul>
+      <div class="card" style="margin-top:16px"><p>Sore fingers? Sore fingertips in the first two weeks are normal. <b class="c-gold">Short, frequent practice every day</b> builds calluses faster than one long session.</p></div>
+    </div>
+    <div>
+      <p class="muted" style="font-size:18px;margin-bottom:10px">Roughly how long did tuning yourself take this week?</p>
+      <div class="poll" data-id="g02-tune" data-options="Under 1 minute|1–3 minutes|3–5 minutes|Still need help"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 拍點暖身 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-qi">Open</span>Beat warm-up</div>
+  <h2 style="margin-bottom:12px">Beats: clap along with the metronome</h2>
+  <div class="cards-mini">
+    <div class="card"><h3 class="c-navy">① Clap and count</h3><p>Clap once per beat and count "1, 2, 3, 4" out loud, clapping a bit louder on beat 1.</p></div>
+    <div class="card"><h3 class="c-gold">② Add half beats</h3><p>Clap on the beat and say "&" in between: 1 & 2 & 3 & 4 &.</p></div>
+    <div class="card"><h3 class="c-red">③ Clap only the offbeats</h3><p>Tap your foot on the beat and clap only on the "&". This is the most common groove in pop songs.</p></div>
+  </div>
+  <div class="metro" data-bpm="60" data-presets="60|80|100" style="margin-top:22px"></div>
+  <p class="muted" style="margin-top:10px;font-size:18px">BPM means beats per minute. 60 BPM is exactly one beat a second, like the second hand on a clock.</p>
+</section>
+
+<!-- 5 預測 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Predict, then reveal</div>
+  <div class="kicker"><span class="tag t-qi">Open</span>Think about it</div>
+  <h2>What does the "4/4" you often see on guitar music mean?</h2>
+  <div class="split">
+    <div class="quiz" data-answer="3">
+      <p class="q">Pick an answer now, and check it again after today's lesson.</p>
+      <ol><li>The song lasts four minutes</li><li>Four chords played in turn four times</li><li>4 beats per bar, with the quarter note as one beat</li><li>The tempo is 44 BPM</li></ol>
+      <div class="why">A time signature is like a fraction: the top 4 means "how many beats per bar" and the bottom 4 means "the quarter note counts as one beat". Part 3 today explains it in detail.</div>
+    </div>
+    <div class="card"><h3>Why learn to read music</h3><p>Chord charts, tab, numbered notation and staff notation are the shared language of musicians. If you can read music, you can learn new songs on your own.</p></div>
+  </div>
+</section>
+
+<!-- 6 音高與譜表 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>00:20–00:55 Part 1: Pitch and the staff</div>
+  <h2 style="margin-bottom:8px">The staff: the higher the position, the higher the note</h2>
+  <div data-gfig="staff"></div>
+  <div class="cards-mini" style="margin-top:8px">
+    <div class="card"><h3 class="c-navy">Treble clef 𝄞</h3><p>Also called the G clef: its curl centres on the second line, and that line is G (Sol).</p></div>
+    <div class="card"><h3 class="c-gold">Ledger lines</h3><p>Notes beyond the five lines get short lines added above or below; middle C, for example, sits on the first ledger line below.</p></div>
+    <div class="card"><h3 class="c-red">How guitar music is written</h3><p>Guitar music is written an octave up: middle C on the page actually sounds an octave lower.</p></div>
+  </div>
+</section>
+
+<!-- 7 全全半 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>Note names, solfège, numbered notation</div>
+  <h2 style="margin-bottom:14px">One note, three names; eight notes, two semitones</h2>
+  <table>
+    <tr><th>Degree</th><th>Ⅰ Tonic</th><th>Ⅱ Supertonic</th><th>Ⅲ Mediant</th><th>Ⅳ Subdominant</th><th>Ⅴ Dominant</th><th>Ⅵ Submediant</th><th>Ⅶ Leading note</th><th>Ⅷ Tonic</th></tr>
+    <tr><td><b>Note name</b></td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>A</td><td>B</td><td>C</td></tr>
+    <tr><td><b>Solfège</b></td><td>Do</td><td>Re</td><td>Mi</td><td>Fa</td><td>Sol</td><td>La</td><td>Si</td><td>Do</td></tr>
+    <tr><td><b>Number</b></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>1̇</td></tr>
+    <tr><td><b>Step</b></td><td colspan="8" style="letter-spacing:.3em">W W <b class="c-gold">H</b> W W W <b class="c-gold">H</b></td></tr>
+  </table>
+  <div class="reveal" data-label="Whole and half steps on the guitar" style="margin-top:14px"><p class="compact">On the guitar, each fret is a half step and two frets are a whole step. So Mi→Fa and Si→Do are only one fret apart, and all other neighbouring notes are two frets apart.</p></div>
+</section>
+
+<!-- 8 時值 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>Part 2: Note values</div>
+  <h2 style="margin-bottom:6px">Cut a bar in half, then in half again</h2>
+  <div data-gfig="notevalues"></div>
+  <p class="muted" style="font-size:17px">Western music mostly divides in twos: each level down, the note is half as long and there are twice as many. From eighth notes down, a beam joins the notes in the same beat.</p>
+</section>
+
+<!-- 9 休止符與附點 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>Rests and dots</div>
+  <h2 style="margin-bottom:10px">Count rests just as carefully</h2>
+  <div data-gfig="rests"></div>
+  <div class="grid2" style="margin-top:16px">
+    <div class="card"><h3 class="c-gold">A dot adds half again</h3><p>A small dot to the right of a note adds half its length: dotted quarter = 1 + ½ = 1.5 beats; dotted half = 3 beats.</p></div>
+    <div class="card"><h3 class="c-navy">What rests mean</h3><p>On a rest your hand stops and the sound is cut, while you keep counting in your head. Lots of songs stop suddenly at a key moment, and it sounds especially cool.</p></div>
+  </div>
+</section>
+
+<!-- 10 節奏挑戰 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Rhythm challenge</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>Learn the rhythm with your voice first</div>
+  <h2 style="margin-bottom:10px">Listen once, say it once: sing the rhythm on "Ta"</h2>
+  <div class="split narrow">
+    <ul class="clean compact">
+      <li>Choose a rhythm and press "Play demo" to listen first</li>
+      <li>Press "Start challenge" and sing it on Ta after the count-in</li>
+      <li>The microphone compares your timing and tells you if you're rushing or dragging</li>
+      <li>If you can't make noise, use the "Beat" button or the J key instead</li>
+      <li>Get the rhythm right with your voice first, and switching to right-hand strumming gets much easier</li>
+    </ul>
+    <div class="panel rhythm-game" data-bpm="70"></div>
+  </div>
+</section>
+
+<!-- 11 拍號 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>Part 3: Time signatures</div>
+  <h2 style="margin-bottom:14px">Time signatures set strong and weak beats: how many beats in a bar, and which note counts as one</h2>
+  <div class="meters">
+    <div class="card"><div class="sig">2/4</div><div class="dots"><i class="s"></i><i></i></div><p>Strong, weak. Marches, upbeat songs.</p></div>
+    <div class="card"><div class="sig">3/4</div><div class="dots"><i class="s"></i><i></i><i></i></div><p>Strong, weak, weak. Waltzes, Happy Birthday.</p></div>
+    <div class="card"><div class="sig">4/4</div><div class="dots"><i class="s"></i><i></i><i class="m"></i><i></i></div><p>Strong, weak, medium, weak. Most pop songs.</p></div>
+    <div class="card"><div class="sig">6/8</div><div class="dots"><i class="s"></i><i></i><i></i><i class="m"></i><i></i><i></i></div><p>The eighth note counts as one beat, 6 beats per bar, with a rocking feel.</p></div>
+  </div>
+  <div class="card" style="margin-top:16px"><p>The top number is how many beats per bar; the bottom number is which note counts as one beat. <b class="c-gold">3/4</b> means "3 beats per bar, with the quarter note as one beat".</p></div>
+</section>
+
+<!-- 12 拍號小測 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Multiple choice</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>Quiz</div>
+  <h2 style="margin-bottom:14px">Sing Happy Birthday together and clap as you sing</h2>
+  <div class="split">
+    <div class="quiz" data-answer="2">
+      <p class="q">Which beat feels most natural for "Happy birthday to you"?</p>
+      <ol><li>2/4: strong, weak</li><li>3/4: strong, weak, weak</li><li>4/4: strong, weak, medium, weak</li></ol>
+      <div class="why">"Happy | birthday | to you" groups as "strong, weak, weak", so it's in triple time. Chapter 5 teaches how to accompany triple time.</div>
+    </div>
+    <div class="quiz" data-answer="4">
+      <p class="q">Which of these fills one bar of 4/4 exactly?</p>
+      <ol><li>3 quarter notes</li><li>1 half note + 1 quarter note</li><li>6 eighth notes</li><li>1 half note + 2 quarter notes</li></ol>
+      <div class="why">A half note is 2 beats, plus two quarter notes at 1 beat each, makes 4 beats. The other options are only 3 beats.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 六線譜 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>The guitarist's map: tab</div>
+  <h2 style="margin-bottom:10px">Six lines are the six strings, numbers are frets</h2>
+  <div class="split wide">
+    <div data-tab="1-0 1-1 1-3 r | 2-1 2-3 3-0 3-2 | 5-3+4-2+3-0+2-1+1-0:w" data-per-row="3" data-title="Try reading it" data-play data-bpm="60"></div>
+    <ul class="clean compact">
+      <li>The top line is <b>the thinnest string, string 1</b>; the bottom line is string 6</li>
+      <li>Numbers show which fret to press; <b>0 means open string</b></li>
+      <li>Numbers stacked on top of each other are played together (a chord)</li>
+      <li>Tab shows where, staff notation shows rhythm, and the two often appear together</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 14 休息 -->
+<section class="slide center">
+  <div class="kicker">Break</div>
+  <div class="timer" id="timer">10:00</div>
+  <p class="lead">Take a ten-minute break; shake out your hands and massage your fingertips</p>
+  <div style="height:20px"></div>
+  <div class="btn-row"><button type="button" class="btn" id="timerBtn">Start countdown</button><button type="button" class="btn" id="timerReset">Reset</button></div>
+</section>
+
+<!-- 15 左手按弦 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>01:05–01:40 How the left hand presses the strings</div>
+  <h2 style="margin-bottom:12px">Four keys to clean fretting</h2>
+  <div class="grid2" style="align-items:center">
+    <figure style="margin:0">
+      <img loading="lazy" decoding="async" class="gfig" src="../../../assets/guitar/fretting-technique.branded.svg?v=20261028identity" width="1400" height="933" alt="Close-up photos of left-hand fretting: on the left, fingers naturally curved, pressing the string with the fingertip just behind the fret; on the right, the pad of the thumb supporting on the back of the neck" style="border-radius:10px">
+      <figcaption style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;font-size:16px;line-height:1.5;text-align:center"><span><b class="c-green">Fingertip close to the fret</b><br>Fingers curved, leaving room for the next string</span><span><b class="c-green">Thumb supports from behind</b><br>Pad resting lightly on the middle of the neck</span></figcaption>
+    </figure>
+    <div>
+      <ul class="clean compact">
+        <li><b>① Close to the fret</b>: press toward the right side of the fret space; it takes the least effort and buzzes least</li>
+        <li><b>② Fingertips upright</b>: use the area between tip and pad, with fingers close to 90 degrees to the fretboard so they clear the next string</li>
+        <li><b>③ Thumb behind</b>: on the middle line at the back of the neck, squeezing with the fingers like a clip, supporting from behind</li>
+        <li><b>④ Just enough pressure</b>: stop once the note sounds clean; pressing too hard tires you out and pushes the pitch sharp</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 16 爬格子一 -->
+<section class="slide" data-teaching="g06">
+  <div class="ix-tag"><b>Interactive</b>Tab trainer</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Warm-up (1)</div>
+  <h2 style="margin-bottom:8px">Finger crawl 1-2-3-4: one finger per fret</h2>
+  <div data-tab="1-5 1-6 1-7 1-8 | 2-5 2-6 2-7 2-8 | 3-5 3-6 3-7 3-8 | 4-5 4-6 4-7 4-8 | 5-5 5-6 5-7 5-8 | 6-5 6-6 6-7 6-8" data-per-row="6" data-title="Start at string 1, fret 5" data-play data-bpm="60"></div>
+  <p class="muted" style="font-size:17px;margin-top:8px">Index on fret 5, middle on fret 6, ring on fret 7, little finger on fret 8. The right hand alternates "down, up" with the pick. When you press the next fret, keep the earlier fingers on the string.</p>
+</section>
+
+<!-- 17 爬格子二 -->
+<section class="slide" data-teaching="g06">
+  <div class="ix-tag"><b>Interactive</b>Tab trainer</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Warm-up (2)</div>
+  <h2 style="margin-bottom:8px">Finger crawl 1-3-2-4: make each finger independent</h2>
+  <div data-tab="6-5 6-7 6-6 6-8 | 5-5 5-7 5-6 5-8 | 4-5 4-7 4-6 4-8 | 3-5 3-7 3-6 3-8 | 2-5 2-7 2-6 2-8 | 1-5 1-7 1-6 1-8" data-per-row="6" data-title="From string 6 to string 1" data-play data-bpm="60"></div>
+  <div class="cards-mini" style="margin-top:10px">
+    <div class="card"><h3 class="c-navy">Goal</h3><p>Left-hand control and stretch, right-hand speed and accuracy.</p></div>
+    <div class="card"><h3 class="c-gold">How to speed up</h3><p>Only add 4 BPM after two steady rounds in a row. The original handbook's 100 BPM is the final goal; start slow.</p></div>
+    <div class="card"><h3 class="c-red">Move down the neck</h3><p>Once it's comfortable, crawl from fret 1, where the frets are widest and the finger stretch does the most good.</p></div>
+  </div>
+</section>
+
+<!-- 18 爬格子接力 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Team contest · timed</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Team contest</div>
+  <h2 style="margin-bottom:12px">Finger-crawl relay</h2>
+  <div class="split">
+    <div>
+      <ul class="clean compact">
+        <li>Each group lines up; each person takes one string, and the next person carries on with the next string</li>
+        <li>Metronome at 70 BPM; if the whole group stays steady across all six strings, 2 points</li>
+        <li>If someone stops or slips, pick up again from that person, 1 point</li>
+        <li>Round two goes up to 80 BPM; go for the group's top speed</li>
+      </ul>
+      <div class="phase" data-phases="Group practice|180;Relay challenge|300" style="margin-top:12px"></div>
+    </div>
+    <div class="score" data-id="g02-relay" data-teams="4"></div>
+  </div>
+</section>
+
+<!-- 19 五格調音法 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Listen and compare</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Tuning without a tuner</div>
+  <h2 style="margin-bottom:8px">Fifth-fret tuning: use the next string as your reference</h2>
+  <div data-tab="6-5 5-0:h r | 5-5 4-0:h r | 4-5 3-0:h r | 3-4 2-0:h r | 2-5 1-0:h r" data-per-row="5" data-title="The two notes in each pair should match" data-play data-bpm="56"></div>
+  <div class="pill-row" style="margin-top:14px">
+    <span class="pill">String 6 fret 5 = open string 5 A</span><span class="pill">String 5 fret 5 = open string 4 D</span><span class="pill">String 4 fret 5 = open string 3 G</span><span class="pill" style="border-color:var(--accent);color:var(--accent)">String 3 fret 4 = open string 2 B</span><span class="pill">String 2 fret 5 = open string 1 E</span>
+  </div>
+  <p class="muted" style="font-size:17px;margin-top:10px">Why string 3 uses fret 4: strings 3 and 2 are a major third apart, while all other neighbouring strings are a perfect fourth apart. The tuning diagram from Chapter 1 comes in handy here.</p>
+</section>
+
+<!-- 20 迷思翻牌 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Myth busting · flip cards</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>How to think about practice</div>
+  <h2 style="margin-bottom:14px">Myth or fact?</h2>
+  <div class="flips">
+    <div class="flip"><div class="f">The faster you practise, the faster you improve</div><div class="b"><strong>Myth</strong>Slow and steady is how fingers remember. Speed comes naturally once you're steady.</div></div>
+    <div class="flip"><div class="f">Metronomes are only for beginners</div><div class="b"><strong>Myth</strong>Professional musicians practise with a metronome every day before recording too.</div></div>
+    <div class="flip"><div class="f">Even 10 minutes of practice a day helps</div><div class="b"><strong>Fact</strong>Short practice every day works better than two hours once at the weekend.</div></div>
+    <div class="flip"><div class="f">You have to read staff notation to learn guitar</div><div class="b"><strong>Myth</strong>Pop guitar mostly uses chord charts and tab; being able to read staff notation opens up a lot more music.</div></div>
+    <div class="flip"><div class="f">The little finger is too short, so you can skip it</div><div class="b"><strong>Myth</strong>The little finger is your fourth main finger. Start training it now and later chords and scales will be much easier.</div></div>
+    <div class="flip"><div class="f">Rest when your fingers hurt</div><div class="b"><strong>Fact</strong>When soreness turns into a sharp pain, rest a few minutes and practise again tomorrow; your fingertips will slowly build calluses.</div></div>
+  </div>
+</section>
+
+<!-- 21 C 大調指板 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Tap to hear</div>
+  <div class="kicker"><span class="tag t-he">Close</span>01:40–02:00 The C major scale and the fretboard</div>
+  <h2 style="margin-bottom:8px">C major in first position: find where Do Re Mi are</h2>
+  <div data-fretboard="cscale"></div>
+  <div class="cards-mini" style="margin-top:12px">
+    <div class="card"><h3 class="c-gold">Green is C (Do)</h3><p>String 5 fret 3 and string 2 fret 1. Tap to listen: these two Do's are an octave apart.</p></div>
+    <div class="card"><h3 class="c-navy">One finger per fret</h3><p>Index on fret 1, middle on fret 2, ring on fret 3, the same as the finger crawl.</p></div>
+    <div class="card"><h3 class="c-red">Open strings are notes too</h3><p>Open string 4 is D, open string 3 is G, open string 2 is B.</p></div>
+  </div>
+</section>
+
+<!-- 22 C 大調音階 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Tab trainer</div>
+  <div class="kicker"><span class="tag t-he">Close</span>Scale practice</div>
+  <h2 style="margin-bottom:8px">The C major scale: up first, then down</h2>
+  <div data-tab="5-3 4-0 4-2 4-3 | 3-0 3-2 2-0 2-1:h | 2-1 2-0 3-2 3-0 | 4-3 4-2 4-0 5-3:h" data-per-row="4" data-title="Do Re Mi Fa Sol La Si Do" data-play data-bpm="60"></div>
+  <p class="muted" style="font-size:17px;margin-top:8px">Sing the solfège as you play. When you reach high Do at string 2 fret 1, hold it for two beats, then play all the way back to the start.</p>
+</section>
+
+<!-- 23 歡樂頌 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Tab trainer</div>
+  <div class="kicker"><span class="tag t-he">Close</span>Your first melody</div>
+  <h2 style="margin-bottom:8px">Ode to Joy: playable on strings 1 and 2 alone</h2>
+  <div data-tab="1-0 1-0 1-1 1-3 | 1-3 1-1 1-0 2-3 | 2-1 2-1 2-3 1-0 | 1-0:dq 2-3:e 2-3:h | 1-0 1-0 1-1 1-3 | 1-3 1-1 1-0 2-3 | 2-1 2-1 2-3 1-0 | 2-3:dq 2-1:e 2-1:h" data-per-row="4" data-title="The Ode to Joy theme from Beethoven's Ninth Symphony" data-play data-bpm="72"></div>
+  <p class="muted" style="font-size:17px;margin-top:6px">Bars 4 and 8 have a dotted quarter note: 1.5 beats plus a half beat. Listen along with the demo once, then turn off "Guitar demo" and play it yourself.</p>
+</section>
+
+<!-- 24 錄音 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Record and compare</div>
+  <div class="kicker"><span class="tag t-he">Close</span>Check-in</div>
+  <h2 style="margin-bottom:12px">Record your Ode to Joy</h2>
+  <div class="split">
+    <ul class="clean compact">
+      <li>Turn on the metronome at 60 BPM and play from start to finish without stopping</li>
+      <li>Listen back afterwards: is every note clear, and is any beat dragged out?</li>
+      <li>Swap with the classmate next to you, listen, and each name one strength</li>
+      <li>The recording stays on your phone only, and you can download it as a keepsake</li>
+    </ul>
+    <div class="panel"><div class="recorder" data-max="40" data-name="Chapter2_Ode_to_Joy"></div></div>
+  </div>
+</section>
+
+<!-- 25 三句話 -->
+<section class="slide center">
+  <div class="kicker">Today In Three Lines</div>
+  <p class="quote">Rhythm comes before pitch,<br>tab runs from thin to thick,<br>slow and steady is how you get fast.</p>
+</section>
+
+<!-- 26 出場券 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Exit ticket 3-2-1</div>
+  <div class="kicker"><span class="tag t-he">Close</span>Exit Ticket</div>
+  <h2 style="margin-bottom:14px">Before you leave, write down 3-2-1</h2>
+  <div class="split wide">
+    <div class="exit" data-prompts="3 symbols you learned today|2 things to practise at home|1 question you still want to ask the teacher"></div>
+    <div class="card"><h3>How to use it</h3><p>Scan the QR code on slide 2 with your phone, fill it in on your own phone and press "Send to teacher".<br><br>Next week the teacher will start from everyone's questions.</p></div>
+  </div>
+</section>
+
+<!-- 27 每日練習 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Self-directed log</div>
+  <div class="kicker">Homework</div>
+  <h2 style="margin-bottom:12px">A 15-minute daily warm-up routine</h2>
+  <div class="routine">
+    <div class="bar-qi" style="flex:2">Tuning<br><small>2 minutes</small></div>
+    <div class="bar-teal" style="flex:4">Finger crawl 1-2-3-4<br><small>4 minutes</small></div>
+    <div class="bar-cheng" style="flex:3">Finger crawl 1-3-2-4<br><small>3 minutes</small></div>
+    <div class="bar-orange" style="flex:3">C major scale<br><small>3 minutes</small></div>
+    <div class="bar-zhuan" style="flex:3">Ode to Joy<br><small>3 minutes</small></div>
+  </div>
+  <div class="log7" data-cols="Finger-crawl BPM|Was the scale smooth?|How today felt"></div>
+</section>
+
+<!-- 28 課後練習 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Self-directed tracking</div>
+  <div class="kicker">Homework</div>
+  <h2 style="margin-bottom:12px">Practice after class: tap once to tick each item you finish</h2>
+  <ul class="checks" data-id="g02-hw">
+    <li>Without the handbook, write how many beats each note from whole to sixteenth lasts</li>
+    <li>Finger crawls 1-2-3-4 and 1-3-2-4, two unbroken rounds each at 70 BPM</li>
+    <li>Tune once with fifth-fret tuning, then check with a tuner</li>
+    <li>Play the C major scale up and down, singing the solfège as you go</li>
+    <li>Record Ode to Joy once and fill in the Chapter 3 pre-class survey</li>
+  </ul>
+</section>
+
+<!-- 29 下週預告 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Pre-class survey</div>
+  <div class="kicker">Next Week</div>
+  <h2>Chapter 3 Your first chords</h2>
+  <div class="split wide">
+    <div>
+      <p class="lead">C, G, Am, F: four chords hold up most pop songs.<br>From next week, you'll play your first accompaniment.</p>
+      <p class="muted" style="margin-top:20px">Scan the QR code to fill in the Chapter 3 pre-class survey on the website.</p>
+    </div>
+    <div class="qr" data-href="../survey.html?id=g-pre-3"></div>
+  </div>
+</section>
+</div>
+</main>
+
+<nav class="ui" aria-label="Slide controls">
+  <button type="button" id="prev" aria-label="Previous">← Previous</button>
+  <span class="counter" id="counter">1 / 1</span>
+  <button type="button" id="next" aria-label="Next">Next →</button>
+  <button type="button" id="full">Full screen</button>
+  <a href="../index.html">Course home</a>
+</nav>
+
+<script src="../../../assets/pixel.js?v=20261015visual1" defer></script>
+<script src="../../assets/ui.js?v=20261016review1" defer></script>
+<script src="../../assets/deck.js?v=20261015visual1" defer></script>
+<script src="../../../assets/vendor/qrcode.min.js" defer></script>
+<script src="../../assets/interact.js?v=20261028a" defer></script>
+<script src="../../../assets/config.js?v=20261020g" defer></script>
+<script src="../../assets/backend.js?v=20261030a" defer></script>
+<script src="../../../assets/ps-audio.js?v=20261015visual1" defer></script>
+<script src="../guitar.js?v=20261028identity" defer></script>
+<script src="../songs.js?v=20261015visual1" defer></script>
+<script src="../../assets/youtube.js?v=20261029a" defer></script>
+<script src="../../assets/teaching/manifest.js?v=20261028identity" defer></script>
+<script src="../../assets/teaching-visuals.js?v=20261028identity" defer></script>
+<script src="../../assets/learning-tools.js?v=20261020a" defer></script>
+</body>
+</html>

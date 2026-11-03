@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meet the piano and pop piano｜Lesson 1｜Piano Lab</title>
+<meta name="description" content="Pixel Studio Piano Lab Lesson 1 class slides: where the piano came from and how it's built, kinds of piano, how classical, pop and jazz piano differ, sitting and hand shape, finger numbers, pedals, and playing the keyboard for the first time.">
+<link rel="icon" href="../../../assets/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="../../../assets/favicon.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="../../../assets/favicon-192.png?v=2">
+<link rel="apple-touch-icon" href="../../../assets/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#101210">
+<link rel="preload" href="../../../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../../assets/brand/pixel-studio-symbol-color.svg" as="image" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script>/* 中文字型策略：首次造訪用系統中文字型（符合 CI：正黑體／蘋方），不在首屏重排；載入完成 5 秒後，利用閒置時間逐一把本頁用得到的 Noto Sans TC 分組下載進快取，之後每頁一開始就套用 */(function(){var K="ps-font",U="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap";function apply(){var l=document.createElement("link");l.rel="stylesheet";l.href=U;document.head.appendChild(l)}var c=0;try{c=localStorage.getItem(K)}catch(e){}if(c){apply();return}var n=navigator.connection;if(n&&(n.saveData||/2g/.test(n.effectiveType||"")))return;var idle=window.requestIdleCallback||function(f){return setTimeout(f,300)};function inRange(r,cps){return r.split(",").some(function(p){var m=p.trim().replace(/^U\+/i,"").split("-"),a=parseInt(m[0],16),b=m[1]?parseInt(m[1],16):a;return cps.some(function(x){return x>=a&&x<=b})})}function warm(){if(!window.FontFace||!window.fetch)return;var seen={},cps=[],t=document.body.textContent;for(var i=0;i<t.length;i++){var x=t.charCodeAt(i);if(x>=0x2E80&&!seen[x]){seen[x]=1;cps.push(x)}}fetch(U).then(function(r){return r.text()}).then(function(css){var q=[];css.replace(/@font-face\s*\{([^}]*)\}/g,function(_,b){var s=/url\(([^)]+)\)/.exec(b),r=/unicode-range:\s*([^;]+)/.exec(b);if(s&&r&&inRange(r[1],cps))q.push([s[1],r[1]]);return _});function next(){if(!q.length){try{localStorage.setItem(K,"1")}catch(e){}return}var j=q.shift();new FontFace("Noto Sans TC","url("+j[0]+")",{weight:"400 900",unicodeRange:j[1]}).load().then(function(){idle(next,{timeout:3000})},function(){idle(next,{timeout:3000})})}idle(next,{timeout:3000})}).catch(function(){})}var painted=0,loaded=0,started=0;function go(){if(painted&&loaded&&!started){started=1;setTimeout(function(){idle(warm,{timeout:5000})},5000)}}try{new PerformanceObserver(function(l){if(!painted&&l.getEntriesByName("first-contentful-paint").length){painted=1;go()}}).observe({type:"paint",buffered:true})}catch(e){painted=1}addEventListener("load",function(){loaded=1;setTimeout(function(){painted=1;go()},3000);go()})})()</script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Music&text=%F0%9D%84%9E%F0%9D%84%A2%E2%99%AF%E2%99%AD&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="../../assets/deck-bundle.css?v=20261029a">
+<link rel="stylesheet" href="../../../piano/theme.css?v=20261016review1">
+<link rel="stylesheet" href="../../../assets/learning-tools.css?v=20261020a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pixel Studio">
+<meta property="og:title" content="Meet the piano and pop piano｜Lesson 1｜Piano Lab">
+<meta property="og:description" content="Pixel Studio Piano Lab Lesson 1 class slides: where the piano came from and how it's built, kinds of piano, how classical, pop and jazz piano differ, sitting and hand shape, finger numbers, pedals, and playing the keyboard for the first time.">
+<meta property="og:image" content="https://pixel-studio.musicallanding.workers.dev/piano/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../../assets/teaching-visuals.css?v=20261015identity21">
+<link rel="canonical" href="https://pixel-studio.musicallanding.workers.dev/en/piano/p01/">
+<link rel="alternate" hreflang="zh-Hant" href="https://pixel-studio.musicallanding.workers.dev/piano/p01/">
+<link rel="alternate" hreflang="en" href="https://pixel-studio.musicallanding.workers.dev/en/piano/p01/">
+<link rel="alternate" hreflang="x-default" href="https://pixel-studio.musicallanding.workers.dev/piano/p01/">
+<meta property="og:url" content="https://pixel-studio.musicallanding.workers.dev/en/piano/p01/">
+<script src="../../../assets/analytics.js?v=20261104a" defer></script>
+<script src="../../../assets/lang.js?v=20261104a" defer></script>
+</head>
+<body data-title="Lesson 1｜Meet the piano and pop piano" data-course="piano" data-lesson="p01" data-home="../index.html#lessons">
+<div class="progress" id="progress"></div>
+<main class="deck" id="deck">
+<div class="stage" id="stage">
+<!-- 1 封面 -->
+<section class="slide cover"><div class="cover-art" aria-hidden="true"><span class="ca-glow"></span><img src="../../../assets/brand/pixel-studio-symbol-color.svg" alt="" width="1024" height="1024" fetchpriority="high"></div>
+  <div class="kicker">Pixel Studio Piano Lab｜Pop piano Lesson 1</div>
+  <h1>Meet the piano and pop piano</h1>
+  <p class="lead">Meet The Piano · Pop Piano</p>
+  <p class="meta">Teacher: Leo Lee, Pixel Studio<br>musicallanding@gmail.com</p>
+<img class="cover-sig" src="../../../assets/brand/pixel-studio-primary-mono-white.svg" alt="Pixel Studio" width="1600" height="1440" loading="lazy" decoding="async"></section>
+
+<!-- 2 路線 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Phone sync</div>
+  <div class="kicker">Today · 120 Minutes</div>
+  <h2>Today's route: get to know the eighty-eight keys in front of you</h2>
+  <div class="timeline">
+    <div class="bar-qi" style="flex:20"><b>Open</b><small>Piano experience and hopes｜20 minutes</small></div>
+    <div class="bar-cheng" style="flex:35"><b>Build</b><small>Origins, construction, kinds, three styles of piano｜35 minutes</small></div>
+    <div class="bar-rest" style="flex:10"><b>Break</b><small>10 minutes</small></div>
+    <div class="bar-zhuan" style="flex:35"><b>Turn</b><small>Sitting, finger numbers, pedals, finding C｜35 minutes</small></div>
+    <div class="bar-he" style="flex:20"><b>Close</b><small>Five-finger position, your first sound｜20 minutes</small></div>
+  </div>
+  <div class="split wide">
+    <ul class="clean compact">
+      <li>Explain where the piano came from, how it makes sound and the common kinds</li>
+      <li>Tell classical, pop and jazz piano apart</li>
+      <li>With good posture and hand shape, learn the finger numbers for both hands and the pedals</li>
+      <li>Before the end of class, everyone finds middle C on the keyboard and plays Do Re Mi Fa Sol in five-finger position</li>
+    </ul>
+    <div class="qr" data-href="../../../piano/p01/self"></div>
+  </div>
+</section>
+
+<!-- 3 破冰 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Show-of-hands vote</div>
+  <div class="kicker"><span class="tag t-qi">Open</span>00:00–00:20 Before we begin</div>
+  <h2>Lots of people learned piano as kids and then let it go</h2>
+  <div class="split">
+    <div>
+      <ul class="clean compact">
+        <li>Introduce yourself: your piano experience and the one song you most want to play</li>
+        <li>Check everyone's instrument: piano, digital piano or keyboard</li>
+        <li>The goal of pop piano: play and sing, accompany freely, and play music that's your own</li>
+      </ul>
+    </div>
+    <div>
+      <p class="muted" style="font-size:18px;margin-bottom:10px">What's your piano experience?</p>
+      <div class="poll" data-id="p01-exp" data-options="Never learned|Learned as a kid, then stopped|Learned classical, want to play pop|Can play a few pop songs"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 阿勳老師的故事 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-qi">Open</span>A few words on pop piano</div>
+  <h2 style="margin-bottom:18px">When I was six, my piano teacher sent me home</h2>
+  <div class="grid2" style="grid-template-columns:1.2fr .8fr;align-items:start">
+    <div class="lyric"><p style="font-size:25px;line-height:1.8">After I passed Yamaha Grade 12,<br>every time I sat at the piano my eyelids got heavy,<br>so my teacher sent home a kid who had no interest in the piano.<br>Ten years later, the guitar taught me theory all over again<br>and brought me back to the piano for nearly five years of teaching myself.</p></div>
+    <div class="card"><h3 class="c-cyan">Where this course starts</h3><p>The drive to learn comes from wanting to play the music you love. This course starts from chords and accompaniment: first you play and sing at the piano, then step by step you build your ear and your arranging.</p></div>
+  </div>
+</section>
+
+<!-- 5 起源 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>00:20–00:55 Where the piano came from</div>
+  <h2 style="margin-bottom:16px">Pianoforte: an instrument that can play "soft" and "loud"</h2>
+  <div class="era">
+    <div class="card" style="--c:#8a4fc0"><div class="yr">Renaissance · Baroque</div><h3>Harpsichord</h3><p>The harpsichord plucks its strings, so the volume can't change with your touch.</p></div>
+    <div class="card hl" style="--c:#45b3e6"><div class="yr">1709</div><h3>Cristofori</h3><p>The Italian Bartolomeo Cristofori took the harpsichord as a model and switched to hammers striking the strings, making an early piano "with soft and loud".</p></div>
+    <div class="card" style="--c:#6cbb4b"><div class="yr">Where the name comes from</div><h3>Piano + Forte</h3><p>The full name is pianoforte, "soft-loud". For convenience the forte, meaning loud, was dropped, leaving just piano.</p></div>
+    <div class="card" style="--c:#f4a62a"><div class="yr">Late 18th century</div><h3>King of instruments</h3><p>With its wide range and the ability to play melody and harmony together, it became the most important instrument for composing and music education.</p></div>
+  </div>
+</section>
+
+<!-- 6 構造 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>How it's built and makes sound</div>
+  <h2 style="margin-bottom:14px">Press a key and a hammer strikes the strings</h2>
+  <div class="grid2" style="grid-template-columns:1fr 1fr;align-items:center">
+    <figure class="piano-mechanism">
+      <img loading="lazy" decoding="async" src="../../../assets/piano/piano-action.branded.svg?v=20261015revision17" width="1400" height="788" alt="Upright piano cross-section: the key drives wooden levers, the hammer strikes the strings, and the vibration travels to the soundboard">
+      <figcaption>Key → action → strings → soundboard → air</figcaption>
+    </figure>
+    <ul class="clean compact">
+      <li>In principle it's a <b>struck string instrument</b>; because you play it through a keyboard, it's classed as a <b>keyboard instrument</b></li>
+      <li>88 keys, a range from A0 to C8, over seven octaves, tuned in twelve-tone equal temperament</li>
+      <li>Over two hundred strings inside, with an iron frame taking their pull</li>
+      <li>Let go of a key and the damper stops the string vibrating straight away</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 7 小測 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Multiple choice</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>Quiz</div>
+  <h2 style="margin-bottom:14px">Predict, then reveal</h2>
+  <div class="split">
+    <div class="quiz" data-answer="2">
+      <p class="q">What makes the piano's sound?</p>
+      <ol><li>Hammers</li><li>Strings</li><li>Pedals</li><li>Keys</li></ol>
+      <div class="why">The vibrating strings make the sound; the hammers strike them and the soundboard makes it louder.</div>
+    </div>
+    <div class="quiz" data-answer="4">
+      <p class="q">The piano combines the principles of which two kinds of instrument?</p>
+      <ol><li>Reeds and wind</li><li>Strings and wind</li><li>Keyboard and wind</li><li>Strings and percussion</li></ol>
+      <div class="why">Strings make the sound and hammers strike them, so the piano combines the principles of string and percussion instruments.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 種類 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>Kinds of piano</div>
+  <h2 style="margin-bottom:14px">From concert hall to bedroom: the keyboard family</h2>
+  <div class="types">
+    <div class="card"><img loading="lazy" decoding="async" class="piano-type-img" src="../../../assets/piano/grand-piano.branded.svg?v=20261015revision17" width="1312" height="1199" alt="A grand piano with its lid up, showing the strings and keyboard"><h3>Grand piano</h3><div class="en">Grand Piano</div><p>Strings lie horizontally and the hammers strike from below; a responsive touch, standard for concerts.</p></div>
+    <div class="card"><img loading="lazy" decoding="async" class="piano-type-img" src="../../../assets/piano/upright-piano.branded.svg?v=20261015revision17" width="1374" height="1145" alt="A dark wooden upright piano with keys and pedals"><h3>Upright piano</h3><div class="en">Upright Piano</div><p>Strings stand vertically and the hammers strike from the front; compact, and most common in homes and classrooms.</p></div>
+    <div class="card"><img loading="lazy" decoding="async" class="piano-type-img" src="../../../assets/piano/digital-piano.branded.svg?v=20261015revision17" width="1536" height="1024" alt="An 88-key digital piano on an X stand"><h3>Digital piano</h3><div class="en">Digital Piano</div><p>Samples a real piano's sound; you can practise with headphones and connect to a computer over MIDI.</p></div>
+    <div class="card"><img loading="lazy" decoding="async" class="piano-type-img" src="../../../assets/piano/synth-keyboard.branded.svg?v=20261015revision17" width="1374" height="1145" alt="A keyboard synthesizer with a screen, knobs and buttons"><h3>Keyboards, synthesizers</h3><div class="en">Keyboard · Synthesizer</div><p>49 to 88 keys, with lots of built-in sounds and rhythms; light and easy to carry.</p></div>
+  </div>
+  <p class="muted" style="font-size:17px;margin-top:12px">There are also silent pianos you can practise on with headphones, player pianos, and organs with two manuals plus a pedalboard. For a beginner, an instrument with at least 61 touch-sensitive keys is best.</p>
+</section>
+
+<!-- 9 三種鋼琴 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>Classical, pop and jazz</div>
+  <h2 style="margin-bottom:14px">Pop piano is the foundation for jazz piano</h2>
+  <div class="cmp">
+    <div class="card"><h3 class="c-gold">Classical piano</h3><p>Played from staff notation, with an emphasis on sight-reading and fine technical interpretation.</p></div>
+    <div class="card"><h3 class="c-cyan">Pop piano</h3><p>Accompanying freely from chord symbols, adding ornaments and fills, and pushing and laying back with syncopation for a pop feel.</p></div>
+    <div class="card"><h3 class="c-pink">Jazz piano</h3><p>Mostly improvised, with seventh chords and walking bass; play a song a hundred times and it's different every time.</p></div>
+  </div>
+  <table class="tight" style="margin-top:14px">
+    <tr><th>Three elements</th><th>Pop piano</th><th>Jazz piano</th></tr>
+    <tr><td><b>Harmony</b></td><td>More consonant triads</td><td>Dissonant seventh chords</td></tr>
+    <tr><td><b>Melody</b></td><td>Ornaments and syncopation added to the original</td><td>Improvised variations</td></tr>
+    <tr><td><b>Rhythm</b></td><td>Grooves from dances around the world</td><td>Walking bass</td></tr>
+  </table>
+</section>
+
+<!-- 10 聆聽 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Song listening · YouTube</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>Ears first</div>
+  <h2 style="margin-bottom:10px">Listen to four piano pieces and guess the style of each</h2>
+  <div class="yt-list song-grid c4">
+    <div class="yt" data-song="Ballade Pour Adeline"></div>
+    <div class="yt" data-song="不能說的秘密"></div>
+    <div class="yt" data-song="Waltz For Debby"></div>
+    <div class="yt" data-song="C Jam Blues"></div>
+  </div>
+  <div class="reveal" data-label="Reveal" style="margin-top:12px"><p>Ballade pour Adeline and 不能說的秘密 are pop piano: a clear melody over mostly broken-chord accompaniment. Bill Evans and Oscar Peterson are jazz piano: rich harmony, with the melody improvised again and again.</p></div>
+</section>
+
+<!-- 11 休息 -->
+<section class="slide center">
+  <div class="kicker">Break</div>
+  <div class="timer" id="timer">10:00</div>
+  <p class="lead">Ten-minute break: shake out your wrists and relax your shoulders</p>
+  <div style="height:20px"></div>
+  <div class="btn-row"><button type="button" class="btn" id="timerBtn">Start countdown</button><button type="button" class="btn" id="timerReset">Reset</button></div>
+</section>
+
+<!-- 12 坐姿 -->
+<section class="slide" data-teaching="p01">
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>01:05–01:40 Sitting and hand shape</div>
+  <h2 style="margin-bottom:14px">Sit steady and relaxed, fingers as if holding a ball</h2>
+  <div class="grid2">
+    <ul class="clean compact">
+      <li>Sit on the front half of the bench, centred on middle C, feet flat on the floor</li>
+      <li>Bench height: elbows roughly level with the keys</li>
+      <li>Shoulders relaxed, upper arms hanging naturally, wrists neither sagging nor raised</li>
+      <li>Fingers curved, playing with the fingertips; the thumb plays on its side</li>
+    </ul>
+    <div class="card"><h3 class="c-cyan">Checklist</h3><p class="pattern-txt" style="font-size:24px;line-height:1.7">Loose shoulders, level elbows, straight wrists, round fingers</p><p style="margin-top:8px">If your shoulders or wrists feel tight while playing, stop, shake out your hands and set your hand shape again. Playing slowly is fine; tension is what you most need to avoid.</p></div>
+  </div>
+</section>
+
+<!-- 13 手指編號 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Finger numbers</div>
+  <h2 style="margin-bottom:14px">The thumb is 1 and the little finger 5, on both hands</h2>
+  <div class="hands photo-hands">
+    <img loading="lazy" decoding="async" src="../../../assets/piano/hands-keyboard.branded.svg?v=20261015revision17" width="1500" height="750" alt="Both hands resting in a natural curve on the keyboard, the left in the low register and the right in the high">
+    <svg viewBox="0 0 1774 887" role="img" aria-label="Finger numbers: left hand 1 to 5 from thumb to little finger; right hand 1 to 5 from thumb to little finger">
+      <g class="finger-marker"><circle class="tip" cx="340" cy="350" r="23"/><text class="finger-num" x="340" y="360">5</text><circle class="tip" cx="415" cy="310" r="23"/><text class="finger-num" x="415" y="320">4</text><circle class="tip" cx="505" cy="285" r="23"/><text class="finger-num" x="505" y="295">3</text><circle class="tip" cx="590" cy="300" r="23"/><text class="finger-num" x="590" y="310">2</text><circle class="tip" cx="685" cy="410" r="23"/><text class="finger-num" x="685" y="420">1</text></g>
+      <g class="finger-marker"><circle class="tip" cx="1060" cy="410" r="23"/><text class="finger-num" x="1060" y="420">1</text><circle class="tip" cx="1165" cy="300" r="23"/><text class="finger-num" x="1165" y="310">2</text><circle class="tip" cx="1250" cy="285" r="23"/><text class="finger-num" x="1250" y="295">3</text><circle class="tip" cx="1330" cy="305" r="23"/><text class="finger-num" x="1330" y="315">4</text><circle class="tip" cx="1410" cy="350" r="23"/><text class="finger-num" x="1410" y="360">5</text></g>
+      <text class="hand-label" x="510" y="830">Left hand L</text><text class="hand-label" x="1260" y="830">Right hand R</text>
+    </svg>
+  </div>
+  <p class="muted" style="font-size:17px;margin-top:8px">This course writes accompaniment as "L5 L3 L2 L1" and "R1 R2 R5": L is the left hand, R the right, and the numbers are fingers.</p>
+</section>
+
+<!-- 14 踏板 -->
+<section class="slide" data-teaching="p02">
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Pedals</div>
+  <h2 style="margin-bottom:14px">Three pedals, each with a job</h2>
+  <div class="grid3">
+    <div class="card"><div class="big-num c-cyan">Right</div><h3>Sustain pedal</h3><p>Pressing it lifts the dampers off the strings, so the sound keeps going after you let go of the keys. It's the one pop piano uses most; change the pedal when you change chords.</p></div>
+    <div class="card"><div class="big-num c-gold">Left</div><h3>Soft pedal</h3><p>Makes the sound quieter and softer. On a grand it shifts the hammers; on an upright it moves the hammers closer to the strings.</p></div>
+    <div class="card"><div class="big-num c-pink">Middle</div><h3>Sostenuto or practice pedal</h3><p>On a grand it sustains only certain notes; on an upright it's often a mute for quiet practice.</p></div>
+  </div>
+  <div class="reveal" data-label="How to change the pedal" style="margin-top:16px"><p>Right after you press the chord, lift the pedal and press it again, so the new chord is sustained and the old one is cut off. Remember: play, lift, press.</p></div>
+</section>
+
+<!-- 15 鍵盤地圖 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Playable keyboard</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Find C</div>
+  <h2 style="margin-bottom:8px">The white key left of a pair of black keys is C</h2>
+  <div class="keyboard" data-lo="48" data-hi="84" data-labels="name" data-mark="48 60 72 84"></div>
+  <p class="muted" style="font-size:17px;margin-top:8px">Black keys repeat in groups of two and three. The C nearest the middle of the piano is middle C (C4). The keys marked light blue are all Cs.</p>
+</section>
+
+<!-- 16 迷思 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Myth busting · flip cards</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Ideas about learning piano</div>
+  <h2 style="margin-bottom:14px">Myth or fact?</h2>
+  <div class="flips">
+    <div class="flip"><div class="f">You have to master classical piano before you can play pop</div><div class="b"><strong>Myth</strong>Pop piano starts from chords, so you can begin from zero; classical technique is a great help, though.</div></div>
+    <div class="flip"><div class="f">The thinner the string, the lower the note</div><div class="b"><strong>Myth</strong>The thinner and shorter the string, the higher the note; bass strings are thick and long and wrapped in copper wire.</div></div>
+    <div class="flip"><div class="f">A piano needs regular tuning</div><div class="b"><strong>Fact</strong>Strings stretch over time and go out of tune; tune at least once a year.</div></div>
+    <div class="flip"><div class="f">Holding the sustain pedal down the whole time sounds best</div><div class="b"><strong>Myth</strong>Different chords blur together into mud; change the pedal when you change chords.</div></div>
+    <div class="flip"><div class="f">A piano doesn't like damp, or too dry either</div><div class="b"><strong>Fact</strong>The right environment is about 20°C with 50–60% humidity, out of direct sunlight.</div></div>
+    <div class="flip"><div class="f">You have to press hard for a good sound</div><div class="b"><strong>Myth</strong>Letting the arm's weight fall naturally is stronger than pushing the keys, and won't hurt you.</div></div>
+  </div>
+</section>
+
+<!-- 17 五指位置 -->
+<section class="slide" data-teaching="p03">
+  <div class="ix-tag"><b>Interactive</b>Scale fingering</div>
+  <div class="kicker"><span class="tag t-he">Close</span>01:40–02:00 Your first sound</div>
+  <h2 style="margin-bottom:8px">C five-finger position: one finger per key</h2>
+  <div class="scaletrain" data-scales="C5" data-bpm="60"></div>
+</section>
+
+<!-- 18 錄音 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Recording</div>
+  <div class="kicker"><span class="tag t-he">Close</span>Record day one</div>
+  <h2 style="margin-bottom:12px">Play Do Re Mi Fa Sol once with the right hand and once with the left</h2>
+  <div class="rec-pair">
+    <div class="panel"><h3>① Right hand 1 2 3 4 5</h3><div class="recorder" data-max="20" data-name="Lesson 1_right-hand five fingers"></div></div>
+    <div class="panel"><h3>② Left hand 5 4 3 2 1</h3><div class="recorder" data-max="20" data-name="Lesson 1_left-hand five fingers"></div></div>
+  </div>
+  <p class="muted" style="font-size:17px;margin-top:12px">When you listen back, check: are all five notes equally loud? Are your fingers staying curved? After twelve lessons, compare with today's recording.</p>
+</section>
+
+<!-- 19 三句話 -->
+<section class="slide center">
+  <div class="kicker">Today In Three Lines</div>
+  <p class="quote">The hammer strikes the string and the soundboard makes it louder,<br>C is left of the two black keys,<br>the thumb is 1, the little finger 5.</p>
+</section>
+
+<!-- 20 出場券 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Exit ticket 3-2-1</div>
+  <div class="kicker"><span class="tag t-he">Close</span>Exit Ticket</div>
+  <h2 style="margin-bottom:14px">Before you leave, write down 3-2-1</h2>
+  <div class="split wide">
+    <div class="exit" data-prompts="3 piano parts or terms you learned today|2 songs you most want to play on piano|1 question you still want to ask the teacher"></div>
+    <div class="card"><h3>Before you go home</h3><p>Find middle C on the piano or keyboard at home; if you don't have an instrument yet, practise on the keyboard on the website for now.</p></div>
+  </div>
+</section>
+
+<!-- 21 每日練習 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Self-directed log</div>
+  <div class="kicker">Homework</div>
+  <h2 style="margin-bottom:12px">10-minute daily warm-up</h2>
+  <div class="routine">
+    <div class="bar-qi" style="flex:2">Posture check<br><small>2 minutes</small></div>
+    <div class="bar-cheng" style="flex:3">Find every C<br><small>3 minutes</small></div>
+    <div class="bar-zhuan" style="flex:3">Right-hand five fingers<br><small>3 minutes</small></div>
+    <div class="bar-teal" style="flex:2">Left-hand five fingers<br><small>2 minutes</small></div>
+  </div>
+  <div class="log7" data-cols="Practice time (minutes)|Five fingers even?|How today felt"></div>
+</section>
+
+<!-- 22 課後練習 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Self-directed tracking</div>
+  <div class="kicker">Homework</div>
+  <h2 style="margin-bottom:12px">Practice after class: tap once to tick each item you finish</h2>
+  <ul class="checks" data-id="p01-hw">
+    <li>Without the handbook, say the piano's sound path: key, hammer, string, soundboard</li>
+    <li>With your eyes closed, find a pair of black keys by touch, then play C</li>
+    <li>C five-finger position ten times with each hand, all five notes equally loud</li>
+    <li>Listen to a pop song with piano accompaniment and decide whether it's closer to pop or jazz</li>
+    <li>Fill in the Lesson 2 pre-class survey</li>
+  </ul>
+</section>
+
+<!-- 23 下週預告 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Pre-class survey</div>
+  <div class="kicker">Next Week</div>
+  <h2>Lesson 2: Basic theory and reading music</h2>
+  <div class="split wide">
+    <div>
+      <p class="lead">Note names, solfège and numbered notation, the grand staff and middle C,<br>note lengths, time signatures and intervals:<br>learn to read music and find every note on the keyboard.</p>
+      <p class="muted" style="margin-top:20px">Scan the QR code to fill in the Lesson 2 pre-class survey on the website.</p>
+    </div>
+    <div class="qr" data-href="../survey.html?id=p-pre-2"></div>
+  </div>
+</section>
+</div>
+</main>
+
+<nav class="ui" aria-label="Slide controls">
+  <button type="button" id="prev" aria-label="Previous">← Previous</button>
+  <span class="counter" id="counter">1 / 1</span>
+  <button type="button" id="next" aria-label="Next">Next →</button>
+  <button type="button" id="full">Full screen</button>
+  <a href="../index.html">Course home</a>
+</nav>
+
+<script src="../../../assets/pixel.js?v=20261016b" defer></script>
+<script src="../../assets/ui.js?v=20261016review1" defer></script>
+<script src="../../assets/deck.js?v=20261016b" defer></script>
+<script src="../../../assets/vendor/qrcode.min.js" defer></script>
+<script src="../../assets/interact.js?v=20261028a" defer></script>
+<script src="../../../assets/config.js?v=20261020g" defer></script>
+<script src="../../assets/backend.js?v=20261030a" defer></script>
+<script src="../../../assets/ps-audio.js?v=20261016b" defer></script>
+<script src="../piano.js?v=20261016review1" defer></script>
+<script src="../songs.js?v=20261016b" defer></script>
+<script src="../../assets/youtube.js?v=20261029a" defer></script>
+<script src="../../assets/learning-tools.js?v=20261020a" defer></script>
+<script src="../../assets/teaching/manifest.js?v=20261015identity21" defer></script>
+<script src="../../assets/teaching-visuals.js?v=20261015identity21" defer></script>
+</body>
+</html>

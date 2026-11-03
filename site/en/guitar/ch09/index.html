@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bass movement｜Chapter 9｜Guitar Lab</title>
+<meta name="description" content="Pixel Studio Guitar Lab Chapter 9 class slides: the role of the bass, slash chords (C/G, G/B, Am/G, C/E, D/F#), double and alternate roots, descending and ascending bass lines, passing notes, and bass with strumming and fingerpicking.">
+<link rel="icon" href="../../../assets/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="../../../assets/favicon.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="../../../assets/favicon-192.png?v=2">
+<link rel="apple-touch-icon" href="../../../assets/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#101210">
+<link rel="preload" href="../../../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../../assets/brand/pixel-studio-symbol-color.svg" as="image" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script>/* 中文字型策略：首次造訪用系統中文字型（符合 CI：正黑體／蘋方），不在首屏重排；載入完成 5 秒後，利用閒置時間逐一把本頁用得到的 Noto Sans TC 分組下載進快取，之後每頁一開始就套用 */(function(){var K="ps-font",U="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap";function apply(){var l=document.createElement("link");l.rel="stylesheet";l.href=U;document.head.appendChild(l)}var c=0;try{c=localStorage.getItem(K)}catch(e){}if(c){apply();return}var n=navigator.connection;if(n&&(n.saveData||/2g/.test(n.effectiveType||"")))return;var idle=window.requestIdleCallback||function(f){return setTimeout(f,300)};function inRange(r,cps){return r.split(",").some(function(p){var m=p.trim().replace(/^U\+/i,"").split("-"),a=parseInt(m[0],16),b=m[1]?parseInt(m[1],16):a;return cps.some(function(x){return x>=a&&x<=b})})}function warm(){if(!window.FontFace||!window.fetch)return;var seen={},cps=[],t=document.body.textContent;for(var i=0;i<t.length;i++){var x=t.charCodeAt(i);if(x>=0x2E80&&!seen[x]){seen[x]=1;cps.push(x)}}fetch(U).then(function(r){return r.text()}).then(function(css){var q=[];css.replace(/@font-face\s*\{([^}]*)\}/g,function(_,b){var s=/url\(([^)]+)\)/.exec(b),r=/unicode-range:\s*([^;]+)/.exec(b);if(s&&r&&inRange(r[1],cps))q.push([s[1],r[1]]);return _});function next(){if(!q.length){try{localStorage.setItem(K,"1")}catch(e){}return}var j=q.shift();new FontFace("Noto Sans TC","url("+j[0]+")",{weight:"400 900",unicodeRange:j[1]}).load().then(function(){idle(next,{timeout:3000})},function(){idle(next,{timeout:3000})})}idle(next,{timeout:3000})}).catch(function(){})}var painted=0,loaded=0,started=0;function go(){if(painted&&loaded&&!started){started=1;setTimeout(function(){idle(warm,{timeout:5000})},5000)}}try{new PerformanceObserver(function(l){if(!painted&&l.getEntriesByName("first-contentful-paint").length){painted=1;go()}}).observe({type:"paint",buffered:true})}catch(e){painted=1}addEventListener("load",function(){loaded=1;setTimeout(function(){painted=1;go()},3000);go()})})()</script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Music&text=%F0%9D%84%9E%E2%99%AF%E2%99%AE&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="../../assets/deck-bundle.css?v=20261029a">
+<link rel="stylesheet" href="../../../guitar/theme.css?v=20261016review1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pixel Studio">
+<meta property="og:title" content="Bass movement｜Chapter 9｜Guitar Lab">
+<meta property="og:description" content="Pixel Studio Guitar Lab Chapter 9 class slides: the role of the bass, slash chords (C/G, G/B, Am/G, C/E, D/F#), double and alternate roots, descending and ascending bass lines, passing notes, and bass with strumming and fingerpicking.">
+<meta property="og:image" content="https://pixel-studio.musicallanding.workers.dev/guitar/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../../assets/learning-tools.css?v=20261020a">
+<link rel="canonical" href="https://pixel-studio.musicallanding.workers.dev/en/guitar/ch09/">
+<link rel="alternate" hreflang="zh-Hant" href="https://pixel-studio.musicallanding.workers.dev/guitar/ch09/">
+<link rel="alternate" hreflang="en" href="https://pixel-studio.musicallanding.workers.dev/en/guitar/ch09/">
+<link rel="alternate" hreflang="x-default" href="https://pixel-studio.musicallanding.workers.dev/guitar/ch09/">
+<meta property="og:url" content="https://pixel-studio.musicallanding.workers.dev/en/guitar/ch09/">
+<script src="../../../assets/analytics.js?v=20261104a" defer></script>
+<script src="../../../assets/lang.js?v=20261104a" defer></script>
+</head>
+<body data-title="Chapter 9｜Bass movement" data-course="guitar" data-lesson="ch09" data-home="../index.html#lessons">
+<div class="progress" id="progress"></div>
+<main class="deck" id="deck">
+<div class="stage" id="stage">
+<!-- 1 封面 -->
+<section class="slide cover"><div class="cover-art" aria-hidden="true"><span class="ca-glow"></span><img src="../../../assets/brand/pixel-studio-symbol-color.svg" alt="" width="1024" height="1024" fetchpriority="high"></div>
+  <div class="kicker">Pixel Studio Guitar Lab｜Folk guitar Chapter 9</div>
+  <h1>Bass movement</h1>
+  <p class="lead">Bass Lines · Slash Chords</p>
+  <p class="meta">Teacher: Leo Lee, Pixel Studio<br>musicallanding@gmail.com</p>
+<img class="cover-sig" src="../../../assets/brand/pixel-studio-primary-mono-white.svg" alt="Pixel Studio" width="1600" height="1440" loading="lazy" decoding="async"></section>
+
+<!-- 2 路線 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Phone sync</div>
+  <div class="kicker">Today · 120 Minutes</div>
+  <h2>Today's route: join the bass notes into a melody</h2>
+  <div class="timeline">
+    <div class="bar-qi" style="flex:20"><b>Open</b><small>Barre chord review, listening for the bass｜20 minutes</small></div>
+    <div class="bar-cheng" style="flex:35"><b>Build</b><small>Slash chords, alternate roots, bass lines｜35 minutes</small></div>
+    <div class="bar-rest" style="flex:10"><b>Break</b><small>10 minutes</small></div>
+    <div class="bar-zhuan" style="flex:35"><b>Turn</b><small>Passing notes, bass with strumming and fingerpicking｜35 minutes</small></div>
+    <div class="bar-he" style="flex:20"><b>Close</b><small>Descending bass play-along｜20 minutes</small></div>
+  </div>
+  <div class="split wide">
+    <ul class="clean compact">
+      <li>Read slash chords like C/G and G/B, understanding that the note after the slash is the bass</li>
+      <li>Use alternate roots so the "boom" alternates between two strings</li>
+      <li>Play the descending bass line C → G/B → Am → Am/G → F</li>
+      <li>Add passing notes between chords so the accompaniment walks like a bass player</li>
+    </ul>
+    <div class="qr" data-href="../../../guitar/ch09/self"></div>
+  </div>
+</section>
+
+<!-- 3 回顧 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Show-of-hands vote</div>
+  <div class="kicker"><span class="tag t-qi">Open</span>00:00–00:20 Warm-up and review</div>
+  <h2>How many strings ring on your full barre F right now?</h2>
+  <div class="split">
+    <div>
+      <ul class="clean compact">
+        <li>After tuning, one G major scale and one round of C → F → G → C</li>
+        <li>The teacher goes round helping everyone check their F hand shape</li>
+        <li>The teacher answers questions from last week's exit tickets</li>
+      </ul>
+      <div class="card" style="margin-top:16px"><p>In Chapter 5 you learned "boom": whatever the chord is called, that's the bass note. Today we break that rule and let the bass <b class="c-gold">take its own route</b>.</p></div>
+    </div>
+    <div>
+      <p class="muted" style="font-size:18px;margin-bottom:10px">How is your full barre F right now?</p>
+      <div class="poll" data-id="g09-barre" data-options="All six ring|Five|Four or fewer|Still using small F"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 預測 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Predict, then reveal</div>
+  <div class="kicker"><span class="tag t-qi">Open</span>Think about it</div>
+  <h2>In "C/G" on a chord chart, what does the G after the slash mean?</h2>
+  <div class="split">
+    <div class="quiz" data-answer="2">
+      <p class="q">Choose the right meaning</p>
+      <ol><li>Alternate between C and G chords</li><li>Play a C chord with G as the lowest note</li><li>Play the C chord in the key of G</li><li>Play C, then switch to G</li></ol>
+      <div class="why">The chord comes before the slash and the bass after it; these are called "slash chords". C/G is read "C over G".</div>
+    </div>
+    <div class="card"><h3>The original handbook's Chapter 3</h3><p>"The murmur of the bass": as well as being the chord's root, the bass can substitute and move, as if a line were threading the chords together.</p></div>
+  </div>
+</section>
+
+<!-- 5 低音的角色 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>00:20–00:55 Chapter 3: The murmur of the bass</div>
+  <h2 style="margin-bottom:12px">The bass decides where a chord sits</h2>
+  <div class="cards-mini">
+    <div class="card"><h3 class="c-navy">Foundation</h3><p>Your ears use the bass first to work out "which chord is this". Change the bass and the chord feels different.</p></div>
+    <div class="card"><h3 class="c-gold">Line</h3><p>When neighbouring chords' bass notes move step by step, they sound like a melody and flow especially smoothly.</p></div>
+    <div class="card"><h3 class="c-red">Momentum</h3><p>When the bass alternates or walks, the accompaniment gets legs, and the strum has a groove without needing to be busy.</p></div>
+  </div>
+  <div data-tab="5-3+4-2+3-0+2-1+1-0:w | 6-3+5-3+4-2+3-0+2-1+1-0:w | 6-0+5-3+4-2+3-0+2-1+1-0:w" data-per-row="3" data-title="All C: with C, G and E in the bass" data-play data-bpm="56" style="margin-top:16px"></div>
+</section>
+
+<!-- 6 分數和弦 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>Slash chords</div>
+  <h2 style="margin-bottom:10px">The five most-used slash chords</h2>
+  <div data-chord-cards="C/G C/E G/B Am/G D/F#" data-plain data-labels="C/G:Bass_G C/E:Bass_E G/B:Bass_B Am/G:Bass_G D/F#:Bass_F#" style="grid-template-columns:repeat(5,1fr)"></div>
+  <div class="grid2" style="margin-top:8px">
+    <div class="card"><h3 class="c-gold">How to press them</h3><p>Hold the usual chord first, then add the bass note after the slash. C/G mostly uses the ring and little fingers; for D/F#, hook the thumb over the neck onto string 6 fret 2.</p></div>
+    <div class="card"><h3 class="c-navy">Strum range</h3><p>Start the strum from the string the bass note is on: C/E, Am/G and C/G use all six, G/B starts from string 5.</p></div>
+  </div>
+</section>
+
+<!-- 7 替代根音 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Tab trainer</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>1. Double and alternate roots</div>
+  <h2 style="margin-bottom:8px">The bass moves back and forth between the root and the fifth</h2>
+  <div data-tab="5-3 3-0+2-1+1-0 6-3 3-0+2-1+1-0 | 5-0 3-2+2-1+1-0 6-0 3-2+2-1+1-0 | 4-3 3-2+2-1+1-1 5-3 3-2+2-1+1-1 | 6-3 3-0+2-0+1-3 4-0 3-0+2-0+1-3" data-per-row="4" data-title="C → Am → F → G: root, chord, fifth, chord" data-play data-bpm="70"></div>
+  <table style="margin-top:10px;font-size:16px">
+    <tr><th>Chord</th><th>C</th><th>Am</th><th>F</th><th>G</th><th>D</th><th>Em</th></tr>
+    <tr><td><b>Root</b></td><td>String 5 fret 3</td><td>Open string 5</td><td>String 4 fret 3</td><td>String 6 fret 3</td><td>Open string 4</td><td>Open string 6</td></tr>
+    <tr><td><b>Alternate bass (fifth)</b></td><td>String 6 fret 3 G</td><td>Open string 6 E</td><td>String 5 fret 3 C</td><td>Open string 4 D</td><td>Open string 5 A</td><td>String 5 fret 2 B</td></tr>
+  </table>
+</section>
+
+<!-- 8 下行低音 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Chord change trainer</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>Descending bass line</div>
+  <h2 style="margin-bottom:10px">C → G/B → Am → Am/G → F: the bass steps down</h2>
+  <div data-switch-trainer="C G/B Am Am/G F C/E Dm G|C G/B Am Am/G" data-bpm="60"></div>
+</section>
+
+<!-- 9 低音線 TAB -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Tab trainer</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>Listen to that bass line</div>
+  <h2 style="margin-bottom:8px">Play the bass first, then add the chords</h2>
+  <p style="margin:0 0 8px">① First 4 bars, bass only: C B A G F E D G (thumb or pick) ② Last 4 bars, add the chords: C G/B Am Am/G F C/E Dm G</p>
+  <div data-tab="5-3:h 5-2:h | 5-0:h 6-3:h | 6-1:h 6-0:h | 4-0:h 6-3:h | 5-3+4-2+3-0+2-1:h 5-2+4-0+3-0+2-0:h | 5-0+4-2+3-2+2-1:h 6-3+4-2+3-2+2-1:h | 6-1+5-3+4-3+3-2+2-1+1-1:h 6-0+5-3+4-2+3-0+2-1:h | 4-0+3-2+2-3+1-1:h 6-3+5-2+4-0+3-0+2-0:h" data-per-row="4" data-title="Bass first, then chords" data-play data-bpm="70"></div>
+</section>
+
+<!-- 10 上行 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>Going up works too</div>
+  <h2 style="margin-bottom:12px">Ascending bass: C → C/E → F → G</h2>
+  <div class="grid2" style="align-items:start">
+    <div data-tab="5-3+4-2+3-0+2-1+1-0:w | 6-0+5-3+4-2+3-0+2-1+1-0:w | 6-1+5-3+4-3+3-2+2-1+1-1:w | 6-3+5-2+4-0+3-0+2-0+1-3:w" data-per-row="2" data-title="Bass C → E → F → G" data-play data-bpm="64"></div>
+    <div>
+      <ul class="clean compact">
+        <li>A descending bass sounds wistful and nostalgic; an ascending bass feels like climbing and building energy</li>
+        <li>Pre-choruses often use an ascending bass to push into the chorus</li>
+        <li>Use the full barre for F here; string 6 fret 1 is the F bass</li>
+      </ul>
+      <div class="reveal" data-label="Why step-by-step bass sounds so good" style="margin-top:12px"><p class="compact">Ears follow notes that are "close together" easily. When the bass moves only a fret or two at a time, it sounds like someone singing a melody.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 休息 -->
+<section class="slide center">
+  <div class="kicker">Break</div>
+  <div class="timer" id="timer">10:00</div>
+  <p class="lead">Take a ten-minute break; relax the web of your left thumb</p>
+  <div style="height:20px"></div>
+  <div class="btn-row"><button type="button" class="btn" id="timerBtn">Start countdown</button><button type="button" class="btn" id="timerReset">Reset</button></div>
+</section>
+
+<!-- 12 經過音 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Tab trainer</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>01:05–01:40 Passing notes</div>
+  <h2 style="margin-bottom:8px">Walk the bass from one chord to the next</h2>
+  <div data-tab="6-3 3-0+2-0+1-3 6-3 6-2 | 6-0 3-0+2-0+1-0 6-0 6-2 | 6-3 3-0+2-0+1-3 5-0 5-2 | 5-3 3-0+2-1+1-0 5-3:h" data-per-row="4" data-title="G → Em → G → C: play passing notes on the last beat" data-play data-bpm="70"></div>
+  <div class="cards-mini" style="margin-top:12px">
+    <div class="card"><h3 class="c-navy">On the last beat</h3><p>Passing notes come on the last beat or half beat before a chord change, leading the ear to the next chord.</p></div>
+    <div class="card"><h3 class="c-gold">Use notes from the scale</h3><p>G to Em: G → F# → E, moving fret by fret through notes in G major.</p></div>
+    <div class="card"><h3 class="c-red">Use them sparingly</h3><p>Once or twice every four bars is plenty; too many get in the way of the singer's melody.</p></div>
+  </div>
+</section>
+
+<!-- 13 低音配刷奏 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Strum-along metronome</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Bass with strumming</div>
+  <h2 style="margin-bottom:10px">Boom-chick-a + descending bass</h2>
+  <div class="split narrow">
+    <ul class="clean compact">
+      <li>Choose "Descending bass": C G/B Am Am/G F C/E Dm G</li>
+      <li>The X plays the bass note after the slash, stepping down automatically</li>
+      <li>Play only the X first and listen to the bass line, then add chick-a</li>
+      <li>Switch to a 3/4 waltz and you have the accompaniment to lots of old songs</li>
+    </ul>
+    <div data-strum-player="P W" data-chords="bass prog" data-bpm="70"></div>
+  </div>
+</section>
+
+<!-- 14 低音配指法 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Tab trainer</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Bass with fingerpicking</div>
+  <h2 style="margin-bottom:8px">The thumb walks the bass, the other fingers stay put</h2>
+  <div data-tab="5-3:e 3-0:e 2-1:e 1-0:e 5-2:e 3-0:e 2-0:e 1-3:e | 5-0:e 3-2:e 2-1:e 1-0:e 6-3:e 3-2:e 2-1:e 1-0:e | 4-3:e 3-2:e 2-1:e 1-1:e 6-0:e 3-0:e 2-1:e 1-0:e | 4-0:e 3-2:e 2-3:e 1-1:e 6-3:e 3-0:e 2-0:e 1-3:e" data-per-row="4" data-title="T-1-2-3 × descending bass (two beats per chord)" data-play data-bpm="64"></div>
+  <p class="muted" style="font-size:17px;margin-top:8px">Change chord every two beats. Only the thumb moves; the index, middle and ring fingers stay on strings 3, 2 and 1 almost the whole time.</p>
+</section>
+
+<!-- 原講義曲例 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Song listening · YouTube</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Songs from the original handbook</div>
+  <h2 style="margin-bottom:8px">Songs from the original handbook: listen along the bass line</h2>
+  <p class="muted" style="font-size:17px;margin-bottom:14px">Listen only to the bass or the guitar's lowest sound, and notice where it stays and where it steps down.</p>
+  <div class="yt-list song-grid c4">
+    <div class="yt" data-song="With Or Without You"></div>
+    <div class="yt" data-song="牛仔很忙"></div>
+    <div class="yt" data-song="Don't Cry"></div>
+    <div class="yt" data-song="Yesterday"></div>
+  </div>
+</section>
+
+<!-- 15 分組 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Group task · scoring</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Group challenge</div>
+  <h2 style="margin-bottom:12px">Design a bass line for a progression</h2>
+  <div class="split">
+    <div>
+      <ul class="clean compact">
+        <li>The task: G → Em → C → D (G major)</li>
+        <li>Each group uses at least one slash chord (for example G/B, D/F#) and one passing note</li>
+        <li>Write it on the whiteboard and play it for everyone with boom-chick-a or fingerpicking</li>
+        <li>Smooth bass line 2 points, steady beat 2 points, most creative 1 point</li>
+      </ul>
+      <div class="phase" data-phases="Design and practice|300;Group performances|300" style="margin-top:12px"></div>
+    </div>
+    <div class="score" data-id="g09-bass" data-teams="4"></div>
+  </div>
+</section>
+
+<!-- 16 迷思 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Myth busting · flip cards</div>
+  <div class="kicker"><span class="tag t-he">Close</span>01:40–02:00 Thinking about bass</div>
+  <h2 style="margin-bottom:14px">Myth or fact?</h2>
+  <div class="flips">
+    <div class="flip"><div class="f">A slash chord is two chords played together</div><div class="b"><strong>Myth</strong>A slash chord is still one chord; it just names the lowest note.</div></div>
+    <div class="flip"><div class="f">The bass must be the chord's root</div><div class="b"><strong>Myth</strong>The root is the most stable, but thirds, fifths and passing notes can all go in the bass.</div></div>
+    <div class="flip"><div class="f">C/G and C have the same notes</div><div class="b"><strong>Fact</strong>Both are C, E and G; only the lowest note differs, and the feel changes with it.</div></div>
+    <div class="flip"><div class="f">Only bass players need to understand bass lines</div><div class="b"><strong>Myth</strong>When you play and sing, you're the whole band, and a bass line makes one guitar sound fuller.</div></div>
+    <div class="flip"><div class="f">Descending bass suits ballads well</div><div class="b"><strong>Fact</strong>A bass stepping down brings out nostalgia and wistfulness most easily.</div></div>
+    <div class="flip"><div class="f">The more passing notes, the better</div><div class="b"><strong>Myth</strong>The accompaniment's job is to set off the voice; few and well placed is best.</div></div>
+  </div>
+</section>
+
+<!-- 17 合奏 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Whole-class play-along</div>
+  <div class="kicker"><span class="tag t-he">Close</span>Play together</div>
+  <h2 style="margin-bottom:10px">Descending bass play-along</h2>
+  <div class="grid2" style="align-items:start">
+    <div class="chart">
+      <div class="sec">One round of 8 bars</div>
+      <div>C</div><div>G/B</div><div>Am</div><div>Am/G</div>
+      <div>F</div><div>C/E</div><div>Dm</div><div>G</div>
+    </div>
+    <div data-strum-player="P A W" data-chords="bass" data-bpm="72"></div>
+  </div>
+  <p class="muted" style="font-size:16px;margin-top:8px">Split into two parts: half the class plays only the bass, half strums the treble strings, then swap. It's also the "Canon-style" bass movement common in classical music.</p>
+</section>
+
+<!-- 18 錄音 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Record and compare</div>
+  <div class="kicker"><span class="tag t-he">Close</span>Check-in</div>
+  <h2 style="margin-bottom:12px">Record your bass line</h2>
+  <div class="rec-pair">
+    <div class="panel"><h3>① Descending bass · boom-chick-a</h3><div class="recorder" data-max="30" data-name="Chapter9_Descending_bass"></div></div>
+    <div class="panel"><h3>② Bass with fingerpicking</h3><div class="recorder" data-max="30" data-name="Chapter9_Bass_fingerpicking"></div></div>
+  </div>
+  <p class="muted" style="font-size:17px;margin-top:12px">Listen back focusing on the bass: does it step down, and is it on the right strings?</p>
+</section>
+
+<!-- 19 三句話 -->
+<section class="slide center">
+  <div class="kicker">Today In Three Lines</div>
+  <p class="quote">The bass comes after the slash,<br>the bass moves fret by fret,<br>and the accompaniment hangs together.</p>
+</section>
+
+<!-- 20 出場券 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Exit ticket 3-2-1</div>
+  <div class="kicker"><span class="tag t-he">Close</span>Exit Ticket</div>
+  <h2 style="margin-bottom:14px">Before you leave, write down 3-2-1</h2>
+  <div class="split wide">
+    <div class="exit" data-prompts="3 slash chords you learned|2 songs you'd like to add a bass line to|1 question you still want to ask the teacher"></div>
+    <div class="card"><h3>How to use it</h3><p>Scan the QR code on slide 2 with your phone, fill it in on your own phone and press "Send to teacher".</p></div>
+  </div>
+</section>
+
+<!-- 21 每日練習 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Self-directed log</div>
+  <div class="kicker">Homework</div>
+  <h2 style="margin-bottom:12px">A 15-minute daily bass routine</h2>
+  <div class="routine">
+    <div class="bar-qi" style="flex:2">Tuning<br><small>2 minutes</small></div>
+    <div class="bar-teal" style="flex:3">Alternate roots<br><small>3 minutes</small></div>
+    <div class="bar-cheng" style="flex:4">Descending bass chords<br><small>4 minutes</small></div>
+    <div class="bar-orange" style="flex:3">Passing notes<br><small>3 minutes</small></div>
+    <div class="bar-zhuan" style="flex:3">Bass with fingerpicking<br><small>3 minutes</small></div>
+  </div>
+  <div class="log7" data-cols="Descending bass BPM|Were the slash chords smooth?|How today felt"></div>
+</section>
+
+<!-- 22 課後練習 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Self-directed tracking</div>
+  <div class="kicker">Homework</div>
+  <h2 style="margin-bottom:12px">Practice after class: tap once to tick each item you finish</h2>
+  <ul class="checks" data-id="g09-hw">
+    <li>Without the diagrams, press the four slash chords C/G, C/E, G/B and Am/G</li>
+    <li>One round of C → Am → F → G with alternate roots</li>
+    <li>C → G/B → Am → Am/G → F → C/E → Dm → G without losing the beat</li>
+    <li>Add a bass line or passing notes to your mid-course song</li>
+    <li>Record the descending bass and fill in the Chapter 10 pre-class survey</li>
+  </ul>
+</section>
+
+<!-- 23 下週預告 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Pre-class survey</div>
+  <div class="kicker">Next Week</div>
+  <h2>Chapter 10 Scale degrees and chord arranging</h2>
+  <div class="split wide">
+    <div>
+      <p class="lead">Next chapter explores why some chords always show up together.<br>Understand progressions by scale degree and put chords to a melody yourself.</p>
+      <p class="muted" style="margin-top:20px">Scan the QR code to fill in the Chapter 10 pre-class survey on the website.</p>
+    </div>
+    <div class="qr" data-href="../survey.html?id=g-pre-10"></div>
+  </div>
+</section>
+</div>
+</main>
+
+<nav class="ui" aria-label="Slide controls">
+  <button type="button" id="prev" aria-label="Previous">← Previous</button>
+  <span class="counter" id="counter">1 / 1</span>
+  <button type="button" id="next" aria-label="Next">Next →</button>
+  <button type="button" id="full">Full screen</button>
+  <a href="../index.html">Course home</a>
+</nav>
+
+<script src="../../../assets/pixel.js?v=20261014v" defer></script>
+<script src="../../assets/ui.js?v=20261016review1" defer></script>
+<script src="../../assets/deck.js?v=20261015b" defer></script>
+<script src="../../../assets/vendor/qrcode.min.js" defer></script>
+<script src="../../assets/interact.js?v=20261028a" defer></script>
+<script src="../../../assets/config.js?v=20261020g" defer></script>
+<script src="../../assets/backend.js?v=20261030a" defer></script>
+<script src="../../../assets/ps-audio.js?v=20261014v" defer></script>
+<script src="../guitar.js?v=20261028identity" defer></script>
+<script src="../songs.js?v=20261014v" defer></script>
+<script src="../../assets/youtube.js?v=20261029a" defer></script>
+<script src="../../assets/learning-tools.js?v=20261020a" defer></script>
+</body>
+</html>

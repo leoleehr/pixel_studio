@@ -1,0 +1,138 @@
+(function () {
+  'use strict';
+  var group = document.getElementById('voice-lines');
+  if (!group) return;
+  var slider = document.getElementById('voice-frequency');
+  var value = document.getElementById('voice-value');
+  var button = document.getElementById('voice-play');
+  var context, oscillator, gain, timer, playing = false;
+  var gradient = document.getElementById('voice-gradient');
+  // 彩虹流動：改用 requestAnimationFrame 移動漸層起訖點（iOS Safari 對 SVG animateTransform 漸層不會重繪）
+  // 系統開啟「減少動態效果」時不動；離開畫面或切到背景時暫停，省電
+  var motionButton = document.getElementById('voice-motion');
+  var motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var motionPaused = false;
+  if (gradient) {
+    var art = gradient.ownerSVGElement, visible = true, last = 0, flowRaf = 0, flowTime = 0;
+    function canFlow() { return visible && !document.hidden && !motionPaused && !motionPreference.matches; }
+    function syncFlow() {
+      cancelAnimationFrame(flowRaf); flowRaf = 0; last = 0;
+      if (canFlow()) flowRaf = requestAnimationFrame(flowTick);
+      if (motionButton) {
+        motionButton.hidden = motionPreference.matches;
+        motionButton.setAttribute('aria-pressed', String(motionPaused));
+        motionButton.innerHTML = motionPaused ? 'Resume motion <span aria-hidden="true">▷</span>' : 'Pause motion <span aria-hidden="true">Ⅱ</span>';
+      }
+    }
+    function flowTick(now) {
+      if (!canFlow()) { flowRaf = 0; return; }
+      flowRaf = requestAnimationFrame(flowTick);
+      if (!last) { last = now; return; }
+      if (now - last < 33) return;
+      flowTime += Math.min(now - last, 100); last = now;
+      var t = (flowTime / 12000 * 500) % 500;
+      gradient.setAttribute('x1', (t).toFixed(1)); gradient.setAttribute('x2', (t + 500).toFixed(1));
+    }
+    if ('IntersectionObserver' in window && art) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; syncFlow(); }).observe(art);
+    if (motionButton) motionButton.addEventListener('click', function () { motionPaused = !motionPaused; syncFlow(); });
+    motionPreference.addEventListener('change', syncFlow);
+    document.addEventListener('visibilitychange', syncFlow);
+    window.addEventListener('pagehide', function () { cancelAnimationFrame(flowRaf); flowRaf = 0; });
+    window.addEventListener('pageshow', syncFlow);
+    syncFlow();
+  }
+  function draw() {
+    var frequency = Number(slider.value), markup = '';
+    for (var line = 0; line < 54; line++) {
+      var path = '', angle = line / 53 * Math.PI;
+      for (var step = 0; step <= 120; step++) {
+        var u = step / 120, envelope = Math.pow(Math.sin(u * Math.PI), .8);
+        var x = 55 + u * 390;
+        var y = 250 + Math.sin(u * Math.PI * (3 + frequency / 110) + angle * 2) * envelope * 102 + Math.cos(angle) * envelope * 100;
+        path += (step ? 'L' : 'M') + x.toFixed(2) + ',' + y.toFixed(2);
+      }
+      markup += '<path d="' + path + '" opacity="' + (.25 + .65 * Math.sin(angle)).toFixed(2) + '"/>';
+    }
+    group.innerHTML = markup;
+    value.textContent = frequency + ' Hz';
+    var coordinate = document.querySelector('.art-coordinate');
+    if (coordinate) {
+      var notes = ['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B'];
+      var midi = Math.round(69 + 12 * Math.log2(frequency / 440));
+      coordinate.textContent = notes[midi % 12] + (Math.floor(midi / 12) - 1) + ' / ' + frequency + ' Hz';
+    }
+    if (oscillator && context) oscillator.frequency.setTargetAtTime(frequency, context.currentTime, .08);
+  }
+  function stop() {
+    clearTimeout(timer);
+    if (oscillator) {
+      var previous = oscillator;
+      gain.gain.setTargetAtTime(0, context.currentTime, .025);
+      previous.stop(context.currentTime + .15);
+      oscillator = null;
+    }
+    playing = false; group.closest('.voice-art').classList.remove('listening'); button.textContent = '▶︎ Listen'; button.setAttribute('aria-pressed', 'false');
+  }
+  slider.addEventListener('input', draw);
+  button.addEventListener('click', async function () {
+    if (playing) { stop(); return; }
+    button.disabled = true;
+    try {
+      var Audio = window.AudioContext || window.webkitAudioContext;
+      if (!Audio) throw new Error('Audio unavailable');
+      context = context || new Audio();
+      await context.resume();
+      if (document.hidden) return;
+      oscillator = context.createOscillator(); gain = context.createGain();
+      oscillator.type = 'sine'; oscillator.frequency.value = Number(slider.value);
+      gain.gain.value = 0; oscillator.connect(gain); gain.connect(context.destination);
+      var currentGain = gain, currentOscillator = oscillator;
+      oscillator.onended = function () { currentOscillator.disconnect(); currentGain.disconnect(); };
+      oscillator.start(); gain.gain.setTargetAtTime(.08, context.currentTime, .04);
+      playing = true; group.closest('.voice-art').classList.add('listening'); button.textContent = '■ Stop listening'; button.setAttribute('aria-pressed', 'true');
+      timer = setTimeout(stop, 12000);
+    } catch (error) { button.textContent = 'This browser can\'t play it'; }
+    finally { button.disabled = false; }
+  });
+  document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); });
+  window.addEventListener('pagehide', stop);
+  draw();
+})();
+
+/* 捲動進場：區塊標題、課程列、功能卡由下往上淡入（首頁與四個 Lab 共用）。
+   只有在 JS 執行時才加上 .reveal-ready，避免腳本失敗時內容被隱藏；系統減少動態時不啟用。 */
+(function () {
+  'use strict';
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var items = [].slice.call(document.querySelectorAll('.home .sec-head, .home .lesson, .home .feature, .home .about, .home .practice-display, .home .rhythm, .home .teacher, .home .session-head'));
+  if (!items.length) return;
+  document.documentElement.classList.add('reveal-ready');
+  /* 先算好同層同類的順序再加 class，否則前一個元素加了 reveal-item 後就比對不到，錯開延遲會全部歸零。 */
+  items.map(function (el) {
+    var sib = el.parentNode ? [].slice.call(el.parentNode.children).filter(function (c) { return c.className === el.className; }) : [];
+    return Math.min(sib.indexOf(el), 6);
+  }).forEach(function (ri, i) {
+    items[i].style.setProperty('--ri', ri);
+    items[i].classList.add('reveal-item');
+  });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  /* 初次可見性交給瀏覽器批次計算，不在載入期間強制同步 layout。 */
+  items.forEach(function (el) { io.observe(el); });
+  /* 點選錨點直接跳段時，中間被跳過的區塊不會觸發 IntersectionObserver；捲動後補上，往回捲時內容已經在。 */
+  var pending = false;
+  addEventListener('scroll', function () {
+    if (pending) return;
+    pending = true;
+    requestAnimationFrame(function () {
+      pending = false;
+      var entering = items.filter(function (el) {
+        return !el.classList.contains('is-in') && el.getBoundingClientRect().top < innerHeight;
+      });
+      entering.forEach(function (el) {
+        el.classList.add('is-in'); io.unobserve(el);
+      });
+    });
+  }, { passive: true });
+})();

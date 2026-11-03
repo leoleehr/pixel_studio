@@ -1,0 +1,6 @@
+PixelLearning.register('chord-path',(root,K)=>{
+ const ctl=K.shell(root),plot=K.chart(root),status=K.status(root);let p=0;const slider=K.range('C → Am',100,v=>{p=v/100;draw();},ctl);
+ K.button('C',()=>{p=0;slider.value=0;draw();},ctl);K.button('Am',()=>{p=1;slider.value=100;draw();},ctl,true);
+ function draw(){K.svg(plot,225,w=>{const l=44,r=w-18,fw=(r-l)/3,y=s=>40+(6-s)*29,x=f=>l+(f-.5)*fw;let s=K.text(l,18,'Fingers 1 and 2 stay put; finger 3 changes string');for(let f=0;f<4;f++)s+=K.line(l+f*fw,28,l+f*fw,196);for(let n=6;n>0;n--)s+=K.line(l,y(n),r,y(n))+K.text(30,y(n)+5,'String '+n,'end');for(let f=1;f<=3;f++)s+=K.text(x(f),218,'Fret '+f,'middle');s+='<path d="M'+x(3)+' '+y(5)+' Q'+x(3)+' '+y(3)+' '+x(2)+' '+y(3)+'" fill="none" stroke="var(--muted)" stroke-dasharray="4 4"/>';return s+K.dot(x(1),y(2),'1')+K.dot(x(2),y(4),'2')+K.dot(x(3)+(x(2)-x(3))*p,y(5)+(y(3)-y(5))*p,'3');},'Fingering change from C to Am');status.textContent=p===0?'C: finger 3 on string 5, fret 3.':p===1?'Am: finger 3 moves to string 3, fret 2; fingers 1 and 2 stay put.':'Move finger 3 and leave the other fingers where they are.';}
+ K.note(root,'The path joins start and end; lift off the string when actually changing. Then move on to the one-minute challenge on the next slide.');K.watch(plot,draw);draw();
+});

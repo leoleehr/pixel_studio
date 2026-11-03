@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changing key, choosing a key and songwriting｜Chapter 12｜Guitar Lab</title>
+<meta name="description" content="Pixel Studio Guitar Lab Chapter 12 class slides: transposing and the capo, measuring your range to find your key, an overview of D, A, E and F major, an intro to songwriting and the song planning sheet, writing together, the final showcase, and guitar care and restringing.">
+<link rel="icon" href="../../../assets/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="../../../assets/favicon.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="../../../assets/favicon-192.png?v=2">
+<link rel="apple-touch-icon" href="../../../assets/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#101210">
+<link rel="preload" href="../../../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../../assets/brand/pixel-studio-symbol-color.svg" as="image" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script>/* 中文字型策略：首次造訪用系統中文字型（符合 CI：正黑體／蘋方），不在首屏重排；載入完成 5 秒後，利用閒置時間逐一把本頁用得到的 Noto Sans TC 分組下載進快取，之後每頁一開始就套用 */(function(){var K="ps-font",U="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap";function apply(){var l=document.createElement("link");l.rel="stylesheet";l.href=U;document.head.appendChild(l)}var c=0;try{c=localStorage.getItem(K)}catch(e){}if(c){apply();return}var n=navigator.connection;if(n&&(n.saveData||/2g/.test(n.effectiveType||"")))return;var idle=window.requestIdleCallback||function(f){return setTimeout(f,300)};function inRange(r,cps){return r.split(",").some(function(p){var m=p.trim().replace(/^U\+/i,"").split("-"),a=parseInt(m[0],16),b=m[1]?parseInt(m[1],16):a;return cps.some(function(x){return x>=a&&x<=b})})}function warm(){if(!window.FontFace||!window.fetch)return;var seen={},cps=[],t=document.body.textContent;for(var i=0;i<t.length;i++){var x=t.charCodeAt(i);if(x>=0x2E80&&!seen[x]){seen[x]=1;cps.push(x)}}fetch(U).then(function(r){return r.text()}).then(function(css){var q=[];css.replace(/@font-face\s*\{([^}]*)\}/g,function(_,b){var s=/url\(([^)]+)\)/.exec(b),r=/unicode-range:\s*([^;]+)/.exec(b);if(s&&r&&inRange(r[1],cps))q.push([s[1],r[1]]);return _});function next(){if(!q.length){try{localStorage.setItem(K,"1")}catch(e){}return}var j=q.shift();new FontFace("Noto Sans TC","url("+j[0]+")",{weight:"400 900",unicodeRange:j[1]}).load().then(function(){idle(next,{timeout:3000})},function(){idle(next,{timeout:3000})})}idle(next,{timeout:3000})}).catch(function(){})}var painted=0,loaded=0,started=0;function go(){if(painted&&loaded&&!started){started=1;setTimeout(function(){idle(warm,{timeout:5000})},5000)}}try{new PerformanceObserver(function(l){if(!painted&&l.getEntriesByName("first-contentful-paint").length){painted=1;go()}}).observe({type:"paint",buffered:true})}catch(e){painted=1}addEventListener("load",function(){loaded=1;setTimeout(function(){painted=1;go()},3000);go()})})()</script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Music&text=%F0%9D%84%9E%E2%99%AF%E2%99%AE&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="../../assets/deck-bundle.css?v=20261029a">
+<link rel="stylesheet" href="../../../guitar/theme.css?v=20261016review1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pixel Studio">
+<meta property="og:title" content="Changing key, choosing a key and songwriting｜Chapter 12｜Guitar Lab">
+<meta property="og:description" content="Pixel Studio Guitar Lab Chapter 12 class slides: transposing and the capo, measuring your range to find your key, an overview of D, A, E and F major, an intro to songwriting and the song planning sheet, writing together, the final showcase, and guitar care and restringing.">
+<meta property="og:image" content="https://pixel-studio.musicallanding.workers.dev/guitar/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../../assets/teaching-visuals.css?v=20261028identity">
+<link rel="stylesheet" href="../../../assets/learning-tools.css?v=20261020a">
+<link rel="canonical" href="https://pixel-studio.musicallanding.workers.dev/en/guitar/ch12/">
+<link rel="alternate" hreflang="zh-Hant" href="https://pixel-studio.musicallanding.workers.dev/guitar/ch12/">
+<link rel="alternate" hreflang="en" href="https://pixel-studio.musicallanding.workers.dev/en/guitar/ch12/">
+<link rel="alternate" hreflang="x-default" href="https://pixel-studio.musicallanding.workers.dev/guitar/ch12/">
+<meta property="og:url" content="https://pixel-studio.musicallanding.workers.dev/en/guitar/ch12/">
+<script src="../../../assets/analytics.js?v=20261104a" defer></script>
+<script src="../../../assets/lang.js?v=20261104a" defer></script>
+</head>
+<body data-title="Chapter 12｜Changing key, choosing a key and songwriting" data-course="guitar" data-lesson="ch12" data-home="../index.html#lessons">
+<div class="progress" id="progress"></div>
+<main class="deck" id="deck">
+<div class="stage" id="stage">
+<!-- 1 封面 -->
+<section class="slide cover"><div class="cover-art" aria-hidden="true"><span class="ca-glow"></span><img src="../../../assets/brand/pixel-studio-symbol-color.svg" alt="" width="1024" height="1024" fetchpriority="high"></div>
+  <div class="kicker">Pixel Studio Guitar Lab｜Folk guitar Chapter 12</div>
+  <h1>Changing key, choosing a key and songwriting</h1>
+  <p class="lead">Keys · Songwriting · Finale</p>
+  <p class="meta">Teacher: Leo Lee, Pixel Studio<br>musicallanding@gmail.com</p>
+<img class="cover-sig" src="../../../assets/brand/pixel-studio-primary-mono-white.svg" alt="Pixel Studio" width="1600" height="1440" loading="lazy" decoding="async"></section>
+
+<!-- 2 路線 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Phone sync</div>
+  <div class="kicker">Today · 120 Minutes</div>
+  <h2>The last chapter: find your key, write your song</h2>
+  <div class="timeline">
+    <div class="bar-qi" style="flex:20"><b>Open</b><small>Final prep, why change key｜20 minutes</small></div>
+    <div class="bar-cheng" style="flex:35"><b>Build</b><small>Transposing, measuring range, choosing a key, other keys｜35 minutes</small></div>
+    <div class="bar-rest" style="flex:10"><b>Break</b><small>10 minutes</small></div>
+    <div class="bar-zhuan" style="flex:35"><b>Turn</b><small>Songwriting, writing a section together｜35 minutes</small></div>
+    <div class="bar-he" style="flex:20"><b>Close</b><small>Final showcase, course feedback｜20 minutes</small></div>
+  </div>
+  <div class="split wide">
+    <ul class="clean compact">
+      <li>Move a song into another key and choose the shapes and capo</li>
+      <li>Measure your range and work out the key that suits you best</li>
+      <li>Plan a song with the song planning sheet and write four bars with your group</li>
+      <li>Give your final performance and look back at yourself across twelve chapters</li>
+    </ul>
+    <div class="qr" data-href="../../../guitar/ch12/self"></div>
+  </div>
+</section>
+
+<!-- 3 期末準備 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Show-of-hands vote</div>
+  <div class="kicker"><span class="tag t-qi">Open</span>00:00–00:20 Final prep</div>
+  <h2>How ready your final project is</h2>
+  <div class="split">
+    <div>
+      <ul class="clean compact">
+        <li>After tuning, everyone plays and sings 30 seconds of their final project's chorus</li>
+        <li>The teacher checks everyone's key, chords and techniques</li>
+        <li>Anyone finding it too high or too low will change key today</li>
+      </ul>
+      <div class="card" style="margin-top:16px"><p>Final project format: <b class="c-gold">play and sing a song you like, arrange a song, or a song you wrote</b>. Today's lesson helps you get your piece to its most comfortable shape.</p></div>
+    </div>
+    <div>
+      <p class="muted" style="font-size:18px;margin-bottom:10px">How your final project is going</p>
+      <div class="poll" data-id="g12-ready" data-options="I can play and sing it all|The chorus is comfortable|Still practising the chords|Haven't chosen a song"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 預測 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Predict, then reveal</div>
+  <div class="kicker"><span class="tag t-qi">Open</span>Think about it</div>
+  <h2>The chorus's high note is out of your range. What's the best fix?</h2>
+  <div class="split">
+    <div class="quiz" data-answer="3">
+      <p class="q">Choose the best solution</p>
+      <ol><li>Shout your way up</li><li>Switch to another song</li><li>Move the whole song to a lower key</li><li>Skip the high line</li></ol>
+      <div class="why">The original key was tailored to the original singer. Lower the whole song together and the relationship between melody and chords stays the same; it just fits your voice better. That's "transposing".</div>
+    </div>
+    <div class="card"><h3>The original handbook's Chapter 6</h3><p>Changing key and transposing: a song's key can be adjusted, and finding your own key (Make Your Own Key) is the most important step in playing and singing.</p></div>
+  </div>
+</section>
+
+<!-- 5 移調 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>00:20–00:55 Chapter 6: Changing key and transposing</div>
+  <h2 style="margin-bottom:12px">Transposing: every chord moves the same distance</h2>
+  <table>
+    <tr><th>Original key C</th><th>C</th><th>G</th><th>Am</th><th>F</th><th>Em</th><th>Dm</th></tr>
+    <tr><td><b>Up 2 semitones → D</b></td><td>D</td><td>A</td><td>Bm</td><td>G</td><td>F#m</td><td>Em</td></tr>
+    <tr><td><b>Down 3 semitones → A</b></td><td>A</td><td>E</td><td>F#m</td><td>D</td><td>C#m</td><td>Bm</td></tr>
+    <tr><td><b>Seen as scale degrees</b></td><td>I</td><td>V</td><td>vi</td><td>IV</td><td>iii</td><td>ii</td></tr>
+  </table>
+  <div class="grid2" style="margin-top:14px">
+    <div class="card"><h3 class="c-gold">Two ways</h3><p>① Change the chords: move every chord by the same number of semitones. ② Use a capo: keep the shapes, and each fret higher raises it a semitone.</p></div>
+    <div class="card"><h3 class="c-navy">Scale degrees are the most useful</h3><p>Remember the song is I–V–vi–IV and you can lay out the chords in any key straight away.</p></div>
+  </div>
+</section>
+
+<!-- 6 移調小測 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Multiple choice</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>Quiz</div>
+  <h2 style="margin-bottom:14px">Transposing practice</h2>
+  <div class="split">
+    <div class="quiz" data-answer="2">
+      <p class="q">Move G → D → Em → C into C (down 7 semitones or up 5). What are the chords?</p>
+      <ol><li>C → F → Dm → Bb</li><li>C → G → Am → F</li><li>C → G → Em → F</li><li>A → E → F#m → D</li></ol>
+      <div class="why">I–V–vi–IV in G is still I–V–vi–IV in C: C → G → Am → F.</div>
+    </div>
+    <div class="quiz" data-answer="1">
+      <p class="q">The song is in E and you want to use C shapes. Which fret does the capo go on?</p>
+      <ol><li>Fret 4</li><li>Fret 3</li><li>Fret 5</li><li>No capo needed</li></ol>
+      <div class="why">C → C# → D → D# → E is four semitones, so fret 4. You could also use G shapes at fret 9, but that's very high up.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 定調步驟 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>2. How to choose a song's key: Make Your Own Key</div>
+  <h2 style="margin-bottom:12px">Four steps to work out your key</h2>
+  <div class="steps" style="grid-template-columns:repeat(4,1fr)">
+    <div class="card"><div class="big-num c-navy">1</div><h3>Find the song's highest note</h3><p>Usually in the chorus; check against the original or the music.</p></div>
+    <div class="card"><div class="big-num c-gold">2</div><h3>Measure your own highest note</h3><p>The highest note you can sing easily without straining, not your absolute limit.</p></div>
+    <div class="card"><div class="big-num c-red">3</div><h3>Work out the gap</h3><p>However many semitones apart the two notes are, move the whole song by that many.</p></div>
+    <div class="card"><div class="big-num c-green">4</div><h3>Choose shapes and capo</h3><p>Pick the open chord shapes you're most comfortable with, then make up the difference with a capo.</p></div>
+  </div>
+  <p class="muted" style="font-size:17px;margin-top:14px">On the next two slides, measure your range with the microphone first, then take a song into the calculator.</p>
+</section>
+
+<!-- 8 音域測量 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Range test</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>Measure your range</div>
+  <h2 style="margin-bottom:12px">Follow the reference notes up and down to find your comfort zone</h2>
+  <div class="split narrow">
+    <ul class="clean compact">
+      <li>Sing easily on "ah" or "oo", following the reference notes up one by one</li>
+      <li>When a note starts to feel tight and take effort, the note before it is your highest usable note</li>
+      <li>The result is saved on your phone and fills in the calculator on the next slide automatically</li>
+      <li>You can also let the microphone detect your full range from low to high</li>
+    </ul>
+    <div class="panel range"></div>
+  </div>
+</section>
+
+<!-- 9 定調計算 -->
+<section class="slide" data-teaching="g09">
+  <div class="ix-tag"><b>Interactive</b>Key calculator</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>Work out your key</div>
+  <h2 style="margin-bottom:14px">Choose a song and work out your key, shapes and capo</h2>
+  <div class="panel transpose" data-key="0" data-top="69"></div>
+  <p class="muted" style="margin-top:10px;font-size:17px">The male and female keys on song sheets are just average suggestions; a key calculated from the range you measured yourself is the most accurate.</p>
+</section>
+
+<!-- 10 其他調 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>Chapter 7: Scales and diatonic chords in other keys</div>
+  <h2 style="margin-bottom:12px">The five most-used major keys on guitar</h2>
+  <table>
+    <tr><th>Key</th><th>Key signature</th><th>I</th><th>ii</th><th>iii</th><th>IV</th><th>V</th><th>vi</th><th>Difficulty</th></tr>
+    <tr><td><b>C</b></td><td>No sharps or flats</td><td>C</td><td>Dm</td><td>Em</td><td>F</td><td>G</td><td>Am</td><td>F needs a barre chord</td></tr>
+    <tr><td><b>G</b></td><td>1 #</td><td>G</td><td>Am</td><td>Bm</td><td>C</td><td>D</td><td>Em</td><td>The most comfortable</td></tr>
+    <tr><td><b>D</b></td><td>2 #</td><td>D</td><td>Em</td><td>F#m</td><td>G</td><td>A</td><td>Bm</td><td>Bm and F#m need barre chords</td></tr>
+    <tr><td><b>A</b></td><td>3 #</td><td>A</td><td>Bm</td><td>C#m</td><td>D</td><td>E</td><td>F#m</td><td>Most minor chords need barres</td></tr>
+    <tr><td><b>E</b></td><td>4 #</td><td>E</td><td>F#m</td><td>G#m</td><td>A</td><td>B</td><td>C#m</td><td>Common in rock and blues</td></tr>
+    <tr><td><b>F</b></td><td>1 b</td><td>F</td><td>Gm</td><td>Am</td><td>Bb</td><td>C</td><td>Dm</td><td>Often played as C shapes + capo 5</td></tr>
+  </table>
+</section>
+
+<!-- 11 其他調練習 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Chord change trainer</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>Play them</div>
+  <h2 style="margin-bottom:10px">I–IV–V in D, A and E major</h2>
+  <div data-switch-trainer="D G A D|A D E A|E A B7 E|D A Bm G" data-bpm="64"></div>
+</section>
+
+<!-- 12 休息 -->
+<section class="slide center">
+  <div class="kicker">Break</div>
+  <div class="timer" id="timer">10:00</div>
+  <p class="lead">Take a ten-minute break and think of a story you'd most like to turn into a song</p>
+  <div style="height:20px"></div>
+  <div class="btn-row"><button type="button" class="btn" id="timerBtn">Start countdown</button><button type="button" class="btn" id="timerReset">Reset</button></div>
+</section>
+
+<!-- 原講義曲例 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Song listening · YouTube</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Songs from the original handbook</div>
+  <h2 style="margin-bottom:8px">Songs from the original handbook: other keys and key changes</h2>
+  <p class="muted" style="font-size:17px;margin-bottom:14px">島嶼天光 and We Are The World change key near the end. Listen to how the song's energy shifts as the key rises.</p>
+  <div class="yt-list song-grid c4">
+    <div class="yt" data-song="玫瑰色的你"></div>
+    <div class="yt" data-song="晚安台灣"></div>
+    <div class="yt" data-song="島嶼天光"></div>
+    <div class="yt" data-song="We Are The World"></div>
+  </div>
+</section>
+
+<!-- 13 創作概論 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>01:05–01:40 Chapter 8: An intro to songwriting</div>
+  <h2 style="margin-bottom:12px">Writing a song starts with a story</h2>
+  <div class="cards-mini" style="grid-template-columns:repeat(3,1fr)">
+    <div class="card"><h3 class="c-navy">Theme and story</h3><p>Characters, events, time, place, objects: who the main character is, what happens, when, where, what's left behind. The more specific, the more moving.</p></div>
+    <div class="card"><h3 class="c-gold">Point of view</h3><p>Tell your own story as "I", or someone else's as "he" or "she". Point of view decides where the listener stands.</p></div>
+    <div class="card"><h3 class="c-red">Rhyme</h3><p>End lines on words that rhyme (for example the -ou rhyme: 行走, 雙手, 長久), and lyrics flow and stick. You can keep one rhyme throughout or change rhyme between sections.</p></div>
+    <div class="card"><h3 class="c-green">Song form</h3><p>The verse tells the story and the chorus makes the point. The song-form map from Chapter 6 works as a framework for writing too.</p></div>
+    <div class="card"><h3 style="color:var(--accent)">Capture it</h3><p>Ideas come and go fast, so record them on your phone as voice memos or notes whenever they come.</p></div>
+    <div class="card"><h3 class="c-navy">Revise and get feedback</h3><p>Leave it for a day after writing, then sing it to a friend and revise line by line. Most good songs are rewritten again and again.</p></div>
+  </div>
+</section>
+
+<!-- 14 企劃單 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Song planning sheet</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>The original handbook's song planning sheet</div>
+  <h2 style="margin-bottom:12px">Fill in a planning sheet before you start writing</h2>
+  <div class="split wide">
+    <div class="exit" data-prompts="Theme, story and point of view: what you want to say, and who tells it|Key, tempo and main groove (for example G, 80 BPM, 8 beats)|Rhyme and chord progression (for example the -ou rhyme, I–V–vi–IV)"></div>
+    <div class="card"><h3>Example</h3><p><b>Theme</b>: feelings after a breakup, and letting go<br><b>Point of view</b>: telling my own story in the first person<br><b>Key and tempo</b>: Ab, 63 BPM<br><b>Main groove</b>: strong, weak, medium, weak (8 beats)<br><b>Rhyme</b>: one rhyme throughout, -ou</p><p style="margin-top:8px" class="muted">Adapted from the songwriting template in the original handbook.</p></div>
+  </div>
+</section>
+
+<!-- 15 哼旋律 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Strum-along metronome · recording</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Chords first, then hum a melody</div>
+  <h2 style="margin-bottom:10px">Loop the chords and hum your melody along</h2>
+  <div class="grid2" style="align-items:start">
+    <div data-strum-player="A P W" data-chords="prog minor fifties" data-bpm="76"></div>
+    <div>
+      <ul class="clean compact">
+        <li>Choose a set of chords to loop and hum on "la" first</li>
+        <li>Try to land the melody's strong-beat notes on notes of the current chord</li>
+        <li>When you hum a line you like, record it straight away</li>
+      </ul>
+      <div class="panel" style="margin-top:12px"><div class="recorder" data-max="60" data-name="Chapter12_Melody_idea"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 16 押韻小測 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Multiple choice</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Rhyme practice</div>
+  <h2 style="margin-bottom:14px">Find the set whose line endings share one rhyme</h2>
+  <div class="split">
+    <div class="quiz" data-answer="2">
+      <p class="q">Choose the set that rhymes all the way through</p>
+      <ol><li>天空, 海洋, 星星 (sky, sea, stars)</li><li>放手, 以後, 溫柔 (let go, later, gentle)</li><li>思念, 遠方, 季節 (longing, far away, season)</li><li>回憶, 離開, 雨天 (memory, leave, rainy day)</li></ol>
+      <div class="why">放手, 以後 and 溫柔 all end on the -ou rhyme. You can rhyme every line, or only the ends of sections; the latter sounds most natural.</div>
+    </div>
+    <div class="card"><h3>Common rhymes</h3><p>-a rhyme: 牽掛, 說話, 回家, 櫻花<br>-an rhyme: 藍天, 身邊, 遙遠, 思念<br>-ang rhyme: 月光, 遠方, 歌唱, 夢想<br>-ou rhyme: 行走, 雙手, 長久, 以後<br>-i rhyme: 想你, 早起, 真心, 回憶</p></div>
+  </div>
+</section>
+
+<!-- 17 共同創作 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Group task · timed</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Group songwriting</div>
+  <h2 style="margin-bottom:12px">Each group writes a four-bar chorus</h2>
+  <div class="split">
+    <div>
+      <ul class="clean compact">
+        <li>Use the planning sheet to decide the theme, key and progression</li>
+        <li>One person handles chords and strum, one hums the melody, and the others write the lyrics</li>
+        <li>Four lines of lyrics, at least two of them rhyming</li>
+        <li>The whole group plays and sings it on stage, and every other group gives one compliment</li>
+      </ul>
+      <div class="phase" data-phases="Planning|120;Writing melody and lyrics|360;Rehearsal|180" style="margin-top:12px"></div>
+    </div>
+    <div class="score" data-id="g12-song" data-teams="4"></div>
+  </div>
+</section>
+
+<!-- 18 期末發表 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-he">Close</span>01:40–02:00 Final showcase</div>
+  <h2 style="margin-bottom:12px">Final assessment: progress since mid-course</h2>
+  <div class="grid2" style="grid-template-columns:1.2fr .8fr;align-items:start">
+    <table class="rubric">
+      <tr><th>Item</th><th>What we're looking for</th></tr>
+      <tr><td><b>Steadiness</b></td><td>Unbroken beat, chord changes on time</td></tr>
+      <tr><td><b>Arrangement</b></td><td>Contrast between sections, using Book 2's fingerpicking, bass or techniques</td></tr>
+      <tr><td><b>Key</b></td><td>A key that suits you and is comfortable to sing</td></tr>
+      <tr><td><b>Performance</b></td><td>Playing and singing as one, expressive, with a proper ending</td></tr>
+      <tr><td><b>Progress</b></td><td>Growth compared with your mid-course recording</td></tr>
+    </table>
+    <div>
+      <p class="muted" style="font-size:17px;margin-bottom:8px">Draw the running order</p>
+      <div class="picker" data-id="g12-order"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 19 期末錄音 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Record and compare</div>
+  <div class="kicker"><span class="tag t-he">Close</span>Keep your final project</div>
+  <h2 style="margin-bottom:12px">Record your final project and listen to it alongside your mid-course recording</h2>
+  <div class="split">
+    <ul class="clean compact">
+      <li>After recording, open your mid-course recording from Chapter 6 and listen to them together</li>
+      <li>Write down three improvements you notice</li>
+      <li>The recording stays on your phone only, and you can download it to keep</li>
+    </ul>
+    <div class="panel"><div class="recorder" data-max="300" data-name="Chapter12_Final_project"></div></div>
+  </div>
+</section>
+
+<!-- 20 保養參考 -->
+<section class="slide" data-teaching="g16">
+  <div class="kicker"><span class="tag t-he">Close</span>Reference: Chapter 12, caring for an acoustic guitar</div>
+  <h2 style="margin-bottom:12px">Help your guitar stay with you for years</h2>
+  <div class="grid2" style="align-items:start">
+    <table>
+      <tr><th>Body part</th><th>How to care for it</th></tr>
+      <tr><td><b>Fretboard</b></td><td>Wipe it clean when changing strings; oil rosewood and ebony fretboards once or twice a year</td></tr>
+      <tr><td><b>Body</b></td><td>Wipe off sweat with a dry cloth after playing; keep it out of sun, heat and damp</td></tr>
+      <tr><td><b>Strings</b></td><td>Wipe the strings after playing; change them when they sound dull or show rust, roughly every one to two months if you play often</td></tr>
+      <tr><td><b>Environment</b></td><td>Humidity around 45–55%; in Taiwan's summer use desiccant packs or a dry cabinet</td></tr>
+    </table>
+    <div>
+      <div class="card"><h3 class="c-gold">Types of folk guitar strings</h3><p>Phosphor bronze: warm and durable, the most common. 80/20 bronze: bright, but dulls faster. Coated strings: smooth feel and longer life, at a higher price.</p></div>
+      <div class="card" style="margin-top:12px"><h3 class="c-navy">How to change strings</h3><p>Change one string at a time → fix the ball end with the bridge pin → leave two or three frets' length to wind round the peg → wind in one direction → tune, gently stretch the string, and tune again.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 21 三句話 -->
+<section class="slide center">
+  <div class="kicker">Twelve Chapters In Three Lines</div>
+  <p class="quote">Choose the song's key to suit your voice,<br>chords first, then melody,<br>and bring a piece of your own to the final.</p>
+</section>
+
+<!-- 22 出場券 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Exit ticket 3-2-1</div>
+  <div class="kicker"><span class="tag t-he">Close</span>Final Ticket</div>
+  <h2 style="margin-bottom:14px">All twelve chapters done: write your 3-2-1</h2>
+  <div class="split wide">
+    <div class="exit" data-prompts="3 biggest things you got from this course|2 songs you want to learn next|1 thing you'd like to say to yourself or the teacher"></div>
+    <div class="card"><h3>Thank you</h3><p>From meeting the guitar and tuning it to writing four bars of your own. In twenty-four hours, you've become a guitarist who can play, sing and write.</p></div>
+  </div>
+</section>
+
+<!-- 23 課程回饋 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Course feedback survey</div>
+  <div class="kicker">Feedback</div>
+  <h2>The last survey: course feedback</h2>
+  <div class="split wide">
+    <div>
+      <p class="lead">Your feedback will make the next Guitar Lab even better.<br>It takes about five minutes. Thank you.</p>
+      <ul class="checks" data-id="g12-keep" style="margin-top:20px">
+        <li>Fill in the course feedback survey</li>
+        <li>Download and keep your mid-course and final recordings</li>
+        <li>Play at least three times a week to keep your hands in</li>
+      </ul>
+    </div>
+    <div class="qr" data-href="../survey.html?id=g-feedback"></div>
+  </div>
+</section>
+
+<!-- 24 結尾 -->
+<section class="slide center">
+  <div class="kicker">Pixel Studio Guitar Lab</div>
+  <p class="quote">We Perform<br>the Pixel of Music.</p>
+  <p class="lead" style="margin-top:20px">Thank you all for your time from Pixel Studio. May the guitar always be with you.</p>
+</section>
+</div>
+</main>
+
+<nav class="ui" aria-label="Slide controls">
+  <button type="button" id="prev" aria-label="Previous">← Previous</button>
+  <span class="counter" id="counter">1 / 1</span>
+  <button type="button" id="next" aria-label="Next">Next →</button>
+  <button type="button" id="full">Full screen</button>
+  <a href="../index.html">Course home</a>
+</nav>
+
+<script src="../../../assets/pixel.js?v=20261015visual1" defer></script>
+<script src="../../assets/ui.js?v=20261016review1" defer></script>
+<script src="../../assets/deck.js?v=20261015visual1" defer></script>
+<script src="../../../assets/vendor/qrcode.min.js" defer></script>
+<script src="../../assets/interact.js?v=20261028a" defer></script>
+<script src="../../../assets/config.js?v=20261020g" defer></script>
+<script src="../../assets/backend.js?v=20261030a" defer></script>
+<script src="../../../assets/ps-audio.js?v=20261015visual1" defer></script>
+<script src="../guitar.js?v=20261028identity" defer></script>
+<script src="../songs.js?v=20261015visual1" defer></script>
+<script src="../../assets/youtube.js?v=20261029a" defer></script>
+<script src="../../assets/teaching/manifest.js?v=20261028identity" defer></script>
+<script src="../../assets/teaching-visuals.js?v=20261028identity" defer></script>
+<script src="../../assets/learning-tools.js?v=20261020a" defer></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+PixelLearning.register('rhetoric',(root,K)=>{
+ const ctl=K.shell(root),sentence=K.el('p','lt-status'),answers=K.el('div','lt-controls'),status=K.status(root);root.insertBefore(sentence,status);root.insertBefore(answers,status);let item=0,revealed=false;
+ const examples=[{name:'Repetition',parts:['我','等著','風，','等著','雨，','等著','你。'],marks:[1,3,5],why:'Repeating "等著" (waiting) again and again builds rhythm and momentum.'},{name:'Anadiplosis',parts:['夜裡留下','回聲',', ','回聲','帶我回家。'],marks:[1,3],why:'The first line ends on "回聲" (echo) and the next line starts with it.'},{name:'Contrast',parts:['門外是','喧鬧','，心裡是','寂靜','. '],marks:[1,3],why:'"喧鬧" (noise) and "寂靜" (silence) side by side set outside against inside.'}];
+ K.select('Practice line',examples.map((e,i)=>[i,'Line '+(i+1)]),v=>{item=+v;revealed=false;draw();},ctl);
+ function draw(){const e=examples[item];sentence.replaceChildren();e.parts.forEach((t,i)=>sentence.append(K.el('span',revealed&&e.marks.includes(i)?'lt-highlight':'',t)));answers.replaceChildren();['Repetition','Anadiplosis','Contrast'].forEach(name=>K.button(name,()=>{revealed=true;draw();status.textContent=(name===e.name?'Correct.':'Now compare the marked positions: this line is mainly '+e.name+'. ')+e.why;},answers));status.textContent=revealed?e.why:'Identify the device first, then look at the marks in the line.';}
+ K.note(root,'These are original practice lines. The tool only explains these examples and doesn\'t grade whole lyrics.');draw();
+});

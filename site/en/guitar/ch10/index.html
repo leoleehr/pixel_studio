@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scale degrees and chord arranging｜Chapter 10｜Guitar Lab</title>
+<meta name="description" content="Pixel Studio Guitar Lab Chapter 10 class slides: scale-degree names and chord functions (tonic, subdominant, dominant), dominant 7th resolution, common progressions and hearing them, relative major and minor, substitute chords, seventh-chord colours, putting chords to a melody, and an intro to arranging.">
+<link rel="icon" href="../../../assets/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="../../../assets/favicon.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="../../../assets/favicon-192.png?v=2">
+<link rel="apple-touch-icon" href="../../../assets/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#101210">
+<link rel="preload" href="../../../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../../assets/brand/pixel-studio-symbol-color.svg" as="image" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script>/* 中文字型策略：首次造訪用系統中文字型（符合 CI：正黑體／蘋方），不在首屏重排；載入完成 5 秒後，利用閒置時間逐一把本頁用得到的 Noto Sans TC 分組下載進快取，之後每頁一開始就套用 */(function(){var K="ps-font",U="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap";function apply(){var l=document.createElement("link");l.rel="stylesheet";l.href=U;document.head.appendChild(l)}var c=0;try{c=localStorage.getItem(K)}catch(e){}if(c){apply();return}var n=navigator.connection;if(n&&(n.saveData||/2g/.test(n.effectiveType||"")))return;var idle=window.requestIdleCallback||function(f){return setTimeout(f,300)};function inRange(r,cps){return r.split(",").some(function(p){var m=p.trim().replace(/^U\+/i,"").split("-"),a=parseInt(m[0],16),b=m[1]?parseInt(m[1],16):a;return cps.some(function(x){return x>=a&&x<=b})})}function warm(){if(!window.FontFace||!window.fetch)return;var seen={},cps=[],t=document.body.textContent;for(var i=0;i<t.length;i++){var x=t.charCodeAt(i);if(x>=0x2E80&&!seen[x]){seen[x]=1;cps.push(x)}}fetch(U).then(function(r){return r.text()}).then(function(css){var q=[];css.replace(/@font-face\s*\{([^}]*)\}/g,function(_,b){var s=/url\(([^)]+)\)/.exec(b),r=/unicode-range:\s*([^;]+)/.exec(b);if(s&&r&&inRange(r[1],cps))q.push([s[1],r[1]]);return _});function next(){if(!q.length){try{localStorage.setItem(K,"1")}catch(e){}return}var j=q.shift();new FontFace("Noto Sans TC","url("+j[0]+")",{weight:"400 900",unicodeRange:j[1]}).load().then(function(){idle(next,{timeout:3000})},function(){idle(next,{timeout:3000})})}idle(next,{timeout:3000})}).catch(function(){})}var painted=0,loaded=0,started=0;function go(){if(painted&&loaded&&!started){started=1;setTimeout(function(){idle(warm,{timeout:5000})},5000)}}try{new PerformanceObserver(function(l){if(!painted&&l.getEntriesByName("first-contentful-paint").length){painted=1;go()}}).observe({type:"paint",buffered:true})}catch(e){painted=1}addEventListener("load",function(){loaded=1;setTimeout(function(){painted=1;go()},3000);go()})})()</script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Music&text=%F0%9D%84%9E%E2%99%AF%E2%99%AE&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="../../assets/deck-bundle.css?v=20261029a">
+<link rel="stylesheet" href="../../../guitar/theme.css?v=20261016review1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pixel Studio">
+<meta property="og:title" content="Scale degrees and chord arranging｜Chapter 10｜Guitar Lab">
+<meta property="og:description" content="Pixel Studio Guitar Lab Chapter 10 class slides: scale-degree names and chord functions (tonic, subdominant, dominant), dominant 7th resolution, common progressions and hearing them, relative major and minor, substitute chords, seventh-chord colours, putting chords to a melody, and an intro to arranging.">
+<meta property="og:image" content="https://pixel-studio.musicallanding.workers.dev/guitar/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../../assets/learning-tools.css?v=20261020a">
+<link rel="canonical" href="https://pixel-studio.musicallanding.workers.dev/en/guitar/ch10/">
+<link rel="alternate" hreflang="zh-Hant" href="https://pixel-studio.musicallanding.workers.dev/guitar/ch10/">
+<link rel="alternate" hreflang="en" href="https://pixel-studio.musicallanding.workers.dev/en/guitar/ch10/">
+<link rel="alternate" hreflang="x-default" href="https://pixel-studio.musicallanding.workers.dev/guitar/ch10/">
+<meta property="og:url" content="https://pixel-studio.musicallanding.workers.dev/en/guitar/ch10/">
+<script src="../../../assets/analytics.js?v=20261104a" defer></script>
+<script src="../../../assets/lang.js?v=20261104a" defer></script>
+</head>
+<body data-title="Chapter 10｜Scale degrees and chord arranging" data-course="guitar" data-lesson="ch10" data-home="../index.html#lessons">
+<div class="progress" id="progress"></div>
+<main class="deck" id="deck">
+<div class="stage" id="stage">
+<!-- 1 封面 -->
+<section class="slide cover"><div class="cover-art" aria-hidden="true"><span class="ca-glow"></span><img src="../../../assets/brand/pixel-studio-symbol-color.svg" alt="" width="1024" height="1024" fetchpriority="high"></div>
+  <div class="kicker">Pixel Studio Guitar Lab｜Folk guitar Chapter 10</div>
+  <h1>Scale degrees and chord arranging</h1>
+  <p class="lead">Progressions · Arranging</p>
+  <p class="meta">Teacher: Leo Lee, Pixel Studio<br>musicallanding@gmail.com</p>
+<img class="cover-sig" src="../../../assets/brand/pixel-studio-primary-mono-white.svg" alt="Pixel Studio" width="1600" height="1440" loading="lazy" decoding="async"></section>
+
+<!-- 2 路線 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Phone sync</div>
+  <div class="kicker">Today · 120 Minutes</div>
+  <h2>Today's route: understand the logic of how chords are ordered</h2>
+  <div class="timeline">
+    <div class="bar-qi" style="flex:20"><b>Open</b><small>Bass review, listening to progressions｜20 minutes</small></div>
+    <div class="bar-cheng" style="flex:35"><b>Build</b><small>Scale degrees, functions, common progressions｜35 minutes</small></div>
+    <div class="bar-rest" style="flex:10"><b>Break</b><small>10 minutes</small></div>
+    <div class="bar-zhuan" style="flex:35"><b>Turn</b><small>Substitutes, sevenths, harmonising, arranging｜35 minutes</small></div>
+    <div class="bar-he" style="flex:20"><b>Close</b><small>Canon progression play-along｜20 minutes</small></div>
+  </div>
+  <div class="split wide">
+    <ul class="clean compact">
+      <li>Name chords by scale degree and understand the three functions: tonic, subdominant and dominant</li>
+      <li>Tell apart the four most common chord progressions</li>
+      <li>Use substitute chords and seventh chords to change the accompaniment's colour</li>
+      <li>Put chords to a simple melody and plan the arrangement of a song</li>
+    </ul>
+    <div class="qr" data-href="../../../guitar/ch10/self"></div>
+  </div>
+</section>
+
+<!-- 3 回顧 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Show-of-hands vote</div>
+  <div class="kicker"><span class="tag t-qi">Open</span>00:00–00:20 Warm-up and review</div>
+  <h2>Is your descending bass smooth yet?</h2>
+  <div class="split">
+    <div>
+      <ul class="clean compact">
+        <li>After tuning, play one round of C → G/B → Am → Am/G → F → C/E → Dm → G</li>
+        <li>Two students share the bass lines they added to their mid-course songs</li>
+        <li>The teacher answers questions from last week's exit tickets</li>
+      </ul>
+    </div>
+    <div>
+      <p class="muted" style="font-size:18px;margin-bottom:10px">Have you noticed that lots of songs use very similar chords?</p>
+      <div class="poll" data-id="g10-same" data-options="Often|Now and then|Never paid attention"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 預測 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Predict, then reveal</div>
+  <div class="kicker"><span class="tag t-qi">Open</span>Think about it</div>
+  <h2>How can the same chords make completely different songs?</h2>
+  <div class="split">
+    <div class="quiz" data-answer="3">
+      <p class="q">Choose the best explanation</p>
+      <ol><li>Because the singers are different</li><li>Because chords are copyrighted, so everyone can only use those few</li><li>Chords steer the emotion, while melody, rhythm and lyrics give each song its character</li><li>Those songs are actually the same</li></ol>
+      <div class="why">A chord progression is like a story outline: "calm → setting out → tension → home". The same outline can tell countless different stories.</div>
+    </div>
+    <div class="card"><h3>The original handbook's Chapter 4</h3><p>Scale degrees turn a key's diatonic chords into numbers. Think in numbers and a progression works in every key.</p></div>
+  </div>
+</section>
+
+<!-- 5 級數名稱 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>00:20–00:55 Chapter 4: Scale degrees and diatonic chords</div>
+  <h2 style="margin-bottom:12px">Seven degrees, seven roles</h2>
+  <table>
+    <tr><th>Degree</th><th>Name</th><th>C major</th><th>G major</th><th>Function</th></tr>
+    <tr><td><b>Ⅰ</b></td><td>Tonic</td><td>C</td><td>G</td><td><b class="c-green">Tonic: stable, home</b></td></tr>
+    <tr><td><b>ii</b></td><td>Supertonic</td><td>Dm</td><td>Am</td><td><b class="c-gold">Subdominant: setting out</b></td></tr>
+    <tr><td><b>iii</b></td><td>Mediant</td><td>Em</td><td>Bm</td><td><b class="c-green">Tonic</b> (weaker)</td></tr>
+    <tr><td><b>Ⅳ</b></td><td>Subdominant</td><td>F</td><td>C</td><td><b class="c-gold">Subdominant: setting out</b></td></tr>
+    <tr><td><b>Ⅴ</b></td><td>Dominant</td><td>G</td><td>D</td><td><b class="c-red">Dominant: tense, wants to go home</b></td></tr>
+    <tr><td><b>vi</b></td><td>Submediant</td><td>Am</td><td>Em</td><td><b class="c-green">Tonic</b> (relative minor)</td></tr>
+    <tr><td><b>vii°</b></td><td>Leading-tone</td><td>Bdim</td><td>F#dim</td><td><b class="c-red">Dominant</b></td></tr>
+  </table>
+</section>
+
+<!-- 6 功能 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>What chords do</div>
+  <h2 style="margin-bottom:14px">At home, setting out, wanting to go home</h2>
+  <div class="chain" style="margin-top:0">
+    <div class="fbox"><b>Tonic T</b><span>I, vi, iii · at home</span></div><i></i>
+    <div class="fbox"><b>Subdominant S</b><span>IV, ii · heading out</span></div><i></i>
+    <div class="fbox hl"><b>Dominant D</b><span>V, vii° · wants to go home</span></div><i></i>
+    <div class="fbox"><b>Tonic T</b><span>I · back home</span></div>
+  </div>
+  <div class="cards-mini" style="margin-top:22px">
+    <div class="card"><h3 class="c-green">Tonic</h3><p>Sounds like a full stop. Songs usually start and end here.</p></div>
+    <div class="card"><h3 class="c-gold">Subdominant</h3><p>Leaving home, with only a little tension. Often the first chord of a chorus.</p></div>
+    <div class="card"><h3 class="c-red">Dominant</h3><p>The most tense, the most eager to resolve. Follow V with I and your ears breathe a sigh of relief.</p></div>
+  </div>
+</section>
+
+<!-- 7 屬七 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Tab trainer</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>The dominant 7th</div>
+  <h2 style="margin-bottom:10px">V7 → I: the strongest signal to go home</h2>
+  <div class="grid2" style="align-items:start">
+    <div>
+      <div data-tab="6-3+5-2+4-0+3-0+2-0+1-1:w | 5-3+4-2+3-0+2-1+1-0:w | 4-0+3-2+2-1+1-2:w | 6-3+5-2+4-0+3-0+2-0+1-3:w" data-per-row="4" data-title="G7 → C、D7 → G" data-play data-bpm="56"></div>
+      <div style="margin-top:10px"><div class="grid2" style="grid-template-columns:repeat(4,1fr);gap:10px;align-items:end"><div style="text-align:center"><div data-diagram="G7" style="max-width:110px;margin:0 auto"></div><b style="font-size:20px">G7</b></div><div style="text-align:center"><div data-diagram="D7" style="max-width:110px;margin:0 auto"></div><b style="font-size:20px">D7</b></div><div style="text-align:center"><div data-diagram="E7" style="max-width:110px;margin:0 auto"></div><b style="font-size:20px">E7</b></div><div style="text-align:center"><div data-diagram="A7" style="max-width:110px;margin:0 auto"></div><b style="font-size:20px">A7</b></div></div></div>
+    </div>
+    <ul class="clean compact">
+      <li>G7 = a G chord plus F. F and B form a dissonant augmented fourth that badly wants to resolve</li>
+      <li>B moves up to C and F moves down to E, landing on a C chord</li>
+      <li>Add a seventh to V in any key and it becomes a "dominant 7th"</li>
+      <li>In a song's last line, swap V for V7 and the ending hits harder</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 8 常見進行 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>Common chord progressions</div>
+  <h2 style="margin-bottom:12px">Four progressions you've heard a thousand times</h2>
+  <table>
+    <tr><th>Name</th><th>Degree</th><th>C major</th><th>Feel</th></tr>
+    <tr><td><b>Pop four-chord</b></td><td>I–V–vi–IV</td><td>C G Am F</td><td>Bright and uplifting, the most common in choruses</td></tr>
+    <tr><td><b>Sad four-chord</b></td><td>vi–IV–I–V</td><td>Am F C G</td><td>The same four chords starting on the minor turn sad</td></tr>
+    <tr><td><b>'50s progression</b></td><td>I–vi–IV–V</td><td>C Am F G</td><td>Retro and sweet, common in old love songs</td></tr>
+    <tr><td><b>Canon progression</b></td><td>I–V–vi–iii–IV–I–IV–V</td><td>C G Am Em F C F G</td><td>The bass line of Pachelbel's Canon, stately and warm</td></tr>
+    <tr><td><b>Ⅱ–Ⅴ–Ⅰ</b></td><td>ii–V–I</td><td>Dm G C</td><td>The most-used progression in jazz, with a very strong ending</td></tr>
+  </table>
+</section>
+
+<!-- 9 進行聽辨 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Listening game</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>Ear training</div>
+  <h2 style="margin-bottom:12px">Listen to four chords and tell which progression it is</h2>
+  <div class="split">
+    <div data-prog-ear="C,G,Am,F|Am,F,C,G|C,Am,F,G|Dm,G,C,C" data-names="I–V–vi–IV|vi–IV–I–V|I–vi–IV–V|ii–V–I"></div>
+    <ul class="clean compact">
+      <li>Listen to the first chord: bright (I) or sad (vi)?</li>
+      <li>Then the last chord: does it come home?</li>
+      <li>In ii–V–I the last two chords are the same, meaning "home and staying put"</li>
+      <li>Get 5 right in a row and you can tell the common progressions apart</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 10 換和弦 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Chord change trainer</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>Play them</div>
+  <h2 style="margin-bottom:10px">Play all four progressions once</h2>
+  <div data-switch-trainer="C G Am F|Am F C G|C Am F G|C G Am Em F C F G|Dm G7 C C" data-bpm="64"></div>
+</section>
+
+<!-- 11 休息 -->
+<section class="slide center">
+  <div class="kicker">Break</div>
+  <div class="timer" id="timer">10:00</div>
+  <p class="lead">Take a ten-minute break; hum a song and guess its chords</p>
+  <div style="height:20px"></div>
+  <div class="btn-row"><button type="button" class="btn" id="timerBtn">Start countdown</button><button type="button" class="btn" id="timerReset">Reset</button></div>
+</section>
+
+<!-- 12 關係調與代理 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>01:05–01:40 Relative keys and substitute chords</div>
+  <h2 style="margin-bottom:12px">Swap in a chord from the same family and the colour changes</h2>
+  <div class="grid2" style="align-items:start">
+    <table>
+      <tr><th>Original chord</th><th>Can become</th><th>Why it works</th></tr>
+      <tr><td><b>C（I）</b></td><td>Am（vi）、Em（iii）</td><td>Two notes in common, both tonic function</td></tr>
+      <tr><td><b>F（IV）</b></td><td>Dm（ii）</td><td>F and A in common, both subdominant function</td></tr>
+      <tr><td><b>G（V）</b></td><td>G7、Bdim（vii°）</td><td>Both dominant function, with more tension</td></tr>
+    </table>
+    <div>
+      <div class="card"><h3 class="c-navy">Relative major and minor</h3><p>C major and A minor use the same chords; only where "home" is differs. G major's relative minor is E minor.</p></div>
+      <div class="card" style="margin-top:12px"><h3 class="c-gold">Try it</h3><p>Swap the F in C → G → Am → F for Dm: C → G → Am → Dm sounds softer, with more depth.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 七和弦色彩 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Chord change trainer</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Colour chords</div>
+  <h2 style="margin-bottom:10px">Add a seventh: Cmaj7, Am7, Dm7, Fmaj7</h2>
+  <div class="grid2" style="grid-template-columns:.9fr 1.1fr;align-items:start">
+    <div class="grid2" style="grid-template-columns:repeat(2,1fr);gap:10px;align-items:end"><div style="text-align:center"><div data-diagram="Cmaj7" style="max-width:110px;margin:0 auto"></div><b style="font-size:20px">Cmaj7</b></div><div style="text-align:center"><div data-diagram="Am7" style="max-width:110px;margin:0 auto"></div><b style="font-size:20px">Am7</b></div><div style="text-align:center"><div data-diagram="Dm7" style="max-width:110px;margin:0 auto"></div><b style="font-size:20px">Dm7</b></div><div style="text-align:center"><div data-diagram="Fmaj7" style="max-width:110px;margin:0 auto"></div><b style="font-size:20px">Fmaj7</b></div></div>
+    <div data-switch-trainer="Cmaj7 Am7 Dm7 G7|Fmaj7 G Em7 Am7" data-bpm="60"></div>
+  </div>
+</section>
+
+<!-- 14 配和弦 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Tab trainer</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Putting chords to a melody</div>
+  <h2 style="margin-bottom:8px">Twinkle Twinkle Little Star: which chord does each strong-beat note belong to?</h2>
+  <div data-tab="2-1 2-1 1-3 1-3 | 1-5 1-5 1-3:h | 1-1 1-1 1-0 1-0 | 2-3 2-3 2-1:h" data-per-row="4" data-title="Do Do Sol Sol｜La La Sol (long)｜Fa Fa Mi Mi｜Re Re Do (long)" data-play data-bpm="80"></div>
+  <div class="card" style="margin-top:12px"><p><b class="c-gold">How</b> Look at the melody note on beats 1 and 3 of each bar and find a chord that contains it (C, F, G); the last line comes back to C.</p>
+    <div class="reveal" data-label="Reveal answer"><p class="compact">｜C｜F C｜F C｜G C｜ "La La" gets F, "Re Re" gets G, and the final "Do" comes back to C.</p></div>
+  </div>
+</section>
+
+<!-- 15 編曲入門 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Chapter 11: Intro to arranging</div>
+  <h2 style="margin-bottom:12px">Arranging for one guitar: give every section its own look</h2>
+  <table>
+    <tr><th>Section</th><th>Chord</th><th>Right hand</th><th>Tip</th></tr>
+    <tr><td><b>Intro</b></td><td>Use the chorus chords</td><td>Fingerpicking or quarter notes</td><td>Stop for a beat in the last bar to let the singer in</td></tr>
+    <tr><td><b>Verse</b></td><td>Original chord</td><td>Fingerpicking, boom-chick-a</td><td>Add alternate roots and bass lines</td></tr>
+    <tr><td><b>Pre-chorus</b></td><td>Ascending bass</td><td>8 beats, strumming more and more densely</td><td>Strum only beat 1 in the last bar</td></tr>
+    <tr><td><b>Chorus</b></td><td>Add substitute chords and sevenths</td><td>Syncopation, 16 beats</td><td>End with V7 in place of V</td></tr>
+    <tr><td><b>Outro</b></td><td>I or Imaj7</td><td>Slow down and strum one last time</td><td>Let the chord ring out fully before stopping</td></tr>
+  </table>
+  <p class="muted" style="font-size:16px;margin-top:10px">The original handbook's arranging chapter is only an outline; this table comes from classroom practice and can be used directly in your final project.</p>
+</section>
+
+<!-- 原講義曲例 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Song listening · YouTube</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Songs from the original handbook</div>
+  <h2 style="margin-bottom:8px">Songs from the original handbook: each section has its own accompaniment</h2>
+  <p class="muted" style="font-size:17px;margin-bottom:14px">Listen for the accompaniment and instruments in the intro, verse and chorus, and note them down as reference for the arrangement makeover.</p>
+  <div class="yt-list song-grid c2">
+    <div class="yt" data-song="如果有如果"></div>
+    <div class="yt" data-song="王妃"></div>
+  </div>
+</section>
+
+<!-- 16 分組 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Group task · scoring</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Group challenge</div>
+  <h2 style="margin-bottom:12px">Arrangement makeover</h2>
+  <div class="split">
+    <div>
+      <ul class="clean compact">
+        <li>The task: C → G → Am → F, eight bars, twice through</li>
+        <li>Treat the first time as a verse and the second as a chorus, and use today's tools to make them different</li>
+        <li>Use at least one substitute or seventh chord, and end on V7</li>
+        <li>Perform it and explain your design: verse–chorus contrast 2 points, chord changes 2 points, steady beat 1 point</li>
+      </ul>
+      <div class="phase" data-phases="Arranging discussion|300;Group performances|300" style="margin-top:12px"></div>
+    </div>
+    <div class="score" data-id="g10-arrange" data-teams="4"></div>
+  </div>
+</section>
+
+<!-- 17 迷思 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Myth busting · flip cards</div>
+  <div class="kicker"><span class="tag t-he">Close</span>01:40–02:00 Thinking about chords</div>
+  <h2 style="margin-bottom:14px">Myth or fact?</h2>
+  <div class="flips">
+    <div class="flip"><div class="f">Using the same progression is plagiarism</div><div class="b"><strong>Myth</strong>Chord progressions are shared material; a song's character comes from its melody and lyrics.</div></div>
+    <div class="flip"><div class="f">Scale degrees make changing key easy</div><div class="b"><strong>Fact</strong>Remember I–V–vi–IV and you can play it straight away in any key.</div></div>
+    <div class="flip"><div class="f">Seventh chords are only for jazz</div><div class="b"><strong>Myth</strong>Pop ballads use lots of maj7 and m7 to soften the sound.</div></div>
+    <div class="flip"><div class="f">V must always be followed by I</div><div class="b"><strong>Myth</strong>V to vi is called a "deceptive cadence"; it creates an unexpected turn, and lots of choruses use it.</div></div>
+    <div class="flip"><div class="f">Songs in minor keys are always sad</div><div class="b"><strong>Myth</strong>Fast songs in minor keys can sound powerful and cool too.</div></div>
+    <div class="flip"><div class="f">When putting chords to a melody, look at the strong-beat notes first</div><div class="b"><strong>Fact</strong>Strong-beat notes decide the chord most; weak-beat notes can be passing notes.</div></div>
+  </div>
+</section>
+
+<!-- 18 合奏 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Whole-class play-along</div>
+  <div class="kicker"><span class="tag t-he">Close</span>Play together</div>
+  <h2 style="margin-bottom:10px">Canon progression: a four-part class play-along</h2>
+  <div class="grid2" style="align-items:start">
+    <div class="chart">
+      <div class="sec">I–V–vi–iii–IV–I–IV–V</div>
+      <div>C</div><div>G</div><div>Am</div><div>Em</div>
+      <div>F</div><div>C</div><div>F</div><div>G</div>
+    </div>
+    <div data-strum-player="P A B" data-chords="C,G,Am,Em,F,C,F,G" data-bpm="72"></div>
+  </div>
+  <p class="muted" style="font-size:16px;margin-top:8px">Split into four parts: part 1 plays bass only, part 2 fingerpicks, part 3 strums 8 beats, part 4 strums syncopation. Add one part each round and listen to the sound grow richer.</p>
+</section>
+
+<!-- 19 錄音 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Record and compare</div>
+  <div class="kicker"><span class="tag t-he">Close</span>Check-in</div>
+  <h2 style="margin-bottom:12px">Record your arrangement</h2>
+  <div class="split">
+    <ul class="clean compact">
+      <li>Play C → G → Am → F twice: the first time as a verse, the second as a chorus</li>
+      <li>Listen back and check: do the two passes sound different?</li>
+      <li>You can use this design directly in your final project</li>
+    </ul>
+    <div class="panel"><div class="recorder" data-max="60" data-name="Chapter10_Arrangement"></div></div>
+  </div>
+</section>
+
+<!-- 20 三句話 -->
+<section class="slide center">
+  <div class="kicker">Today In Three Lines</div>
+  <p class="quote">Tonic is home, subdominant heads out, dominant wants to go home,<br>scale degrees make chords work in every key,<br>and arranging gives the same chords shape.</p>
+</section>
+
+<!-- 21 出場券 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Exit ticket 3-2-1</div>
+  <div class="kicker"><span class="tag t-he">Close</span>Exit Ticket</div>
+  <h2 style="margin-bottom:14px">Before you leave, write down 3-2-1</h2>
+  <div class="split wide">
+    <div class="exit" data-prompts="3 progressions you met today|2 arranging tricks you want to use|1 question you still want to ask the teacher"></div>
+    <div class="card"><h3>Getting ready for the final</h3><p>Chapter 12 is the final project. Start thinking about the format: play and sing a song you like, arrange a song, or write your own.</p></div>
+  </div>
+</section>
+
+<!-- 22 每日練習 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Self-directed log</div>
+  <div class="kicker">Homework</div>
+  <h2 style="margin-bottom:12px">15 minutes a day: a progressions routine</h2>
+  <div class="routine">
+    <div class="bar-qi" style="flex:2">Tuning<br><small>2 minutes</small></div>
+    <div class="bar-teal" style="flex:3">Progression ear training<br><small>3 minutes</small></div>
+    <div class="bar-cheng" style="flex:4">Four progressions<br><small>4 minutes</small></div>
+    <div class="bar-orange" style="flex:3">Seventh chords<br><small>3 minutes</small></div>
+    <div class="bar-zhuan" style="flex:3">Harmonise it yourself<br><small>3 minutes</small></div>
+  </div>
+  <div class="log7" data-cols="Ear training questions right|Song you harmonised|How today felt"></div>
+</section>
+
+<!-- 23 課後練習 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Self-directed tracking</div>
+  <div class="kicker">Homework</div>
+  <h2 style="margin-bottom:12px">Practice after class: tap once to tick each item you finish</h2>
+  <ul class="checks" data-id="g10-hw">
+    <li>Write out I–V–vi–IV and the Canon progression in C major and G major</li>
+    <li>Get 5 progression questions right in a row</li>
+    <li>Cmaj7 → Am7 → Dm7 → G7, one round without stopping</li>
+    <li>Put chords to Twinkle Twinkle Little Star or a nursery song, and play and sing it</li>
+    <li>Decide the format and song for your final project, and fill in the Chapter 11 pre-class survey</li>
+  </ul>
+</section>
+
+<!-- 24 下週預告 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Pre-class survey</div>
+  <div class="kicker">Next Week</div>
+  <h2>Chapter 11 Melody and tone techniques</h2>
+  <div class="split wide">
+    <div>
+      <p class="lead">Hammer-ons, pull-offs, slides, muting, chucks and bends:<br>give your melodies more expression.</p>
+      <p class="muted" style="margin-top:20px">Scan the QR code to fill in the Chapter 11 pre-class survey on the website.</p>
+    </div>
+    <div class="qr" data-href="../survey.html?id=g-pre-11"></div>
+  </div>
+</section>
+</div>
+</main>
+
+<nav class="ui" aria-label="Slide controls">
+  <button type="button" id="prev" aria-label="Previous">← Previous</button>
+  <span class="counter" id="counter">1 / 1</span>
+  <button type="button" id="next" aria-label="Next">Next →</button>
+  <button type="button" id="full">Full screen</button>
+  <a href="../index.html">Course home</a>
+</nav>
+
+<script src="../../../assets/pixel.js?v=20261014v" defer></script>
+<script src="../../assets/ui.js?v=20261016review1" defer></script>
+<script src="../../assets/deck.js?v=20261015b" defer></script>
+<script src="../../../assets/vendor/qrcode.min.js" defer></script>
+<script src="../../assets/interact.js?v=20261028a" defer></script>
+<script src="../../../assets/config.js?v=20261020g" defer></script>
+<script src="../../assets/backend.js?v=20261030a" defer></script>
+<script src="../../../assets/ps-audio.js?v=20261014v" defer></script>
+<script src="../guitar.js?v=20261028identity" defer></script>
+<script src="../songs.js?v=20261014v" defer></script>
+<script src="../../assets/youtube.js?v=20261029a" defer></script>
+<script src="../../assets/learning-tools.js?v=20261020a" defer></script>
+</body>
+</html>

@@ -26,15 +26,21 @@ OUT = SITE / 'en'
 DICT_DIR = ROOT / 'i18n' / 'en'
 PROD = 'https://pixel-studio.musicallanding.workers.dev/'
 CJK = re.compile(r'[㐀-鿿豈-﫿]')
-TEXT_EXT = {'.html', '.js', '.css', '.md', '.webmanifest'}
+TEXT_EXT = {'.html', '.js', '.css', '.md', '.webmanifest', '.svg'}
 # 不翻譯的檔案：產生器資料、說明文件
 SKIP = {'assets/teaching/README.md', 'songwriting/lyric-dice.js', 'assets/lang.js'}
+# 品牌標誌的中文字標依 CI 規範不重打，整個資料夾不翻
+SKIP_DIRS = ('assets/brand/',)
 LANG_JS = 'assets/lang.js?v=20261104a'
 
 # 英文版 JS 載入相對資源時要改指回中文版的路徑（檔案 → [(原字串, 新字串)]）
 FIXUPS = {
     'assets/deck.js': [("ME.replace(/deck\\.js(\\?.*)?$/, 'brand/')", "ME.replace(/en\\/assets\\/deck\\.js(\\?.*)?$/, 'assets/brand/')")],
-    'assets/teaching-visuals.js': [("var base = new URL('teaching/', script.src);", "var base = new URL('../../assets/teaching/', script.src);")],
+    # 圖解：有英文版的 SVG 讀 en/assets/teaching/，其餘照片讀中文版資料夾（清單在 build 時填入）
+    'assets/teaching-visuals.js': [("var base = new URL('teaching/', script.src);",
+                                    "var base = new URL('../../assets/teaching/', script.src), enBase = new URL('teaching/', script.src), EN_FILES = __EN_TEACHING__;"),
+                                   ("var resolved = new URL(src, base);",
+                                    "var resolved = new URL(src, EN_FILES.indexOf(src.split('?')[0]) > -1 ? enBase : base);")],
     'guitar/guitar.js': [("new URL('../assets/guitar/', guitarScript.src)", "new URL('../../assets/guitar/', guitarScript.src)"),
                          ("new URL('../assets/teaching/', guitarScript.src)", "new URL('../../assets/teaching/', guitarScript.src)")],
 }
@@ -141,6 +147,18 @@ def js_strings(src):
 
     code(0, False)
     return out
+
+
+PUNCT = {'，': ', ', '、': ', ', '：': ': ', '；': '; ', '。': '. ', '（': ' (', '）': ')', '！': '! ', '？': '? '}
+
+
+def js_punct(src):
+    """英文版程式裡只剩中文標點的字串（拼接句子用的「，」「（」等）換成英文標點。"""
+    def fix(m):
+        q, body = m.group(1), m.group(2)
+        t = ''.join(PUNCT.get(c, c) for c in body)
+        return q + re.sub(r'  +', ' ', t) + q
+    return re.sub(r"(?<!split\()(?<!join\()(['\"])([\s，、：；。（）！？]*[，、：；。（）！？][\s，、：；。（）！？]*)\1", fix, src)
 
 
 def js_escape(s, q):
@@ -336,9 +354,41 @@ def md_units(src):
     return out
 
 
+def svg_units(src):
+    """SVG 圖解：<text>／<tspan>／<title> 的文字節點，以及 aria-label 等可見屬性；<style> 不動。"""
+    masked = re.sub(r'<(style|script)\b.*?</\1>', lambda m: ' ' * len(m.group(0)), src, flags=re.S)
+    out = []
+    for m in re.finditer(r'>([^<]+)<', masked):
+        raw = m.group(1)
+        if CJK.search(raw):
+            l = len(raw) - len(raw.lstrip())
+            out.append((m.start(1) + l, m.start(1) + l + len(raw.strip()), raw.strip(), 'svg'))
+    for m in re.finditer(r'\b(aria-label|aria-description|title|alt)="([^"]*)"', masked):
+        if CJK.search(m.group(2)):
+            out.append((m.start(2), m.end(2), m.group(2), 'attr'))
+    return sorted(out)
+
+
 # ---------------------------------------------------------------- 檔案
+def code_table():
+    """i18n/code_en.py 的 CODE：{檔案: [(中文版程式片段, 英文版程式片段)]}，處理語序不同、由片段拼成的句子。"""
+    f = ROOT / 'i18n' / 'code_en.py'
+    if not f.exists(): return {}
+    ns = {}
+    exec(compile(f.read_text(encoding='utf-8'), str(f), 'exec'), ns)
+    return ns.get('CODE', {})
+
+
+CODE = None
+
+
 def prep(rel, src):
-    """翻譯前的整理：講義頁的預先渲染內容改由英文 Markdown 在瀏覽器端轉換，不逐句翻 HTML。"""
+    """翻譯前的整理：先套用 code_en.py 的整句替換；講義頁的預先渲染內容改由英文 Markdown 在瀏覽器端轉換，不逐句翻 HTML。"""
+    global CODE
+    if CODE is None: CODE = code_table()
+    for a, b in CODE.get(rel, []):
+        if a not in src and b not in src: print('code_en: not found in', rel, '::', a[:60], file=sys.stderr)
+        src = src.replace(a, b)
     if rel.endswith('/handbook.html'):
         src = re.sub(r'(<main\b[^>]*?)\s+data-prerendered="[^"]*"([^>]*>).*?(</main>)', r'\1\2\3', src, count=1, flags=re.S)
     return src
@@ -351,6 +401,7 @@ def units_of(path, src):
     if ext in ('.js', '.webmanifest'): return [(a, b, raw, 'js:' + q) for a, b, raw, q in js_units(src)]
     if ext == '.css': return [(a, b, raw, 'css:' + q) for a, b, raw, q in css_units(src)]
     if ext == '.md': return md_units(src)
+    if ext == '.svg': return svg_units(src)
     return []
 
 
@@ -359,7 +410,7 @@ def sources():
     for p in sorted(SITE.rglob('*')):
         if not p.is_file() or p.suffix not in TEXT_EXT: continue
         rel = p.relative_to(SITE).as_posix()
-        if rel.startswith('en/') or rel in SKIP: continue
+        if rel.startswith('en/') or rel in SKIP or rel.startswith(SKIP_DIRS): continue
         files.append(p)
     return files
 
@@ -392,7 +443,8 @@ def rewrite_ref(val, src_rel, en_set):
     check = target
     if path.endswith('/') or (SITE / target).is_dir():
         check = (target.rstrip('/') + '/index.html').lstrip('/')
-    if check in en_set:
+    # 英文版另有實體檔（例如英文講義 PDF）時也留在 en/
+    if check in en_set or (OUT / check).is_file():
         return val
     # 指回中文版：英文頁位於 en/ 底下，多一層
     return os.path.relpath(SITE / target, (OUT / src_rel).parent).replace('\\', '/') + ('/' if path.endswith('/') else '') + tail
@@ -410,15 +462,23 @@ def translate_file(p, d, en_set, missing=None):
             if missing is not None and t != '=': missing.append((rel, hid(raw), raw))
             continue
         lead = raw[:len(raw) - len(raw.lstrip())]; trail = raw[len(raw.rstrip()):]
+        if lead: t = t.lstrip()
+        if trail: t = t.rstrip()
         if kind.startswith('js:'):
             t = js_escape(t, kind[3:])
         elif kind.startswith('css:'):
             t = t.replace(kind[4:], '\\' + kind[4:])
         elif kind == 'attr':
             t = t.replace('"', '&quot;')
+        elif kind == 'svg':
+            t = re.sub(r'&(?![#\w]+;)', '&amp;', t).replace('<', '&lt;')
         parts.append(src[last:a]); parts.append(lead + t + trail); last = b
     parts.append(src[last:])
     out = ''.join(parts)
+    if p.suffix == '.js':
+        out = js_punct(out)
+    elif p.suffix == '.html':
+        out = re.sub(r'(<script\b[^>]*>)(.*?)(</script>)', lambda m: m.group(1) + js_punct(m.group(2)) + m.group(3), out, flags=re.S)
     if p.suffix == '.html':
         out = html_paths(out, rel, en_set)
     elif p.suffix == '.md':
@@ -430,6 +490,9 @@ def translate_file(p, d, en_set, missing=None):
     for a, b in FIXUPS.get(rel, []):
         assert a in out, (rel, a)
         out = out.replace(a, b)
+    if '__EN_TEACHING__' in out:
+        names = sorted(r[len('assets/teaching/'):] for r in en_set if r.startswith('assets/teaching/') and r.endswith('.svg'))
+        out = out.replace('__EN_TEACHING__', json.dumps(names))
     return out
 
 
@@ -469,7 +532,7 @@ def cmd_status(args):
     tot_u = tot_m = 0
     for p in sources():
         rel = p.relative_to(SITE).as_posix()
-        if args and not any(a in rel for a in args): continue
+        if args and not any((rel == a[1:]) if a.startswith('=') else (a in rel) for a in args): continue
         us = units_of(p, p.read_text(encoding='utf-8'))
         if not us: continue
         keep = sum(1 for u in us if d.get(hid(u[2])) == '=')
@@ -487,7 +550,7 @@ def cmd_todo(args):
     seen, n = set(), 0
     for p in sources():
         rel = p.relative_to(SITE).as_posix()
-        if args and not any(a in rel for a in args): continue
+        if args and not any((rel == a[1:]) if a.startswith('=') else (a in rel) for a in args): continue
         for a, b, raw, kind in units_of(p, p.read_text(encoding='utf-8')):
             h = hid(raw)
             if h in seen or d.get(h) or d.get(h + '@' + rel): continue

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Move records from the old site｜Vocal Lab</title>
+<link rel="icon" href="../../assets/favicon.ico?v=20261014v" sizes="any">
+<link rel="stylesheet" href="../../assets/site.css?v=20261016c">
+<link rel="stylesheet" href="../assets/responsive.css?v=20261016review1">
+<link rel="stylesheet" href="../../assets/studio.css?v=20261016review1">
+<style>
+.transfer{max-width:760px;margin:0 auto;padding:52px 22px 80px}.transfer h1{font-size:clamp(30px,6vw,48px);margin:14px 0}.transfer p,.transfer li{line-height:1.9}.transfer ol{padding-left:24px}.transfer-card{margin-top:24px;padding:22px;border:1px solid var(--line);border-radius:0;background:var(--card)}.transfer-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}.transfer-card h2{font-size:22px;margin:0 0 6px}.transfer-file{display:block;margin:16px 0 18px;font-size:14px;color:var(--muted)}.transfer input[type=file]{display:block;margin-top:8px;max-width:100%;color:var(--ink);font:inherit}.transfer input[type=file]::file-selector-button{margin-right:12px;padding:8px 14px;border:1px solid var(--line-2);background:transparent;color:var(--ink);font:inherit;cursor:pointer}.transfer input[type=file]::file-selector-button:hover{border-color:var(--amber)}.transfer>a.back{display:inline-block;margin-bottom:8px}.transfer-status{min-height:1.8em;margin-top:12px;font-weight:700}.transfer-note{color:var(--muted);font-size:14px}.transfer .btn{cursor:pointer}
+</style>
+<meta name="description" content="Pixel Studio: four interactive courses in pop singing, folk guitar, pop piano and songwriting. We Perform the Pixel of Music.">
+<meta name="theme-color" content="#101210">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pixel Studio">
+<meta property="og:title" content="Move records from the old site｜Vocal Lab">
+<meta property="og:description" content="Pixel Studio: four interactive courses in pop singing, folk guitar, pop piano and songwriting. We Perform the Pixel of Music.">
+<meta property="og:image" content="https://pixel-studio.musicallanding.workers.dev/vocal/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://pixel-studio.musicallanding.workers.dev/en/vocal/data-transfer">
+<link rel="alternate" hreflang="zh-Hant" href="https://pixel-studio.musicallanding.workers.dev/vocal/data-transfer">
+<link rel="alternate" hreflang="en" href="https://pixel-studio.musicallanding.workers.dev/en/vocal/data-transfer">
+<link rel="alternate" hreflang="x-default" href="https://pixel-studio.musicallanding.workers.dev/vocal/data-transfer">
+<meta property="og:url" content="https://pixel-studio.musicallanding.workers.dev/en/vocal/data-transfer">
+<script src="../../assets/analytics.js?v=20261104a" defer></script>
+<script src="../../assets/lang.js?v=20261104a" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../studio.html"><img class="brand-logo" src="../../assets/brand/pixel-studio-horizontal.svg" alt="Pixel Studio" width="2400" height="720"><span class="brand-caption">Pixel Music Workshop<br>Vocal Lab</span><span class="sr-only">, back to the course home</span></a>
+  </div>
+</header>
+<main class="transfer">
+  <a class="back" href="index.html">← Back to Vocal Lab</a>
+  <p class="eyebrow">Local Record Transfer</p>
+  <h1>Bring your practice records from the old site</h1>
+  <p>The old site and Pixel Studio live on different domains, so your browser won't move your local practice records over by itself. First download a backup on the device and browser you used before, then come back here to import it.</p>
+  <ol>
+    <li>Open the old site's <a href="https://leoleehr.github.io/vocal_music/data-transfer.html">record export page</a> and download the JSON file.</li>
+    <li>Come back here, choose that file and press "Import to this device".</li>
+    <li>When it's done, open the slides and check that your practice records are there.</li>
+  </ol>
+  <section class="transfer-card">
+    <h2>Import a backup from the old site</h2>
+    <p class="transfer-note">The file is only read inside this browser. If a record with the same name already exists, the current site's data is kept and not overwritten.</p>
+    <label class="transfer-file">Backup file (JSON)<input id="backup-file" type="file" accept="application/json,.json"></label>
+    <button class="btn primary" id="import-button" type="button">Import to this device</button>
+    <div id="status" class="transfer-status" role="status" aria-live="polite"></div>
+  </section>
+  <section class="transfer-card">
+    <h2>Download a Pixel Studio backup</h2>
+    <p class="transfer-note">Download this device's current Vocal Lab local records to keep a copy or move them later.</p>
+    <button class="btn" id="export-button" type="button">Download local records</button>
+  </section>
+  <p class="transfer-note">Surveys and homework already sent to the teacher's sheet stay in the original back end; this tool only moves the local records in your browser. Keep the downloaded backup until you've checked everything.</p>
+</main>
+<script>
+(function () {
+  'use strict';
+  var PREFIX = 'pixel:', schema = 'pixel-studio-local-storage-v1';
+  var fileInput = document.getElementById('backup-file'), status = document.getElementById('status');
+  function entries() {
+    var rows = [];
+    for (var i = 0; i < localStorage.length; i++) {
+      var key = localStorage.key(i);
+      if (key && key.indexOf(PREFIX) === 0 && key.indexOf('pixel:guitar:') !== 0) rows.push({ key: key, value: localStorage.getItem(key) });
+    }
+    return rows;
+  }
+  function download(rows, name) {
+    var blob = new Blob([JSON.stringify({ schema: schema, exportedAt: new Date().toISOString(), entries: rows }, null, 2)], { type: 'application/json' });
+    var url = URL.createObjectURL(blob), a = document.createElement('a');
+    a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+  }
+  document.getElementById('export-button').addEventListener('click', function () {
+    var rows = entries();
+    if (!rows.length) { status.textContent = 'There are no Pixel Studio records on this device to export.'; return; }
+    var d = new Date(), stamp = d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0');
+    download(rows, 'pixel-studio-vocal-backup-' + stamp + '.json');
+    status.textContent = 'Prepared a backup of ' + rows.length + ' local records.';
+  });
+  document.getElementById('import-button').addEventListener('click', function () {
+    var file = fileInput.files && fileInput.files[0];
+    if (!file) { status.textContent = 'Please choose the JSON backup you downloaded from the old site first.'; return; }
+    if (file.size > 10 * 1024 * 1024) { status.textContent = 'The backup file is over 10 MB. Please check you chose the right file.'; return; }
+    var reader = new FileReader();
+    reader.onload = function () {
+      try {
+        var data = JSON.parse(reader.result);
+        if (!data || data.schema !== schema || !Array.isArray(data.entries)) throw new Error('Wrong format');
+        var added = 0, skipped = 0, failed = 0;
+        data.entries.forEach(function (row) {
+          if (!row || typeof row.key !== 'string' || row.key.indexOf(PREFIX) !== 0 || row.key.indexOf('pixel:guitar:') === 0 || typeof row.value !== 'string') { skipped++; return; }
+          if (localStorage.getItem(row.key) !== null) { skipped++; return; }
+          try { localStorage.setItem(row.key, row.value); added++; } catch (storageError) { failed++; }
+        });
+        status.textContent = 'Import finished: ' + added + ' added, ' + skipped + ' kept or skipped, ' + failed + ' failed for lack of storage space.';
+      } catch (error) { status.textContent = 'Couldn\'t import: the file format is wrong or the browser is out of storage space.'; }
+    };
+    reader.onerror = function () { status.textContent = 'Couldn\'t read the selected file.'; };
+    reader.readAsText(file);
+  });
+})();
+</script>
+</body>
+</html>

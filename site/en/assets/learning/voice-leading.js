@@ -1,0 +1,12 @@
+PixelLearning.register('voice-leading',(root,K)=>{
+ const ctl=K.shell(root),plot=K.chart(root),status=K.status(root),player=K.player(root);const names=['C','F','G','C'],a=[[60,64,67],[65,69,72],[67,71,74],[60,64,67]],b=[[60,64,67],[60,65,69],[59,62,67],[60,64,67]];let pos=0,bpm=72;
+ const select=K.select('Chord',names.map((n,i)=>[i,(i+1)+' '+n]),v=>{stop();pos=+v;draw();},ctl);K.number('Tempo BPM',72,40,140,v=>{stop();bpm=v;},ctl);
+ function note(m){return ['C','C♯','D','E♭','E','F','F♯','G','A♭','A','B♭','B'][m%12]+(Math.floor(m/12)-1);}
+ function cost(seq){return seq.slice(1).reduce((t,c,i)=>t+c.reduce((s,n,j)=>s+Math.abs(n-seq[i][j]),0),0);}
+ function draw(){select.value=pos;K.svg(plot,260,w=>{const x=i=>24+i*(w-48)/3;let s='';[[a,'All root position',0],[b,'Nearest-note voicing',132]].forEach(([seq,title,top])=>{const y=m=>top+99-(m-59)/15*66;s+=K.text(4,top+15,title)+K.text(w-4,top+15,'Total '+cost(seq)+' semitones','end');s+='<rect x="'+(x(pos)-13)+'" y="'+(top+23)+'" width="26" height="100" fill="var(--lt-fill)"/>';
+  [0,1,2].forEach(v=>{s+='<path d="'+seq.map((ch,i)=>(i?'L':'M')+x(i)+' '+y(ch[v])).join(' ')+'" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="'+['none','5 3','1 3'][v]+'"/>';seq.forEach((ch,i)=>{s+='<circle cx="'+x(i)+'" cy="'+y(ch[v])+'" r="4" fill="var(--accent)"/>';if(i===pos)s+=K.text(x(i)+(i===3?-8:8),y(ch[v])+4,note(ch[v]),i===3?'end':'start');});});
+  names.forEach((n,i)=>{s+=K.text(x(i),top+121,n,'middle');});});return s;},'C to F to G to C, the full path of three voices. Root position moves 42 semitones in total; nearest-note voicing moves 12.');status.textContent='Step '+(pos+1)+' '+names[pos]+' | root position '+a[pos].map(note).join(' ')+'; nearest-note '+b[pos].map(note).join(' ');}
+ function start(seq,label){stop();pos=0;draw();if(player.start(bpm,1,16,(s,t)=>{if(s%4===0)player.chord(seq[Math.floor(s/4)],t,60/bpm*3.5);},s=>{pos=Math.floor(s/4);draw();},stop))status.textContent='Now playing: '+label;}
+ K.button('Hear all root position',()=>start(a,'All root position'),ctl);K.button('Hear nearest-note voicing',()=>start(b,'Nearest-note voicing'),ctl,true);K.button('Stop',stop,ctl);
+ function stop(){player.stop();}K.onStop(root,stop);K.note(root,'Four connected steps show the three voices. Switch chords to see the note names at each step. The semitone total measures overall pitch movement, not how far your hand actually travels.');K.watch(plot,draw);draw();
+});

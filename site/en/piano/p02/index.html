@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Basic theory and reading music｜Lesson 2｜Piano Lab</title>
+<meta name="description" content="Pixel Studio Piano Lab Lesson 2 class slides: note names, solfège and numbered notation, note names on the keyboard, the grand staff and middle C, note values and rests, time signatures, whole and half steps, sharps and flats, intervals and consonance.">
+<link rel="icon" href="../../../assets/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="../../../assets/favicon.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="../../../assets/favicon-192.png?v=2">
+<link rel="apple-touch-icon" href="../../../assets/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#101210">
+<link rel="preload" href="../../../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../../assets/brand/pixel-studio-symbol-color.svg" as="image" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script>/* 中文字型策略：首次造訪用系統中文字型（符合 CI：正黑體／蘋方），不在首屏重排；載入完成 5 秒後，利用閒置時間逐一把本頁用得到的 Noto Sans TC 分組下載進快取，之後每頁一開始就套用 */(function(){var K="ps-font",U="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap";function apply(){var l=document.createElement("link");l.rel="stylesheet";l.href=U;document.head.appendChild(l)}var c=0;try{c=localStorage.getItem(K)}catch(e){}if(c){apply();return}var n=navigator.connection;if(n&&(n.saveData||/2g/.test(n.effectiveType||"")))return;var idle=window.requestIdleCallback||function(f){return setTimeout(f,300)};function inRange(r,cps){return r.split(",").some(function(p){var m=p.trim().replace(/^U\+/i,"").split("-"),a=parseInt(m[0],16),b=m[1]?parseInt(m[1],16):a;return cps.some(function(x){return x>=a&&x<=b})})}function warm(){if(!window.FontFace||!window.fetch)return;var seen={},cps=[],t=document.body.textContent;for(var i=0;i<t.length;i++){var x=t.charCodeAt(i);if(x>=0x2E80&&!seen[x]){seen[x]=1;cps.push(x)}}fetch(U).then(function(r){return r.text()}).then(function(css){var q=[];css.replace(/@font-face\s*\{([^}]*)\}/g,function(_,b){var s=/url\(([^)]+)\)/.exec(b),r=/unicode-range:\s*([^;]+)/.exec(b);if(s&&r&&inRange(r[1],cps))q.push([s[1],r[1]]);return _});function next(){if(!q.length){try{localStorage.setItem(K,"1")}catch(e){}return}var j=q.shift();new FontFace("Noto Sans TC","url("+j[0]+")",{weight:"400 900",unicodeRange:j[1]}).load().then(function(){idle(next,{timeout:3000})},function(){idle(next,{timeout:3000})})}idle(next,{timeout:3000})}).catch(function(){})}var painted=0,loaded=0,started=0;function go(){if(painted&&loaded&&!started){started=1;setTimeout(function(){idle(warm,{timeout:5000})},5000)}}try{new PerformanceObserver(function(l){if(!painted&&l.getEntriesByName("first-contentful-paint").length){painted=1;go()}}).observe({type:"paint",buffered:true})}catch(e){painted=1}addEventListener("load",function(){loaded=1;setTimeout(function(){painted=1;go()},3000);go()})})()</script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Music&text=%F0%9D%84%9E%F0%9D%84%A2%E2%99%AF%E2%99%AD&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="../../assets/deck-bundle.css?v=20261029a">
+<link rel="stylesheet" href="../../../piano/theme.css?v=20261016review1">
+<link rel="stylesheet" href="../../../assets/learning-tools.css?v=20261020a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pixel Studio">
+<meta property="og:title" content="Basic theory and reading music｜Lesson 2｜Piano Lab">
+<meta property="og:description" content="Pixel Studio Piano Lab Lesson 2 class slides: note names, solfège and numbered notation, note names on the keyboard, the grand staff and middle C, note values and rests, time signatures, whole and half steps, sharps and flats, intervals and consonance.">
+<meta property="og:image" content="https://pixel-studio.musicallanding.workers.dev/piano/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://pixel-studio.musicallanding.workers.dev/en/piano/p02/">
+<link rel="alternate" hreflang="zh-Hant" href="https://pixel-studio.musicallanding.workers.dev/piano/p02/">
+<link rel="alternate" hreflang="en" href="https://pixel-studio.musicallanding.workers.dev/en/piano/p02/">
+<link rel="alternate" hreflang="x-default" href="https://pixel-studio.musicallanding.workers.dev/piano/p02/">
+<meta property="og:url" content="https://pixel-studio.musicallanding.workers.dev/en/piano/p02/">
+<script src="../../../assets/analytics.js?v=20261104a" defer></script>
+<script src="../../../assets/lang.js?v=20261104a" defer></script>
+</head>
+<body data-title="Lesson 2｜Basic theory and reading music" data-course="piano" data-lesson="p02" data-home="../index.html#lessons">
+<div class="progress" id="progress"></div>
+<main class="deck" id="deck">
+<div class="stage" id="stage">
+<!-- 1 封面 -->
+<section class="slide cover"><div class="cover-art" aria-hidden="true"><span class="ca-glow"></span><img src="../../../assets/brand/pixel-studio-symbol-color.svg" alt="" width="1024" height="1024" fetchpriority="high"></div>
+  <div class="kicker">Pixel Studio Piano Lab｜Pop piano Lesson 2</div>
+  <h1>Basic theory and reading music</h1>
+  <p class="lead">Basic Theory · Reading Music</p>
+  <p class="meta">Teacher: Leo Lee, Pixel Studio<br>musicallanding@gmail.com</p>
+<img class="cover-sig" src="../../../assets/brand/pixel-studio-primary-mono-white.svg" alt="Pixel Studio" width="1600" height="1440" loading="lazy" decoding="async"></section>
+
+<!-- 2 路線 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Phone sync</div>
+  <div class="kicker">Today · 120 Minutes</div>
+  <h2>Today's route: read music and find every note on the keyboard</h2>
+  <div class="timeline">
+    <div class="bar-qi" style="flex:20"><b>Open</b><small>Five-finger review, three elements of sound｜20 minutes</small></div>
+    <div class="bar-cheng" style="flex:35"><b>Build</b><small>Note names, staves, note values, time signatures｜35 minutes</small></div>
+    <div class="bar-rest" style="flex:10"><b>Break</b><small>10 minutes</small></div>
+    <div class="bar-zhuan" style="flex:35"><b>Turn</b><small>Whole and half steps, sharps and flats, intervals｜35 minutes</small></div>
+    <div class="bar-he" style="flex:20"><b>Close</b><small>Note-finding game｜20 minutes</small></div>
+  </div>
+  <div class="split wide">
+    <ul class="clean compact">
+      <li>Match note names, solfège and numbered notation, and find every note on the keyboard</li>
+      <li>Read the notes around middle C on the grand staff and understand note values and time signatures</li>
+      <li>Understand whole steps, half steps, sharps and flats, and work out the interval between two notes</li>
+      <li>Before the end of class, get ten in a row in the note-finding game</li>
+    </ul>
+    <div class="qr" data-href="../../../piano/p02/self"></div>
+  </div>
+</section>
+
+<!-- 3 回顧 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Show-of-hands vote</div>
+  <div class="kicker"><span class="tag t-qi">Open</span>00:00–00:20 Review</div>
+  <h2>Is your five-finger position steady now?</h2>
+  <div class="split">
+    <div>
+      <ul class="clean compact">
+        <li>Right hand 1 2 3 4 5, left hand 5 4 3 2 1, one round together as a class</li>
+        <li>Two students share last week's recording: are the five notes even?</li>
+        <li>The teacher answers questions from last week's exit tickets</li>
+      </ul>
+    </div>
+    <div>
+      <p class="muted" style="font-size:18px;margin-bottom:10px">Can you find middle C with your eyes closed?</p>
+      <div class="poll" data-id="p02-c" data-options="Straight away|Need a glance at the black keys|Still need to count|Not quite sure yet"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 聲音三要素 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-qi">Open</span>What is music?</div>
+  <h2 style="margin-bottom:16px">Three elements of sound: pitch, volume, tone colour</h2>
+  <div class="grid3">
+    <div class="card"><div class="big-num c-cyan">Hz</div><h3>Pitch: frequency</h3><p>Vibrations per second. A4 vibrates 440 times a second, which is 440 Hz; human ears hear roughly 20 Hz to 20,000 Hz.</p></div>
+    <div class="card"><div class="big-num c-gold">dB</div><h3>Volume: amplitude</h3><p>The bigger the vibration, the louder the sound. On the piano, the speed and weight of your touch control the volume.</p></div>
+    <div class="card"><div class="big-num c-pink">♪</div><h3>Tone colour: overtones</h3><p>At the same 440 Hz, a piano and a flute sound different because of the number and strength of their overtones.</p></div>
+  </div>
+  <div class="card" style="margin-top:16px"><p>Sound with regular vibration and a fixed pitch is a musical tone; irregular sound with no fixed pitch is noise. The four main elements of music are melody, harmony, rhythm and the tone colour that carries them.</p></div>
+</section>
+
+<!-- 5 音名 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>00:20–00:55 Note names, solfège and numbered notation</div>
+  <h2 style="margin-bottom:14px">One note, three names</h2>
+  <table>
+    <tr><th>Degree</th><td>Ⅰ Tonic</td><td>Ⅱ Supertonic</td><td>Ⅲ Mediant</td><td>Ⅳ Subdominant</td><td>Ⅴ Dominant</td><td>Ⅵ Submediant</td><td>Ⅶ Leading note</td><td>Ⅷ Tonic</td></tr>
+    <tr><th>Note names</th><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>A</td><td>B</td><td>C</td></tr>
+    <tr><th>Solfège</th><td>Do</td><td>Re</td><td>Mi</td><td>Fa</td><td>Sol</td><td>La</td><td>Si</td><td>Do</td></tr>
+    <tr><th>Numbered notation</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>1̇</td></tr>
+  </table>
+  <div class="grid2" style="margin-top:16px">
+    <div class="card"><h3 class="c-cyan">Note names</h3><p>The letters used in English, fixed names for the keys. Chord names use them too, for example C, Am, G7.</p></div>
+    <div class="card"><h3 class="c-gold">Solfège and numbered notation</h3><p>Solfège is handy for singing; numbered notation is handy for writing down and showing scale degrees. This course writes melodies in numbered notation: a dot above a number means an octave higher, a dot below an octave lower.</p></div>
+  </div>
+</section>
+
+<!-- 6 鍵盤上的音名 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Playable keyboard</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>Note names on the keyboard</div>
+  <h2 style="margin-bottom:8px">Switch between note names, solfège and numbers, and see each white key's name</h2>
+  <div class="keyboard" data-lo="48" data-hi="84" data-labels="name"></div>
+  <p class="muted" style="font-size:17px;margin-top:8px">The number after C4 tells you which octave. C to the next C is an octave, and the piano has just over seven.</p>
+</section>
+
+<!-- 7 大譜表 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>The grand staff</div>
+  <h2 style="margin-bottom:14px">The grand staff shows every note's exact position</h2>
+  <div class="grid2" style="grid-template-columns:1fr 1fr;align-items:center">
+    <svg class="pfig" viewBox="0 0 520 300" role="img" aria-label="The grand staff: treble clef on top, bass clef below, middle C on the ledger line between them">
+      <rect x="0" y="0" width="520" height="300" rx="14" fill="#f4f2ec"/>
+      <g stroke="#1b1b20" stroke-width="1.4"><path d="M40 60H500M40 76H500M40 92H500M40 108H500M40 124H500"/><path d="M40 180H500M40 196H500M40 212H500M40 228H500M40 244H500"/><path d="M40 60V244"/></g>
+      <text x="48" y="122" font-size="78" style="font-family:'Noto Music','Segoe UI Symbol',serif;fill:#1b1b20">𝄞</text>
+      <text x="50" y="222" font-size="56" style="font-family:'Noto Music','Segoe UI Symbol',serif;fill:#1b1b20">𝄢</text>
+      <g fill="#1b1b20"><path d="M246 140h28" stroke="#1b1b20" stroke-width="1.6"/><ellipse cx="260" cy="140" rx="9" ry="6.5" transform="rotate(-20 260 140)" fill="#45b3e6"/>
+      <ellipse cx="330" cy="124" rx="9" ry="6.5" transform="rotate(-20 330 124)"/><ellipse cx="400" cy="60" rx="9" ry="6.5" transform="rotate(-20 400 60)"/><ellipse cx="190" cy="180" rx="9" ry="6.5" transform="rotate(-20 190 180)"/><ellipse cx="130" cy="244" rx="9" ry="6.5" transform="rotate(-20 130 244)"/></g>
+      <g font-size="15" fill="#1b1b20" style="font-family:'Space Grotesk',sans-serif;font-weight:700"><text x="250" y="166" fill="#2f8fc4">C4</text><text x="320" y="146">E4</text><text x="390" y="48">F5</text><text x="180" y="168">A3</text><text x="120" y="268">G2</text></g>
+    </svg>
+    <ul class="clean compact">
+      <li>The grand staff stacks the treble staff over the bass staff, the standard layout for piano music</li>
+      <li>Middle C sits between the two staves: the first ledger line below the treble staff</li>
+      <li>The treble staff's first line is E4 and its fifth line F5</li>
+      <li>The bass staff's first line is G2 and its fifth line A3</li>
+      <li>Notes beyond the five lines add ledger lines and spaces above or below</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 8 時值 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>Note values</div>
+  <h2 style="margin-bottom:14px">Halving: each step down is half as long</h2>
+  <div class="grid2" style="grid-template-columns:1.15fr .85fr;align-items:start">
+    <table class="tight">
+      <tr><th>Note</th><th>Beats (4/4)</th><th>Rest</th><th>Numbered notation</th></tr>
+      <tr><td>Whole note</td><td>4 beats</td><td>Whole rest</td><td>1 - - -</td></tr>
+      <tr><td>Half note</td><td>2 beats</td><td>Half rest</td><td>1 -</td></tr>
+      <tr><td>Quarter notes</td><td>1 beat</td><td>Quarter rest</td><td>1</td></tr>
+      <tr><td>Eighth notes</td><td>½ beat</td><td>Eighth rest</td><td>One line under the number</td></tr>
+      <tr><td>Sixteenth note</td><td>¼ beat</td><td>Sixteenth rest</td><td>Two lines under the number</td></tr>
+    </table>
+    <div>
+      <div class="card"><h3 class="c-cyan">Dot</h3><p>Adds half the note's value. A dotted half note is 3 beats, a dotted quarter note 1.5 beats.</p></div>
+      <div class="card" style="margin-top:12px"><h3 class="c-gold">Triplet</h3><p>Splits one beat evenly in three; common in slow ballads and slow rock, and we'll meet it again in Lesson 11.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 拍號 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>Time signatures</div>
+  <h2 style="margin-bottom:14px">The top is beats per bar, the bottom is which note counts as one beat</h2>
+  <div class="grid3">
+    <div class="card"><div class="big-num c-cyan">2/4・4/4</div><h3>Duple time</h3><p>Strong, weak; 4/4 is strong, weak, medium, weak, the most common in pop.</p></div>
+    <div class="card"><div class="big-num c-gold">3/4・6/8</div><h3>Triple time</h3><p>Strong, weak, weak, like the spin of a waltz; 6/8 is two big beats, each split in three.</p></div>
+    <div class="card"><div class="big-num c-pink">5/4・7/8</div><h3>Mixed meter</h3><p>Made of twos and threes combined; less common, often found in experimental music.</p></div>
+  </div>
+  <div class="reveal" data-label="Clap the beat" style="margin-top:16px"><p>Clap together as a class: for 4/4 say "1, 2, 3, 4" with beat 1 strongest; for 3/4 say "1, 2, 3", like turning once in a dance.</p></div>
+</section>
+
+<!-- 10 小測 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Multiple choice</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>Quiz</div>
+  <h2 style="margin-bottom:14px">Staves and time</h2>
+  <div class="split">
+    <div class="quiz" data-answer="3">
+      <p class="q">Where is middle C on the treble staff?</p>
+      <ol><li>First line</li><li>First space</li><li>First ledger line below</li><li>First ledger line above</li></ol>
+      <div class="why">Middle C is on the first ledger line below the treble staff, and also the first ledger line above the bass staff.</div>
+    </div>
+    <div class="quiz" data-answer="2">
+      <p class="q">In 4/4, how many beats is a dotted half note?</p>
+      <ol><li>2 beats</li><li>3 beats</li><li>4 beats</li><li>1.5 beats</li></ol>
+      <div class="why">A half note is 2 beats, and the dot adds half again, 1 beat, for 3 in all.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 休息 -->
+<section class="slide center">
+  <div class="kicker">Break</div>
+  <div class="timer" id="timer">10:00</div>
+  <p class="lead">Ten-minute break: tap out 4/4 and 3/4 on the table with your fingers</p>
+  <div style="height:20px"></div>
+  <div class="btn-row"><button type="button" class="btn" id="timerBtn">Start countdown</button><button type="button" class="btn" id="timerReset">Reset</button></div>
+</section>
+
+<!-- 12 全音半音 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>01:05–01:40 Whole and half steps</div>
+  <h2 style="margin-bottom:14px">Two neighbouring keys are a half step apart</h2>
+  <div class="grid2">
+    <div class="card"><h3 class="c-cyan"> semitones</h3><p>Two keys right next to each other on the keyboard, black or white. There's no black key between E and F or B and C, so they're a half step apart themselves.</p></div>
+    <div class="card"><h3 class="c-gold">Whole step</h3><p>Two half steps. There's a black key between C and D, so they're a whole step apart.</p></div>
+  </div>
+  <div class="card" style="margin-top:14px"><p><b class="c-cyan">Equal temperament:</b> divides the octave evenly into twelve half steps, so every key sounds equally even. Today's pianos are all tuned in equal temperament.</p></div>
+</section>
+
+<!-- 13 升降記號 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Accidentals</div>
+  <h2 style="margin-bottom:14px">Sharp, flat, natural: move a note up or down a half step</h2>
+  <table>
+    <tr><th>Mark</th><th>Name</th><th>What it does</th><th>Example</th></tr>
+    <tr><td><b>♯</b></td><td>Sharp</td><td>Raises a half step</td><td>F♯: the black key right of F</td></tr>
+    <tr><td><b>♭</b></td><td>Flat</td><td>Lowers a half step</td><td>B♭: the black key left of B</td></tr>
+    <tr><td><b>♮</b></td><td>Natural</td><td>Cancels a sharp or flat, back to the original note</td><td>F♮: back to the white key F</td></tr>
+    <tr><td><b>𝄪 𝄫</b></td><td>Double sharp, double flat</td><td>Raises or lowers a whole step</td><td>Less common</td></tr>
+  </table>
+  <p class="muted" style="font-size:17px;margin-top:12px">Accidentals written inside a bar last only for that bar; the ones written next to the clef are the key signature and last the whole piece. G major in Lesson 12 has a key signature of one sharp, F♯.</p>
+</section>
+
+<!-- 14 音程 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Intervals</div>
+  <h2 style="margin-bottom:12px">The distance between two notes, counted in degrees</h2>
+  <div class="grid2" style="grid-template-columns:1.1fr .9fr;align-items:start">
+    <table class="tight">
+      <tr><th>Semitones</th><th>Interval</th><th>Consonance</th></tr>
+      <tr><td>0</td><td>Unison</td><td>Perfect consonance</td></tr>
+      <tr><td>3／4</td><td>Minor third / major third</td><td>Imperfect consonance</td></tr>
+      <tr><td>5</td><td>Perfect 4th</td><td>Perfect consonance</td></tr>
+      <tr><td>6</td><td>Augmented fourth, diminished fifth</td><td>Dissonance</td></tr>
+      <tr><td>7</td><td>Perfect 5th</td><td>Perfect consonance</td></tr>
+      <tr><td>8／9</td><td>Minor sixth / major sixth</td><td>Imperfect consonance</td></tr>
+      <tr><td>1、2、10、11</td><td>Seconds, sevenths</td><td>Dissonance</td></tr>
+      <tr><td>12</td><td>Octave</td><td>Perfect consonance</td></tr>
+    </table>
+    <div>
+      <div class="card"><h3 class="c-cyan">Counting degrees</h3><p>Count both ends: C to F is C, D, E, F, a fourth.</p></div>
+      <div class="card" style="margin-top:12px"><h3 class="c-gold">Why count half steps too</h3><p>Both are fourths, but C to F is 5 half steps and F to B is 6, so the name changes from perfect fourth to augmented fourth.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 15 音程鍵盤 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Interval calculator</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Work it out yourself</div>
+  <h2 style="margin-bottom:8px">Tap two keys to work out the interval and hear how consonant it is</h2>
+  <div class="keyboard" data-lo="48" data-hi="84" data-labels="name" data-mode="interval"></div>
+  <p class="muted" style="font-size:17px;margin-top:8px">Try it: C and G, C and E, C and D, B and F. Which sounds most stable, and which most tense?</p>
+</section>
+
+<!-- 16 小測 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Multiple choice</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Quick quiz</div>
+  <h2 style="margin-bottom:14px">Working out intervals</h2>
+  <div class="split">
+    <div class="quiz" data-answer="1">
+      <p class="q">How many half steps in a major third?</p>
+      <ol><li>4</li><li>5</li><li>6</li><li>8</li></ol>
+      <div class="why">C to E: C♯, D, D♯, E, 4 half steps.</div>
+    </div>
+    <div class="quiz" data-answer="4">
+      <p class="q">Which is not a perfect consonance?</p>
+      <ol><li>Octave</li><li>Fourth</li><li>Fifth</li><li>Second</li></ol>
+      <div class="why">The perfect consonances are the unison, fourth, fifth and octave; a second is dissonant.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 17 找音遊戲：音名 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Note-finding game</div>
+  <div class="kicker"><span class="tag t-he">Close</span>01:40–02:00 Note-finding game</div>
+  <h2 style="margin-bottom:8px">See a note name, tap the right key</h2>
+  <div class="notequiz" data-mode="name" data-lo="48" data-hi="72"></div>
+</section>
+
+<!-- 18 找音遊戲：五線譜 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Note-finding game · staff</div>
+  <div class="kicker"><span class="tag t-he">Close</span>Reading challenge</div>
+  <h2 style="margin-bottom:8px">See a note on the staff, tap the right key</h2>
+  <div class="notequiz" data-mode="staff" data-lo="53" data-hi="72"></div>
+</section>
+
+<!-- 19 三句話 -->
+<section class="slide center">
+  <div class="kicker">Today In Three Lines</div>
+  <p class="quote">C D E F G A B are the note names,<br>middle C sits on the first ledger line below,<br>neighbouring keys are a half step apart.</p>
+</section>
+
+<!-- 20 出場券 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Exit ticket 3-2-1</div>
+  <div class="kicker"><span class="tag t-he">Close</span>Exit Ticket</div>
+  <h2 style="margin-bottom:14px">Before you leave, write down 3-2-1</h2>
+  <div class="split wide">
+    <div class="exit" data-prompts="3 theory terms you learned today|2 notes or intervals you still mix up|1 question you still want to ask the teacher"></div>
+    <div class="card"><h3>Next lesson we start on fingering</h3><p>Lesson 3 covers major scales with thumb-unders and finger-overs. Play the note-finding game for five minutes every day so your eyes and fingers get to know the keyboard.</p></div>
+  </div>
+</section>
+
+<!-- 21 課後練習 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Self-directed tracking</div>
+  <div class="kicker">Homework</div>
+  <h2 style="margin-bottom:12px">Practice after class: tap once to tick each item you finish</h2>
+  <ul class="checks" data-id="p02-hw">
+    <li>Twenty in a row in the note-finding game (note names)</li>
+    <li>Ten in a row in the note-finding game (staff)</li>
+    <li>Play C to G, C to E and E to F on the keyboard and name their intervals</li>
+    <li>Write the numbered notation of Twinkle Twinkle, 1 1 5 5 6 6 5, as note names and solfège</li>
+    <li>Fill in the Lesson 3 pre-class survey</li>
+  </ul>
+</section>
+
+<!-- 22 下週預告 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Pre-class survey</div>
+  <div class="kicker">Next Week</div>
+  <h2>Lesson 3: Scale fingering</h2>
+  <div class="split wide">
+    <div>
+      <p class="lead">The major scale's "whole, whole, half, whole, whole, whole, half",<br>thumb under, middle finger over:<br>play the C major scale smoothly with all ten fingers.</p>
+      <p class="muted" style="margin-top:20px">Scan the QR code to fill in the Lesson 3 pre-class survey on the website.</p>
+    </div>
+    <div class="qr" data-href="../survey.html?id=p-pre-3"></div>
+  </div>
+</section>
+</div>
+</main>
+
+<nav class="ui" aria-label="Slide controls">
+  <button type="button" id="prev" aria-label="Previous">← Previous</button>
+  <span class="counter" id="counter">1 / 1</span>
+  <button type="button" id="next" aria-label="Next">Next →</button>
+  <button type="button" id="full">Full screen</button>
+  <a href="../index.html">Course home</a>
+</nav>
+
+<script src="../../../assets/pixel.js?v=20261016b" defer></script>
+<script src="../../assets/ui.js?v=20261016review1" defer></script>
+<script src="../../assets/deck.js?v=20261016b" defer></script>
+<script src="../../../assets/vendor/qrcode.min.js" defer></script>
+<script src="../../assets/interact.js?v=20261028a" defer></script>
+<script src="../../../assets/config.js?v=20261020g" defer></script>
+<script src="../../assets/backend.js?v=20261030a" defer></script>
+<script src="../../../assets/ps-audio.js?v=20261016b" defer></script>
+<script src="../piano.js?v=20261016review1" defer></script>
+<script src="../songs.js?v=20261016b" defer></script>
+<script src="../../assets/youtube.js?v=20261029a" defer></script>
+<script src="../../assets/learning-tools.js?v=20261020a" defer></script>
+</body>
+</html>

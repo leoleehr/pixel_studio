@@ -9,7 +9,7 @@ from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 ENTRIES = [
- ('breathing','vocal','slides/lesson-02/',2,'呼吸拍點','4拍吸氣、8拍吐氣。快吸慢吐的暫停與吐氣長度，可由老師調整。'),
+ ('breathing','vocal','slides/lesson-02/',2,'呼吸拍點','每一拍吸吐一次，快吸慢吐為吸短吐長；速度可由老師調整。'),
  ('chord-path','guitar','ch03/',3,'換和弦路徑','C→Am：食指與中指留在原位，無名指由5弦3格移到3弦2格。實際移動時先離弦。'),
  ('voice-leading','piano','p04/',4,'最近音連接','C→F→G→C可比較原位與就近連接。C→F保留C4，E4到F4、G4到A4。'),
  ('tone-melody','songwriting','s03/',3,'字調與旋律','字調與旋律的方向可疊圖比較；方向不同時需回到字義及整句試唱，不能只憑曲線判定。'),

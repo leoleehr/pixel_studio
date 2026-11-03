@@ -391,7 +391,7 @@ Oct 5, 2026 · @Leo Lee
 <!-- teaching-visuals-end -->
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>呼吸拍點</h4><p>4拍吸氣、8拍吐氣。快吸慢吐的暫停與吐氣長度，可由老師調整。</p><figure class="learning-print"><img src="../assets/learning/print/vocal-breathing.svg" alt="呼吸拍點的關鍵狀態圖" loading="eager"><figcaption>呼吸拍點｜關鍵狀態</figcaption></figure><p><a href="slides/lesson-02/#12">開啟互動練習</a></p></div>
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>呼吸拍點</h4><p>每一拍吸吐一次，快吸慢吐為吸短吐長；速度可由老師調整。</p><figure class="learning-print"><img src="../assets/learning/print/vocal-breathing.svg" alt="呼吸拍點的關鍵狀態圖" loading="eager"><figcaption>呼吸拍點｜關鍵狀態</figcaption></figure><p><a href="slides/lesson-02/#12">開啟互動練習</a></p></div>
 
 <!-- learning-notes-end -->
 

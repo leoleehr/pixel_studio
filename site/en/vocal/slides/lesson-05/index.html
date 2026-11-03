@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Putting it all together｜Lesson 5</title>
+<meta name="description" content="Pixel Studio Vocal Lab Lesson 5 class slides: putting it all together">
+<link rel="icon" href="../../../../assets/favicon.ico?v=20261014v" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="../../../../assets/favicon.png?v=20261014v">
+<link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/favicon-192.png?v=20261014v">
+<link rel="apple-touch-icon" href="../../../../assets/apple-touch-icon.png?v=20261014v">
+<meta name="theme-color" content="#101210">
+<link rel="preload" href="../../../../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../../../assets/brand/pixel-studio-symbol-color.svg" as="image" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script>/* 中文字型策略：首次造訪用系統中文字型（符合 CI：正黑體／蘋方），不在首屏重排；載入完成 5 秒後，利用閒置時間逐一把本頁用得到的 Noto Sans TC 分組下載進快取，之後每頁一開始就套用 */(function(){var K="ps-font",U="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap";function apply(){var l=document.createElement("link");l.rel="stylesheet";l.href=U;document.head.appendChild(l)}var c=0;try{c=localStorage.getItem(K)}catch(e){}if(c){apply();return}var n=navigator.connection;if(n&&(n.saveData||/2g/.test(n.effectiveType||"")))return;var idle=window.requestIdleCallback||function(f){return setTimeout(f,300)};function inRange(r,cps){return r.split(",").some(function(p){var m=p.trim().replace(/^U\+/i,"").split("-"),a=parseInt(m[0],16),b=m[1]?parseInt(m[1],16):a;return cps.some(function(x){return x>=a&&x<=b})})}function warm(){if(!window.FontFace||!window.fetch)return;var seen={},cps=[],t=document.body.textContent;for(var i=0;i<t.length;i++){var x=t.charCodeAt(i);if(x>=0x2E80&&!seen[x]){seen[x]=1;cps.push(x)}}fetch(U).then(function(r){return r.text()}).then(function(css){var q=[];css.replace(/@font-face\s*\{([^}]*)\}/g,function(_,b){var s=/url\(([^)]+)\)/.exec(b),r=/unicode-range:\s*([^;]+)/.exec(b);if(s&&r&&inRange(r[1],cps))q.push([s[1],r[1]]);return _});function next(){if(!q.length){try{localStorage.setItem(K,"1")}catch(e){}return}var j=q.shift();new FontFace("Noto Sans TC","url("+j[0]+")",{weight:"400 900",unicodeRange:j[1]}).load().then(function(){idle(next,{timeout:3000})},function(){idle(next,{timeout:3000})})}idle(next,{timeout:3000})}).catch(function(){})}var painted=0,loaded=0,started=0;function go(){if(painted&&loaded&&!started){started=1;setTimeout(function(){idle(warm,{timeout:5000})},5000)}}try{new PerformanceObserver(function(l){if(!painted&&l.getEntriesByName("first-contentful-paint").length){painted=1;go()}}).observe({type:"paint",buffered:true})}catch(e){painted=1}addEventListener("load",function(){loaded=1;setTimeout(function(){painted=1;go()},3000);go()})})()</script>
+<link rel="stylesheet" href="../../../assets/deck-bundle.css?v=20261029a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pixel Studio">
+<meta property="og:title" content="Putting it all together｜Lesson 5">
+<meta property="og:description" content="Pixel Studio Vocal Lab Lesson 5 class slides: putting it all together">
+<meta property="og:image" content="https://pixel-studio.musicallanding.workers.dev/vocal/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../../../assets/learning-tools.css?v=20261020a">
+<link rel="canonical" href="https://pixel-studio.musicallanding.workers.dev/en/vocal/slides/lesson-05/">
+<link rel="alternate" hreflang="zh-Hant" href="https://pixel-studio.musicallanding.workers.dev/vocal/slides/lesson-05/">
+<link rel="alternate" hreflang="en" href="https://pixel-studio.musicallanding.workers.dev/en/vocal/slides/lesson-05/">
+<link rel="alternate" hreflang="x-default" href="https://pixel-studio.musicallanding.workers.dev/vocal/slides/lesson-05/">
+<meta property="og:url" content="https://pixel-studio.musicallanding.workers.dev/en/vocal/slides/lesson-05/">
+<script src="../../../../assets/analytics.js?v=20261104a" defer></script>
+<script src="../../../../assets/lang.js?v=20261104a" defer></script>
+</head>
+<body data-title="Lesson 5｜Putting it all together">
+<div class="progress" id="progress"></div>
+<main class="deck" id="deck">
+<div class="stage" id="stage">
+<!-- 1 封面 -->
+<section class="slide cover"><div class="cover-art" aria-hidden="true"><span class="ca-glow"></span><img src="../../../../assets/brand/pixel-studio-symbol-color.svg" alt="" width="1024" height="1024" fetchpriority="high"></div>
+  <div class="kicker">Pixel Studio Vocal Lab｜Pop singing, Lesson 5</div>
+  <h1>Putting it all together</h1>
+  <p class="lead">Breath · Resonance · Phonation → Expression</p>
+  <p class="meta">Teacher: Leo Lee, Pixel Studio<br>musicallanding@gmail.com</p>
+<img class="cover-sig" src="../../../../assets/brand/pixel-studio-primary-mono-white.svg" alt="Pixel Studio" width="1600" height="1440" loading="lazy" decoding="async"></section>
+
+<!-- 2 路線 + 手機同步 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Phone sync</div>
+  <div class="kicker">Today · 120 Minutes</div>
+  <h2>Today's route: from singing "correctly" to singing "movingly"</h2>
+  <div class="timeline">
+    <div class="bar-qi" style="flex:20"><b>Open</b><small>Showcase, 愛情轉移｜20 minutes</small></div>
+    <div class="bar-cheng" style="flex:35"><b>Build</b><small>Using resonance and phonation, imitation｜35 minutes</small></div>
+    <div class="bar-rest" style="flex:10"><b>Break</b><small>10 minutes</small></div>
+    <div class="bar-zhuan" style="flex:35"><b>Turn</b><small>Imitation workshop｜35 minutes</small></div>
+    <div class="bar-he" style="flex:20"><b>Close</b><small>Emotion map, singing together｜20 minutes</small></div>
+  </div>
+  <div class="split wide">
+    <ul class="clean compact">
+      <li>Hear how breathing, resonance and phonation change a song's expression</li>
+      <li>Imitate a singer in three steps: listen, imitate, transform</li>
+      <li>Record an imitation and your own version, and find one technique you want to keep</li>
+      <li>Draw an emotion map for a song. Scan this slide's QR code with your phone to mark breaths, record and take notes on your own phone</li>
+    </ul>
+    <div class="qr" data-href="../../../../vocal/slides/lesson-05/self"></div>
+  </div>
+</section>
+
+<!-- 3 三步驟成果 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Random pick</div>
+  <div class="kicker"><span class="tag t-qi">Open</span>00:00–00:20</div>
+  <h2>Sing last week's three-step song for everyone</h2>
+  <div class="split">
+    <div>
+      <ul class="clean compact">
+        <li>Two classmates are picked to demonstrate the chorus of《不是因為天氣晴朗才愛你》</li>
+        <li>Sing the /i/ vowel version first, then the lyric version</li>
+        <li>Listeners, notice: are the vowels in the lyric version as round as in the /i/ version?</li>
+        <li>Are the rhyme 你 and the back nasals 晴朗 and 星星 closed clearly?</li>
+      </ul>
+      <p style="margin-top:12px"><span class="yt chip" data-song="不是因為天氣晴朗才愛你"></span></p>
+    </div>
+    <div class="panel picker"></div>
+  </div>
+</section>
+
+<!-- 4 愛情轉移：換氣標記 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Mark it · compare with the original</div>
+  <div class="kicker"><span class="tag t-qi">Open</span>Eason Chan《愛情轉移》</div>
+  <h2 style="margin-bottom:12px">Sing it your way first, then listen for where the original singer breathes</h2>
+  <div class="split song-split rev">
+    <div class="lyric-col">
+      <div class="lyricmark" data-id="l5-transfer" data-lines="把一個人的溫暖∨;轉移到另一個人的胸膛∨;讓上次犯的錯ˇ反省出夢想∨"></div>
+      <p class="muted" style="font-size:17px;margin-top:6px">Mark where you breathe and sing it once, then listen to the original; press "Compare with teacher's" to see how the original is phrased.</p>
+    </div>
+    <div class="yt" data-song="愛情轉移"></div>
+  </div>
+</section>
+
+<!-- 5 共鳴應用：翻牌 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Retrieval practice · flip cards</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>00:20–00:55 1. Using resonance</div>
+  <h2 style="margin-bottom:8px">Turning the three elements into expression</h2>
+  <p class="compact" style="margin-bottom:14px">The first four lessons practised singing "correctly"; from this lesson we practise singing "movingly". Guess first: what kind of expression suits each resonance?</p>
+  <div class="flips">
+    <div class="flip"><div class="f">Head resonance<br><small class="muted">High range</small></div><div class="b"><strong>Soft, less forceful</strong>Works in both verse and chorus.</div></div>
+    <div class="flip"><div class="f">Mouth resonance<br><small class="muted">Middle range</small></div><div class="b"><strong>The strongest speaking tone, clear diction</strong>Medium force; works in both verse and chorus.</div></div>
+    <div class="flip"><div class="f">Chest resonance<br><small class="muted">Low range</small></div><div class="b"><strong>Deep and powerful</strong>Harder to produce; often used in choruses and bridges.</div></div>
+    <div class="flip"><div class="f">Mixed<br><small class="muted">Throughout</small></div><div class="b"><strong>Can show every section's expression</strong>The key is smoothing out the differences between registers.</div></div>
+  </div>
+</section>
+
+<!-- 6 發聲應用：聽辨 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Listen and tell · show of hands</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>2. Using phonation</div>
+  <h2 style="margin-bottom:16px">Tell which way the teacher is singing</h2>
+  <div class="split">
+    <div>
+      <ul class="clean compact">
+        <li>The teacher sings the same line at random with long notes, short notes or staccato</li>
+        <li>After listening, the whole class holds up 1, 2 or 3 at once, and the teacher counts</li>
+        <li>Press "Clear" for another round with a different style</li>
+      </ul>
+      <div class="reveal" data-label="How the three styles differ">
+        <table>
+          <tr><th>How to sing it</th><th>Tempo</th><th>Expression</th><th>Style</th></tr>
+          <tr><td><b>Long notes (legato)</b></td><td>Under 100</td><td>Full of feeling, very moving</td><td>Ballad、Soul</td></tr>
+          <tr><td><b>Short notes</b></td><td>70–120</td><td>Less emotional, more groove</td><td>R&amp;B、Soul</td></tr>
+          <tr><td><b>Staccato</b></td><td>120–200</td><td>Clear speaking tone, strong groove</td><td>R&amp;B、Rock</td></tr>
+        </table>
+      </div>
+    </div>
+    <div>
+      <p class="muted" style="font-size:18px;margin-bottom:10px">Which style did you hear?</p>
+      <div class="poll" data-id="l5-phonation" data-options="1 Long notes (legato)|2 Short notes|3 Staccato"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 拍速與發聲：節拍器 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Demonstrate, follow along · metronome</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>Tempo decides the style</div>
+  <h2 style="margin-bottom:14px">Sing the same line at 70, 100 and 140 BPM</h2>
+  <div class="grid3" style="margin-bottom:18px">
+    <div class="card"><div class="big-num c-navy">70</div><h3 style="margin-top:12px">Long notes</h3><p>Stretch every word to its full length, with quick in slow out supporting the line ends.</p></div>
+    <div class="card"><div class="big-num c-gold">100</div><h3 style="margin-top:12px">Short notes</h3><p>Separate the words slightly and the groove appears by itself.</p></div>
+    <div class="card"><div class="big-num c-red">140</div><h3 style="margin-top:12px">Staccato</h3><p>Bounce every word out from the belly, using the staccato from Lesson 4.</p></div>
+  </div>
+  <div class="metro" data-bpm="70" data-presets="70|100|140"></div>
+  <p class="muted" style="margin-top:10px;font-size:18px">Long notes rely on "quick in, slow out" from Lesson 2; staccato relies on the "staccato chords" from Lesson 4. Everything from the earlier lessons comes together here.</p>
+</section>
+
+<!-- 8 模仿的作用：投票 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Show of hands · getting motivated</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>3. Why imitate</div>
+  <h2 style="margin-bottom:16px">Which kind of singer would you most like to imitate?</h2>
+  <div class="split">
+    <div class="compact">
+      <p>Unless you were born able to make any melody sound moving, every singer develops through imitation.</p>
+      <p style="margin-top:10px">Imitation is for <b>developing the techniques you lack</b>; the more varied the singers you imitate, the more techniques you can use.</p>
+    </div>
+    <div class="poll wide-label" data-id="l5-imitate" data-options="Chest: Jacky Cheung, Eason Chan|Head: A-Mei, Ashin|Bel canto: Terry Lin, Ke Yi-min|Mouth: Cheer Chen, Fish Leong|Pressed throat: Tiger Huang, David Huang"></div>
+  </div>
+</section>
+
+<!-- 9 聽、仿、化 -->
+<section class="slide">
+  <div class="kicker"><span class="tag t-cheng">Build</span>Three steps of imitation</div>
+  <h2>Listen, imitate, transform</h2>
+  <div class="grid3">
+    <div class="card"><div class="big-num c-navy">Listen</div><h3 style="margin-top:12px">Listen to the same line five times</h3><p>Mark the breaths, resonance, runs, breathiness and line endings in turn.</p></div>
+    <div class="card"><div class="big-num c-gold">Imitate</div><h3 style="margin-top:12px">Imitate line by line and record</h3><p>Play it alternately with the original and compare line by line.</p></div>
+    <div class="card"><div class="big-num c-red">Transform</div><h3 style="margin-top:12px">Keep what suits you</h3><p>Keep the techniques that suit your voice and let go of the rest.</p></div>
+  </div>
+  <div class="card" style="margin-top:18px"><p><b class="c-red">If your throat starts to tighten or hurt, stop at once.</b> It means you're imitating a way of singing that doesn't suit you, especially a husky sound made by deliberately pressing the throat.</p></div>
+</section>
+
+<!-- 10 歌手配對：翻牌 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Retrieval practice · flip cards</div>
+  <div class="kicker"><span class="tag t-cheng">Build</span>Choose who to study by the skill you want to build</div>
+  <h2 style="margin-bottom:12px">Guess the singers first, then flip the card</h2>
+  <div class="flips cols3">
+    <div class="flip"><div class="f">Steady, full, emotional chest resonance</div><div class="b"><strong>Jacky Cheung, Eason Chan</strong>Steady low notes, well-supported long notes.</div></div>
+    <div class="flip"><div class="f">Power and impact in high notes</div><div class="b"><strong>A-Mei, Princess Ai, Ashin</strong>Prime examples of head resonance.</div></div>
+    <div class="flip"><div class="f">Beautiful high lines and bel canto</div><div class="b"><strong>Terry Lin, Ke Yi-min</strong>Almost seamless register changes.</div></div>
+    <div class="flip"><div class="f">More varied mouth resonance</div><div class="b"><strong>Joanna Wang, Cheer Chen, Fish Leong</strong>Intimate diction, like talking right in your ear.</div></div>
+    <div class="flip"><div class="f">A pressed sound between mouth and throat</div><div class="b"><strong>David Huang, Tiger Huang</strong>Only borrow the feel, and stop as soon as your throat tightens.</div></div>
+  </div>
+</section>
+
+<!-- 11 休息 -->
+<section class="slide center">
+  <div class="kicker">Break</div>
+  <div class="timer" id="timer">10:00</div>
+  <p class="lead">Ten-minute break. Drink warm water, and each group picks the line it will imitate</p>
+  <div style="height:20px"></div>
+  <div class="btn-row"><button type="button" class="btn" id="timerBtn">Start countdown</button><button type="button" class="btn" id="timerReset">Reset</button></div>
+</section>
+
+<!-- 12 模仿工作坊 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Cooperative learning · draw lots · timed stages</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>01:05–01:40 Imitation workshop</div>
+  <h2 style="margin-bottom:12px">Each of the four groups draws a type of singer</h2>
+  <div class="cards-mini" style="grid-template-columns:repeat(4,1fr)">
+    <div class="card"><h3 class="c-navy">Chest type</h3><p>Eason Chan, Jacky Cheung</p></div>
+    <div class="card"><h3 class="c-red">Head type</h3><p>A-Mei, Ashin</p></div>
+    <div class="card"><h3 class="c-gold">Mouth type</h3><p>Cheer Chen, Fish Leong</p></div>
+    <div class="card"><h3>Pressed-throat type</h3><p>Tiger Huang, David Huang</p></div>
+  </div>
+  <div class="split">
+    <div class="panel picker"></div>
+    <div class="phase" data-phases="Listen: the same line five times|300;Imitate: line by line|480;Transform: back to your own voice|300"></div>
+  </div>
+</section>
+
+<!-- 13 參考歌曲 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Listen · compare</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Workshop reference</div>
+  <h2 style="margin-bottom:14px">While listening, mark these five things</h2>
+  <table>
+    <tr><th>What to listen for</th><th>Ask yourself</th></tr>
+    <tr><td><b>Breaths</b></td><td>Where the breaths are, and whether they're full breaths or sneaked ones</td></tr>
+    <tr><td><b>Resonance</b></td><td>Which resonance the verse and chorus each use</td></tr>
+    <tr><td><b>Runs</b></td><td>Which words have runs, and how many notes they move through</td></tr>
+    <tr><td><b>Breathiness</b></td><td>Where a bit of air is added on purpose</td></tr>
+    <tr><td><b>Line endings</b></td><td>How lines end: clean cut, held long, or with vibrato</td></tr>
+  </table>
+  <p style="margin-top:14px"><span class="yt chip" data-song="愛情轉移"></span> <span class="yt chip" data-song="人質"></span> <span class="yt chip" data-song="後來的我們"></span> <span class="yt chip" data-song="演員"></span></p>
+</section>
+
+<!-- 14 小組展示 + 計分 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Peer scoring</div>
+  <div class="kicker"><span class="tag t-zhuan">Turn</span>Group showcase</div>
+  <h2 style="margin-bottom:12px">Imitate first, then sing the same line in your own voice</h2>
+  <div class="split wide">
+    <div class="score" data-id="l5-imitate" data-teams="4"></div>
+    <div class="card">
+      <h3>Two rounds of voting</h3>
+      <p>① "Best imitation": vote for one group<br>② "Most their own": vote for another group<br><br>After each group sings both versions, the other groups vote by raising hands and the teacher adds points; you can only vote for other groups.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 15 模仿版與自己版 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Self-assessment · recording comparison</div>
+  <div class="kicker"><span class="tag t-he">Close</span>01:40–02:00 Turning it into your own voice</div>
+  <h2 style="margin-bottom:14px">Record the same line once as an imitation and once your way</h2>
+  <div class="split narrow">
+    <div>
+      <ul class="clean compact">
+        <li>First record the imitation: as close to the original as you can</li>
+        <li>Then record your own version: in your own voice</li>
+        <li>Listen to both and write down <b>one</b> technique you want to keep</li>
+      </ul>
+      <div class="card" style="margin-top:12px"><p>Producers often keep one easily recognised tone or way of singing for a singer as a hook. Compare these two recordings and find your own hook.</p></div>
+    </div>
+    <div class="rec-pair">
+      <div class="panel"><h3>① Imitation</h3><div class="recorder" data-max="20" data-name="Imitation"></div></div>
+      <div class="panel"><h3>② Your version</h3><div class="recorder" data-max="20" data-name="Your version"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 16 情緒地圖 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Class consensus · show of hands</div>
+  <div class="kicker"><span class="tag t-he">Close</span>Mayday《後來的我們》｜Original key C · male key C · female key G · 79 BPM</div>
+  <h2 style="margin-bottom:12px">The whole class votes on the volume of each section</h2>
+  <div class="split song-split">
+    <div>
+      <div class="dynmap" data-id="l5-later" data-sections="Verse|Pre-chorus &quot;而那些昨日&quot;|Chorus|Final chorus"></div>
+      <p class="muted" style="font-size:16px">p soft · mp moderately soft · mf moderately loud · f loud. After the vote, sing it together following the class's choices.</p>
+    </div>
+    <div class="yt" data-song="後來的我們"></div>
+  </div>
+</section>
+
+<!-- 17 人質、演員分組合唱 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Random pick · sharing</div>
+  <div class="kicker"><span class="tag t-he">Close</span>Group singing by male and female keys</div>
+  <h2 style="margin-bottom:12px">Each group chooses《人質》or《演員》</h2>
+  <div class="split">
+    <div>
+      <table>
+        <tr><th>Song</th><th>Original / male / female key</th><th>Focus</th></tr>
+        <tr><td><b>A-Mei《人質》</b><br><span class="yt chip" data-song="人質"></span></td><td>A♭／C／G・75</td><td>Hold back in the verse, release in the chorus, building from mp to f</td></tr>
+        <tr><td><b>Joker Xue《演員》</b><br><span class="yt chip" data-song="演員"></span></td><td>B／A／E・92</td><td>Short, conversational notes in the verse; long notes in the chorus</td></tr>
+      </table>
+      <p class="muted" style="margin-top:10px;font-size:17px">After singing, draw lots; whoever is drawn names one "technique I want to keep".</p>
+    </div>
+    <div class="panel picker"></div>
+  </div>
+</section>
+
+<!-- 18 三句話 -->
+<section class="slide center">
+  <div class="kicker">Today In Three Lines</div>
+  <p class="quote">Listen closely,<br>imitate with care,<br>turn it into your own voice.</p>
+</section>
+
+<!-- 19 出場券 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Exit ticket 3-2-1</div>
+  <div class="kicker"><span class="tag t-he">Close</span>Exit Ticket</div>
+  <h2 style="margin-bottom:14px">Before you leave, write down 3-2-1</h2>
+  <div class="split wide">
+    <div class="exit" data-prompts="3 expressive techniques you heard today|2 singers or songs to imitate at home|1 question you still want to ask the teacher"></div>
+    <div class="card"><h3>How to use it</h3><p>Scan the QR code on slide 2 with your phone, fill it in on your own phone and press "Send to teacher".<br><br>Next week the teacher will start from everyone's questions.</p></div>
+  </div>
+</section>
+
+<!-- 20 模仿筆記表 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Imitation notes</div>
+  <div class="kicker">Homework</div>
+  <h2 style="margin-bottom:12px">Imitation notes: choose one singer and one song</h2>
+  <div class="exit notes" data-key="notes" data-label="Imitation notes" data-prompts="Singer and song|Breath points (full, catch)|Main resonance (one each for verse and chorus)|Phonation (long, short, staccato)|This singer's hook|One technique I want to keep"></div>
+</section>
+
+<!-- 21 課後練習 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Self-directed tracking</div>
+  <div class="kicker">Homework</div>
+  <h2 style="margin-bottom:12px">Practice after class: tap once to tick each item you finish</h2>
+  <ul class="checks" data-id="l5-hw">
+    <li>Complete the imitation notes, and record one line each as an imitation and your own version</li>
+    <li>Draw an emotion map on the lyrics of《人質》or《演員》and record the chorus<span class="yt chip" data-song="人質"></span> <span class="yt chip" data-song="演員"></span></li>
+    <li>Measure your range: with a keyboard app, sing note by note down and up from middle C, and note the lowest and highest notes you can "sing comfortably" and "just about reach"</li>
+    <li>Choose your song for the final performance; you can pick from the ten Lesson 6 case studies</li>
+  </ul>
+</section>
+
+<!-- 22 下週預告 -->
+<section class="slide">
+  <div class="ix-tag"><b>Interactive</b>Pre-class survey</div>
+  <div class="kicker">Next Week</div>
+  <h2>Lesson 6: Setting your own conditions</h2>
+  <div class="split wide">
+    <div>
+      <p class="lead">Measure your range and set your own key for each song; finish with the final performance and compare it with your Recording Zero.</p>
+      <div class="card" style="margin-top:14px"><p><b>Bring to class</b>: the "Recording Zero" file you downloaded in Lesson 1, the range you measured at home, and your chosen song for the final performance.</p></div>
+      <p class="muted" style="margin-top:16px">Scan the QR code to fill in the Lesson 6 pre-class survey on the website.</p>
+    </div>
+    <div class="qr" data-href="../../survey.html?id=pre-6"></div>
+  </div>
+</section>
+</div>
+</main>
+
+<nav class="ui" aria-label="Slide controls">
+  <button type="button" id="prev" aria-label="Previous">← Previous</button>
+  <span class="counter" id="counter">1 / 1</span>
+  <button type="button" id="next" aria-label="Next">Next →</button>
+  <button type="button" id="full">Full screen</button>
+  <a href="../../index.html">Course home</a>
+</nav>
+
+<script src="../../../../assets/pixel.js?v=20261014v" defer></script>
+<script src="../../../assets/ui.js?v=20261016review1" defer></script>
+<script src="../../../assets/deck.js?v=20261015b" defer></script>
+<script src="../../../../assets/vendor/qrcode.min.js" defer></script>
+<script src="../../../assets/interact.js?v=20261028a" defer></script>
+<script src="../../songs.js?v=20261014v" defer></script>
+<script src="../../../assets/youtube.js?v=20261029a" defer></script>
+<script src="../../../../assets/config.js?v=20261020g" defer></script>
+<script src="../../../assets/backend.js?v=20261030a" defer></script>
+<script src="../../../../assets/ps-audio.js?v=20261016learning1" defer></script>
+<script src="../../../assets/learning-tools.js?v=20261020a" defer></script>
+</body>
+</html>
