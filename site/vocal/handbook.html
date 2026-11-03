@@ -45,7 +45,7 @@
 <nav class="toc" aria-label="講義目錄"><div class="wrap" id="toc"><a href="#overview" data-id="overview">課程總覽</a><a href="#lesson-1" data-id="lesson-1">第一堂</a><a href="#lesson-2" data-id="lesson-2">第二堂</a><a href="#lesson-3" data-id="lesson-3">第三堂</a><a href="#lesson-4" data-id="lesson-4">第四堂</a><a href="#lesson-5" data-id="lesson-5">第五堂</a><a href="#lesson-6" data-id="lesson-6">第六堂</a></div></nav>
 
 <aside class="wrap" aria-label="講義下載"><div class="dl-bar"><div><b>講義與教案 PDF</b><span>A4 排版・40 頁・含歌曲 QR Code，可列印或分享</span></div><a class="btn primary" href="vocal-class-handbook.pdf" download="Vocal_Lab_講義與教案.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>下載 PDF</a></div></aside>
-<main class="wrap md" id="content" data-prerendered="ab07176795">
+<main class="wrap md" id="content" data-prerendered="a75589a6fa">
 <h1>Pixel Studio Vocal Lab｜流行歌唱六堂講義與教案</h1>
 <p>Oct 5, 2026 · @Leo Lee</p>
 <section class="hb-sec" style="--ch-m:5903px;--ch-d:2698px"><div class="lesson-head" id="overview" data-item="課程總覽"><div class="lh-no">Overview</div><h2>課程總覽</h2></div>
@@ -529,7 +529,7 @@
 <li><input disabled="" type="checkbox"> 觀察自己一週的用聲習慣：熬夜幾天、喝冰飲幾杯、大聲說話或尖叫幾次</li>
 </ul>
 </section>
-<section class="hb-sec" style="--ch-m:21126px;--ch-d:11166px"><div class="lesson-head" id="lesson-2" style="--c: #e2407f;" data-dot="#e2407f" data-item="第二堂　歌唱基本條件與呼吸"><div class="lh-no">Lesson 02</div><h2>歌唱基本條件與呼吸</h2></div>
+<section class="hb-sec" style="--ch-m:21186px;--ch-d:11192px"><div class="lesson-head" id="lesson-2" style="--c: #e2407f;" data-dot="#e2407f" data-item="第二堂　歌唱基本條件與呼吸"><div class="lh-no">Lesson 02</div><h2>歌唱基本條件與呼吸</h2></div>
 <p>第二堂的目標，是讓每位學員學會胸腹式呼吸，並將 /s/ 吐氣秒數從課堂開頭到結尾實際拉長。歌唱的氣息以小腹肌肉為基礎，與平日集中在胸口的呼吸方式不同；姿勢、暖身與聲帶保養，則是讓呼吸發揮作用的前提。</p>
 <h3 id="lesson-2-16">課前問卷</h3>
 <ol>
@@ -651,7 +651,7 @@
 <li>上背部：上背往前傾斜，感受上腹部。</li>
 <li>下背部：上半身往前傾，感受下腹部。</li>
 </ol>
-<p><strong>二、基本呼吸練習</strong>（建議搭配節拍器 60 Bpm）</p>
+<p><strong>二、基本呼吸練習</strong>（建議搭配節拍器：自然呼吸、慢吸慢吐 10 Bpm，快吸慢吐 40 Bpm，快吸快吐 80 Bpm）</p>
 <table>
 <thead>
 <tr>
@@ -796,7 +796,7 @@
 </tr>
 <tr>
 <td>12 四種呼吸</td>
-<td>節拍器 60 Bpm</td>
+<td>節拍器 10–90 Bpm</td>
 <td>示範、跟做</td>
 <td>每一拍吸吐一次，畫面依拍點亮起「吸」「吐」</td>
 </tr>
@@ -2507,7 +2507,7 @@
   var main = document.getElementById('content'), toc = document.getElementById('toc'), prog = document.getElementById('progress');
   var pre = main.hasAttribute('data-prerendered');
   function loadMarked() { return window.marked ? Promise.resolve() : new Promise(function (ok, no) { var s = document.createElement('script'); s.src = 'https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js'; s.integrity = 'sha384-/TQbtLCAerC3jgaim+N78RZSDYV7ryeoBCVqTuzRrFec2akfBkHS7ACQ3PQhvMVi'; s.crossOrigin = 'anonymous'; s.onload = ok; s.onerror = no; document.head.appendChild(s); }); }
-  (pre ? (location.hash ? Promise.resolve(null) : new Promise(function (ok) { requestAnimationFrame(function () { setTimeout(function () { ok(null); }, 0); }); })) : loadMarked().then(function () { return fetch('course-handbook.md?v=20261103a'); }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }))
+  (pre ? (location.hash ? Promise.resolve(null) : new Promise(function (ok) { requestAnimationFrame(function () { setTimeout(function () { ok(null); }, 0); }); })) : loadMarked().then(function () { return fetch('course-handbook.md?v=20261103b'); }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }))
     .then(function (md) {
       if (md !== null) main.innerHTML = marked.parse(md, { gfm: true });
       main.querySelectorAll('img').forEach(function (i) { i.loading = 'lazy'; i.decoding = 'async'; });
