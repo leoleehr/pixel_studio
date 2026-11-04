@@ -11,7 +11,7 @@
   var title = document.body.getAttribute('data-title') || document.title;
   var i = 0, shown = false;
 
-  // 每張投影片加上錨點、左下角章節標註、右下角刷淡的 Pixel Studio Logo
+  // 每張投影片加上錨點、左下角章節標註、右下角的 Pixel Studio Logo
   var chapter = document.body.getAttribute('data-title') || '';
   slides.forEach(function (s, k) {
     s.id = 's' + (k + 1);
@@ -211,6 +211,41 @@
     new MutationObserver(function () { if (!mq.matches && !slide.classList.contains('active')) stop(); })
       .observe(slide, { attributes: true, attributeFilter: ['class'] });
   });
+
+  // 內容超出舞台時等比例縮小內容（--fit，樣式在 deck-studio.css），不裁切也不改文字。
+  // FIT_MIN 是下限：舞台上 21px 的內文最小約 17px；手機閱讀模式本來就能捲動，不縮放。
+  var FIT_MIN = 0.8;
+  function overflow(s) { return Math.max(s.scrollHeight - s.clientHeight, s.scrollWidth - s.clientWidth); }
+  function setFit(s, z) {
+    if (z < 1) { s.style.setProperty('--fit', z.toFixed(2)); s.setAttribute('data-fit', ''); }
+    else if (s.hasAttribute('data-fit')) { s.style.removeProperty('--fit'); s.removeAttribute('data-fit'); }
+  }
+  function refit() {
+    var s = slides[i];
+    if (!s || mq.matches) return;
+    if (!s.hasAttribute('data-fit') && overflow(s) <= 0) return;
+    var z = 1;
+    setFit(s, 1);
+    while (overflow(s) > 0 && z > FIT_MIN) { z = Math.max(FIT_MIN, z - 0.02); setFit(s, z); }
+  }
+  var refitTimer = 0;
+  function refitSoon() { clearTimeout(refitTimer); refitTimer = setTimeout(refit, 80); }
+  // 圖片載入、展開內容、互動元件改變高度時重新計算；縮放結果相同時尺寸不變，不會反覆觸發
+  var refitWatch = window.ResizeObserver ? new ResizeObserver(refitSoon) : null;
+  function watchSlide() {
+    if (!refitWatch) return;
+    refitWatch.disconnect();
+    if (slides[i] && !mq.matches) [].forEach.call(slides[i].children, function (c) { refitWatch.observe(c); });
+  }
+  document.addEventListener('slide:change', function () { refit(); watchSlide(); });
+  document.addEventListener('toggle', refitSoon, true);
+  document.addEventListener('load', refitSoon, true);
+  stage.addEventListener('click', refitSoon);
+  (mq.addEventListener ? mq.addEventListener.bind(mq, 'change') : mq.addListener.bind(mq))(function () {
+    if (mq.matches) slides.forEach(function (s) { setFit(s, 1); });
+  });
+  addEventListener('load', refit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(refit);
 
   fit();
   show(fromHash());
