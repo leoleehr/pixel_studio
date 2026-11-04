@@ -1,7 +1,8 @@
 """為所有頁面補齊社群分享與基本 head 標籤（og:title、og:description、og:image、twitter:card、description、theme-color）。
 
 用法：python -X utf8 tools/add_social_meta.py
-既有文案不覆寫；canonical 與 og:url 依正式路徑更新，並重建 sitemap。
+既有文案不覆寫；canonical 與 og:url 依正式路徑更新。
+en/ 由 tools/i18n.py 從中文頁產生，這裡不動。sitemap 只在中文網址清單有變時才重寫，並交給 i18n.py 補回英文網址與 hreflang。
 問卷、資料移轉與錯誤頁不收錄搜尋；列印副本指向正式講義。
 投影片重建後再執行一次即可。
 """
@@ -21,7 +22,7 @@ changed = 0
 sitemap_urls = []
 for p in sorted(SITE.rglob('*.html')):
     rel = p.relative_to(SITE).as_posix()
-    if rel.startswith('__'):
+    if rel.startswith('__') or rel.startswith('en/'):
         continue
     s = p.read_text(encoding='utf-8')
     original = s
@@ -54,7 +55,8 @@ for p in sorted(SITE.rglob('*.html')):
             add.append(og_url)
     if utility and 'name="robots"' not in s:
         add.append('<meta name="robots" content="noindex, follow">')
-    if not utility and p.name != 'handbook-print.html' and rel != 'index.html':
+    # 隱私權頁可被搜尋，但目前不主動列入 sitemap（維持現行內容）
+    if not utility and p.name != 'handbook-print.html' and rel not in ('index.html', 'privacy.html'):
         sitemap_urls.append(canonical)
     if not m:
         add.append('<meta name="description" content="%s">' % html.escape(desc, quote=True))
@@ -80,8 +82,16 @@ for p in sorted(SITE.rglob('*.html')):
         changed += 1
 print('pages updated', changed)
 # 不虛構 lastmod：此檔沒有可靠的內容日期來源，省略選填欄位。
-sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-sitemap += ''.join('  <url><loc>%s</loc></url>\n' % html.escape(url) for url in sitemap_urls)
-sitemap += '</urlset>\n'
-(SITE / 'sitemap.xml').write_text(sitemap, encoding='utf-8', newline='\n')
-print('sitemap URLs', len(sitemap_urls))
+sitemap_path = SITE / 'sitemap.xml'
+current = re.findall(r'<loc>([^<]+)</loc>', sitemap_path.read_text(encoding='utf-8')) if sitemap_path.exists() else []
+if [u for u in current if not u.startswith(BASE + 'en/')] == [html.escape(u) for u in sitemap_urls]:
+    print('sitemap unchanged', len(current))
+else:
+    sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    sitemap += ''.join('  <url><loc>%s</loc></url>\n' % html.escape(url) for url in sitemap_urls)
+    sitemap += '</urlset>\n'
+    sitemap_path.write_text(sitemap, encoding='utf-8', newline='\n')
+    print('sitemap URLs', len(sitemap_urls))
+    if (SITE / 'en').exists():
+        import i18n
+        i18n.write_sitemap(i18n.translated_set())

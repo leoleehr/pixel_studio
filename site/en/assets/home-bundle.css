@@ -268,6 +268,9 @@ h1,h2,h3,h4{text-wrap:balance}p,li,dd,figcaption,blockquote,.sv-item small,.desc
 .hb-sec{content-visibility:auto;contain-intrinsic-size:auto var(--ch-d,2400px)}@media(max-width:860px){.hb-sec{contain-intrinsic-size:auto var(--ch-m,4800px)}}
 .hb-deep .hb-sec{content-visibility:visible}
 
+/* 講義與問卷頁尾的文字連結：點擊範圍加高到 24px 以上 */
+footer>a{display:inline-block;padding:4px 0}
+
 /* responsive.css */
 /* ===== Pixel Studio 響應式設計：依螢幕尺寸調整版面 =====
  * 斷點：< 600 手機｜600–899 大手機、小平板｜900–1279 平板橫向、筆電｜1280–1599 桌機｜≥ 1600 大螢幕

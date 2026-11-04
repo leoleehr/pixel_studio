@@ -4,14 +4,18 @@
 這裡用 Chrome 依 object-fit:contain 繪製成 240 × 96 透明底 WebP（約 2.5 倍螢幕密度）。
 teaching-visuals.js 優先讀縮圖，缺檔時退回原圖。
 
-用法：python -X utf8 tools/build_teaching_thumbs.py
-需要 Playwright（python -m pip install playwright）與本機 Chrome。更換教學圖後要再執行。
+用法：python -X utf8 tools/build_teaching_thumbs.py [--force | --stamp-only]
+預設只補缺檔或來源內容有變的縮圖（WebP 每次輸出都略有不同，全部重建只會製造差異）。
+來源是否有變看 tools/teaching_thumbs_stamp.json 記的內容雜湊：剛 checkout 的檔案時間不可靠。
+--force 全部重建；--stamp-only 不繪製，只把目前的來源記進雜湊表。
+繪製時需要 Playwright（python -m pip install playwright）與本機 Chrome。
 """
-import asyncio, io, json, pathlib, tempfile
+import asyncio, hashlib, io, json, pathlib, sys, tempfile
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TEACH = ROOT / 'site' / 'assets' / 'teaching'
 OUT = TEACH / 'thumbs'
+STAMP = ROOT / 'tools' / 'teaching_thumbs_stamp.json'
 W, H = 240, 96
 
 
@@ -24,6 +28,29 @@ def first_images():
 
 def thumb_name(src):
     return pathlib.Path(src).stem + '.webp'
+
+
+def digest(src):
+    return hashlib.sha1((TEACH / src).read_bytes().replace(b'\r\n', b'\n')).hexdigest()[:16]
+
+
+def load_stamp():
+    return json.loads(STAMP.read_text(encoding='utf-8')) if STAMP.exists() else {}
+
+
+def write_stamp(stamp):
+    STAMP.write_text(json.dumps(stamp, ensure_ascii=False, indent=0, sort_keys=True) + '\n', encoding='utf-8', newline='\n')
+
+
+def stale(names):
+    stamp = load_stamp()
+    out = []
+    for src in names:
+        if not (TEACH / src).exists():
+            print('missing', src)
+        elif not (OUT / thumb_name(src)).exists() or stamp.get(src) != digest(src):
+            out.append(src)
+    return out
 
 
 async def render(names):
@@ -51,9 +78,19 @@ async def render(names):
         await b.close()
 
 
-def build():
-    asyncio.run(render(first_images()))
+def build(force=False):
+    names = first_images()
+    todo = [n for n in names if (TEACH / n).exists()] if force else stale(names)
+    if not todo:
+        return
+    asyncio.run(render(todo))
+    stamp = load_stamp()
+    stamp.update({src: digest(src) for src in todo})
+    write_stamp(stamp)
 
 
 if __name__ == '__main__':
-    build()
+    if '--stamp-only' in sys.argv:
+        write_stamp({src: digest(src) for src in first_images() if (TEACH / src).exists()})
+    else:
+        build(force='--force' in sys.argv)
