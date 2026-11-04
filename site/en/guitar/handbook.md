@@ -8,20 +8,20 @@ The folk guitar course is split into Book 1 (beginner) and Book 2 (advanced), wi
 
 ### Twelve-chapter schedule
 
-| Chapter | Book | Topic | Core content | Materials |
-| --- | --- | --- | --- | --- |
-| 1 | Book 1 | Meet the guitar and tune it | Origins and history, types, parts, materials, body shapes, choosing a guitar, tuning, holding | Slides done |
-| 2 | Book 1 | Beats, reading music and warming up | Pitch and the staff, note values, time signatures, tab, finger crawls, C major scale | Slides done |
-| 3 | Book 1 | Your first chords | Chord diagrams, C, G, Am, F, chord changes, scale degrees I–V–vi–IV | Slides done |
-| 4 | Book 1 | Strumming and syncopation | Downstrokes, upstrokes, ghost strums, strum marks in Chinese-language books, 8 beats, syncopated folk rock | Slides done |
-| 5 | Book 1 | Triple time and varying the accompaniment | Duple-time accompaniment, 3/4, 6/8, 12/8, boom-chick-chick | Slides done |
-| 6 | Book 1 | Song form and mid-course performance | Verse, chorus, bridge, capo, designing accompaniment by section, mid-course showcase | Slides done |
-| 7 | Book 2 | Intro to theory and fingerpicking | Intervals and consonance, triads, fingerpicking posture, arpeggios | Slides done |
-| 8 | Book 2 | G major and barre chords | G major scale, diatonic chords, barre F, Bm | Slides done |
-| 9 | Book 2 | Bass movement | Roots and alternate roots, slash chords, descending bass lines | Slides done |
-| 10 | Book 2 | Scale degrees and chord arranging | Scale-degree functions, common progressions, substitute chords, intro to arranging | Slides done |
-| 11 | Book 2 | Melody and tone techniques | Hammer-ons, pull-offs, slides, palm muting, chucks, slaps, harmonics, bends, releases, vibrato, trills | Slides done |
-| 12 | Book 2 | Changing key, choosing a key and songwriting | Transposing and the capo, choosing a key, other keys, songwriting | Slides done |
+| Chapter | Book | Topic | Core content |
+| --- | --- | --- | --- |
+| 1 | Book 1 | Meet the guitar and tune it | Origins and history, types, parts, materials, body shapes, choosing a guitar, tuning, holding |
+| 2 | Book 1 | Beats, reading music and warming up | Pitch and the staff, note values, time signatures, tab, finger crawls, C major scale |
+| 3 | Book 1 | Your first chords | Chord diagrams, C, G, Am, F, chord changes, scale degrees I–V–vi–IV |
+| 4 | Book 1 | Strumming and syncopation | Downstrokes, upstrokes, ghost strums, strum marks in Chinese-language books, 8 beats, syncopated folk rock |
+| 5 | Book 1 | Triple time and varying the accompaniment | Duple-time accompaniment, 3/4, 6/8, 12/8, boom-chick-chick |
+| 6 | Book 1 | Song form and mid-course performance | Verse, chorus, bridge, capo, designing accompaniment by section, mid-course performance |
+| 7 | Book 2 | Intro to theory and fingerpicking | Intervals and consonance, triads, fingerpicking posture, arpeggios |
+| 8 | Book 2 | G major and barre chords | G major scale, diatonic chords, barre F, Bm |
+| 9 | Book 2 | Bass movement | Roots and alternate roots, slash chords, descending bass lines |
+| 10 | Book 2 | Scale degrees and chord arranging | Scale-degree functions, common progressions, substitute chords, intro to arranging |
+| 11 | Book 2 | Melody and tone techniques | Hammer-ons, pull-offs, slides, palm muting, chucks, slaps, harmonics, bends, releases, vibrato, trills |
+| 12 | Book 2 | Changing key, choosing a key and songwriting | Transposing and the capo, choosing a key, other keys, songwriting |
 
 ### The shared rhythm of each 120-minute chapter
 
@@ -55,7 +55,7 @@ The folk guitar course is split into Book 1 (beginner) and Book 2 (advanced), wi
 <!-- learning-notes-start -->
 ### Skill route and practice logs
 
-[Open the course skill route](index.html#lessons): each lesson card shows suggested prerequisites and this device's homework ticks, and you can expand the full course route. The website's practice chart uses the original seven-day table, leaves missing values blank, and shows seconds, counts and minutes separately. The PDF keeps this table as a paper record with no sample scores filled in.
+[Open the course map](index.html#lessons) to see each lesson's suggested preparation and homework, tick off what you've finished and expand the route overview. The website's practice chart uses the original seven-day table, leaves missing values blank, and shows seconds, counts and minutes separately. The PDF keeps this table as a paper record with no sample scores filled in.
 
 <!-- learning-notes-end -->
 
@@ -510,7 +510,7 @@ The strums and fingerpicking used in this chapter. The staff above shows pitch a
 <!-- teaching-visuals-end -->
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>Interactive practice and diagrams</h3><h4>Chord change paths</h4><p>C→Am: index and middle stay put while the ring finger moves from string 5 fret 3 to string 3 fret 2. Lift off the string before you move.</p><figure class="learning-print"><img src="../assets/learning/print/guitar-chord-path.svg" alt="Key states of chord change paths" loading="eager"><figcaption>Chord change paths｜Key states</figcaption></figure><p><a href="ch03/#15">Open the interactive practice</a></p></div>
+<div class="learning-book-block"><h3>Interactive practice and diagrams</h3><h4>Chord change paths</h4><p>C→Am: index and middle stay put while the ring finger moves from string 5 fret 3 to string 3 fret 2. Lift off the string before you move.</p><figure class="learning-print"><img src="../assets/learning/print/guitar-chord-path.svg" alt="Key views of chord change paths" loading="eager"><figcaption>Chord change paths｜Key views</figcaption></figure><p><a href="ch03/#15">Open the interactive practice</a></p></div>
 
 <!-- learning-notes-end -->
 
@@ -709,8 +709,8 @@ The strums and fingerpicking used in this chapter. The staff above shows pitch a
 - [ ] Choose your mid-course song and fill in the Chapter 6 pre-class survey
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>Interactive practice and diagrams</h3><h4>Roots and alternating bass</h4><p>Find each chord's root and another chord tone. Alternations such as C/E aren't always a fifth; follow the fingering in the materials.</p><figure class="learning-print"><img src="../assets/learning/print/guitar-bass-map.svg" alt="Key states of roots and alternating bass" loading="eager"><figcaption>Roots and alternating bass｜Key states</figcaption></figure><p><a href="ch05/#6">Open the interactive practice</a></p></div>
-<div class="learning-book-block"><h4>Choosing an accompaniment by time signature</h4><p>Choose the time signature first, then compare tempos and patterns on the same chords; the suggestion isn't the only right answer.</p><figure class="learning-print"><img src="../../assets/learning/print/guitar-accompaniment.svg" alt="Key states of choosing an accompaniment by time signature" loading="eager"><figcaption>Choosing an accompaniment by time signature｜Key states</figcaption></figure><p><a href="ch05/#16">Open the interactive practice</a></p></div>
+<div class="learning-book-block"><h3>Interactive practice and diagrams</h3><h4>Roots and alternating bass</h4><p>Find each chord's root and another chord tone. Alternations such as C/E aren't always a fifth; follow the fingering in the materials.</p><figure class="learning-print"><img src="../assets/learning/print/guitar-bass-map.svg" alt="Key views of roots and alternating bass" loading="eager"><figcaption>Roots and alternating bass｜Key views</figcaption></figure><p><a href="ch05/#6">Open the interactive practice</a></p></div>
+<div class="learning-book-block"><h4>Choosing an accompaniment by time signature</h4><p>Choose the time signature first, then compare tempos and patterns on the same chords; the suggestion is only a guide; adjust it to the song.</p><figure class="learning-print"><img src="../../assets/learning/print/guitar-accompaniment.svg" alt="Key views of choosing an accompaniment by time signature" loading="eager"><figcaption>Choosing an accompaniment by time signature｜Key views</figcaption></figure><p><a href="ch05/#16">Open the interactive practice</a></p></div>
 
 <!-- learning-notes-end -->
 

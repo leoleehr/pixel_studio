@@ -460,9 +460,9 @@
       '<defs><clipPath id="pick-photo-clip"><rect x="0" y="20" width="282" height="188" rx="12"/></clipPath></defs>' +
       '<image data-lazy-href="' + GUITAR_IMAGE + 'pick-grip.branded.svg?v=20261028identity" x="0" y="20" width="282" height="188" preserveAspectRatio="xMidYMid slice" clip-path="url(#pick-photo-clip)"/>' +
       '<path d="M302 64 L231 118" class="lead" stroke-width="2"/><circle cx="231" cy="118" r="4" class="dot"/>' +
-      '<text x="302" y="57" class="big" style="fill:var(--accent)">Thumb</text><text x="370" y="57">pad presses lightly</text>' +
-      '<text x="302" y="111" class="big" style="fill:var(--accent)">Index</text><text x="370" y="111">side of first joint</text>' +
-      '<text x="302" y="165" class="big" style="fill:var(--accent)">Tip</text><text x="370" y="165">about 2–3 mm out</text>' +
+      '<text x="302" y="57" class="big" style="fill:var(--accent)">Thumb</text><text x="384" y="57">pad presses lightly</text>' +
+      '<text x="302" y="111" class="big" style="fill:var(--accent)">Index</text><text x="384" y="111">side of first joint</text>' +
+      '<text x="302" y="165" class="big" style="fill:var(--accent)">Tip</text><text x="384" y="165">about 2–3 mm out</text>' +
       '<text x="0" y="231" class="en">Hold it lightly, fingers naturally curved</text>' + '</svg>';
   }
   function handsSVG() {
@@ -477,7 +477,7 @@
     s += '<text x="18" y="318" class="en" style="fill:#f4f4f0">Thumb not numbered</text>';
     s += '<text x="18" y="393" style="font-size:17px">1 index 2 middle 3 ring 4 little</text>';
     s += '<text x="420" y="393" style="font-size:17px">T thumb 1 index 2 middle 3 ring</text>';
-    s += '<text x="18" y="423" class="en">Four fingers press the strings; the thumb supports behind the neck</text>';
+    s += '<text x="18" y="423" class="en">Fingers fret; thumb supports behind the neck</text>';
     s += '<text x="420" y="423" class="en">Thumb 4–6 / index 3 / middle 2 / ring 1</text>';
     return s + '</svg>';
   }
@@ -711,7 +711,7 @@
     root.classList.add('tuner');
     root.innerHTML = '<div class="strings">' + OPEN.map(function (o, i) { return '<button type="button" data-s="' + i + '"><b>' + o.n + '</b><small>' + 'String ' + (6 - i) + ' · ' + o.n + o.o + '</small></button>'; }).join('') + '</div>' +
       '<div class="dial"><span class="read">‧‧</span><span class="cents"></span><i class="zone"></i><i class="scale"></i><i class="needle"></i><span class="lbl l">Flat ♭</span><span class="lbl r">Sharp ♯</span></div>' +
-      '<div class="row" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button type="button" class="btn primary mic">🎙 Start tuning</button><button type="button" class="btn ref">▶︎ Play reference note</button><span class="msg">Choose a string and listen to the reference note first, then press "Start tuning" and pluck that open string.</span></div>';
+      '<div class="row" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button type="button" class="btn primary mic">Start tuning</button><button type="button" class="btn ref">▶︎ Play reference note</button><span class="msg">Choose a string and listen to the reference note first, then press "Start tuning" and pluck that open string.</span></div>';
     var cur = 0, stream = null, raf = 0, an = null, buf = null, okSince = 0, done = {};
     var needle = $('.needle', root), read = $('.read', root), cents = $('.cents', root), msg = $('.msg', root), micBtn = $('.mic', root);
     function pick(i) { cur = i; $$('.strings button', root).forEach(function (b, k) { b.classList.toggle('on', k === i); }); }
@@ -721,7 +721,7 @@
       var f = [-1, -1, -1, -1, -1, -1]; f[cur] = 0;
       PS.audio.strum(f, a.currentTime + 0.02, 'down', { duration: 2.5, volume: 0.35 });
     });
-    function stop() { cancelAnimationFrame(raf); if (stream) stream.getTracks().forEach(function (t) { t.stop(); }); stream = null; micBtn.textContent = '🎙 Start tuning'; }
+    function stop() { cancelAnimationFrame(raf); if (stream) stream.getTracks().forEach(function (t) { t.stop(); }); stream = null; micBtn.textContent = 'Start tuning'; }
     var lastT = 0;
     function loop(now) {
       raf = requestAnimationFrame(loop);

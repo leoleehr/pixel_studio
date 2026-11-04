@@ -37,7 +37,7 @@
 .fb-track:empty::before{content:"Tap the sections above to put the song's structure in order";color:var(--faint);align-self:center;margin:auto;font-size:16px}
 .fb-block{position:relative;flex:var(--w,1) 0 0;min-width:58px;border-radius:var(--r-sm);background:var(--sc);color:#fff;padding:8px 8px 6px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer}
 .fb-block.f-bridge{color:#1a1800}
-.fb-block b{font:700 15px var(--display);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fb-block b{font:700 15px/1.2 var(--display);padding-right:12px;overflow-wrap:anywhere}
 .fb-block small{font-size:12px;opacity:.9}
 .fb-block .x{position:absolute;top:2px;right:4px;font-size:13px;opacity:.75}
 .fb-block.bad{outline:3px solid #fff;outline-offset:-3px;animation:fbshake .4s}
@@ -406,7 +406,7 @@ body .slide .c-pink,body .slide th,body .slide .tp-out tr.main td,body .slide .p
 .ld-reel b{max-width:100%;overflow-wrap:anywhere}
 .ld-name{margin:0;font-size:19px;color:var(--accent);flex:none}
 .ld-note{margin:0;font-size:13.5px;line-height:1.4;color:var(--muted)}
-.ld-head .ld-note{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.ld-head .ld-note{min-width:0}
 .ld-row{display:flex;gap:8px;align-items:flex-start}
 .ld-lab{flex:none;font-size:13.5px;color:var(--faint);padding-top:5px;min-width:30px}
 .ld-chips{display:flex;flex-wrap:wrap;gap:5px}
@@ -485,7 +485,7 @@ body .slide .c-pink,body .slide th,body .slide .tp-out tr.main td,body .slide .p
 .wv-yt .ytp-bar{padding:6px 10px;gap:6px}
 .wv-yt .ytp-btn{width:32px;height:32px;border-radius:9px}
 .slide .wave .wk-tip,.slide .wave .wk-msg{font-size:15px;line-height:1.5}
-.wv-yt .ytp-meta>*{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wv-yt .ytp-meta>*{white-space:normal}
 .wv-yt .ytp-time{display:none}
 .wave.compact .wk-foot{margin-top:0}
 .wave.compact .wk-foot .wk-msg{margin:0 0 0 8px;flex:1}

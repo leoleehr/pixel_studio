@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<script data-kit="site" data-href="../../assets/theme-light.css?v=fdc23a8b0a">(function(d){var s=d.currentScript,r=d.documentElement,m=location.pathname.match(/\/(vocal|guitar|piano|songwriting)\//);r.setAttribute('data-kit',s.getAttribute('data-kit'));if(m)r.setAttribute('data-lab',m[1]);try{if(localStorage.getItem('ps-theme')==='light'){r.setAttribute('data-theme','light');var l=d.createElement('link');l.rel='stylesheet';l.id='ps-theme-css';l.href=s.getAttribute('data-href');l.setAttribute('blocking','render');d.head.appendChild(l)}}catch(e){}})(document)</script>
-<script src="../../assets/theme.js?v=c116c598a2" data-kit="site" defer></script>
+<script data-kit="site" data-href="../../assets/theme-light.css?v=7de7f9ec53">(function(d){var s=d.currentScript,r=d.documentElement,m=location.pathname.match(/\/(vocal|guitar|piano|songwriting)\//);r.setAttribute('data-kit',s.getAttribute('data-kit'));if(m)r.setAttribute('data-lab',m[1]);try{if(localStorage.getItem('ps-theme')==='light'){r.setAttribute('data-theme','light');var l=d.createElement('link');l.rel='stylesheet';l.id='ps-theme-css';l.href=s.getAttribute('data-href');l.setAttribute('blocking','render');d.head.appendChild(l)}}catch(e){}})(document)</script>
+<script src="../../assets/theme.js?v=b566feabff" data-kit="site" defer></script>
 <title>Pixel Studio｜Exploring the voice · Vocal Lab</title>
 <meta name="description" content="Pixel Studio Vocal Lab pop singing: handbook, lesson plans and interactive slides for six lessons. Taught by Leo Lee of Pixel Studio.">
 <link rel="icon" href="../../assets/favicon.ico?v=20261014v" sizes="any">
@@ -12,20 +12,20 @@
 <link rel="icon" type="image/png" sizes="192x192" href="../../assets/favicon-192.png?v=20261014v">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261014v">
 <meta name="theme-color" content="#101210">
-<link rel="stylesheet" href="../assets/bundles/vocal-index.css?v=09e055dafc" data-sources="../assets/brand/brand-tokens.css|../assets/site.css?v=20261016c|../assets/backend.css?v=20261028a|../assets/responsive.css?v=20261016review1|../assets/studio.css?v=20261016review1|../assets/home-art-direction.css?v=20261028identity|../assets/learning-tools.css?v=20261020a">
+<link rel="stylesheet" href="../assets/bundles/vocal-index.css?v=e28a57788a" data-sources="../assets/brand/brand-tokens.css|../assets/site.css?v=20261016c|../assets/backend.css?v=20261028a|../assets/responsive.css?v=20261016review1|../assets/studio.css?v=20261016review1|../assets/home-art-direction.css?v=20261028identity|../assets/learning-tools.css?v=20261020a">
 <meta property="og:title" content="Vocal Lab｜Pixel Studio">
 <meta property="og:description" content="Six lessons to find a voice that's your own.">
 <meta property="og:image" content="https://pixel-studio.musicallanding.workers.dev/vocal/og-image.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Pixel Studio official colour sound-wave logo｜Vocal Lab">
+<meta property="og:image:alt" content="Pixel Studio official colour sound-wave logo｜Vocal Lab pop singing">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://pixel-studio.musicallanding.workers.dev/vocal/og-image.png">
 <link rel="preload" href="../../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<script>/* 中文字型策略：首次造訪用系統中文字型（符合 CI：正黑體／蘋方），不在首屏重排；載入完成 5 秒後，利用閒置時間逐一把本頁用得到的 Noto Sans TC 分組下載進快取，之後每頁一開始就套用 */(function(){var K="ps-font",U="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap";function apply(){var l=document.createElement("link");l.rel="stylesheet";l.href=U;document.head.appendChild(l)}var c=0;try{c=localStorage.getItem(K)}catch(e){}if(c){apply();return}var n=navigator.connection;if(n&&(n.saveData||/2g/.test(n.effectiveType||"")))return;var idle=window.requestIdleCallback||function(f){return setTimeout(f,300)};function inRange(r,cps){return r.split(",").some(function(p){var m=p.trim().replace(/^U\+/i,"").split("-"),a=parseInt(m[0],16),b=m[1]?parseInt(m[1],16):a;return cps.some(function(x){return x>=a&&x<=b})})}function warm(){if(!window.FontFace||!window.fetch)return;var seen={},cps=[],t=document.body.textContent;for(var i=0;i<t.length;i++){var x=t.charCodeAt(i);if(x>=0x2E80&&!seen[x]){seen[x]=1;cps.push(x)}}fetch(U).then(function(r){return r.text()}).then(function(css){var q=[];css.replace(/@font-face\s*\{([^}]*)\}/g,function(_,b){var s=/url\(([^)]+)\)/.exec(b),r=/unicode-range:\s*([^;]+)/.exec(b);if(s&&r&&inRange(r[1],cps))q.push([s[1],r[1]]);return _});function next(){if(!q.length){try{localStorage.setItem(K,"1")}catch(e){}return}var j=q.shift();new FontFace("Noto Sans TC","url("+j[0]+")",{weight:"400 900",unicodeRange:j[1]}).load().then(function(){idle(next,{timeout:3000})},function(){idle(next,{timeout:3000})})}idle(next,{timeout:3000})}).catch(function(){})}var painted=0,loaded=0,started=0;function go(){if(painted&&loaded&&!started){started=1;setTimeout(function(){idle(warm,{timeout:5000})},5000)}}try{new PerformanceObserver(function(l){if(!painted&&l.getEntriesByName("first-contentful-paint").length){painted=1;go()}}).observe({type:"paint",buffered:true})}catch(e){painted=1}addEventListener("load",function(){loaded=1;setTimeout(function(){painted=1;go()},3000);go()})})()</script>
+<script>/* 中文字型策略：手機（主要輸入是觸控、螢幕短邊小於 600）一律用系統中文字型，不下載也不套用；其他裝置首次造訪用系統中文字型（符合 CI：正黑體／蘋方），不在首屏重排；載入完成 5 秒後，利用閒置時間逐一把本頁用得到的 Noto Sans TC 分組下載進快取，之後每頁一開始就套用 */(function(){var K="ps-font",U="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap";if(matchMedia("(pointer:coarse)").matches&&Math.min(screen.width,screen.height)<600){try{localStorage.removeItem(K)}catch(e){}return}function apply(){var l=document.createElement("link");l.rel="stylesheet";l.href=U;document.head.appendChild(l)}var c=0;try{c=localStorage.getItem(K)}catch(e){}if(c){apply();return}var n=navigator.connection;if(n&&(n.saveData||/2g/.test(n.effectiveType||"")))return;var idle=window.requestIdleCallback||function(f){return setTimeout(f,300)};function inRange(r,cps){return r.split(",").some(function(p){var m=p.trim().replace(/^U\+/i,"").split("-"),a=parseInt(m[0],16),b=m[1]?parseInt(m[1],16):a;return cps.some(function(x){return x>=a&&x<=b})})}function warm(){if(!window.FontFace||!window.fetch)return;var seen={},cps=[],t=document.body.textContent;for(var i=0;i<t.length;i++){var x=t.charCodeAt(i);if(x>=0x2E80&&!seen[x]){seen[x]=1;cps.push(x)}}fetch(U).then(function(r){return r.text()}).then(function(css){var q=[];css.replace(/@font-face\s*\{([^}]*)\}/g,function(_,b){var s=/url\(([^)]+)\)/.exec(b),r=/unicode-range:\s*([^;]+)/.exec(b);if(s&&r&&inRange(r[1],cps))q.push([s[1],r[1]]);return _});function next(){if(!q.length){try{localStorage.setItem(K,"1")}catch(e){}return}var j=q.shift();new FontFace("Noto Sans TC","url("+j[0]+")",{weight:"400 900",unicodeRange:j[1]}).load().then(function(){idle(next,{timeout:3000})},function(){idle(next,{timeout:3000})})}idle(next,{timeout:3000})}).catch(function(){})}var painted=0,loaded=0,started=0;function go(){if(painted&&loaded&&!started){started=1;setTimeout(function(){idle(warm,{timeout:5000})},5000)}}try{new PerformanceObserver(function(l){if(!painted&&l.getEntriesByName("first-contentful-paint").length){painted=1;go()}}).observe({type:"paint",buffered:true})}catch(e){painted=1}addEventListener("load",function(){loaded=1;setTimeout(function(){painted=1;go()},3000);go()})})()</script>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=optional"></noscript>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pixel Studio">
@@ -37,13 +37,13 @@
 <meta property="og:url" content="https://pixel-studio.musicallanding.workers.dev/en/vocal/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"Pop singing: Vocal Lab","description":"Find your own voice through breathing, resonance and vocal technique.","url":"https://pixel-studio.musicallanding.workers.dev/vocal/","inLanguage":"zh-Hant","timeRequired":"PT12H","provider":{"@type":"EducationalOrganization","@id":"https://pixel-studio.musicallanding.workers.dev/#studio","name":"Pixel Studio","url":"https://pixel-studio.musicallanding.workers.dev/studio"}}</script>
 <script src="../../assets/analytics.js?v=20261104b" defer></script>
-<script src="../../assets/lang.js?v=20261104a" defer></script>
+<script src="../../assets/lang.js?v=20261104fix" defer></script>
 </head>
 <body id="top" class="home">
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="topbar">
   <div class="wrap">
-    <a class="brand" href="../studio.html"><img class="brand-logo" src="../../assets/brand/pixel-studio-horizontal.svg" alt="Pixel Studio" width="2400" height="720"><span class="brand-caption">Pixel Music Workshop<br>Vocal Lab</span><span class="sr-only">, back to the course home</span></a>
+    <a class="brand" href="../studio.html"><img class="brand-logo" src="../../assets/brand/pixel-studio-horizontal.svg" alt="Pixel Studio" width="2400" height="720"><span class="brand-caption">Pixel Studio<br>Vocal Lab</span><span class="sr-only">, back to the course home</span></a>
     <nav aria-label="Site navigation">
       <a href="#lessons">Lessons</a> <a href="survey.html">Surveys</a> <a href="handbook.html">Handbook</a> <a href="#about">About</a>
     </nav>
@@ -79,7 +79,7 @@
     <div class="section-index">01 / The Learning Journey</div>
     <div class="sec-head">
       <h2>Step by step,<br>hear your voice and sing with it.</h2>
-      <p>From understanding the voice to singing while you play, six lessons build up one step at a time. Pick a lesson to open the slides, read the handbook, or fill in the pre-class survey first.</p>
+      <p>From understanding the voice to finding your own key, six lessons build up one step at a time. Pick a lesson to open the slides, read the handbook, or fill in the pre-class survey.</p>
     </div>
     <div class="journey-label" aria-hidden="true"><span>Six lessons / six explorations</span><span>Explore The Possibilities</span></div>
     <div class="lessons">
@@ -140,7 +140,7 @@
       <div class="feature"><i>01 / Pitch</i><b>Pitch challenge</b><span>Play the target note, sing into the microphone, see how far off you are in real time, and keep a record of every hit.</span><a class="feature-link" href="slides/lesson-02/index.html#s6">Start the pitch challenge ↗︎</a></div>
       <div class="feature"><i>02 / Breath</i><b>Exhale test</b><span>Press start and the timer runs straight away. It works out your steadiness, and comparing the pre-test with the post-test shows how far you've come.</span><a class="feature-link" href="slides/lesson-02/index.html#s3">Go to the breathing lesson ↗︎</a></div>
       <div class="feature"><i>03 / Record</i><b>Recording comparison</b><span>Record and keep your Recording Zero, then play it next to your progress at the end of the course.</span><a class="feature-link" href="slides/lesson-01/index.html#s21">Make your first recording ↗︎</a></div>
-      <div class="feature"><i>04 / Practice</i><b>Practice log</b><span>Exit tickets, a seven-day log and homework checklists carry your practice into the next lesson. Until the back end connects, written records are held in this browser.</span><a class="feature-link" href="handbook.html">Read the practice notes ↗︎</a></div>
+      <div class="feature"><i>04 / Practice</i><b>Practice log</b><span>Exit tickets, a seven-day log and homework checklists carry your practice into the next lesson. If the network drops, written records are held in this browser and sent automatically once you're back online.</span><a class="feature-link" href="handbook.html">Read the practice notes ↗︎</a></div>
     </div>
   </div>
   </div>
@@ -151,7 +151,7 @@
     <div class="section-index">03 / The Session Flow</div>
     <div class="sec-head">
       <h2>Let learning<br>find its own rhythm.</h2>
-      <p>Fill in the survey on the site three days before class. Each lesson moves through four parts, and practice after class carries into the next one.</p>
+      <p>Fill in the survey on the site three days before class. Each lesson moves through four parts, with timing that varies slightly from lesson to lesson, and practice after class carries into the next one.</p>
     </div>
     <div class="session-head"><span class="eyebrow">Learn. Play. Repeat.</span><div class="session-total">120 <small>Min / Session</small></div></div>
     <div class="rhythm">
@@ -200,6 +200,6 @@
 })();
 </script>
 <script src="../../assets/ps-audio.js?v=20261016learning1" defer></script>
-<script src="../assets/learning-tools.js?v=20261104terms" defer></script>
+<script src="../assets/learning-tools.js?v=20261104fix" defer></script>
 </body>
 </html>

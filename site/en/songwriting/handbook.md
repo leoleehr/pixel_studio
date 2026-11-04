@@ -69,7 +69,7 @@ The song planning card comes from the "Lyric Writing And Compose Sample Form". I
 <!-- learning-notes-start -->
 ### Skill route and practice logs
 
-[Open the course skill route](index.html#lessons): each lesson card shows suggested prerequisites and this device's homework ticks, and you can expand the full course route. The website's practice chart uses the original seven-day table, leaves missing values blank, and shows seconds, counts and minutes separately. The PDF keeps this table as a paper record with no sample scores filled in.
+[Open the course map](index.html#lessons) to see each lesson's suggested preparation and homework, tick off what you've finished and expand the route overview. The website's practice chart uses the original seven-day table, leaves missing values blank, and shows seconds, counts and minutes separately. The PDF keeps this table as a paper record with no sample scores filled in.
 
 <!-- learning-notes-end -->
 
@@ -404,7 +404,7 @@ Goals: explain how the metrical rules differ across Han fu, Tang poems, Song ci,
 - [ ] Fill in the Lesson 4 pre-class survey
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>Interactive practice and diagrams</h3><h4>Tones and melody</h4><p>The direction of the tones and of the melody can be overlaid and compared; where they differ, go back to the meaning and sing the whole line, rather than judging from the curves alone.</p><figure class="learning-print"><img src="../assets/learning/print/songwriting-tone-melody.svg" alt="Key states of tones and melody" loading="eager"><figcaption>Tones and melody｜Key states</figcaption></figure><p><a href="s03/#11">Open the interactive practice</a></p></div>
+<div class="learning-book-block"><h3>Interactive practice and diagrams</h3><h4>Tones and melody</h4><p>The direction of the tones and of the melody can be overlaid and compared; where they differ, go back to the meaning and sing the whole line, rather than judging from the curves alone.</p><figure class="learning-print"><img src="../assets/learning/print/songwriting-tone-melody.svg" alt="Key views of tones and melody" loading="eager"><figcaption>Tones and melody｜Key views</figcaption></figure><p><a href="s03/#11">Open the interactive practice</a></p></div>
 
 <!-- learning-notes-end -->
 
@@ -541,7 +541,7 @@ The lyricists' careers are summarised from the 2011 lecture materials; for curre
 - [ ] Fill in the Lesson 5 pre-class survey
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>Interactive practice and diagrams</h3><h4>Marking rhetoric within a line</h4><p>For repetition, look at the repeated words; for anadiplosis, look at how the end of one clause joins the start of the next; for contrast, look at the paired phrases. The website offers original short lines to choose from and mark up.</p><figure class="learning-print"><img src="../assets/learning/print/songwriting-rhetoric.svg" alt="Key states of marking rhetoric within a line" loading="eager"><figcaption>Marking rhetoric within a line｜Key states</figcaption></figure><p><a href="s04/#9">Open the interactive practice</a></p></div>
+<div class="learning-book-block"><h3>Interactive practice and diagrams</h3><h4>Marking rhetoric within a line</h4><p>For repetition, look at the repeated words; for anadiplosis, look at how the end of one clause joins the start of the next; for contrast, look at the paired phrases. The website offers original short lines to choose from and mark up.</p><figure class="learning-print"><img src="../assets/learning/print/songwriting-rhetoric.svg" alt="Key views of marking rhetoric within a line" loading="eager"><figcaption>Marking rhetoric within a line｜Key views</figcaption></figure><p><a href="s04/#9">Open the interactive practice</a></p></div>
 
 <!-- learning-notes-end -->
 
@@ -599,8 +599,8 @@ Goals: explain how instrumental pieces differ from songs, and tell composing fro
 
 | Family | Degree | Job |
 | --- | --- | --- |
-| Tonic | 1 and 6 | Start and finish |
-| Pre-dominant | 4 and 2 | Placed before the dominant |
+| Tonic | 1 (6 as a substitute chord) | Start and finish |
+| Subdominant | 4 (2 as a substitute chord) | Placed before the dominant |
 | Dominant | 5 | Placed before the final tonic |
 
 | Movement | C major | Notes |
@@ -816,7 +816,7 @@ Preparing to arrange: choose a style, set the tempo, choose the key, place the m
 - [ ] Fill in the Lesson 8 pre-class survey
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>Interactive practice and diagrams</h3><h4>Instrumentation by section</h4><p>Compare the main groove, secondary groove, lead melody, fills and pads section by section; you can load your own song form blocks, save an instrumentation for each form, and hear the difference between parts.</p><figure class="learning-print"><img src="../assets/learning/print/songwriting-arrangement.svg" alt="Key states of instrumentation by section" loading="eager"><figcaption>Instrumentation by section｜Key states</figcaption></figure><p><a href="s07/#8">Open the interactive practice</a></p></div>
+<div class="learning-book-block"><h3>Interactive practice and diagrams</h3><h4>Instrumentation by section</h4><p>Compare the main groove, secondary groove, lead melody, fills and pads section by section; you can load your own song form blocks, save an instrumentation for each form, and hear the difference between parts.</p><figure class="learning-print"><img src="../assets/learning/print/songwriting-arrangement.svg" alt="Key views of instrumentation by section" loading="eager"><figcaption>Instrumentation by section｜Key views</figcaption></figure><p><a href="s07/#8">Open the interactive practice</a></p></div>
 
 <!-- learning-notes-end -->
 
@@ -874,7 +874,7 @@ Goals: use the four steps of revision feedback to keep improving your song; give
 ### Extended notes: conclusion
 
 - What songwriting means: recording the details of life in melody and words, and carrying what you feel and what moves you across whole into the listener's heart.
-- Sharing your work: only after you release a song does the conversation with the world really begin.
+- Sharing your work: after a song is released, you can share it with friends, post it online or enter contests.
 - Self-fulfilment through writing: good music doesn't need a pile of advanced technique; fully expressing what you feel is an art nobody can copy.
 
 The road of songwriting is long, and we'll always need each other's encouragement.

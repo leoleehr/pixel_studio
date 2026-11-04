@@ -31,7 +31,7 @@ TEXT_EXT = {'.html', '.js', '.css', '.md', '.webmanifest', '.svg'}
 SKIP = {'assets/teaching/README.md', 'songwriting/lyric-dice.js', 'assets/lang.js', 'assets/theme.js'}
 # 品牌標誌的中文字標依 CI 規範不重打，整個資料夾不翻
 SKIP_DIRS = ('assets/brand/',)
-LANG_JS = 'assets/lang.js?v=20261104a'
+LANG_JS = 'assets/lang.js?v=20261104fix'
 
 # 英文版 JS 載入相對資源時要改指回中文版的路徑（檔案 → [(原字串, 新字串)]）
 FIXUPS = {

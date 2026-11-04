@@ -19,7 +19,7 @@ The course has twelve lessons of 120 minutes each, 24 hours in all. The first ei
 
 | Lesson | Topic | Syllabus topic (beginner) | Core content |
 | --- | --- | --- | --- |
-| 1 | Meet the piano and pop piano | Intro to jazz piano | Origins, construction, kinds, classical, pop and jazz, sitting, finger numbers, pedals |
+| 1 | Meet the piano and pop piano | Introduction to pop piano | Origins, construction, kinds, classical, pop and jazz, sitting, finger numbers, pedals |
 | 2 | Basic theory and reading music | Basic theory and reading | Note names, solfège, numbered notation, grand staff, note values, time signatures, whole and half steps, intervals |
 | 3 | Scale fingering | Scale fingering | The major formula, thumb-unders and crossings, C, G and F major |
 | 4 | How chords are built | How chords are built | Major, minor, augmented and diminished triads, diatonic chords, inversions |
@@ -65,7 +65,7 @@ The course has twelve lessons of 120 minutes each, 24 hours in all. The first ei
 <!-- learning-notes-start -->
 ### Skill route and practice logs
 
-[Open the course skill route](index.html#lessons): each lesson card shows suggested prerequisites and this device's homework ticks, and you can expand the full course route. The website's practice chart uses the original seven-day table, leaves missing values blank, and shows seconds, counts and minutes separately. The PDF keeps this table as a paper record with no sample scores filled in.
+[Open the course map](index.html#lessons) to see each lesson's suggested preparation and homework, tick off what you've finished and expand the route overview. The website's practice chart uses the original seven-day table, leaves missing values blank, and shows seconds, counts and minutes separately. The PDF keeps this table as a paper record with no sample scores filled in.
 
 <!-- learning-notes-end -->
 
@@ -343,7 +343,7 @@ Goals: explain the "whole, whole, half, whole, whole, whole, half" rule of the m
 <!-- teaching-visuals-end -->
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>Interactive practice and diagrams</h3><h4>Hands-together fingering</h4><p>Going up in C major, the right thumb passes under at F and the left hand crosses over at A; the two moves don't happen at the same time.</p><figure class="learning-print"><img src="../assets/learning/print/piano-dual-hands.svg" alt="Key states of hands-together fingering" loading="eager"><figcaption>Hands-together fingering｜Key states</figcaption></figure><p><a href="p03/#12">Open the interactive practice</a></p></div>
+<div class="learning-book-block"><h3>Interactive practice and diagrams</h3><h4>Hands-together fingering</h4><p>Going up in C major, the right thumb passes under at F and the left hand crosses over at A; the two moves don't happen at the same time.</p><figure class="learning-print"><img src="../assets/learning/print/piano-dual-hands.svg" alt="Key views of hands-together fingering" loading="eager"><figcaption>Hands-together fingering｜Key views</figcaption></figure><p><a href="p03/#12">Open the interactive practice</a></p></div>
 
 <!-- learning-notes-end -->
 
@@ -425,7 +425,7 @@ Goals: define harmony and chords, and stack triads in thirds; tell major, minor,
 - [ ] Fill in the Lesson 5 pre-class survey
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>Interactive practice and diagrams</h3><h4>Nearest-note voice leading</h4><p>Compare root position and nearest-note voicing on C→F→G→C. C→F keeps C4, E4 moves to F4 and G4 to A4.</p><figure class="learning-print"><img src="../assets/learning/print/piano-voice-leading.svg" alt="Key states of nearest-note voice leading" loading="eager"><figcaption>Nearest-note voice leading｜Key states</figcaption></figure><p><a href="p04/#12">Open the interactive practice</a></p></div>
+<div class="learning-book-block"><h3>Interactive practice and diagrams</h3><h4>Nearest-note voice leading</h4><p>Compare root position and nearest-note voicing on C→F→G→C. C→F keeps C4, E4 moves to F4 and G4 to A4.</p><figure class="learning-print"><img src="../assets/learning/print/piano-voice-leading.svg" alt="Key views of nearest-note voice leading" loading="eager"><figcaption>Nearest-note voice leading｜Key views</figcaption></figure><p><a href="p04/#12">Open the interactive practice</a></p></div>
 
 <!-- learning-notes-end -->
 
@@ -600,7 +600,7 @@ Taking a C chord as an example: L5 = C3 (root), L3 = E3 (third), L2 = G3 (fifth)
 <!-- teaching-visuals-end -->
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>Interactive practice and diagrams</h3><h4>Choosing an accompaniment by time signature</h4><p>Compare this course's accompaniments on the same C chord by time signature, rather than choosing a style by BPM alone.</p><figure class="learning-print"><img src="../../assets/learning/print/piano-accompaniment.svg" alt="Key states of choosing an accompaniment by time signature" loading="eager"><figcaption>Choosing an accompaniment by time signature｜Key states</figcaption></figure><p><a href="p06/#11">Open the interactive practice</a></p></div>
+<div class="learning-book-block"><h3>Interactive practice and diagrams</h3><h4>Choosing an accompaniment by time signature</h4><p>Compare this course's accompaniments on the same C chord by time signature, rather than choosing a style by BPM alone.</p><figure class="learning-print"><img src="../../assets/learning/print/piano-accompaniment.svg" alt="Key views of choosing an accompaniment by time signature" loading="eager"><figcaption>Choosing an accompaniment by time signature｜Key views</figcaption></figure><p><a href="p06/#11">Open the interactive practice</a></p></div>
 
 <!-- learning-notes-end -->
 
@@ -706,7 +706,7 @@ Goals: find a song's key from its chord chart and read the sections of a pop son
 
 ### Extended notes: finding the key and reading chord charts
 
-- One key: the whole song stays in the same key. Look at the first and last chords, then at the three chords that appear most.
+- One key: the whole song stays in the same key. Check the first and last chords, then find the three chords that appear most.
 - Common chord chart marks: Intro, Verse, Chorus, repeat signs, first and second endings, D.S., D.C., Coda, N.C.
 
 ### Extended notes: intros and outros
@@ -924,7 +924,7 @@ Goals: play a slow rock accompaniment with a 12/8 triplet groove; play the oom-p
 | --- | --- | --- | --- |
 | Slow Rock | 12/8 | L5 L2 L1　R1 L1 L2 | Three notes per beat, with a swing |
 | March | 2/4 | Root, chord, fifth, chord | Oom-pah, light and lively |
-| Bossa Nova | 4/4 | Bass on beats one and three, syncopated chords | From Brazil; more in the intermediate course |
+| Bossa Nova | 4/4 | Bass on beats one and three, syncopated chords | From Brazil; in this course we just get to know its sound |
 
 The original materials' rhythm styles also include rumba, cha-cha, tango, disco, boogie-woogie and classical styles; pop piano accompaniment mostly comes from traditional dances around the world.
 

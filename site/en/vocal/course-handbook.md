@@ -1,6 +1,6 @@
 # Pixel Studio Vocal Lab｜Pop singing handbook and lesson plans for six lessons
 
-Oct 5, 2026 · @Leo Lee
+Instructor: Pixel Studio, Leo Lee
 
 ## Overview
 
@@ -52,7 +52,7 @@ The website slides include at least one activity every three slides, so every fe
 | Students' phones | Students | Scan the QR code on slide 2 to open the same slides: pitch challenge, exhale test, recording, lyric breath marks, exit ticket, homework checklist, seven-day log |
 | Whole class | Teacher and students together | Predict, observe, explain; finger votes (everyone holds up 1–4 at once); demonstrate and follow along; pre-test and post-test comparison |
 
-**Data and privacy**: the website uses a Google Sheet as its back end. The first time students send data, they fill in their name, department and course code; after that, surveys, answers, exit tickets, practice logs and recordings are all sent with their name to the teacher's sheet, and recordings are saved to the teacher's Google Drive. The course code is announced by the teacher in class and blocks submissions from outside the class; only the teacher can open the sheet and recording folder. The class list and the votes and scores on the projector are stored on the teacher's computer and can be saved to the back end with "Save to back end" when needed.
+**Data and privacy**: the website uses a Google Sheet as its back end. Students first sign in with a Google account, then fill in their name, school department or company, and course code; after that, surveys, answers, exit tickets, practice logs and recordings are all sent with their name to the teacher's sheet, and recordings are saved to the teacher's Google Drive. The course code is announced by the teacher in class and blocks submissions from outside the class; only the teacher can open the sheet and recording folder. The class list and the votes and scores on the projector are stored on the teacher's computer and can be saved to the back end with "Save to back end" when needed.
 
 **Equipment needs**: the microphone features (pitch challenge, exhale test, recording) need the site opened over https, and the browser asks for microphone permission the first time. If the classroom can't use microphones, the exhale test can use the built-in stopwatch instead.
 
@@ -61,7 +61,7 @@ The website slides include at least one activity every three slides, so every fe
 <!-- learning-notes-start -->
 ### Skill route and practice logs
 
-[Open the course skill route](index.html#lessons): each lesson card shows suggested prerequisites and this device's homework ticks, and you can expand the full course route. The website's practice chart uses the original seven-day table, leaves missing values blank, and shows seconds, counts and minutes separately. The PDF keeps this table as a paper record with no sample scores filled in.
+[Open the course map](index.html#lessons) to see each lesson's suggested preparation and homework, tick off what you've finished and expand the route overview. The website's practice chart uses the original seven-day table, leaves missing values blank, and shows seconds, counts and minutes separately. The PDF keeps this table as a paper record with no sample scores filled in.
 
 <!-- learning-notes-end -->
 
@@ -88,7 +88,7 @@ Lesson 1 builds a shared language: six sets of "three elements" explain how soun
 | 00:00–00:20 | Open | Teacher introduction and course map. Warm-up poll: students take turns naming a singer and song they like; the teacher types them in live and plays the song with the most votes on an instrument. Icebreaker "chorus relay": everyone sings one line of the chorus of their favourite song. The teacher then sings the same line in three tones (breathy, nasal, full resonance) and asks students to think about why the same person singing the same line can sound so different. | Guitar |
 | 00:20–00:55 | Build | Explain the six sets of three elements (see the notes below). Guitar experiment: pluck the open strings from the sixth to the first → do it again, stopping each string with the right hand straight after plucking → press all strings at the 12th fret with the left index finger and pluck again → repeat experiment 1 facing a wall from far to near, relating it to "vibration, resonance, room". Students hum the same note in the middle of the room and in a corner and write down the difference. Listening: the teacher outlines the style of Bruno Mars's "I Just Might", demonstrates how to listen for pitch, tone, tempo and rhythm, and students then practise with Crowd Lu's〈太陽與地球〉 | Guitar, projector |
 | 00:55–01:05 | Break | Drink warm water |  |
-| 01:05–01:40 | Turn | Song form detectives: play PiA Chiu's《太陽》; when students hear a section change, they raise a hand and call out the section name. Then in groups of three, they break down the form of a song chosen by a group member, draw a form map and mark the section with the song's highest note | Speakers, A4 paper |
+| 01:05–01:40 | Turn | Song form detectives: play PiA Chiu's 《太陽》; when students hear a section change, they raise a hand and call out the section name. Then in groups of three, they break down the form of a song chosen by a group member, draw a form map and mark the section with the song's highest note | Speakers, A4 paper |
 | 01:40–02:00 | Close | Each group takes one minute to share its form map. Every student sings 30 seconds of their chosen song's chorus unaccompanied and records a "Recording Zero" on their phone. Teacher's summary: sound has principles, songs have structure, progress has a record | Phone |
 
 ### Extended notes: six sets of three elements
@@ -154,7 +154,7 @@ Most pop songs are built on the same formula: intro → verse → pre-chorus →
 | Tag | Repeats or extends the last line | You can change the rhythm or slow down to let it linger |
 | Outro / Ending | Wraps up the song | Close the sound cleanly and let the last note fade |
 
-**Example: PiA Chiu《太陽》** (Lesson 2 practice song): intro → verse ▲ "你總感到落寞沮喪" → chorus ★ "我只想做你的太陽" → after the interlude, back to ▲ → ★ → bridge "也許有一天你不再記得我" → back to ★ → outro. The bridge comes in on an F chord, against the verse and chorus that start on C. That contrast is the clearest signal of a "turn".
+**Example: PiA Chiu 《太陽》** (Lesson 2 practice song): intro → verse ▲ "你總感到落寞沮喪" → chorus ★ "我只想做你的太陽" → after the interlude, back to ▲ → ★ → bridge "也許有一天你不再記得我" → back to ★ → outro. The bridge comes in on an F chord, against the verse and chorus that start on C. That contrast is the clearest signal of a "turn".
 
 ### Class activities (website slides)
 
@@ -177,7 +177,7 @@ Most pop songs are built on the same formula: intro → verse → pre-chorus →
 | 16 Break | Ten-minute countdown | Pacing | The projector shows a countdown |
 | 17 The song formula | Ordering game | Gamification | Tap two of the eight section cards to swap them; once they're in the order they first appear, press "Check" |
 | 18 The role of each section | Flip cards | Retrieval practice | Guess each section's role first, then flip the card to see the singing strategy |
-| 19 Song form detectives | Team scoreboard | Team quiz | Play《太陽》; when the section changes, the first group to call it correctly gets 1 point |
+| 19 Song form detectives | Team scoreboard | Team quiz | Play 《太陽》; when the section changes, the first group to call it correctly gets 1 point |
 | 20 Group task | Timed stages | Cooperative learning | 8 minutes to break it down, 5 to mark it, 2 to prepare; three people split the roles of operating, note-taking and presenting |
 | 21 Recording Zero | Phone recording | Pre-test, self-assessment | Students record 30 seconds on their own phones and press "Download file" to keep it, or "Upload to teacher" to save it to the course's cloud folder, for comparison in Lesson 6 |
 | 23 Exit ticket | 3-2-1 exit ticket | Exit ticket | Fill it in on the phone and press "Send to teacher"; next week starts from everyone's questions |
@@ -187,7 +187,7 @@ Most pop songs are built on the same formula: intro → verse → pre-chorus →
 ### Practice after class
 
 - [ ] Keep your "Recording Zero"; you'll need this file in Lesson 6
-- [ ] Listen to three songs a day and write out their section order with the song formula; one of them must be Crowd Lu's《刻在我心底的名字》
+- [ ] Listen to three songs a day and write out their section order with the song formula; one of them must be Crowd Lu's 《刻在我心底的名字》
 - [ ] Listen closely to your favourite singer and note how many breaths you can hear in the chorus, and which words they come after
 - [ ] Hum the same line in the bathroom, your room and outdoors, and write down how the three spaces sound different
 - [ ] Watch your own voice habits for a week: how many late nights, how many iced drinks, how many times you talked loudly or screamed
@@ -211,10 +211,10 @@ Lesson 2 aims to teach every student chest-and-belly breathing and to genuinely 
 | Time | Section | Activities | Equipment |
 | --- | --- | --- | --- |
 | 00:00–00:20 | Open | Two students share their form homework. The whole class breathes out on /s/ while the teacher times them and writes everyone's seconds on the board, prompting the question: with the same lungs, why do some last 10 seconds and others 30? | Metronome, stopwatch |
-| 00:20–00:55 | Build | Explain how the voice works and why listening matters; compare good and bad posture, including sitting to play and sing; go through the eight points of vocal care. The teacher leads the five warm-up steps and four basic breathing patterns, with students' hands on their hips to feel the belly and sides of the waist expand | Projector, mirror |
+| 00:20–00:55 | Build | Explain how the voice works and why listening matters; compare correct and incorrect posture, including sitting; go over the eight points of vocal care. The teacher leads the five warm-up steps and four basic breaths, with hands on hips to feel the belly and side waist expand | Projector, mirror |
 | 00:55–01:05 | Break | Drink warm water |  |
 | 01:05–01:40 | Turn | "Breathing games" team contest: belly against the wall, paper ping-pong, tissue on the wall, blowing paper. Then three muscle workouts on /s/, /hei/ and /hu/ with the metronome at 80 BPM, four bars each | Tissues, A4 paper, metronome |
-| 01:40–02:00 | Close | Chorus of《刻在我心底的名字》: the class marks breath points ∨ in the lyrics, then sings together and in groups. Finally measure /s/ again and compare with the start of class | Guitar, song sheet |
+| 01:40–02:00 | Close | Chorus of 《刻在我心底的名字》: the class marks breath points ∨ in the lyrics, then sings together and in groups. Finally measure /s/ again and compare with the start of class | Guitar, song sheet |
 
 ### Extended notes: the path of the voice
 
@@ -238,7 +238,7 @@ Singing and speaking both come from the voice. The difference is that singing go
 | Head and neck | Chin level with the floor, eyes looking straight ahead | Tipping the head back for high notes, looking down at the music |
 | Face | Jaw relaxed, mouth open inside | Clenched teeth, frowning |
 
-**Sitting to play and sing**: sit on the front third of the chair with your pelvis settled, the guitar close to your body and the music stand at eye level. Guitarists tend to look down at the fretboard, and once the neck bends, the throat gets squeezed too. Practise the chords until you don't need to look at your hands before you start playing and singing.
+**Optional for guitarists: sitting to sing with a guitar**: sit on the front third of the chair with your pelvis settled, the guitar close to your body and the music stand at eye level. Guitarists tend to look down at the fretboard, and once the neck bends, the throat gets squeezed too. When you check the fretboard, try to move only your eyes and keep your neck relaxed.
 
 ### Extended notes: eight points of vocal care
 
@@ -296,8 +296,8 @@ There are two kinds of breath point: a **full breath** between phrases, with tim
 
 | Song | Original / male / female key | Tempo | Breath points shown (∨) |
 | --- | --- | --- | --- |
-| Crowd Lu《刻在我心底的名字》 | B♭／A／E | 68 | 刻在我心底的名字 ∨ 忘記了時間這回事 ∨ 於是謊言說了一次 ∨ 就一輩子 |
-| PiA Chiu《太陽》 | E♭／E♭／A♭ | 64 | 我只想做你的太陽 ∨ 你的太陽 ∨ 在你的心裡呀 ∨ 在你的心底呀 |
+| Crowd Lu 《刻在我心底的名字》 | B♭／A／E | 68 | 刻在我心底的名字 ∨ 忘記了時間這回事 ∨ 於是謊言說了一次 ∨ 就一輩子 |
+| PiA Chiu 《太陽》 | E♭／E♭／A♭ | 64 | 我只想做你的太陽 ∨ 你的太陽 ∨ 在你的心裡呀 ∨ 在你的心底呀 |
 
 Both are slow songs under 70 BPM with long phrases and many long notes, ideal for practising "quick in, slow out". For guitar strumming and fingerpicking, see the original sheet music.
 
@@ -343,8 +343,8 @@ Both are slow songs under 70 BPM with long phrases and many long notes, ideal fo
 | Day 7 |  |  |  |
 
 - [ ] Complete the seven-day breathing log
-- [ ] Mark every breath point in the lyrics of《太陽》, telling full breaths from catch breaths
-- [ ] Record the chorus of《太陽》once and listen for weak line endings
+- [ ] Mark every breath point in the lyrics of 《太陽》, telling full breaths from catch breaths
+- [ ] Record the chorus of 《太陽》 once and listen for weak line endings
 - [ ] Drink over 1,500 ml of water a day and log your hours of sleep
 
 <!-- teaching-visuals-start -->
@@ -391,7 +391,7 @@ Both are slow songs under 70 BPM with long phrases and many long notes, ideal fo
 <!-- teaching-visuals-end -->
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>Interactive practice and diagrams</h3><h4>Breathing on the beat</h4><p>One in-out breath per beat; quick in, slow out means a short inhale and a long exhale. The teacher can adjust the tempo.</p><figure class="learning-print"><img src="../assets/learning/print/vocal-breathing.svg" alt="Key states of breathing on the beat" loading="eager"><figcaption>Breathing on the beat｜Key states</figcaption></figure><p><a href="slides/lesson-02/#12">Open the interactive practice</a></p></div>
+<div class="learning-book-block"><h3>Interactive practice and diagrams</h3><h4>Breathing on the beat</h4><p>One in-out breath per beat; quick in, slow out means a short inhale and a long exhale. The teacher can adjust the tempo.</p><figure class="learning-print"><img src="../assets/learning/print/vocal-breathing.svg" alt="Key views of breathing on the beat" loading="eager"><figcaption>Breathing on the beat｜Key views</figcaption></figure><p><a href="slides/lesson-02/#12">Open the interactive practice</a></p></div>
 
 <!-- learning-notes-end -->
 
@@ -415,8 +415,8 @@ Lesson 3 helps students find mouth, head and chest resonance separately, then pr
 | 00:00–00:20 | Open | Quick 5-minute review of the breathing routine. "Covered-ears test": cover your ears lightly and hum a line to hear the sound inside your head. The teacher sings the same line with three resonances and students guess which is which | Guitar |
 | 00:20–00:55 | Build | Explain where the three spaces are using cross-sections of the mouth and throat; lead the four feeling exercises one by one: yawning, humming, a palm on the chest, the nose-pinch test | Projector, keyboard |
 | 00:55–01:05 | Break | Drink warm water |  |
-| 01:05–01:40 | Turn | Siren slides: slide from the lowest note to the highest and find where the sound "breaks".《浪流連》with three roles: the chest group takes the verse, the mouth group the chorus, the head group the long notes at line ends, swapping roles after each round | Guitar, song sheet |
-| 01:40–02:00 | Close | The whole class plays and sings《浪子回頭》. Each student records the same line with each of the three resonances, and three students' recordings are played on the spot for comparison and feedback | Phones, speakers |
+| 01:05–01:40 | Turn | Siren slides: slide from the lowest note to the highest and find where the sound "breaks". 《浪流連》 with three roles: the chest group takes the verse, the mouth group the chorus, the head group the long notes at line ends, swapping roles after each round | Guitar, song sheet |
+| 01:40–02:00 | Close | The whole class sings 《浪子回頭》 together. Each student records the same line once in each of the three resonances, then three recordings are played back on the spot for comparison and comment | Phones, speakers |
 
 ### Extended notes: what resonance is
 
@@ -446,8 +446,8 @@ Resonance is an advanced topic in singing, and beginners find it hard to tell fo
 
 | Song | Original / male / female key | Tempo | Resonance plan |
 | --- | --- | --- | --- |
-| EggPlantEgg《浪流連》 | C／C／G | 63 | The verse "想你的彼暗" is mainly chest, like talking to someone; the chorus "這個風風雨雨的社會" switches to mouth, every word clear; the ending of "浪流連" adds head resonance to extend it |
-| EggPlantEgg《浪子回頭》 | C／C／G | 66 | The repeated line "菸一支一支一支的點" keeps a grainy texture with mouth resonance; "佇坎坷的路" pushes upward using both chest and mouth; "帶某子逗陣" relaxes at the end with a touch of breathiness |
+| EggPlantEgg 《浪流連》 | C／C／G | 63 | The verse "想你的彼暗" is mainly chest, like talking to someone; the chorus "這個風風雨雨的社會" switches to mouth, every word clear; the ending of "浪流連" adds head resonance to extend it |
+| EggPlantEgg 《浪子回頭》 | C／C／G | 66 | The repeated line "菸一支一支一支的點" keeps a grainy texture with mouth resonance; "佇坎坷的路" pushes upward using both chest and mouth; "帶某子逗陣" relaxes at the end with a touch of breathiness |
 
 Vowels in Taiwanese songs open wider, especially /a/ and /o/, which makes them great for practising the open feeling of mouth resonance.
 
@@ -467,10 +467,10 @@ Vowels in Taiwanese songs open wider, especially /a/ and /o/, which makes them g
 | 12 Siren slides | Pitch curve | Hands-on experiment | Slide from low to high; where the curve breaks is the register break. Press "Mark break" to note which note it is; your range and break point are sent to the teacher |
 | 13 Mixing | Multiple choice | Retrieval practice | Ask "which resonance does the high range use more?" |
 | 14 Break | Ten-minute countdown | Pacing | The projector shows a countdown |
-| 15 Resonance map of《浪流連》 | Video playback | Listen, compare | While listening, mark chest in the verse, mouth in the chorus and head at line ends on the song sheet |
-| 16 Roles in《浪流連》 | Random pick + timed stages | Rotating roles | Draw groups for the chest, mouth and head roles, swapping every 3 minutes |
-| 17 Performing《浪流連》 | Team scoreboard | Peer scoring | Groups vote for the one with "the clearest resonance changes" |
-| 18《浪子回頭》 | Phone recording | Peer feedback | Record the same line with each of the three resonances, listen to each other in pairs and give "two compliments and one suggestion" |
+| 15 Resonance map of 《浪流連》 | Video playback | Listen, compare | While listening, mark chest in the verse, mouth in the chorus and head at line ends on the song sheet |
+| 16 Roles in 《浪流連》 | Random pick + timed stages | Rotating roles | Draw groups for the chest, mouth and head roles, swapping every 3 minutes |
+| 17 Performing 《浪流連》 | Team scoreboard | Peer scoring | Groups vote for the one with "the clearest resonance changes" |
+| 18 《浪子回頭》 | Phone recording | Peer feedback | Record the same line with each of the three resonances, listen to each other in pairs and give "two compliments and one suggestion" |
 | 20 Exit ticket | 3-2-1 exit ticket | Exit ticket | Fill it in on the phone and press "Send to teacher" |
 | 21 Practice after class | Homework checklist | Self-directed tracking | Tap once for each item you finish |
 | 22 Next week | Pre-class survey QR code | Preparing for class | Scan to fill in the Lesson 4 pre-class survey on the website |
@@ -479,7 +479,7 @@ Vowels in Taiwanese songs open wider, especially /a/ and /o/, which makes them g
 
 **18-minute daily routine**: short breathing routine 10 minutes → yawn and sigh 2 minutes → humming five-note scales 2 minutes → siren slides 2 minutes → chest /hei/ 2 minutes.
 
-- [ ] Record the first chorus line of《浪流連》with each of the three resonances and write down how the versions differ
+- [ ] Record the first chorus line of 《浪流連》 with each of the three resonances and write down how the versions differ
 - [ ] Use a keyboard app to find roughly which note your register break falls on: \_\_\_\_
 - [ ] Listen to a song by Jacky Cheung or Eason Chan and note the line with the clearest chest resonance
 - [ ] Listen to a song by A-Mei or Mayday's Ashin and note the line with the clearest head resonance
@@ -531,7 +531,7 @@ Lesson 4 brings breath and resonance down to every single word: scales and stacc
 | 00:20–00:55 | Build | Practise the five vowel shapes in a mirror; explain how diphthongs and nasal finals close. Lead the "basic scale exercise" at 70 BPM, rotating the five vowels through a C major octave | Mirror, keyboard, metronome |
 | 00:55–01:05 | Break | Drink warm water |  |
 | 01:05–01:40 | Turn | "Staccato chord exercise": the metronome speeds up gradually from 70 to 90 BPM. Group "vowel relay": each group takes a vowel and they carry on through all seven chords. Consonant practice: compare flat-tongue and retroflex, aspirated and unaspirated | Metronome, keyboard |
-| 01:40–02:00 | Close | Learn《不是因為天氣晴朗才愛你》in three steps: solfège → /i/ vowel → lyrics, focusing on the \[i\] rhyme. The whole class sings along to the teacher's fingerpicking | Guitar, song sheet |
+| 01:40–02:00 | Close | Learn 《不是因為天氣晴朗才愛你》 in three steps: solfège → /i/ vowel → lyrics, focusing on the \[i\] rhyme. The whole class sings along to the teacher's fingerpicking | Guitar, song sheet |
 
 ### Extended notes: the five basic vowels
 
@@ -565,7 +565,7 @@ Mandarin songs are sung almost entirely on vowels, and long notes mostly land on
 | Chord tones | 1 3 5 | 2 4 6 | 3 5 7 | 4 6 1 | 5 7 2 | 6 1 3 | 7 2 4 |
 | Movement | 13531353 1 | 24642464 2 | 35753575 3 | 46164616 4 | 57275727 5 | 61316131 6 | 72427242 7 |
 
-Staccato is common in fast songs, syncopation and ragtime-style rhythms, so it's a must. Guitarists can play the seven chords as arpeggios themselves and sing while playing, training pitch and sense of harmony together.
+Staccato is common in fast, syncopated and shuffle songs, so it's a must-learn. In practice you can play a broken-chord backing of the seven chords and sing while listening, training pitch and your sense of harmony together.
 
 ### Extended notes: basic consonant sounds
 
@@ -582,7 +582,7 @@ Consonants rarely stand alone; they mostly show up in fast songs or advertising 
 
 ### Extended notes: using it in songs
 
-Bestards《不是因為天氣晴朗才愛你》, tempo 68 BPM; on guitar use G shapes with the capo at the 1st fret.
+Bestards 《不是因為天氣晴朗才愛你》, tempo 68 BPM; on guitar use G shapes with the capo at the 1st fret.
 
 **Learning it in three steps**:
 
@@ -610,7 +610,7 @@ Bestards《不是因為天氣晴朗才愛你》, tempo 68 BPM; on guitar use G s
 | 14 Consonants | Flip cards | Retrieval practice | Hold your palm in front of your mouth and say flat-tongue, retroflex, aspirated and unaspirated sounds, then flip the card to see the tips |
 | 15 Aspirated sounds and popping | Multiple choice | Key question | Ask "what's the most common problem when singing aspirated sounds into a microphone?" |
 | 16 Learning in three steps | Timed stages + linked video + melody detection | Demonstrate, follow along | Solfège, /i/ vowel and lyrics, 3 minutes each. Pressing start also plays the video, and the solfège stage switches on melody detection automatically, drawing the video's melody as staff and numbered notation in real time (tab audio on a computer, the microphone on a phone) |
-| 17 Handling the rhymes | Lyric marks | Mark it | Mark the \[i\] rhymes (●) and back nasals (ŋ) on the lyrics of《不是因為天氣晴朗才愛你》, then compare with the teacher's version |
+| 17 Handling the rhymes | Lyric marks | Mark it | Mark the \[i\] rhymes (●) and back nasals (ŋ) on the lyrics of 《不是因為天氣晴朗才愛你》, then compare with the teacher's version |
 | 18 Singing together | Phone recording | Self-assessment | Record the step-three version and compare it with the step-two /i/ version |
 | 20 Exit ticket | 3-2-1 exit ticket | Exit ticket | Fill it in on the phone and press "Send to teacher" |
 | 21 Practice after class | Homework checklist | Self-directed tracking | Tap once for each item you finish |
@@ -623,8 +623,8 @@ Bestards《不是因為天氣晴朗才愛你》, tempo 68 BPM; on guitar use G s
 - [ ] Record your five-vowel scale practice and check your mouth shapes in a mirror
 - [ ] Start staccato chords at 70 BPM; once steady, add 5 BPM a day and log your top speed: \_\_\_\_ BPM
 - [ ] Say the tongue twister once a day and record it to check flat-tongue vs. retroflex
-- [ ] Practise the chorus of《不是因為天氣晴朗才愛你》in three steps and record the step-three version
-- [ ] Preview: listen to Eason Chan's《愛情轉移》and sing "把一個人的溫暖，轉移到另一個人的胸膛" once in your own way
+- [ ] Practise the chorus of 《不是因為天氣晴朗才愛你》 in three steps and record the step-three version
+- [ ] Preview: listen to Eason Chan's 《愛情轉移》 and sing "把一個人的溫暖，轉移到另一個人的胸膛" once in your own way
 
 <!-- teaching-visuals-start -->
 
@@ -662,7 +662,7 @@ Bestards《不是因為天氣晴朗才愛你》, tempo 68 BPM; on guitar use G s
 <!-- teaching-visuals-end -->
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>Interactive practice and diagrams</h3><h4>Ending a long note</h4><p>Hold the vowel first, then close clearly: 愛 moves from a to i, 心 closes on n with the tongue tip, 星 closes on ng with the back of the tongue. When to close can follow the demo.</p><figure class="learning-print"><img src="../assets/learning/print/vocal-word-ending.svg" alt="Key states of ending a long note" loading="eager"><figcaption>Ending a long note｜Key states</figcaption></figure><p><a href="slides/lesson-04/#8">Open the interactive practice</a></p></div>
+<div class="learning-book-block"><h3>Interactive practice and diagrams</h3><h4>Ending a long note</h4><p>Hold the vowel first, then close clearly: 愛 moves from a to i, 心 closes on n with the tongue tip, 星 closes on ng with the back of the tongue. When to close can follow the demo.</p><figure class="learning-print"><img src="../assets/learning/print/vocal-word-ending.svg" alt="Key views of ending a long note" loading="eager"><figcaption>Ending a long note｜Key views</figcaption></figure><p><a href="slides/lesson-04/#8">Open the interactive practice</a></p></div>
 
 <!-- learning-notes-end -->
 
@@ -684,11 +684,11 @@ Lesson 5 turns the three elements of breath, resonance and phonation into expres
 
 | Time | Section | Activities | Equipment |
 | --- | --- | --- | --- |
-| 00:00–00:20 | Open | Two students show the results of last week's three-step learning. Students sing "把一個人的溫暖，轉移到另一個人的胸膛，讓上次犯的錯反省出夢想" from《愛情轉移》their own way, then listen to the original and compare phrasing and breaths | Speakers |
-| 00:20–00:55 | Build | Explain the table of how to use breath, resonance and phonation. The teacher sings the same line from《後來的我們》with long notes, short notes and staccato, and students note the difference in feeling | Guitar, projector |
+| 00:00–00:20 | Open | Two students show the results of last week's three-step learning. Students sing "把一個人的溫暖，轉移到另一個人的胸膛，讓上次犯的錯反省出夢想" from 《愛情轉移》 their own way, then listen to the original and compare phrasing and breaths | Speakers |
+| 00:20–00:55 | Build | Explain the table of how to use breath, resonance and phonation. The teacher sings the same line from 《後來的我們》 with long notes, short notes and staccato, and students note the difference in feeling | Guitar, projector |
 | 00:55–01:05 | Break | Drink warm water |  |
 | 01:05–01:40 | Turn | Imitation workshop: the four groups each draw a type of singer (chest, head, mouth, pressed throat), imitate one line in three steps (listen, imitate, transform) and present it, then sing the same line again in their own voice | Speakers, phones |
-| 01:40–02:00 | Close | The whole class sings the chorus of《後來的我們》; groups split by male and female keys for《人質》and《演員》. Each student names one "technique I want to keep", and the teacher explains the final performance and the range-measuring homework | Guitar, song sheet |
+| 01:40–02:00 | Close | The whole class sings the chorus of 《後來的我們》; groups split by male and female keys for 《人質》 and 《演員》. Each student names one "technique I want to keep", and the teacher explains the final performance and the range-measuring homework | Guitar, song sheet |
 
 ### Extended notes: using breath, resonance and phonation
 
@@ -750,9 +750,9 @@ Being moving comes from the influence a singer releases once they put their feel
 
 | Song | Original / male / female key | Tempo | Focus |
 | --- | --- | --- | --- |
-| Mayday《後來的我們》 | C／C／G | 79 | A complete form including the pre-chorus "而那些昨日". The verse tells the story with mouth resonance, the pre-chorus builds energy, and the chorus "只期待後來的你能快樂" opens up with long notes and mixed resonance |
-| A-Mei《人質》 | A♭／C／G | 75 | Study A-Mei's head-resonance power; hold back in the verse and release in the chorus, building from mp to f |
-| Joker Xue《演員》 | B／A／E | 92 | The verse "簡單點，說話的方式簡單點" uses short, conversational notes; the chorus switches to long notes, contrasting the drop in emotion |
+| Mayday 《後來的我們》 | C／C／G | 79 | A complete form including the pre-chorus "而那些昨日". The verse tells the story with mouth resonance, the pre-chorus builds energy, and the chorus "只期待後來的你能快樂" opens up with long notes and mixed resonance |
+| A-Mei 《人質》 | A♭／C／G | 75 | Study A-Mei's head-resonance power; hold back in the verse and release in the chorus, building from mp to f |
+| Joker Xue 《演員》 | B／A／E | 92 | The verse "簡單點，說話的方式簡單點" uses short, conversational notes; the chorus switches to long notes, contrasting the drop in emotion |
 
 ### Class activities (website slides)
 
@@ -762,7 +762,7 @@ Being moving comes from the influence a singer releases once they put their feel
 | --- | --- | --- | --- |
 | 2 Today's route | Phone sync QR code | Lower the barrier to taking part | Students scan to sync with the slides |
 | 3 Three-step results | Random pick | Random pick | Two classmates are picked to show last week's three-step song |
-| 4《愛情轉移》 | Lyric breath marks | Mark it, compare | Mark your own breath points and sing once; after listening to the original, compare with the teacher's version marked from the original |
+| 4 《愛情轉移》 | Lyric breath marks | Mark it, compare | Mark your own breath points and sing once; after listening to the original, compare with the teacher's version marked from the original |
 | 5 Using resonance | Flip cards | Retrieval practice | The front shows the resonance area; the back shows the expression and which song sections it suits |
 | 6 Using phonation | Listen and tell + show of hands | Key question | The teacher sings the same line with long notes, short notes and staccato; the class holds up 1–3, and the reveal is checked against the tempo and style table |
 | 7 Tempo and phonation | Metronome | Demonstrate, follow along | Switch between 70, 100 and 140 BPM with one tap; sing the same line at three speeds and feel how the way of singing changes with it |
@@ -773,8 +773,8 @@ Being moving comes from the influence a singer releases once they put their feel
 | 13 Workshop reference | Video playback | Listen, compare | Mark five things: breaths, resonance, runs, breathiness, line endings |
 | 14 Group showcase | Team scoreboard | Peer scoring | The class votes for one group as "best imitation" and one as "most their own" |
 | 15 Imitation and your own version | Comparing two recordings | Self-assessment | Record the same line once each way and write down one technique you want to keep |
-| 16 Emotion map | Dynamics vote table | Class consensus | For each section of《後來的我們》, vote on p, mp, mf or f, then sing it together following the class's choices |
-| 17《人質》《演員》 | Random pick | Sharing | Sing in groups by male and female keys; draw lots for classmates to name one "technique I want to keep" |
+| 16 Emotion map | Dynamics vote table | Class consensus | For each section of 《後來的我們》, vote on p, mp, mf or f, then sing it together following the class's choices |
+| 17 《人質》《演員》 | Random pick | Sharing | Sing in groups by male and female keys; draw lots for classmates to name one "technique I want to keep" |
 | 19 Exit ticket | 3-2-1 exit ticket | Exit ticket | Fill it in on the phone and press "Send to teacher" |
 | 20 Imitation notes | Notes form | Self-directed log | Fill in the six fields on your phone and press "Send to teacher" |
 | 21 Practice after class | Homework checklist | Self-directed tracking | Tap once for each item you finish |
@@ -794,7 +794,7 @@ Being moving comes from the influence a singer releases once they put their feel
 | One technique I want to keep |  |
 
 - [ ] Complete the imitation notes, and record one line each as an imitation and your own version
-- [ ] Draw an emotion map on the lyrics of《人質》or《演員》and record the chorus
+- [ ] Draw an emotion map on the lyrics of 《人質》 or 《演員》 and record the chorus
 - [ ] Measure your range: with a keyboard app, sing note by note down and up from middle C, and note the lowest and highest notes you can "sing comfortably" and "just about reach", for use in Lesson 6
 - [ ] Choose your song for the final performance; you can pick from the ten Lesson 6 case studies
 
@@ -853,11 +853,11 @@ There are only two rules for setting your own key: the song's range should be no
 
 For example: the song is in C with a highest note of A4, and your highest usable note is F4. That's minus 4 semitones, so lower C by 4 semitones and you get A♭. On guitar you can use G shapes with the capo at the 1st fret.
 
-Song sheets in earlier lessons show "male key, female key", for example《後來的我們》male key C, female key G. These are only average suggestions for male and female voices; a key calculated from the range you measured yourself is the most accurate.
+Song sheets in earlier lessons show "male key, female key", for example 《後來的我們》 male key C, female key G. These are only average suggestions for male and female voices; a key calculated from the range you measured yourself is the most accurate.
 
 ### Extended notes: ten case studies
 
-In the table below, "Highest note H" is in numbered notation, and red and blue text in the lyric sheets marks where the highest note appears. Students fill in the "Range", "Your key" and "Rhyme" columns;《泡沫》is the example.
+In the table below, "Highest note H" is in numbered notation, and red and blue text in the lyric sheets marks where the highest note appears. Students fill in the "Range", "Your key" and "Rhyme" columns; 《泡沫》 is the example.
 
 | Song | Time signature | Lyrics and music | Highest note H | Range  | Your key | Rhyme |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -892,6 +892,7 @@ In the table below, "Highest note H" is in numbered notation, and red and blue t
 | 12 Transposing on guitar | Team scoreboard | Cooperative learning | Groups play the given key with a capo; the first to get it right gets 1 point |
 | 13 Break | Ten-minute countdown | Pacing | Performers get ready |
 | 14 Assigning case-study songs | Random pick + timed stages | Cooperative learning | Draw lots for songs; analyse for 10 minutes, present for 5 |
+| 15 Demo: 《泡沫》 | Listening, demo | Demo | The teacher demonstrates how to analyze the time signature, highest note, range and rhymes of 《泡沫》 |
 | 16 Top ten chart | Show-of-hands vote | Your choice | Everyone picks the one that suits them best, and the vote shows how the class is spread |
 | 17 Final performance order | Random pick | Random pick | Draw lots for the order |
 | 18 Final performance | Looping timer | Peer feedback | Prepare 20 seconds, sing 1 minute, feedback 40 seconds, then on to the next person automatically; the audience gives "two compliments and one suggestion" |

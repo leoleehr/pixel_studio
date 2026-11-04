@@ -75,7 +75,7 @@ window.PixelInteract.define('range', function (K) {
     function shape(k) { // 常用開放和弦指型 + 移調夾
       var best = null;
       [['C', 0], ['G', 7], ['D', 2], ['A', 9], ['E', 4]].forEach(function (s) { var capo = ((k - s[1]) % 12 + 12) % 12; if (capo <= 7 && (!best || capo < best.capo)) best = { name: s[0], capo: capo }; });
-      return best.capo ? best.name + ' shapes, Capo ' + best.capo : best.name + ' shapes, no capo';
+      return best.capo ? best.name + ' shapes, capo ' + best.capo : best.name + ' shapes, no capo';
     }
     function calc() {
       var k = +t.querySelector('.k').value, top = +t.querySelector('.top').value, mine = +t.querySelector('.me').value, n = mine - top;

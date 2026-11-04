@@ -59,6 +59,6 @@ footer .footer-logo{height:120px;margin-left:-20px}
 @media(max-width:599px){.topbar .wrap{padding-inline:24px}}
 /* 英文品牌標題較長，字距收緊；手機講義頂列還有目錄鈕，標題改由頁面大標呈現，避免按鈕被推出畫面 */
 html[lang^=en] .topbar .brand-caption{letter-spacing:.04em;line-height:1.45}
-@media(max-width:480px){.topbar .wrap.toc-docked .brand-caption{display:none}}
+@media(max-width:480px){.topbar .brand-caption{display:none}} /* 窄手機頂欄要放標誌、語言與登入鈕 */
 /* 深藍編號底色改用白字，對比 5.9:1 */
 .sv-item[style*="2f5fc4"] .no{color:#fff}

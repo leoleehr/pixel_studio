@@ -401,6 +401,8 @@ html[data-theme="light"][data-kit="site"] .matrix .row{border-bottom:1px solid v
 html[data-theme="light"][data-kit="site"] .matrix .row:last-child{border-bottom:0}
 html[data-theme="light"][data-kit="site"] .sv-err{color:color-mix(in srgb,var(--red) 80%,#000);color:oklch(from var(--red) min(l, 0.5) c h)}
 html[data-theme="light"][data-kit="site"] .sv-card.bad{border-color:rgba(236,74,54,0.6)}
+html[data-theme="light"][data-kit="site"] .sv-req{color:var(--muted)}
+html[data-theme="light"][data-kit="site"] .sv-summary{color:color-mix(in srgb,var(--red) 80%,#000);color:oklch(from var(--red) min(l, 0.5) c h)}
 html[data-theme="light"][data-kit="site"] .sv-submit p{color:var(--muted)}
 html[data-theme="light"][data-kit="site"] .sv-done .ok{background:rgba(108,187,75,0.188);color:color-mix(in srgb,var(--green) 61%,#000);color:oklch(from var(--green) min(l, 0.5) c h)}
 html[data-theme="light"][data-kit="site"] .sv-done p{color:var(--muted)}
@@ -432,6 +434,8 @@ html[data-theme="light"][data-kit="site"] .matrix .row{border-bottom:1px solid v
 html[data-theme="light"][data-kit="site"] .matrix .row:last-child{border-bottom:0}
 html[data-theme="light"][data-kit="site"] .sv-err{color:color-mix(in srgb,var(--red) 80%,#000);color:oklch(from var(--red) min(l, 0.5) c h)}
 html[data-theme="light"][data-kit="site"] .sv-card.bad{border-color:rgba(236,74,54,0.6)}
+html[data-theme="light"][data-kit="site"] .sv-req{color:var(--muted)}
+html[data-theme="light"][data-kit="site"] .sv-summary{color:color-mix(in srgb,var(--red) 80%,#000);color:oklch(from var(--red) min(l, 0.5) c h)}
 html[data-theme="light"][data-kit="site"] .sv-submit p{color:var(--muted)}
 html[data-theme="light"][data-kit="site"] .sv-done .ok{background:rgba(108,187,75,0.188);color:color-mix(in srgb,var(--green) 61%,#000);color:oklch(from var(--green) min(l, 0.5) c h)}
 html[data-theme="light"][data-kit="site"] .sv-done p{color:var(--muted)}
@@ -831,6 +835,7 @@ html[data-theme="light"][data-kit="deck"] .bar-orange{background:#8c6436}
 html[data-theme="light"][data-kit="deck"] .bar-pink{background:#9c5a70}
 html[data-theme="light"][data-kit="deck"] .bar-purple{background:#7b62a0}
 html[data-theme="light"][data-kit="deck"] .slide-chapter{color:var(--faint)}
+@media (max-width:900px),(orientation:portrait) and (max-width:1100px){html[data-theme="light"][data-kit="deck"] .slide.cover{background:none!important}}
 html[data-theme="light"][data-kit="deck"] .ca-glow{background:radial-gradient(circle,rgba(110,90,220,0.35),rgba(69,179,230,0.15) 45%,transparent 70%);filter:blur(30px)}
 html[data-theme="light"][data-kit="deck"] .slide .c-red{color:#cf2611}
 
@@ -975,9 +980,9 @@ html[data-theme="light"][data-lab="guitar"] .era p{color:var(--muted)}
 html[data-theme="light"][data-lab="guitar"] .era .card.hl{background:rgba(var(--accent-rgb),.1);border-color:rgba(var(--accent-rgb),.5)}
 html[data-theme="light"][data-lab="guitar"] .family .en{color:var(--muted)}
 html[data-theme="light"][data-lab="guitar"] .family p{color:var(--muted)}
-html[data-theme="light"][data-lab="guitar"] .wood-sw{border:1px solid var(--line)}
+html[data-theme="light"][data-lab="guitar"] .wood-sw{border:1px solid var(--line);background:var(--card)}
 html[data-theme="light"][data-lab="guitar"] .wood-sw i{background:var(--w);background-image:repeating-linear-gradient(100deg,rgba(241,241,241,0.08) 0 2px,transparent 2px 9px),repeating-linear-gradient(97deg,rgba(255,255,255,.06) 0 1px,transparent 1px 14px)}
-html[data-theme="light"][data-lab="guitar"] .wood-sw div{background:var(--card)}
+html[data-theme="light"][data-lab="guitar"] .wood-sw>div{background:var(--card)}
 html[data-theme="light"][data-lab="guitar"] .wood-sw span{color:var(--muted)}
 html[data-theme="light"][data-lab="guitar"] .wood-sw p{color:var(--muted)}
 html[data-theme="light"][data-lab="guitar"] .wood-sw .wbar{background:var(--card-2,#ffffff)}
@@ -1486,3 +1491,5 @@ html[data-theme="light"][data-kit] .sv-item[style*="2f5fc4"] .no{color:#fff}
 html[data-theme="light"][data-kit="deck"] .form-row>div:not(.f-intro,.f-chorus,.f-inter,.f-outro,.f-bridge){color:#fff}
 /* 創作編曲器：未開啟的軌道半透明，說明字改深一階 */
 html[data-theme="light"][data-lab="songwriting"] .ar-tr small{color:#3d4247}
+/* 淺色頂列用純白：CI 指定白底彩色橫式標誌（horizontal-light.svg 自帶白底），米白底會看出白框 */
+html[data-theme="light"][data-kit] .topbar{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
