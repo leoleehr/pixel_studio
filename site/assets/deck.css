@@ -32,7 +32,7 @@ a{color:var(--amber)}
 .slide.active{opacity:1;pointer-events:auto;transform:none}
 .slide::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--rainbow);opacity:.9}
 .slide-brand{position:absolute;right:40px;bottom:26px;display:flex;align-items:center;gap:12px;font-size:13px;color:var(--faint);letter-spacing:.08em}
-.slide-brand .pixel-word{height:14px;width:auto;opacity:.85}
+.slide-brand .pixel-word{height:14px;width:auto}
 .slide-meta{display:none}
 
 /* ---- type ---- */

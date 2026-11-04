@@ -22,13 +22,39 @@ body::before{display:none}
 .bar-qi{background:#52699f}.bar-cheng{background:#cdc57a;color:#1f1d0c!important}.bar-rest{background:#3b3b43}.bar-zhuan{background:#b05a4d}.bar-he{background:#4f7649}
 .bar-teal{background:#45748a}.bar-orange{background:#8c6436}.bar-pink{background:#9c5a70}.bar-purple{background:#7b62a0}
 
-/* 投影片頁尾：左下章節、右下刷淡 Logo */
+/* 投影片頁尾：左下章節、右下 Logo（CI 禁止另加透明度） */
 .slide-chapter{position:absolute;left:40px;bottom:26px;font-size:13px;color:var(--faint);letter-spacing:.08em;pointer-events:none}
 .slide-brand{pointer-events:none}
-.slide-brand img{height:15px;width:auto;opacity:.42;display:block}
 @media (max-width:900px),(orientation:portrait) and (max-width:1100px){.slide-chapter{display:none}}
 @media print{.slide-chapter,.slide-brand{display:none}}
-.slide-brand img{height:34px;opacity:.38;margin:-10px -14px -10px 0} /* 白色單色橫式標誌（SVG 含安全邊距） */
+.slide-brand img{height:34px;width:auto;display:block;margin:-10px -14px -10px 0} /* 白色單色橫式標誌（SVG 含安全邊距） */
+
+/* 手機閱讀模式：封面不留放射漸層，避免在投影片邊界出現硬邊 */
+@media (max-width:900px),(orientation:portrait) and (max-width:1100px){.slide.cover{background:none!important}}
+/* 課堂常用的勾選框加大，投影機與觸控都好操作 */
+.slide input[type=checkbox]{width:20px;height:20px;flex:none}
+.slide input[type=range]{min-height:24px}
+
+/* 內容超出舞台時由 deck.js 依實際高度設定 --fit，頁尾、互動標籤與封面主視覺不跟著縮 */
+.slide[data-fit]>:not(.slide-brand,.slide-chapter,.slide-meta,.ix-tag,.cover-art,.cover-sig){zoom:var(--fit)}
+
+/* 簡報模式：英文比中文長，加寬版面、收緊基礎字級與間距；手機閱讀模式不受影響。
+ * :where() 讓權重和 deck.css 的基礎規則相同，互動元件自己指定的字級照舊優先。 */
+@media (min-width:901px) and (orientation:landscape),(min-width:1101px){
+  .slide h2{text-wrap:balance}
+  :where(html[lang^=en]) .slide{padding:56px 64px 62px}
+  :where(html[lang^=en]) h2{font-size:38px;line-height:1.18;margin-bottom:18px;letter-spacing:0}
+  :where(html[lang^=en]) .kicker{letter-spacing:.06em;margin-bottom:10px}
+  :where(html[lang^=en]) p,:where(html[lang^=en]) li{font-size:22px;line-height:1.5}
+  :where(html[lang^=en]) .lead{font-size:26px;line-height:1.45}
+  :where(html[lang^=en]) .card{padding:18px 20px}
+  :where(html[lang^=en]) .card p{font-size:19px;line-height:1.45}
+  :where(html[lang^=en]) .card h3{font-size:21px;margin-bottom:6px}
+  :where(html[lang^=en]) td{font-size:19px;line-height:1.35;padding:8px 10px}
+  :where(html[lang^=en]) th{font-size:14px;line-height:1.3;letter-spacing:.03em;padding:8px 10px}
+  :where(html[lang^=en]) .grid2{gap:20px}
+  :where(html[lang^=en]) .grid3{gap:16px}
+}
 
 /* 封面：Rebranding 聲波主視覺 */
 .cover::after{display:none}
@@ -38,7 +64,7 @@ body::before{display:none}
 .ca-glow{position:absolute;inset:14%;border-radius:50%;background:radial-gradient(circle,rgba(110,90,220,.28),rgba(69,179,230,.12) 45%,transparent 70%);filter:blur(30px);animation:ca-breathe 9s ease-in-out infinite}
 @keyframes ca-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 @keyframes ca-breathe{0%,100%{opacity:.7}50%{opacity:1}}
-.cover-sig{position:absolute;right:56px;bottom:40px;width:118px;height:auto;opacity:.55;z-index:1}
+.cover-sig{position:absolute;right:56px;bottom:40px;width:118px;height:auto;z-index:1}
 .cover .kicker{letter-spacing:.14em}
 @media (prefers-reduced-motion:reduce){.cover-art img,.ca-glow{animation:none}}
 @media (max-width:900px),(orientation:portrait) and (max-width:1100px){

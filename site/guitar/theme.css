@@ -56,13 +56,13 @@
 
 /* 木材色票 */
 .woods{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.wood-sw{border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+.wood-sw{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--card)}
 .wood-sw i{display:block;height:74px;background:var(--w);background-image:repeating-linear-gradient(100deg,rgba(0,0,0,.08) 0 2px,transparent 2px 9px),repeating-linear-gradient(97deg,rgba(255,255,255,.06) 0 1px,transparent 1px 14px)}
 .wood-sw div{padding:10px 12px;background:var(--card)}
 .wood-sw b{display:block;font-size:18px}
 .wood-sw span{display:block;font:500 13px var(--display);color:var(--muted)}
 .wood-sw p{font-size:14.5px!important;line-height:1.5!important;margin-top:6px;color:var(--muted)}
-.wood-sw .wbar{height:6px;border-radius:3px;background:var(--card-2,#252b22);margin-top:8px;overflow:hidden}
+.wood-sw .wbar{height:6px;padding:0;border-radius:3px;background:var(--card-2,#252b22);margin-top:8px;overflow:hidden}
 .wood-sw .wbar span{display:block;height:100%;background:var(--accent);width:var(--v)}
 
 /* 筒身比較 */

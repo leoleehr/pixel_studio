@@ -4,7 +4,7 @@
  * 淺色樣式在 theme-light.css（tools/build_theme_light.py 產生），只在淺色模式載入；深色模式完全不受影響。
  * <script data-kit> 標明這頁用哪一套樣式（site／deck／entry／plain），淺色規則依此分開。
  * 按鈕：入口頁的 .masthead 放一顆完整按鈕，其他頁跟在語言切換旁邊放小按鈕。
- * 單色白標誌在淺色底換成 CI 的單色黑標誌（同名 mono-black 檔），不改標誌本身。
+ * 標誌在淺色底換成 CI 指定的淺色底版本（見 LOGOS），不改標誌本身。
  */
 (function () {
   'use strict';
@@ -45,13 +45,22 @@
     if (localStorage.getItem(KEY) === 'light') { load(); root.setAttribute('data-theme', 'light'); }
   } catch (e) {}
 
+  // 依 CI：深色底透明標誌在淺色底換成白底彩色橫式與淺色底單色主標誌
+  var LOGOS = [
+    ['mono-white.svg', 'mono-black.svg'],
+    ['pixel-studio-horizontal.svg', 'horizontal-light.svg'],
+    ['horizontal-transparent.svg', 'horizontal-light.svg'],
+    ['brand/primary-transparent.svg', 'brand/pixel-studio-primary-mono-black.svg']
+  ];
   function logos() {
     if (!document.body) return;
     var light = get() === 'light';
-    [].forEach.call(document.querySelectorAll('img[src*="mono-white.svg"],img[src*="mono-black.svg"]'), function (img) {
+    [].forEach.call(document.querySelectorAll('img[src*="brand/"]'), function (img) {
       if (img.hasAttribute('data-mono-fixed')) return; // 本來就固定用某一色的標誌
-      var src = img.getAttribute('src');
-      var want = light ? src.replace('mono-white.svg', 'mono-black.svg') : src.replace('mono-black.svg', 'mono-white.svg');
+      var src = img.getAttribute('src'), base = img.getAttribute('data-logo-dark');
+      if (!base) { base = src.replace('mono-black.svg', 'mono-white.svg'); img.setAttribute('data-logo-dark', base); }
+      var want = base;
+      if (light) LOGOS.forEach(function (pair) { want = want.replace(pair[0], pair[1]); });
       if (want !== src) img.setAttribute('src', want);
     });
   }

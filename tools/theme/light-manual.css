@@ -44,3 +44,5 @@ html[data-theme="light"][data-kit] .sv-item[style*="2f5fc4"] .no{color:#fff}
 html[data-theme="light"][data-kit="deck"] .form-row>div:not(.f-intro,.f-chorus,.f-inter,.f-outro,.f-bridge){color:#fff}
 /* 創作編曲器：未開啟的軌道半透明，說明字改深一階 */
 html[data-theme="light"][data-lab="songwriting"] .ar-tr small{color:#3d4247}
+/* 淺色頂列用純白：CI 指定白底彩色橫式標誌（horizontal-light.svg 自帶白底），米白底會看出白框 */
+html[data-theme="light"][data-kit] .topbar{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
