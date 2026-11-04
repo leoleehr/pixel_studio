@@ -1,0 +1,8 @@
+{
+"f035c569a4": "<form novalidate><p class=\"sv-req\">Every question is required unless it's marked Optional.</p><div class=\"sv-card who\" role=\"group\" aria-labelledby=\"sv-who\"><div class=\"sv-q\" id=\"sv-who\"><span class=\"n\">✦</span>About you</div><div class=\"sv-body\" style=\"margin-left:0\"><div class=\"grid\">",
+"71d3edb735": "<label class=\"f\"><span>Name</span><input type=\"text\" name=\"_name\" required autocomplete=\"name\" maxlength=\"30\" value=\"",
+"4ba4a53d86": "<label class=\"f\"><span>School department / company</span><input type=\"text\" name=\"_dept\" required list=\"sv-depts\" maxlength=\"40\" placeholder=\"e.g. Computer Science, company name\" value=\"",
+"c0f576228f": "<label class=\"f\"><span>Course code</span><input type=\"text\" name=\"_code\" required autocomplete=\"off\" maxlength=\"30\" placeholder=\"Given by the teacher in class\" value=\"",
+"9b72a395c6": "_other\" aria-label=\"Other (write your own)\" placeholder=\"Other (write your own)\">",
+"0a9bff3774": "\">This question hasn\\'t been answered yet</p></div>"
+}

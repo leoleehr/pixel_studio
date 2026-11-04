@@ -15,7 +15,7 @@
 <link rel="preload" href="../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<script>/* 中文字型策略：首次造訪用系統中文字型（符合 CI：正黑體／蘋方），不在首屏重排；載入完成 5 秒後，利用閒置時間逐一把本頁用得到的 Noto Sans TC 分組下載進快取，之後每頁一開始就套用 */(function(){var K="ps-font",U="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap";function apply(){var l=document.createElement("link");l.rel="stylesheet";l.href=U;document.head.appendChild(l)}var c=0;try{c=localStorage.getItem(K)}catch(e){}if(c){apply();return}var n=navigator.connection;if(n&&(n.saveData||/2g/.test(n.effectiveType||"")))return;var idle=window.requestIdleCallback||function(f){return setTimeout(f,300)};function inRange(r,cps){return r.split(",").some(function(p){var m=p.trim().replace(/^U\+/i,"").split("-"),a=parseInt(m[0],16),b=m[1]?parseInt(m[1],16):a;return cps.some(function(x){return x>=a&&x<=b})})}function warm(){if(!window.FontFace||!window.fetch)return;var seen={},cps=[],t=document.body.textContent;for(var i=0;i<t.length;i++){var x=t.charCodeAt(i);if(x>=0x2E80&&!seen[x]){seen[x]=1;cps.push(x)}}fetch(U).then(function(r){return r.text()}).then(function(css){var q=[];css.replace(/@font-face\s*\{([^}]*)\}/g,function(_,b){var s=/url\(([^)]+)\)/.exec(b),r=/unicode-range:\s*([^;]+)/.exec(b);if(s&&r&&inRange(r[1],cps))q.push([s[1],r[1]]);return _});function next(){if(!q.length){try{localStorage.setItem(K,"1")}catch(e){}return}var j=q.shift();new FontFace("Noto Sans TC","url("+j[0]+")",{weight:"400 900",unicodeRange:j[1]}).load().then(function(){idle(next,{timeout:3000})},function(){idle(next,{timeout:3000})})}idle(next,{timeout:3000})}).catch(function(){})}var painted=0,loaded=0,started=0;function go(){if(painted&&loaded&&!started){started=1;setTimeout(function(){idle(warm,{timeout:5000})},5000)}}try{new PerformanceObserver(function(l){if(!painted&&l.getEntriesByName("first-contentful-paint").length){painted=1;go()}}).observe({type:"paint",buffered:true})}catch(e){painted=1}addEventListener("load",function(){loaded=1;setTimeout(function(){painted=1;go()},3000);go()})})()</script>
+<script>/* 中文字型策略：手機（主要輸入是觸控、螢幕短邊小於 600）一律用系統中文字型，不下載也不套用；其他裝置首次造訪用系統中文字型（符合 CI：正黑體／蘋方），不在首屏重排；載入完成 5 秒後，利用閒置時間逐一把本頁用得到的 Noto Sans TC 分組下載進快取，之後每頁一開始就套用 */(function(){var K="ps-font",U="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap";if(matchMedia("(pointer:coarse)").matches&&Math.min(screen.width,screen.height)<600){try{localStorage.removeItem(K)}catch(e){}return}function apply(){var l=document.createElement("link");l.rel="stylesheet";l.href=U;document.head.appendChild(l)}var c=0;try{c=localStorage.getItem(K)}catch(e){}if(c){apply();return}var n=navigator.connection;if(n&&(n.saveData||/2g/.test(n.effectiveType||"")))return;var idle=window.requestIdleCallback||function(f){return setTimeout(f,300)};function inRange(r,cps){return r.split(",").some(function(p){var m=p.trim().replace(/^U\+/i,"").split("-"),a=parseInt(m[0],16),b=m[1]?parseInt(m[1],16):a;return cps.some(function(x){return x>=a&&x<=b})})}function warm(){if(!window.FontFace||!window.fetch)return;var seen={},cps=[],t=document.body.textContent;for(var i=0;i<t.length;i++){var x=t.charCodeAt(i);if(x>=0x2E80&&!seen[x]){seen[x]=1;cps.push(x)}}fetch(U).then(function(r){return r.text()}).then(function(css){var q=[];css.replace(/@font-face\s*\{([^}]*)\}/g,function(_,b){var s=/url\(([^)]+)\)/.exec(b),r=/unicode-range:\s*([^;]+)/.exec(b);if(s&&r&&inRange(r[1],cps))q.push([s[1],r[1]]);return _});function next(){if(!q.length){try{localStorage.setItem(K,"1")}catch(e){}return}var j=q.shift();new FontFace("Noto Sans TC","url("+j[0]+")",{weight:"400 900",unicodeRange:j[1]}).load().then(function(){idle(next,{timeout:3000})},function(){idle(next,{timeout:3000})})}idle(next,{timeout:3000})}).catch(function(){})}var painted=0,loaded=0,started=0;function go(){if(painted&&loaded&&!started){started=1;setTimeout(function(){idle(warm,{timeout:5000})},5000)}}try{new PerformanceObserver(function(l){if(!painted&&l.getEntriesByName("first-contentful-paint").length){painted=1;go()}}).observe({type:"paint",buffered:true})}catch(e){painted=1}addEventListener("load",function(){loaded=1;setTimeout(function(){painted=1;go()},3000);go()})})()</script>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=optional"></noscript>
 <link rel="stylesheet" href="../assets/bundles/vocal-survey-1.css?v=b1abbcceea" data-sources="../assets/site.css?v=20261016c|../assets/backend.css?v=20261028a|../assets/responsive.css?v=20261016review1">
 <style>
@@ -56,6 +56,8 @@
 .sv-err{color:var(--red);font-size:13px;margin-top:8px;display:none}
 .sv-card.bad{border-color:rgba(236,74,54,.6)}
 .sv-card.bad .sv-err{display:block}
+.sv-req{font-size:14px;color:var(--muted);margin:0 0 12px}
+.sv-summary{font-size:14px;font-weight:700;color:var(--red);margin:0 0 8px}
 .sv-submit{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:18px}
 .sv-submit .btn{min-width:200px}
 .sv-submit p{font-size:13px;color:var(--muted)}
@@ -156,29 +158,32 @@
   document.title = sv.title + '｜Vocal Lab';
   var p = PixelBackend.profile() || {};
   var html = '<div class="sv-head" style="--c:' + (sv.id === 'feedback' ? '#f4a62a' : COLOR[sv.lesson]) + '"><div class="lh-no">' + (sv.id === 'feedback' ? 'FEEDBACK' : 'Lesson ' + String(sv.lesson).padStart(2, '0') + '・PRE-CLASS') + '</div><h1>' + esc(sv.title) + '</h1><p>' + esc(sv.intro) + '</p></div>' + notice +
-    '<form novalidate><div class="sv-card who"><div class="sv-q"><span class="n">✦</span>填寫者資料</div><div class="sv-body" style="margin-left:0"><div class="grid">' +
-    '<label class="f"><span>姓名</span><input type="text" name="_name" autocomplete="name" maxlength="30" value="' + esc(p.name) + '"></label>' +
-    '<label class="f"><span>學校科系／公司名稱</span><input type="text" name="_dept" list="sv-depts" maxlength="40" placeholder="例如：資訊工程系、公司名稱" value="' + esc(p.dept) + '"></label>' +
-    '<label class="f"><span>課程代碼</span><input type="text" name="_code" autocomplete="off" maxlength="30" placeholder="老師在課堂上公布" value="' + esc(p.code) + '"></label>' +
+    '<form novalidate><p class="sv-req">除了標示「選填」的題目，其他都要填寫。</p><div class="sv-card who" role="group" aria-labelledby="sv-who"><div class="sv-q" id="sv-who"><span class="n">✦</span>填寫者資料</div><div class="sv-body" style="margin-left:0"><div class="grid">' +
+    '<label class="f"><span>姓名</span><input type="text" name="_name" required autocomplete="name" maxlength="30" value="' + esc(p.name) + '"></label>' +
+    '<label class="f"><span>學校科系／公司名稱</span><input type="text" name="_dept" required list="sv-depts" maxlength="40" placeholder="例如：資訊工程系、公司名稱" value="' + esc(p.dept) + '"></label>' +
+    '<label class="f"><span>課程代碼</span><input type="text" name="_code" required autocomplete="off" maxlength="30" placeholder="老師在課堂上公布" value="' + esc(p.code) + '"></label>' +
     '</div><datalist id="sv-depts"><option value="資訊工程系"><option value="電機工程系"><option value="電子工程系"><option value="機械工程系"><option value="通訊工程系"><option value="材料與纖維系"><option value="工業管理系"><option value="資訊管理系"><option value="行銷與流通管理系"><option value="醫務管理系"><option value="護理系"><option value="應用外語系"></datalist><p class="sv-err">請填寫姓名、學校科系／公司名稱與課程代碼</p></div></div>';
   sv.questions.forEach(function (q, k) {
-    var name = 'q' + k, body = '';
+    var name = 'q' + k, body = '', need = q.optional ? '' : ' required aria-required="true"';
+    var named = ' aria-labelledby="sv-t-' + k + '" aria-describedby="sv-e-' + k + '"' + need;
+    var role = q.type === 'single' || q.type === 'scale' ? ' role="radiogroup" aria-labelledby="sv-t-' + k + '" aria-describedby="sv-e-' + k + '"' + (q.optional ? '' : ' aria-required="true"') :
+      q.type === 'multi' || q.type === 'matrix' ? ' role="group" aria-labelledby="sv-t-' + k + '" aria-describedby="sv-e-' + k + '"' : '';
     if (q.type === 'single' || q.type === 'multi') {
       body = '<div class="pills">' + q.options.map(function (o) { return '<label><input type="' + (q.type === 'single' ? 'radio' : 'checkbox') + '" name="' + name + '" value="' + esc(o) + '"><span>' + esc(o) + '</span></label>'; }).join('') + '</div>' +
-        (q.other ? '<input type="text" class="other" name="' + name + '_other" placeholder="其他（自行填寫）">' : '');
+        (q.other ? '<input type="text" class="other" name="' + name + '_other" aria-label="其他（自行填寫）" placeholder="其他（自行填寫）">' : '');
     } else if (q.type === 'scale') {
       body = '<div class="scale"><small>' + esc(q.low || '') + '</small><div class="pills">' + [1, 2, 3, 4, 5].map(function (v) { return '<label><input type="radio" name="' + name + '" value="' + v + '"><span>' + v + '</span></label>'; }).join('') + '</div><small>' + esc(q.high || '') + '</small></div>';
     } else if (q.type === 'matrix') {
-      body = '<div class="matrix">' + q.rows.map(function (r, i) { return '<div class="row"><b>' + esc(r) + '</b><div class="pills">' + [1, 2, 3, 4, 5].map(function (v) { return '<label><input type="radio" name="' + name + '_' + i + '" value="' + v + '"><span>' + v + '</span></label>'; }).join('') + '</div></div>'; }).join('') + '</div>';
+      body = '<div class="matrix">' + q.rows.map(function (r, i) { return '<div class="row" role="radiogroup" aria-label="' + esc(r) + '"><b>' + esc(r) + '</b><div class="pills">' + [1, 2, 3, 4, 5].map(function (v) { return '<label><input type="radio" name="' + name + '_' + i + '" value="' + v + '"><span>' + v + '</span></label>'; }).join('') + '</div></div>'; }).join('') + '</div>';
     } else if (q.type === 'number') {
-      body = '<div class="num"><input type="number" inputmode="decimal" name="' + name + '" min="0"><span>' + esc(q.unit || '') + '</span></div>';
+      body = '<div class="num"><input type="number" inputmode="decimal" name="' + name + '" min="0"' + named + '><span>' + esc(q.unit || '') + '</span></div>';
     } else if (q.type === 'short') {
-      body = '<input type="text" name="' + name + '" maxlength="200" placeholder="' + esc(q.placeholder || '') + '">';
+      body = '<input type="text" name="' + name + '" maxlength="200" placeholder="' + esc(q.placeholder || '') + '"' + named + '>';
     } else {
-      body = '<textarea name="' + name + '" maxlength="2000"></textarea>';
+      body = '<textarea name="' + name + '" maxlength="2000"' + named + '></textarea>';
     }
-    html += '<div class="sv-card" data-k="' + k + '"><div class="sv-q"><span class="n">' + (k + 1) + '</span><span>' + esc(q.q) + '</span>' + (q.optional ? '<span class="opt">選填</span>' : '') + '</div>' +
-      (q.hint ? '<p class="sv-hint">' + esc(q.hint) + '</p>' : '') + '<div class="sv-body">' + body + '</div><p class="sv-err">這一題還沒有填寫</p></div>';
+    html += '<div class="sv-card" data-k="' + k + '"' + role + '><div class="sv-q"><span class="n">' + (k + 1) + '</span><span id="sv-t-' + k + '">' + esc(q.q) + '</span>' + (q.optional ? '<span class="opt">選填</span>' : '') + '</div>' +
+      (q.hint ? '<p class="sv-hint">' + esc(q.hint) + '</p>' : '') + '<div class="sv-body">' + body + '</div><p class="sv-err" id="sv-e-' + k + '">這一題還沒有填寫</p></div>';
   });
   html += '<div class="sv-submit"><button type="submit" class="btn primary">送出問卷</button><p>送出後會附上你的姓名與學校科系／公司名稱，資料只提供給老師。</p></div></form>';
   var head = html.slice(0, html.indexOf('<form')), f, editing = null;
@@ -187,7 +192,7 @@
     editing = prev || null;
     app.innerHTML = html;
     f = app.querySelector('form');
-    f.addEventListener('change', function (e) { var c = e.target.closest('.sv-card'); if (c) c.classList.remove('bad'); });
+    f.addEventListener('change', function (e) { var c = e.target.closest('.sv-card'); if (c) mark(c, false); });
     f.onsubmit = submit;
     var pp = PixelBackend.profile() || {};
     ['name', 'dept', 'code'].forEach(function (k) { if (!f['_' + k].value) f['_' + k].value = pp[k] || ''; });
@@ -215,6 +220,22 @@
       else f.querySelector('[name="' + name + '"]').value = v;
     });
   }
+  function mark(c, on) {
+    c.classList.toggle('bad', on);
+    if (c.getAttribute('role') === 'radiogroup') { if (on) c.setAttribute('aria-invalid', 'true'); else c.removeAttribute('aria-invalid'); }
+    [].forEach.call(c.querySelectorAll('input:not([type=radio]):not([type=checkbox]):not(.other),textarea'), function (x) {
+      if (on && !x.value.trim()) x.setAttribute('aria-invalid', 'true'); else x.removeAttribute('aria-invalid');
+    });
+  }
+  // 焦點移到這張卡片第一個還沒填的欄位，鍵盤使用者不必從送出按鈕走回去
+  function focusFirst(c) {
+    var list = [].slice.call(c.querySelectorAll('input:not(.other),textarea'));
+    var x = list.filter(function (n) {
+      return n.type === 'radio' || n.type === 'checkbox' ? !c.querySelector('input[name="' + n.name + '"]:checked') : !n.value.trim();
+    })[0] || list[0];
+    if (x) x.focus({ preventScroll: true });
+    c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
   function submit(e) {
     e.preventDefault();
     var bad = [], questions = [], answers = [];
@@ -238,11 +259,19 @@
       questions.push(q.q + (q.unit ? '（' + q.unit + '）' : '')); answers.push(v);
       if (!v && !q.optional) bad.push(card);
     });
-    app.querySelectorAll('.sv-card').forEach(function (c) { c.classList.toggle('bad', bad.indexOf(c) > -1); });
-    if (bad.length) { bad[0].scrollIntoView({ behavior: 'smooth', block: 'center' }); PixelBackend.toast('還有 ' + bad.length + ' 題沒有填寫', 'warn'); return; }
+    app.querySelectorAll('.sv-card').forEach(function (c) { mark(c, bad.indexOf(c) > -1); });
+    var old = f.querySelector('.sv-summary'); if (old) old.remove();
+    if (bad.length) {
+      // 提示放在第一個未填題的正上方，不用浮動訊息，才不會蓋住題目的錯誤文字
+      var sum = document.createElement('p'); sum.className = 'sv-summary'; sum.setAttribute('role', 'alert');
+      sum.textContent = '還有 ' + bad.length + ' 題沒有填寫，請從這一題開始';
+      bad[0].parentNode.insertBefore(sum, bad[0]);
+      focusFirst(bad[0]);
+      return;
+    }
     var btn = f.querySelector('[type=submit]'); btn.disabled = true; btn.textContent = '送出中…';
     PixelBackend.checkCode(who.code).then(function (ok) {
-      if (ok === false) { btn.disabled = false; btn.textContent = label(); app.querySelector('.sv-card.who').classList.add('bad'); app.querySelector('.sv-card.who .sv-err').textContent = '課程代碼不正確，請向老師確認'; app.querySelector('.sv-card.who').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+      if (ok === false) { btn.disabled = false; btn.textContent = label(); app.querySelector('.sv-card.who').classList.add('bad'); app.querySelector('.sv-card.who .sv-err').textContent = '課程代碼不正確，請向老師確認'; f._code.setAttribute('aria-invalid', 'true'); f._code.focus({ preventScroll: true }); app.querySelector('.sv-card.who').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
       PixelBackend.saveProfile(who);
       return PixelBackend.send('survey', { title: sv.title, questions: questions, answers: answers }, { lesson: sv.lesson, okMsg: editing ? '問卷已更新' : '問卷已送出' }).then(function (r) {
         if (r && r.cancelled) { btn.disabled = false; btn.textContent = label(); PixelBackend.toast('請先以 Google 帳戶登入，問卷才能送出', 'warn'); return; }

@@ -75,7 +75,7 @@ CODE = {
 
 for _lab in ('vocal', 'guitar', 'piano', 'songwriting'):
     CODE.setdefault(_lab + '/survey.html', []).extend([
-        ("'還有 ' + bad.length + ' 題沒有填寫'", "bad.length + ' more question' + (bad.length > 1 ? 's' : '') + ' to answer'"),
+        ("'還有 ' + bad.length + ' 題沒有填寫，請從這一題開始'", "bad.length + ' more question' + (bad.length > 1 ? 's' : '') + ' to answer. Start with this one.'"),
         ("'你在 ' + esc(j.time) + ' 以 ' + esc(a.email) + ' 送出過這份問卷。是否要修改原本的填答？'", "'You sent this survey on ' + esc(j.time) + ' as ' + esc(a.email) + '. Would you like to edit your answers?'"),
     ])
 

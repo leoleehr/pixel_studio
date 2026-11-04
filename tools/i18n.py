@@ -515,7 +515,9 @@ def html_paths(out, rel, en_set):
 
         def fix_attr(a):
             k, q, v = a.group(1), a.group(2), a.group(3)
-            if k.lower() in URL_ATTRS:
+            if k.lower() == 'data-href' and v == 'self':
+                pass  # interact.js 的特殊值：QR Code 指向目前這一頁，不是路徑
+            elif k.lower() in URL_ATTRS:
                 v = rewrite_ref(v, rel, en_set)
             elif k.lower() == 'srcset':
                 v = ', '.join(' '.join([rewrite_ref(x.split()[0], rel, en_set)] + x.split()[1:]) for x in v.split(',') if x.strip())
@@ -577,6 +579,8 @@ def cmd_build(args):
         rel = p.relative_to(SITE).as_posix()
         if rel not in en_set: continue
         out = translate_file(p, d, en_set, missing)
+        if re.search(r'data-href="[^"]*/self"', out):
+            raise SystemExit(f'{rel}: data-href 的 self 被當成路徑改寫，QR Code 會指向 404')
         dst = OUT / rel
         dst.parent.mkdir(parents=True, exist_ok=True)
         if not dst.exists() or dst.read_text(encoding='utf-8') != out:

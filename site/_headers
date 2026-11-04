@@ -15,6 +15,55 @@
 /en/assets/*
   Cache-Control: public, max-age=86400, stale-while-revalidate=2592000
 
+# Lab 資料夾的程式與樣式（guitar.js、theme.css、surveys.js 等）比照 /assets/*。只比對副檔名，HTML 不受影響
+/vocal/*.js
+  Cache-Control: public, max-age=86400, stale-while-revalidate=2592000
+
+/vocal/*.css
+  Cache-Control: public, max-age=86400, stale-while-revalidate=2592000
+
+/guitar/*.js
+  Cache-Control: public, max-age=86400, stale-while-revalidate=2592000
+
+/guitar/*.css
+  Cache-Control: public, max-age=86400, stale-while-revalidate=2592000
+
+/piano/*.js
+  Cache-Control: public, max-age=86400, stale-while-revalidate=2592000
+
+/piano/*.css
+  Cache-Control: public, max-age=86400, stale-while-revalidate=2592000
+
+/songwriting/*.js
+  Cache-Control: public, max-age=86400, stale-while-revalidate=2592000
+
+/songwriting/*.css
+  Cache-Control: public, max-age=86400, stale-while-revalidate=2592000
+
+/en/vocal/*.js
+  Cache-Control: public, max-age=86400, stale-while-revalidate=2592000
+
+/en/vocal/*.css
+  Cache-Control: public, max-age=86400, stale-while-revalidate=2592000
+
+/en/guitar/*.js
+  Cache-Control: public, max-age=86400, stale-while-revalidate=2592000
+
+/en/guitar/*.css
+  Cache-Control: public, max-age=86400, stale-while-revalidate=2592000
+
+/en/piano/*.js
+  Cache-Control: public, max-age=86400, stale-while-revalidate=2592000
+
+/en/piano/*.css
+  Cache-Control: public, max-age=86400, stale-while-revalidate=2592000
+
+/en/songwriting/*.js
+  Cache-Control: public, max-age=86400, stale-while-revalidate=2592000
+
+/en/songwriting/*.css
+  Cache-Control: public, max-age=86400, stale-while-revalidate=2592000
+
 # 樣式包網址帶內容雜湊、字型與第三方函式庫內容固定：長期快取
 /assets/bundles/*
   ! Cache-Control
