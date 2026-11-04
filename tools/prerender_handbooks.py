@@ -154,22 +154,45 @@ def patch_deep(page):
     return page
 
 
+MAIN = re.compile(r'<main class="wrap md" id="content"[^>]*>\n?(.*?)</main>', re.S)
+HEIGHT = re.compile(r'(<section class="hb-sec") style="--ch-m:(\d+)px;--ch-d:(\d+)px"')
+HEIGHT_TOLERANCE = 0.01  # 重新量測的正常誤差實測不到 0.4%（1–29px）；1% 以內沿用舊值，避免每次建置都改動頁面
+OLD_HEIGHTS = {}
+
+
+def digest_of(path):
+    """換行先統一成 LF：Windows 工作目錄（autocrlf）與 repo 內的內容算出同一個值。"""
+    return hashlib.sha1(path.read_bytes().replace(b'\r\n', b'\n')).hexdigest()[:10]
+
+
 def build(lab):
     cfg = LABS[lab]
     page_path = ROOT / 'site' / lab / 'handbook.html'
-    page = page_path.read_text(encoding='utf-8')
+    original = page = page_path.read_text(encoding='utf-8')
     md_name = re.search(r"fetch\('([^'?]+)", page).group(1)
     colors = [c.strip(" '") for c in re.search(r'var COLOR = \[([^\]]*)\]', page).group(1).split(',')]
     md_path = ROOT / 'site' / lab / md_name
     body, chips = transform(md_to_html(md_path), cfg, colors, md_path.parent)
-    digest = hashlib.sha1(md_path.read_bytes()).hexdigest()[:10]
     page = patch_deep(patch_defer(patch_wrap(patch_script(page))))
-    page, k1 = re.subn(r'<main class="wrap md" id="content"[^>]*>.*?</main>',
-                       lambda m: f'<main class="wrap md" id="content" data-prerendered="{digest}">\n{body}</main>', page, flags=re.S)
+    old = MAIN.search(page)
+    assert old, lab
+    OLD_HEIGHTS[lab] = [(int(m), int(d)) for _, m, d in HEIGHT.findall(old.group(1))]
+    # 轉換結果沒變就不動內容：雜湊與章節高度都留著，頁面不會因重跑而改變
+    if HEIGHT.sub(r'\1', old.group(1)) != body:
+        digest = digest_of(md_path)
+        page = page[:old.start()] + f'<main class="wrap md" id="content" data-prerendered="{digest}">\n{body}</main>' + page[old.end():]
     page, k2 = re.subn(r'<div class="wrap" id="toc">.*?</div>', lambda m: f'<div class="wrap" id="toc">{chips}</div>', page, flags=re.S)
-    assert k1 == 1 and k2 == 1, (lab, k1, k2)
-    page_path.write_text(page, encoding='utf-8', newline='\n')
-    print(f'{lab}: {md_name} -> handbook.html ({len(body) // 1024} KB, {chips.count("<a ")} 章節)')
+    assert k2 == 1, (lab, k2)
+    if page != original:
+        page_path.write_text(page, encoding='utf-8', newline='\n')
+    print(f'{lab}: {md_name} -> handbook.html ({len(body) // 1024} KB, {chips.count("<a ")} 章節)' + ('' if page != original else '，沒有變更'))
+
+
+def steady(measured, previous):
+    """誤差範圍內沿用舊高度；章節數不同（例如新增章節）就全部採用新值。"""
+    if len(measured) != len(previous):
+        return measured
+    return [o if abs(n - o) <= o * HEIGHT_TOLERANCE else n for n, o in zip(measured, previous)]
 
 
 def measure(labs):
@@ -201,11 +224,15 @@ def measure(labs):
                 text = page_path.read_text(encoding='utf-8')
                 parts = text.split('<section class="hb-sec"')
                 assert len(parts) - 1 == len(hs['m']) == len(hs['d']), (lab, len(parts) - 1, len(hs['m']))
+                prev = OLD_HEIGHTS.get(lab, [])
+                hs['m'] = steady(hs['m'], [m for m, _ in prev])
+                hs['d'] = steady(hs['d'], [d for _, d in prev])
                 out = parts[0]
                 for i, rest in enumerate(parts[1:]):
                     rest = re.sub(r'^ style="[^"]*"', '', rest)
                     out += f'<section class="hb-sec" style="--ch-m:{hs["m"][i]}px;--ch-d:{hs["d"][i]}px"' + rest
-                page_path.write_text(out, encoding='utf-8', newline='\n')
+                if out != text:
+                    page_path.write_text(out, encoding='utf-8', newline='\n')
                 print(f'{lab}: 章節高度 手機 {hs["m"]} 桌機 {hs["d"]}')
             await b.close()
     asyncio.run(run())

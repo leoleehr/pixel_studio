@@ -7,6 +7,7 @@
 import html
 import pathlib
 import re
+from handbook_merge import merge, slide_sections
 from teaching_visuals import enrich_markdown
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -428,7 +429,7 @@ def slides_of(n):
     src = (ROOT / 'tools' / 'piano' / ('p%02d.html' % n)).read_text(encoding='utf-8')
     meta, body = src.split('\n', 1)
     title, en, _ = meta.split('|')
-    secs = re.findall(r'<section class="slide[^"]*">(.*?)</section>', body, re.S)
+    secs = slide_sections(body)
     out = []
     for i, s in enumerate(secs, 1):
         tag = re.search(r'class="tag (t-\w+)"', s)
@@ -479,7 +480,7 @@ def session(n, sv):
 def main():
     sv = surveys()
     body = '\n'.join(session(n, sv) for n in range(1, 13))
-    MD.write_text(enrich_markdown(HEAD + body, "piano"), encoding='utf-8', newline='\n')
+    MD.write_text(merge(enrich_markdown(HEAD + body, "piano"), MD.read_text(encoding='utf-8')), encoding='utf-8', newline='\n')
     print('handbook written', len(HEAD + body))
 
 
