@@ -142,7 +142,7 @@
   var list = window.PIXEL_SURVEYS || [], sv = list.filter(function (s) { return s.id === id; })[0];
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function doneAt(sid) { try { return localStorage.getItem('pixel:survey-' + sid); } catch (e) { return null; } }
-  var notice = PixelBackend.configured ? '' : '<div class="sv-notice">後台尚未完成設定：送出的問卷會先存在這台裝置，設定完成後自動補送給老師。</div>';
+  var notice = PixelBackend.configured ? '' : '<div class="sv-notice">後台尚未完成設定：送出的問卷會先儲存在這台裝置，設定完成之後，自動補送給老師。</div>';
 
   if (!sv) {
     app.innerHTML = '<div class="sv-head"><div class="lh-no">Surveys</div><h1>課程問卷</h1><p>每堂課前三天填寫課前問卷，結業當天填寫課程回饋。填寫後會直接送到老師的課程試算表。</p></div>' + notice + '<div class="sv-list"></div>';
