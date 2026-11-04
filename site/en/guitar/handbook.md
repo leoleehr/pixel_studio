@@ -227,7 +227,9 @@ The strums and fingerpicking used in this chapter. The staff above shows pitch a
 | 23 | Tuner (microphone) | Everyone tunes their own guitar |
 | 25 | Strum-along metronome: open-string downstrokes, 8 beats | Your first sound |
 | 27 | Exit ticket 3-2-1 | Collect questions |
-| 28–29 | Seven-day log, practice checklist | Keep the practice going |
+| 28 | Seven-day log | Carry on the practice from class |
+| 29 | Homework checklist | Track homework progress |
+| 30 | Chapter 2 pre-class survey | Find the starting point for the next chapter |
 
 ### Practice after class
 

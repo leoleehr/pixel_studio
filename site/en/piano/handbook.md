@@ -91,9 +91,9 @@ Goals: explain where the piano came from, how it makes sound and the common kind
 | Open | 00:00–00:20 | Lots of people learned piano as kids and then let it go; when I was six, my piano teacher sent me home | 3–4 |
 | Build | 00:20–00:55 | Pianoforte: an instrument that can play "soft" and "loud"; press a key and a hammer strikes the strings; predict, then reveal; from concert hall to bedroom: the keyboard family; pop piano is the foundation for jazz piano; listen to four piano pieces and guess the style of each | 5–10 |
 | Break | 00:55–01:05 | 10-minute break | 11 |
-| Turn | 01:05–01:40 | The thumb is 1 and the little finger 5, on both hands; the white key left of a pair of black keys is C; myth or fact? | 12–14 |
-| Close | 01:40–02:00 | Play Do Re Mi Fa Sol once with each hand; write your 3-2-1 before you leave | 15–17 |
-| Wrap up | After class | Three-line summary, exit ticket, practice after class and next lesson preview | 16、18、19、20 |
+| Turn | 01:05–01:40 | Sit steady and relaxed, fingers as if holding a ball; The thumb is 1 and the little finger 5, on both hands; Three pedals, each with a job; The white key left of a pair of black keys is C; Myth or fact? | 12–16 |
+| Close | 01:40–02:00 | C five-finger position: one finger per key; Play Do Re Mi Fa Sol once with the right hand and once with the left; Before you leave, write down 3-2-1 | 17–20 |
+| Wrap up | After class | Three-line summary, exit ticket, practice after class and next lesson preview | 19、21、22、23 |
 
 ### Extended notes: where the piano came from and how it's built
 
@@ -131,13 +131,14 @@ Goals: explain where the piano came from, how it makes sound and the common kind
 | 3 | Show-of-hands vote | Lots of people learned piano as kids and then let it go |
 | 7 | Multiple choice | Predict, then reveal |
 | 10 | Song listening · YouTube | Listen to four piano pieces and guess the style of each |
-| 13 | Playable keyboard | The white key left of a pair of black keys is C |
-| 14 | Myth-busting · flip cards | Myth or fact? |
-| 15 | Recording | Play Do Re Mi Fa Sol once with the right hand and once with the left |
-| 17 | Exit ticket 3-2-1 | Before you leave, write down 3-2-1 |
-| 18 | Self-directed log | 10-minute daily warm-up |
-| 19 | Self-directed tracking | Practice after class: tap once to tick each item you finish |
-| 20 | Pre-class survey | Lesson 2: Basic theory and reading music |
+| 15 | Playable keyboard | The white key left of a pair of black keys is C |
+| 16 | Myth-busting · flip cards | Myth or fact? |
+| 17 | Scale fingering | C five-finger position: one finger per key |
+| 18 | Recording | Play Do Re Mi Fa Sol once with the right hand and once with the left |
+| 20 | Exit ticket 3-2-1 | Before you leave, write down 3-2-1 |
+| 21 | Self-directed log | 10-minute daily warm-up |
+| 22 | Self-directed tracking | Practice after class: tap once to tick each item you finish |
+| 23 | Pre-class survey | Lesson 2: Basic theory and reading music |
 
 ### Practice after class
 
@@ -281,11 +282,11 @@ Goals: explain the "whole, whole, half, whole, whole, whole, half" rule of the m
 | Section | Time | Content | Slide |
 | --- | --- | --- | --- |
 | Open | 00:00–00:20 | What was your score in the note-finding game?; starting from the tonic, laid out at fixed distances | 3–4 |
-| Build | 00:20–00:55 | Whole, whole, half, whole, whole, whole, half; follow the lit keys and fingering to play C major up and down; fingering and the formula | 5–7 |
-| Break | 00:55–01:05 | 10-minute break | 8 |
-| Turn | 01:05–01:40 | Change the tonic and watch the sharps, flats and fingering change; three keys, two fingerings; Canon's melody is full of descending scale runs; scale relay: one note each, passed on steadily | 9–12 |
-| Close | 01:40–02:00 | Record the C major scale with each hand; write your 3-2-1 before you leave | 13–15 |
-| Wrap up | After class | Three-line summary, exit ticket, practice after class and next lesson preview | 14、16、17、18 |
+| Build | 00:20–00:55 | Whole, whole, half, whole, whole, whole, half; When you run out of fingers, the thumb goes under and the middle finger goes over; Follow the lit keys and fingering to play C major up and down; Fingering and the formula | 5–8 |
+| Break | 00:55–01:05 | 10-minute break | 9 |
+| Turn | 01:05–01:40 | Change the tonic and watch the sharps, flats and fingering change; Three keys, two fingerings; Hands together: the thumbs pass under at different times; Canon's melody is full of descending scale runs; Scale relay: one note each, passed on steadily | 10–14 |
+| Close | 01:40–02:00 | Record the C major scale with each hand; write your 3-2-1 before you leave | 15–17 |
+| Wrap up | After class | Three-line summary, exit ticket, practice after class and next lesson preview | 16、18、19、20 |
 
 ### Extended notes: major scales and fingering
 
@@ -309,16 +310,16 @@ Goals: explain the "whole, whole, half, whole, whole, whole, half" rule of the m
 | --- | --- | --- |
 | 2 | Phone sync | Today's route: ten fingers moving smoothly through eight notes |
 | 3 | Show-of-hands vote | What was your score in the note-finding game? |
-| 6 | Scale fingering | Follow the lit keys and fingering to play C major up and down |
-| 7 | Multiple choice | Fingering and the formula |
-| 9 | Scale fingering | Change the tonic and watch the sharps, flats and fingering change |
-| 11 | Song listening · YouTube | Canon's melody is full of descending scale runs |
-| 12 | Group task · scoring | Scale relay: one note each, passed on steadily |
-| 13 | Record and compare | Record the C major scale with each hand |
-| 15 | Exit ticket 3-2-1 | Before you leave, write down 3-2-1 |
-| 16 | Self-directed log | 15-minute daily scale routine |
-| 17 | Self-directed tracking | Practice after class: tap once to tick each item you finish |
-| 18 | Pre-class survey | Lesson 4: How chords are built |
+| 7 | Scale fingering | Follow the lit keys and fingering to play C major up and down |
+| 8 | Multiple choice | Fingering and the formula |
+| 10 | Scale fingering | Change the tonic and watch the sharps, flats and fingering change |
+| 13 | Song listening · YouTube | Canon's melody is full of descending scale runs |
+| 14 | Group task · scoring | Scale relay: one note each, passed on steadily |
+| 15 | Record and compare | Record the C major scale with each hand |
+| 17 | Exit ticket 3-2-1 | Before you leave, write down 3-2-1 |
+| 18 | Self-directed log | 15-minute daily scale routine |
+| 19 | Self-directed tracking | Practice after class: tap once to tick each item you finish |
+| 20 | Pre-class survey | Lesson 4: How chords are built |
 
 ### Practice after class
 
@@ -524,11 +525,11 @@ Goals: read L5 L3 L2 L1 and R1 R2 R5 finger-position notation and play broken ch
 | Section | Time | Content | Slide |
 | --- | --- | --- | --- |
 | Open | 00:00–00:20 | Have you finished Twinkle Twinkle hands together?; both are ballads, but four-beat and three-beat accompaniments differ | 3–4 |
-| Build | 00:20–00:55 | Slow soul: the most common rhythm in today's pop; four slow soul accompaniments: listen first, then play along; reading finger-position notation | 5–7 |
-| Break | 00:55–01:05 | 10-minute break | 8 |
-| Turn | 01:05–01:40 | Strong, weak, weak: four accompaniments in triple time; listen for the time signature and tempo, then choose the left hand; myth or fact?; Twinkle Twinkle in slow soul, hands together | 9–12 |
-| Close | 01:40–02:00 | Happy Birthday: switch to 3/4 broken chords; record a four-beat and a three-beat version; write your 3-2-1 before you leave | 13–16 |
-| Wrap up | After class | Three-line summary, exit ticket, practice after class and next lesson preview | 15、17、18 |
+| Build | 00:20–00:55 | Finger-position notation: writing accompaniment by where the fingers sit; Slow soul: the most common rhythm in today's pop; Four slow soul accompaniments: listen first, then play along; Reading finger-position notation | 5–8 |
+| Break | 00:55–01:05 | 10-minute break | 9 |
+| Turn | 01:05–01:40 | Strong, weak, weak: four accompaniments in triple time; listen for the time signature and tempo, then choose the left hand; myth or fact?; Twinkle Twinkle in slow soul, hands together | 10–13 |
+| Close | 01:40–02:00 | Happy Birthday: switch to 3/4 broken chords; record a four-beat and a three-beat version; write your 3-2-1 before you leave | 14–17 |
+| Wrap up | After class | Three-line summary, exit ticket, practice after class and next lesson preview | 16、18、19 |
 
 ### Extended notes: broken-chord accompaniment and finger-position notation
 
@@ -568,16 +569,16 @@ Taking a C chord as an example: L5 = C3 (root), L3 = E3 (third), L2 = G3 (fifth)
 | 2 | Phone sync | Today's route: get the left hand flowing |
 | 3 | Show-of-hands vote | Have you finished Twinkle Twinkle hands together? |
 | 4 | Song listening · YouTube | Both are ballads, but four-beat and three-beat accompaniments differ |
-| 6 | Accompaniment player | Four slow soul accompaniments: listen first, then play along |
-| 7 | Multiple choice | Reading finger-position notation |
-| 9 | Accompaniment player | Strong, weak, weak: four accompaniments in triple time |
-| 11 | Myth-busting · flip cards | Myth or fact? |
-| 12 | Playing songs | Twinkle Twinkle in slow soul, hands together |
-| 13 | Playing songs | Happy Birthday: switch to 3/4 broken chords |
-| 14 | Record and compare | Record a four-beat and a three-beat version |
-| 16 | Exit ticket 3-2-1 | Before you leave, write down 3-2-1 |
-| 17 | Self-directed tracking | Practice after class: tap once to tick each item you finish |
-| 18 | Pre-class survey | Lesson 7: Stronger accompaniment (4 + 8) |
+| 7 | Accompaniment player | Four slow soul accompaniments: listen first, then play along |
+| 8 | Multiple choice | Reading finger-position notation |
+| 10 | Accompaniment player | Strong, weak, weak: four accompaniments in triple time |
+| 12 | Myth-busting · flip cards | Myth or fact? |
+| 13 | Playing songs | Twinkle Twinkle in slow soul, hands together |
+| 14 | Playing songs | Happy Birthday: switch to 3/4 broken chords |
+| 15 | Record and compare | Record a four-beat and a three-beat version |
+| 17 | Exit ticket 3-2-1 | Before you leave, write down 3-2-1 |
+| 18 | Self-directed tracking | Practice after class: tap once to tick each item you finish |
+| 19 | Pre-class survey | Lesson 7: Stronger accompaniment (4 + 8) |
 
 ### Practice after class
 
@@ -619,11 +620,11 @@ Goals: explain how 4 beats and 8 beats differ and choose an accompaniment densit
 | Section | Time | Content | Slide |
 | --- | --- | --- | --- |
 | Open | 00:00–00:20 | Which of the four slow soul accompaniments do you like best?; the piano plays a different number of notes in the verse and chorus | 3–4 |
-| Build | 00:20–00:55 | One note per beat, or two; accompaniment density and range | 5–6 |
-| Break | 00:55–01:05 | 10-minute break | 7 |
-| Turn | 01:05–01:40 | Twelve accompaniments in 4/4; 4 beats in the verse, 8 beats in the chorus; accompaniment relay: one pattern per person | 8–10 |
-| Close | 01:40–02:00 | Record both verse and chorus accompaniments; write your 3-2-1 before you leave | 11–13 |
-| Wrap up | After class | Three-line summary, exit ticket, practice after class and next lesson preview | 12、14、15、16 |
+| Build | 00:20–00:55 | One note per beat, or two; 4 beats: three one-hand octave patterns; Three two-hand, two-octave (fifteenth) patterns; On the handover beat, the sound mustn't break; Accompaniment density and range | 5–8 |
+| Break | 00:55–01:05 | 10-minute break | 9 |
+| Turn | 01:05–01:40 | 8 beats: three one-hand patterns; Three two-hand patterns; Twelve accompaniments in 4/4; 4 beats in the verse, 8 beats in the chorus; Accompaniment relay: one pattern per person | 10–13 |
+| Close | 01:40–02:00 | Record both verse and chorus accompaniments; write your 3-2-1 before you leave | 14–16 |
+| Wrap up | After class | Three-line summary, exit ticket, practice after class and next lesson preview | 15、17、18、19 |
 
 ### Extended notes: broken-chord accompaniment (4/4)
 
@@ -653,13 +654,15 @@ Goals: explain how 4 beats and 8 beats differ and choose an accompaniment densit
 | 2 | Phone sync | Today's route: hands taking turns to sound two octaves |
 | 3 | Show-of-hands vote | Which of the four slow soul accompaniments do you like best? |
 | 4 | Song listening · YouTube | The piano plays a different number of notes in the verse and chorus |
-| 6 | Multiple choice | Accompaniment density and range |
-| 10 | Group task · scoring | Accompaniment relay: one pattern per person |
-| 11 | Record and compare | Record both verse and chorus accompaniments |
-| 13 | Exit ticket 3-2-1 | Before you leave, write down 3-2-1 |
-| 14 | Self-directed log | 20-minute daily accompaniment routine |
-| 15 | Self-directed tracking | Practice after class: tap once to tick each item you finish |
-| 16 | Pre-class survey | Lesson 8: Songs in one key, playing and singing |
+| 6 | Accompaniment player | 4 beats: three one-hand octave patterns, three two hands, two octaves (15th) |
+| 8 | Multiple choice | Accompaniment density and range |
+| 10 | Accompaniment player | 8 beats: three one-hand, three two-hand |
+| 13 | Group task · scoring | Accompaniment relay: one pattern per person |
+| 14 | Record and compare | Record both verse and chorus accompaniments |
+| 16 | Exit ticket 3-2-1 | Before you leave, write down 3-2-1 |
+| 17 | Self-directed log | 20-minute daily accompaniment routine |
+| 18 | Self-directed tracking | Practice after class: tap once to tick each item you finish |
+| 19 | Pre-class survey | Lesson 8: Songs in one key, playing and singing |
 
 ### Practice after class
 
@@ -911,9 +914,9 @@ Goals: play a slow rock accompaniment with a 12/8 triplet groove; play the oom-p
 | Open | 00:00–00:20 | Have you got the Canon progression's descending bass line down?; tenths, slow rock, bossa nova | 3–4 |
 | Build | 00:20–00:55 | 12/8: each beat split in three, with a swing to it; slow rock and the march: listen first, then play along; duple-time "oom-pah", and Brazil's bossa nova; rhythm styles | 5–8 |
 | Break | 00:55–01:05 | 10-minute break | 9 |
-| Turn | 01:05–01:40 | Every accompaniment from the twelve lessons in one table; guess the style | 10–11 |
-| Close | 01:40–02:00 | Record two new accompaniments; write your 3-2-1 before you leave | 12–14 |
-| Wrap up | After class | Three-line summary, exit ticket, practice after class and next lesson preview | 13、15、16 |
+| Turn | 01:05–01:40 | A tenth: the third, an octave up; Tenths and two-hand fifteenths: the accompaniment's range widens to two octaves; Every accompaniment from the twelve lessons in one table; Guess the style | 10–13 |
+| Close | 01:40–02:00 | Record two new accompaniments; write your 3-2-1 before you leave | 14–16 |
+| Wrap up | After class | Three-line summary, exit ticket, practice after class and next lesson preview | 15、17、18 |
 
 ### Extended notes: playing songs (3): 10th and 15th accompaniment
 
@@ -940,11 +943,12 @@ The original materials' rhythm styles also include rumba, cha-cha, tango, disco,
 | 4 | Song listening · YouTube | Tenths, slow rock, bossa nova |
 | 6 | Accompaniment player | Slow rock and the march: listen first, then play along |
 | 8 | Multiple choice | Rhythm styles |
-| 11 | Group task · scoring | Guess the style |
-| 12 | Record and compare | Record two new accompaniments |
-| 14 | Exit ticket 3-2-1 | Before you leave, write down 3-2-1 |
-| 15 | Self-directed tracking | Practice after class: tap once to tick each item you finish |
-| 16 | Pre-class survey | Lesson 12: Major and minor, and songs in G major |
+| 11 | Accompaniment player | Tenths and two-hand fifteenths: the accompaniment's range widens to two octaves |
+| 13 | Group task · scoring | Guess the style |
+| 14 | Record and compare | Record two new accompaniments |
+| 16 | Exit ticket 3-2-1 | Before you leave, write down 3-2-1 |
+| 17 | Self-directed tracking | Practice after class: tap once to tick each item you finish |
+| 18 | Pre-class survey | Lesson 12: Major and minor, and songs in G major |
 
 ### Practice after class
 
