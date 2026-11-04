@@ -55,8 +55,7 @@ for p in sorted(SITE.rglob('*.html')):
             add.append(og_url)
     if utility and 'name="robots"' not in s:
         add.append('<meta name="robots" content="noindex, follow">')
-    # 隱私權頁可被搜尋，但目前不主動列入 sitemap（維持現行內容）
-    if not utility and p.name != 'handbook-print.html' and rel not in ('index.html', 'privacy.html'):
+    if not utility and p.name != 'handbook-print.html' and rel != 'index.html':
         sitemap_urls.append(canonical)
     if not m:
         add.append('<meta name="description" content="%s">' % html.escape(desc, quote=True))
