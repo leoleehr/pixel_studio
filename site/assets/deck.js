@@ -9,7 +9,7 @@
   var slides = [].slice.call(document.querySelectorAll('.slide'));
   var stage = document.getElementById('stage');
   var title = document.body.getAttribute('data-title') || document.title;
-  var i = 0;
+  var i = 0, shown = false;
 
   // 每張投影片加上錨點、左下角章節標註、右下角刷淡的 Pixel Studio Logo
   var chapter = document.body.getAttribute('data-title') || '';
@@ -84,9 +84,25 @@
     var s = Math.min((innerWidth - 32) / 1280, (innerHeight - 76) / 720);
     stage.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
   }
+  // 焦點留在上一張（已設 inert）或頁面本身時，移到目前這張，下一次 Tab 才會從這張開始；停在控制列就不動，方便連按「下一張」
+  function moveFocus(prev) {
+    if (mq.matches || prev === i || !shown) { shown = true; return; }
+    var at = document.activeElement;
+    if (at && at !== document.body && !(at.closest && at.closest('.slide'))) return;
+    var cur = slides[i];
+    cur.tabIndex = -1;
+    cur.style.outline = 'none';
+    cur.focus({ preventScroll: true });
+  }
   function show(n) {
+    var prev = i;
     i = Math.max(0, Math.min(slides.length - 1, n));
-    slides.forEach(function (s, k) { s.classList.toggle('active', k === i); });
+    // 桌面一次只顯示一張，其他張雖然看不見仍在排版裡，要設 inert 才不會被 Tab 走到；手機直向全部顯示，不套用
+    slides.forEach(function (s, k) {
+      s.classList.toggle('active', k === i);
+      s.toggleAttribute('inert', !mq.matches && k !== i);
+    });
+    moveFocus(prev);
     document.getElementById('counter').textContent = (i + 1) + ' / ' + slides.length;
     document.getElementById('progress').style.width = ((i + 1) / slides.length * 100) + '%';
     if (!mq.matches && location.hash !== '#' + (i + 1)) history.replaceState(null, '', '#' + (i + 1));
