@@ -7,7 +7,7 @@
 import html
 import pathlib
 import re
-from handbook_merge import merge, slide_sections
+from handbook_merge import slide_sections, write_handbook
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 MD = ROOT / 'site' / 'songwriting' / 'handbook.md'
@@ -560,7 +560,7 @@ def session(n, sv):
 def main():
     sv = surveys()
     body = '\n'.join(session(n, sv) for n in range(1, 9))
-    MD.write_text(merge(HEAD + body, MD.read_text(encoding='utf-8')), encoding='utf-8', newline='\n')
+    write_handbook(MD, HEAD + body)
     print('handbook written', len(HEAD + body))
 
 

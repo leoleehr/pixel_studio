@@ -51,3 +51,11 @@ def restore_image_versions(new_md, old_md):
 
 def merge(new_md, old_md):
     return restore_image_versions(restore_notes(new_md, old_md), old_md).rstrip() + '\n'
+
+
+def write_handbook(path, new_md):
+    """併回舊講義的內容後寫入。內容相同就不寫：Windows 工作目錄的 CRLF 換成 LF 會讓 Git 誤判成已修改。"""
+    old_md = path.read_text(encoding='utf-8')
+    text = merge(new_md, old_md)
+    if text != old_md:
+        path.write_text(text, encoding='utf-8', newline='\n')
