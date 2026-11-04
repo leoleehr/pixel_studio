@@ -11,14 +11,14 @@ ROOT = Path(__file__).resolve().parents[1]
 ENTRIES = [
  ('breathing','vocal','slides/lesson-02/',2,'呼吸拍點','每一拍吸吐一次，快吸慢吐為吸短吐長；速度可由老師調整。'),
  ('chord-path','guitar','ch03/',3,'換和弦路徑','C→Am：食指與中指留在原位，無名指由5弦3格移到3弦2格。實際移動時先離弦。'),
- ('voice-leading','piano','p04/',4,'最近音連接','C→F→G→C可比較原位與就近連接。C→F保留C4，E4到F4、G4到A4。'),
+ ('voice-leading','piano','p04/',4,'最近音連接','C→F→G→C 可比較原位與就近連接。C→F 保留 C4，E4 到 F4、G4 到 A4。'),
  ('tone-melody','songwriting','s03/',3,'字調與旋律','字調與旋律的方向可疊圖比較；方向不同時需回到字義及整句試唱，不能只憑曲線判定。'),
  ('word-ending','vocal','slides/lesson-04/',4,'長音收尾','母音先延續，再清楚收尾；愛由a轉i、心以舌尖收n、星以舌根收ng。收音時點可依示範調整。'),
  ('bass-map','guitar','ch05/',5,'根音與交替低音','依和弦找出根音與另一個和弦音。C/E等交替方式不一律是五度，仍以教材指法為準。'),
- ('dual-hands','piano','p03/',3,'雙手同步指法','C大調上行，右手在F穿指，左手在A跨指；兩個動作並不同時發生。'),
+ ('dual-hands','piano','p03/',3,'雙手同步指法','C 大調上行，右手在 F 穿指，左手在 A 跨指；兩個動作並不同時發生。'),
  ('arrangement','songwriting','s07/',7,'段落配器','以段落對照主律動、副律動、主旋律、過門與襯底；可以讀取自己的曲式積木，按曲式分別儲存配置，再試聽聲部差別。'),
- ('accompaniment','guitar','ch05/',5,'按拍號選伴奏','先選拍號，再以相同和弦比較速度與伴奏型；推薦不是唯一正解。'),
- ('accompaniment','piano','p06/',6,'按拍號選伴奏','同一組C和弦可依拍號比較本課既有的伴奏型，避免只憑BPM決定風格。'),
+ ('accompaniment','guitar','ch05/',5,'按拍號選伴奏','先選拍號，再以相同和弦比較速度與伴奏型；推薦僅供參考，可依歌曲調整。'),
+ ('accompaniment','piano','p06/',6,'按拍號選伴奏','同一組 C 和弦可依拍號比較本課既有的伴奏型，避免只憑 BPM 決定風格。'),
  ('rhetoric','songwriting','s04/',4,'句內修辭標記','類疊看重複詞，頂真看前尾接後頭，映襯看對照片語。網站以原創短句提供選擇與標記。'),
 ]
 
@@ -67,7 +67,7 @@ def build():
                 root.locator('.lt-chart').evaluate('(e)=>e.style.width="460px"')
                 page.wait_for_timeout(80)
             filename=f'{course}-{feature}.svg';(asset/filename).write_text(static_svg(root,title,description),encoding='utf-8')
-            block=f'<div class="learning-book-block"><h4>{title}</h4><p>{description}</p><figure class="learning-print"><img src="../assets/learning/print/{filename}" alt="{title}的關鍵狀態圖" loading="eager"><figcaption>{title}｜關鍵狀態</figcaption></figure><p><a href="{route}#{n}">開啟互動練習</a></p></div>\n'
+            block=f'<div class="learning-book-block"><h4>{title}</h4><p>{description}</p><figure class="learning-print"><img src="../assets/learning/print/{filename}" alt="{title}的重點畫面圖" loading="eager"><figcaption>{title}｜重點畫面</figcaption></figure><p><a href="{route}#{n}">開啟互動練習</a></p></div>\n'
             notes.setdefault((course,chapter),[]).append(block)
         browser.close()
     for course in ['vocal','guitar','piano','songwriting']:
@@ -84,8 +84,8 @@ def build():
                     blocks=blocks.copy();blocks[0]=blocks[0].replace('<h4>','<h3>互動練習與圖解</h3><h4>',1)
                     parts[i]=part.rstrip()+'\n\n<!-- learning-notes-start -->\n'+''.join(blocks)+'\n<!-- learning-notes-end -->\n\n'
             elif re.match(r'## 課程總覽',part):
-                parts[i]=part.rstrip()+'\n\n<!-- learning-notes-start -->\n### 能力路線與練習紀錄\n\n[開啟課程能力路線](index.html#lessons)：各堂課卡片整合建議先備與本機作業勾選，另可展開課程路線總覽。網站練習紀錄圖沿用原七天表格，缺值保留空白，秒數、次數與分鐘分開檢視。PDF保留本表作書面紀錄，不填入示範成績。\n\n<!-- learning-notes-end -->\n\n'
+                parts[i]=part.rstrip()+'\n\n<!-- learning-notes-start -->\n### 能力路線與練習紀錄\n\n[開啟課程地圖](index.html#lessons)，查看每堂的建議準備與作業，也可以勾選完成項目、展開路線總覽。網站練習紀錄圖沿用原七天表格，缺值保留空白，秒數、次數與分鐘分開檢視。PDF 保留本表作書面紀錄，不填入示範成績。\n\n<!-- learning-notes-end -->\n\n'
         path.write_text(''.join(parts),encoding='utf-8',newline='\n')
-    print('Updated four handbooks and',len(ENTRIES),'key-state diagrams')
+    print('Updated four handbooks and',len(ENTRIES),'key-moment diagrams')
 
 if __name__=='__main__':build()

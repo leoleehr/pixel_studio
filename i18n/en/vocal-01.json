@@ -1,7 +1,7 @@
 {
 "817a565406": "Move records from the old site｜Vocal Lab",
 "d046cc7ebf": "Pixel Studio: four interactive courses in pop singing, folk guitar, pop piano and songwriting. We Perform the Pixel of Music.",
-"15c1584e06": "<a class=\"brand\" href=\"../studio.html\"><img class=\"brand-logo\" src=\"../assets/brand/pixel-studio-horizontal.svg\" alt=\"Pixel Studio\" width=\"2400\" height=\"720\"><span class=\"brand-caption\">Pixel Music Workshop<br>Vocal Lab</span><span class=\"sr-only\">, back to the course home</span></a>",
+"15c1584e06": "<a class=\"brand\" href=\"../studio.html\"><img class=\"brand-logo\" src=\"../assets/brand/pixel-studio-horizontal.svg\" alt=\"Pixel Studio\" width=\"2400\" height=\"720\"><span class=\"brand-caption\">Pixel Studio<br>Vocal Lab</span><span class=\"sr-only\">, back to the course home</span></a>",
 "455705da5b": "<a class=\"back\" href=\"index.html\">← Back to Vocal Lab</a>",
 "fb46756d7f": "Bring your practice records from the old site",
 "cebfb0fad4": "The old site and Pixel Studio live on different domains, so your browser won't move your local practice records over by itself. First download a backup on the device and browser you used before, then come back here to import it.",
@@ -116,7 +116,6 @@
 "bfc3240148": "<i>01 / Pitch</i><b>Pitch challenge</b><span>Play the target note, sing into the microphone, see how far off you are in real time, and keep a record of every hit.</span><a class=\"feature-link\" href=\"slides/lesson-02/index.html#s6\">Start the pitch challenge ↗︎</a>",
 "1e4d54975f": "<i>02 / Breath</i><b>Exhale test</b><span>Press start and the timer runs straight away. It works out your steadiness, and comparing the pre-test with the post-test shows how far you've come.</span><a class=\"feature-link\" href=\"slides/lesson-02/index.html#s3\">Go to the breathing lesson ↗︎</a>",
 "10386c3308": "<i>03 / Record</i><b>Recording comparison</b><span>Record and keep your Recording Zero, then play it next to your progress at the end of the course.</span><a class=\"feature-link\" href=\"slides/lesson-01/index.html#s21\">Make your first recording ↗︎</a>",
-"f3b8fc9a59": "<i>04 / Practice</i><b>Practice log</b><span>Exit tickets, a seven-day log and homework checklists carry your practice into the next lesson. Until the back end connects, written records are held in this browser.</span><a class=\"feature-link\" href=\"handbook.html\">Read the practice notes ↗︎</a>",
 "590a09c457": "Let learning<br>find its own rhythm.",
 "f48d17dfe1": "Fill in the survey on the site three days before class. Each lesson moves through four parts, and practice after class carries into the next one.",
 "e347bddeb0": "<b>Open</b>Warm-up · feedback · topic<br><small>20 minutes</small>",

@@ -65,7 +65,7 @@
 <!-- learning-notes-start -->
 ### 能力路線與練習紀錄
 
-[開啟課程能力路線](index.html#lessons)：各堂課卡片整合建議先備與本機作業勾選，另可展開課程路線總覽。網站練習紀錄圖沿用原七天表格，缺值保留空白，秒數、次數與分鐘分開檢視。PDF保留本表作書面紀錄，不填入示範成績。
+[開啟課程地圖](index.html#lessons)，查看每堂的建議準備與作業，也可以勾選完成項目、展開路線總覽。網站練習紀錄圖沿用原七天表格，缺值保留空白，秒數、次數與分鐘分開檢視。PDF 保留本表作書面紀錄，不填入示範成績。
 
 <!-- learning-notes-end -->
 
@@ -343,7 +343,7 @@
 <!-- teaching-visuals-end -->
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>雙手同步指法</h4><p>C大調上行，右手在F穿指，左手在A跨指；兩個動作並不同時發生。</p><figure class="learning-print"><img src="../assets/learning/print/piano-dual-hands.svg" alt="雙手同步指法的關鍵狀態圖" loading="eager"><figcaption>雙手同步指法｜關鍵狀態</figcaption></figure><p><a href="p03/#12">開啟互動練習</a></p></div>
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>雙手同步指法</h4><p>C 大調上行，右手在 F 穿指，左手在 A 跨指；兩個動作並不同時發生。</p><figure class="learning-print"><img src="../assets/learning/print/piano-dual-hands.svg" alt="雙手同步指法的重點畫面圖" loading="eager"><figcaption>雙手同步指法｜重點畫面</figcaption></figure><p><a href="p03/#12">開啟互動練習</a></p></div>
 
 <!-- learning-notes-end -->
 
@@ -425,7 +425,7 @@
 - [ ] 填寫第五堂課前問卷
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>最近音連接</h4><p>C→F→G→C可比較原位與就近連接。C→F保留C4，E4到F4、G4到A4。</p><figure class="learning-print"><img src="../assets/learning/print/piano-voice-leading.svg" alt="最近音連接的關鍵狀態圖" loading="eager"><figcaption>最近音連接｜關鍵狀態</figcaption></figure><p><a href="p04/#12">開啟互動練習</a></p></div>
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>最近音連接</h4><p>C→F→G→C 可比較原位與就近連接。C→F 保留 C4，E4 到 F4、G4 到 A4。</p><figure class="learning-print"><img src="../assets/learning/print/piano-voice-leading.svg" alt="最近音連接的重點畫面圖" loading="eager"><figcaption>最近音連接｜重點畫面</figcaption></figure><p><a href="p04/#12">開啟互動練習</a></p></div>
 
 <!-- learning-notes-end -->
 
@@ -600,7 +600,7 @@
 <!-- teaching-visuals-end -->
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>按拍號選伴奏</h4><p>同一組C和弦可依拍號比較本課既有的伴奏型，避免只憑BPM決定風格。</p><figure class="learning-print"><img src="../assets/learning/print/piano-accompaniment.svg" alt="按拍號選伴奏的關鍵狀態圖" loading="eager"><figcaption>按拍號選伴奏｜關鍵狀態</figcaption></figure><p><a href="p06/#11">開啟互動練習</a></p></div>
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>按拍號選伴奏</h4><p>同一組 C 和弦可依拍號比較本課既有的伴奏型，避免只憑 BPM 決定風格。</p><figure class="learning-print"><img src="../assets/learning/print/piano-accompaniment.svg" alt="按拍號選伴奏的重點畫面圖" loading="eager"><figcaption>按拍號選伴奏｜重點畫面</figcaption></figure><p><a href="p06/#11">開啟互動練習</a></p></div>
 
 <!-- learning-notes-end -->
 
@@ -706,7 +706,7 @@
 
 ### 講義擴充：判斷調性與閱讀和弦譜
 
-- 單一調性：整首歌沒有轉調。看第一個與最後一個和弦，再看出現最多的三個和弦。
+- 單一調性：整首歌沒有轉調。觀察第一個與最後一個和弦，再找出出現最多的三個和弦。
 - 和弦譜常見記號：Intro、Verse、Chorus、反覆記號、第一次與第二次結尾、D.S.、D.C.、Coda、N.C.。
 
 ### 講義擴充：前奏與尾奏
@@ -840,7 +840,7 @@
 | 段落 | 時間 | 內容 | 投影片 |
 | --- | --- | --- | --- |
 | 起 | 00:00–00:20 | 期中曲目移調了嗎？、只聆聽最低的聲音：它一直往下走 | 3–4 |
-| 承 | 00:20–00:55 | 斜線左邊是和弦，右邊是低音、相鄰的兩個低音，最好只差一步、切換兩組和弦，比較低音跳躍與低音級進、讀出複合和弦 | 5–8 |
+| 承 | 00:20–00:55 | 斜線左邊是和弦，右邊是低音、相鄰的兩個低音，最好只差一步、切換兩組和弦，比較低音跳躍與低音級進、判讀複合和弦 | 5–8 |
 | 休 | 00:55–01:05 | 休息十分鐘 | 9 |
 | 轉 | 01:05–01:40 | 流行歌曲最常用的五組和弦行進、切換和弦行進，跟著彈奏，感受情緒的差別、迷思還是事實？、設計一條低音線 | 10–13 |
 | 合 | 01:40–02:00 | 一半同學彈奏低音線，一半同學彈奏右手和弦、離開教室前，寫下 3-2-1 | 14–16 |
@@ -879,7 +879,7 @@
 | 3 | 舉手計票 | 期中曲目移調了嗎？ |
 | 4 | 曲例聆聽・YouTube | 只聆聽最低的聲音：它一直往下走 |
 | 7 | 伴奏型播放器 | 切換兩組和弦，比較低音跳躍與低音級進 |
-| 8 | 選擇題 | 讀出複合和弦 |
+| 8 | 選擇題 | 判讀複合和弦 |
 | 11 | 伴奏型播放器 | 切換和弦行進，跟著彈奏，感受情緒的差別 |
 | 12 | 迷思破解・翻牌 | 迷思還是事實？ |
 | 13 | 分組任務・計分 | 設計一條低音線 |

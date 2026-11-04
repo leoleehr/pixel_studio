@@ -8,20 +8,20 @@
 
 ### 十二章進度表
 
-| 章 | 冊別 | 主題 | 核心內容 | 教材狀態 |
-| --- | --- | --- | --- | --- |
-| 1 | 上冊 | 認識吉他與調音 | 起源演變、種類、構造、用料、筒身、選琴、調音、持琴 | 投影片完成 |
-| 2 | 上冊 | 拍點、讀譜與熱手 | 音高與譜表、時值、拍號、六線譜、爬格子、C 大調音階 | 投影片完成 |
-| 3 | 上冊 | 第一組和弦 | 和弦圖、C、G、Am、F、換和弦、級數 I–V–vi–IV | 投影片完成 |
-| 4 | 上冊 | 刷奏與切分 | 下刷、上刷、空刷、華語刷法標示、8 Beats、切分 Folk Rock | 投影片完成 |
-| 5 | 上冊 | 三拍子與伴奏變化 | 二拍子系統伴奏、3/4、6/8、12/8、蹦洽洽 | 投影片完成 |
-| 6 | 上冊 | 曲式分析與期中彈唱 | 主歌、副歌、橋段、Capo、段落伴奏設計、期中發表 | 投影片完成 |
-| 7 | 下冊 | 樂理導入與指法 | 音程與協和度、三和弦、指法姿勢、分散和弦 | 投影片完成 |
-| 8 | 下冊 | G 大調與封閉和弦 | G 大調音階、順階和弦、封閉 F、Bm | 投影片完成 |
-| 9 | 下冊 | 低音變化 | 根音與替代根音、分數和弦、下行低音線 | 投影片完成 |
-| 10 | 下冊 | 級數與和弦編排 | 級數功能、常見行進、代理和弦、編曲入門 | 投影片完成 |
-| 11 | 下冊 | 旋律與音色技巧 | 搥弦、勾弦、滑弦、悶音、切音、打板、泛音、推弦、鬆弦、揉音、顫音 | 投影片完成 |
-| 12 | 下冊 | 轉調、定調與創作 | 移調與 Capo、定調、其他調性、詞曲創作 | 投影片完成 |
+| 章 | 冊別 | 主題 | 核心內容 |
+| --- | --- | --- | --- |
+| 1 | 上冊 | 認識吉他與調音 | 起源演變、種類、構造、用料、筒身、選琴、調音、持琴 |
+| 2 | 上冊 | 拍點、讀譜與熱手 | 音高與譜表、時值、拍號、六線譜、爬格子、C 大調音階 |
+| 3 | 上冊 | 第一組和弦 | 和弦圖、C、G、Am、F、換和弦、級數 I–V–vi–IV |
+| 4 | 上冊 | 刷奏與切分 | 下刷、上刷、空刷、華語刷法標示、8 Beats、切分 Folk Rock |
+| 5 | 上冊 | 三拍子與伴奏變化 | 二拍子系統伴奏、3/4、6/8、12/8、蹦洽洽 |
+| 6 | 上冊 | 曲式分析與期中彈唱 | 主歌、副歌、橋段、Capo、段落伴奏設計、期中發表 |
+| 7 | 下冊 | 樂理導入與指法 | 音程與協和度、三和弦、指法姿勢、分散和弦 |
+| 8 | 下冊 | G 大調與封閉和弦 | G 大調音階、順階和弦、封閉 F、Bm |
+| 9 | 下冊 | 低音變化 | 根音與替代根音、分數和弦、下行低音線 |
+| 10 | 下冊 | 級數與和弦編排 | 級數功能、常見行進、代理和弦、編曲入門 |
+| 11 | 下冊 | 旋律與音色技巧 | 搥弦、勾弦、滑弦、悶音、切音、打板、泛音、推弦、鬆弦、揉音、顫音 |
+| 12 | 下冊 | 轉調、定調與創作 | 移調與 Capo、定調、其他調性、詞曲創作 |
 
 ### 每章 120 分鐘的共同節奏
 
@@ -49,13 +49,13 @@
 
 - 新觀念控制在 35 分鐘以內，其餘時間都留給彈奏
 - 每三張投影片至少安排一個互動：投票、選擇題、排序、翻牌、分組計分或練習器
-- 先示範、再跟著做、最後各自練習；速度由慢到快，穩定比速度重要
+- 先示範、再跟隨操作、最後各自練習；速度由慢到快，穩定比速度重要
 - 原教材的固定 BPM 只是示例，起始速度依照學員程度調整
 
 <!-- learning-notes-start -->
 ### 能力路線與練習紀錄
 
-[開啟課程能力路線](index.html#lessons)：各堂課卡片整合建議先備與本機作業勾選，另可展開課程路線總覽。網站練習紀錄圖沿用原七天表格，缺值保留空白，秒數、次數與分鐘分開檢視。PDF保留本表作書面紀錄，不填入示範成績。
+[開啟課程地圖](index.html#lessons)，查看每堂的建議準備與作業，也可以勾選完成項目、展開路線總覽。網站練習紀錄圖沿用原七天表格，缺值保留空白，秒數、次數與分鐘分開檢視。PDF 保留本表作書面紀錄，不填入示範成績。
 
 <!-- learning-notes-end -->
 
@@ -510,7 +510,7 @@
 <!-- teaching-visuals-end -->
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>換和弦路徑</h4><p>C→Am：食指與中指留在原位，無名指由5弦3格移到3弦2格。實際移動時先離弦。</p><figure class="learning-print"><img src="../assets/learning/print/guitar-chord-path.svg" alt="換和弦路徑的關鍵狀態圖" loading="eager"><figcaption>換和弦路徑｜關鍵狀態</figcaption></figure><p><a href="ch03/#15">開啟互動練習</a></p></div>
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>換和弦路徑</h4><p>C→Am：食指與中指留在原位，無名指由5弦3格移到3弦2格。實際移動時先離弦。</p><figure class="learning-print"><img src="../assets/learning/print/guitar-chord-path.svg" alt="換和弦路徑的重點畫面圖" loading="eager"><figcaption>換和弦路徑｜重點畫面</figcaption></figure><p><a href="ch03/#15">開啟互動練習</a></p></div>
 
 <!-- learning-notes-end -->
 
@@ -709,8 +709,8 @@
 - [ ] 選好期中彈唱曲目，填寫第六章課前問卷
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>根音與交替低音</h4><p>依和弦找出根音與另一個和弦音。C/E等交替方式不一律是五度，仍以教材指法為準。</p><figure class="learning-print"><img src="../assets/learning/print/guitar-bass-map.svg" alt="根音與交替低音的關鍵狀態圖" loading="eager"><figcaption>根音與交替低音｜關鍵狀態</figcaption></figure><p><a href="ch05/#6">開啟互動練習</a></p></div>
-<div class="learning-book-block"><h4>按拍號選伴奏</h4><p>先選拍號，再以相同和弦比較速度與伴奏型；推薦不是唯一正解。</p><figure class="learning-print"><img src="../assets/learning/print/guitar-accompaniment.svg" alt="按拍號選伴奏的關鍵狀態圖" loading="eager"><figcaption>按拍號選伴奏｜關鍵狀態</figcaption></figure><p><a href="ch05/#16">開啟互動練習</a></p></div>
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>根音與交替低音</h4><p>依和弦找出根音與另一個和弦音。C/E等交替方式不一律是五度，仍以教材指法為準。</p><figure class="learning-print"><img src="../assets/learning/print/guitar-bass-map.svg" alt="根音與交替低音的重點畫面圖" loading="eager"><figcaption>根音與交替低音｜重點畫面</figcaption></figure><p><a href="ch05/#6">開啟互動練習</a></p></div>
+<div class="learning-book-block"><h4>按拍號選伴奏</h4><p>先選拍號，再以相同和弦比較速度與伴奏型；推薦僅供參考，可依歌曲調整。</p><figure class="learning-print"><img src="../assets/learning/print/guitar-accompaniment.svg" alt="按拍號選伴奏的重點畫面圖" loading="eager"><figcaption>按拍號選伴奏｜重點畫面</figcaption></figure><p><a href="ch05/#16">開啟互動練習</a></p></div>
 
 <!-- learning-notes-end -->
 

@@ -711,7 +711,7 @@
     root.classList.add('tuner');
     root.innerHTML = '<div class="strings">' + OPEN.map(function (o, i) { return '<button type="button" data-s="' + i + '"><b>' + o.n + '</b><small>' + (6 - i) + ' 弦・' + o.n + o.o + '</small></button>'; }).join('') + '</div>' +
       '<div class="dial"><span class="read">‧‧</span><span class="cents"></span><i class="zone"></i><i class="scale"></i><i class="needle"></i><span class="lbl l">偏低 ♭</span><span class="lbl r">偏高 ♯</span></div>' +
-      '<div class="row" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button type="button" class="btn primary mic">🎙 開始調音</button><button type="button" class="btn ref">▶︎ 播放參考音</button><span class="msg">選擇一條琴弦，先聆聽參考音，再按下「開始調音」，撥奏那條空弦。</span></div>';
+      '<div class="row" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button type="button" class="btn primary mic">開始調音</button><button type="button" class="btn ref">▶︎ 播放參考音</button><span class="msg">選擇一條琴弦，先聆聽參考音，再按下「開始調音」，撥奏那條空弦。</span></div>';
     var cur = 0, stream = null, raf = 0, an = null, buf = null, okSince = 0, done = {};
     var needle = $('.needle', root), read = $('.read', root), cents = $('.cents', root), msg = $('.msg', root), micBtn = $('.mic', root);
     function pick(i) { cur = i; $$('.strings button', root).forEach(function (b, k) { b.classList.toggle('on', k === i); }); }
@@ -721,7 +721,7 @@
       var f = [-1, -1, -1, -1, -1, -1]; f[cur] = 0;
       PS.audio.strum(f, a.currentTime + 0.02, 'down', { duration: 2.5, volume: 0.35 });
     });
-    function stop() { cancelAnimationFrame(raf); if (stream) stream.getTracks().forEach(function (t) { t.stop(); }); stream = null; micBtn.textContent = '🎙 開始調音'; }
+    function stop() { cancelAnimationFrame(raf); if (stream) stream.getTracks().forEach(function (t) { t.stop(); }); stream = null; micBtn.textContent = '開始調音'; }
     var lastT = 0;
     function loop(now) {
       raf = requestAnimationFrame(loop);

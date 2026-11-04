@@ -397,8 +397,8 @@
       st = LS.get(key, null); if (!st || st.length !== secs.length) st = secs.map(function () { return 0; });
       showRef = false; selected=0;edit.hidden = !work.editable;
       meta.innerHTML = work.artist
-        ? '邊聽〈' + esc(work.title) + '〉，邊替每一段點選旋律的音域位置（7 最高、1 最低）。' + (work.editable ? '段落先依常見曲式排列，請依實際聆聽增減。' : '')
-        : '依照歌詞的情緒，替每一段點選旋律的音域位置（7 最高、1 最低）。' + (work.key ? '原曲：' + (work.meter || '4/4') + '，' + work.key + ' 大調' + (work.bpm ? '，每分鐘 ' + work.bpm + ' 拍' : '') + '。' : '');
+        ? '邊聽〈' + esc(work.title) + '〉，邊為每一段點選旋律的音域位置（7 最高、1 最低）。' + (work.editable ? '段落先依常見曲式排列，請依實際聆聽增減。' : '')
+        : '依照歌詞的情緒，為每一段點選旋律的音域位置（7 最高、1 最低）。' + (work.key ? '原曲：' + (work.meter || '4/4') + '，' + work.key + ' 大調' + (work.bpm ? '，每分鐘 ' + work.bpm + ' 拍' : '') + '。' : '');
       if (lyr) lyrics();
       draw();
     }

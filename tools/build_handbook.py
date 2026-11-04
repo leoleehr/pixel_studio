@@ -394,8 +394,6 @@ def chapter(n, sv):
 def main():
     md = MD.read_text(encoding='utf-8')
     head = md[:md.index('## 第二章')]
-    head = re.sub(r'\| 教案草案（原教材部分為綱要） \|', '| 投影片完成 |', head)
-    head = head.replace('| 教案草案 |', '| 投影片完成 |')
     # 第一章為手寫內容：在「課堂互動」前放入（或更新）譜例
     head = re.sub(r'<!-- scores:1 -->.*?<!-- /scores:1 -->\n\n', '', head, flags=re.S)
     i1 = head.index('### 課堂互動（網站簡報）', head.index('## 第一章'))

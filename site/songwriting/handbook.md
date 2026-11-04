@@ -4,7 +4,7 @@
 
 ## 課程總覽
 
-流行音樂以藍調為濫觴，百年之間翻轉、融合了整個地球的音樂。臺灣在五〇年代大量吸收美國的流行音樂文化，日後成為華語流行音樂的重鎮；詞曲創作的中文教材，卻始終稀少。這份講義將詞曲創作整理成系統，盼望協助學員解答創作上的疑惑。
+流行音樂以藍調為濫觴，百年之間翻轉、融合了整個地球的音樂。台灣在五〇年代大量吸收美國的流行音樂文化，日後成為華語流行音樂的重鎮；詞曲創作的中文教材，卻始終稀少。這份講義將詞曲創作整理成系統，盼望協助學員解答創作上的疑惑。
 
 課程共八堂，每堂 180 分鐘，合計 24 小時。每一組學員從第一堂確立主題開始，一堂一堂累積同一張「創作範本卡」，第八堂發表一首包含詞、曲、編曲與 Demo 的完整作品。
 
@@ -69,7 +69,7 @@
 <!-- learning-notes-start -->
 ### 能力路線與練習紀錄
 
-[開啟課程能力路線](index.html#lessons)：各堂課卡片整合建議先備與本機作業勾選，另可展開課程路線總覽。網站練習紀錄圖沿用原七天表格，缺值保留空白，秒數、次數與分鐘分開檢視。PDF保留本表作書面紀錄，不填入示範成績。
+[開啟課程地圖](index.html#lessons)，查看每堂的建議準備與作業，也可以勾選完成項目、展開路線總覽。網站練習紀錄圖沿用原七天表格，缺值保留空白，秒數、次數與分鐘分開檢視。PDF 保留本表作書面紀錄，不填入示範成績。
 
 <!-- learning-notes-end -->
 
@@ -404,7 +404,7 @@
 - [ ] 填寫第四堂課前問卷
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>字調與旋律</h4><p>字調與旋律的方向可疊圖比較；方向不同時需回到字義及整句試唱，不能只憑曲線判定。</p><figure class="learning-print"><img src="../assets/learning/print/songwriting-tone-melody.svg" alt="字調與旋律的關鍵狀態圖" loading="eager"><figcaption>字調與旋律｜關鍵狀態</figcaption></figure><p><a href="s03/#11">開啟互動練習</a></p></div>
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>字調與旋律</h4><p>字調與旋律的方向可疊圖比較；方向不同時需回到字義及整句試唱，不能只憑曲線判定。</p><figure class="learning-print"><img src="../assets/learning/print/songwriting-tone-melody.svg" alt="字調與旋律的重點畫面圖" loading="eager"><figcaption>字調與旋律｜重點畫面</figcaption></figure><p><a href="s03/#11">開啟互動練習</a></p></div>
 
 <!-- learning-notes-end -->
 
@@ -541,7 +541,7 @@
 - [ ] 填寫第五堂課前問卷
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>句內修辭標記</h4><p>類疊看重複詞，頂真看前尾接後頭，映襯看對照片語。網站以原創短句提供選擇與標記。</p><figure class="learning-print"><img src="../assets/learning/print/songwriting-rhetoric.svg" alt="句內修辭標記的關鍵狀態圖" loading="eager"><figcaption>句內修辭標記｜關鍵狀態</figcaption></figure><p><a href="s04/#9">開啟互動練習</a></p></div>
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>句內修辭標記</h4><p>類疊看重複詞，頂真看前尾接後頭，映襯看對照片語。網站以原創短句提供選擇與標記。</p><figure class="learning-print"><img src="../assets/learning/print/songwriting-rhetoric.svg" alt="句內修辭標記的重點畫面圖" loading="eager"><figcaption>句內修辭標記｜重點畫面</figcaption></figure><p><a href="s04/#9">開啟互動練習</a></p></div>
 
 <!-- learning-notes-end -->
 
@@ -600,7 +600,7 @@
 | 家族 | 級數 | 任務 |
 | --- | --- | --- |
 | 主和弦 | 1 與 6 | 開始與結束 |
-| 裝飾和弦 | 4 與 2 | 放在屬和弦之前 |
+| 下屬和弦 | 4 與 2 | 放在屬和弦之前 |
 | 屬和弦 | 5 | 放在結束的主和弦之前 |
 
 | 行進 | C 大調 | 說明 |
@@ -816,7 +816,7 @@
 - [ ] 填寫第八堂課前問卷
 
 <!-- learning-notes-start -->
-<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>段落配器</h4><p>以段落對照主律動、副律動、主旋律、過門與襯底；可以讀取自己的曲式積木，按曲式分別儲存配置，再試聽聲部差別。</p><figure class="learning-print"><img src="../assets/learning/print/songwriting-arrangement.svg" alt="段落配器的關鍵狀態圖" loading="eager"><figcaption>段落配器｜關鍵狀態</figcaption></figure><p><a href="s07/#8">開啟互動練習</a></p></div>
+<div class="learning-book-block"><h3>互動練習與圖解</h3><h4>段落配器</h4><p>以段落對照主律動、副律動、主旋律、過門與襯底；可以讀取自己的曲式積木，按曲式分別儲存配置，再試聽聲部差別。</p><figure class="learning-print"><img src="../assets/learning/print/songwriting-arrangement.svg" alt="段落配器的重點畫面圖" loading="eager"><figcaption>段落配器｜重點畫面</figcaption></figure><p><a href="s07/#8">開啟互動練習</a></p></div>
 
 <!-- learning-notes-end -->
 
@@ -874,7 +874,7 @@
 ### 講義擴充：結論
 
 - 音樂創作的意義：用旋律與文字記錄生命的點滴，將感受與感動對等地移轉到聆聽者的心底。
-- 創作的推廣：作品發表之後，才真正開始與世界對話。
+- 創作的推廣：作品發表之後，可以分享給朋友、上傳網路或參加比賽。
 - 創作的自我實現：好的音樂不需要高深的技巧堆砌，充分表達內心的情感，就是無法仿造的藝術。
 
 音樂創作的路很長，我們都永遠需要彼此的鼓勵。
