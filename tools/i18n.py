@@ -386,6 +386,11 @@ def prep(rel, src):
     """翻譯前的整理：先套用 code_en.py 的整句替換；講義頁的預先渲染內容改由英文 Markdown 在瀏覽器端轉換，不逐句翻 HTML。"""
     global CODE
     if CODE is None: CODE = code_table()
+    # interact.js 拆成分塊後，整句替換仍寫在同一組；每個片段只會落在其中一個檔案，所以這組不提示對不上
+    if rel == 'assets/interact.js' or rel.startswith('assets/interact/'):
+        for a, b in CODE.get('assets/interact.js', []):
+            src = src.replace(a, b)
+        return src
     for a, b in CODE.get(rel, []):
         if a not in src and b not in src: print('code_en: not found in', rel, '::', a[:60], file=sys.stderr)
         src = src.replace(a, b)
