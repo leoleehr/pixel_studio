@@ -30,15 +30,23 @@
     lesson: LESSON,
     page_lang: PAGE_LANG
   });
-  // gtag 約 170 KB，等頁面載完、瀏覽器閒置時才下載，不和首屏搶頻寬；之前的事件先排在 dataLayer，載入後一起送出
+  // gtag 約 170 KB，解析執行要占主執行緒 200–400 ms。等使用者第一次捲動、點按或按鍵才下載，
+  // 頁面剛打開、正在回應操作的那幾秒不被它卡住；一直沒操作的人，載入後 5 秒也會補送。之前的事件先排在 dataLayer，載入後一起送出
+  var loaded = false, WAKE = ['pointerdown', 'keydown', 'touchstart', 'scroll', 'wheel'];
   function loadGtag() {
+    if (loaded) return;
+    loaded = true;
+    WAKE.forEach(function (t) { removeEventListener(t, wake, true); });
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID;
     document.head.appendChild(s);
   }
-  function idle() { (window.requestIdleCallback || function (f) { setTimeout(f, 1200); })(loadGtag, { timeout: 4000 }); }
-  if (document.readyState === 'complete') idle(); else addEventListener('load', idle, { once: true });
+  // 操作當下先讓瀏覽器處理那次點按或捲動，空檔再載入
+  function wake() { (window.requestIdleCallback || function (f) { setTimeout(f, 200); })(loadGtag, { timeout: 1500 }); }
+  WAKE.forEach(function (t) { addEventListener(t, wake, { capture: true, passive: true, once: true }); });
+  function later() { setTimeout(loadGtag, 5000); }
+  if (document.readyState === 'complete') later(); else addEventListener('load', later, { once: true });
 
   function track(name, params) {
     params = params || {};
