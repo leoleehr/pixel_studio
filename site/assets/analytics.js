@@ -30,10 +30,15 @@
     lesson: LESSON,
     page_lang: PAGE_LANG
   });
-  var s = document.createElement('script');
-  s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID;
-  document.head.appendChild(s);
+  // gtag 約 170 KB，等頁面載完、瀏覽器閒置時才下載，不和首屏搶頻寬；之前的事件先排在 dataLayer，載入後一起送出
+  function loadGtag() {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID;
+    document.head.appendChild(s);
+  }
+  function idle() { (window.requestIdleCallback || function (f) { setTimeout(f, 1200); })(loadGtag, { timeout: 4000 }); }
+  if (document.readyState === 'complete') idle(); else addEventListener('load', idle, { once: true });
 
   function track(name, params) {
     params = params || {};

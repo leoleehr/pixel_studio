@@ -1,7 +1,10 @@
 """Build deterministic SVG artwork with the official corner logo.
 
 Run after regenerating artwork, then prerender_handbooks.py and reprint PDFs.
-Original artwork is retained; no generative edits or image recompression.
+Original artwork files are retained untouched and no generative edits are made.
+The copy embedded in each branded SVG is re-encoded as WebP (longest side at most
+2000 px) so pages download less; the corner logo is embedded as lossless WebP.
+`--images-only` rebuilds the SVG files without rewriting references in pages.
 """
 from pathlib import Path
 import base64, io, json, re, shutil, xml.etree.ElementTree as ET
@@ -14,7 +17,27 @@ SOURCE = Path(r'C:/Agent/UIUX/brand/pixel-studio/01-current/Pixel-Studio-CI-v1/0
 def uri(data, mime):
     return 'data:' + mime + ';base64,' + base64.b64encode(data).decode()
 
-def build():
+MAX_SIDE = 2000
+
+def web_uri(data, mime):
+    """Embed a web copy: WebP, longest side <= MAX_SIDE; keep the original bytes if WebP is not smaller."""
+    im = Image.open(io.BytesIO(data))
+    alpha = im.mode in ('RGBA', 'LA', 'P') and 'A' in im.convert('RGBA').getbands()
+    im = im.convert('RGBA' if alpha else 'RGB')
+    if max(im.size) > MAX_SIDE:
+        im.thumbnail((MAX_SIDE, MAX_SIDE), Image.Resampling.LANCZOS)
+    buf = io.BytesIO()
+    # PNG sources are usually diagrams with lettering: higher quality keeps edges crisp
+    im.save(buf, format='WEBP', quality=90 if mime == 'image/png' else 82, method=6)
+    out = buf.getvalue()
+    return uri(out, 'image/webp') if len(out) < len(data) else uri(data, mime)
+
+EMBEDDED = re.compile(r'data:(image/(?:png|jpeg|webp));base64,([A-Za-z0-9+/=\s]+)')
+
+def web_embedded(svg_text):
+    return EMBEDDED.sub(lambda m: web_uri(base64.b64decode(re.sub(r'\s', '', m.group(2))), m.group(1)), svg_text)
+
+def build(rewrite_refs=True):
     logos = {}
     for color in ('black','white'):
         name = f'horizontal-mono-{color}-3600.png'
@@ -22,8 +45,8 @@ def build():
         if not target.exists(): shutil.copyfile(SOURCE / name, target)
         # A proportional web-sized copy; original official files remain unchanged.
         im = Image.open(target); im.thumbnail((720,216), Image.Resampling.LANCZOS)
-        buf = io.BytesIO(); im.save(buf, format='PNG', optimize=True)
-        logos[color] = uri(buf.getvalue(), 'image/png')
+        buf = io.BytesIO(); im.save(buf, format='WEBP', lossless=True, method=6)
+        logos[color] = uri(buf.getvalue(), 'image/webp')
     overrides = json.loads((ROOT / 'tools/artwork_branding_overrides.json').read_text(encoding='utf-8'))
     mapping = {}; report = []
     for folder in ('guitar','piano','teaching'):
@@ -36,7 +59,7 @@ def build():
                 w,h = map(float,vb[2:]) if vb else (float(root.get('width')),float(root.get('height')))
                 # Keep the original canvas; use the empty lower-right area beside captions.
                 out_h = h
-                content = re.sub(r'<\?xml[^>]*\?>', '', original.decode('utf-8')).strip()
+                content = web_embedded(re.sub(r'<\?xml[^>]*\?>', '', original.decode('utf-8')).strip())
                 opacity=.60;color='white';side='right';lw=w*.15;x=w-lw-w*.02;y=h-lw*.3-w*.012
             else:
                 im=Image.open(p).convert('RGB');w,h=im.size;out_h=h
@@ -59,7 +82,7 @@ def build():
                 # User requires transparent logos only: never add plates, borders or canvas.
                 if p.stem in ('breath-wall-tissue-white','breath-wall-white'):
                     side='right';x=w-lw-margin;color='black';opacity=.50
-                content=f'<image width="{w}" height="{h}" href="{uri(original,"image/jpeg" if p.suffix==".jpg" else "image/webp")}"/>'
+                content=f'<image width="{w}" height="{h}" href="{web_uri(original,"image/jpeg" if p.suffix==".jpg" else "image/webp")}"/>'
             override = overrides.get(p.stem)
             if override:
                 color = override.get('logo', color);opacity=override.get('opacity',opacity)
@@ -70,7 +93,7 @@ def build():
                 if 'x_fraction' in override:x=w*override['x_fraction']
                 if 'y_fraction' in override:y=h*override['y_fraction']
             if override and override.get('flip_left_vertical'):
-                data_uri=uri(original,'image/jpeg' if p.suffix=='.jpg' else 'image/webp')
+                data_uri=web_uri(original,'image/jpeg' if p.suffix=='.jpg' else 'image/webp')
                 content=(f'<g><defs><image id="original-photo" width="{w}" height="{h}" href="{data_uri}"/>'
                          f'<clipPath id="left-half"><rect width="{w/2}" height="{h}"/></clipPath>'
                          f'<clipPath id="right-half"><rect x="{w/2}" width="{w/2}" height="{h}"/></clipPath></defs>'
@@ -84,6 +107,8 @@ def build():
             out.write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{out_h}" viewBox="0 0 {w} {out_h}">{content}{logo}</svg>\n',encoding='utf-8',newline='\n')
             mapping[p.name]=out.name
             report.append({'source':p.relative_to(ROOT).as_posix(),'output':out.relative_to(ROOT).as_posix(),'corner':side,'logo':color,'opacity':opacity,'width_fraction':round(lw/w,3),'transparent':True,'canvas_unchanged':True})
+    if not rewrite_refs:
+        print('Branded',len(report),'artworks (references untouched)'); return
     # Only references change, never the original artwork generators.
     files=list((ROOT/'site').rglob('*'))+list((ROOT/'tools/decks').rglob('*.html'))+list((ROOT/'tools/piano').rglob('*.html'))+list((ROOT/'tools/songwriting').rglob('*.html'))+[ROOT/'tools/teaching_visuals_manifest.json']
     for p in files:
@@ -98,4 +123,6 @@ def build():
         if updated!=text:p.write_text(updated,encoding='utf-8',newline='\n')
     (ROOT/'tools/artwork_branding_manifest.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
     print('Branded',len(report),'artworks')
-if __name__=='__main__':build()
+if __name__=='__main__':
+    import sys
+    build(rewrite_refs='--images-only' not in sys.argv)

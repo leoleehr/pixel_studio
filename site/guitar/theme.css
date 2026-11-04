@@ -143,7 +143,7 @@
 /* 調音器 */
 .tuner{display:grid;gap:14px}
 .tuner .strings{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
-.tuner .strings button{border:1px solid var(--line-2);background:var(--card);color:var(--ink);border-radius:var(--r-sm,3px);padding:10px 0 8px;cursor:pointer;text-align:center}
+.tuner .strings button{min-height:44px;border:1px solid var(--line-2);background:var(--card);color:var(--ink);border-radius:var(--r-sm,3px);padding:10px 0 8px;cursor:pointer;text-align:center}
 .tuner .strings button b{display:block;font:700 28px/1.1 var(--display)}
 .tuner .strings button small{font-size:13px;color:var(--muted)}
 .tuner .strings button.on{border-color:var(--accent);background:rgba(var(--accent-rgb),.12)}
@@ -221,6 +221,10 @@
 
 /* 指板點選 */
 .fretboard .nn{cursor:pointer}
+/* 透明的點擊範圍：比音符圓點大，手機上至少 24px */
+.fretboard .hit-area{fill:transparent}
+/* 手機上指板維持可點的大小，改成左右滑動 */
+@media(max-width:700px){[data-fretboard]{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}[data-fretboard] .fretboard{min-width:1100px}}
 .fretboard .nn.hit circle{fill:#fff}
 .fretboard .nn.hit text{fill:#0b130a}
 

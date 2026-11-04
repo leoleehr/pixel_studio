@@ -1,5 +1,6 @@
 /* ===== 深色／淺色主題 =====
- * 放在 <head> 最前面同步執行，第一次繪製就是使用者選的主題。選擇存在 localStorage（ps-theme），全站共用。
+ * <head> 最前面的內嵌程式（tools/theme_inject.py 產生）先套用使用者選的主題，第一次繪製就正確；本檔以 defer 載入，負責按鈕與標誌。
+ * 選擇存在 localStorage（ps-theme），全站共用。
  * 淺色樣式在 theme-light.css（tools/build_theme_light.py 產生），只在淺色模式載入；深色模式完全不受影響。
  * <script data-kit> 標明這頁用哪一套樣式（site／deck／entry／plain），淺色規則依此分開。
  * 按鈕：入口頁的 .masthead 放一顆完整按鈕，其他頁跟在語言切換旁邊放小按鈕。
@@ -7,14 +8,14 @@
  */
 (function () {
   'use strict';
-  var CSS_V = 'a8b4996f39';
+  var CSS_V = 'fdc23a8b0a';
   var KEY = 'ps-theme', root = document.documentElement, me = document.currentScript;
   var base = me ? me.src.replace(/theme\.js(\?.*)?$/, '') : 'assets/';
   root.setAttribute('data-kit', (me && me.getAttribute('data-kit')) || 'site');
   var lab = (location.pathname.match(/\/(vocal|guitar|piano|songwriting)\//) || [])[1];
   if (lab) root.setAttribute('data-lab', lab);
 
-  var sheet = null;
+  var sheet = document.getElementById('ps-theme-css');
   function load(cb) {
     if (sheet) { if (cb) cb(); return; }
     sheet = document.createElement('link');

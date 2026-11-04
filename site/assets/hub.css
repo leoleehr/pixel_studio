@@ -98,7 +98,7 @@
   .hub .teacher{grid-template-columns:1fr;gap:28px}
   .hub .teacher-portrait{position:static}
   .hub .pillars{grid-template-columns:1fr;gap:24px}
-  .hub .fx-toggle{font-size:10px;min-height:30px;padding:4px 9px}
+  .hub .fx-toggle{font-size:11px;min-height:30px;padding:4px 9px}
 }
 
 /* 主視覺英文標語：完整一行，不在 of 與 Music 之間斷行 */

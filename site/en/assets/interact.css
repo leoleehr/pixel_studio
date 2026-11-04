@@ -201,7 +201,10 @@
   .picker-name{font-size:34px;min-height:60px}
   .score-grid{grid-template-columns:1fr 1fr;gap:8px}
   .score-pts{font-size:40px}
-  .score-team .btn{min-height:40px;flex:1}
+  .score-team .btn{min-height:44px;flex:1}
+  /* 手機觸控：按鈕至少 44px 高，滑桿加高點擊範圍 */
+  .btn{min-height:44px}
+  input[type=range]{min-height:32px}
   .wl-ctrl{grid-template-columns:1fr;gap:10px}
   .wavelab canvas{height:120px}
   .wl-read{font-size:13px}.wl-read b{font-size:18px}

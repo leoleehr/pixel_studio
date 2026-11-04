@@ -487,6 +487,9 @@ def translate_file(p, d, en_set, missing=None):
         out = re.sub(r'((?:src|href)=")([^"]+)', lambda m: m.group(1) + rewrite_ref(m.group(2), rel, en_set), out)
     elif p.suffix == '.css':
         out = re.sub(r'url\(\s*(["\']?)([^"\')]+)\1\s*\)', lambda m: 'url(' + m.group(1) + rewrite_ref(m.group(2), rel, en_set) + m.group(1) + ')', out)
+    elif p.suffix == '.webmanifest':
+        # 圖示沒有英文版，路徑要指回中文版的 assets/
+        out = re.sub(r'("(?:src|start_url)":\s*")([^"]+)', lambda m: m.group(1) + rewrite_ref(m.group(2), rel, en_set), out)
     for a, b in FIXUPS.get(rel, []):
         assert a in out, (rel, a)
         out = out.replace(a, b)
@@ -579,6 +582,33 @@ def cmd_build(args):
         if p.is_file() and p.suffix in TEXT_EXT and p.relative_to(OUT).as_posix() not in en_set:
             p.unlink()
     print(f'en/: {written} files written, {len(en_set)} total, {len(missing)} untranslated units')
+    write_sitemap(en_set)
+
+
+def write_sitemap(en_set):
+    """sitemap.xml 由 add_social_meta.py 產生中文網址；這裡補上英文網址與 hreflang 對照。"""
+    sm = SITE / 'sitemap.xml'
+    zh = [u for u in re.findall(r'<loc>([^<]+)</loc>', sm.read_text(encoding='utf-8')) if not u.startswith(PROD + 'en/')]
+
+    def rel_of(u):
+        r = u[len(PROD):]
+        return r + 'index.html' if r == '' or r.endswith('/') else r + '.html'
+
+    def entry(loc, pair):
+        alt = ''.join('<xhtml:link rel="alternate" hreflang="%s" href="%s"/>' % (k, v) for k, v in pair)
+        return '  <url><loc>%s</loc>%s</url>\n' % (loc, alt)
+    rows = []
+    for u in zh:
+        en = PROD + 'en/' + u[len(PROD):] if rel_of(u) in en_set else None
+        pair = [('zh-Hant', u), ('en', en), ('x-default', u)] if en else []
+        rows.append(entry(u, pair))
+        if en:
+            rows.append(entry(en, pair))
+    text = ('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+            'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + ''.join(rows) + '</urlset>\n')
+    if sm.read_text(encoding='utf-8') != text:
+        sm.write_text(text, encoding='utf-8', newline='\n')
+    print('sitemap URLs', len(rows))
 
 
 def cmd_tag(args):

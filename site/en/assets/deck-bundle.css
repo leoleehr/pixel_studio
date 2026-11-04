@@ -205,7 +205,7 @@ img.pixel-word{display:block;width:auto}
   /* cover */
   .slide.cover{padding:32px 20px 36px;background:radial-gradient(90% 60% at 100% 0%,rgba(var(--accent-rgb,244,166,42),.12),transparent 70%)}
   .cover .pixel-logo{width:220px;max-width:220px;margin-bottom:22px}
-  .pixel-tagline{font-size:10px;letter-spacing:.24em;margin-top:10px}
+  .pixel-tagline{font-size:11px;letter-spacing:.24em;margin-top:10px}
   .cover .meta{font-size:14px;margin-top:20px}
   .cover::after{display:none}
 
@@ -480,7 +480,10 @@ th[scope=row]{font-size:21px;color:inherit;letter-spacing:0;font-weight:700}
   .picker-name{font-size:34px;min-height:60px}
   .score-grid{grid-template-columns:1fr 1fr;gap:8px}
   .score-pts{font-size:40px}
-  .score-team .btn{min-height:40px;flex:1}
+  .score-team .btn{min-height:44px;flex:1}
+  /* 手機觸控：按鈕至少 44px 高，滑桿加高點擊範圍 */
+  .btn{min-height:44px}
+  input[type=range]{min-height:32px}
   .wl-ctrl{grid-template-columns:1fr;gap:10px}
   .wavelab canvas{height:120px}
   .wl-read{font-size:13px}.wl-read b{font-size:18px}
@@ -1089,7 +1092,7 @@ table.mini-scale th{width:5.5em;text-align:left}
   .wrap{padding:0 14px}
   .stats{gap:6px!important}
   .stat b{font-size:19px!important}
-  .tabbar a{font-size:10px}
+  .tabbar a{font-size:11px}
   .lesson .links a,.lesson .links span{font-size:13px}
 }
 /* 手機橫向：高度很矮，縮小上下留白 */
@@ -1274,7 +1277,7 @@ body::before{display:none}
 .ytp.error .ytp-time{color:var(--red,#ec4a36);font-family:inherit}
 
 .yt-chip{display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:14px;font-weight:700;color:#fff;background:rgba(255,0,0,.12);border:1px solid rgba(255,64,64,.45);border-radius:999px;padding:3px 12px 3px 4px;margin:0 2px;cursor:pointer;vertical-align:middle;line-height:1.5}
-.yt-chip i{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:#d92020;color:#fff;font-style:normal;font-size:9px;padding-left:1px}
+.yt-chip i{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:#d92020;color:#fff;font-style:normal;font-size:11px;padding-left:1px}
 .yt-chip:hover{background:rgba(255,0,0,.2)}
 
 /* 右下角小播放器（行內按鈕使用） */
@@ -1298,7 +1301,7 @@ body::before{display:none}
  .ytp .ytp-meta,.slide .ytp .ytp-meta{grid-column:1/-1;grid-row:1;margin:0;min-width:0;line-height:1.6}
  .ytp .ytp-meta>*,.slide .ytp .ytp-meta>*{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}
  .ytp .ytp-meta b{font-size:16px}.ytp .ytp-meta span{font-size:14px}
- .ytp .ytp-btn,.slide .ytp .ytp-btn{width:44px;height:44px;min-height:44px}
+ .ytp .ytp-btn,.slide .ytp .ytp-btn{width:44px;min-width:44px;height:44px;min-height:44px}
  .ytp-toggle{grid-column:1;grid-row:2}.ytp-stop{grid-column:2;grid-row:2}.ytp-time,.slide .wv-yt .ytp-time{display:block;grid-column:3;grid-row:2}.ytp-ext{grid-column:4;grid-row:2}
  .ytp:has(.ytp-close) .ytp-meta{padding-right:48px}.ytp-close{grid-column:4;grid-row:1;align-self:start}
 }

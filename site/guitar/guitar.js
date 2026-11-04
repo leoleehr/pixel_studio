@@ -356,7 +356,7 @@
   function fretY(n) { return 108 + 442 * (1 - Math.pow(2, -n / 12)); }
   function anatomySVG() {
     var s = '<svg class="gfig" viewBox="0 0 1024 1536" role="group" aria-label="真實木吉他正面構造圖，共 16 個部位">';
-    s += '<image href="' + GUITAR_IMAGE + 'acoustic-front.branded.svg?v=20261028identity" x="0" y="0" width="1024" height="1536" preserveAspectRatio="xMidYMid meet"/>';
+    s += '<image data-lazy-href="' + GUITAR_IMAGE + 'acoustic-front.branded.svg?v=20261028identity" x="0" y="0" width="1024" height="1536" preserveAspectRatio="xMidYMid meet"/>';
     PARTS.forEach(function (p, i) {
       s += '<g class="hot" data-part="' + i + '" tabindex="0" role="button" aria-label="' + (i + 1) + ' ' + p.zh + '">' +
         (p.t ? '<line x1="' + p.x + '" y1="' + p.y + '" x2="' + p.t[0] + '" y2="' + p.t[1] + '" class="lead"/><circle cx="' + p.t[0] + '" cy="' + p.t[1] + '" r="6" class="dot"/>' : '') +
@@ -415,13 +415,13 @@
   function laminateSVG() {
     return '<svg class="gfig" viewBox="0 0 600 390" role="img" aria-label="響孔邊緣放大切面：左側合板有三層木片與膠合線；右側單板由同一塊木料連續延伸">' +
       '<text x="12" y="26" class="big">合板 Laminated</text><text x="312" y="26" class="big">單板 Solid</text>' +
-      '<image href="' + GUITAR_IMAGE + 'soundboard-cutaway.branded.svg?v=20261028identity" x="0" y="42" width="600" height="300"/>' +
+      '<image data-lazy-href="' + GUITAR_IMAGE + 'soundboard-cutaway.branded.svg?v=20261028identity" x="0" y="42" width="600" height="300"/>' +
       '<text x="12" y="368" style="font-size:15px">多層木片，切面可見膠合線</text>' +
       '<text x="312" y="368" style="font-size:15px">同一塊木料，切面木紋連續</text>' +
       '<text x="300" y="388" class="en mid" style="font-size:11px">響孔邊緣放大切面示意</text></svg>';
   }
   function bracingSVG() {
-    return '<div class="demo-inline-duo"><figure><img src="' + GUITAR_TEACHING + 'bracing-x.branded.svg?v=20261028identity" alt="面板內側 X 型力木"><figcaption>X 型力木｜鋼弦民謠吉他</figcaption></figure><figure><img src="' + GUITAR_TEACHING + 'bracing-fan.branded.svg?v=20261028fanlogo" alt="面板內側扇形力木"><figcaption>扇形力木｜古典吉他</figcaption></figure></div>';
+    return '<div class="demo-inline-duo"><figure><img loading="lazy" src="' + GUITAR_TEACHING + 'bracing-x.branded.svg?v=20261028identity" alt="面板內側 X 型力木"><figcaption>X 型力木｜鋼弦民謠吉他</figcaption></figure><figure><img loading="lazy" src="' + GUITAR_TEACHING + 'bracing-fan.branded.svg?v=20261028fanlogo" alt="面板內側扇形力木"><figcaption>扇形力木｜古典吉他</figcaption></figure></div>';
   }
   function trussSVG() {
     return '<figure class="demo-inline"><img loading="lazy" decoding="async" src="' + GUITAR_TEACHING + 'truss-cutaway.branded.svg?v=20261028identity" alt="琴頸剖面中的鋼筋與指板"><figcaption>琴頸剖面｜鋼筋位於木製琴頸內</figcaption></figure>';
@@ -446,7 +446,7 @@
   function postureSVG() {
     return '<svg class="gfig" viewBox="0 0 620 330" role="img" aria-label="木吉他坐姿：坐在椅子前三分之一，背部自然挺直，琴身靠近身體並置於右大腿，琴頸微微上揚">' +
       '<defs><clipPath id="posture-photo-clip"><rect x="0" y="28" width="390" height="260" rx="12"/></clipPath></defs>' +
-      '<image href="' + GUITAR_TEACHING + 'guitar-posture-white.branded.svg?v=20261028identity" x="0" y="28" width="390" height="260" preserveAspectRatio="xMidYMid slice" clip-path="url(#posture-photo-clip)"/>' +
+      '<image data-lazy-href="' + GUITAR_TEACHING + 'guitar-posture-white.branded.svg?v=20261028identity" x="0" y="28" width="390" height="260" preserveAspectRatio="xMidYMid slice" clip-path="url(#posture-photo-clip)"/>' +
       '<path d="M14 55 L154 76 M285 75 L269 109 M18 153 L126 152 M180 274 L157 186" class="lead" stroke-width="2"/>' +
       '<circle cx="154" cy="76" r="4" class="dot"/><circle cx="269" cy="109" r="4" class="dot"/><circle cx="126" cy="152" r="4" class="dot"/><circle cx="157" cy="186" r="4" class="dot"/>' +
       '<text x="414" y="72" class="big" style="fill:var(--accent)">01</text><text x="446" y="72">背部自然挺直</text>' +
@@ -458,7 +458,7 @@
   function pickSVG() {
     return '<svg class="gfig" viewBox="0 0 540 235" role="img" aria-label="持彈片特寫：拇指指腹與食指側面輕夾彈片，尖端露出約 2 到 3 公釐">' +
       '<defs><clipPath id="pick-photo-clip"><rect x="0" y="20" width="282" height="188" rx="12"/></clipPath></defs>' +
-      '<image href="' + GUITAR_IMAGE + 'pick-grip.branded.svg?v=20261028identity" x="0" y="20" width="282" height="188" preserveAspectRatio="xMidYMid slice" clip-path="url(#pick-photo-clip)"/>' +
+      '<image data-lazy-href="' + GUITAR_IMAGE + 'pick-grip.branded.svg?v=20261028identity" x="0" y="20" width="282" height="188" preserveAspectRatio="xMidYMid slice" clip-path="url(#pick-photo-clip)"/>' +
       '<path d="M302 64 L231 118" class="lead" stroke-width="2"/><circle cx="231" cy="118" r="4" class="dot"/>' +
       '<text x="302" y="57" class="big" style="fill:var(--accent)">拇指</text><text x="355" y="57">指腹輕壓彈片</text>' +
       '<text x="302" y="111" class="big" style="fill:var(--accent)">食指</text><text x="355" y="111">第一節側面支撐</text>' +
@@ -469,7 +469,7 @@
     var s = '<svg class="gfig" viewBox="0 0 800 440" role="img" aria-label="吉他指法：左手食指 1、中指 2、無名指 3、小指 4，拇指不編號；右手拇指 T、食指 1、中指 2、無名指 3">';
     s += '<defs><clipPath id="guitar-left-photo"><rect x="0" y="42" width="400" height="320" rx="10"/></clipPath><clipPath id="guitar-right-photo"><rect x="400" y="42" width="400" height="320" rx="10"/></clipPath></defs>';
     s += '<text x="18" y="28" class="big">左手｜按弦</text><text x="420" y="28" class="big">右手｜撥弦</text>';
-    s += '<image href="' + GUITAR_IMAGE + 'finger-anatomy.branded.svg?v=20261028identity" x="-400" y="42" width="800" height="533.333" clip-path="url(#guitar-left-photo)"/><image href="' + GUITAR_IMAGE + 'finger-anatomy.branded.svg?v=20261028identity" x="400" y="42" width="800" height="533.333" clip-path="url(#guitar-right-photo)"/>';
+    s += '<image data-lazy-href="' + GUITAR_IMAGE + 'finger-anatomy.branded.svg?v=20261028identity" x="-400" y="42" width="800" height="533.333" clip-path="url(#guitar-left-photo)"/><image data-lazy-href="' + GUITAR_IMAGE + 'finger-anatomy.branded.svg?v=20261028identity" x="400" y="42" width="800" height="533.333" clip-path="url(#guitar-right-photo)"/>';
     var markers = [['1',157,119],['2',220,84],['3',277,119],['4',328,175],['T',760,280],['1',640,117],['2',580,84],['3',528,119]];
     markers.forEach(function (f, i) {
       s += '<circle cx="' + f[1] + '" cy="' + f[2] + '" r="15" fill="' + (i < 4 ? '#6cbb4b' : '#c9ccd1') + '" stroke="#111315" stroke-width="2"/><text x="' + f[1] + '" y="' + (f[2] + 5) + '" class="n" style="font-size:16px">' + f[0] + '</text>';
@@ -947,7 +947,7 @@
         if (!inKey(pc)) continue;
         if (mode === 'cscale' && (st === 6 || (st === 5 && f < 3) || f > 3)) continue;
         var x = f === 0 ? x0 - 20 : x0 + fw * (f - 0.5);
-        s += '<g class="nn' + (pc === keyPc ? ' on' : '') + '" data-s="' + st + '" data-f="' + f + '" tabindex="0" role="button" aria-label="' + st + ' 弦第 ' + f + ' 格 ' + NAMES[pc] + '"><circle cx="' + x + '" cy="' + y + '" r="10"/><text x="' + x + '" y="' + (y + 4) + '">' + label(pc) + '</text></g>';
+        s += '<g class="nn' + (pc === keyPc ? ' on' : '') + '" data-s="' + st + '" data-f="' + f + '" tabindex="0" role="button" aria-label="' + st + ' 弦第 ' + f + ' 格 ' + NAMES[pc] + '"><rect class="hit-area" x="' + (x - Math.min(fw, 44) / 2) + '" y="' + (y - 10.5) + '" width="' + Math.min(fw, 44) + '" height="21"/><circle cx="' + x + '" cy="' + y + '" r="10"/><text x="' + x + '" y="' + (y + 4) + '">' + label(pc) + '</text></g>';
       }
     }
     root.innerHTML = s + '</svg>';
@@ -1149,4 +1149,28 @@
   // 講義頁：Markdown 載入後再掛上譜例
   PS.guitar.mount = function (scope) { $$('[data-pattern-grid]', scope).forEach(mountPattern); $$('[data-tab]', scope).forEach(mountTab); paintAll(); };
   PS.guitar.paint = paintAll;
+
+  // 插圖 SVG 裡的照片沒有 loading="lazy" 可用：先寫在 data-lazy-href，整張圖接近畫面時才換成 href，首屏不用先下載整份投影片的照片
+  (function () {
+    var io = 'IntersectionObserver' in window && new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) show(e.target); });
+    }, { rootMargin: '800px 0px' });
+    function show(svg) {
+      if (io) io.unobserve(svg);
+      $$('image[data-lazy-href]', svg).forEach(function (im) { im.setAttribute('href', im.getAttribute('data-lazy-href')); im.removeAttribute('data-lazy-href'); });
+    }
+    function scan() {
+      $$('image[data-lazy-href]').forEach(function (im) {
+        var svg = im.ownerSVGElement;
+        if (svg && !svg._lazy) { svg._lazy = 1; if (io) io.observe(svg); else show(svg); }
+      });
+    }
+    scan();
+    // 插圖會隨互動重畫，新加入的照片也要接上
+    new MutationObserver(function (ms) {
+      for (var i = 0; i < ms.length; i++) if (ms[i].addedNodes.length) { scan(); return; }
+    }).observe(document.body, { childList: true, subtree: true });
+    // 列印與產生 PDF 時全部載入
+    addEventListener('beforeprint', function () { $$('svg').forEach(function (svg) { if (svg._lazy) show(svg); }); });
+  })();
 })(window.PS = window.PS || {});

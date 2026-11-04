@@ -4,7 +4,7 @@
 html[data-theme="light"][data-kit]{
   color-scheme:light;
   --bg:#f4f4f0; --surface:#ebebe5; --paper:#ffffff; --card:#ffffff; --card-2:#f0efe9;
-  --ink:#111315; --muted:#53585e; --faint:#666b72;
+  --ink:#111315; --muted:#53585e; --faint:#5c6168;
   --line:rgba(17,19,21,.12); --line-2:rgba(17,19,21,.22); --frame:rgba(17,19,21,.14);
 }
 html[data-theme="light"][data-kit],html[data-theme="light"][data-kit] body{background-color:#f4f4f0}
@@ -26,7 +26,7 @@ html[data-theme="light"][data-kit],html[data-theme="light"][data-kit] .hub{--spe
 html[data-theme="light"][data-kit] .home .tools-section{color:#222820}
 
 /* ---- HTML 行內寫的強調字色 ---- */
-html[data-theme="light"][data-kit] [style^="color:var(--accent)"],html[data-theme="light"][data-kit] [style*=";color:var(--accent)"]{color:color-mix(in srgb,var(--accent) 66%,#000)!important}
+html[data-theme="light"][data-kit] [style^="color:var(--accent)"],html[data-theme="light"][data-kit] [style*=";color:var(--accent)"]{color:color-mix(in srgb,var(--accent) 57%,#000)!important;color:oklch(from var(--accent) min(l, 0.5) c h)!important}
 
 /* ---- 影片畫面、照片底：維持黑底，縮圖與教學照片本來就是深色背景 ---- */
 html[data-theme="light"][data-kit] .ytp-screen{background-color:#000}
@@ -34,3 +34,13 @@ html[data-theme="light"][data-kit] .ytp-big{border-color:rgba(255,255,255,.4);ba
 html[data-theme="light"][data-kit] .ytp-screen::after{background:linear-gradient(180deg,rgba(0,0,0,.05) 40%,rgba(0,0,0,.5))}
 /* 跑馬燈帶是色塊、上面壓深色字，維持原本的淺色色譜 */
 html[data-theme="light"][data-kit] .hub .studio-band{background-image:linear-gradient(90deg,#f2836f,#ee7fae,#b993e8,#86a8f2,#7cccf0,#9bd57f,#e3ea6f,#f7c06a,#f2836f)}
+
+/* ---- 投影片路線圖與練習流程：深色色條上維持白字 ---- */
+html[data-theme="light"][data-kit="deck"] .timeline div,html[data-theme="light"][data-kit="deck"] .routine div{color:#fff}
+html[data-theme="light"][data-kit="deck"] .timeline .bar-rest{color:#111315}
+/* 問卷：深藍色號碼牌維持白字 */
+html[data-theme="light"][data-kit] .sv-item[style*="2f5fc4"] .no{color:#fff}
+/* 吉他曲式色條：品牌色底上維持白字（副歌、間奏、尾奏、橋段本來就是深字） */
+html[data-theme="light"][data-kit="deck"] .form-row>div:not(.f-intro,.f-chorus,.f-inter,.f-outro,.f-bridge){color:#fff}
+/* 創作編曲器：未開啟的軌道半透明，說明字改深一階 */
+html[data-theme="light"][data-lab="songwriting"] .ar-tr small{color:#3d4247}

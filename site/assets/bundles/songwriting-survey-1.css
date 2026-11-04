@@ -117,7 +117,7 @@ section.block{padding:44px 0}
 .about .since{font-style:italic;letter-spacing:.06em;color:var(--ink);margin-top:10px;font-family:var(--display)}
 .since-block{justify-self:end;display:flex;align-items:baseline;gap:8px;border:1px solid var(--line-2);border-radius:999px;padding:6px 14px;white-space:nowrap}
 .since-year{font-size:16px;font-weight:700;line-height:1;letter-spacing:.02em;font-family:var(--display);background:var(--rainbow);-webkit-background-clip:text;background-clip:text;color:transparent}
-.since-cap{font-size:10px;letter-spacing:.32em;color:var(--muted);margin-top:0;text-transform:none;font-family:var(--display)}
+.since-cap{font-size:11px;letter-spacing:.32em;color:var(--muted);margin-top:0;text-transform:none;font-family:var(--display)}
 
 footer{margin-top:24px;padding:28px 0 40px;color:var(--faint);font-size:13px;text-align:center}
 
@@ -192,7 +192,7 @@ footer{margin-top:24px;padding:28px 0 40px;color:var(--faint);font-size:13px;tex
   .br-m{display:inline}
   .hero{padding:28px 0 20px}
   .hero .pixel-logo{width:min(264px,72%);margin-bottom:22px}
-  .pixel-tagline{font-size:10px;letter-spacing:.24em}
+  .pixel-tagline{font-size:11px;letter-spacing:.24em}
   .hero h1{font-size:24px}
   .hero p.sub{font-size:15.5px}
   .cta{flex-direction:column;gap:10px}
@@ -267,6 +267,9 @@ h1,h2,h3,h4{text-wrap:balance}p,li,dd,figcaption,blockquote,.sv-item small,.desc
 /* 講義：畫面外的章節延後計算版面 */
 .hb-sec{content-visibility:auto;contain-intrinsic-size:auto var(--ch-d,2400px)}@media(max-width:860px){.hb-sec{contain-intrinsic-size:auto var(--ch-m,4800px)}}
 .hb-deep .hb-sec{content-visibility:visible}
+
+/* 講義與問卷頁尾的文字連結：點擊範圍加高到 24px 以上 */
+footer>a{display:inline-block;padding:4px 0}
 
 /* ===== assets/backend.css ===== */
 /* ===== 學員資料、送出提示 ===== */
@@ -372,7 +375,7 @@ h1,h2,h3,h4{text-wrap:balance}p,li,dd,figcaption,blockquote,.sv-item small,.desc
   .wrap{padding:0 14px}
   .stats{gap:6px!important}
   .stat b{font-size:19px!important}
-  .tabbar a{font-size:10px}
+  .tabbar a{font-size:11px}
   .lesson .links a,.lesson .links span{font-size:13px}
 }
 /* 手機橫向：高度很矮，縮小上下留白 */

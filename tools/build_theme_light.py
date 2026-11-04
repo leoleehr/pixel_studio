@@ -40,10 +40,12 @@ MANUAL = ROOT / 'tools' / 'theme' / 'light-manual.css'
 OUT = SITE / 'assets' / 'theme-light.css'
 
 PAPER = (0xf4 / 255, 0xf4 / 255, 0xf0 / 255)
-BRAND_VARS = {'amber': 66, 'accent': 66, 'c': 70, 'lab': 70, 'red': 80, 'green': 72, 'blue': 72, 'navy': 72,
-              'gold': 55, 'yellow': 55, 'pink': 80, 'purple': 85, 'cyan': 70, 'lime': 55, 'h': 70,
-              'pixel-amber': 66, 'pixel-green': 72, 'pixel-cyan': 70, 'pixel-pink': 80, 'pixel-lime': 55,
+# 品牌色當字色時和黑色混合的比例：在紙白底上至少 4.8:1（小字 AA 4.5 再留一點餘裕給帶色卡片）
+BRAND_VARS = {'amber': 57, 'accent': 57, 'c': 56, 'lab': 56, 'red': 80, 'green': 61, 'blue': 72, 'navy': 72,
+              'gold': 48, 'yellow': 48, 'pink': 80, 'purple': 85, 'cyan': 62, 'lime': 48, 'h': 56,
+              'pixel-amber': 57, 'pixel-green': 61, 'pixel-cyan': 62, 'pixel-pink': 80, 'pixel-lime': 48,
               'pixel-red': 80, 'pixel-blue': 85, 'pixel-purple': 85}
+TEXT_MIN = 4.8
 DARK_VARS = ('bg', 'paper', 'black', 'pixel-black', 'surface', 'card')
 # 中性底色變數；background 用到其他變數（--amber、--c、--sc…）就當成品牌色塊
 NEUTRAL_VARS = DARK_VARS + ('card-2', 'line', 'line-2', 'frame', 'ink', 'muted', 'faint', 'home-paper', 'spectrum-light')
@@ -51,6 +53,7 @@ COLOR_PROPS = re.compile(r'^(-webkit-text-fill-color|-webkit-text-stroke(-color)
                          r'text-decoration(-color)?|text-emphasis-color|background(-color|-image)?|border(-(top|right|bottom|left|block|inline)(-(start|end))?)?(-color)?|'
                          r'outline(-color)?|column-rule(-color)?|box-shadow|text-shadow|filter|fill|stroke|stop-color|scrollbar-color)$')
 TEXT_PROPS = {'color', '-webkit-text-fill-color', 'caret-color', 'text-decoration', 'text-decoration-color', 'text-emphasis-color'}
+RELMIX = re.compile(r'color-mix\(in srgb,(var\(--[a-z-]+[^()]*(?:\([^()]*\))?[^()]*\)) \d+%,#000\)')
 COLOR = re.compile(r'#[0-9a-fA-F]{3,8}\b|rgba?\([^()]*\)|\b(white|black)\b')
 NAMED = {'white': '#ffffff', 'black': '#000000'}
 
@@ -131,7 +134,7 @@ def map_color(tok, ctx, keep_dark_text=False):
                 return tok
             if a < 0.5 and ctx == 'border':
                 return fmt(*darken_to(r, g, b, 2.0), min(1, a * 1.6))
-            return fmt(*darken_to(r, g, b, 3.8 if ctx == 'text' else 2.2), a)
+            return fmt(*darken_to(r, g, b, TEXT_MIN if ctx == 'text' else 2.2), a)
         # 底色：品牌色塊保持；很深的帶色底當成中性底處理
         if l < 0.25:
             return fmt(*neutral_flip(r, g, b, 'bg'), a)
@@ -139,18 +142,24 @@ def map_color(tok, ctx, keep_dark_text=False):
             return fmt(r, g, b, min(1, a * 1.25))
         return tok
     h, l, s = colorsys.rgb_to_hls(r, g, b)
-    # 深色版的深色字一定壓在亮底上，亮底不翻，字也不翻
-    if ctx == 'text' and (keep_dark_text or l < 0.35):
+    # 深色版的深色字一定壓在亮底上（例如米白工具區），亮底不翻，字也不翻
+    if ctx == 'text' and (keep_dark_text or l < 0.42):
         return tok
     if ctx == 'bg' and l > 0.6:
         return tok
     nr, ng, nb = neutral_flip(r, g, b, ctx)
-    if ctx == 'text' and a > 0.5 and lum(nr, ng, nb) < lum(*PAPER):
-        # 字色至少 4.5:1
+    if ctx == 'text' and a >= 0.3 and lum(nr, ng, nb) < lum(*PAPER):
+        # 字色疊在紙白底上的實際顏色至少 4.6:1；半透明字先加深，不夠再提高不透明度
         h, l, s = colorsys.rgb_to_hls(nr, ng, nb)
-        while l > 0.05 and contrast((nr, ng, nb), PAPER) < 4.5:
-            l -= 0.01
-            nr, ng, nb = colorsys.hls_to_rgb(h, l, s)
+        on = lambda c, al: tuple(x * al + p * (1 - al) for x, p in zip(c, PAPER))
+        while contrast(on((nr, ng, nb), a), PAPER) < 4.6:
+            if l > 0.05:
+                l -= 0.01
+                nr, ng, nb = colorsys.hls_to_rgb(h, l, s)
+            elif a < 1:
+                a = min(1, a + 0.02)
+            else:
+                break
     if ctx == 'border' and a < 1:
         a = min(1, a * 1.1)
     return fmt(nr, ng, nb, a)
@@ -294,7 +303,11 @@ def convert(css, pre):
                 ctx = 'border'
             else:
                 ctx = 'text'
-            keep.append(p + ':' + map_value(p, v, ctx, fill_block))
+            mv = map_value(p, v, ctx, fill_block)
+            keep.append(p + ':' + mv)
+            if ctx == 'text' and 'color-mix(in srgb,var(--' in mv:
+                # 支援相對色彩語法的瀏覽器改用 OKLCH 亮度上限，各色相對比一致（≥5:1）
+                keep.append(p + ':' + RELMIX.sub(lambda m: 'oklch(from %s min(l, 0.5) c h)' % m.group(1), mv))
         if not keep:
             continue
         sels = [prefix_sel(s, pre) for s in split_top(head, ',')]

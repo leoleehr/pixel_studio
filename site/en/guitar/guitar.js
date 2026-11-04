@@ -356,7 +356,7 @@
   function fretY(n) { return 108 + 442 * (1 - Math.pow(2, -n / 12)); }
   function anatomySVG() {
     var s = '<svg class="gfig" viewBox="0 0 1024 1536" role="group" aria-label="Diagram of the front of a real acoustic guitar, 16 parts">';
-    s += '<image href="' + GUITAR_IMAGE + 'acoustic-front.branded.svg?v=20261028identity" x="0" y="0" width="1024" height="1536" preserveAspectRatio="xMidYMid meet"/>';
+    s += '<image data-lazy-href="' + GUITAR_IMAGE + 'acoustic-front.branded.svg?v=20261028identity" x="0" y="0" width="1024" height="1536" preserveAspectRatio="xMidYMid meet"/>';
     PARTS.forEach(function (p, i) {
       s += '<g class="hot" data-part="' + i + '" tabindex="0" role="button" aria-label="' + (i + 1) + ' ' + p.zh + '">' +
         (p.t ? '<line x1="' + p.x + '" y1="' + p.y + '" x2="' + p.t[0] + '" y2="' + p.t[1] + '" class="lead"/><circle cx="' + p.t[0] + '" cy="' + p.t[1] + '" r="6" class="dot"/>' : '') +
@@ -415,13 +415,13 @@
   function laminateSVG() {
     return '<svg class="gfig" viewBox="0 0 600 390" role="img" aria-label="Close-up cross-section of the sound hole edge: on the left, laminated wood with three plies and glue lines; on the right, solid wood running continuously from one piece">' +
       '<text x="12" y="26" class="big">Laminated</text><text x="312" y="26" class="big">Solid</text>' +
-      '<image href="' + GUITAR_IMAGE + 'soundboard-cutaway.branded.svg?v=20261028identity" x="0" y="42" width="600" height="300"/>' +
+      '<image data-lazy-href="' + GUITAR_IMAGE + 'soundboard-cutaway.branded.svg?v=20261028identity" x="0" y="42" width="600" height="300"/>' +
       '<text x="12" y="368" style="font-size:15px">Several plies, glue lines visible in the cut</text>' +
       '<text x="312" y="368" style="font-size:15px">One piece of wood, grain continuous in the cut</text>' +
       '<text x="300" y="388" class="en mid" style="font-size:11px">Close-up cross-section of the sound hole edge</text></svg>';
   }
   function bracingSVG() {
-    return '<div class="demo-inline-duo"><figure><img src="' + GUITAR_TEACHING + 'bracing-x.branded.svg?v=20261028identity" alt="X bracing inside the top"><figcaption>X bracing｜Steel-string folk guitar</figcaption></figure><figure><img src="' + GUITAR_TEACHING + 'bracing-fan.branded.svg?v=20261028fanlogo" alt="Fan bracing inside the top"><figcaption>Fan bracing｜Classical guitar</figcaption></figure></div>';
+    return '<div class="demo-inline-duo"><figure><img loading="lazy" src="' + GUITAR_TEACHING + 'bracing-x.branded.svg?v=20261028identity" alt="X bracing inside the top"><figcaption>X bracing｜Steel-string folk guitar</figcaption></figure><figure><img loading="lazy" src="' + GUITAR_TEACHING + 'bracing-fan.branded.svg?v=20261028fanlogo" alt="Fan bracing inside the top"><figcaption>Fan bracing｜Classical guitar</figcaption></figure></div>';
   }
   function trussSVG() {
     return '<figure class="demo-inline"><img loading="lazy" decoding="async" src="' + GUITAR_TEACHING + 'truss-cutaway.branded.svg?v=20261028identity" alt="The truss rod and fretboard in a cross-section of the neck"><figcaption>Neck cross-section｜The truss rod sits inside the wooden neck</figcaption></figure>';
@@ -446,7 +446,7 @@
   function postureSVG() {
     return '<svg class="gfig" viewBox="0 0 620 330" role="img" aria-label="Sitting with an acoustic guitar: sit on the front third of the chair, back naturally straight, body close to you on your right thigh, neck tilted slightly up">' +
       '<defs><clipPath id="posture-photo-clip"><rect x="0" y="28" width="390" height="260" rx="12"/></clipPath></defs>' +
-      '<image href="' + GUITAR_TEACHING + 'guitar-posture-white.branded.svg?v=20261028identity" x="0" y="28" width="390" height="260" preserveAspectRatio="xMidYMid slice" clip-path="url(#posture-photo-clip)"/>' +
+      '<image data-lazy-href="' + GUITAR_TEACHING + 'guitar-posture-white.branded.svg?v=20261028identity" x="0" y="28" width="390" height="260" preserveAspectRatio="xMidYMid slice" clip-path="url(#posture-photo-clip)"/>' +
       '<path d="M14 55 L154 76 M285 75 L269 109 M18 153 L126 152 M180 274 L157 186" class="lead" stroke-width="2"/>' +
       '<circle cx="154" cy="76" r="4" class="dot"/><circle cx="269" cy="109" r="4" class="dot"/><circle cx="126" cy="152" r="4" class="dot"/><circle cx="157" cy="186" r="4" class="dot"/>' +
       '<text x="414" y="72" class="big" style="fill:var(--accent)">01</text><text x="446" y="72">Back naturally straight</text>' +
@@ -458,7 +458,7 @@
   function pickSVG() {
     return '<svg class="gfig" viewBox="0 0 540 235" role="img" aria-label="Holding a pick close-up: the pad of the thumb and side of the index finger hold the pick lightly, with about 2 to 3 mm of tip showing">' +
       '<defs><clipPath id="pick-photo-clip"><rect x="0" y="20" width="282" height="188" rx="12"/></clipPath></defs>' +
-      '<image href="' + GUITAR_IMAGE + 'pick-grip.branded.svg?v=20261028identity" x="0" y="20" width="282" height="188" preserveAspectRatio="xMidYMid slice" clip-path="url(#pick-photo-clip)"/>' +
+      '<image data-lazy-href="' + GUITAR_IMAGE + 'pick-grip.branded.svg?v=20261028identity" x="0" y="20" width="282" height="188" preserveAspectRatio="xMidYMid slice" clip-path="url(#pick-photo-clip)"/>' +
       '<path d="M302 64 L231 118" class="lead" stroke-width="2"/><circle cx="231" cy="118" r="4" class="dot"/>' +
       '<text x="302" y="57" class="big" style="fill:var(--accent)">Thumb</text><text x="370" y="57">pad presses lightly</text>' +
       '<text x="302" y="111" class="big" style="fill:var(--accent)">Index</text><text x="370" y="111">side of first joint</text>' +
@@ -469,7 +469,7 @@
     var s = '<svg class="gfig" viewBox="0 0 800 440" role="img" aria-label="Guitar finger numbers: left hand index 1, middle 2, ring 3, little 4, thumb not numbered; right hand thumb T, index 1, middle 2, ring 3">';
     s += '<defs><clipPath id="guitar-left-photo"><rect x="0" y="42" width="400" height="320" rx="10"/></clipPath><clipPath id="guitar-right-photo"><rect x="400" y="42" width="400" height="320" rx="10"/></clipPath></defs>';
     s += '<text x="18" y="28" class="big">Left hand｜Fretting</text><text x="420" y="28" class="big">Right hand｜Picking</text>';
-    s += '<image href="' + GUITAR_IMAGE + 'finger-anatomy.branded.svg?v=20261028identity" x="-400" y="42" width="800" height="533.333" clip-path="url(#guitar-left-photo)"/><image href="' + GUITAR_IMAGE + 'finger-anatomy.branded.svg?v=20261028identity" x="400" y="42" width="800" height="533.333" clip-path="url(#guitar-right-photo)"/>';
+    s += '<image data-lazy-href="' + GUITAR_IMAGE + 'finger-anatomy.branded.svg?v=20261028identity" x="-400" y="42" width="800" height="533.333" clip-path="url(#guitar-left-photo)"/><image data-lazy-href="' + GUITAR_IMAGE + 'finger-anatomy.branded.svg?v=20261028identity" x="400" y="42" width="800" height="533.333" clip-path="url(#guitar-right-photo)"/>';
     var markers = [['1',157,119],['2',220,84],['3',277,119],['4',328,175],['T',760,280],['1',640,117],['2',580,84],['3',528,119]];
     markers.forEach(function (f, i) {
       s += '<circle cx="' + f[1] + '" cy="' + f[2] + '" r="15" fill="' + (i < 4 ? '#6cbb4b' : '#c9ccd1') + '" stroke="#111315" stroke-width="2"/><text x="' + f[1] + '" y="' + (f[2] + 5) + '" class="n" style="font-size:16px">' + f[0] + '</text>';
@@ -947,7 +947,7 @@
         if (!inKey(pc)) continue;
         if (mode === 'cscale' && (st === 6 || (st === 5 && f < 3) || f > 3)) continue;
         var x = f === 0 ? x0 - 20 : x0 + fw * (f - 0.5);
-        s += '<g class="nn' + (pc === keyPc ? ' on' : '') + '" data-s="' + st + '" data-f="' + f + '" tabindex="0" role="button" aria-label="' + 'string ' + st + ', fret ' + f + ' ' + NAMES[pc] + '"><circle cx="' + x + '" cy="' + y + '" r="10"/><text x="' + x + '" y="' + (y + 4) + '">' + label(pc) + '</text></g>';
+        s += '<g class="nn' + (pc === keyPc ? ' on' : '') + '" data-s="' + st + '" data-f="' + f + '" tabindex="0" role="button" aria-label="' + 'string ' + st + ', fret ' + f + ' ' + NAMES[pc] + '"><rect class="hit-area" x="' + (x - Math.min(fw, 44) / 2) + '" y="' + (y - 10.5) + '" width="' + Math.min(fw, 44) + '" height="21"/><circle cx="' + x + '" cy="' + y + '" r="10"/><text x="' + x + '" y="' + (y + 4) + '">' + label(pc) + '</text></g>';
       }
     }
     root.innerHTML = s + '</svg>';
@@ -1149,4 +1149,28 @@
   // 講義頁：Markdown 載入後再掛上譜例
   PS.guitar.mount = function (scope) { $$('[data-pattern-grid]', scope).forEach(mountPattern); $$('[data-tab]', scope).forEach(mountTab); paintAll(); };
   PS.guitar.paint = paintAll;
+
+  // 插圖 SVG 裡的照片沒有 loading="lazy" 可用：先寫在 data-lazy-href，整張圖接近畫面時才換成 href，首屏不用先下載整份投影片的照片
+  (function () {
+    var io = 'IntersectionObserver' in window && new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) show(e.target); });
+    }, { rootMargin: '800px 0px' });
+    function show(svg) {
+      if (io) io.unobserve(svg);
+      $$('image[data-lazy-href]', svg).forEach(function (im) { im.setAttribute('href', im.getAttribute('data-lazy-href')); im.removeAttribute('data-lazy-href'); });
+    }
+    function scan() {
+      $$('image[data-lazy-href]').forEach(function (im) {
+        var svg = im.ownerSVGElement;
+        if (svg && !svg._lazy) { svg._lazy = 1; if (io) io.observe(svg); else show(svg); }
+      });
+    }
+    scan();
+    // 插圖會隨互動重畫，新加入的照片也要接上
+    new MutationObserver(function (ms) {
+      for (var i = 0; i < ms.length; i++) if (ms[i].addedNodes.length) { scan(); return; }
+    }).observe(document.body, { childList: true, subtree: true });
+    // 列印與產生 PDF 時全部載入
+    addEventListener('beforeprint', function () { $$('svg').forEach(function (svg) { if (svg._lazy) show(svg); }); });
+  })();
 })(window.PS = window.PS || {});
