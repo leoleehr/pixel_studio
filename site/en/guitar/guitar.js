@@ -574,7 +574,7 @@
   }
 
   /* ---------- 換和弦練習器 ----------
-   * data-switch-trainer="C G Am F|G D Em C"：以 | 分隔多組進行；留空時使用四大和弦的三種進行
+   * data-switch-trainer="C G Am F|G D Em C"：以 | 分隔多組行進；留空時使用四大和弦的三種行進
    */
   $$('[data-switch-trainer]').forEach(function (root) {
     var attr = root.getAttribute('data-switch-trainer'), progs = attr ? attr.split('|').map(function (x, i) { var seq = x.trim().split(/\s+/); return { id: 'p' + i, label: seq.join(' → '), seq: seq }; }) : PROGRESSIONS;
@@ -585,7 +585,7 @@
     var c = $('.gcontrols', root), start = el('button', { type: 'button', class: 'btn primary' }, 'Start');
     c.appendChild(start);
     c.appendChild(bpmField(40, 120, +(root.getAttribute('data-bpm') || 60), function (v) { m.bpm = v; }));
-    if (progs.length > 1) c.appendChild(field('Progression', seg('Chord progression', progs.map(function (p) { return [p.id, p.label]; }), prog.id, function (id) { prog = progs.filter(function (p) { return p.id === id; })[0]; show(0, -1); })));
+    if (progs.length > 1) c.appendChild(field('Movement', seg('Chord progression', progs.map(function (p) { return [p.id, p.label]; }), prog.id, function (id) { prog = progs.filter(function (p) { return p.id === id; })[0]; show(0, -1); })));
     c.appendChild(field('Per chord', seg('Beats per chord', [[4, '4 beats'], [2, '2 beats']], 4, function (v) { perChord = v; })));
     c.appendChild(toggle('Demo strum', true, function (v) { demo = v; }));
     var nowN = $('.now .name', root), nextN = $('.next .name', root), nowF = $('.now .fig', root), nextF = $('.next .fig', root), lights = $$('.beats i', root), hint = $('.hint', root);
@@ -1070,7 +1070,7 @@
       } });
   });
 
-  /* ---------- 和弦進行聽辨 ----------
+  /* ---------- 和弦行進聽辨 ----------
    * data-prog-ear="C,G,Am,F|C,Am,F,G"；data-names="I–V–vi–IV|I–vi–IV–V" 可自訂按鈕文字
    */
   $$('[data-prog-ear]').forEach(function (root) {

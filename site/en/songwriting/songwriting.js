@@ -2,7 +2,7 @@
  * .formbuilder  曲式積木：排出段落，檢查前後順序，畫出情緒曲線
  * .rhyme        韻腳檢查器：逐行判斷句尾的韻母，說明押韻方式
  * .motif        動機實驗室：重複、模進、倒影、逆行、擴大、聯結
- * .chordprog    和弦進行：經典進行、移調、播放
+ * .chordprog    和弦行進：經典行進、移調、播放
  * .arranger     編曲混音台：主律動、副律動、主旋律、過門、襯底
  * .songcard     創作範本卡：八堂課共用一張，存在這台裝置，可送給老師或下載
  * .notebook     素材庫：詞典、句典、曲典
@@ -133,7 +133,7 @@
   var SEC = {
     intro: { zh: 'Intro', en: 'Intro', e: 3, bars: 4 },
     verse: { zh: 'Verse', en: 'Verse', e: 4, bars: 8 },
-    pre: { zh: 'Pre-chorus', en: 'Pre-Chorus', e: 6, bars: 4 },
+    pre: { zh: 'Pre-chorus', short: 'Pre-chorus', en: 'Pre-Chorus', e: 6, bars: 4 },
     chorus: { zh: 'Chorus', en: 'Chorus', e: 9, bars: 8 },
     inter: { zh: 'Interlude', en: 'Interlude', e: 5, bars: 4 },
     bridge: { zh: 'Post-chorus / bridge', en: 'Bridge', e: 8, bars: 4 },
@@ -183,7 +183,7 @@
       track.innerHTML = '';
       var chk = checkForm(st.list);
       st.list.forEach(function (b, i) {
-        var d = el('div', 'fb-block f-' + b.k + (chk.bad.indexOf(i) > -1 ? ' bad' : ''), '<b>' + SEC[b.k].zh + '</b><small>' + b.bars + ' bars</small><span class="x" aria-hidden="true">✕</span>');
+        var d = el('div', 'fb-block f-' + b.k + (chk.bad.indexOf(i) > -1 ? ' bad' : ''), '<b>' + (SEC[b.k].short || SEC[b.k].zh) + '</b><small>' + b.bars + ' bars</small><span class="x" aria-hidden="true">✕</span>');
         d.style.setProperty('--w', Math.max(1, b.bars / 4)); d.title = 'Tap to change the number of bars, tap the top-right corner to delete';
         d.onclick = function (e) {
           if (e.target.classList.contains('x')) { st.list.splice(i, 1); save(); return; }
@@ -370,7 +370,7 @@
     draw();
   });
 
-  /* ========== 4. 和弦進行 ========== */
+  /* ========== 4. 和弦行進 ========== */
   var PROG = {
     fifties: { name: '1645', deg: ['I', 'vi', 'IV', 'V'], note: 'The \'50s progression, the most common loop in ballads' },
     pop: { name: '1564', deg: ['I', 'V', 'vi', 'IV'], note: 'The all-purpose progression, the backbone of countless pop songs' },

@@ -66,14 +66,14 @@ window.PIXEL_SURVEYS = [
     { q: '聆聽歌曲時，聽出貝斯或低音線條的程度', type: 'scale', low: '無法分辨', high: '非常清楚' },
     { q: '對 C/G、G/B 這類寫法的熟悉程度', type: 'single', options: ['看過也會彈奏', '看過、尚未學會', '從未看過'] }
   ] },
-  { id: 'g-pre-10', lesson: 10, title: '第十章課前問卷', intro: '低音變化的進度，準備理解和弦進行。', questions: [
+  { id: 'g-pre-10', lesson: 10, title: '第十章課前問卷', intro: '低音變化的進度，準備理解和弦行進。', questions: [
     { q: '下行低音線（例如 C → G/B → Am）的流暢程度', type: 'scale', low: '仍不順暢', high: '非常順暢' },
     { q: '是否察覺許多歌曲的和弦都很相似', type: 'single', options: ['已經察覺', '從未留意'] },
     { q: '想學會自己為歌曲配和弦的程度', type: 'single', options: ['非常想學', '有點興趣', '普通'] },
     { q: '最近最常練習的一首歌', type: 'short', optional: true }
   ] },
   { id: 'g-pre-11', lesson: 11, title: '第十一章課前問卷', intro: '和弦編排的進度，準備加入吉他技巧。', questions: [
-    { q: '以級數說出一首歌和弦進行的把握', type: 'scale', low: '尚無把握', high: '完全可以' },
+    { q: '以級數說出一首歌和弦行進的把握', type: 'scale', low: '尚無把握', high: '完全可以' },
     { q: '最想學習的技巧', type: 'multi', options: ['搥弦', '勾弦', '滑弦', '悶音', '切音', '打板', '泛音', '推弦'] },
     { q: '欣賞的吉他手或演奏影片', type: 'short', optional: true }
   ] },

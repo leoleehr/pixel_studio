@@ -29,7 +29,7 @@
   function report(root, type, data) { if (window.PixelBackend) window.PixelBackend.log(type, data, { slide: slideNo(root) }); }
   function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
   function ids(node, attr) { return (node.getAttribute(attr) || '').split(',').map(function (s) { return s.trim(); }).filter(function (k) { return W[k]; }); }
-  var SECZH = { intro: '前奏', verse: '主歌', pre: '前副歌', chorus: '副歌', inter: '間奏', post: '後副歌', bridge: '橋段', tag: '破格句', outro: '尾奏' };
+  var SECZH = { intro: '前奏', verse: '主歌', pre: '前副歌（前導句）', chorus: '副歌', inter: '間奏', post: '後副歌', bridge: '橋段', tag: '破格句', outro: '尾奏' };
   // 可捲動的區塊要能用鍵盤聚焦
   function scroller(node, label, root) {
     var h = root && root.closest('.slide') && root.closest('.slide').querySelector('h2');
@@ -96,7 +96,7 @@
   function lastHan(line) { var m = line.replace(/[\s　，。、！？；：「」『』（）()…~～.,!?;:'"]+$/g, '').match(/[㐀-鿿](?=[^㐀-鿿]*$)/); return m ? m[0] : ''; }
 
   /* ========== 1. 歌詞重組 ========== */
-  var LF_OPTS = [['', '選擇段落'], ['verse', '主歌'], ['pre', '前副歌'], ['chorus', '副歌'], ['post', '後副歌'], ['tag', '破格句']];
+  var LF_OPTS = [['', '選擇段落'], ['verse', '主歌'], ['pre', '前副歌（前導句）'], ['chorus', '副歌'], ['post', '後副歌'], ['tag', '破格句']];
   function lfKind(k) { return k === 'bridge' ? 'post' : k; }
   $$('.lyricform').forEach(function (root) {
     var list = ids(root, 'data-works'); if (!list.length) return;
@@ -437,12 +437,12 @@
       if (st.filter(Boolean).length < Math.min(4, secs.length)) { msg.textContent = '至少點選四個段落，就會出現回饋。'; return; }
       var out = [], v = avg('verse'), p = avg('pre'), c = avg('chorus');
       if (v && c && c <= v) out.push('副歌的音域沒有高過主歌，Hook 容易被淹沒；試著讓副歌往上推 2 到 3 格。');
-      if (p && v && c && !(p >= v && p <= c)) out.push('前副歌負責加溫，音域通常介於主歌與副歌之間。');
+      if (p && v && c && !(p >= v && p <= c)) out.push('前副歌（前導句）負責加溫，音域通常介於主歌與副歌之間。');
       var tagI = secs.map(function (s) { return s.k; }).lastIndexOf('tag');
       if (tagI > -1 && st[tagI] && c && st[tagI] > c) out.push('破格句比副歌還高，結尾的情緒會停在半空中；也可以刻意這樣安排，但要說得出理由。');
       var last = -1; secs.forEach(function (s, i) { if (isLast(i)) last = i; });
       if (last > -1 && st[last] && c && st[last] < c) out.push('最後一次副歌通常比前面更高，或以升調推進情緒。');
-      msg.innerHTML = out.length ? out.map(function (x) { return '! ' + esc(x); }).join('<br>') : '✓ 起伏清楚：主歌鋪陳、前副歌加溫、副歌到達最高點。聆聽原曲之後，再比較兩條曲線的差異。';
+      msg.innerHTML = out.length ? out.map(function (x) { return '! ' + esc(x); }).join('<br>') : '✓ 起伏清楚：主歌鋪陳、前副歌（前導句）加溫、副歌到達最高點。聆聽原曲之後，再比較兩條曲線的差異。';
     }
     bRef.onclick = function () { showRef = !showRef; bRef.textContent = showRef ? '隱藏常見安排' : '對照常見安排'; draw(); };
     bClr.onclick = function () { st = secs.map(function () { return 0; }); LS.set(key, st); draw(); };
@@ -464,7 +464,7 @@
     foot.append(bEx, bClr); root.append(T.bar, tip, wrap, curve, foot, msg);
     var secs, st, key, inst;
     function load(k) {
-      if (k === 'mine') { var f = LS.get('form-mine', { list: [] }); secs = f.list.map(function (b) { return { k: b.k === 'inter' ? 'inter' : b.k, name: { intro: '前奏', verse: '主歌', pre: '前副歌', chorus: '副歌', inter: '間奏', bridge: '橋段', tag: '破格句', outro: '尾奏', ending: '結尾' }[b.k] }; }); }
+      if (k === 'mine') { var f = LS.get('form-mine', { list: [] }); secs = f.list.map(function (b) { return { k: b.k === 'inter' ? 'inter' : b.k, name: { intro: '前奏', verse: '主歌', pre: '前副歌（前導句）', chorus: '副歌', inter: '間奏', bridge: '橋段', tag: '破格句', outro: '尾奏', ending: '結尾' }[b.k] }; }); }
       else secs = W[k].sections.map(function (s) { return { k: s.k, name: s.name }; });
       inst = INST.slice(); if (k === 'xmas') inst.push(['crowd', '觀眾呼應']);
       key = 'arrmap-' + k; st = LS.get(key, null);

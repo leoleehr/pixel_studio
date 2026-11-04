@@ -603,7 +603,7 @@ Goals: explain how instrumental pieces differ from songs, and tell composing fro
 | Pre-dominant | 4 and 2 | Placed before the dominant |
 | Dominant | 5 | Placed before the final tonic |
 
-| Progression | C major | Notes |
+| Movement | C major | Notes |
 | --- | --- | --- |
 | 1645 | C Am F G | '50s progression |
 | 1564 | C G Am F | All-purpose progression |

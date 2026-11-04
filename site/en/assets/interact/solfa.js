@@ -17,7 +17,7 @@ window.PixelInteract.define('solfa', function (K) {
     var bars = Math.ceil(Math.max.apply(null, notes.map(function (n) { return n.at; })) / 4 + 0.001), total = bars * 4;
     var key = 'solfa-start-' + LESSON + '-' + (b.getAttribute('data-id') || 'solfa'), startAt = LS.get(key, null), t0 = 0, tick = 0, mode = '', shown = -1, open = false;
     b.classList.add('score');
-    b.innerHTML = '<div class="sf-head"><b>Solfège guide</b><span class="sf-src muted">' + esc(keyTxt) + '・' + bpm + ' Bpm · chorus ' + bars + ' bars</span><span class="sf-btns"><button type="button" class="btn go">▶︎ Sing along</button><button type="button" class="btn mark">Set chorus start</button><button type="button" class="btn tog">Show</button></span></div>' +
+    b.innerHTML = '<div class="sf-head"><b>Solfège guide</b><span class="sf-src muted">' + esc(keyTxt) + '・' + bpm + ' BPM · chorus ' + bars + ' bars</span><span class="sf-btns"><button type="button" class="btn go">▶︎ Sing along</button><button type="button" class="btn mark">Set chorus start</button><button type="button" class="btn tog">Show</button></span></div>' +
       '<div class="sf-body"><div class="sf-bar"></div><p class="sf-hint muted"></p></div>';
     var barEl = b.querySelector('.sf-bar'), hint = b.querySelector('.sf-hint');
     function digit(n) { return '<span class="sf-d">' + n.n + (n.low ? '<i class="lo"></i>' : '') + (n.high ? '<i class="hi"></i>' : '') + '</span>'; }

@@ -15,7 +15,7 @@ window.PixelInteract.define('songpoll', function (K) {
       taps.push(now); if (taps.length > 8) taps.shift();
       if (taps.length < 4) { out.textContent = '再點 ' + (4 - taps.length) + ' 下'; return; }
       var bpm = Math.round(60000 * (taps.length - 1) / (taps[taps.length - 1] - taps[0]));
-      out.innerHTML = '<b>' + bpm + ' Bpm</b>・' + (bpm < 80 ? '偏慢' : bpm <= 110 ? '中等' : '偏快');
+      out.innerHTML = '<b>' + bpm + ' BPM</b>・' + (bpm < 80 ? '偏慢' : bpm <= 110 ? '中等' : '偏快');
     };
     rs.onclick = function () { taps = []; out.textContent = '跟著拍子連續點按 4 下以上'; };
     var row = el('div', 'btn-row'); row.appendChild(go); row.appendChild(rs); row.appendChild(out); t.appendChild(row);

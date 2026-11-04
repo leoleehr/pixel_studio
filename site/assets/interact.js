@@ -246,7 +246,7 @@
       $$('.rg-pat', pats).forEach(function (b, k) { b.classList.toggle('on', k === idx); });
       g.querySelector('.rg-name').textContent = RHYTHMS[idx].name;
       g.querySelector('.rg-tip').textContent = RHYTHMS[idx].tip;
-      g.querySelector('.rg-bpm').textContent = bpm + ' Bpm';
+      g.querySelector('.rg-bpm').textContent = bpm + ' BPM';
     }
     function click(at, accent, vol) {
       var c = ac(), o = c.createOscillator(), gn = c.createGain();
@@ -301,7 +301,7 @@
       scoreEl.textContent = pct + ' 分';
       state.textContent = '命中 ' + n + ' / ' + tg.length + (extra ? '，多唱 ' + extra + ' 個' : '') + '。' + (n ? lean : '再聆聽一次示範，跟著節拍器練唱');
       if (n === tg.length && !extra) chime();
-      report(g, 'rhythm', { item: RHYTHMS[idx].name + '（' + bpm + ' Bpm）', result: n + '/' + tg.length, value: pct, detail: { extra: extra, avgOffsetMs: Math.round(avg), mode: mode } });
+      report(g, 'rhythm', { item: RHYTHMS[idx].name + '（' + bpm + ' BPM）', result: n + '/' + tg.length, value: pct, detail: { extra: extra, avgOffsetMs: Math.round(avg), mode: mode } });
       draw();
     }
     function finish() {

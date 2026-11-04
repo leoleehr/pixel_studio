@@ -3,7 +3,7 @@
  * .notequiz    找音遊戲：依音名、唱名或五線譜，點出正確的琴鍵
  * .scaletrain  音階運指：標出指法，依速度逐音亮起
  * .chordlab    和弦實驗室：根音、性質、轉位，顯示組成音與音程
- * .accomp      伴奏型播放器：L5 L3 L2 L1 R1 R2 R5 指位譜，搭配和弦進行
+ * .accomp      伴奏型播放器：L5 L3 L2 L1 R1 R2 R5 指位譜，搭配和弦行進
  * .degrees     順階和弦：大調七個和弦與級數，點選即可聆聽
  */
 (function () {
@@ -332,7 +332,7 @@
     var pick = el('div', 'ap-pick'), grid = el('div', 'ap-grid'), box = el('div', 'kb-box'), ctl = el('div', 'ap-ctl'), desc = el('p', 'ap-desc'), bars = el('div', 'ap-bars');
     plist.forEach(function (k) { var b = btn(PAT[k].name); b.setAttribute('data-k', k); b.onclick = function () { cur = k; restart(); }; pick.appendChild(b); });
     var bP = btn('▶︎ 播放', 'primary'); bP.onclick = function () { clock.tid ? stop() : play(); };
-    var sel = el('select'); sel.setAttribute('aria-label', '和弦進行'); progs.forEach(function (p, i) { sel.appendChild(new Option(p.join(' → '), i)); }); sel.onchange = function () { pi = +sel.value; restart(); };
+    var sel = el('select'); sel.setAttribute('aria-label', '和弦行進'); progs.forEach(function (p, i) { sel.appendChild(new Option(p.join(' → '), i)); }); sel.onchange = function () { pi = +sel.value; restart(); };
     var rng = el('input'); rng.type = 'range'; rng.min = 40; rng.max = 140; rng.value = bpm; rng.setAttribute('aria-label', '速度');
     var bl = el('b', '', bpm + ' BPM'); rng.oninput = function () { bpm = +rng.value; bl.textContent = bpm + ' BPM'; };
     var mt = el('label', 'ap-metro'), cb = el('input'); cb.type = 'checkbox'; cb.onchange = function () { metro = cb.checked; }; mt.appendChild(cb); mt.appendChild(document.createTextNode(' 節拍器'));

@@ -1,6 +1,6 @@
 /* ===== Songwriting Lab：老師的作品集（李奕勳，匹克索樂團 阿勳） =====
  * 歌詞由作者授權用於本課程教學；〈長眠〉的作詞者黃文奕已同意授權。
- * sections：k 是段落種類（verse 主歌、pre 前副歌、chorus 副歌、post 後副歌、bridge 橋段、tag 破格句），name 是原稿的段落名稱。
+ * sections：k 是段落種類（verse 主歌、pre 前副歌（前導句）、chorus 副歌、post 後副歌、bridge 橋段、tag 破格句），name 是原稿的段落名稱。
  * figs：修辭獵人與作品全貌共用，at 是句子裡的關鍵片段，figs 是可接受的答案（第一個為主要答案）。
  * keywords：委託案的關鍵字（關鍵字尋寶使用）。
  */
@@ -190,7 +190,7 @@ window.PIXEL_LEO_WORKS = {
       { at: '在此時 在此刻', figs: ['類疊'], why: '「在此時」「在此刻」相鄰反覆，強調當下。' },
       { at: '剛剛的默契實在有一點不行', figs: ['呼告'], why: '直接對台下說話，將觀眾的回應寫進歌詞。' }
     ],
-    discuss: ['歌詞裡寫進了「當我唱到 Merry Xmas，請你們要大聲說出」，這樣的設計對現場演出有什麼幫助？', '第二次前副歌將「今天的主題」換成「新 北 耶 誕 城」，為什麼要一個字一個字唱？', '如果改成學校園遊會的主題曲，哪幾句可以保留？']
+    discuss: ['歌詞裡寫進了「當我唱到 Merry Xmas，請你們要大聲說出」，這樣的設計對現場演出有什麼幫助？', '第二次前副歌（前導句）將「今天的主題」換成「新 北 耶 誕 城」，為什麼要一個字一個字唱？', '如果改成學校園遊會的主題曲，哪幾句可以保留？']
   },
   sevenhundred: {
     title: '你污的七億呢', date: '2008.11.12', credit: '詞曲：李奕勳', origin: '自發創作', theme: '議題擴大：時事諷刺',
@@ -243,5 +243,5 @@ window.PIXEL_REF_SONGS = {
   saygoodbye: { title: '說了再見', artist: '周杰倫', credit: '詞：古小力、黃凌嘉・曲：周杰倫', editable: true,
     sections: [{ k: 'intro', name: '前奏' }, { k: 'verse', name: '主歌一' }, { k: 'chorus', name: '副歌' }, { k: 'inter', name: '間奏' }, { k: 'verse', name: '主歌二' }, { k: 'chorus', name: '副歌' }, { k: 'bridge', name: '橋段' }, { k: 'chorus', name: '副歌' }, { k: 'outro', name: '尾奏' }] },
   apt: { title: 'APT.', artist: 'ROSÉ & Bruno Mars', credit: '詞曲：ROSÉ、Bruno Mars 等', editable: true,
-    sections: [{ k: 'intro', name: '前奏' }, { k: 'chorus', name: '副歌' }, { k: 'verse', name: '主歌一' }, { k: 'pre', name: '前副歌' }, { k: 'chorus', name: '副歌' }, { k: 'verse', name: '主歌二' }, { k: 'pre', name: '前副歌' }, { k: 'chorus', name: '副歌' }, { k: 'bridge', name: '橋段' }, { k: 'pre', name: '前副歌' }, { k: 'chorus', name: '副歌' }] }
+    sections: [{ k: 'intro', name: '前奏' }, { k: 'chorus', name: '副歌' }, { k: 'verse', name: '主歌一' }, { k: 'pre', name: '前副歌（前導句）' }, { k: 'chorus', name: '副歌' }, { k: 'verse', name: '主歌二' }, { k: 'pre', name: '前副歌（前導句）' }, { k: 'chorus', name: '副歌' }, { k: 'bridge', name: '橋段' }, { k: 'pre', name: '前副歌（前導句）' }, { k: 'chorus', name: '副歌' }] }
 };

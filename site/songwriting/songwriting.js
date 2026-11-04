@@ -2,7 +2,7 @@
  * .formbuilder  曲式積木：排出段落，檢查前後順序，畫出情緒曲線
  * .rhyme        韻腳檢查器：逐行判斷句尾的韻母，說明押韻方式
  * .motif        動機實驗室：重複、模進、倒影、逆行、擴大、聯結
- * .chordprog    和弦進行：經典進行、移調、播放
+ * .chordprog    和弦行進：經典行進、移調、播放
  * .arranger     編曲混音台：主律動、副律動、主旋律、過門、襯底
  * .songcard     創作範本卡：八堂課共用一張，存在這台裝置，可送給老師或下載
  * .notebook     素材庫：詞典、句典、曲典
@@ -133,7 +133,7 @@
   var SEC = {
     intro: { zh: '前奏', en: 'Intro', e: 3, bars: 4 },
     verse: { zh: '主歌', en: 'Verse', e: 4, bars: 8 },
-    pre: { zh: '前副歌', en: 'Pre-Chorus', e: 6, bars: 4 },
+    pre: { zh: '前副歌（前導句）', short: '前副歌', en: 'Pre-Chorus', e: 6, bars: 4 },
     chorus: { zh: '副歌', en: 'Chorus', e: 9, bars: 8 },
     inter: { zh: '間奏', en: 'Interlude', e: 5, bars: 4 },
     bridge: { zh: '後副歌／橋段', en: 'Bridge', e: 8, bars: 4 },
@@ -156,12 +156,12 @@
       var nx = at(i + 1);
       if (b.k === 'intro' && i > 0) { bad.push(i); msg.push(['warn', '前奏放在第 ' + (i + 1) + ' 段：前奏之前沒有其他段落，只有專輯序曲例外。']); }
       if (b.k === 'intro' && nx && nx !== 'verse') { bad.push(i + 1); msg.push(['warn', '前奏之後要接主歌。']); }
-      if (b.k === 'pre' && nx !== 'chorus' && nx !== 'inter') { bad.push(i); msg.push(['warn', '前副歌之後要接副歌：這一段負責加溫，將能量交給副歌解決。']); }
+      if (b.k === 'pre' && nx !== 'chorus' && nx !== 'inter') { bad.push(i); msg.push(['warn', '前副歌（前導句）之後要接副歌：這一段負責加溫，將能量交給副歌解決。']); }
       if (b.k === 'bridge' && nx && nx !== 'chorus') { bad.push(i); msg.push(['warn', '後副歌（橋段）之後要接回副歌。']); }
       if (b.k === 'outro' && nx && nx !== 'ending') { bad.push(i); msg.push(['warn', '尾奏之後要接結尾。']); }
       if (b.k === 'ending' && i !== list.length - 1) { bad.push(i); msg.push(['warn', '結尾是歌曲的最後一個段落，之後不再有其他段落。']); }
       if (b.k === 'inter' && i > 0 && at(i - 1) !== 'chorus' && at(i - 1) !== 'tag') msg.push(['warn', '間奏通常放在副歌之後，作為兩大段落之間的緩衝區。']);
-      if (b.k === 'verse' && nx && ['pre', 'chorus', 'verse', 'inter'].indexOf(nx) < 0) msg.push(['warn', '主歌之後通常接前副歌或副歌。']);
+      if (b.k === 'verse' && nx && ['pre', 'chorus', 'verse', 'inter'].indexOf(nx) < 0) msg.push(['warn', '主歌之後通常接前副歌（前導句）或副歌。']);
     });
     if (!msg.length) msg.push(['ok', '結構通順：段落的先後順序都符合流行歌曲的規則。']);
     var seen = {}; msg = msg.filter(function (m) { if (seen[m[1]]) return false; seen[m[1]] = 1; return true; });
@@ -183,7 +183,7 @@
       track.innerHTML = '';
       var chk = checkForm(st.list);
       st.list.forEach(function (b, i) {
-        var d = el('div', 'fb-block f-' + b.k + (chk.bad.indexOf(i) > -1 ? ' bad' : ''), '<b>' + SEC[b.k].zh + '</b><small>' + b.bars + ' 小節</small><span class="x" aria-hidden="true">✕</span>');
+        var d = el('div', 'fb-block f-' + b.k + (chk.bad.indexOf(i) > -1 ? ' bad' : ''), '<b>' + (SEC[b.k].short || SEC[b.k].zh) + '</b><small>' + b.bars + ' 小節</small><span class="x" aria-hidden="true">✕</span>');
         d.style.setProperty('--w', Math.max(1, b.bars / 4)); d.title = '點選更改小節數，點選右上角刪除';
         d.onclick = function (e) {
           if (e.target.classList.contains('x')) { st.list.splice(i, 1); save(); return; }
@@ -370,11 +370,11 @@
     draw();
   });
 
-  /* ========== 4. 和弦進行 ========== */
+  /* ========== 4. 和弦行進 ========== */
   var PROG = {
-    fifties: { name: '1645', deg: ['I', 'vi', 'IV', 'V'], note: '五〇年代進行，抒情歌最常見的循環' },
-    pop: { name: '1564', deg: ['I', 'V', 'vi', 'IV'], note: '萬用進行，無數流行歌曲的骨架' },
-    canon: { name: '卡農進行', deg: ['I', 'V', 'vi', 'iii', 'IV', 'I', 'IV', 'V'], note: '帕海貝爾〈卡農〉的低音線，華語情歌的經典' },
+    fifties: { name: '1645', deg: ['I', 'vi', 'IV', 'V'], note: '五〇年代行進，抒情歌最常見的循環' },
+    pop: { name: '1564', deg: ['I', 'V', 'vi', 'IV'], note: '萬用行進，無數流行歌曲的骨架' },
+    canon: { name: '卡農行進', deg: ['I', 'V', 'vi', 'iii', 'IV', 'I', 'IV', 'V'], note: '帕海貝爾〈卡農〉的低音線，華語情歌的經典' },
     royal: { name: '4536', deg: ['IV', 'V', 'iii', 'vi'], note: '日系與華語副歌常用，情緒向上推進' },
     minor: { name: '6415', deg: ['vi', 'IV', 'I', 'V'], note: '從小調開始，帶有一點憂傷' },
     seventh: { name: '1625（七和弦）', deg: ['I', 'vi7', 'ii7', 'V7'], note: '流行音樂育成中心教材：C Am7 Dm7 G7' },
@@ -502,9 +502,9 @@
     groove: ['主律動 Grooving', 'input', '例如：8 Beats、強弱次強弱'],
     rhyme: ['押韻方式與韻腳 Rhyme Scheme', 'input', '例如：一韻到底；ㄡ'], person: ['人稱立場 Personal', 'input', '例如：第一人稱敘述兩個人的故事'],
     theme: ['主題與故事 Subject', 'textarea', '這首歌想說什麼？用一兩句話寫下來'], hook: ['記憶點 Hook', 'textarea', '歌詞的記憶點、旋律的記憶點、樂器的記憶點'],
-    form: ['歌曲段落結構 Song Form', 'textarea', '例如：前奏 4 → 主歌 8 → 前副歌 4 → 副歌 8'],
+    form: ['歌曲段落結構 Song Form', 'textarea', '例如：前奏 4 → 主歌 8 → 前副歌（前導句） 4 → 副歌 8'],
     inst: ['樂器配置 Arrangement', 'checks', INST],
-    verse: ['主歌 Verse', 'textarea'], pre: ['前副歌 Pre-Chorus', 'textarea'], chorus: ['副歌 Chorus', 'textarea'], post: ['後副歌 Post-Chorus', 'textarea'], bridge: ['橋段 Bridge', 'textarea'], tag: ['破格句 Tag', 'textarea'],
+    verse: ['主歌 Verse', 'textarea'], pre: ['前副歌（前導句）Pre-Chorus', 'textarea'], chorus: ['副歌 Chorus', 'textarea'], post: ['後副歌 Post-Chorus', 'textarea'], bridge: ['橋段 Bridge', 'textarea'], tag: ['破格句 Tag', 'textarea'],
     rhet: ['修辭法使用 Rhetoric', 'checks', RHET]
   };
   var ALL = Object.keys(FIELDS);

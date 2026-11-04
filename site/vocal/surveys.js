@@ -15,7 +15,7 @@ window.PIXEL_SURVEYS = [
   ] },
   { id: 'pre-2', lesson: 2, title: '第二堂課前問卷', intro: '上一週的練習狀況，以及你的呼吸習慣。', questions: [
     { q: '上週的五項課後練習，完成的項數', type: 'single', options: ['0', '1', '2', '3', '4', '5'] },
-    { q: '拆解曲式時，哪一個段落最難分辨', type: 'single', options: ['主歌', '前導句', '副歌', '橋段', '破格句'] },
+    { q: '拆解曲式時，哪一個段落最難分辨', type: 'single', options: ['主歌', '前副歌（前導句）', '副歌', '橋段', '破格句'] },
     { q: '演唱一首歌時，通常感到氣息不足的段落', type: 'multi', options: ['主歌', '副歌', '長音', '快歌的密集歌詞'] },
     { q: '演唱完一小時後，喉嚨的感覺', type: 'single', options: ['舒服', '乾燥', '緊繃', '疼痛', '聲音沙啞'] },
     { q: '平均每天喝水量', type: 'number', unit: 'c.c.' },
@@ -42,7 +42,7 @@ window.PIXEL_SURVEYS = [
     { q: '練習吉他或歌唱時，是否使用節拍器', type: 'single', options: ['經常', '偶爾', '從未'] }
   ] },
   { id: 'pre-5', lesson: 5, title: '第五堂課前問卷', intro: '發聲練習的進度、想模仿的歌手，以及結業演唱的初步想法。', questions: [
-    { q: '促音和弦練習的最高速度', type: 'number', unit: 'Bpm' },
+    { q: '促音和弦練習的最高速度', type: 'number', unit: 'BPM' },
     { q: '三步驟學唱中，最有幫助的是哪一步', type: 'single', options: ['唱名', '母音', '歌詞'] },
     { q: '最想模仿的歌手與原因', type: 'text' },
     { q: '演唱時，是否思考歌詞的意思', type: 'single', options: ['經常', '偶爾', '幾乎只留意音準'] },

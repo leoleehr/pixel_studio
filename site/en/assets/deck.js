@@ -159,7 +159,7 @@
     var bpm = parseInt(m.getAttribute('data-bpm'), 10) || 60, beat = 0, mid = null;
     m.innerHTML = '<button type="button" class="go">▶︎ Metronome</button><button type="button" class="dn" aria-label="Slower">−</button><span class="bpm"></span><button type="button" class="up" aria-label="Faster">＋</button><span class="dots"><span></span><span></span><span></span><span></span></span>';
     var dots = m.querySelectorAll('.dots span'), lab = m.querySelector('.bpm'), go = m.querySelector('.go');
-    function label() { lab.textContent = bpm + ' Bpm'; }
+    function label() { lab.textContent = bpm + ' BPM'; }
     function tick() {
       dots.forEach(function (d, k) { d.classList.toggle('on', k === beat); d.classList.toggle('first', k === 0); });
       click(beat === 0); beat = (beat + 1) % 4;
@@ -182,7 +182,7 @@
       var ok = document.createElement('button'); ok.type = 'button'; ok.className = 'pass'; ok.textContent = 'Nailed it +5';
       var rb = document.createElement('span'); rb.className = 'record';
       var rs = document.createElement('button'); rs.type = 'button'; rs.className = 'restart'; rs.textContent = 'Back to ' + base;
-      function showRec() { rb.textContent = rec ? 'Class record ' + rec + ' Bpm' : 'Class record: none yet'; }
+      function showRec() { rb.textContent = rec ? 'Class record ' + rec + ' BPM' : 'Class record: none yet'; }
       ok.onclick = function () {
         if (bpm > rec) { rec = bpm; try { localStorage.setItem(key, rec); } catch (e) {} showRec(); }
         bpm = Math.min(200, bpm + 5); label(); start();

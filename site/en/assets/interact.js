@@ -246,7 +246,7 @@
       $$('.rg-pat', pats).forEach(function (b, k) { b.classList.toggle('on', k === idx); });
       g.querySelector('.rg-name').textContent = RHYTHMS[idx].name;
       g.querySelector('.rg-tip').textContent = RHYTHMS[idx].tip;
-      g.querySelector('.rg-bpm').textContent = bpm + ' Bpm';
+      g.querySelector('.rg-bpm').textContent = bpm + ' BPM';
     }
     function click(at, accent, vol) {
       var c = ac(), o = c.createOscillator(), gn = c.createGain();
@@ -301,7 +301,7 @@
       scoreEl.textContent = pct + ' points';
       state.textContent = 'Hits ' + n + ' / ' + tg.length + (extra ? ', ' + extra + ' extra' : '') + '. ' + (n ? lean : 'Listen to the demo again and practise with the metronome');
       if (n === tg.length && !extra) chime();
-      report(g, 'rhythm', { item: RHYTHMS[idx].name + ' (' + bpm + ' Bpm）', result: n + '/' + tg.length, value: pct, detail: { extra: extra, avgOffsetMs: Math.round(avg), mode: mode } });
+      report(g, 'rhythm', { item: RHYTHMS[idx].name + ' (' + bpm + ' BPM）', result: n + '/' + tg.length, value: pct, detail: { extra: extra, avgOffsetMs: Math.round(avg), mode: mode } });
       draw();
     }
     function finish() {

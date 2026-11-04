@@ -574,7 +574,7 @@
   }
 
   /* ---------- 換和弦練習器 ----------
-   * data-switch-trainer="C G Am F|G D Em C"：以 | 分隔多組進行；留空時使用四大和弦的三種進行
+   * data-switch-trainer="C G Am F|G D Em C"：以 | 分隔多組行進；留空時使用四大和弦的三種行進
    */
   $$('[data-switch-trainer]').forEach(function (root) {
     var attr = root.getAttribute('data-switch-trainer'), progs = attr ? attr.split('|').map(function (x, i) { var seq = x.trim().split(/\s+/); return { id: 'p' + i, label: seq.join(' → '), seq: seq }; }) : PROGRESSIONS;
@@ -585,7 +585,7 @@
     var c = $('.gcontrols', root), start = el('button', { type: 'button', class: 'btn primary' }, '開始');
     c.appendChild(start);
     c.appendChild(bpmField(40, 120, +(root.getAttribute('data-bpm') || 60), function (v) { m.bpm = v; }));
-    if (progs.length > 1) c.appendChild(field('進行', seg('和弦進行', progs.map(function (p) { return [p.id, p.label]; }), prog.id, function (id) { prog = progs.filter(function (p) { return p.id === id; })[0]; show(0, -1); })));
+    if (progs.length > 1) c.appendChild(field('行進', seg('和弦行進', progs.map(function (p) { return [p.id, p.label]; }), prog.id, function (id) { prog = progs.filter(function (p) { return p.id === id; })[0]; show(0, -1); })));
     c.appendChild(field('每個和弦', seg('每個和弦拍數', [[4, '4 拍'], [2, '2 拍']], 4, function (v) { perChord = v; })));
     c.appendChild(toggle('示範撥弦', true, function (v) { demo = v; }));
     var nowN = $('.now .name', root), nextN = $('.next .name', root), nowF = $('.now .fig', root), nextF = $('.next .fig', root), lights = $$('.beats i', root), hint = $('.hint', root);
@@ -1070,14 +1070,14 @@
       } });
   });
 
-  /* ---------- 和弦進行聽辨 ----------
+  /* ---------- 和弦行進聽辨 ----------
    * data-prog-ear="C,G,Am,F|C,Am,F,G"；data-names="I–V–vi–IV|I–vi–IV–V" 可自訂按鈕文字
    */
   $$('[data-prog-ear]').forEach(function (root) {
     var groups = root.getAttribute('data-prog-ear').split('|'), names = (root.getAttribute('data-names') || '').split('|');
-    earQuiz(root, { name: '和弦進行聽辨', pool: groups.map(function (g, i) { return String(i); }),
+    earQuiz(root, { name: '和弦行進聽辨', pool: groups.map(function (g, i) { return String(i); }),
       label: function (k) { return names[+k] || groups[+k].split(',').join(' → '); },
-      hint: '按下「出題」，聆聽四個和弦，選出對應的進行。先留意最後一個和弦是否「回家」。',
+      hint: '按下「出題」，聆聽四個和弦，選出對應的行進。先留意最後一個和弦是否「回家」。',
       play: function (k) {
         var a = PS.audio.ctx(); if (!a) return;
         groups[+k].split(',').forEach(function (ch, i) { PS.audio.strum(CHORDS[ch].frets, a.currentTime + 0.05 + i * 1.1, 'down', { duration: 1.2, gap: 0.03, volume: 0.18 }); });

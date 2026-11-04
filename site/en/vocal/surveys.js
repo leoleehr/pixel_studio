@@ -15,7 +15,7 @@ window.PIXEL_SURVEYS = [
   ] },
   { id: 'pre-2', lesson: 2, title: 'Lesson 2 pre-class survey', intro: 'How last week\'s practice went, and your breathing habits.', questions: [
     { q: 'How many of last week\'s five practice tasks you finished', type: 'single', options: ['0', '1', '2', '3', '4', '5'] },
-    { q: 'When breaking down song form, which section was hardest to spot', type: 'single', options: ['Verse', 'Lead-in', 'Chorus', 'Bridge', 'Break line'] },
+    { q: 'When breaking down song form, which section was hardest to spot', type: 'single', options: ['Verse', 'Pre-chorus', 'Chorus', 'Bridge', 'Break line'] },
     { q: 'Where in a song you usually run out of breath', type: 'multi', options: ['Verse', 'Chorus', 'Long notes', 'Dense lyrics in fast songs'] },
     { q: 'How your throat feels an hour after singing', type: 'single', options: ['Comfortable', 'Dry', 'Tight', 'Sore', 'Hoarse'] },
     { q: 'Water you drink per day on average', type: 'number', unit: 'c.c.' },
@@ -42,7 +42,7 @@ window.PIXEL_SURVEYS = [
     { q: 'Do you use a metronome when practising guitar or singing?', type: 'single', options: ['Often', 'Sometimes', 'Never'] }
   ] },
   { id: 'pre-5', lesson: 5, title: 'Lesson 5 pre-class survey', intro: 'Your vocal exercise progress, a singer you\'d like to imitate, and first ideas for the final performance.', questions: [
-    { q: 'Top speed in the staccato chord exercise', type: 'number', unit: 'Bpm' },
+    { q: 'Top speed in the staccato chord exercise', type: 'number', unit: 'BPM' },
     { q: 'Which of the three learning steps helped most', type: 'single', options: ['Solfège', 'Vowel ', 'Lyrics'] },
     { q: 'The singer you\'d most like to imitate, and why', type: 'text' },
     { q: 'Do you think about what the lyrics mean when you sing?', type: 'single', options: ['Often', 'Sometimes', 'I mostly just watch the pitch'] },

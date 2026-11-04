@@ -73,7 +73,7 @@
   var main = document.getElementById('content'), toc = document.getElementById('toc'), prog = document.getElementById('progress');
   var pre = main.hasAttribute('data-prerendered');
   function loadMarked() { return window.marked ? Promise.resolve() : new Promise(function (ok, no) { var s = document.createElement('script'); s.src = 'https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js'; s.integrity = 'sha384-/TQbtLCAerC3jgaim+N78RZSDYV7ryeoBCVqTuzRrFec2akfBkHS7ACQ3PQhvMVi'; s.crossOrigin = 'anonymous'; s.onload = ok; s.onerror = no; document.head.appendChild(s); }); }
-  (pre ? (location.hash ? Promise.resolve(null) : new Promise(function (ok) { requestAnimationFrame(function () { setTimeout(function () { ok(null); }, 0); }); })) : loadMarked().then(function () { return fetch('handbook.md?v=20261015identity21'); }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }))
+  (pre ? (location.hash ? Promise.resolve(null) : new Promise(function (ok) { requestAnimationFrame(function () { setTimeout(function () { ok(null); }, 0); }); })) : loadMarked().then(function () { return fetch('handbook.md?v=20261104terms'); }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }))
     .then(function (md) {
       if (md !== null) main.innerHTML = marked.parse(md, { gfm: true });
       main.querySelectorAll('img').forEach(function (i) { i.loading = 'lazy'; i.decoding = 'async'; });
@@ -152,6 +152,6 @@
 })();
 </script>
 <script src="../../assets/ps-audio.js?v=20261016learning1" defer></script>
-<script src="../assets/learning-tools.js?v=20261020a" defer></script>
+<script src="../assets/learning-tools.js?v=20261104terms" defer></script>
 </body>
 </html>

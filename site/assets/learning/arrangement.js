@@ -1,7 +1,7 @@
 PixelLearning.register('arrangement',(root,K)=>{
  const ctl=K.shell(root),matrix=K.el('div','lt-matrix'),status=K.status(root),saved=K.el('p','lt-note');root.insertBefore(matrix,status);root.append(saved);
  const keys=['mr','sr','lead','fill','pad'],labels=['主律動','副律動','主旋律','過門','襯底'],storageKey='pixel:songwriting:learning-arrangements:v1';
- const demo=[['前奏',['sr']],['主歌',['mr','sr','lead']],['前副歌',['mr','sr','lead','pad']],['副歌',keys.slice()],['尾奏',['sr','pad']]];
+ const demo=[['前奏',['sr']],['主歌',['mr','sr','lead']],['前副歌（前導句）',['mr','sr','lead','pad']],['副歌',keys.slice()],['尾奏',['sr','pad']]];
  const valid=s=>Array.isArray(s)&&s.length>0&&s.length<=100&&s.every(r=>Array.isArray(r)&&typeof r[0]==='string'&&Array.isArray(r[1])&&r[1].every(k=>keys.includes(k)));
  let profiles=K.get(storageKey,{});if(!profiles||typeof profiles!=='object'||Array.isArray(profiles))profiles={};
  Object.keys(profiles).forEach(k=>{if(!profiles[k]||!valid(profiles[k].sections))delete profiles[k];});
@@ -21,7 +21,7 @@ PixelLearning.register('arrangement',(root,K)=>{
   if(focus)matrix.querySelector('[data-cell="'+focus+'"]')?.focus({preventScroll:true});}
  K.button('聽這個段落',()=>{K.stopAll();stop();if(!api){status.textContent='請使用前一張的編曲混音台試聽。';return;}api.select(sections[current][1]);api.play();timer=setTimeout(stop,60/92*16*1000);},ctl,true);K.button('停止',stop,ctl);
  K.button('讀取曲式積木',()=>{stop();const s=K.get('pixel:songwriting:form-mine',null)||K.get('pixel:songwriting:form-main',null);if(!s||!Array.isArray(s.list)||!s.list.length||s.list.length>100){status.textContent='尚無可用曲式，保留目前配置。';return;}
-  const names={intro:'前奏',verse:'主歌',pre:'前副歌',chorus:'副歌',inter:'間奏',bridge:'橋段',outro:'尾奏',ending:'結尾',tag:'破格句'};
+  const names={intro:'前奏',verse:'主歌',pre:'前副歌（前導句）',chorus:'副歌',inter:'間奏',bridge:'橋段',outro:'尾奏',ending:'結尾',tag:'破格句'};
   const id='form:'+JSON.stringify(s.list.map(p=>[p.k,p.bars||p.b||0]));
   if(!profiles[id])profiles[id]={label:'曲式：'+s.list.map(p=>names[p.k]||p.k).join('→'),sections:s.list.map(p=>[names[p.k]||String(p.k),p.k==='chorus'?keys.slice():p.k==='verse'?['mr','sr','lead']:['sr','lead']])};
   active=id;sections=profiles[id].sections;current=0;options();persist();draw();status.textContent='已切換至曲式配置；先前配置仍保留，可由「配置」切換。';},ctl);

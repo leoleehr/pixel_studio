@@ -166,7 +166,7 @@ a{color:inherit;text-decoration:none}
   var COLOR = ['', '#e8412b', '#e2407f', '#8a4fc0', '#2f5fc4', '#2f8fc4', '#4f9e3a', '#b5a400', '#e08a12', '#e8412b', '#e2407f', '#8a4fc0', '#2f8fc4'];
   var DESC = ['', 'Learn where the piano came from and how it\'s built, and find middle C', 'Read the grand staff and find every note on the keyboard', 'Thumb-under and finger-over crossings for smooth scales', 'Three notes stacked in thirds make a chord; inversions cut down movement', 'Melody in the right hand, chords in the left: your first song', 'Get the left hand moving', 'Hands taking turns to sound two octaves', 'Play and sing at the same time for your mid-course performance', 'Find the number patterns behind the chords', 'Walk the bass down the stairs, one step at a time', 'Dress a song in different styles', 'Meet another key and give your final performance'];
   var main = document.getElementById('content'), toc = document.getElementById('toc');
-  fetch('handbook.md?v=20261015identity21').then(function (r) { return r.text(); }).then(function (md) {
+  fetch('handbook.md?v=20261104terms').then(function (r) { return r.text(); }).then(function (md) {
     var tmp = document.createElement('div'); tmp.innerHTML = marked.parse(md, { gfm: true });
     // 拿掉文件標題與署名行，改用封面
     var h1 = tmp.querySelector('h1'); if (h1) { var nx = h1.nextElementSibling; h1.remove(); if (nx && nx.tagName === 'P') nx.remove(); }

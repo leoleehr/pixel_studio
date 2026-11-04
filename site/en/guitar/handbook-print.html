@@ -170,7 +170,7 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="foot">
     <div>Teacher <b>Leo Lee, Pixel Studio</b><br>Source material: 2013 beginner folk guitar class handbook (books 1 and 2)</div>
-    <div style="text-align:right">Course website<br><b>pixel-studio.musicallanding.workers.dev/en/guitar/</b></div>
+    <div style="text-align:right">Course website<br><b>pixel-studio.musicallanding.workers.dev/guitar</b></div>
   </div>
 </div>
 
@@ -187,7 +187,7 @@ a{color:inherit;text-decoration:none}
 
 <script src="songs.js?v=20261014h"></script>
 <script src="../../assets/ps-audio.js?v=20261014s"></script>
-<script src="guitar.js?v=20261028identity"></script>
+<script src="guitar.js?v=20261104terms"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js" integrity="sha384-/TQbtLCAerC3jgaim+N78RZSDYV7ryeoBCVqTuzRrFec2akfBkHS7ACQ3PQhvMVi" crossorigin="anonymous"></script>
 <script src="../../assets/vendor/qrcode.min.js"></script>
 <script>
@@ -196,7 +196,7 @@ a{color:inherit;text-decoration:none}
   var COLOR = ['', '#e8412b', '#e2407f', '#8a4fc0', '#2f5fc4', '#2f8fc4', '#4f9e3a', '#b5a400', '#e08a12', '#e8412b', '#e2407f', '#8a4fc0', '#2f8fc4'];
   var DESC = ['', 'Learn where the guitar came from and the names of its parts, and tune all six strings', 'Read tab and get both hands working together', 'Four chords are enough to play loads of pop songs', 'Learn right-hand strumming to give songs a groove', 'Design accompaniment for waltzes and slow songs', 'Analyse song sections and learn to use a capo', 'Understand how chords are built and learn basic fingerpicking', 'Master where to press for barre chords', 'Let the bass move smoothly with the chords', 'Understand why chords always come in groups', 'Hammer-ons, pull-offs, slides, muting and bends make the guitar speak', 'Find your own key and write a song of your own'];
   var main = document.getElementById('content'), toc = document.getElementById('toc');
-  fetch('handbook.md?v=20261016learning1').then(function (r) { return r.text(); }).then(function (md) {
+  fetch('handbook.md?v=20261104terms').then(function (r) { return r.text(); }).then(function (md) {
     var tmp = document.createElement('div'); tmp.innerHTML = marked.parse(md, { gfm: true });
     // 拿掉文件標題與署名行，改用封面
     var h1 = tmp.querySelector('h1'); if (h1) { var nx = h1.nextElementSibling; h1.remove(); if (nx && nx.tagName === 'P') nx.remove(); }

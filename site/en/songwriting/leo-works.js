@@ -1,6 +1,6 @@
 /* ===== Songwriting Lab：老師的作品集（李奕勳，匹克索樂團 阿勳） =====
  * 歌詞由作者授權用於本課程教學；〈長眠〉的作詞者黃文奕已同意授權。
- * sections：k 是段落種類（verse 主歌、pre 前副歌、chorus 副歌、post 後副歌、bridge 橋段、tag 破格句），name 是原稿的段落名稱。
+ * sections：k 是段落種類（verse 主歌、pre 前副歌（前導句）、chorus 副歌、post 後副歌、bridge 橋段、tag 破格句），name 是原稿的段落名稱。
  * figs：修辭獵人與作品全貌共用，at 是句子裡的關鍵片段，figs 是可接受的答案（第一個為主要答案）。
  * keywords：委託案的關鍵字（關鍵字尋寶使用）。
  */

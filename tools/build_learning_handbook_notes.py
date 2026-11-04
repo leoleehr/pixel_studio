@@ -32,8 +32,8 @@ def static_svg(root, title, text):
         return markup
     # Non-chart tools: preserve their actual selected cells/phrases as an accessible diagram.
     if root.locator('.lt-matrix').count():
-        rows=[['段落','主律動','副律動','主旋律','過門','襯底'],['前奏','—','有','—','—','—'],['主歌','有','有','有','—','—'],['前副歌','有','有','有','—','有'],['副歌','有','有','有','有','有'],['尾奏','—','有','—','—','有']]
-        body=''.join(f'<text x="{15+c*94}" y="{35+r*34}">{html.escape(v)}</text>' for r,row in enumerate(rows) for c,v in enumerate(row))
+        rows=[['段落','主律動','副律動','主旋律','過門','襯底'],['前奏','—','有','—','—','—'],['主歌','有','有','有','—','—'],['前副歌（前導句）','有','有','有','—','有'],['副歌','有','有','有','有','有'],['尾奏','—','有','—','—','有']]
+        body=''.join(f'<text x="{15 if c==0 else 150+(c-1)*88}" y="{35+r*34}">{html.escape(v)}</text>' for r,row in enumerate(rows) for c,v in enumerate(row))
         return '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="215" viewBox="0 0 600 215"><style>text{font:15px Arial,"Microsoft JhengHei",sans-serif;fill:#111315}</style>'+body+'</svg>'
     spans = root.locator('.lt-steps .lt-step')
     words = spans.all_text_contents() if spans.count() else [root.locator('.lt-status').first.inner_text()]

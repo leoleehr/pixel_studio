@@ -15,7 +15,7 @@ window.PixelInteract.define('songpoll', function (K) {
       taps.push(now); if (taps.length > 8) taps.shift();
       if (taps.length < 4) { out.textContent = 'Tap ' + (4 - taps.length) + ' more'; return; }
       var bpm = Math.round(60000 * (taps.length - 1) / (taps[taps.length - 1] - taps[0]));
-      out.innerHTML = '<b>' + bpm + ' Bpm</b>・' + (bpm < 80 ? 'Slow' : bpm <= 110 ? 'Medium' : 'Fast');
+      out.innerHTML = '<b>' + bpm + ' BPM</b>・' + (bpm < 80 ? 'Slow' : bpm <= 110 ? 'Medium' : 'Fast');
     };
     rs.onclick = function () { taps = []; out.textContent = 'Tap along with the beat at least 4 times'; };
     var row = el('div', 'btn-row'); row.appendChild(go); row.appendChild(rs); row.appendChild(out); t.appendChild(row);

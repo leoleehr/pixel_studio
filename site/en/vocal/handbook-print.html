@@ -168,7 +168,7 @@ a{color:inherit;text-decoration:none}
   var COLOR = ['', '#e8412b', '#e2407f', '#8a4fc0', '#2f8fc4', '#4f9e3a', '#b5a400'];
   var DESC = ['', 'Understand how sound is made and amplified, and what makes a good lead singer', 'Find where your singing breath comes from and make it steady and lasting', 'Make your voice brighter, fuller and able to carry further', 'Make every word clear and rounded', 'Turn technique into expression in a song', 'Find songs that suit you and the right key to sing them in'];
   var main = document.getElementById('content'), toc = document.getElementById('toc');
-  fetch('course-handbook.md?v=20261103b').then(function (r) { return r.text(); }).then(function (md) {
+  fetch('course-handbook.md?v=20261104terms').then(function (r) { return r.text(); }).then(function (md) {
     var tmp = document.createElement('div'); tmp.innerHTML = marked.parse(md, { gfm: true });
     // 拿掉文件標題與署名行，改用封面
     var h1 = tmp.querySelector('h1'); if (h1) { var nx = h1.nextElementSibling; h1.remove(); if (nx && nx.tagName === 'P') nx.remove(); }
