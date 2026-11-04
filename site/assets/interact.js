@@ -112,6 +112,8 @@
     var x = cv.getContext('2d'); x.setTransform(r, 0, 0, r, 0, 0); return { x: x, w: w, h: h };
   }
   function css(v) { return getComputedStyle(document.documentElement).getPropertyValue(v).trim() || '#fff'; }
+  // 畫布上的格線、刻度字：深色主題用白、淺色主題（theme.js）用墨色
+  function ink(a) { return (document.documentElement.getAttribute('data-theme') === 'light' ? 'rgba(17,19,21,' : 'rgba(255,255,255,') + a + ')'; }
 
   /* ---------- 1. 選擇題（手指投票後揭曉） ---------- */
   $$('.quiz').forEach(function (q) {
@@ -288,7 +290,7 @@
     function draw() {
       var c = canvasFit(cv), x = c.x, f = freq(), a = am.value / 100, cyc = f / 110 * 1.5;
       x.clearRect(0, 0, c.w, c.h);
-      x.strokeStyle = 'rgba(255,255,255,.12)'; x.beginPath(); x.moveTo(0, c.h / 2); x.lineTo(c.w, c.h / 2); x.stroke();
+      x.strokeStyle = ink(.12); x.beginPath(); x.moveTo(0, c.h / 2); x.lineTo(c.w, c.h / 2); x.stroke();
       var g = x.createLinearGradient(0, 0, c.w, 0);
       ['#e8412b', '#e2407f', '#8a4fc0', '#2f5fc4', '#45b3e6', '#6cbb4b', '#d6e03a', '#f4a62a'].forEach(function (col, k) { g.addColorStop(k / 7, col); });
       x.strokeStyle = g; x.lineWidth = 3; x.beginPath();
@@ -400,7 +402,7 @@
       var c = canvasFit(cv), x = c.x, Y = function (m) { return c.h - (m - LO) / (HI - LO) * c.h; }, X = function (i) { return i / 359 * c.w; };
       x.clearRect(0, 0, c.w, c.h);
       x.font = '11px ' + css('--display'); x.textBaseline = 'middle';
-      for (var o = LO; o <= HI; o += 12) { x.strokeStyle = 'rgba(255,255,255,.08)'; x.beginPath(); x.moveTo(30, Y(o)); x.lineTo(c.w, Y(o)); x.stroke(); x.fillStyle = 'rgba(255,255,255,.4)'; x.fillText(nameOf(o).name, 4, Math.min(c.h - 7, Math.max(7, Y(o)))); }
+      for (var o = LO; o <= HI; o += 12) { x.strokeStyle = ink(.08); x.beginPath(); x.moveTo(30, Y(o)); x.lineTo(c.w, Y(o)); x.stroke(); x.fillStyle = ink(.4); x.fillText(nameOf(o).name, 4, Math.min(c.h - 7, Math.max(7, Y(o)))); }
       if (brk !== null) { x.fillStyle = 'rgba(236,74,54,.16)'; x.fillRect(30, Y(brk + 1.5), c.w - 30, Y(brk - 1.5) - Y(brk + 1.5)); }
       x.strokeStyle = css('--amber'); x.lineWidth = 3; x.beginPath(); var on = false;
       hist.forEach(function (m, i) { if (m === null) { on = false; return; } on ? x.lineTo(X(i), Y(m)) : x.moveTo(X(i), Y(m)); on = true; });
@@ -465,18 +467,18 @@
       var g = geo(), x = g.c.x;
       x.clearRect(0, 0, g.c.w, g.c.h);
       x.font = '11px ' + css('--display'); x.textBaseline = 'middle';
-      for (var o = 48; o <= HI; o += 12) { x.strokeStyle = 'rgba(255,255,255,.07)'; x.beginPath(); x.moveTo(g.L, g.Yp(o)); x.lineTo(g.L + g.w, g.Yp(o)); x.stroke(); x.fillStyle = 'rgba(255,255,255,.45)'; x.textAlign = 'right'; x.fillText(nameOf(o).name, g.L - 6, g.Yp(o)); }
+      for (var o = 48; o <= HI; o += 12) { x.strokeStyle = ink(.07); x.beginPath(); x.moveTo(g.L, g.Yp(o)); x.lineTo(g.L + g.w, g.Yp(o)); x.stroke(); x.fillStyle = ink(.45); x.textAlign = 'right'; x.fillText(nameOf(o).name, g.L - 6, g.Yp(o)); }
       x.textAlign = 'left'; x.fillStyle = 'rgba(69,179,230,.7)';
       [-60, -40, -20, 0].forEach(function (d) { x.fillText(d + ' dB', g.L + g.w + 4, Math.min(g.T + g.h - 4, Math.max(g.T + 6, g.Yv(d)))); });
-      x.textAlign = 'center'; x.fillStyle = 'rgba(255,255,255,.4)';
+      x.textAlign = 'center'; x.fillStyle = ink(.4);
       for (var s = 0; s <= dur(); s += 5) x.fillText(s + 's', g.X(s), g.T + g.h + 12);
       marks.forEach(function (mk) { var z = zoneOf(mk.z); x.fillStyle = z.col + '2a'; x.fillRect(g.X(mk.a), g.T, g.X(mk.b) - g.X(mk.a), g.h); x.fillStyle = z.col; x.font = '700 13px "Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",sans-serif'; x.fillText(z.name, (g.X(mk.a) + g.X(mk.b)) / 2, g.T + 12 + (mk.z === 'mouth' ? 16 : 0)); x.font = '11px ' + css('--display'); });
       overlaps().forEach(function (o) { // 聲區：斜線網底
         var x1 = g.X(o.a), x2 = g.X(o.b); x.save(); x.beginPath(); x.rect(x1, g.T, x2 - x1, g.h); x.clip();
-        x.strokeStyle = 'rgba(255,255,255,.38)'; x.lineWidth = 1.5; for (var k = x1 - g.h; k < x2; k += 7) { x.beginPath(); x.moveTo(k, g.T + g.h); x.lineTo(k + g.h, g.T); x.stroke(); }
-        x.restore(); x.lineWidth = 1; x.fillStyle = '#fff'; x.font = '700 12px "Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",sans-serif'; x.fillText('聲區', (x1 + x2) / 2, g.T + g.h - 10); x.font = '11px ' + css('--display');
+        x.strokeStyle = ink(.38); x.lineWidth = 1.5; for (var k = x1 - g.h; k < x2; k += 7) { x.beginPath(); x.moveTo(k, g.T + g.h); x.lineTo(k + g.h, g.T); x.stroke(); }
+        x.restore(); x.lineWidth = 1; x.fillStyle = ink(1); x.font = '700 12px "Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",sans-serif'; x.fillText('聲區', (x1 + x2) / 2, g.T + g.h - 10); x.font = '11px ' + css('--display');
       });
-      if (sel) { x.fillStyle = 'rgba(255,255,255,.12)'; x.fillRect(g.X(sel.a), g.T, g.X(sel.b) - g.X(sel.a), g.h); x.strokeStyle = 'rgba(255,255,255,.6)'; x.setLineDash([4, 4]); x.strokeRect(g.X(sel.a), g.T, g.X(sel.b) - g.X(sel.a), g.h); x.setLineDash([]); }
+      if (sel) { x.fillStyle = ink(.12); x.fillRect(g.X(sel.a), g.T, g.X(sel.b) - g.X(sel.a), g.h); x.strokeStyle = ink(.6); x.setLineDash([4, 4]); x.strokeRect(g.X(sel.a), g.T, g.X(sel.b) - g.X(sel.a), g.h); x.setLineDash([]); }
       // 音量：底部的填色區
       x.fillStyle = 'rgba(69,179,230,.28)'; x.beginPath(); x.moveTo(g.X(0), g.T + g.h);
       data.forEach(function (d) { x.lineTo(g.X(d.t / 1000), g.Yv(Math.max(DBLO, d.db))); });
@@ -486,7 +488,7 @@
       x.strokeStyle = css('--amber'); x.lineWidth = 3; x.beginPath(); var on = false;
       data.forEach(function (d) { if (d.m === null || d.m < LO || d.m > HI) { on = false; return; } var X = g.X(d.t / 1000), Y = g.Yp(d.m); on ? x.lineTo(X, Y) : x.moveTo(X, Y); on = true; });
       x.stroke(); x.lineWidth = 1;
-      if (head !== undefined) { x.strokeStyle = '#fff'; x.beginPath(); x.moveTo(g.X(head), g.T); x.lineTo(g.X(head), g.T + g.h); x.stroke(); }
+      if (head !== undefined) { x.strokeStyle = ink(1); x.beginPath(); x.moveTo(g.X(head), g.T); x.lineTo(g.X(head), g.T + g.h); x.stroke(); }
     }
     function rng(st) { var a = nameOf(st.lo).name, b = nameOf(st.hi).name; return a === b ? a : a + '–' + b; }
     function zi(k) { return ZONES.map(function (z) { return z.k; }).indexOf(k); }
@@ -585,8 +587,8 @@
       var lines = $$('.rl-marks li', p).map(function (li) { return li.textContent.replace('×', '').trim(); }).concat(p.querySelector('.rl-sum').innerText.split('\n')).filter(Boolean).slice(0, 8);
       var g = geo(), out = document.createElement('canvas'), r = window.devicePixelRatio || 1, W = g.c.w, H = g.c.h + 52 + lines.length * 17;
       out.width = W * r; out.height = H * r; var x = out.getContext('2d'); x.scale(r, r);
-      x.fillStyle = '#101210'; x.fillRect(0, 0, W, H);
-      x.fillStyle = '#f3f0e9'; x.font = '700 16px "Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",sans-serif'; x.textBaseline = 'top';
+      x.fillStyle = ink(1) === 'rgba(17,19,21,1)' ? '#f4f4f0' : '#101210'; x.fillRect(0, 0, W, H);
+      x.fillStyle = ink(1) === 'rgba(17,19,21,1)' ? '#111315' : '#f3f0e9'; x.font = '700 16px "Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",sans-serif'; x.textBaseline = 'top';
       var who = (window.PixelBackend && window.PixelBackend.profile && window.PixelBackend.profile()) || {};
       x.fillText('共鳴轉換觀測圖　' + (who.name || '') + '　' + stamp().replace('_', ' '), 12, 10);
       x.drawImage(cv, 0, 36, W, g.c.h);
@@ -1243,10 +1245,10 @@
       var X = function (b) { return padL + b / 4 * w; };
       x.clearRect(0, 0, W, H);
       for (var s = 0; s <= 16; s++) {
-        x.strokeStyle = s % 4 === 0 ? 'rgba(255,255,255,.28)' : 'rgba(255,255,255,.07)'; x.lineWidth = s % 4 === 0 ? 1.5 : 1;
+        x.strokeStyle = s % 4 === 0 ? ink(.28) : ink(.07); x.lineWidth = s % 4 === 0 ? 1.5 : 1;
         x.beginPath(); x.moveTo(X(s / 4), 6); x.lineTo(X(s / 4), H - 6); x.stroke();
       }
-      x.fillStyle = 'rgba(255,255,255,.45)'; x.font = '12px "Space Grotesk",sans-serif';
+      x.fillStyle = ink(.45); x.font = '12px "Space Grotesk",sans-serif';
       for (var b = 0; b < 4; b++) x.fillText(String(b + 1), X(b) + 4, 18);
       if (nowBeat >= 0) { x.fillStyle = 'rgba(244,166,42,.12)'; x.fillRect(X(Math.floor(nowBeat)), 4, w / 4, H - 8); }
       var on = RHYTHMS[idx].on, mid = H * 0.42;
@@ -1256,10 +1258,10 @@
       });
       (result ? result.det : onsets).forEach(function (d) {
         var b = typeof d === 'number' ? d : d.b; if (b < -0.5 || b > 4.5) return;
-        x.fillStyle = d.ok === undefined ? css('--navy') : (d.ok ? css('--green') : 'rgba(255,255,255,.5)');
+        x.fillStyle = d.ok === undefined ? css('--navy') : (d.ok ? css('--green') : ink(.5));
         x.beginPath(); x.moveTo(X(b), H - 12); x.lineTo(X(b) - 7, H - 26); x.lineTo(X(b) + 7, H - 26); x.closePath(); x.fill();
       });
-      x.fillStyle = 'rgba(255,255,255,.4)'; x.font = '11px "Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",sans-serif';
+      x.fillStyle = ink(.4); x.font = '11px "Noto Sans TC","PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",sans-serif';
       x.fillText('目標拍點', W - 64, mid - 20); x.fillText('你的拍點 ▼', W - 72, H - 30);
     }
     function score() {
@@ -1387,7 +1389,7 @@
     function draw() {
       var c = canvasFit(cv), x = c.x, mx = Math.max(0.05, Math.max.apply(null, levels.concat([th * 2])));
       x.clearRect(0, 0, c.w, c.h);
-      if (th) { x.strokeStyle = 'rgba(255,255,255,.25)'; x.setLineDash([4, 4]); x.beginPath(); x.moveTo(0, c.h - th / mx * c.h); x.lineTo(c.w, c.h - th / mx * c.h); x.stroke(); x.setLineDash([]); }
+      if (th) { x.strokeStyle = ink(.25); x.setLineDash([4, 4]); x.beginPath(); x.moveTo(0, c.h - th / mx * c.h); x.lineTo(c.w, c.h - th / mx * c.h); x.stroke(); x.setLineDash([]); }
       x.fillStyle = css('--navy');
       levels.forEach(function (v, i) { var h = v / mx * c.h; x.fillRect(i / 300 * c.w, c.h - h, c.w / 300 + 0.5, h); });
     }

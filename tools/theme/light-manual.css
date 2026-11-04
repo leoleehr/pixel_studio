@@ -1,0 +1,36 @@
+/* 淺色主題手動微調。前綴 html[data-theme="light"][data-kit] 與自動產生的規則同權重，放在最後所以優先。 */
+
+/* ---- 色彩變數：CI 的 Pixel Paper 當底、Pixel Ink 當字 ---- */
+html[data-theme="light"][data-kit]{
+  color-scheme:light;
+  --bg:#f4f4f0; --surface:#ebebe5; --paper:#ffffff; --card:#ffffff; --card-2:#f0efe9;
+  --ink:#111315; --muted:#53585e; --faint:#666b72;
+  --line:rgba(17,19,21,.12); --line-2:rgba(17,19,21,.22); --frame:rgba(17,19,21,.14);
+}
+html[data-theme="light"][data-kit],html[data-theme="light"][data-kit] body{background-color:#f4f4f0}
+
+/* ---- 語言切換（lang.js 寫死深色） ---- */
+html[data-theme="light"][data-kit] .ps-lang-pair{border-color:rgba(17,19,21,.18);background:rgba(255,255,255,.72)}
+html[data-theme="light"][data-kit] .ps-lang-pair .ps-lang-opt[aria-current]{color:#111315}
+html[data-theme="light"][data-kit] .ps-lang-pair .ps-lang-opt:not([aria-current]):hover{background:rgba(17,19,21,.07)}
+html[data-theme="light"][data-kit] .ps-lang-float{border-color:rgba(17,19,21,.18);background:rgba(255,255,255,.85);color:#111315}
+html[data-theme="light"][data-kit] .appbar .ps-lang{border-color:rgba(17,19,21,.2)}
+
+/* ---- 入口頁：--paper 是字色、--black 是底色，兩者對調 ---- */
+html[data-theme="light"][data-kit="entry"]{--paper:#111315;--black:#f4f4f0;--muted:#5f646a;--line:rgba(17,19,21,.18)}
+
+/* ---- 工作坊首頁：漸層字改用加深的色譜（同 hub.css 的 section-index） ---- */
+html[data-theme="light"][data-kit],html[data-theme="light"][data-kit] .hub{--spectrum-light:linear-gradient(90deg,#c2311f,#b52a64,#6d3aa0,#2450a8,#2a7fae,#4c8f32,#8f8f12,#b36f0c,#c2311f)}
+
+/* ---- Lab 首頁的米白工具區：本來就是淺色帶，字維持深色 ---- */
+html[data-theme="light"][data-kit] .home .tools-section{color:#222820}
+
+/* ---- HTML 行內寫的強調字色 ---- */
+html[data-theme="light"][data-kit] [style^="color:var(--accent)"],html[data-theme="light"][data-kit] [style*=";color:var(--accent)"]{color:color-mix(in srgb,var(--accent) 66%,#000)!important}
+
+/* ---- 影片畫面、照片底：維持黑底，縮圖與教學照片本來就是深色背景 ---- */
+html[data-theme="light"][data-kit] .ytp-screen{background-color:#000}
+html[data-theme="light"][data-kit] .ytp-big{border-color:rgba(255,255,255,.4);background:rgba(10,10,12,.62);color:#fff}
+html[data-theme="light"][data-kit] .ytp-screen::after{background:linear-gradient(180deg,rgba(0,0,0,.05) 40%,rgba(0,0,0,.5))}
+/* 跑馬燈帶是色塊、上面壓深色字，維持原本的淺色色譜 */
+html[data-theme="light"][data-kit] .hub .studio-band{background-image:linear-gradient(90deg,#f2836f,#ee7fae,#b993e8,#86a8f2,#7cccf0,#9bd57f,#e3ea6f,#f7c06a,#f2836f)}

@@ -28,7 +28,7 @@ PROD = 'https://pixel-studio.musicallanding.workers.dev/'
 CJK = re.compile(r'[㐀-鿿豈-﫿]')
 TEXT_EXT = {'.html', '.js', '.css', '.md', '.webmanifest', '.svg'}
 # 不翻譯的檔案：產生器資料、說明文件
-SKIP = {'assets/teaching/README.md', 'songwriting/lyric-dice.js', 'assets/lang.js'}
+SKIP = {'assets/teaching/README.md', 'songwriting/lyric-dice.js', 'assets/lang.js', 'assets/theme.js'}
 # 品牌標誌的中文字標依 CI 規範不重打，整個資料夾不翻
 SKIP_DIRS = ('assets/brand/',)
 LANG_JS = 'assets/lang.js?v=20261104a'
