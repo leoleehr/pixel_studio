@@ -41,7 +41,7 @@ for p in sorted(SITE.rglob('*.html')):
     if p.name == 'handbook-print.html':
         route = route.replace('handbook-print', 'handbook')
     canonical = BASE + quote(route)
-    utility = p.name in ('404.html', 'survey.html', 'data-transfer.html')
+    utility = p.name in ('404.html', 'survey.html', 'data-transfer.html', 'handbook.html')  # 講義內容需登入，不列入搜尋
     if p.name != '404.html':
         tag = '<link rel="canonical" href="%s">' % canonical
         if re.search(r'<link\b[^>]*rel="canonical"[^>]*>', s):

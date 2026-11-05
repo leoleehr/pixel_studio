@@ -1,2 +1,4 @@
-# 列印版只用來在本機產生 PDF（tools/build_handbook_pdf.py），不對外發布
+# 講義原稿與列印版只留本機；登入後由 worker/handbook.js 從 KV 提供
 handbook-print.html
+handbook.md
+course-handbook.md

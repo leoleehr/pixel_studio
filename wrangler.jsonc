@@ -1,5 +1,5 @@
 // Cloudflare Workers：發布 site/，找不到的路徑回傳 site/404.html。
-// 只有講義 PDF 先進 worker/handbook.js 驗證身分，其他網址仍由靜態資產直接回應。
+// 只有講義 PDF 與網頁版內容先進 worker/handbook.js 驗證身分，其他網址仍由靜態資產直接回應。
 {
   "name": "pixel-studio",
   "compatibility_date": "2026-10-01",
@@ -16,7 +16,15 @@
       "/en/vocal/vocal-class-handbook.pdf",
       "/en/guitar/guitar-handbook.pdf",
       "/en/piano/piano-handbook.pdf",
-      "/en/songwriting/songwriting-handbook.pdf"
+      "/en/songwriting/songwriting-handbook.pdf",
+      "/vocal/course-handbook.md",
+      "/guitar/handbook.md",
+      "/piano/handbook.md",
+      "/songwriting/handbook.md",
+      "/en/vocal/course-handbook.md",
+      "/en/guitar/handbook.md",
+      "/en/piano/handbook.md",
+      "/en/songwriting/handbook.md"
     ]
   },
   "kv_namespaces": [

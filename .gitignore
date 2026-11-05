@@ -1,5 +1,14 @@
-# 需要登入才能下載的講義 PDF：放 Cloudflare KV，不進公開 repo
+# 需要登入才能看的講義 PDF：放 Cloudflare KV，不進公開 repo
 /private/
+# 講義原稿、列印版與英文譯文：只留本機，發布內容放 Cloudflare KV
+/site/*/handbook.md
+/site/en/*/handbook.md
+/site/vocal/course-handbook.md
+/site/en/vocal/course-handbook.md
+/site/*/handbook-print.html
+/site/en/*/handbook-print.html
+/i18n/en/*-hb-*.json
+/i18n/en/handbook-tables-*.json
 
 # 檢閱、截圖與暫存
 .qa/

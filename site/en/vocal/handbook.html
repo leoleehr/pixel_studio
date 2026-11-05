@@ -6,6 +6,7 @@
 <script data-kit="site" data-href="../../assets/theme-light.css?v=783ff89041">(function(d){var s=d.currentScript,r=d.documentElement,m=location.pathname.match(/\/(vocal|guitar|piano|songwriting)\//);r.setAttribute('data-kit',s.getAttribute('data-kit'));if(m)r.setAttribute('data-lab',m[1]);try{if(localStorage.getItem('ps-theme')==='light'){r.setAttribute('data-theme','light');var l=d.createElement('link');l.rel='stylesheet';l.id='ps-theme-css';l.href=s.getAttribute('data-href');l.setAttribute('blocking','render');d.head.appendChild(l)}}catch(e){}})(document)</script>
 <script src="../../assets/theme.js?v=852ef74b3d" data-kit="site" defer></script>
 <title>Handbook and lesson plans｜Vocal Lab</title>
+<meta name="robots" content="noindex, follow">
 <meta name="description" content="Handbook and lesson plans for the six Pixel Studio Vocal Lab pop singing lessons: pre-class surveys, 120-minute lesson outlines, extended notes, class activities and practice after class.">
 <link rel="icon" href="../../assets/favicon.ico?v=20261014v" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="../../assets/favicon.png?v=20261014v">
@@ -45,9 +46,9 @@
   </div>
   <span class="bar-progress" id="progress"></span>
 </header>
-<nav class="toc" aria-label="Handbook contents"><div class="wrap" id="toc"><a href="#overview" data-id="overview">Overview</a><a href="#lesson-1" data-id="lesson-1">Lesson 1</a><a href="#lesson-2" data-id="lesson-2">Lesson 2</a><a href="#lesson-3" data-id="lesson-3">Lesson 3</a><a href="#lesson-4" data-id="lesson-4">Lesson 4</a><a href="#lesson-5" data-id="lesson-5">Lesson 5</a><a href="#lesson-6" data-id="lesson-6">Lesson 6</a></div></nav>
+<nav class="toc" aria-label="Handbook contents"><div class="wrap" id="toc"></div></nav>
 
-<aside class="wrap" aria-label="Download the handbook"><div class="dl-bar"><div><b>Handbook and lesson plans PDF</b><span>A4 layout · 51 pages · with song QR codes · sign in with the course code to download</span></div><a class="btn primary" href="vocal-class-handbook.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download PDF</a></div></aside>
+<aside class="wrap" aria-label="Download the handbook"><div class="dl-bar"><div><b>Handbook and lesson plans PDF</b><span>A4 layout · 51 pages · with song QR codes · sign in with the course code to download</span></div><a class="btn primary" href="../../vocal/vocal-class-handbook.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download PDF</a></div></aside>
 <main class="wrap md" id="content"></main>
 
 <footer>© Pixel Studio · Vocal Lab pop singing · <a href="../privacy.html">Privacy policy</a></footer>
@@ -64,7 +65,7 @@
 <script src="songs.js?v=20261104fix"></script>
 <script src="../assets/youtube.js?v=20261029a"></script>
 <script src="../../assets/config.js?v=20261020g"></script>
-<script src="../assets/backend.js?v=20261105d"></script>
+<script src="../assets/backend.js?v=20261105e"></script>
 <script>
 (function () {
   var NUM = { '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6 };
@@ -72,7 +73,7 @@
   var main = document.getElementById('content'), toc = document.getElementById('toc'), prog = document.getElementById('progress');
   var pre = main.hasAttribute('data-prerendered');
   function loadMarked() { return window.marked ? Promise.resolve() : new Promise(function (ok, no) { var s = document.createElement('script'); s.src = 'https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js'; s.integrity = 'sha384-/TQbtLCAerC3jgaim+N78RZSDYV7ryeoBCVqTuzRrFec2akfBkHS7ACQ3PQhvMVi'; s.crossOrigin = 'anonymous'; s.onload = ok; s.onerror = no; document.head.appendChild(s); }); }
-  (pre ? (location.hash ? Promise.resolve(null) : new Promise(function (ok) { requestAnimationFrame(function () { setTimeout(function () { ok(null); }, 0); }); })) : loadMarked().then(function () { return fetch('course-handbook.md?v=20261104terms'); }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }))
+  (pre ? (location.hash ? Promise.resolve(null) : new Promise(function (ok) { requestAnimationFrame(function () { setTimeout(function () { ok(null); }, 0); }); })) : loadMarked().then(function () { return PixelBackend.handbook('course-handbook.md?v=20261104terms', main); }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }))
     .then(function (md) {
       if (md !== null) main.innerHTML = marked.parse(md, { gfm: true });
       main.querySelectorAll('img').forEach(function (i) { i.loading = 'lazy'; i.decoding = 'async'; });
@@ -153,7 +154,7 @@
       if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t) window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - (innerWidth <= 860 ? 110 : 124), behavior: 'instant' }); }
     })
     .catch(function () {
-      main.innerHTML = '<p class="loading">The handbook couldn\'t load. Please read <a href="https://github.com/leoleehr/pixel_studio/blob/main/site/en/vocal/course-handbook.md">the version on GitHub</a>.</p>';
+      main.innerHTML = '<p class="loading">The handbook couldn\'t load. Please refresh this page and try again.</p>';
     });
 })();
 </script>

@@ -1,6 +1,6 @@
-/* 講義 PDF 下載閘門：只有 Google 登入且課程代碼正確、名單狀態為核准的學員拿得到檔案。
+/* 講義閘門：只有 Google 登入且課程代碼正確、名單狀態為核准的學員拿得到 PDF 與網頁版內容。
  * 其餘網址不經過這支 Worker（見 wrangler.jsonc 的 run_worker_first），由靜態資產直接回應。
- * PDF 放在 KV（HANDBOOKS），不在公開網站與 GitHub repo 中；上傳方式見 tools/upload_handbooks.py。
+ * 內容放在 KV（HANDBOOKS），不在公開網站與 GitHub repo 中；上傳方式見 tools/upload_handbooks.py。
  */
 const FILES = {
   '/vocal/vocal-class-handbook.pdf': 'Vocal_Lab_講義與教案.pdf',
@@ -12,6 +12,11 @@ const FILES = {
   '/en/piano/piano-handbook.pdf': 'Piano_Lab_Handbook.pdf',
   '/en/songwriting/songwriting-handbook.pdf': 'Songwriting_Lab_Handbook.pdf'
 };
+// 網頁版講義內容：登入後由講義頁載入，不當成檔案下載
+const TEXTS = new Set([
+  '/vocal/course-handbook.md', '/guitar/handbook.md', '/piano/handbook.md', '/songwriting/handbook.md',
+  '/en/vocal/course-handbook.md', '/en/guitar/handbook.md', '/en/piano/handbook.md', '/en/songwriting/handbook.md'
+]);
 
 const NO_STORE = { 'Cache-Control': 'private, no-store', 'X-Content-Type-Options': 'nosniff', 'X-Robots-Tag': 'noindex' };
 
@@ -38,7 +43,8 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const filename = FILES[url.pathname];
-    if (!filename) return env.ASSETS.fetch(request);
+    const isText = TEXTS.has(url.pathname);
+    if (!filename && !isText) return env.ASSETS.fetch(request);
 
     // 直接開網址、舊連結或爬蟲：帶回講義頁，由按鈕走登入流程
     if (request.method === 'GET' || request.method === 'HEAD') {
@@ -65,9 +71,10 @@ export default {
       return fail(503, 'backend');
     }
 
-    const pdf = await env.HANDBOOKS.get(url.pathname.slice(1), { type: 'stream' });
-    if (!pdf) return fail(404, 'missing');
-    return new Response(pdf, {
+    const content = await env.HANDBOOKS.get(url.pathname.slice(1), { type: 'stream' });
+    if (!content) return fail(404, 'missing');
+    if (isText) return new Response(content, { headers: { ...NO_STORE, 'Content-Type': 'text/markdown; charset=utf-8' } });
+    return new Response(content, {
       headers: {
         ...NO_STORE,
         'Content-Type': 'application/pdf',

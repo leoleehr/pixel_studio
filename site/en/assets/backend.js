@@ -180,6 +180,7 @@
         if (ok === 'login') { err.textContent = 'Google sign-in couldn\'t be verified. Please sign in again'; idToken = ''; paintGoogle(); return; }
         if (ok === 'net') { err.textContent = 'Can\'t reach the server right now. Check your connection and try again'; return; }
         set(K.profile, p); refreshChips(); closeProfile(true);
+        document.dispatchEvent(new CustomEvent('ps:signedin'));
         send('profile', {}, { silent: true });
         var a = account();
         if (a && a.status !== '核准') toast('Signed in. Once the teacher adds you to the class list, your data will be sent automatically', 'warn');
@@ -350,10 +351,47 @@
     downloadHandbook(link);
   });
 
+  /* ---------- 網頁版講義：登入並通過 worker/handbook.js 驗證後才取得內容 ---------- */
+  function handbook(url, box) {
+    return new Promise(function (resolve) {
+      var done = false;
+      function card(msg, label, act) {
+        box.innerHTML = '<div class="hb-lock"><b>Sign in to read the handbook</b><p>' + esc(msg) + '</p>' + (label ? '<button type="button" class="pb-save">' + esc(label) + '</button>' : '') + '</div>';
+        if (label) box.querySelector('button').onclick = act;
+      }
+      function signIn(reason) {
+        openProfile(reason).catch(function () { locked(); });
+      }
+      function locked() {
+        card('Please sign in with Google and enter the course code your teacher announced in class.', 'Sign in and enter the course code', function () { signIn('Please sign in with Google and enter the course code to read the handbook.'); });
+      }
+      function retry(msg) { card(msg, 'Reload', go); }
+      function go() {
+        if (done) return;
+        var p = profile();
+        if (!complete(p)) { locked(); return; }
+        box.innerHTML = '<p class="loading">Checking your access. Please wait…</p>';
+        fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: p.code, session: (account() || {}).session || '' }) }).then(function (r) {
+          if (done) return;
+          if (r.ok) { done = true; resolve(r); return; }
+          return r.json().catch(function () { return {}; }).then(function (j) {
+            if (j.error === 'code') { card('That course code isn\'t right. Please check with the teacher and enter it again.', 'Re-enter the course code', function () { signIn('That course code isn\'t right. Please check with the teacher and enter it again.'); }); return; }
+            if (j.error === 'session') { del(K.account); refreshChips(); card('Your Google sign-in has expired. Please sign in again.', 'Sign in again', function () { signIn('Your Google sign-in has expired. Please sign in again to read the handbook.'); }); return; }
+            if (j.error === 'roster') { card(j.status === '停用' ? 'The teacher has disabled this Gmail account. Please check with your teacher.' : 'You\'re not on the class list yet. You can read this once the teacher approves you.'); return; }
+            retry('The handbook can\'t be loaded right now. Please try again later.');
+          });
+        }).catch(function () { retry('Can\'t connect. Please check your network and try again.'); });
+      }
+      document.addEventListener('ps:signedin', go);
+      go();
+    });
+  }
+
   /* ---------- Google 登入區塊樣式 ---------- */
   function style() {
     var s = document.createElement('style');
-    s.textContent = '.pb-gwrap{margin-bottom:14px}.pb-gwrap>span{display:block;font-size:13px;color:#c9c5bd;margin-bottom:6px}' +
+    s.textContent = '.hb-lock{max-width:520px;margin:48px auto;padding:28px 24px;text-align:center;border:1px solid rgba(128,128,128,.35);border-radius:16px}.hb-lock b{display:block;font-size:20px;margin-bottom:8px}.hb-lock p{margin:0 0 18px;line-height:1.7}.hb-lock button{display:inline-block;width:auto;min-height:44px;padding:0 22px;cursor:pointer}' +
+      '.pb-gwrap{margin-bottom:14px}.pb-gwrap>span{display:block;font-size:13px;color:#c9c5bd;margin-bottom:6px}' +
       // color-scheme:light 讓 Google 按鈕的 iframe 保持透明，深色頁面上才不會出現白底
       '.pb-google{min-height:44px}.pb-gbtn{min-height:44px;color-scheme:light;background:transparent;margin-top:2px}.pb-gbtn iframe{color-scheme:light}' +
       '.pb-acct{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#0d0d10;border:1px solid rgba(108,187,75,.45);border-radius:12px;padding:10px 12px;font-size:14px}' +
@@ -376,5 +414,5 @@
     if (document.querySelector('.ui')) document.body.appendChild(chip('corner'));
     setTimeout(flush, 1500);
   }
-  window.PixelBackend = { configured: !!URL_, google: !!GID, fetchLyrics: fetchLyrics, fetchSurvey: fetchSurvey, profile: profile, account: account, saveProfile: saveProfile, checkCode: checkCode, ensureProfile: ensureProfile, openProfile: openProfile, send: send, log: log, upload: upload, flush: flush, toast: toast, chip: chip };
+  window.PixelBackend = { handbook: handbook, configured: !!URL_, google: !!GID, fetchLyrics: fetchLyrics, fetchSurvey: fetchSurvey, profile: profile, account: account, saveProfile: saveProfile, checkCode: checkCode, ensureProfile: ensureProfile, openProfile: openProfile, send: send, log: log, upload: upload, flush: flush, toast: toast, chip: chip };
 })();

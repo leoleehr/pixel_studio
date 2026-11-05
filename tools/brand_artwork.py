@@ -1,6 +1,6 @@
 """Build deterministic SVG artwork with the official corner logo.
 
-Run after regenerating artwork, then prerender_handbooks.py and reprint PDFs.
+Run after regenerating artwork, then reprint PDFs and run upload_handbooks.py.
 Original artwork files are retained untouched and no generative edits are made.
 The copy embedded in each branded SVG is re-encoded as WebP (longest side at most
 2000 px) so pages download less; the corner logo is embedded as lossless WebP.

@@ -11,6 +11,8 @@ h3 錨點與目錄列；頁面腳本看到 main[data-prerendered] 就略過下�
 """
 import hashlib, html, pathlib, re, subprocess, sys
 
+raise SystemExit('講義內容改為登入後才載入，不可再寫進公開的 handbook.html。改完講義請執行 tools/upload_handbooks.py。')
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 MARKED = 'marked@12.0.2'
 CDN = 'https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js'

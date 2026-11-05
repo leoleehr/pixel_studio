@@ -180,6 +180,7 @@
         if (ok === 'login') { err.textContent = 'Google 登入沒有通過驗證，請重新登入一次'; idToken = ''; paintGoogle(); return; }
         if (ok === 'net') { err.textContent = '目前無法連線到後台，請確認網路後再試'; return; }
         set(K.profile, p); refreshChips(); closeProfile(true);
+        document.dispatchEvent(new CustomEvent('ps:signedin'));
         send('profile', {}, { silent: true });
         var a = account();
         if (a && a.status !== '核准') toast('已登入：老師核准加入班級名單之後，資料會自動送出', 'warn');
@@ -350,10 +351,47 @@
     downloadHandbook(link);
   });
 
+  /* ---------- 網頁版講義：登入並通過 worker/handbook.js 驗證後才取得內容 ---------- */
+  function handbook(url, box) {
+    return new Promise(function (resolve) {
+      var done = false;
+      function card(msg, label, act) {
+        box.innerHTML = '<div class="hb-lock"><b>講義需要登入才能閱讀</b><p>' + esc(msg) + '</p>' + (label ? '<button type="button" class="pb-save">' + esc(label) + '</button>' : '') + '</div>';
+        if (label) box.querySelector('button').onclick = act;
+      }
+      function signIn(reason) {
+        openProfile(reason).catch(function () { locked(); });
+      }
+      function locked() {
+        card('請以 Google 帳戶登入，並輸入老師在課堂上公布的課程代碼。', '登入並輸入課程代碼', function () { signIn('閱讀講義前，請先以 Google 帳戶登入並輸入課程代碼。'); });
+      }
+      function retry(msg) { card(msg, '重新載入', go); }
+      function go() {
+        if (done) return;
+        var p = profile();
+        if (!complete(p)) { locked(); return; }
+        box.innerHTML = '<p class="loading">確認資格中，請稍候…</p>';
+        fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: p.code, session: (account() || {}).session || '' }) }).then(function (r) {
+          if (done) return;
+          if (r.ok) { done = true; resolve(r); return; }
+          return r.json().catch(function () { return {}; }).then(function (j) {
+            if (j.error === 'code') { card('課程代碼不正確，請向老師確認後重新輸入。', '重新輸入課程代碼', function () { signIn('課程代碼不正確，請向老師確認後重新輸入。'); }); return; }
+            if (j.error === 'session') { del(K.account); refreshChips(); card('Google 登入已失效，請重新登入。', '重新登入', function () { signIn('Google 登入已失效，請重新登入後閱讀講義。'); }); return; }
+            if (j.error === 'roster') { card(j.status === '停用' ? '這個 Gmail 已被老師停用，請向老師確認。' : '尚未加入班級名單，老師核准後才能閱讀。'); return; }
+            retry('目前無法載入講義，請稍後再試。');
+          });
+        }).catch(function () { retry('無法連線，請檢查網路後再試。'); });
+      }
+      document.addEventListener('ps:signedin', go);
+      go();
+    });
+  }
+
   /* ---------- Google 登入區塊樣式 ---------- */
   function style() {
     var s = document.createElement('style');
-    s.textContent = '.pb-gwrap{margin-bottom:14px}.pb-gwrap>span{display:block;font-size:13px;color:#c9c5bd;margin-bottom:6px}' +
+    s.textContent = '.hb-lock{max-width:520px;margin:48px auto;padding:28px 24px;text-align:center;border:1px solid rgba(128,128,128,.35);border-radius:16px}.hb-lock b{display:block;font-size:20px;margin-bottom:8px}.hb-lock p{margin:0 0 18px;line-height:1.7}.hb-lock button{display:inline-block;width:auto;min-height:44px;padding:0 22px;cursor:pointer}' +
+      '.pb-gwrap{margin-bottom:14px}.pb-gwrap>span{display:block;font-size:13px;color:#c9c5bd;margin-bottom:6px}' +
       // color-scheme:light 讓 Google 按鈕的 iframe 保持透明，深色頁面上才不會出現白底
       '.pb-google{min-height:44px}.pb-gbtn{min-height:44px;color-scheme:light;background:transparent;margin-top:2px}.pb-gbtn iframe{color-scheme:light}' +
       '.pb-acct{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#0d0d10;border:1px solid rgba(108,187,75,.45);border-radius:12px;padding:10px 12px;font-size:14px}' +
@@ -376,5 +414,5 @@
     if (document.querySelector('.ui')) document.body.appendChild(chip('corner'));
     setTimeout(flush, 1500);
   }
-  window.PixelBackend = { configured: !!URL_, google: !!GID, fetchLyrics: fetchLyrics, fetchSurvey: fetchSurvey, profile: profile, account: account, saveProfile: saveProfile, checkCode: checkCode, ensureProfile: ensureProfile, openProfile: openProfile, send: send, log: log, upload: upload, flush: flush, toast: toast, chip: chip };
+  window.PixelBackend = { handbook: handbook, configured: !!URL_, google: !!GID, fetchLyrics: fetchLyrics, fetchSurvey: fetchSurvey, profile: profile, account: account, saveProfile: saveProfile, checkCode: checkCode, ensureProfile: ensureProfile, openProfile: openProfile, send: send, log: log, upload: upload, flush: flush, toast: toast, chip: chip };
 })();
