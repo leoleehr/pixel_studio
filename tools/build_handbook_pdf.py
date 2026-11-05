@@ -3,6 +3,7 @@
 用法：python -X utf8 tools/build_handbook_pdf.py [vocal guitar piano songwriting] [--lang zh|en]
 需要 Playwright、本機 Chrome、PyMuPDF、pikepdf。
 流程：開本機伺服器 → 載入圖片（含 guitar.js 接近畫面才載入的插圖）→ 列印 → 連結改正式網址 → compress_pdf_images.py。
+輸出到 private/handbooks/（不進 Git），完成後執行 tools/upload_handbooks.py 上傳，網站才會換新檔。
 完成後印出頁數；頁數變了要同步講義頁寫的頁數。
 """
 import http.server
@@ -18,6 +19,7 @@ from playwright.sync_api import sync_playwright
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = ROOT / 'site'
+OUT = ROOT / 'private' / 'handbooks'
 PROD = 'https://pixel-studio.musicallanding.workers.dev/'
 PDFS = {'vocal': 'vocal-class-handbook.pdf', 'guitar': 'guitar-handbook.pdf',
         'piano': 'piano-handbook.pdf', 'songwriting': 'songwriting-handbook.pdf'}
@@ -74,7 +76,8 @@ def main():
                 for lang in langs:
                     raw = pathlib.Path(tmp) / f'{lab}-{lang}-raw.pdf'
                     linked = pathlib.Path(tmp) / f'{lab}-{lang}-links.pdf'
-                    dest = SITE / ('en' if lang == 'en' else '') / lab / PDFS[lab]
+                    dest = OUT / ('en' if lang == 'en' else '') / lab / PDFS[lab]
+                    dest.parent.mkdir(parents=True, exist_ok=True)
                     render(browser, base, lab, lang, raw)
                     fix_links(raw, linked, base)
                     subprocess.run([sys.executable, '-X', 'utf8', str(ROOT / 'tools' / 'compress_pdf_images.py'), str(linked), str(dest)],

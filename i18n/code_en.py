@@ -143,13 +143,12 @@ CODE['songwriting/songwriting.js'] += [
     ("RGK[top].name + '（' + cnt[top]", "RGK[top].name + ' (' + cnt[top]"),
 ]
 
-# 講義 PDF 的下載檔名（英文 PDF 放在 en/<lab>/，檔名與中文版相同）
+# 列印版的下載檔名；網頁版改由 worker/handbook.js 指定檔名
 for _lab, _zh, _en in [('vocal', 'Vocal_Lab_講義與教案.pdf', 'Vocal_Lab_Handbook.pdf'),
                        ('guitar', '民謠吉他十二章_講義與教案.pdf', 'Guitar_Lab_Handbook.pdf'),
                        ('piano', '流行鋼琴十二堂_講義與教案.pdf', 'Piano_Lab_Handbook.pdf'),
                        ('songwriting', '詞曲創作八堂_講義與教案.pdf', 'Songwriting_Lab_Handbook.pdf')]:
-    for _page in ('/handbook.html', '/handbook-print.html'):
-        CODE.setdefault(_lab + _page, []).append(('download="' + _zh + '"', 'download="' + _en + '"'))
+    CODE.setdefault(_lab + '/handbook-print.html', []).append(('download="' + _zh + '"', 'download="' + _en + '"'))
 
 # 英文歌手名之間改用逗號
 CODE.setdefault('guitar/songs.js', []).extend([("'Hugh Grant、Drew Barrymore'", "'Hugh Grant, Drew Barrymore'"),

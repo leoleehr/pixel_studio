@@ -316,6 +316,40 @@
     }).catch(function () { return { ok: false }; });
   }
 
+  /* ---------- 講義 PDF 下載：由 worker/handbook.js 驗證登入與課程代碼後才回傳檔案 ---------- */
+  function savePdf(res) {
+    var m = /filename\*=UTF-8''([^;]+)/i.exec(res.headers.get('Content-Disposition') || '');
+    return res.blob().then(function (blob) {
+      var a = document.createElement('a'), u = URL.createObjectURL(blob);
+      a.href = u; a.download = m ? decodeURIComponent(m[1]) : 'handbook.pdf';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(u); }, 60000);
+      toast('講義 PDF 已開始下載', 'ok');
+    });
+  }
+  function downloadHandbook(link) {
+    if (link.getAttribute('aria-busy') === 'true') return;
+    ensureProfile('下載講義 PDF 前，請先以 Google 帳戶登入並輸入課程代碼。').then(function (p) {
+      link.setAttribute('aria-busy', 'true');
+      toast('確認資格中，檔案較大請稍候…', '');
+      return fetch(link.href, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: p.code, session: (account() || {}).session || '' }) }).then(function (r) {
+        if (r.ok) return savePdf(r);
+        return r.json().catch(function () { return {}; }).then(function (j) {
+          if (j.error === 'code') { toast('課程代碼不正確，請向老師確認', 'err'); return openProfile('課程代碼不正確，請向老師確認後重新輸入。').catch(function () {}); }
+          if (j.error === 'session') { del(K.account); refreshChips(); toast('Google 登入已失效，請重新登入', 'warn'); return openProfile('Google 登入已失效，請重新登入後再下載。').catch(function () {}); }
+          if (j.error === 'roster') { toast(j.status === '停用' ? '這個 Gmail 已被老師停用，請向老師確認' : '尚未加入班級名單，老師核准後才能下載', 'warn'); return; }
+          toast('目前無法下載講義，請稍後再試', 'err');
+        });
+      }).catch(function () { toast('下載失敗，請檢查網路後再試', 'err'); });
+    }).catch(function () {}).then(function () { link.removeAttribute('aria-busy'); });
+  }
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('a[href$="-handbook.pdf"]');
+    if (!link) return;
+    e.preventDefault();
+    downloadHandbook(link);
+  });
+
   /* ---------- Google 登入區塊樣式 ---------- */
   function style() {
     var s = document.createElement('style');

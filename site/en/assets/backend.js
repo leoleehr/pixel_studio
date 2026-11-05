@@ -316,6 +316,40 @@
     }).catch(function () { return { ok: false }; });
   }
 
+  /* ---------- 講義 PDF 下載：由 worker/handbook.js 驗證登入與課程代碼後才回傳檔案 ---------- */
+  function savePdf(res) {
+    var m = /filename\*=UTF-8''([^;]+)/i.exec(res.headers.get('Content-Disposition') || '');
+    return res.blob().then(function (blob) {
+      var a = document.createElement('a'), u = URL.createObjectURL(blob);
+      a.href = u; a.download = m ? decodeURIComponent(m[1]) : 'handbook.pdf';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(u); }, 60000);
+      toast('Your handbook PDF download has started', 'ok');
+    });
+  }
+  function downloadHandbook(link) {
+    if (link.getAttribute('aria-busy') === 'true') return;
+    ensureProfile('Please sign in with Google and enter the course code to download the handbook PDF.').then(function (p) {
+      link.setAttribute('aria-busy', 'true');
+      toast('Checking your access. The file is large, so this may take a moment…', '');
+      return fetch(link.href, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: p.code, session: (account() || {}).session || '' }) }).then(function (r) {
+        if (r.ok) return savePdf(r);
+        return r.json().catch(function () { return {}; }).then(function (j) {
+          if (j.error === 'code') { toast('That course code isn\'t right. Please check with the teacher', 'err'); return openProfile('That course code isn\'t right. Please check with the teacher and enter it again.').catch(function () {}); }
+          if (j.error === 'session') { del(K.account); refreshChips(); toast('Your Google sign-in has expired. Please sign in again', 'warn'); return openProfile('Your Google sign-in has expired. Please sign in again to download.').catch(function () {}); }
+          if (j.error === 'roster') { toast(j.status === '停用' ? 'The teacher has disabled this Gmail account. Please check with the teacher' : 'You\'re not on the class list yet. You can download once the teacher approves you', 'warn'); return; }
+          toast('The handbook can\'t be downloaded right now. Please try again later', 'err');
+        });
+      }).catch(function () { toast('Download failed. Please check your connection and try again', 'err'); });
+    }).catch(function () {}).then(function () { link.removeAttribute('aria-busy'); });
+  }
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('a[href$="-handbook.pdf"]');
+    if (!link) return;
+    e.preventDefault();
+    downloadHandbook(link);
+  });
+
   /* ---------- Google 登入區塊樣式 ---------- */
   function style() {
     var s = document.createElement('style');

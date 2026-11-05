@@ -69,3 +69,12 @@ LINE、Facebook、Instagram 內建的瀏覽器無法使用 Google 登入；網�
 - 停用某位學員：將「班級名單」的狀態改為「停用」，一分鐘內生效。
 - 網路中斷或後台尚未設定時，資料會先存在學員的瀏覽器，連線後自動補送。
 - Apps Script 每天有執行次數與總時間的免費額度，一般班級的使用量遠低於上限。
+
+## 講義 PDF 的下載權限
+
+講義 PDF 不放在 `site/` 與 Git，存在 Cloudflare KV（綁定 `HANDBOOKS`）。按下「下載 PDF」時，`worker/handbook.js` 把課程代碼與登入證明交給本後台驗證，通過才回傳檔案；直接開 PDF 網址會回到講義頁。本後台不需要為此重新部署。
+
+- 重產 PDF：`python -X utf8 tools/build_handbook_pdf.py`，輸出到 `private/handbooks/`（不進 Git）。
+- 上傳：`python -X utf8 tools/upload_handbooks.py`，上傳後約一分鐘內全球生效。
+- 取消某位學員的下載權：在「班級名單」改為「停用」，最晚一分鐘生效。
+- 更換課程代碼：試算表選單「Pixel Studio 後台 → 設定課程代碼」。舊代碼隨即失效，學員要重新輸入新代碼。

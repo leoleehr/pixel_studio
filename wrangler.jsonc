@@ -1,9 +1,29 @@
-// Cloudflare Workers 靜態資產設定：只發布 site/，找不到的路徑回傳 site/404.html
+// Cloudflare Workers：發布 site/，找不到的路徑回傳 site/404.html。
+// 只有講義 PDF 先進 worker/handbook.js 驗證身分，其他網址仍由靜態資產直接回應。
 {
   "name": "pixel-studio",
   "compatibility_date": "2026-10-01",
+  "main": "worker/handbook.js",
   "assets": {
     "directory": "./site",
-    "not_found_handling": "404-page"
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": [
+      "/vocal/vocal-class-handbook.pdf",
+      "/guitar/guitar-handbook.pdf",
+      "/piano/piano-handbook.pdf",
+      "/songwriting/songwriting-handbook.pdf",
+      "/en/vocal/vocal-class-handbook.pdf",
+      "/en/guitar/guitar-handbook.pdf",
+      "/en/piano/piano-handbook.pdf",
+      "/en/songwriting/songwriting-handbook.pdf"
+    ]
+  },
+  "kv_namespaces": [
+    { "binding": "HANDBOOKS", "id": "3684b5dd76644a99bb0a24117293f47f" }
+  ],
+  "vars": {
+    // 與 site/assets/config.js 相同的公開網址
+    "BACKEND_URL": "https://script.google.com/macros/s/AKfycbwI5bIe10gTTKDKFQVuqGowdg6a_mSjcr_tOPXCKUnd-PgQoFYqRuvG6WKWac0Cdwzibg/exec"
   }
 }
