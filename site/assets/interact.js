@@ -555,7 +555,7 @@
   };
   var KIT = { COURSE: COURSE, LESSON: LESSON, NS: NS, LS: LS, '$$': $$, el: el, btn: btn, esc: esc, slideNo: slideNo, report: report, say: say, onLeave: onLeave, later: later, IN_APP: IN_APP, TOUCH: TOUCH, saveFile: saveFile, ac: ac, tone: tone, chime: chime, mic: mic, micStart: micStart, micStop: micStop, midiOf: midiOf, freqOf: freqOf, nameOf: nameOf, detectPitch: detectPitch, rmsOf: rmsOf, canvasFit: canvasFit, css: css, ink: ink };
   function chunkFailed(name) {
-    var note = '互動暫時無法載入，原教材仍可查閱。';
+    var note = '互動暫時無法載入，頁面內容仍可查閱。';
     later(function () {
       $$(CHUNKS[name].join(',')).forEach(function (r) { r.appendChild(el('p', 'muted', note)); });
       say(note, 'warn');

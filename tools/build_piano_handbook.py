@@ -369,7 +369,7 @@ NOTES = {
 | 進行曲 | 2/4 | 根音、和弦、五音、和弦 | 蹦洽，輕快有朝氣 |
 | Bossa Nova | 4/4 | 低音在一、三拍，和弦切分 | 源自巴西，本課程先熟悉聲音 |
 
-原教材的節奏型態另有 Rumba、Cha Cha、Tango、Disco、Boogie Woogie 與古典風格，流行鋼琴的伴奏多半來自各國的傳統舞曲。
+2013 年教案的節奏型態另有 Rumba、Cha Cha、Tango、Disco、Boogie Woogie 與古典風格，流行鋼琴的伴奏多半來自各國的傳統舞曲。
 
 ### 講義擴充：十度與十五度伴奏
 

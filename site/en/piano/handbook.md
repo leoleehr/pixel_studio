@@ -926,7 +926,7 @@ Goals: play a slow rock accompaniment with a 12/8 triplet groove; play the oom-p
 | March | 2/4 | Root, chord, fifth, chord | Oom-pah, light and lively |
 | Bossa Nova | 4/4 | Bass on beats one and three, syncopated chords | From Brazil; in this course we just get to know its sound |
 
-The original materials' rhythm styles also include rumba, cha-cha, tango, disco, boogie-woogie and classical styles; pop piano accompaniment mostly comes from traditional dances around the world.
+The 2013 lesson plan's rhythm styles also include rumba, cha-cha, tango, disco, boogie-woogie and classical styles; pop piano accompaniment mostly comes from traditional dances around the world.
 
 ### Extended notes: 10th and 15th accompaniment
 

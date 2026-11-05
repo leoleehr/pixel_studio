@@ -50,7 +50,7 @@ The folk guitar course is split into Book 1 (beginner) and Book 2 (advanced), wi
 - Keep new ideas within 35 minutes and leave the rest of the time for playing
 - At least one activity every three slides: votes, multiple choice, ordering, flip cards, team scoring or practice tools
 - Demonstrate first, then follow along, then practise individually; slow to fast, and steadiness matters more than speed
-- The fixed BPMs in the original materials are only examples; set the starting tempo to fit the students
+- The fixed BPMs in the 2013 lesson plan are only examples; set the starting tempo to fit the students
 
 <!-- learning-notes-start -->
 ### Skill route and practice logs

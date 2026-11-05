@@ -4,7 +4,7 @@
  * kind 顯示在播放卡上：填詞與譜曲。課堂只放影片，歌詞僅摘錄分析所需的短句。
  */
 window.PIXEL_SONGS = {
-  // 曲式結構分析範例（原教材 01–23）
+  // 曲式結構分析範例（2013 年教案 01–23）
   '愛情轉移': { artist: 'Eason Chan', id: 'RIq7Tz9nYD8', kind: 'Lyrics: Lin Xi · Music: Christopher Chak', src: 'Official audio' },
   '彩虹': { artist: 'Jay Chou', id: 'WxZvXPTBC0A', kind: 'Lyrics & music: Jay Chou', src: 'Official MV' },
   '當冬夜漸暖': { artist: 'Stefanie Sun', id: 'pD2VWvz9ZCY', kind: 'Lyrics: Tengjingshu · Music: Jao Shan-chiang', src: 'Official audio' },
