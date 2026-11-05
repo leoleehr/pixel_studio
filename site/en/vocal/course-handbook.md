@@ -131,7 +131,7 @@ With strings alone, a guitar sounds faint and thin. The voice is the same: the v
 - **Harmony**: the colour the guitar chords provide; when singers understand the chords, their pitch has something to lean on.
 - **Rhythm**: the song's groove, which you can recognise from the guitar's strumming and fingerpicking.
 
-Note: the pie chart in the original notes spelled them "Hamonic" and "Rythem"; the correct spellings are Harmony and Rhythm.
+Note: the pie chart in the 2013 lesson plan spelled them "Hamonic" and "Rythem"; the correct spellings are Harmony and Rhythm.
 
 **6. What makes a good lead singer**
 
