@@ -39,7 +39,7 @@
   slides.forEach(function (s, k) {
     var tag = s.querySelector('.kicker .tag'), seg = null;
     if (tag) Object.keys(SEG).forEach(function (c) { if (tag.classList.contains(c)) seg = SEG[c]; });
-    var ixEl = s.querySelector('.ix-tag'), ix = ixEl ? ixEl.textContent.replace(/^\s*互動/, '').trim() : '';
+    var ixEl = s.querySelector('.ix-tag'), ix = ixEl ? ixEl.textContent.replace(/^\s*(互動|Interactive)/, '').trim() : '';
     var head = s.querySelector('h2,h1,.quote,.timer'), label = head ? head.textContent.replace(/\s+/g, ' ').trim() : '';
     if (s.querySelector('#timer')) label = '休息十分鐘';
     var meta = document.createElement('div'); meta.className = 'slide-meta';

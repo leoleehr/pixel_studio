@@ -3,7 +3,7 @@
  */
 window.PIXEL_SURVEYS = [
   { id: 'pre-1', lesson: 1, title: 'Lesson 1 pre-class survey (joining the class)', intro: 'Tell us about your singing experience, what\'s bothering you now and what you hope for. The teacher will adjust the course based on your answers.', questions: [
-    { q: 'Past singing experience', type: 'multi', options: ['None', 'Ktv', 'Choir', 'Band', 'Took singing lessons'] },
+    { q: 'Past singing experience', type: 'multi', options: ['None', 'KTV', 'Choir', 'Band', 'Took singing lessons'] },
     { q: 'Current guitar level', type: 'single', options: ['Just starting', 'Can play simple chords', 'Can play and sing a whole song'] },
     { q: 'Your three favourite singers', type: 'short', placeholder: 'e.g. Crowd Lu, Hebe Tien, Mayday' },
     { q: 'The song you sing most often', type: 'short', hint: 'Bring the lyrics or chord chart of this song to Lesson 1' },

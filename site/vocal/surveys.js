@@ -3,7 +3,7 @@
  */
 window.PIXEL_SURVEYS = [
   { id: 'pre-1', lesson: 1, title: '第一堂課前問卷（入班問卷）', intro: '瞭解你的歌唱經驗、目前的困擾與期待，老師會依照結果調整課程。', questions: [
-    { q: '過去的歌唱經驗', type: 'multi', options: ['沒有經驗', 'Ktv', '合唱團', '樂團', '上過歌唱課'] },
+    { q: '過去的歌唱經驗', type: 'multi', options: ['沒有經驗', 'KTV', '合唱團', '樂團', '上過歌唱課'] },
     { q: '目前的吉他程度', type: 'single', options: ['剛剛入門', '可以彈奏簡單和弦', '可以自彈自唱整首歌'] },
     { q: '最喜歡的三位歌手', type: 'short', placeholder: '例如：盧廣仲、田馥甄、五月天' },
     { q: '平常最常演唱的一首歌', type: 'short', hint: '第一堂請備妥這首歌的歌詞或和弦譜' },

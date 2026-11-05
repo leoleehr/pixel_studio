@@ -65,6 +65,7 @@ html[lang^=en] .topbar .brand-caption{letter-spacing:.04em;line-height:1.45}
 @media(max-width:480px){.topbar .brand-caption{display:none}} /* 窄手機頂欄要放標誌、語言與登入鈕 */
 /* 深藍編號底色改用白字，對比 5.9:1 */
 .sv-item[style*="2f5fc4"] .no{color:#fff}
+@media(max-width:360px){.home .footer-main{flex-wrap:wrap}}
 
 /* ===== songwriting/theme.css ===== */
 /* Songwriting Lab 主題：沿用 Vocal Lab 版面，主色換成 CI 粉紅（#e2407f），並加上詞曲創作專用的互動工具 */

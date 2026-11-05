@@ -111,6 +111,9 @@
     '[data-theme=light] .ps-theme-mini:hover{background:rgba(17,19,21,.07)}' +
     '[data-theme=light] .ps-theme-float{border-color:rgba(17,19,21,.18);background:rgba(255,255,255,.85);color:#111315}' +
     '.ps-theme-topm{display:none}' +
+    '.appbar .ps-theme-ab{width:44px;height:44px;margin:0;border:0;border-radius:12px;color:var(--ink);background:none}.appbar .ps-theme-ab:hover{background:none}' +
+    /* 窄手機頂欄放不下標題：保留空間讓按鈕靠右，標題已在投影片內容裡 */
+    '@media(max-width:400px){.appbar .ab-title{visibility:hidden}}' +
     '.tabbar .ps-theme-tab{flex:1;flex-direction:column;gap:3px;padding:0;border:0;background:none;color:var(--faint);font-size:11px;font-weight:500}' +
     '.tabbar .ps-theme-tab svg{width:22px;height:22px}' +
     '@media(max-width:860px){.ps-theme-topm{display:inline-flex;margin-left:auto;margin-right:8px}.ps-theme-topm+.pb-chip{margin-left:0}}' +
@@ -129,6 +132,8 @@
     } else if (langs.length) {
       // 手機版頂欄的選單收起來了：有底部分頁列就加一格，沒有就放在頂欄右側（學員資料按鈕左邊）
       var tab = document.querySelector('.tabbar'), bar = document.querySelector('.topbar .wrap');
+      var ab = document.querySelector('.appbar');
+      if (ab) ab.insertBefore(button('ps-theme-mini ps-theme-ab'), ab.querySelector('.ab-count')); // 投影片手機版的頂部列
       if (tab) tab.appendChild(button('ps-theme-tab'));
       else if (bar) bar.insertBefore(button('ps-theme-mini ps-theme-topm'), bar.querySelector('.pb-chip'));
       langs.forEach(function (l) {
