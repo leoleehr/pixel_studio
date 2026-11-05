@@ -67,7 +67,7 @@ footer .footer-main{flex-wrap:wrap;row-gap:16px}
 footer .footer-logo{display:block;width:600px;height:auto;max-width:none;margin-left:-30px}
 .footer-name{display:none;font-size:15px;font-weight:700;color:var(--ink,inherit)}
 @media(max-width:767px){footer .footer-logo{width:64px;height:64px;margin-left:-10px}.footer-name{display:block}}
-@media(max-width:359px){.topbar .wrap{padding-left:14px;padding-right:12px}.topbar .brand .brand-caption{padding-left:6px;letter-spacing:0}}
+@media(max-width:359px){.topbar .wrap{padding-left:12px;padding-right:10px}.topbar .brand .brand-caption{padding-left:6px;letter-spacing:0}}
 
 /* ===== songwriting/theme.css ===== */
 /* Songwriting Lab 主題：沿用 Vocal Lab 版面，主色換成 CI 粉紅（#e2407f），並加上詞曲創作專用的互動工具 */

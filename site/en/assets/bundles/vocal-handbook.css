@@ -601,7 +601,7 @@ footer .footer-main{flex-wrap:wrap;row-gap:16px}
 footer .footer-logo{display:block;width:600px;height:auto;max-width:none;margin-left:-30px}
 .footer-name{display:none;font-size:15px;font-weight:700;color:var(--ink,inherit)}
 @media(max-width:767px){footer .footer-logo{width:64px;height:64px;margin-left:-10px}.footer-name{display:block}}
-@media(max-width:359px){.topbar .wrap{padding-left:14px;padding-right:12px}.topbar .brand .brand-caption{padding-left:6px;letter-spacing:0}}
+@media(max-width:359px){.topbar .wrap{padding-left:12px;padding-right:10px}.topbar .brand .brand-caption{padding-left:6px;letter-spacing:0}}
 
 /* ===== assets/brand/brand-tokens.css ===== */
 :root{--pixel-black:#000;--pixel-paper:#f4f4f0;--pixel-ink:#111315;--pixel-muted:#8b9097;--pixel-red:#e8412b;--pixel-pink:#e2407f;--pixel-purple:#8a4fc0;--pixel-blue:#2f5fc4;--pixel-cyan:#45b3e6;--pixel-green:#6cbb4b;--pixel-lime:#d6e03a;--pixel-amber:#f4a62a;--pixel-wordmark-opacity:.9;--pixel-space-unit:64px;}
