@@ -388,7 +388,7 @@ html[lang^=en] .topbar .brand-caption{letter-spacing:.04em;line-height:1.45}
   .pill{white-space:normal}
 }
 
-/* 原講義曲例：投影片上的 YouTube 卡片 */
+/* 2013 年教案曲例：投影片上的 YouTube 卡片 */
 .slide .song-grid{gap:14px}
 .slide .song-grid.c2{grid-template-columns:repeat(2,minmax(0,1fr));max-width:900px}
 .slide .song-grid.c4{grid-template-columns:repeat(4,minmax(0,1fr))}

@@ -131,7 +131,7 @@
 - **和聲 Harmony**：吉他和弦提供的色彩，歌者理解和弦，音準才有依靠。
 - **節奏 Rhythm**：歌曲的律動，從吉他的刷法與指法就能辨認。
 
-註：原講義圓圖中的 Hamonic、Rythem，正確拼法為 Harmony、Rhythm。
+註：2013 年教案圓圖中的 Hamonic、Rythem，正確拼法為 Harmony、Rhythm。
 
 **六、好主唱的條件**
 

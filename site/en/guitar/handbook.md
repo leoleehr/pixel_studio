@@ -341,7 +341,7 @@ A major scale's steps are "whole, whole, half, whole, whole, whole, half"; one f
 
 - The top line of tab is the thinnest string, string 1; numbers are frets, 0 is an open string, and stacked numbers are played together.
 - Left-hand fretting: close to the fret, fingertips upright, thumb on the middle line at the back of the neck, and just enough pressure for a clear sound.
-- Finger crawls 1-2-3-4 and 1-3-2-4: one finger per fret, the right-hand pick alternating down and up; add 4 BPM only after two steady rounds in a row. The 2013 handbook's 100 BPM is the final goal; start slow.
+- Finger crawls 1-2-3-4 and 1-3-2-4: one finger per fret, the right-hand pick alternating down and up; add 4 BPM only after two steady rounds in a row. The 2013 lesson plan's 100 BPM is the final goal; start slow.
 - Fifth-fret tuning: fret 5 on strings 6, 5, 4 and 2 matches the next string open; only string 3 uses fret 4 (a major third).
 
 ### Examples: staff + tab
@@ -421,7 +421,7 @@ Goals: read chord diagrams and understand which notes make up a chord; make ever
 | Open | 00:00–00:20 | Tune and crawl to wake up your fingers; three or more notes sounding together make a chord; how many songs can you play with just C, G, Am and F? | 3–5 |
 | Build | 00:20–00:55 | Chord diagrams: the fretboard stood upright; C: ring finger first, low to high; Am: one finger different from C; G: fingers spread, all six strings ring; small F: index flat across two strings; four chords, four colours; name the chord from the diagram; close your eyes and tell which chord you hear | 6–13 |
 | Break | 00:55–01:05 | 10-minute break | 14 |
-| Turn | 01:05–01:40 | Get ready early for faster changes; how many times can you switch between two chords in a minute?; 4 beats per chord, then 2 once steady; the family in C: calling chords by number; reading a chord chart: one box per bar, four downstrokes; songs from the 2013 handbook playable with four chords; chord chain | 15–21 |
+| Turn | 01:05–01:40 | Get ready early for faster changes; how many times can you switch between two chords in a minute?; 4 beats per chord, then 2 once steady; the family in C: calling chords by number; reading a chord chart: one box per bar, four downstrokes; songs from the 2013 lesson plan playable with four chords; chord chain | 15–21 |
 | Close | 01:40–02:00 | Chord sounding dead? Flip the cards to find out why; whole-class play-along: the teacher sings, everyone accompanies; record 30 seconds of C → G → Am → F; write your 3-2-1 before you leave | 22–26 |
 | Wrap up | After class | Three-line summary, daily practice log, practice after class and next chapter preview | 25、27、28、29 |
 
@@ -474,7 +474,7 @@ The strums and fingerpicking used in this chapter. The staff above shows pitch a
 | 16 | Timed stages | How many times can you switch between two chords in a minute? |
 | 17 | Chord change trainer | 4 beats per chord, then switch to 2 once you're steady |
 | 19 | Strum-along metronome | Reading a chord chart: one box per bar, four downstrokes |
-| 20 | Song listening · YouTube | Songs from the 2013 handbook: playable with four chords |
+| 20 | Song listening · YouTube | Songs from the 2013 lesson plan: playable with four chords |
 | 21 | Team contest · scoring | Chord chain |
 | 22 | Myth-busting · flip cards | Chord sounding dead? Flip the cards to find out why |
 | 23 | Whole-class play-along | Whole-class play-along: the teacher sings, everyone accompanies |
@@ -533,7 +533,7 @@ Goals: keep the right hand swinging steadily, down on the beat and up on the hal
 | Open | 00:00–00:20 | C → G → Am → F: how smooth are your chord changes?; same chords, different strum: what changes? | 3–4 |
 | Build | 00:20–00:55 | Strum from the wrist, keep the arm steady; three symbols for writing strums; three marks to know before reading Chinese guitar music; quarter notes: one strum per beat, hand back up on the half beat; 8 beats: the upward stroke sounds too; hide a beat: a tie moves the accent forward; say it: down, down-up, up-down-up; sing "eighth notes" and "syncopation" on Ta; listen to one bar and tell which strum it is | 5–13 |
 | Break | 00:55–01:05 | 10-minute break | 14 |
-| Turn | 01:05–01:40 | 8 beats and syncopation over the four main chords; three tricks for great-sounding strumming; 16 beats: each beat in four, the hand swings twice as fast; start 16 beats at 50 BPM; songs from the 2013 handbook: tell which strum they use; design the strumming for a song | 15–20 |
+| Turn | 01:05–01:40 | 8 beats and syncopation over the four main chords; three tricks for great-sounding strumming; 16 beats: each beat in four, the hand swings twice as fast; start 16 beats at 50 BPM; songs from the 2013 lesson plan: tell which strum they use; design the strumming for a song | 15–20 |
 | Close | 01:40–02:00 | Myth or fact?; 8 beats in the verse, syncopation in the chorus: whole-class play-along; record both strums and listen for the accents; write your 3-2-1 before you leave | 21–25 |
 | Wrap up | After class | Three-line summary, daily practice log, practice after class and next chapter preview | 24、26、27、28 |
 
@@ -582,7 +582,7 @@ The strums and fingerpicking used in this chapter. The staff above shows pitch a
 | 13 | Listening game | Listen to one bar and tell which strum it is |
 | 15 | Strum-along metronome | 8 beats and syncopation over the four main chords |
 | 18 | Strum-along metronome | Start 16 beats at 50 BPM |
-| 19 | Song listening · YouTube | Songs from the 2013 handbook: tell which strum each song uses |
+| 19 | Song listening · YouTube | Songs from the 2013 lesson plan: tell which strum each song uses |
 | 20 | Group task · scoring | Design the strumming for a song |
 | 21 | Myth-busting · flip cards | Myth or fact? |
 | 22 | Whole-class play-along | 8 beats in the verse, syncopation in the chorus: the whole class plays together |
@@ -629,7 +629,7 @@ Goals: tell duple time (2/4, 4/4) from triple time (3/4, 6/8); find each chord's
 | Open | 00:00–00:20 | Is your syncopated folk rock steady yet?; telling the time: listen for how often the strong beat comes round | 3–4 |
 | Build | 00:20–00:55 | The two big families of time; "boom": play the note the chord is named after, usually on the lowest string; boom, chick-a, boom, chick-a; boom-chick-a on C written as tab; 3/4 waltz: boom, chick, chick; count it, think it through; 6/8: two big beats, each in three; how 3/4 and 6/8 differ | 5–12 |
 | Break | 00:55–01:05 | 10-minute break | 13 |
-| Turn | 01:05–01:40 | 12/8: three little beats in every beat; songs from the 2013 handbook: one each in 3/4, 6/8 and 12/8; listen for the time signature and tempo, then choose the right hand's accompaniment; same chords, three accompaniments; myth or fact? | 14–18 |
+| Turn | 01:05–01:40 | 12/8: three little beats in every beat; songs from the 2013 lesson plan: one each in 3/4, 6/8 and 12/8; listen for the time signature and tempo, then choose the right hand's accompaniment; same chords, three accompaniments; myth or fact? | 14–18 |
 | Close | 01:40–02:00 | Happy Birthday in 3/4, C major; record two kinds of time; write your 3-2-1 before you leave | 19–22 |
 | Wrap up | After class | Three-line summary, daily practice log, practice after class and next chapter preview | 21、23、24、25 |
 
@@ -690,7 +690,7 @@ The strums and fingerpicking used in this chapter. The staff above shows pitch a
 | 10 | Multiple choice | Count it, think it through |
 | 11 | Strum-along metronome | 6/8: two big beats, each split in three |
 | 14 | Strum-along metronome | 12/8: three little beats inside every beat |
-| 15 | Song listening · YouTube | Songs from the 2013 handbook: listen to one each in 3/4, 6/8 and 12/8 |
+| 15 | Song listening · YouTube | Songs from the 2013 lesson plan: listen to one each in 3/4, 6/8 and 12/8 |
 | 17 | Group task · scoring | Same chords, three accompaniments |
 | 18 | Myth-busting · flip cards | Myth or fact? |
 | 19 | Whole-class play-along | Happy Birthday: 3/4, C major |
@@ -733,7 +733,7 @@ Goals: tell intro, verse, pre-chorus, chorus, bridge, interlude and outro apart;
 | Open | 00:00–00:20 | Share your mid-course song; which part of a song do people remember most? | 3–4 |
 | Build | 00:20–00:55 | A map of a pop song; the verse makes room for the singer, the chorus lets the energy out; put the sections in order for a typical pop song; a capo: a nut you can move; shape plus capo equals the real key; changing key for a singer | 5–10 |
 | Break | 00:55–01:05 | 10-minute break | 11 |
-| Turn | 01:05–01:40 | Same chords, shape built through the sections; mid-course song ideas: 16-beat songs from the 2013 handbook; rehearsal: play from start to finish without stopping; five tips for a more polished play-and-sing | 12–15 |
+| Turn | 01:05–01:40 | Same chords, shape built through the sections; mid-course song ideas: 16-beat songs from the 2013 lesson plan; rehearsal: play from start to finish without stopping; five tips for a more polished play-and-sing | 12–15 |
 | Close | 01:40–02:00 | Mid-course assessment: getting through it matters most; for each performer: one compliment, one suggestion; record your mid-course performance; Book 1 is done: write your 3-2-1 | 16–20 |
 | Wrap up | After class | Three-line summary, daily practice log, practice after class and next chapter preview | 19、21、22、23 |
 
@@ -781,7 +781,7 @@ The strums and fingerpicking used in this chapter. The staff above shows pitch a
 | 9 | Capo calculator | Shape plus capo equals the real key |
 | 10 | Multiple choice | Changing key for a singer |
 | 12 | Strum-along metronome | Same chords, with shape built through the sections |
-| 13 | Song listening · YouTube | Mid-course song ideas: 16-beat songs from the 2013 handbook |
+| 13 | Song listening · YouTube | Mid-course song ideas: 16-beat songs from the 2013 lesson plan |
 | 14 | Timed stages | Rehearsal: play from start to finish without stopping |
 | 17 | Peer feedback | For each performer: one compliment, one suggestion |
 | 18 | A recording to keep | Record your mid-course performance |
@@ -827,7 +827,7 @@ Goals: work out the distance between two notes (in degrees) and tell consonant f
 | Open | 00:00–00:20 | After mid-course: giving your guitar more expression; C and Cm sound very different, so how many notes apart are they? | 3–4 |
 | Build | 00:20–00:55 | The distance between two notes in degrees and semitones; some notes sound settled together, some tense; listen to two notes and tell how far apart they are; triads: notes stacked in thirds; A and Am, E and Em, D and Dm; a suspended sound has to come home | 5–10 |
 | Break | 00:55–01:05 | 10-minute break | 11 |
-| Turn | 01:05–01:40 | Put down the pick: each of four fingers looks after its own strings; T-1-2-3: the most basic arpeggio; T-1-2-1-3-1-2-1: up, then back down; pinch: thumb and ring finger together; songs from the 2013 handbook accompanied with arpeggios; add fingerpicking to a song | 12–17 |
+| Turn | 01:05–01:40 | Put down the pick: each of four fingers looks after its own strings; T-1-2-3: the most basic arpeggio; T-1-2-1-3-1-2-1: up, then back down; pinch: thumb and ring finger together; songs from the 2013 lesson plan accompanied with arpeggios; add fingerpicking to a song | 12–17 |
 | Close | 01:40–02:00 | Myth or fact?; half fingerpicking, half strumming; record your first fingerpicking; write your 3-2-1 before you leave | 18–22 |
 | Wrap up | After class | Three-line summary, daily practice log, practice after class and next chapter preview | 21、23、24、25 |
 
@@ -897,7 +897,7 @@ The strums and fingerpicking used in this chapter. The staff above shows pitch a
 | 13 | Tab trainer | T-1-2-3: the most basic arpeggio |
 | 14 | Tab trainer | T-1-2-1-3-1-2-1: up, then back down |
 | 15 | Tab trainer | Pinch: thumb and ring finger play together |
-| 16 | Song listening · YouTube | Songs from the 2013 handbook: songs accompanied with arpeggios |
+| 16 | Song listening · YouTube | Songs from the 2013 lesson plan: songs accompanied with arpeggios |
 | 17 | Group task · scoring | Add fingerpicking to a song |
 | 18 | Myth-busting · flip cards | Myth or fact? |
 | 19 | Whole-class play-along | Half fingerpicking, half strumming |
@@ -943,7 +943,7 @@ Goals: play the G major scale and understand that G major adds an F#; lay out th
 | Open | 00:00–00:20 | How your fingerpicking practice went; why learn G when you already know C? | 3–4 |
 | Build | 00:20–00:55 | Whole-whole-half-whole-whole-whole-half from G; the G major scale over two octaves; stack a triad on every note of the scale; D: three fingers in a small triangle; G → D → Em → C; tell the four chords in G apart | 5–10 |
 | Break | 00:55–01:05 | 10-minute break | 11 |
-| Turn | 01:05–01:40 | Barre chords: your index finger is a capo; to make it ring, position matters more than strength; pluck string by string, every one should ring; 4 beats per chord, starting with the most common progression; songs from the 2013 handbook: G major and Em shapes; myth or fact?; barre chord checkpoint | 12–18 |
+| Turn | 01:05–01:40 | Barre chords: your index finger is a capo; to make it ring, position matters more than strength; pluck string by string, every one should ring; 4 beats per chord, starting with the most common progression; songs from the 2013 lesson plan: G major and Em shapes; myth or fact?; barre chord checkpoint | 12–18 |
 | Close | 01:40–02:00 | Play-along in G major: G → D → Em → C; record today's two challenges; write your 3-2-1 before you leave | 19–22 |
 | Wrap up | After class | Three-line summary, daily practice log, practice after class and next chapter preview | 21、23、24、25 |
 
@@ -995,7 +995,7 @@ The strums and fingerpicking used in this chapter. The staff above shows pitch a
 | 10 | Listening game | Tell the four chords in G apart |
 | 14 | Tab trainer | Pluck string by string; every one should ring |
 | 15 | Chord change trainer | 4 beats per chord, starting with the most common progression |
-| 16 | Song listening · YouTube | Songs from the 2013 handbook: G major and Em shapes |
+| 16 | Song listening · YouTube | Songs from the 2013 lesson plan: G major and Em shapes |
 | 17 | Myth-busting · flip cards | Myth or fact? |
 | 18 | Team contest · scoring | Barre chord checkpoint |
 | 19 | Whole-class play-along | Play-along in G major: G → D → Em → C |
@@ -1056,7 +1056,7 @@ Goals: read slash chords like C/G and G/B, understanding that the note after the
 | Open | 00:00–00:20 | How many strings ring on your full barre F?; what does the G after the slash in "C/G" mean? | 3–4 |
 | Build | 00:20–00:55 | The bass decides where a chord sits; the five most-used slash chords; the bass moving between root and fifth; C → G/B → Am → Am/G → F: the bass steps down; play the bass first, then add the chords; ascending bass: C → C/E → F → G | 5–10 |
 | Break | 00:55–01:05 | 10-minute break | 11 |
-| Turn | 01:05–01:40 | Walk the bass from one chord to the next; boom-chick-a + descending bass; the thumb walks the bass, the other fingers stay put; songs from the 2013 handbook: listen along the bass line; design a bass line for a progression | 12–16 |
+| Turn | 01:05–01:40 | Walk the bass from one chord to the next; boom-chick-a + descending bass; the thumb walks the bass, the other fingers stay put; songs from the 2013 lesson plan: listen along the bass line; design a bass line for a progression | 12–16 |
 | Close | 01:40–02:00 | Myth or fact?; descending bass play-along; record your bass line; write your 3-2-1 before you leave | 17–21 |
 | Wrap up | After class | Three-line summary, daily practice log, practice after class and next chapter preview | 20、22、23、24 |
 
@@ -1114,7 +1114,7 @@ The strums and fingerpicking used in this chapter. The staff above shows pitch a
 | 12 | Tab trainer | Walk the bass from one chord to the next |
 | 13 | Strum-along metronome | Boom-chick-a + descending bass |
 | 14 | Tab trainer | The thumb walks the bass, the other fingers stay put |
-| 15 | Song listening · YouTube | Songs from the 2013 handbook: listen along the bass line |
+| 15 | Song listening · YouTube | Songs from the 2013 lesson plan: listen along the bass line |
 | 16 | Group task · scoring | Design a bass line for a progression |
 | 17 | Myth-busting · flip cards | Myth or fact? |
 | 18 | Whole-class play-along | Descending bass play-along |
@@ -1150,7 +1150,7 @@ Goals: name chords by scale degree and understand the three functions: tonic, su
 | Open | 00:00–00:20 | Is your descending bass smooth?; how can the same chords make completely different songs? | 3–4 |
 | Build | 00:20–00:55 | Seven degrees, seven roles; at home, setting out, wanting to go home; V7 → I: the strongest signal to go home; four progressions you've heard a thousand times; listen to four chords and tell the progression; play all four progressions once | 5–10 |
 | Break | 00:55–01:05 | 10-minute break | 11 |
-| Turn | 01:05–01:40 | Swap in a chord from the same family and the colour changes; add a seventh: Cmaj7, Am7, Dm7, Fmaj7; Twinkle Twinkle: which chord does each strong-beat note belong to?; arranging for one guitar: give every section its own look; songs from the 2013 handbook: each section has its own accompaniment; arrangement makeover | 12–17 |
+| Turn | 01:05–01:40 | Swap in a chord from the same family and the colour changes; add a seventh: Cmaj7, Am7, Dm7, Fmaj7; Twinkle Twinkle: which chord does each strong-beat note belong to?; arranging for one guitar: give every section its own look; songs from the 2013 lesson plan: each section has its own accompaniment; arrangement makeover | 12–17 |
 | Close | 01:40–02:00 | Myth or fact?; Canon progression: four-part class play-along; record your arrangement; write your 3-2-1 before you leave | 18–22 |
 | Wrap up | After class | Three-line summary, daily practice log, practice after class and next chapter preview | 21、23、24、25 |
 
@@ -1182,7 +1182,7 @@ Goals: name chords by scale degree and understand the three functions: tonic, su
 
 ### Extended notes: an intro to arranging
 
-This chapter of the 2013 handbook is only an outline; the following comes from classroom practice: the intro uses the chorus chords; the verse uses fingerpicking or boom-chick-a with a bass line; the pre-chorus uses an ascending bass, strumming more and more densely; the chorus uses syncopation or 16 beats and ends on V7; the outro slows down and lets I or Imaj7 ring out fully.
+This chapter of the 2013 lesson plan is only an outline; the following comes from classroom practice: the intro uses the chorus chords; the verse uses fingerpicking or boom-chick-a with a bass line; the pre-chorus uses an ascending bass, strumming more and more densely; the chorus uses syncopation or 16 beats and ends on V7; the outro slows down and lets I or Imaj7 ring out fully.
 
 ### Examples: staff + tab
 
@@ -1210,7 +1210,7 @@ The strums and fingerpicking used in this chapter. The staff above shows pitch a
 | 10 | Chord change trainer | Play all four progressions once |
 | 13 | Chord change trainer | Add a seventh: Cmaj7, Am7, Dm7, Fmaj7 |
 | 14 | Tab trainer | Twinkle Twinkle Little Star: which chord does each strong-beat note belong to? |
-| 16 | Song listening · YouTube | Songs from the 2013 handbook: each section has its own accompaniment |
+| 16 | Song listening · YouTube | Songs from the 2013 lesson plan: each section has its own accompaniment |
 | 17 | Group task · scoring | Arrangement makeover |
 | 18 | Myth-busting · flip cards | Myth or fact? |
 | 19 | Whole-class play-along | Canon progression: a four-part class play-along |
@@ -1259,7 +1259,7 @@ Goals: use hammer-ons, pull-offs and slides to play more connected melodies; add
 
 Fills go in the last beat or two of a bar, using notes from the next chord or neighbouring scale notes, joined with hammer-ons, pull-offs and slides.
 
-### Extended notes: tone techniques (the 2013 handbook's Chapters 8 and 9 are only outlines; this chapter adds the motions)
+### Extended notes: tone techniques (the 2013 lesson plan's Chapters 8 and 9 are only outlines; this chapter adds the motions)
 
 | Technique | Motion | Where it's used |
 | --- | --- | --- |
@@ -1382,7 +1382,7 @@ Goals: move a song into another key and choose the shapes and capo; measure your
 | Open | 00:00–00:20 | How ready your final project is; the chorus's high note is out of range, so what's the best fix? | 3–4 |
 | Build | 00:20–00:55 | Transposing: every chord moves the same distance; transposing practice; four steps to work out your key; follow the reference notes up and down to find your comfort zone; choose a song and work out your key, shapes and capo; the five most-used major keys on guitar; I–IV–V in D, A and E major | 5–11 |
 | Break | 00:55–01:05 | 10-minute break | 12 |
-| Turn | 01:05–01:40 | Songs from the 2013 handbook: other keys and key changes; writing a song starts with a story; fill in a planning sheet before you start; loop the chords and hum your melody along; find the set whose line endings share one rhyme; each group writes a four-bar chorus | 13–18 |
+| Turn | 01:05–01:40 | Songs from the 2013 lesson plan: other keys and key changes; writing a song starts with a story; fill in a planning sheet before you start; loop the chords and hum your melody along; find the set whose line endings share one rhyme; each group writes a four-bar chorus | 13–18 |
 | Close | 01:40–02:00 | Final assessment: progress since mid-course; record your final project and listen alongside your mid-course recording; help your guitar stay with you for years; all twelve chapters done: write your 3-2-1 | 19–23 |
 | Wrap up | After class | Three-line summary, daily practice log, practice after class and next chapter preview | 22、24、25 |
 
@@ -1437,7 +1437,7 @@ The strums and fingerpicking used in this chapter. The staff above shows pitch a
 | 8 | Range test | Follow the reference notes up and down to find your comfort zone |
 | 9 | Key calculator | Choose a song and work out your key, shapes and capo |
 | 11 | Chord change trainer | I–IV–V in D, A and E major |
-| 13 | Song listening · YouTube | Songs from the 2013 handbook: other keys and key changes |
+| 13 | Song listening · YouTube | Songs from the 2013 lesson plan: other keys and key changes |
 | 15 | Song planning sheet | Fill in a planning sheet before you start writing |
 | 16 | Strum-along metronome · recording | Loop the chords and hum your melody along |
 | 17 | Multiple choice | Find the set whose line endings share one rhyme |
