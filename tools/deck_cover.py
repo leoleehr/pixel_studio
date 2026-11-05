@@ -17,8 +17,7 @@ def static_cover(html, prefix):
     brand = prefix + 'assets/brand/'
     art = (f'<div class="cover-art" aria-hidden="true"><span class="ca-glow"></span>'
            f'<img src="{brand}pixel-studio-symbol-color.svg" alt="" width="1024" height="1024" fetchpriority="high"></div>')
-    sig = f'<img class="cover-sig" src="{brand}pixel-studio-primary-mono-white.svg" alt="Pixel Studio 畫素音樂工作坊" width="1600" height="1440" loading="lazy" decoding="async">'
-    return html[:m.end()] + art + html[m.end():end] + sig + html[end:]
+    return html[:m.end()] + art + html[m.end():end] + html[end:]
 
 
 def lazy_images(html):

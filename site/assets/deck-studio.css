@@ -25,9 +25,10 @@ body::before{display:none}
 /* 投影片頁尾：左下章節、右下 Logo（CI 禁止另加透明度） */
 .slide-chapter{position:absolute;left:40px;bottom:26px;font-size:13px;color:var(--faint);letter-spacing:.08em;pointer-events:none}
 .slide-brand{pointer-events:none}
+.slide.brand-off .slide-brand{display:none}
 @media (max-width:900px),(orientation:portrait) and (max-width:1100px){.slide-chapter{display:none}}
 @media print{.slide-chapter,.slide-brand{display:none}}
-.slide-brand img{height:34px;width:auto;display:block;margin:-10px -14px -10px 0} /* 白色單色橫式標誌（SVG 含安全邊距） */
+.slide-brand img{width:calc(64px / min(var(--stage-s,1),1));height:auto;display:block;margin:0} /* CI：簡化聲波最小 64 px，舞台縮小時反向補償 */ /* 白色單色橫式標誌（SVG 含安全邊距） */
 
 /* 手機閱讀模式：封面不留放射漸層，避免在投影片邊界出現硬邊 */
 @media (max-width:900px),(orientation:portrait) and (max-width:1100px){.slide.cover{background:none!important}}

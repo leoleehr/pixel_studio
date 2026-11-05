@@ -49,23 +49,25 @@ body::before{display:none}a{color:var(--amber)}
 
 /* 2026 Rebranding：左上角與頁尾改用正式橫式標誌 */
 .topbar .brand{flex:none}
-.topbar .brand-logo{display:block;flex:none;height:44px;width:auto;max-width:none} /* 容器寬度已扣掉負邊距，max-width 會把標誌壓扁 */
-footer .footer-logo{display:block;height:96px;width:auto;max-width:100%}
-@media(max-width:860px){.topbar .brand-logo{height:36px}footer .footer-logo{height:72px}}
-@media(max-width:599px){.topbar .brand-logo{height:32px}footer .footer-logo{height:56px}}
-.topbar .brand-logo{height:64px;margin-left:-11px;margin-right:-8px}
-footer .footer-logo{height:120px;margin-left:-20px}
-@media(max-width:860px){.topbar .brand-logo{height:52px;margin-left:-9px}footer .footer-logo{height:88px;margin-left:-15px}}
-@media(max-width:599px){.topbar .brand-logo{height:46px;margin-left:-8px}footer .footer-logo{height:70px;margin-left:-12px}}
 /* 全站導覽列使用同一條欄線，換頁時標誌位置不跳動 */
 .topbar .wrap{max-width:1440px;padding-inline:clamp(24px,5vw,80px)}
 @media(max-width:599px){.topbar .wrap{padding-inline:24px}}
 /* 英文品牌標題較長，字距收緊；手機講義頂列還有目錄鈕，標題改由頁面大標呈現，避免按鈕被推出畫面 */
 html[lang^=en] .topbar .brand-caption{letter-spacing:.04em;line-height:1.45}
-@media(max-width:480px){.topbar .brand-caption{display:none}} /* 窄手機頂欄要放標誌、語言與登入鈕 */
 /* 深藍編號底色改用白字，對比 5.9:1 */
 .sv-item[style*="2f5fc4"] .no{color:#fff}
 @media(max-width:360px){.home .footer-main{flex-wrap:wrap}}
+/* CI 尺寸下限：橫式 600 px，放不下時只用簡化聲波（64 px），品牌名稱以文字呈現 */
+.topbar .brand-logo{display:block;flex:none;width:64px;height:64px;max-width:none;margin:0 -4px 0 -10px}
+.topbar .brand .brand-caption{display:block}
+@media(max-width:599px){.topbar .brand{gap:6px}.topbar .brand .brand-caption{padding-left:8px;letter-spacing:.04em;line-height:1.45}}
+footer .footer-main{flex-wrap:wrap;row-gap:16px}
+.footer-id{display:flex;align-items:center;gap:10px}
+.footer-id picture{display:block;flex:none}
+footer .footer-logo{display:block;width:600px;height:auto;max-width:none;margin-left:-30px}
+.footer-name{display:none;font-size:15px;font-weight:700;color:var(--ink,inherit)}
+@media(max-width:767px){footer .footer-logo{width:64px;height:64px;margin-left:-10px}.footer-name{display:block}}
+@media(max-width:359px){.topbar .wrap{padding-left:14px;padding-right:12px}.topbar .brand .brand-caption{padding-left:6px;letter-spacing:0}}
 
 /* ===== songwriting/theme.css ===== */
 /* Songwriting Lab 主題：沿用 Vocal Lab 版面，主色換成 CI 粉紅（#e2407f），並加上詞曲創作專用的互動工具 */

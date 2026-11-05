@@ -29,7 +29,7 @@
     s.appendChild(c);
     var b = document.createElement('div');
     b.className = 'slide-brand';
-    b.innerHTML = '<img src="' + BRAND + 'pixel-studio-horizontal-mono-white.svg" alt="Pixel Studio 畫素音樂工作坊" loading="lazy" decoding="async">';
+    b.innerHTML = '<img src="' + BRAND + 'symbol-compact-color.svg" alt="Pixel Studio 畫素音樂工作坊" width="512" height="512" decoding="async">';
     s.appendChild(b);
   });
 
@@ -83,6 +83,7 @@
     if (mq.matches) { stage.style.transform = ''; return; }
     var s = Math.min((innerWidth - 32) / 1280, (innerHeight - 76) / 720);
     stage.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
+    stage.style.setProperty('--stage-s', s);
   }
   // 焦點留在上一張（已設 inert）或頁面本身時，移到目前這張，下一次 Tab 才會從這張開始；停在控制列就不動，方便連按「下一張」
   function moveFocus(prev) {
@@ -220,13 +221,35 @@
     if (z < 1) { s.style.setProperty('--fit', z.toFixed(2)); s.setAttribute('data-fit', ''); }
     else if (s.hasAttribute('data-fit')) { s.style.removeProperty('--fit'); s.removeAttribute('data-fit'); }
   }
+  // CI：聲波不得小於 64 px，也不與內容重疊；這張放不下就不放
+  function logoRoom(s) {
+    var img = s.querySelector('.slide-brand img');
+    if (!img) return;
+    s.classList.remove('brand-off');
+    var R = img.getBoundingClientRect(), mx = R.width * 0.15, my = R.height * 0.15;
+    var L = R.left + mx, Ri = R.right - mx, T = R.top + my, B = R.bottom - my, hit = false;
+    function clash(r) { return r.width > 0 && r.height > 0 && r.left < Ri && r.right > L && r.top < B && r.bottom > T; }
+    function outside(e) { return e.closest('.slide-brand,.slide-chapter,.cover-art'); }
+    [].forEach.call(s.querySelectorAll('table,.card,img,svg,canvas,video,input,textarea,select,button'), function (e) {
+      if (!hit && !outside(e) && getComputedStyle(e).visibility !== 'hidden' && clash(e.getBoundingClientRect())) hit = true;
+    });
+    var walk = document.createTreeWalker(s, NodeFilter.SHOW_TEXT), range = document.createRange(), n;
+    while (!hit && (n = walk.nextNode())) {
+      if (!n.textContent.trim() || outside(n.parentElement) || getComputedStyle(n.parentElement).visibility === 'hidden') continue;
+      range.selectNodeContents(n);
+      if ([].some.call(range.getClientRects(), clash)) hit = true;
+    }
+    s.classList.toggle('brand-off', hit);
+  }
   function refit() {
     var s = slides[i];
     if (!s || mq.matches) return;
-    if (!s.hasAttribute('data-fit') && overflow(s) <= 0) return;
-    var z = 1;
-    setFit(s, 1);
-    while (overflow(s) > 0 && z > FIT_MIN) { z = Math.max(FIT_MIN, z - 0.02); setFit(s, z); }
+    if (s.hasAttribute('data-fit') || overflow(s) > 0) {
+      var z = 1;
+      setFit(s, 1);
+      while (overflow(s) > 0 && z > FIT_MIN) { z = Math.max(FIT_MIN, z - 0.02); setFit(s, z); }
+    }
+    logoRoom(s);
   }
   var refitTimer = 0;
   function refitSoon() { clearTimeout(refitTimer); refitTimer = setTimeout(refit, 80); }

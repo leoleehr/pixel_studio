@@ -8,7 +8,7 @@
  */
 (function () {
   'use strict';
-  var CSS_V = '7de7f9ec53';
+  var CSS_V = '783ff89041';
   var KEY = 'ps-theme', root = document.documentElement, me = document.currentScript;
   var base = me ? me.src.replace(/theme\.js(\?.*)?$/, '') : 'assets/';
   root.setAttribute('data-kit', (me && me.getAttribute('data-kit')) || 'site');

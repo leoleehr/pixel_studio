@@ -127,3 +127,5 @@
 .hub .lesson .q .ph{display:inline-block}
 html[lang^=en] .hub .lesson .q .ph{display:inline}
 html[lang^=en] .hub .lesson .q .ph+.ph::before{content:" "}
+/* CI：直式完整標誌下限 480 px，放不下時改用完整聲波（下限 192 px） */
+@media(max-width:1199px){.hub .hub-logo-wrap{min-width:192px}.hub .hub-logo-flow,.hub.fx-on .hub-logo-flow{display:none}}
