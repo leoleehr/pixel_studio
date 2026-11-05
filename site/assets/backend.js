@@ -390,7 +390,7 @@
   /* ---------- Google 登入區塊樣式 ---------- */
   function style() {
     var s = document.createElement('style');
-    s.textContent = '.hb-lock{max-width:520px;margin:48px auto;padding:28px 24px;text-align:center;border:1px solid rgba(128,128,128,.35);border-radius:16px}.hb-lock b{display:block;font-size:20px;margin-bottom:8px}.hb-lock p{margin:0 0 18px;line-height:1.7}.hb-lock button{display:inline-block;width:auto;min-height:44px;padding:0 22px;cursor:pointer}' +
+    s.textContent = '.toc:has(#toc:empty){display:none}.hb-lock{max-width:520px;margin:48px auto;padding:28px 24px;text-align:center;border:1px solid rgba(128,128,128,.35);border-radius:16px}.hb-lock b{display:block;font-size:20px;margin-bottom:8px}.hb-lock p{margin:0 0 18px;line-height:1.7}.hb-lock button{display:inline-block;width:auto;min-height:44px;padding:0 22px;cursor:pointer}' +
       '.pb-gwrap{margin-bottom:14px}.pb-gwrap>span{display:block;font-size:13px;color:#c9c5bd;margin-bottom:6px}' +
       // color-scheme:light 讓 Google 按鈕的 iframe 保持透明，深色頁面上才不會出現白底
       '.pb-google{min-height:44px}.pb-gbtn{min-height:44px;color-scheme:light;background:transparent;margin-top:2px}.pb-gbtn iframe{color-scheme:light}' +
